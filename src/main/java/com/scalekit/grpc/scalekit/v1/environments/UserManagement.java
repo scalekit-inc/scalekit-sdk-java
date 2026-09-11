@@ -329,6 +329,88 @@ private static final long serialVersionUID = 0L;
     return syncUserProfileOnSignin_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : syncUserProfileOnSignin_;
   }
 
+  public static final int ENABLE_BOT_DETECTION_FIELD_NUMBER = 12;
+  private com.google.protobuf.BoolValue enableBotDetection_;
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   * @return Whether the enableBotDetection field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableBotDetection() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   * @return The enableBotDetection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableBotDetection() {
+    return enableBotDetection_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableBotDetection_;
+  }
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableBotDetectionOrBuilder() {
+    return enableBotDetection_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableBotDetection_;
+  }
+
+  public static final int ENABLE_FAIL_OPEN_FIELD_NUMBER = 13;
+  private com.google.protobuf.BoolValue enableFailOpen_;
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   * @return Whether the enableFailOpen field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableFailOpen() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   * @return The enableFailOpen.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getEnableFailOpen() {
+    return enableFailOpen_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableFailOpen_;
+  }
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getEnableFailOpenOrBuilder() {
+    return enableFailOpen_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableFailOpen_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -372,6 +454,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(11, getSyncUserProfileOnSignin());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(12, getEnableBotDetection());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(13, getEnableFailOpen());
     }
     getUnknownFields().writeTo(output);
   }
@@ -421,6 +509,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getSyncUserProfileOnSignin());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getEnableBotDetection());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getEnableFailOpen());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -483,6 +579,16 @@ private static final long serialVersionUID = 0L;
       if (!getSyncUserProfileOnSignin()
           .equals(other.getSyncUserProfileOnSignin())) return false;
     }
+    if (hasEnableBotDetection() != other.hasEnableBotDetection()) return false;
+    if (hasEnableBotDetection()) {
+      if (!getEnableBotDetection()
+          .equals(other.getEnableBotDetection())) return false;
+    }
+    if (hasEnableFailOpen() != other.hasEnableFailOpen()) return false;
+    if (hasEnableFailOpen()) {
+      if (!getEnableFailOpen()
+          .equals(other.getEnableFailOpen())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -531,6 +637,14 @@ private static final long serialVersionUID = 0L;
     if (hasSyncUserProfileOnSignin()) {
       hash = (37 * hash) + SYNC_USER_PROFILE_ON_SIGNIN_FIELD_NUMBER;
       hash = (53 * hash) + getSyncUserProfileOnSignin().hashCode();
+    }
+    if (hasEnableBotDetection()) {
+      hash = (37 * hash) + ENABLE_BOT_DETECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableBotDetection().hashCode();
+    }
+    if (hasEnableFailOpen()) {
+      hash = (37 * hash) + ENABLE_FAIL_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + getEnableFailOpen().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -671,6 +785,8 @@ private static final long serialVersionUID = 0L;
         getBlockDisposableEmailDomainsFieldBuilder();
         getBlockPublicEmailDomainsFieldBuilder();
         getSyncUserProfileOnSigninFieldBuilder();
+        getEnableBotDetectionFieldBuilder();
+        getEnableFailOpenFieldBuilder();
       }
     }
     @java.lang.Override
@@ -722,6 +838,16 @@ private static final long serialVersionUID = 0L;
       if (syncUserProfileOnSigninBuilder_ != null) {
         syncUserProfileOnSigninBuilder_.dispose();
         syncUserProfileOnSigninBuilder_ = null;
+      }
+      enableBotDetection_ = null;
+      if (enableBotDetectionBuilder_ != null) {
+        enableBotDetectionBuilder_.dispose();
+        enableBotDetectionBuilder_ = null;
+      }
+      enableFailOpen_ = null;
+      if (enableFailOpenBuilder_ != null) {
+        enableFailOpenBuilder_.dispose();
+        enableFailOpenBuilder_ = null;
       }
       return this;
     }
@@ -814,6 +940,18 @@ private static final long serialVersionUID = 0L;
             : syncUserProfileOnSigninBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableBotDetection_ = enableBotDetectionBuilder_ == null
+            ? enableBotDetection_
+            : enableBotDetectionBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableFailOpen_ = enableFailOpenBuilder_ == null
+            ? enableFailOpen_
+            : enableFailOpenBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -890,6 +1028,12 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasSyncUserProfileOnSignin()) {
         mergeSyncUserProfileOnSignin(other.getSyncUserProfileOnSignin());
+      }
+      if (other.hasEnableBotDetection()) {
+        mergeEnableBotDetection(other.getEnableBotDetection());
+      }
+      if (other.hasEnableFailOpen()) {
+        mergeEnableFailOpen(other.getEnableFailOpen());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -985,6 +1129,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 90
+            case 98: {
+              input.readMessage(
+                  getEnableBotDetectionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getEnableFailOpenFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2250,6 +2408,338 @@ private static final long serialVersionUID = 0L;
         syncUserProfileOnSignin_ = null;
       }
       return syncUserProfileOnSigninBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enableBotDetection_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enableBotDetectionBuilder_;
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     * @return Whether the enableBotDetection field is set.
+     */
+    public boolean hasEnableBotDetection() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     * @return The enableBotDetection.
+     */
+    public com.google.protobuf.BoolValue getEnableBotDetection() {
+      if (enableBotDetectionBuilder_ == null) {
+        return enableBotDetection_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableBotDetection_;
+      } else {
+        return enableBotDetectionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public Builder setEnableBotDetection(com.google.protobuf.BoolValue value) {
+      if (enableBotDetectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableBotDetection_ = value;
+      } else {
+        enableBotDetectionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public Builder setEnableBotDetection(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableBotDetectionBuilder_ == null) {
+        enableBotDetection_ = builderForValue.build();
+      } else {
+        enableBotDetectionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public Builder mergeEnableBotDetection(com.google.protobuf.BoolValue value) {
+      if (enableBotDetectionBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0) &&
+          enableBotDetection_ != null &&
+          enableBotDetection_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnableBotDetectionBuilder().mergeFrom(value);
+        } else {
+          enableBotDetection_ = value;
+        }
+      } else {
+        enableBotDetectionBuilder_.mergeFrom(value);
+      }
+      if (enableBotDetection_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public Builder clearEnableBotDetection() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableBotDetection_ = null;
+      if (enableBotDetectionBuilder_ != null) {
+        enableBotDetectionBuilder_.dispose();
+        enableBotDetectionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableBotDetectionBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getEnableBotDetectionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableBotDetectionOrBuilder() {
+      if (enableBotDetectionBuilder_ != null) {
+        return enableBotDetectionBuilder_.getMessageOrBuilder();
+      } else {
+        return enableBotDetection_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enableBotDetection_;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnableBotDetectionFieldBuilder() {
+      if (enableBotDetectionBuilder_ == null) {
+        enableBotDetectionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnableBotDetection(),
+                getParentForChildren(),
+                isClean());
+        enableBotDetection_ = null;
+      }
+      return enableBotDetectionBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue enableFailOpen_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enableFailOpenBuilder_;
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     * @return Whether the enableFailOpen field is set.
+     */
+    public boolean hasEnableFailOpen() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     * @return The enableFailOpen.
+     */
+    public com.google.protobuf.BoolValue getEnableFailOpen() {
+      if (enableFailOpenBuilder_ == null) {
+        return enableFailOpen_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enableFailOpen_;
+      } else {
+        return enableFailOpenBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public Builder setEnableFailOpen(com.google.protobuf.BoolValue value) {
+      if (enableFailOpenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enableFailOpen_ = value;
+      } else {
+        enableFailOpenBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public Builder setEnableFailOpen(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (enableFailOpenBuilder_ == null) {
+        enableFailOpen_ = builderForValue.build();
+      } else {
+        enableFailOpenBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public Builder mergeEnableFailOpen(com.google.protobuf.BoolValue value) {
+      if (enableFailOpenBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          enableFailOpen_ != null &&
+          enableFailOpen_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnableFailOpenBuilder().mergeFrom(value);
+        } else {
+          enableFailOpen_ = value;
+        }
+      } else {
+        enableFailOpenBuilder_.mergeFrom(value);
+      }
+      if (enableFailOpen_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public Builder clearEnableFailOpen() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      enableFailOpen_ = null;
+      if (enableFailOpenBuilder_ != null) {
+        enableFailOpenBuilder_.dispose();
+        enableFailOpenBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getEnableFailOpenBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getEnableFailOpenFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getEnableFailOpenOrBuilder() {
+      if (enableFailOpenBuilder_ != null) {
+        return enableFailOpenBuilder_.getMessageOrBuilder();
+      } else {
+        return enableFailOpen_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : enableFailOpen_;
+      }
+    }
+    /**
+     * <pre>
+     * When bot detection is enabled, indicates whether login/signup should be allowed
+     * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+     * verification service is unreachable). Defaults to false (fail closed).
+     * </pre>
+     *
+     * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getEnableFailOpenFieldBuilder() {
+      if (enableFailOpenBuilder_ == null) {
+        enableFailOpenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getEnableFailOpen(),
+                getParentForChildren(),
+                isClean());
+        enableFailOpen_ = null;
+      }
+      return enableFailOpenBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -415,7 +415,7 @@ public final class ConnectionsProto {
       "eConnectionBZ\272HW\272\001Q\0226OAUTH, PASSWORDLESS" +
       " and WEBAUTHN are not supported yet\032\027!(t" +
       "his.type in [4,5,9])\310\001\001R\nconnectionJ\004\010\002\020" +
-      "\003\"\367\005\n\020CreateConnection\022\313\001\n\010provider\030\001 \001(" +
+      "\003\"\360\r\n\020CreateConnection\022\313\001\n\010provider\030\001 \001(" +
       "\0162+.scalekit.v1.connections.ConnectionPr" +
       "oviderB\201\001\222Av2lIdentity provider service " +
       "that handles authentication (such as OKT" +
@@ -427,1204 +427,1291 @@ public final class ConnectionsProto {
       ". This is used to identify the specific " +
       "configuration for the provider.J\010\"google" +
       "\"R\013providerKey\022\032\n\006key_id\030\004 \001(\tH\000R\005keyId\210" +
-      "\001\001:\213\002\272H\207\002\032T\022$provider or provider_key is" +
-      " required\032,has(this.provider_key) || thi" +
-      "s.provider != 0\032`\022\036invalid value for pro" +
-      "vider_key\032>this.provider == 15 ? this.pr" +
-      "ovider_key in [\'SCALEKIT\'] : true\032M\022\030inv" +
-      "alid value for key_id\0321this.type == 9 ? " +
-      "this.key_id == \'WEBAUTHN\' : trueB\t\n\007_key" +
-      "_id\"\263%\n\nConnection\022\215\001\n\002id\030\001 \001(\tB}\222Az2_Un" +
-      "ique identifier for this connection. Use" +
-      "d in API calls to reference this specifi" +
-      "c connection.J\027\"conn_2123312131125533\"R\002" +
-      "id\022\302\001\n\010provider\030\002 \001(\0162+.scalekit.v1.conn" +
-      "ections.ConnectionProviderBy\222Av2lIdentit" +
-      "y provider service that handles authenti" +
-      "cation (such as OKTA, Google, Azure AD, " +
-      "or a custom provider)J\006\"OKTA\"R\010provider\022" +
-      "\264\001\n\004type\030\003 \001(\0162\'.scalekit.v1.connections" +
-      ".ConnectionTypeBw\222At2jAuthentication pro" +
-      "tocol used by this connection. Can be OI" +
-      "DC (OpenID Connect), SAML, OAUTH, or MAG" +
-      "IC_LINK.J\006\"OIDC\"R\004type\022\306\001\n\006status\030\004 \001(\0162" +
-      ").scalekit.v1.connections.ConnectionStat" +
-      "usB\202\001\222A|2kCurrent configuration status o" +
-      "f the connection. Possible values includ" +
-      "e IN_PROGRESS, CONFIGURED, and ERROR.J\r\"" +
-      "IN_PROGRESS\"\340A\003R\006status\022\253\001\n\007enabled\030\005 \001(" +
-      "\010B\220\001\222A\214\0012\202\001Controls whether users can si" +
-      "gn in using this connection. When false," +
-      " the connection exists but cannot be use" +
-      "d for authentication.J\005falseR\007enabled\022\260\001" +
-      "\n\rdebug_enabled\030\006 \001(\010B\212\001\222A\206\0012~Enables te" +
-      "sting mode that allows non-HTTPS endpoin" +
-      "ts. Should only be enabled in developmen" +
-      "t environments, never in production.J\004tr" +
-      "ueR\014debugEnabled\022\301\001\n\017organization_id\030\007 \001" +
-      "(\tB\222\001\222A\216\0012tIdentifier of the organizatio" +
-      "n that owns this connection. Connections" +
-      " are typically scoped to a single organi" +
-      "zation.J\026\"org_2123312131125533\"H\001R\016organ" +
-      "izationId\210\001\001\022\275\001\n\017ui_button_title\030\010 \001(\tB\224" +
-      "\001\222A\201\0012mCustom text shown on the login bu" +
-      "tton in the user interface. Helps users " +
-      "identify which SSO option to select.J\020\"L" +
-      "ogin with SSO\"\372\322\344\223\002\t\022\007PREVIEWR\ruiButtonT" +
-      "itle\022\325\001\n\022configuration_type\030\t \001(\0162*.scal" +
-      "ekit.v1.connections.ConfigurationTypeBz\222" +
-      "Aw2kHow the connection was configured: D" +
-      "ISCOVERY (automatic configuration) or MA" +
-      "NUAL (administrator configured)J\010\"MANUAL" +
-      "\"R\021configurationType\022\337\001\n\023test_connection" +
-      "_uri\030\014 \001(\tB\256\001\222A\252\0012fURI that can be used " +
-      "to test this connection. Visit this URL " +
-      "to verify the connection works correctly" +
-      ".J@\"https://auth.example.com/test-connec" +
-      "tion/conn_2123312131125533\"R\021testConnect" +
-      "ionUri\022\201\002\n\021attribute_mapping\030\017 \003(\01329.sca" +
-      "lekit.v1.connections.Connection.Attribut" +
-      "eMappingEntryB\230\001\222A|2zMaps identity provi" +
-      "der attributes to user profile fields. F" +
-      "or example, {\'email\': \'user.mail\', \'name" +
-      "\': \'user.displayName\'}.\272H\026\232\001\023\020\036\"\006r\004\020\001\030d*" +
-      "\007r\005\020\001\030\200\002R\020attributeMapping\022\261\001\n\013create_ti" +
-      "me\030\020 \001(\0132\032.google.protobuf.TimestampBt\222A" +
-      "_2EWhen this connection was first create" +
-      "d. Format is RFC 3339 timestamp.J\026\"2023-" +
-      "01-15T14:30:00Z\"\340A\003\372\322\344\223\002\t\022\007PREVIEWR\ncrea" +
-      "teTime\022\261\001\n\013update_time\030\021 \001(\0132\032.google.pr" +
-      "otobuf.TimestampBt\222A_2EWhen this connect" +
-      "ion was last modified. Format is RFC 333" +
-      "9 timestamp.J\026\"2023-02-20T09:15:30Z\"\340A\003\372" +
-      "\322\344\223\002\t\022\007PREVIEWR\nupdateTime\022\263\001\n\013oidc_conf" +
-      "ig\030\022 \001(\0132-.scalekit.v1.connections.OIDCC" +
-      "onnectionConfigBa\222A^2\\Configuration deta" +
-      "ils for OpenID Connect (OIDC) connection" +
-      "s. Present only when type is OIDC.H\000R\noi" +
-      "dcConfig\022\252\001\n\013saml_config\030\023 \001(\01325.scaleki" +
-      "t.v1.connections.SAMLConnectionConfigRes" +
-      "ponseBP\222AM2KConfiguration details for SA" +
-      "ML connections. Present only when type i" +
-      "s SAML.H\000R\nsamlConfig\022\247\001\n\014oauth_config\030\024" +
-      " \001(\0132..scalekit.v1.connections.OAuthConn" +
-      "ectionConfigBR\222AO2MConfiguration details" +
-      " for OAuth connections. Present only whe" +
-      "n type is OAUTH.H\000R\013oauthConfig\022\277\001\n\023pass" +
-      "wordless_config\030\026 \001(\0132+.scalekit.v1.conn" +
-      "ections.PasswordLessConfigB_\222A\\2ZConfigu" +
-      "ration details for Magic Link authentica" +
-      "tion. Present only when type is MAGIC_LI" +
-      "NK.H\000R\022passwordlessConfig\022\300\001\n\rstatic_con" +
-      "fig\030\032 \001(\0132).scalekit.v1.connections.Stat" +
-      "icAuthConfigBn\222Ak2iStatic configuration " +
-      "for custom connections. Present only whe" +
-      "n type is BASIC, BEARER, API_KEY, or cus" +
-      "tom.H\000R\014staticConfig\022\261\001\n\017webauthn_config" +
-      "\030\033 \001(\0132-.scalekit.v1.connections.WebAuth" +
-      "ConfigurationBW\222AT2RConfiguration detail" +
-      "s for WebAuthn (passkeys). Present only " +
-      "when type is WEBAUTHN.H\000R\016webauthnConfig" +
-      "\022\273\001\n\021google_dwd_config\030\034 \001(\0132(.scalekit." +
-      "v1.connections.GoogleDWDConfigBc\222A`2^Con" +
-      "figuration details for Google Domain-Wid" +
-      "e Delegation. Present only when type is " +
-      "GOOGLE_DWD.H\000R\017googleDwdConfig\022}\n\006key_id" +
-      "\030\031 \001(\tBa\222A^2\\Alternative identifier for " +
-      "this connection, typically used in front" +
-      "end applications or URLs.H\002R\005keyId\210\001\001\022u\n" +
-      "\014provider_key\030\027 \001(\tBR\222AO2CKey ID of the " +
-      "identity provider service that handles a" +
-      "uthenticationJ\010\"google\"R\013providerKey\022\252\001\n" +
-      "\007domains\030\030 \003(\0132\033.scalekit.v1.domains.Dom" +
-      "ainBs\222Ap2SDomain associated with this co" +
-      "nnection, used for domain-based authenti" +
-      "cation flows.J\031[{\"name\": \"example.com\"}]" +
-      "R\007domains\022\224\003\n\016mcp_server_url\030\035 \001(\tB\350\002\222A\341" +
-      "\0022\237\002URL of the MCP server for this conne" +
-      "ction. Agents can point directly at this" +
-      " URL to access only the tools for this c" +
-      "onnection, without needing to call list_" +
-      "connections or execute_tool with a conne" +
-      "ction_name. Empty when the MCP virtual s" +
-      "ervers feature is not enabled for this e" +
-      "nvironment.J=\"https://acmecorp.scalekit." +
-      "dev/mcp/v3/connections/gmail_work\"\340A\003H\003R" +
-      "\014mcpServerUrl\210\001\001\032C\n\025AttributeMappingEntr" +
+      "\001\001\022\202\005\n\007context\030\005 \001(\0132\027.google.protobuf.S" +
+      "tructB\316\004\222A\312\0042\251\004Optional structured confi" +
+      "guration used only at creation time to r" +
+      "esolve a provider\'s templated proxy_url " +
+      "for a specific data region (for example," +
+      " an MCP connector with region-specific e" +
+      "ndpoints). Not stored on the connection;" +
+      " the resolved URL is saved instead and u" +
+      "sed for all subsequent requests. Only \"d" +
+      "omain\" and \"version\" keys are recognized" +
+      ". \"domain\" is the actual hostname substi" +
+      "tuted into the provider\'s proxy_url temp" +
+      "late \342\200\224 not a region code \342\200\224 and must " +
+      "match one of the values the provider dec" +
+      "lares for that field; any other key is r" +
+      "ejected.J\034{\"domain\": \"eu.example.com\"}R\007" +
+      "context\022\361\002\n\tauth_mode\030\006 \001(\0162+.scalekit.v" +
+      "1.connections.ConnectionAuthModeB\246\002\222A\232\0022" +
+      "\217\002Credential-sharing mode for this conne" +
+      "ction. USER (default): each end user aut" +
+      "horizes their own credential. ORG_WIDE: " +
+      "one admin-authorized credential is share" +
+      "d across all users of this connection; e" +
+      "ach user still grants personal consent b" +
+      "efore it can act on their behalf.J\006\"USER" +
+      "\"\272H\005\202\001\002\020\001R\010authMode:\213\002\272H\207\002\032T\022$provider o" +
+      "r provider_key is required\032,has(this.pro" +
+      "vider_key) || this.provider != 0\032`\022\036inva" +
+      "lid value for provider_key\032>this.provide" +
+      "r == 15 ? this.provider_key in [\'SCALEKI" +
+      "T\'] : true\032M\022\030invalid value for key_id\0321" +
+      "this.type == 9 ? this.key_id == \'WEBAUTH" +
+      "N\' : trueB\t\n\007_key_id\"\334*\n\nConnection\022\215\001\n\002" +
+      "id\030\001 \001(\tB}\222Az2_Unique identifier for thi" +
+      "s connection. Used in API calls to refer" +
+      "ence this specific connection.J\027\"conn_21" +
+      "23312131125533\"R\002id\022\302\001\n\010provider\030\002 \001(\0162+" +
+      ".scalekit.v1.connections.ConnectionProvi" +
+      "derBy\222Av2lIdentity provider service that" +
+      " handles authentication (such as OKTA, G" +
+      "oogle, Azure AD, or a custom provider)J\006" +
+      "\"OKTA\"R\010provider\022\264\001\n\004type\030\003 \001(\0162\'.scalek" +
+      "it.v1.connections.ConnectionTypeBw\222At2jA" +
+      "uthentication protocol used by this conn" +
+      "ection. Can be OIDC (OpenID Connect), SA" +
+      "ML, OAUTH, or MAGIC_LINK.J\006\"OIDC\"R\004type\022" +
+      "\306\001\n\006status\030\004 \001(\0162).scalekit.v1.connectio" +
+      "ns.ConnectionStatusB\202\001\222A|2kCurrent confi" +
+      "guration status of the connection. Possi" +
+      "ble values include IN_PROGRESS, CONFIGUR" +
+      "ED, and ERROR.J\r\"IN_PROGRESS\"\340A\003R\006status" +
+      "\022\253\001\n\007enabled\030\005 \001(\010B\220\001\222A\214\0012\202\001Controls whe" +
+      "ther users can sign in using this connec" +
+      "tion. When false, the connection exists " +
+      "but cannot be used for authentication.J\005" +
+      "falseR\007enabled\022\260\001\n\rdebug_enabled\030\006 \001(\010B\212" +
+      "\001\222A\206\0012~Enables testing mode that allows " +
+      "non-HTTPS endpoints. Should only be enab" +
+      "led in development environments, never i" +
+      "n production.J\004trueR\014debugEnabled\022\301\001\n\017or" +
+      "ganization_id\030\007 \001(\tB\222\001\222A\216\0012tIdentifier o" +
+      "f the organization that owns this connec" +
+      "tion. Connections are typically scoped t" +
+      "o a single organization.J\026\"org_212331213" +
+      "1125533\"H\001R\016organizationId\210\001\001\022\275\001\n\017ui_but" +
+      "ton_title\030\010 \001(\tB\224\001\222A\201\0012mCustom text show" +
+      "n on the login button in the user interf" +
+      "ace. Helps users identify which SSO opti" +
+      "on to select.J\020\"Login with SSO\"\372\322\344\223\002\t\022\007P" +
+      "REVIEWR\ruiButtonTitle\022\325\001\n\022configuration_" +
+      "type\030\t \001(\0162*.scalekit.v1.connections.Con" +
+      "figurationTypeBz\222Aw2kHow the connection " +
+      "was configured: DISCOVERY (automatic con" +
+      "figuration) or MANUAL (administrator con" +
+      "figured)J\010\"MANUAL\"R\021configurationType\022\337\001" +
+      "\n\023test_connection_uri\030\014 \001(\tB\256\001\222A\252\0012fURI " +
+      "that can be used to test this connection" +
+      ". Visit this URL to verify the connectio" +
+      "n works correctly.J@\"https://auth.exampl" +
+      "e.com/test-connection/conn_2123312131125" +
+      "533\"R\021testConnectionUri\022\201\002\n\021attribute_ma" +
+      "pping\030\017 \003(\01329.scalekit.v1.connections.Co" +
+      "nnection.AttributeMappingEntryB\230\001\222A|2zMa" +
+      "ps identity provider attributes to user " +
+      "profile fields. For example, {\'email\': \'" +
+      "user.mail\', \'name\': \'user.displayName\'}." +
+      "\272H\026\232\001\023\020\036\"\006r\004\020\001\030d*\007r\005\020\001\030\200\002R\020attributeMapp" +
+      "ing\022\261\001\n\013create_time\030\020 \001(\0132\032.google.proto" +
+      "buf.TimestampBt\222A_2EWhen this connection" +
+      " was first created. Format is RFC 3339 t" +
+      "imestamp.J\026\"2023-01-15T14:30:00Z\"\340A\003\372\322\344\223" +
+      "\002\t\022\007PREVIEWR\ncreateTime\022\261\001\n\013update_time\030" +
+      "\021 \001(\0132\032.google.protobuf.TimestampBt\222A_2E" +
+      "When this connection was last modified. " +
+      "Format is RFC 3339 timestamp.J\026\"2023-02-" +
+      "20T09:15:30Z\"\340A\003\372\322\344\223\002\t\022\007PREVIEWR\nupdateT" +
+      "ime\022\263\001\n\013oidc_config\030\022 \001(\0132-.scalekit.v1." +
+      "connections.OIDCConnectionConfigBa\222A^2\\C" +
+      "onfiguration details for OpenID Connect " +
+      "(OIDC) connections. Present only when ty" +
+      "pe is OIDC.H\000R\noidcConfig\022\252\001\n\013saml_confi" +
+      "g\030\023 \001(\01325.scalekit.v1.connections.SAMLCo" +
+      "nnectionConfigResponseBP\222AM2KConfigurati" +
+      "on details for SAML connections. Present" +
+      " only when type is SAML.H\000R\nsamlConfig\022\247" +
+      "\001\n\014oauth_config\030\024 \001(\0132..scalekit.v1.conn" +
+      "ections.OAuthConnectionConfigBR\222AO2MConf" +
+      "iguration details for OAuth connections." +
+      " Present only when type is OAUTH.H\000R\013oau" +
+      "thConfig\022\277\001\n\023passwordless_config\030\026 \001(\0132+" +
+      ".scalekit.v1.connections.PasswordLessCon" +
+      "figB_\222A\\2ZConfiguration details for Magi" +
+      "c Link authentication. Present only when" +
+      " type is MAGIC_LINK.H\000R\022passwordlessConf" +
+      "ig\022\300\001\n\rstatic_config\030\032 \001(\0132).scalekit.v1" +
+      ".connections.StaticAuthConfigBn\222Ak2iStat" +
+      "ic configuration for custom connections." +
+      " Present only when type is BASIC, BEARER" +
+      ", API_KEY, or custom.H\000R\014staticConfig\022\261\001" +
+      "\n\017webauthn_config\030\033 \001(\0132-.scalekit.v1.co" +
+      "nnections.WebAuthConfigurationBW\222AT2RCon" +
+      "figuration details for WebAuthn (passkey" +
+      "s). Present only when type is WEBAUTHN.H" +
+      "\000R\016webauthnConfig\022\273\001\n\021google_dwd_config\030" +
+      "\034 \001(\0132(.scalekit.v1.connections.GoogleDW" +
+      "DConfigBc\222A`2^Configuration details for " +
+      "Google Domain-Wide Delegation. Present o" +
+      "nly when type is GOOGLE_DWD.H\000R\017googleDw" +
+      "dConfig\022}\n\006key_id\030\031 \001(\tBa\222A^2\\Alternativ" +
+      "e identifier for this connection, typica" +
+      "lly used in frontend applications or URL" +
+      "s.H\002R\005keyId\210\001\001\022u\n\014provider_key\030\027 \001(\tBR\222A" +
+      "O2CKey ID of the identity provider servi" +
+      "ce that handles authenticationJ\010\"google\"" +
+      "R\013providerKey\022\252\001\n\007domains\030\030 \003(\0132\033.scalek" +
+      "it.v1.domains.DomainBs\222Ap2SDomain associ" +
+      "ated with this connection, used for doma" +
+      "in-based authentication flows.J\031[{\"name\"" +
+      ": \"example.com\"}]R\007domains\022\224\003\n\016mcp_serve" +
+      "r_url\030\035 \001(\tB\350\002\222A\341\0022\237\002URL of the MCP serv" +
+      "er for this connection. Agents can point" +
+      " directly at this URL to access only the" +
+      " tools for this connection, without need" +
+      "ing to call list_connections or execute_" +
+      "tool with a connection_name. Empty when " +
+      "the MCP virtual servers feature is not e" +
+      "nabled for this environment.J=\"https://a" +
+      "cmecorp.scalekit.dev/mcp/v3/connections/" +
+      "gmail_work\"\340A\003H\003R\014mcpServerUrl\210\001\001\022\300\002\n\022re" +
+      "solved_proxy_url\030\036 \001(\tB\214\002\222A\205\0022\337\001The MCP " +
+      "provider\'s proxy_url with any template p" +
+      "laceholders (for example, a data-region " +
+      "choice) resolved at connection-creation " +
+      "time. Empty if the provider\'s proxy_url " +
+      "has no template, or the connection preda" +
+      "tes this field.J!\"https://mcp-eu.mixpane" +
+      "l.com/mcp\"\340A\003H\004R\020resolvedProxyUrl\210\001\001\022\314\002\n" +
+      "\tauth_mode\030\037 \001(\0162+.scalekit.v1.connectio" +
+      "ns.ConnectionAuthModeB\201\002\222A\375\0012\362\001Credentia" +
+      "l-sharing mode for this connection. USER" +
+      ": each end user authorizes their own cre" +
+      "dential. ORG_WIDE: one admin-authorized " +
+      "credential is shared across all users; e" +
+      "ach user still grants personal consent b" +
+      "efore it can act on their behalf.J\006\"USER" +
+      "\"R\010authMode\032C\n\025AttributeMappingEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001" +
+      "B\n\n\010settingsB\022\n\020_organization_idB\t\n\007_key" +
+      "_idB\021\n\017_mcp_server_urlB\025\n\023_resolved_prox" +
+      "y_urlJ\004\010\r\020\017\"w\n\030CreateConnectionResponse\022" +
+      "[\n\nconnection\030\001 \001(\0132#.scalekit.v1.connec" +
+      "tions.ConnectionB\026\222A\0232\021Connection Detail" +
+      "R\nconnection\"\250\002\n\"UpdateEnvironmentConnec" +
+      "tionRequest\022~\n\rconnection_id\030\001 \001(\tBY\222AM2" +
+      "+Connection ID. Unique ID for the connec" +
+      "tionJ\026\"conn_121312434123312\"\312>\005\372\002\002id\272H\006r" +
+      "\004\020\001\030 R\014connectionId\022\201\001\n\nconnection\030\003 \001(\013" +
+      "2).scalekit.v1.connections.UpdateConnect" +
+      "ionB6\222A-2#Connection properties to be up" +
+      "dated\312>\005\372\002\002id\272H\003\310\001\001R\nconnection\"\316\003\n\027Upda" +
+      "teConnectionRequest\022q\n\017organization_id\030\001" +
+      " \001(\tBH\222A<2#Organization ID for the Conne" +
+      "ction.J\025\"org_121312434123312\"\272H\006r\004\020\001\030 R\016" +
+      "organizationId\022a\n\002id\030\003 \001(\tBQ\222AE2+Connect" +
+      "ion ID. Unique ID for the connectionJ\026\"c" +
+      "onn_121312434123312\"\272H\006r\004\020\001\030 R\002id\022\326\001\n\nco" +
+      "nnection\030\004 \001(\0132).scalekit.v1.connections" +
+      ".UpdateConnectionB\212\001\222A-2#Connection prop" +
+      "erties to be updated\312>\005\372\002\002id\272HW\272\001Q\0226OAUT" +
+      "H, PASSWORDLESS and WEBAUTHN are not sup" +
+      "ported yet\032\027!(this.type in [4,5,9])\310\001\001R\n" +
+      "connectionJ\004\010\002\020\003\"\375\022\n\020UpdateConnection\022w\n" +
+      "\010provider\030\002 \001(\0162+.scalekit.v1.connection" +
+      "s.ConnectionProviderB.\222A#2\027SSO Connectio" +
+      "n ProviderJ\010\"CUSTOM\"\272H\005\202\001\002\020\001R\010provider\022r" +
+      "\n\004type\030\003 \001(\0162\'.scalekit.v1.connections.C" +
+      "onnectionTypeB5\222A*2 Connection Protocol " +
+      "OIDC / SAML J\006\"OIDC\"\272H\005\202\001\002\020\001R\004type\022\256\001\n\rd" +
+      "ebug_enabled\030\006 \001(\0132\032.google.protobuf.Boo" +
+      "lValueBm\222Aj2bDebug mode for the connecti" +
+      "on. Debug would allow non HTTPS endpoint" +
+      " to be used with the connectionJ\004trueR\014d" +
+      "ebugEnabled\022\215\001\n\017ui_button_title\030\010 \001(\0132\034." +
+      "google.protobuf.StringValueBG\222A52!Displa" +
+      "y name for the Login ButtonJ\020\"Login with" +
+      " SSO\"\372\322\344\223\002\t\022\007PREVIEWR\ruiButtonTitle\022~\n\022c" +
+      "onfiguration_type\030\013 \001(\0162*.scalekit.v1.co" +
+      "nnections.ConfigurationTypeB#\222A 2\024Config" +
+      "uration Type. J\010\"MANUAL\"R\021configurationT" +
+      "ype\022\235\001\n\021attribute_mapping\030\017 \003(\0132?.scalek" +
+      "it.v1.connections.UpdateConnection.Attri" +
+      "buteMappingEntryB/\222A\0232\021Attribute Mapping" +
+      "\272H\026\232\001\023\020\036\"\006r\004\020\001\030d*\007r\005\020\001\030\200\002R\020attributeMapp" +
+      "ing\022\203\001\n\013oidc_config\030\020 \001(\0132-.scalekit.v1." +
+      "connections.OIDCConnectionConfigB1\222A.2,O" +
+      "IDC Configuration if ConnectionType == O" +
+      "IDCH\000R\noidcConfig\022\212\001\n\013saml_config\030\021 \001(\0132" +
+      "4.scalekit.v1.connections.SAMLConnection" +
+      "ConfigRequestB1\222A.2,SAML Configuration i" +
+      "f ConnectionType == SAMLH\000R\nsamlConfig\022\210" +
+      "\001\n\014oauth_config\030\022 \001(\0132..scalekit.v1.conn" +
+      "ections.OAuthConnectionConfigB3\222A02.OAut" +
+      "h Configuration if ConnectionType == OAU" +
+      "THH\000R\013oauthConfig\022\235\001\n\023passwordless_confi" +
+      "g\030\024 \001(\0132+.scalekit.v1.connections.Passwo" +
+      "rdLessConfigB=\222A:28Magic Link Configurat" +
+      "ion if ConnectionType == MAGIC_LINKH\000R\022p" +
+      "asswordlessConfig\022P\n\rstatic_config\030\027 \001(\013" +
+      "2).scalekit.v1.connections.StaticAuthCon" +
+      "figH\000R\014staticConfig\022\261\001\n\017webauthn_config\030" +
+      "\030 \001(\0132-.scalekit.v1.connections.WebAuthC" +
+      "onfigurationBW\222AT2RConfiguration details" +
+      " for WebAuthn (passkeys). Present only w" +
+      "hen type is WEBAUTHN.H\000R\016webauthnConfig\022" +
+      "\257\001\n\021google_dwd_config\030\031 \001(\0132(.scalekit.v" +
+      "1.connections.GoogleDWDConfigBW\222AT2RGoog" +
+      "le Domain-Wide Delegation configuration." +
+      " Present only when type is GOOGLE_DWD.H\000" +
+      "R\017googleDwdConfig\022&\n\006key_id\030\026 \001(\tB\n\272H\007r\005" +
+      "\020\001\030\254\002H\001R\005keyId\210\001\001\022u\n\014provider_key\030\025 \001(\tB" +
+      "R\222AO2CKey ID of the identity provider se" +
+      "rvice that handles authenticationJ\010\"goog" +
+      "le\"R\013providerKey\032C\n\025AttributeMappingEntr" +
       "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
-      "e:\0028\001B\n\n\010settingsB\022\n\020_organization_idB\t\n" +
-      "\007_key_idB\021\n\017_mcp_server_urlJ\004\010\r\020\017\"w\n\030Cre" +
-      "ateConnectionResponse\022[\n\nconnection\030\001 \001(" +
-      "\0132#.scalekit.v1.connections.ConnectionB\026" +
-      "\222A\0232\021Connection DetailR\nconnection\"\250\002\n\"U" +
-      "pdateEnvironmentConnectionRequest\022~\n\rcon" +
-      "nection_id\030\001 \001(\tBY\222AM2+Connection ID. Un" +
-      "ique ID for the connectionJ\026\"conn_121312" +
-      "434123312\"\312>\005\372\002\002id\272H\006r\004\020\001\030 R\014connectionI" +
-      "d\022\201\001\n\nconnection\030\003 \001(\0132).scalekit.v1.con" +
-      "nections.UpdateConnectionB6\222A-2#Connecti" +
-      "on properties to be updated\312>\005\372\002\002id\272H\003\310\001" +
-      "\001R\nconnection\"\316\003\n\027UpdateConnectionReques" +
-      "t\022q\n\017organization_id\030\001 \001(\tBH\222A<2#Organiz" +
-      "ation ID for the Connection.J\025\"org_12131" +
-      "2434123312\"\272H\006r\004\020\001\030 R\016organizationId\022a\n\002" +
-      "id\030\003 \001(\tBQ\222AE2+Connection ID. Unique ID " +
-      "for the connectionJ\026\"conn_12131243412331" +
-      "2\"\272H\006r\004\020\001\030 R\002id\022\326\001\n\nconnection\030\004 \001(\0132).s" +
-      "calekit.v1.connections.UpdateConnectionB" +
-      "\212\001\222A-2#Connection properties to be updat" +
-      "ed\312>\005\372\002\002id\272HW\272\001Q\0226OAUTH, PASSWORDLESS an" +
-      "d WEBAUTHN are not supported yet\032\027!(this" +
-      ".type in [4,5,9])\310\001\001R\nconnectionJ\004\010\002\020\003\"\375" +
-      "\022\n\020UpdateConnection\022w\n\010provider\030\002 \001(\0162+." +
-      "scalekit.v1.connections.ConnectionProvid" +
-      "erB.\222A#2\027SSO Connection ProviderJ\010\"CUSTO" +
-      "M\"\272H\005\202\001\002\020\001R\010provider\022r\n\004type\030\003 \001(\0162\'.sca" +
-      "lekit.v1.connections.ConnectionTypeB5\222A*" +
-      "2 Connection Protocol OIDC / SAML J\006\"OID" +
-      "C\"\272H\005\202\001\002\020\001R\004type\022\256\001\n\rdebug_enabled\030\006 \001(\013" +
-      "2\032.google.protobuf.BoolValueBm\222Aj2bDebug" +
-      " mode for the connection. Debug would al" +
-      "low non HTTPS endpoint to be used with t" +
-      "he connectionJ\004trueR\014debugEnabled\022\215\001\n\017ui" +
-      "_button_title\030\010 \001(\0132\034.google.protobuf.St" +
-      "ringValueBG\222A52!Display name for the Log" +
-      "in ButtonJ\020\"Login with SSO\"\372\322\344\223\002\t\022\007PREVI" +
-      "EWR\ruiButtonTitle\022~\n\022configuration_type\030" +
-      "\013 \001(\0162*.scalekit.v1.connections.Configur" +
-      "ationTypeB#\222A 2\024Configuration Type. J\010\"M" +
-      "ANUAL\"R\021configurationType\022\235\001\n\021attribute_" +
-      "mapping\030\017 \003(\0132?.scalekit.v1.connections." +
-      "UpdateConnection.AttributeMappingEntryB/" +
-      "\222A\0232\021Attribute Mapping\272H\026\232\001\023\020\036\"\006r\004\020\001\030d*\007" +
-      "r\005\020\001\030\200\002R\020attributeMapping\022\203\001\n\013oidc_confi" +
-      "g\030\020 \001(\0132-.scalekit.v1.connections.OIDCCo" +
-      "nnectionConfigB1\222A.2,OIDC Configuration " +
-      "if ConnectionType == OIDCH\000R\noidcConfig\022" +
-      "\212\001\n\013saml_config\030\021 \001(\01324.scalekit.v1.conn" +
-      "ections.SAMLConnectionConfigRequestB1\222A." +
-      "2,SAML Configuration if ConnectionType =" +
-      "= SAMLH\000R\nsamlConfig\022\210\001\n\014oauth_config\030\022 " +
-      "\001(\0132..scalekit.v1.connections.OAuthConne" +
-      "ctionConfigB3\222A02.OAuth Configuration if" +
-      " ConnectionType == OAUTHH\000R\013oauthConfig\022" +
-      "\235\001\n\023passwordless_config\030\024 \001(\0132+.scalekit" +
-      ".v1.connections.PasswordLessConfigB=\222A:2" +
-      "8Magic Link Configuration if ConnectionT" +
-      "ype == MAGIC_LINKH\000R\022passwordlessConfig\022" +
-      "P\n\rstatic_config\030\027 \001(\0132).scalekit.v1.con" +
-      "nections.StaticAuthConfigH\000R\014staticConfi" +
-      "g\022\261\001\n\017webauthn_config\030\030 \001(\0132-.scalekit.v" +
-      "1.connections.WebAuthConfigurationBW\222AT2" +
-      "RConfiguration details for WebAuthn (pas" +
-      "skeys). Present only when type is WEBAUT" +
-      "HN.H\000R\016webauthnConfig\022\257\001\n\021google_dwd_con" +
-      "fig\030\031 \001(\0132(.scalekit.v1.connections.Goog" +
-      "leDWDConfigBW\222AT2RGoogle Domain-Wide Del" +
-      "egation configuration. Present only when" +
-      " type is GOOGLE_DWD.H\000R\017googleDwdConfig\022" +
-      "&\n\006key_id\030\026 \001(\tB\n\272H\007r\005\020\001\030\254\002H\001R\005keyId\210\001\001\022" +
-      "u\n\014provider_key\030\025 \001(\tBR\222AO2CKey ID of th" +
-      "e identity provider service that handles" +
-      " authenticationJ\010\"google\"R\013providerKey\032C" +
-      "\n\025AttributeMappingEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
-      "y\022\024\n\005value\030\002 \001(\tR\005value:\0028\001:\213\002\272H\207\002\032T\022$pr" +
-      "ovider or provider_key is required\032,has(" +
-      "this.provider_key) || this.provider != 0" +
-      "\032`\022\036invalid value for provider_key\032>this" +
-      ".provider == 15 ? this.provider_key in [" +
-      "\'SCALEKIT\'] : true\032M\022\030invalid value for " +
-      "key_id\0321this.type == 9 ? this.key_id == " +
-      "\'WEBAUTHN\' : trueB\n\n\010settingsB\t\n\007_key_id" +
-      "J\004\010\001\020\002J\004\010\004\020\005J\004\010\005\020\006J\004\010\t\020\013J\004\010\014\020\017\"\200\001\n\030Updat" +
-      "eConnectionResponse\022d\n\nconnection\030\001 \001(\0132" +
-      "#.scalekit.v1.connections.ConnectionB\037\222A" +
-      "\0342\032Updated Connection detailsR\nconnectio" +
-      "n\"\234\001\n\"DeleteEnvironmentConnectionRequest" +
-      "\022v\n\rconnection_id\030\003 \001(\tBQ\222AE2+Connection" +
-      " ID. Unique ID for the connectionJ\026\"conn" +
-      "_121312434123312\"\272H\006r\004\020\001\030 R\014connectionId" +
-      "\"\365\001\n\027DeleteConnectionRequest\022q\n\017organiza" +
-      "tion_id\030\001 \001(\tBH\222A<2#Organization ID for " +
-      "the Connection.J\025\"org_121312434123312\"\272H" +
-      "\006r\004\020\001\030 R\016organizationId\022a\n\002id\030\003 \001(\tBQ\222AE" +
-      "2+Connection ID. Unique ID for the conne" +
-      "ctionJ\026\"conn_121312434123312\"\272H\006r\004\020\001\030 R\002" +
-      "idJ\004\010\002\020\003\"\222\001\n\037GetEnvironmentConnectionReq" +
-      "uest\022o\n\rconnection_id\030\001 \001(\tBJ\222A>2$Unique" +
-      " identifier for the ConnectionJ\026\"conn_12" +
-      "1312434123312\"\272H\006r\004\020\001\030 R\014connectionId\"\374\002" +
-      "\n\024GetConnectionRequest\022\272\001\n\017organization_" +
-      "id\030\001 \001(\tB\220\001\222A\203\0012jOrganization identifier" +
-      " (required). Specifies which organizatio" +
-      "n owns the connection you want to retrie" +
-      "ve.J\025\"org_121312434123312\"\272H\006r\004\020\001\030 R\016org" +
-      "anizationId\022\240\001\n\002id\030\003 \001(\tB\217\001\222A\202\0012hConnect" +
-      "ion identifier (required). Specifies whi" +
-      "ch specific connection to retrieve from " +
-      "the organization.J\026\"conn_121312434123312" +
-      "\"\272H\006r\004\020\001\030 R\002idJ\004\010\002\020\003\"\232\002\n\025GetConnectionRe" +
-      "sponse\022\200\002\n\nconnection\030\001 \001(\0132#.scalekit.v" +
-      "1.connections.ConnectionB\272\001\222A\266\0012\263\001Comple" +
-      "te connection details including provider" +
-      " configuration, protocol settings, statu" +
-      "s, and all metadata. Contains everything" +
-      " needed to understand the connection\'s c" +
-      "urrent state.R\nconnection\"\226\004\n\026ListConnec" +
-      "tionsRequest\022\200\001\n\017organization_id\030\001 \001(\tBR" +
-      "\222AF2-Filter connections by organization " +
-      "identifierJ\025\"org_121312434123312\"\272H\006r\004\020\001" +
-      "\030 H\000R\016organizationId\210\001\001\022\177\n\006domain\030\003 \001(\tB" +
-      "b\222AV2CFilter connections by email domain" +
-      " associated with the organizationJ\017\"hero" +
-      "-saas.app\"\272H\006r\004\020\001\030 H\001R\006domain\210\001\001\022\306\001\n\007inc" +
-      "lude\030\004 \001(\tB\246\001\222A\242\0012\237\001Filter connections b" +
-      "y status. Use \'all\' to include all conne" +
-      "ctions regardless of status. Default beh" +
-      "avior shows only active (completed and e" +
-      "nabled) connectionsH\002R\007include\210\001\001B\022\n\020_or" +
-      "ganization_idB\t\n\007_domainB\n\n\010_includeJ\004\010\002" +
-      "\020\003\"\235\001\n\027ListConnectionsResponse\022\201\001\n\013conne" +
-      "ctions\030\001 \003(\0132\'.scalekit.v1.connections.L" +
-      "istConnectionB6\222A321List of connections " +
-      "matching the request criteriaR\013connectio" +
-      "ns\"\215\017\n\016ListConnection\022Q\n\002id\030\001 \001(\tBA\222A>2#" +
-      "Unique identifier of the connectionJ\027\"co" +
-      "nn_2123312131125533\"R\002id\022\215\001\n\010provider\030\002 " +
-      "\001(\0162+.scalekit.v1.connections.Connection" +
-      "ProviderBD\222AA25Identity provider type (e" +
-      ".g., OKTA, Google, Azure AD)J\010\"CUSTOM\"R\010" +
-      "provider\022x\n\004type\030\003 \001(\0162\'.scalekit.v1.con" +
-      "nections.ConnectionTypeB;\222A82.Authentica" +
-      "tion protocol used by the connectionJ\006\"O" +
-      "IDC\"R\004type\022\210\001\n\006status\030\004 \001(\0162).scalekit.v" +
-      "1.connections.ConnectionStatusBE\222A?2.Cur" +
-      "rent configuration status of the connect" +
-      "ionJ\r\"IN_PROGRESS\"\340A\003R\006status\022g\n\007enabled" +
-      "\030\005 \001(\010BM\222AJ2AWhether the connection is c" +
-      "urrently active for organization usersJ\005" +
-      "falseR\007enabled\022\205\001\n\017organization_id\030\006 \001(\t" +
-      "B\\\222AY2?Unique identifier of the organiza" +
-      "tion that owns this connectionJ\026\"org_212" +
-      "3312131125533\"R\016organizationId\022\210\001\n\017ui_bu" +
-      "tton_title\030\007 \001(\tB`\222AN2:Text displayed on" +
-      " the SSO login button for this connectio" +
-      "nJ\020\"Login with SSO\"\372\322\344\223\002\t\022\007PREVIEWR\ruiBu" +
-      "ttonTitle\022t\n\007domains\030\010 \003(\tBZ\222AW2/List of" +
-      " domains configured with this connection" +
-      "J$[\"yourapp.com\", \"yourworkspace.com\"]R\007" +
-      "domains\022q\n\021organization_name\030\t \001(\tBD\222AA2" +
-      "*Name of the organization of the connect" +
-      "ionJ\023\"Your Organization\"R\020organizationNa" +
-      "me\022u\n\014provider_key\030\n \001(\tBR\222AO2CKey ID of" +
-      " the identity provider service that hand" +
-      "les authenticationJ\010\"google\"R\013providerKe" +
-      "y\022\220\001\n\006key_id\030\013 \001(\tBy\222Av2[Alternative ide" +
-      "ntifier for this connection, typically u" +
-      "sed in frontend applications or URLsJ\027\"c" +
-      "onn_2123312131125533\"R\005keyId\022\220\001\n\ncreated" +
-      "_at\030\014 \001(\0132\032.google.protobuf.TimestampBU\222" +
-      "A@2&When this connection was first creat" +
-      "edJ\026\"2023-01-15T14:30:00Z\"\340A\003\372\322\344\223\002\t\022\007PRE" +
-      "VIEWR\tcreatedAt\022\220\003\n\016mcp_server_url\030\r \001(\t" +
-      "B\351\002\222A\342\0022\240\002MCP virtual server URL for thi" +
-      "s connection. Agents can point directly " +
-      "at this URL to access only the tools for" +
-      " this connection, without needing to cal" +
-      "l list_connections or execute_tool with " +
-      "a connection_name. Empty when the MCP vi" +
-      "rtual servers feature is not enabled for" +
-      " this environment.J=\"https://acmecorp.sc" +
-      "alekit.dev/mcp/v3/connections/gmail_work" +
-      "\"\340A\003R\014mcpServerUrl\"\317\002\n\"ListOrganizationC" +
-      "onnectionsRequest\022\200\001\n\tpage_size\030\001 \001(\rBc\222" +
-      "AY2SMaximum number of organizations to r" +
-      "eturn per page. Value must be between 1 " +
-      "and 30.J\00230\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_to" +
-      "ken\030\002 \001(\tB\205\001\222A\201\0012aToken from a previous " +
-      "response for pagination. Provide this to" +
-      " retrieve the next page of results.J\034eyJ" +
-      "wYWdlIjoyLCJsaW1pdCI6MzB9R\tpageToken\"\227\002\n" +
-      "#ListOrganizationConnectionsResponse\022&\n\017" +
-      "next_page_token\030\001 \001(\tR\rnextPageToken\022\035\n\n" +
-      "total_size\030\002 \001(\rR\ttotalSize\022&\n\017prev_page" +
-      "_token\030\003 \001(\tR\rprevPageToken\022\200\001\n\013connecti" +
-      "ons\030\004 \003(\0132\'.scalekit.v1.connections.List" +
-      "ConnectionB5\222A220List of connections mat" +
-      "ching the filter criteriaR\013connections\"\242" +
-      "\007\n$SearchOrganizationConnectionsRequest\022" +
-      "l\n\005query\030\001 \001(\tBQ\222AG2-Search query Connec" +
-      "tion ID or Organization IDJ\026\"conn_121312" +
-      "434123312\"\272H\004r\002\030dH\000R\005query\210\001\001\022@\n\010provide" +
-      "r\030\002 \001(\tB\037\222A\0342\022Filter by providerJ\006\"OKTA\"" +
-      "H\001R\010provider\210\001\001\022}\n\006status\030\003 \001(\0162).scalek" +
-      "it.v1.connections.ConnectionStatusB5\222A*2",
-      "\033Filter by connection statusJ\013\"COMPLETED" +
-      "\"\272H\005\202\001\002\020\001H\002R\006status\210\001\001\022\214\001\n\017connection_ty" +
-      "pe\030\004 \001(\0162\'.scalekit.v1.connections.Conne" +
-      "ctionTypeB5\222A*2\033Filter by connection sta" +
-      "tusJ\013\"COMPLETED\"\272H\005\202\001\002\020\001H\003R\016connectionTy" +
-      "pe\210\001\001\022O\n\007enabled\030\007 \001(\010B0\222A-2#Filter by c" +
-      "onnection enabled statusJ\006\"true\"H\004R\007enab" +
-      "led\210\001\001\022\200\001\n\tpage_size\030\005 \001(\rBc\222AY2SMaximum" +
-      " number of organizations to return per p" +
-      "age. Value must be between 1 and 30.J\00230" +
-      "\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token\030\006 \001(\tB\205" +
-      "\001\222A\201\0012aToken from a previous response fo" +
-      "r pagination. Provide this to retrieve t" +
-      "he next page of results.J\034eyJwYWdlIjoyLC" +
-      "JsaW1pdCI6MzB9R\tpageTokenB\010\n\006_queryB\013\n\t_" +
-      "providerB\t\n\007_statusB\022\n\020_connection_typeB" +
-      "\n\n\010_enabled\"\231\002\n%SearchOrganizationConnec" +
-      "tionsResponse\022&\n\017next_page_token\030\001 \001(\tR\r" +
-      "nextPageToken\022\035\n\ntotal_size\030\002 \001(\rR\ttotal" +
-      "Size\022&\n\017prev_page_token\030\003 \001(\tR\rprevPageT" +
-      "oken\022\200\001\n\013connections\030\004 \003(\0132\'.scalekit.v1" +
-      ".connections.ListConnectionB5\222A220List o" +
-      "f connections matching the filter criter" +
-      "iaR\013connections\"\234\001\n\"ToggleEnvironmentCon" +
-      "nectionRequest\022v\n\rconnection_id\030\002 \001(\tBQ\222" +
-      "AE2+Connection ID. Unique ID for the con" +
-      "nectionJ\026\"conn_121312434123312\"\272H\006r\004\020\001\030 " +
-      "R\014connectionId\"\236\002\n\027ToggleConnectionReque" +
-      "st\022\222\001\n\017organization_id\030\001 \001(\tBi\222A]2DUniqu" +
-      "e identifier of the organization associa" +
-      "ted with the connectionJ\025\"org_1213124341" +
-      "23312\"\272H\006r\004\020\001\030 R\016organizationId\022h\n\002id\030\003 " +
-      "\001(\tBX\222AL22Unique identifier for the conn" +
-      "ection to be toggledJ\026\"conn_121312434123" +
-      "312\"\272H\006r\004\020\001\030 R\002idJ\004\010\002\020\003\"\274\002\n\030ToggleConnec" +
-      "tionResponse\022\251\001\n\007enabled\030\001 \001(\010B\216\001\222A\212\0012\201\001" +
-      "Current state of the connection after th" +
-      "e operation. True means the connection i" +
-      "s now enabled and can be used for authen" +
-      "tication.J\004trueR\007enabled\022b\n\rerror_messag" +
-      "e\030\002 \001(\tB8\222A52$Error message if the opera" +
-      "tion failsJ\r\"placeholder\"H\000R\014errorMessag" +
-      "e\210\001\001B\020\n\016_error_message\"\240\022\n\024OIDCConnectio" +
-      "nConfig\022j\n\006issuer\030\001 \001(\0132\034.google.protobu" +
-      "f.StringValueB4\222A12\nIssuer URLJ#\"https:/" +
-      "/youridp.com/service/oauth\"R\006issuer\022\252\001\n\022" +
-      "discovery_endpoint\030\002 \001(\0132\034.google.protob" +
-      "uf.StringValueB]\222AZ2\022Discovery EndpointJ" +
-      "D\"https://youridp.com/service/oauth/.wel" +
-      "l-known/openid-configuration\"R\021discovery" +
-      "Endpoint\022\204\001\n\rauthorize_uri\030\003 \001(\0132\034.googl" +
-      "e.protobuf.StringValueBA\222A>2\rAuthorize U" +
-      "RIJ-\"https://youridp.com/service/oauth/a" +
-      "uthorize\"R\014authorizeUri\022t\n\ttoken_uri\030\004 \001" +
-      "(\0132\034.google.protobuf.StringValueB9\222A62\tT" +
-      "oken URIJ)\"https://youridp.com/service/o" +
-      "auth/token\"R\010tokenUri\022\202\001\n\ruser_info_uri\030" +
-      "\005 \001(\0132\034.google.protobuf.StringValueB@\222A=" +
-      "2\rUser Info URIJ,\"https://youridp.com/se" +
-      "rvice/oauth/userinfo\"R\013userInfoUri\022p\n\010jw" +
-      "ks_uri\030\006 \001(\0132\034.google.protobuf.StringVal" +
-      "ueB7\222A42\010JWKS URIJ(\"https://youridp.com/" +
-      "service/oauth/jwks\"R\007jwksUri\022\\\n\tclient_i" +
-      "d\030\010 \001(\0132\034.google.protobuf.StringValueB!\222" +
-      "A\0362\tClient IDJ\021\"oauth_client_id\"R\010client" +
-      "Id\022l\n\rclient_secret\030\t \001(\0132\034.google.proto" +
-      "buf.StringValueB)\222A&2\rClient SecretJ\025\"oa" +
-      "uth_client_secret\"R\014clientSecret\022c\n\006scop" +
-      "es\030\n \003(\0162\".scalekit.v1.connections.OIDCS" +
-      "copeB\'\222A$2\013OIDC ScopesJ\025[\"openid\", \"prof" +
-      "ile\"]R\006scopes\022r\n\017token_auth_type\030\013 \001(\0162&" +
-      ".scalekit.v1.connections.TokenAuthTypeB\"" +
-      "\222A\0372\017Token Auth TypeJ\014\"URL_PARAMS\"R\rtoke" +
-      "nAuthType\022j\n\014redirect_uri\030\014 \001(\tBG\222AD2\014Re" +
-      "direct URIJ4\"https://yourapp.com/sso/v1/" +
-      "oidc/conn_1234/callback\"R\013redirectUri\022V\n" +
-      "\014pkce_enabled\030\r \001(\0132\032.google.protobuf.Bo" +
-      "olValueB\027\222A\0242\014PKCE EnabledJ\004trueR\013pkceEn" +
-      "abled\022h\n\023idp_logout_required\030\016 \001(\0132\032.goo" +
-      "gle.protobuf.BoolValueB\034\222A\0312\021Enable IDP " +
-      "logoutJ\004trueR\021idpLogoutRequired\022\264\001\n\030post" +
-      "_logout_redirect_uri\030\017 \001(\0132\034.google.prot" +
-      "obuf.StringValueB]\222AW2\030post logout redir" +
-      "ect uriJ;\"https://yourapp.com/sso/v1/oid" +
-      "c/conn_1234/logout/callback\"\340A\003R\025postLog" +
-      "outRedirectUri\022\352\001\n\037backchannel_logout_re" +
-      "direct_uri\030\020 \001(\0132\034.google.protobuf.Strin" +
-      "gValueB\204\001\222A~2<backchannel logout redirec" +
-      "t uri where idp sends logout_tokenJ>\"htt" +
-      "ps://yourapp.com/sso/v1/oidc/conn_1234/b" +
-      "ackchannel-logout\"\340A\003R\034backchannelLogout" +
-      "RedirectUri\022\306\001\n\032sync_user_profile_on_log" +
-      "in\030\021 \001(\0132\032.google.protobuf.BoolValueBn\222A" +
-      "k2cIndicates whether user profiles shoul" +
-      "d be synchronized with the identity prov" +
-      "ider upon each log-in.J\004trueR\026syncUserPr" +
-      "ofileOnLogin\022\272\001\n!jit_provisioning_with_s" +
-      "so_enabled\030\022 \001(\0132\032.google.protobuf.BoolV" +
-      "alueBT\222AQ2IIndicates if Just In Time use" +
-      "r provisioning is enabled for the connec" +
-      "tionJ\004trueR\035jitProvisioningWithSsoEnable" +
-      "d\"\357\025\n\025OAuthConnectionConfig\022\204\001\n\rauthoriz" +
-      "e_uri\030\003 \001(\0132\034.google.protobuf.StringValu" +
-      "eBA\222A>2\rAuthorize URIJ-\"https://youridp." +
-      "com/service/oauth/authorize\"R\014authorizeU" +
-      "ri\022t\n\ttoken_uri\030\004 \001(\0132\034.google.protobuf." +
-      "StringValueB9\222A62\tToken URIJ)\"https://yo" +
-      "uridp.com/service/oauth/token\"R\010tokenUri" +
-      "\022\202\001\n\ruser_info_uri\030\005 \001(\0132\034.google.protob" +
-      "uf.StringValueB@\222A=2\rUser Info URIJ,\"htt" +
-      "ps://youridp.com/service/oauth/userinfo\"" +
-      "R\013userInfoUri\022\\\n\tclient_id\030\010 \001(\0132\034.googl" +
-      "e.protobuf.StringValueB!\222A\0362\tClient IDJ\021" +
-      "\"oauth_client_id\"R\010clientId\022l\n\rclient_se" +
-      "cret\030\t \001(\0132\034.google.protobuf.StringValue" +
-      "B)\222A&2\rClient SecretJ\025\"oauth_client_secr" +
-      "et\"R\014clientSecret\022?\n\006scopes\030\n \003(\tB\'\222A$2\013" +
-      "OIDC ScopesJ\025[\"openid\", \"profile\"]R\006scop" +
-      "es\022b\n\014redirect_uri\030\014 \001(\tB?\222A<2\014Redirect " +
-      "URIJ,\"https://yourapp.com/service/oauth/" +
-      "redirect\"R\013redirectUri\022V\n\014pkce_enabled\030\r" +
-      " \001(\0132\032.google.protobuf.BoolValueB\027\222A\0242\014P" +
-      "KCE EnabledJ\004trueR\013pkceEnabled\022V\n\006prompt" +
-      "\030\016 \001(\0132\034.google.protobuf.StringValueB \222A" +
-      "\0352\023Prompt for the userJ\006\"none\"R\006prompt\022m" +
-      "\n\022use_platform_creds\030\017 \001(\0132\032.google.prot" +
-      "obuf.BoolValueB#\222A 2\030Use Scalekit creden" +
-      "tialsJ\004trueR\020usePlatformCreds\022Z\n\013access_" +
-      "type\030\020 \001(\0132\034.google.protobuf.StringValue" +
-      "B\033\222A\0302\013Access TypeJ\t\"offline\"R\naccessTyp" +
-      "e\022n\n\021custom_scope_name\030\021 \001(\0132\034.google.pr" +
-      "otobuf.StringValueB$\222A!2\021Custom Scope Na" +
-      "meJ\014\"user_scope\"R\017customScopeName\022\306\001\n\032sy" +
-      "nc_user_profile_on_login\030\022 \001(\0132\032.google." +
-      "protobuf.BoolValueBn\222Ak2cIndicates wheth" +
-      "er user profiles should be synchronized " +
-      "with the identity provider upon each log" +
-      "-in.J\004trueR\026syncUserProfileOnLogin\022k\n\021to" +
-      "ken_access_type\030\023 \001(\0132\034.google.protobuf." +
-      "StringValueB!\222A\0362\021Token Access TypeJ\t\"of" +
-      "fline\"R\017tokenAccessType\022\204\002\n\ttenant_id\030\024 " +
-      "\001(\0132\034.google.protobuf.StringValueB\310\001\222A\304\001" +
-      "2\231\001Microsoft Entra tenant ID. Required w" +
-      "hen using a single-tenant or multi-tenan" +
-      "t app registered in Microsoft Entra. Lea" +
-      "ve empty to use the common endpoint.J&\"x" +
-      "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"R\010te" +
-      "nantId\022\307\001\n\007is_cimd\030\025 \001(\0132\032.google.protob" +
-      "uf.BoolValueB\221\001\222A\212\0012\201\001Indicates whether " +
-      "this connection was registered using Cli" +
-      "ent ID Metadata Document (CIMD) instead " +
-      "of Dynamic Client Registration.J\004true\340A\003" +
-      "R\006isCimd\022\276\001\n\010app_name\030\026 \001(\0132\034.google.pro" +
-      "tobuf.StringValueB\204\001\222A\200\0012mApplication na" +
-      "me used by providers that require it as " +
-      "an authorize query parameter (e.g., Trel" +
-      "lo\'s app_name).J\017\"My Trello App\"R\007appNam" +
-      "e\022\372\001\n\017optional_scopes\030\027 \001(\0132\'.scalekit.v" +
-      "1.connections.OptionalScopesB\242\001\222A\236\0012\233\001Op" +
-      "tional scopes configuration for identity" +
-      " providers that support or require addit" +
-      "ional scopes to be sent in a custom fiel" +
-      "d during authentication requests.H\000R\016opt" +
-      "ionalScopes\210\001\001\022\217\002\n\nextensions\030\030 \001(\0132(.sc" +
-      "alekit.v1.connections.OauthExtensionsB\277\001" +
-      "\222A\273\0012\270\001OAuth extension profiles for this" +
-      " connection, such as SMART on FHIR. Carr" +
-      "ies typed extension configuration plus a" +
-      " generic escape hatch for provider-speci" +
-      "fic authorize query parameters.H\001R\nexten" +
-      "sions\210\001\001B\022\n\020_optional_scopesB\r\n\013_extensi" +
-      "ons\"\231\005\n\017OauthExtensions\022\326\001\n\005smart\030\001 \001(\0132" +
-      "$.scalekit.v1.connections.SmartConfigB\224\001" +
-      "\222A\220\0012\215\001SMART on FHIR (SMART App Launch) " +
-      "configuration. Set this to issue a SMART" +
-      "-compliant standalone launch authorizati" +
-      "on request to a FHIR server.H\000R\005smart\210\001\001" +
-      "\022\331\002\n\026extra_authorize_params\030\002 \003(\0132B.scal" +
-      "ekit.v1.connections.OauthExtensions.Extr" +
-      "aAuthorizeParamsEntryB\336\001\222A\332\0012\275\001Provider-" +
-      "specific query parameters added to the a" +
-      "uthorization request. Reserved OAuth/OID" +
-      "C parameters (client_id, redirect_uri, s" +
-      "cope, state, code_challenge, aud, and si" +
-      "milar) are rejected.J\030{\"custom_param\":\"v" +
-      "alue\"}R\024extraAuthorizeParams\032G\n\031ExtraAut" +
-      "horizeParamsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
-      "alue\030\002 \001(\tR\005value:\0028\001B\010\n\006_smart\"\257\003\n\013Smar" +
-      "tConfig\022\346\001\n\003aud\030\001 \001(\tB\323\001\222A\317\0012\255\001FHIR reso" +
-      "urce server base URL, sent as the requir" +
-      "ed \'aud\' authorization parameter per the" +
-      " SMART App Launch specification. Binds t" +
-      "he issued token to the intended FHIR ser" +
-      "ver.J\035\"https://fhir.example.com/r4\"R\003aud" +
-      "\022\266\001\n\006domain\030\002 \001(\tB\235\001\222A\231\0012\202\001FHIR server d" +
-      "omain for the SMART on FHIR connection. " +
-      "Stored alongside the audience and editab" +
-      "le through the connection update API.J\022\"" +
-      "fhir.example.com\"R\006domain\"\246\003\n\016OptionalSc" +
-      "opes\022v\n\006scopes\030\001 \003(\tB^\222A[2CList of optio" +
-      "nal scopes that can be requested during " +
-      "authenticationJ\024[\"scope1\", \"scope2\"]R\006sc" +
-      "opes\022\233\002\n\nfield_name\030\002 \001(\tB\373\001\222A\367\0012\325\001Name " +
-      "of the field in which scope should be se" +
-      "nt in the authentication request. This i" +
-      "s required by some identity providers th" +
-      "at expect scopes to be sent in a custom " +
-      "field instead of the standard \'scope\' pa" +
-      "rameter.J\035\"optional_scope or bot_scope\"R" +
-      "\tfieldName\"\200\003\n\017GoogleDWDConfig\022\247\001\n\024servi" +
-      "ce_account_json\030\001 \001(\0132\034.google.protobuf." +
-      "StringValueBW\222AQ2OGoogle Cloud service a" +
-      "ccount JSON key. Write-only: reads retur" +
-      "n a masked value.\340A\004R\022serviceAccountJson" +
-      "\0229\n\006scopes\030\002 \003(\tB!\222A\0362\034OAuth 2.0 scopes " +
-      "to request.R\006scopes\022\207\001\n\ttoken_uri\030\003 \001(\0132" +
-      "\034.google.protobuf.StringValueBL\222AI2GGoog" +
-      "le token endpoint. Defaults to https://o" +
-      "auth2.googleapis.com/token.R\010tokenUri\"\364\007" +
-      "\n\022PasswordLessConfig\022]\n\004type\030\001 \001(\0162).sca" +
-      "lekit.v1.connections.PasswordlessTypeB\036\222" +
-      "A\0332\021Passwordless TypeJ\006\"LINK\"R\004type\022W\n\tf" +
-      "requency\030\002 \001(\0132\034.google.protobuf.UInt32V" +
-      "alueB\026\222A\0232\016Link FrequencyJ\0011H\000R\tfrequenc" +
-      "y\210\001\001\022a\n\010validity\030\003 \001(\0132\034.google.protobuf" +
-      ".UInt32ValueB\"\222A\0372\030Link Validity in Seco" +
-      "ndsJ\003600H\001R\010validity\210\001\001\022\206\001\n\033enforce_same" +
-      "_browser_origin\030\004 \001(\0132\032.google.protobuf." +
-      "BoolValueB&\222A#2\033Enforce Same Browser Ori" +
-      "ginJ\004trueH\002R\030enforceSameBrowserOrigin\210\001\001" +
-      "\022t\n\025code_challenge_length\030\005 \001(\0132\034.google" +
-      ".protobuf.UInt32ValueB\035\222A\0322\025Code Challen" +
-      "ge LengthJ\0016H\003R\023codeChallengeLength\210\001\001\022\204" +
-      "\001\n\023code_challenge_type\030\006 \001(\0162*.scalekit." +
-      "v1.connections.CodeChallengeTypeB#\222A 2\023C" +
-      "ode Challenge TypeJ\t\"NUMERIC\"H\004R\021codeCha" +
-      "llengeType\210\001\001\022\235\001\n-regenerate_passwordles" +
-      "s_credentials_on_resend\030\007 \001(\0132\032.google.p" +
-      "rotobuf.BoolValueB\032\222A\0272\017Regenerate the J" +
-      "\004trueH\005R)regeneratePasswordlessCredentia" +
-      "lsOnResend\210\001\001B\014\n\n_frequencyB\013\n\t_validity" +
-      "B\036\n\034_enforce_same_browser_originB\030\n\026_cod" +
-      "e_challenge_lengthB\026\n\024_code_challenge_ty" +
-      "peB0\n._regenerate_passwordless_credentia" +
-      "ls_on_resend\"P\n\020StaticAuthConfig\022<\n\rstat" +
-      "ic_config\030\001 \001(\0132\027.google.protobuf.Struct" +
-      "R\014staticConfig\"\304\"\n\024WebAuthConfiguration\022" +
-      "@\n\002rp\030\001 \001(\01320.scalekit.v1.connections.We" +
-      "bAuthConfiguration.RpR\002rp\022[\n\013attestation" +
-      "\030\002 \001(\01329.scalekit.v1.connections.WebAuth" +
-      "Configuration.AttestationR\013attestation\022d" +
-      "\n\016authenticators\030\003 \001(\0132<.scalekit.v1.con" +
-      "nections.WebAuthConfiguration.Authentica" +
-      "torsR\016authenticators\022}\n\027authenticator_se" +
-      "lection\030\004 \001(\0132D.scalekit.v1.connections." +
-      "WebAuthConfiguration.AuthenticatorSelect" +
-      "ionR\026authenticatorSelection\022O\n\007timeout\030\005" +
-      " \001(\01325.scalekit.v1.connections.WebAuthCo" +
-      "nfiguration.TimeoutR\007timeout\022d\n\030enable_a" +
-      "uto_registration\030\006 \001(\010B*\222A\'2%Enable auto" +
-      " registration for WebAuthnR\026enableAutoRe" +
-      "gistration\022X\n\023show_passkey_button\030\007 \001(\010B" +
-      "(\222A%2#Show passkey button on login scree" +
-      "nR\021showPasskeyButton\022g\n\030enable_condition" +
-      "al_login\030\010 \001(\010B-\222A*2(Allow autofill of p" +
-      "asskeys in login pageR\026enableConditional" +
-      "Login\032H\n\002Rp\022\034\n\003ids\030\001 \003(\tB\n\272H\007\222\001\004\010\001\020\nR\003id" +
-      "s\022$\n\007origins\030\002 \003(\tB\n\272H\007\222\001\004\010\001\020\nR\007origins\032" +
-      "\301\001\n\013Attestation\022p\n\025conveyance_preference" +
-      "\030\001 \001(\0132\034.google.protobuf.StringValueB\035\272H" +
-      "\032r\030R\004noneR\010indirectR\006directR\024conveyanceP" +
-      "reference\022@\n\027enterprise_approved_ids\030\002 \003" +
-      "(\tB\010\272H\005\222\001\002\0202R\025enterpriseApprovedIds\032\360\023\n\016" +
-      "Authenticators\022\333\002\n\016validate_entry\030\001 \001(\0132" +
-      "\032.google.protobuf.BoolValueB\227\002\222A\223\002\032\032.goo" +
-      "gle.protobuf.BoolValue2\364\001requires that t" +
-      "he provided metadata has an entry for th" +
-      "e given authenticator to be considered v" +
-      "alid. By default an AAGUID which has a z" +
-      "ero value should fail validation if vali" +
-      "date_entry_permit_zero_aaguid is not pro" +
-      "vided with the value of true.R\rvalidateE" +
-      "ntry\022\217\002\n!validate_entry_permit_zero_aagu" +
-      "id\030\002 \001(\0132\032.google.protobuf.BoolValueB\250\001\222" +
-      "A\244\0012\241\001is an option that permits a zero\'d" +
-      " AAGUID from an attestation statement to" +
-      " automatically pass metadata validations" +
-      ". Generally helpful to use with validate" +
-      "_entry.R\035validateEntryPermitZeroAaguid\022\306" +
-      "\001\n\020validate_anchors\030\003 \001(\0132\032.google.proto" +
-      "buf.BoolValueB\177\222A|2zwhen set to true ena" +
-      "bles the validation of the attestation s" +
-      "tatement against the trust anchor from t" +
-      "he metadata statement.R\017validateAnchors\022" +
-      "\276\001\n\017validate_status\030\004 \001(\0132\032.google.proto" +
-      "buf.BoolValueBy\222Av2twhen set to true ena" +
-      "bles the validation of the attestation s" +
-      "tatements AAGUID against the desired and" +
-      " undesired listsR\016validateStatus\022\341\001\n\031val" +
-      "idate_attestation_type\030\005 \001(\0132\032.google.pr" +
-      "otobuf.BoolValueB\210\001\222A\204\0012\201\001when set to tr" +
-      "ue enables the validation of the attesta" +
-      "tion statements type against the known t" +
-      "ypes the authenticator can produce.R\027val" +
-      "idateAttestationType\022\273\004\n\034desired_authent" +
-      "icator_status\030\006 \003(\tB\370\003\222A\235\0012\226\001provides th" +
-      "e list of statuses which are considered " +
-      "undesirable for status report validation" +
-      " purposes. Should be used with validate_" +
-      "status set to true.:\002[]\272H\323\002\222\001\317\002\020\n\"\312\002r\307\002R" +
-      "\022NOT_FIDO_CERTIFIEDR\016FIDO_CERTIFIEDR\030USE" +
-      "R_VERIFICATION_BYPASSR\032ATTESTATION_KEY_C" +
-      "OMPROMISER\032USER_KEY_REMOTE_COMPROMISER\034U" +
-      "SER_KEY_PHYSICAL_COMPROMISER\020UPDATE_AVAI" +
-      "LABLER\007REVOKEDR\030SELF_ASSERTION_SUBMITTED" +
-      "R\021FIDO_CERTIFIED_L1R\025FIDO_CERTIFIED_L1pl" +
-      "usR\021FIDO_CERTIFIED_L2R\025FIDO_CERTIFIED_L2" +
-      "plusR\021FIDO_CERTIFIED_L3R\025FIDO_CERTIFIED_" +
-      "L3plusR\032desiredAuthenticatorStatus\022\301\005\n\036u" +
-      "ndesired_authenticator_status\030\007 \003(\tB\372\004\222A" +
-      "\237\0022\226\001provides the list of statuses which" +
-      " are considered undesirable for status r" +
-      "eport validation purposes. Should be use" +
-      "d with validate_status set to true.:\203\001[\'" +
-      "ATTESTATION_KEY_COMPROMISE\', \'USER_VERIF" +
-      "ICATION_BYPASS\', \'USER_KEY_REMOTE_COMPRO" +
-      "MISE\', \'USER_KEY_PHYSICAL_COMPROMISE\', \'" +
-      "REVOKED\']\272H\323\002\222\001\317\002\020\n\"\312\002r\307\002R\022NOT_FIDO_CERT" +
-      "IFIEDR\016FIDO_CERTIFIEDR\030USER_VERIFICATION" +
-      "_BYPASSR\032ATTESTATION_KEY_COMPROMISER\032USE" +
-      "R_KEY_REMOTE_COMPROMISER\034USER_KEY_PHYSIC" +
-      "AL_COMPROMISER\020UPDATE_AVAILABLER\007REVOKED" +
-      "R\030SELF_ASSERTION_SUBMITTEDR\021FIDO_CERTIFI" +
-      "ED_L1R\025FIDO_CERTIFIED_L1plusR\021FIDO_CERTI" +
-      "FIED_L2R\025FIDO_CERTIFIED_L2plusR\021FIDO_CER" +
-      "TIFIED_L3R\025FIDO_CERTIFIED_L3plusR\034undesi" +
-      "redAuthenticatorStatus\032\206\002\n\026Authenticator" +
-      "Selection\022r\n\021user_verification\030\001 \001(\0132\034.g" +
-      "oogle.protobuf.StringValueB\'\272H$r\"R\010requi" +
-      "redR\tpreferredR\013discouragedR\020userVerific" +
-      "ation\022x\n\030authenticator_attachment\030\002 \001(\0132" +
-      "\034.google.protobuf.StringValueB\037\272H\034r\032R\010pl" +
-      "atformR\016cross-platformR\027authenticatorAtt" +
-      "achment\032\243\004\n\007Timeout\022x\n\014registration\030\001 \001(" +
-      "\0132\031.google.protobuf.DurationB9\222A\'2\035Regis" +
-      "tration timeout duration:\006\"300s\"\272H\014\252\001\t\"\003" +
-      "\010\210\0162\002\010xR\014registration\022\245\001\n\020registration_u" +
-      "vd\030\002 \001(\0132\031.google.protobuf.DurationB_\222AM" +
-      "2CRegistration timeout duration when use" +
-      "r verification is discouraged:\006\"300s\"\272H\014" +
-      "\252\001\t\"\003\010\210\0162\002\010xR\017registrationUvd\022c\n\005login\030\003" +
-      " \001(\0132\031.google.protobuf.DurationB2\222A 2\026Lo" +
-      "gin timeout duration:\006\"300s\"\272H\014\252\001\t\"\003\010\210\0162" +
-      "\002\010xR\005login\022\220\001\n\tlogin_uvd\030\004 \001(\0132\031.google." +
-      "protobuf.DurationBX\222AF2<Login timeout du" +
-      "ration when user verification is discour" +
-      "aged:\006\"300s\"\272H\014\252\001\t\"\003\010\210\0162\002\010xR\010loginUvd\"\367\025" +
-      "\n\033SAMLConnectionConfigRequest\022\212\001\n\020idp_me" +
-      "tadata_url\030\001 \001(\0132\034.google.protobuf.Strin" +
-      "gValueBB\222A?2\020IDP Metadata URLJ+\"https://" +
-      "youridp.com/service/saml/metadata\"R\016idpM" +
-      "etadataUrl\022x\n\ridp_entity_id\030\002 \001(\0132\034.goog" +
-      "le.protobuf.StringValueB6\222A32\rIDP Entity" +
-      " IDJ\"\"https://youridp.com/service/saml\"R" +
-      "\013idpEntityId\022v\n\013idp_sso_url\030\003 \001(\0132\034.goog" +
-      "le.protobuf.StringValueB8\222A52\013IDP SSO UR" +
-      "LJ&\"https://youridp.com/service/saml/sso" +
-      "\"R\tidpSsoUrl\022[\n\017idp_certificate\030\004 \001(\0132\034." +
-      "google.protobuf.StringValueB\024\222A\0212\017IDP Ce" +
-      "rtificateR\016idpCertificate\022v\n\013idp_slo_url" +
-      "\030\005 \001(\0132\034.google.protobuf.StringValueB8\222A" +
-      "52\013IDP SLO URLJ&\"https://youridp.com/ser" +
-      "vice/saml/slo\"R\tidpSloUrl\022l\n\017ui_button_t" +
-      "itle\030\006 \001(\0132\034.google.protobuf.StringValue" +
-      "B&\222A#2\017UI Button TitleJ\020\"Login with SSO\"" +
-      "R\ruiButtonTitle\022t\n\022idp_name_id_format\030\007 " +
-      "\001(\0162%.scalekit.v1.connections.NameIdForm" +
-      "atB \222A\0352\022IDP Name ID FormatJ\007\"EMAIL\"R\017id" +
-      "pNameIdFormat\022\211\001\n\027idp_sso_request_bindin" +
-      "g\030\010 \001(\0162\'.scalekit.v1.connections.Reques" +
-      "tBindingB)\222A&2\027IDP SSO Request BindingJ\013" +
-      "\"HTTP_POST\"R\024idpSsoRequestBinding\022\215\001\n\027id" +
-      "p_slo_request_binding\030\t \001(\0162\'.scalekit.v" +
-      "1.connections.RequestBindingB-\222A*2\027IDP S" +
-      "LO Request BindingJ\017\"HTTP_REDIRECT\"R\024idp" +
-      "SloRequestBinding\022\223\001\n\023saml_signing_optio" +
-      "n\030\n \001(\0162+.scalekit.v1.connections.SAMLSi" +
-      "gningOptionsB6\222A32\023SAML Signing OptionJ\034" +
-      "\"SAML_ONLY_RESPONSE_SIGNING\"R\021samlSignin" +
-      "gOption\022S\n\013force_authn\030\016 \001(\0132\032.google.pr" +
-      "otobuf.BoolValueB\026\222A\0232\013Force AuthnJ\004true" +
-      "R\nforceAuthn\022\226\001\n\024default_redirect_uri\030\017 " +
-      "\001(\0132\034.google.protobuf.StringValueBF\222AC2\024" +
-      "Default Redirect URIJ+\"https://yourapp.c" +
-      "om/service/saml/redirect\"R\022defaultRedire" +
-      "ctUri\022k\n\023assertion_encrypted\030\020 \001(\0132\032.goo" +
-      "gle.protobuf.BoolValueB\036\222A\0332\023Assertion E" +
-      "ncryptedJ\004trueR\022assertionEncrypted\022j\n\023wa" +
-      "nt_request_signed\030\021 \001(\0132\032.google.protobu" +
-      "f.BoolValueB\036\222A\0332\023Want Request SignedJ\004t",
-      "rueR\021wantRequestSigned\022q\n\016certificate_id" +
-      "\030\022 \001(\0132\034.google.protobuf.StringValueB,\222A" +
-      ")2\016Certificate IDJ\027\"cer_3558542316614461" +
-      "3\"R\rcertificateId\022b\n\020idp_slo_required\030\023 " +
-      "\001(\0132\032.google.protobuf.BoolValueB\034\222A\0312\021En" +
-      "able IDP logoutJ\004trueR\016idpSloRequired\022\220\001" +
-      "\n\014sp_entity_id\030\024 \001(\0132\034.google.protobuf.S" +
-      "tringValueBP\222AM2\032Service Provider Entity" +
-      " IDJ/\"https://env.scalekit.com/sso/v1/sa" +
-      "ml/conn_123\"R\nspEntityId\022\237\001\n\020sp_assertio" +
-      "n_url\030\025 \001(\0132\034.google.protobuf.StringValu" +
-      "eBW\222AT2\030Service Provider SSO URLJ8\"https" +
-      "://env.scalekit.com/sso/v1/saml/conn_123" +
-      "/callback\"R\016spAssertionUrl\022\216\001\n\nsp_slo_ur" +
-      "l\030\026 \001(\0132\034.google.protobuf.StringValueBR\222" +
-      "AO2\030Service Provider SLO URLJ3\"https://e" +
-      "nv.scalekit.com/sso/v1/saml/conn_123/slo" +
-      "\"R\010spSloUrl\022\306\001\n\032sync_user_profile_on_log" +
-      "in\030\027 \001(\0132\032.google.protobuf.BoolValueBn\222A" +
-      "k2cIndicates whether user profiles shoul" +
-      "d be synchronized with the identity prov" +
-      "ider upon each log-in.J\004trueR\026syncUserPr" +
-      "ofileOnLogin\022\272\001\n!jit_provisioning_with_s" +
-      "so_enabled\030\030 \001(\0132\032.google.protobuf.BoolV" +
-      "alueBT\222AQ2IIndicates if Just In Time use" +
-      "r provisioning is enabled for the connec" +
-      "tionJ\004trueR\035jitProvisioningWithSsoEnable" +
-      "dJ\004\010\013\020\014\"\377\026\n\034SAMLConnectionConfigResponse" +
-      "\022W\n\014sp_entity_id\030\001 \001(\tB5\222A22\014SP Entity I" +
-      "DJ\"\"https://yourapp.com/service/saml\"R\ns" +
-      "pEntityId\022m\n\020sp_assertion_url\030\002 \001(\tBC\222A@" +
-      "2\020SP Assertion URLJ,\"https://youridp.com" +
-      "/service/saml/assertion\"R\016spAssertionUrl" +
-      "\022i\n\017sp_metadata_url\030\003 \001(\tBA\222A>2\017SP Metad" +
-      "ata URLJ+\"https://youridp.com/service/sa" +
-      "ml/metadata\"R\rspMetadataUrl\022\212\001\n\020idp_meta" +
-      "data_url\030\004 \001(\0132\034.google.protobuf.StringV" +
-      "alueBB\222A?2\020IDP Metadata URLJ+\"https://yo" +
-      "uridp.com/service/saml/metadata\"R\016idpMet" +
-      "adataUrl\022x\n\ridp_entity_id\030\005 \001(\0132\034.google" +
-      ".protobuf.StringValueB6\222A32\rIDP Entity I" +
-      "DJ\"\"https://youridp.com/service/saml\"R\013i" +
-      "dpEntityId\022v\n\013idp_sso_url\030\006 \001(\0132\034.google" +
-      ".protobuf.StringValueB8\222A52\013IDP SSO URLJ" +
-      "&\"https://youridp.com/service/saml/sso\"R" +
-      "\tidpSsoUrl\022i\n\020idp_certificates\030\007 \003(\0132\'.s" +
-      "calekit.v1.connections.IDPCertificateB\025\222" +
-      "A\0222\020IDP CertificatesR\017idpCertificates\022v\n" +
-      "\013idp_slo_url\030\010 \001(\0132\034.google.protobuf.Str" +
-      "ingValueB8\222A52\013IDP SLO URLJ&\"https://you" +
-      "ridp.com/service/saml/slo\"R\tidpSloUrl\022l\n" +
-      "\017ui_button_title\030\t \001(\0132\034.google.protobuf" +
-      ".StringValueB&\222A#2\017UI Button TitleJ\020\"Log" +
-      "in with SSO\"R\ruiButtonTitle\022t\n\022idp_name_" +
-      "id_format\030\n \001(\0162%.scalekit.v1.connection" +
-      "s.NameIdFormatB \222A\0352\022IDP Name ID FormatJ" +
-      "\007\"EMAIL\"R\017idpNameIdFormat\022\211\001\n\027idp_sso_re" +
-      "quest_binding\030\013 \001(\0162\'.scalekit.v1.connec" +
-      "tions.RequestBindingB)\222A&2\027IDP SSO Reque" +
-      "st BindingJ\013\"HTTP_POST\"R\024idpSsoRequestBi" +
-      "nding\022\211\001\n\027idp_slo_request_binding\030\014 \001(\0162" +
-      "\'.scalekit.v1.connections.RequestBinding" +
-      "B)\222A&2\027IDP SLO Request BindingJ\013\"HTTP_PO" +
-      "ST\"R\024idpSloRequestBinding\022\223\001\n\023saml_signi" +
-      "ng_option\030\r \001(\0162+.scalekit.v1.connection" +
-      "s.SAMLSigningOptionsB6\222A32\023SAML Signing " +
-      "OptionJ\034\"SAML_ONLY_RESPONSE_SIGNING\"R\021sa" +
-      "mlSigningOption\022{\n\031allow_idp_initiated_l" +
-      "ogin\030\016 \001(\0132\032.google.protobuf.BoolValueB$" +
-      "\222A!2\031Allow IDP Initiated LoginJ\004trueR\026al" +
-      "lowIdpInitiatedLogin\022S\n\013force_authn\030\017 \001(" +
-      "\0132\032.google.protobuf.BoolValueB\026\222A\0232\013Forc" +
-      "e AuthnJ\004trueR\nforceAuthn\022\226\001\n\024default_re" +
-      "direct_uri\030\020 \001(\0132\034.google.protobuf.Strin" +
-      "gValueBF\222AC2\024Default Redirect URIJ+\"http" +
-      "s://yourapp.com/service/saml/redirect\"R\022" +
-      "defaultRedirectUri\022k\n\023assertion_encrypte" +
-      "d\030\021 \001(\0132\032.google.protobuf.BoolValueB\036\222A\033" +
-      "2\023Assertion EncryptedJ\004trueR\022assertionEn" +
-      "crypted\022j\n\023want_request_signed\030\022 \001(\0132\032.g" +
-      "oogle.protobuf.BoolValueB\036\222A\0332\023Want Requ" +
-      "est SignedJ\004trueR\021wantRequestSigned\022q\n\016c" +
-      "ertificate_id\030\023 \001(\0132\034.google.protobuf.St" +
-      "ringValueB,\222A)2\016Certificate IDJ\027\"cer_355" +
-      "85423166144613\"R\rcertificateId\022b\n\020idp_sl" +
-      "o_required\030\024 \001(\0132\032.google.protobuf.BoolV" +
-      "alueB\034\222A\0312\021Enable IDP logoutJ\004trueR\016idpS" +
-      "loRequired\022\226\001\n\nsp_slo_url\030\025 \001(\0132\034.google" +
-      ".protobuf.StringValueBZ\222AT2\030Service Prov" +
-      "ider SLO urlJ8\"https://yourapp.com/sso/v" +
-      "1/saml/conn_1234/slo/callback\"\340A\003R\010spSlo" +
-      "Url\022\306\001\n\032sync_user_profile_on_login\030\026 \001(\013" +
-      "2\032.google.protobuf.BoolValueBn\222Ak2cIndic" +
-      "ates whether user profiles should be syn" +
-      "chronized with the identity provider upo" +
-      "n each log-in.J\004trueR\026syncUserProfileOnL" +
-      "ogin\022\272\001\n!jit_provisioning_with_sso_enabl" +
-      "ed\030\027 \001(\0132\032.google.protobuf.BoolValueBT\222A" +
-      "Q2IIndicates if Just In Time user provis" +
-      "ioning is enabled for the connectionJ\004tr" +
-      "ueR\035jitProvisioningWithSsoEnabled\"\277\003\n\016ID" +
-      "PCertificate\0226\n\013certificate\030\001 \001(\tB\024\222A\0212\017" +
-      "IDP CertificateR\013certificate\022s\n\013create_t" +
-      "ime\030\002 \001(\0132\032.google.protobuf.TimestampB6\222" +
-      "A32\031Certificate Creation TimeJ\026\"2021-09-" +
-      "01T00:00:00Z\"R\ncreateTime\022q\n\013expiry_time" +
-      "\030\003 \001(\0132\032.google.protobuf.TimestampB4\222A12" +
-      "\027Certificate Expiry TimeJ\026\"2021-09-01T00" +
-      ":00:00Z\"R\nexpiryTime\0228\n\002id\030\004 \001(\tB(\222A%2\016C" +
-      "ertificate IDJ\023\"cert_123123123123\"R\002id\022S" +
-      "\n\006issuer\030\005 \001(\tB;\222A82\022Certificate IssuerJ" +
-      "\"\"https://youridp.com/service/saml\"R\006iss" +
-      "uer\"b\n\026GetOIDCMetadataRequest\022H\n\010metadat" +
-      "a\030\001 \001(\0132,.scalekit.v1.connections.OIDCMe" +
-      "tadataRequestR\010metadata\"9\n\023OIDCMetadataR" +
-      "equest\022\"\n\006issuer\030\001 \001(\tB\n\272H\007r\005\020\001\030\310\001R\006issu" +
-      "er\"\327\001\n\027GetOIDCMetadataResponse\022\026\n\006issuer" +
-      "\030\001 \001(\tR\006issuer\0225\n\026authorization_endpoint" +
-      "\030\002 \001(\tR\025authorizationEndpoint\022%\n\016token_e" +
-      "ndpoint\030\003 \001(\tR\rtokenEndpoint\022+\n\021userinfo" +
-      "_endpoint\030\004 \001(\tR\020userinfoEndpoint\022\031\n\010jwk" +
-      "s_uri\030\005 \001(\tR\007jwksUri\"b\n\026GetSAMLMetadataR" +
-      "equest\022H\n\010metadata\030\001 \001(\0132,.scalekit.v1.c" +
-      "onnections.SAMLMetadataRequestR\010metadata" +
-      "\"D\n\023SAMLMetadataRequest\022-\n\014metadata_url\030" +
-      "\001 \001(\tB\n\272H\007r\005\020\001\030\310\001R\013metadataUrl\"\264\002\n\027GetSA" +
-      "MLMetadataResponse\022\"\n\ridp_entity_id\030\001 \001(" +
-      "\tR\013idpEntityId\022\036\n\013idp_sso_url\030\002 \001(\tR\tidp" +
-      "SsoUrl\022\036\n\013idp_slo_url\030\003 \001(\tR\tidpSloUrl\022)" +
-      "\n\020idp_certificates\030\004 \003(\tR\017idpCertificate" +
-      "s\022+\n\022idp_name_id_format\030\005 \001(\tR\017idpNameId" +
-      "Format\022\'\n\017request_binding\030\006 \001(\tR\016request" +
-      "Binding\0224\n\026want_assertions_signed\030\007 \001(\010R" +
-      "\024wantAssertionsSigned\"u\n GetSAMLCertific" +
-      "ateDetailsRequest\022Q\n\013certificate\030\001 \001(\0132/" +
-      ".scalekit.v1.connections.SAMLCertificate" +
-      "RequestR\013certificate\"5\n\026SAMLCertificateR" +
-      "equest\022\033\n\004text\030\001 \001(\tB\007\272H\004r\002\020\001R\004text\"\245\001\n!" +
-      "GetSAMLCertificateDetailsResponse\022\022\n\004tex" +
-      "t\030\001 \001(\tR\004text\022\033\n\tnot_after\030\002 \001(\003R\010notAft" +
-      "er\022\035\n\nnot_before\030\003 \001(\003R\tnotBefore\022\030\n\007sub" +
-      "ject\030\004 \001(\tR\007subject\022\026\n\006issuer\030\005 \001(\tR\006iss" +
-      "uer\"\206\001\n\036GetConnectionTestResultRequest\022," +
-      "\n\rconnection_id\030\001 \001(\tB\007\272H\004r\002\020\001R\014connecti" +
-      "onId\0226\n\017test_request_id\030\002 \001(\tB\016\272H\013r\t\020\001:\005" +
-      "test_R\rtestRequestId\"\275\002\n\037GetConnectionTe" +
-      "stResultResponse\022A\n\006status\030\001 \001(\0162).scale" +
-      "kit.v1.connections.TestResultStatusR\006sta" +
-      "tus\022 \n\tuser_info\030\002 \001(\tH\000R\010userInfo\210\001\001\022\031\n" +
-      "\005error\030\003 \001(\tH\001R\005error\210\001\001\0220\n\021error_descri" +
-      "ption\030\004 \001(\tH\002R\020errorDescription\210\001\001\022(\n\rer" +
-      "ror_details\030\005 \001(\tH\003R\014errorDetails\210\001\001B\014\n\n" +
-      "_user_infoB\010\n\006_errorB\024\n\022_error_descripti" +
-      "onB\020\n\016_error_details\"\032\n\030PasswordConnecti" +
-      "onConfig\"9\n\005Flags\022\031\n\010is_login\030\001 \001(\010R\007isL" +
-      "ogin\022\025\n\006is_app\030\002 \001(\010R\005isApp\"\321\004\n\031ListAppC" +
-      "onnectionsRequest\022\200\001\n\tpage_size\030\001 \001(\rBc\222" +
-      "AY2SMaximum number of organizations to r" +
-      "eturn per page. Value must be between 1 " +
-      "and 30.J\00230\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_to" +
-      "ken\030\002 \001(\tB\205\001\222A\201\0012aToken from a previous " +
-      "response for pagination. Provide this to" +
-      " retrieve the next page of results.J\034eyJ" +
-      "wYWdlIjoyLCJsaW1pdCI6MzB9R\tpageToken\022U\n\010" +
-      "provider\030\003 \001(\tB4\222A(2\036Filter connections " +
-      "by providerJ\006\"OKTA\"\272H\006r\004\020\001\0302H\000R\010provider" +
-      "\210\001\001\022\232\001\n\005query\030\004 \001(\tB\177\222As2hFree-text sear" +
-      "ch that matches connections by connectio" +
-      "n name (key ID) or provider. Minimum 3 c" +
-      "haracters.J\007\"slack\"\272H\006r\004\020\003\030dH\001R\005query\210\001\001" +
-      "B\013\n\t_providerB\010\n\006_query\"\352\003\n\032ListAppConne" +
-      "ctionsResponse\022\201\001\n\013connections\030\001 \003(\0132\'.s" +
-      "calekit.v1.connections.ListConnectionB6\222" +
-      "A321List of connections matching the req" +
-      "uest criteriaR\013connections\022o\n\017next_page_" +
-      "token\030\002 \001(\tBG\222AD2\"Token for the next pag" +
-      "e of resultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6M" +
-      "zB9\"R\rnextPageToken\022s\n\017prev_page_token\030\003" +
-      " \001(\tBK\222AH2&Token for the previous page o" +
+      "e:\0028\001:\213\002\272H\207\002\032T\022$provider or provider_key" +
+      " is required\032,has(this.provider_key) || " +
+      "this.provider != 0\032`\022\036invalid value for " +
+      "provider_key\032>this.provider == 15 ? this" +
+      ".provider_key in [\'SCALEKIT\'] : true\032M\022\030" +
+      "invalid value for key_id\0321this.type == 9" +
+      " ? this.key_id == \'WEBAUTHN\' : trueB\n\n\010s" +
+      "ettingsB\t\n\007_key_idJ\004\010\001\020\002J\004\010\004\020\005J\004\010\005\020\006J\004\010\t" +
+      "\020\013J\004\010\014\020\017\"\200\001\n\030UpdateConnectionResponse\022d\n" +
+      "\nconnection\030\001 \001(\0132#.scalekit.v1.connecti" +
+      "ons.ConnectionB\037\222A\0342\032Updated Connection " +
+      "detailsR\nconnection\"\234\001\n\"DeleteEnvironmen" +
+      "tConnectionRequest\022v\n\rconnection_id\030\003 \001(" +
+      "\tBQ\222AE2+Connection ID. Unique ID for the" +
+      " connectionJ\026\"conn_121312434123312\"\272H\006r\004" +
+      "\020\001\030 R\014connectionId\"\365\001\n\027DeleteConnectionR" +
+      "equest\022q\n\017organization_id\030\001 \001(\tBH\222A<2#Or" +
+      "ganization ID for the Connection.J\025\"org_" +
+      "121312434123312\"\272H\006r\004\020\001\030 R\016organizationI" +
+      "d\022a\n\002id\030\003 \001(\tBQ\222AE2+Connection ID. Uniqu" +
+      "e ID for the connectionJ\026\"conn_121312434" +
+      "123312\"\272H\006r\004\020\001\030 R\002idJ\004\010\002\020\003\"\222\001\n\037GetEnviro" +
+      "nmentConnectionRequest\022o\n\rconnection_id\030" +
+      "\001 \001(\tBJ\222A>2$Unique identifier for the Co" +
+      "nnectionJ\026\"conn_121312434123312\"\272H\006r\004\020\001\030" +
+      " R\014connectionId\"\374\002\n\024GetConnectionRequest" +
+      "\022\272\001\n\017organization_id\030\001 \001(\tB\220\001\222A\203\0012jOrgan" +
+      "ization identifier (required). Specifies" +
+      " which organization owns the connection " +
+      "you want to retrieve.J\025\"org_121312434123" +
+      "312\"\272H\006r\004\020\001\030 R\016organizationId\022\240\001\n\002id\030\003 \001" +
+      "(\tB\217\001\222A\202\0012hConnection identifier (requir" +
+      "ed). Specifies which specific connection" +
+      " to retrieve from the organization.J\026\"co" +
+      "nn_121312434123312\"\272H\006r\004\020\001\030 R\002idJ\004\010\002\020\003\"\232" +
+      "\002\n\025GetConnectionResponse\022\200\002\n\nconnection\030" +
+      "\001 \001(\0132#.scalekit.v1.connections.Connecti" +
+      "onB\272\001\222A\266\0012\263\001Complete connection details " +
+      "including provider configuration, protoc" +
+      "ol settings, status, and all metadata. C" +
+      "ontains everything needed to understand " +
+      "the connection\'s current state.R\nconnect" +
+      "ion\"\226\004\n\026ListConnectionsRequest\022\200\001\n\017organ" +
+      "ization_id\030\001 \001(\tBR\222AF2-Filter connection" +
+      "s by organization identifierJ\025\"org_12131" +
+      "2434123312\"\272H\006r\004\020\001\030 H\000R\016organizationId\210\001" +
+      "\001\022\177\n\006domain\030\003 \001(\tBb\222AV2CFilter connectio" +
+      "ns by email domain associated with the o" +
+      "rganizationJ\017\"hero-saas.app\"\272H\006r\004\020\001\030 H\001R" +
+      "\006domain\210\001\001\022\306\001\n\007include\030\004 \001(\tB\246\001\222A\242\0012\237\001Fi" +
+      "lter connections by status. Use \'all\' to" +
+      " include all connections regardless of s" +
+      "tatus. Default behavior shows only activ" +
+      "e (completed and enabled) connectionsH\002R" +
+      "\007include\210\001\001B\022\n\020_organization_idB\t\n\007_doma" +
+      "inB\n\n\010_includeJ\004\010\002\020\003\"\235\001\n\027ListConnections" +
+      "Response\022\201\001\n\013connections\030\001 \003(\0132\'.scaleki" +
+      "t.v1.connections.ListConnectionB6\222A321Li" +
+      "st of connections matching the request c" +
+      "riteriaR\013connections\"\334\021\n\016ListConnection\022" +
+      "Q\n\002id\030\001 \001(\tBA\222A>2#Unique identifier of t" +
+      "he connectionJ\027\"conn_2123312131125533\"R\002" +
+      "id\022\215\001\n\010provider\030\002 \001(\0162+.scalekit.v1.conn" +
+      "ections.ConnectionProviderBD\222AA25Identit" +
+      "y provider type (e.g., OKTA, Google, Azu" +
+      "re AD)J\010\"CUSTOM\"R\010provider\022x\n\004type\030\003 \001(\016" +
+      "2\'.scalekit.v1.connections.ConnectionTyp" +
+      "eB;\222A82.Authentication protocol used by " +
+      "the connectionJ\006\"OIDC\"R\004type\022\210\001\n\006status\030" +
+      "\004 \001(\0162).scalekit.v1.connections.Connecti" +
+      "onStatusBE\222A?2.Current configuration sta" +
+      "tus of the connectionJ\r\"IN_PROGRESS\"\340A\003R" +
+      "\006status\022g\n\007enabled\030\005 \001(\010BM\222AJ2AWhether t" +
+      "he connection is currently active for or" +
+      "ganization usersJ\005falseR\007enabled\022\205\001\n\017org" +
+      "anization_id\030\006 \001(\tB\\\222AY2?Unique identifi" +
+      "er of the organization that owns this co" +
+      "nnectionJ\026\"org_2123312131125533\"R\016organi" +
+      "zationId\022\210\001\n\017ui_button_title\030\007 \001(\tB`\222AN2" +
+      ":Text displayed on the SSO login button " +
+      "for this connectionJ\020\"Login with SSO\"\372\322\344" +
+      "\223\002\t\022\007PREVIEWR\ruiButtonTitle\022t\n\007domains\030\010" +
+      " \003(\tBZ\222AW2/List of domains configured wi" +
+      "th this connectionJ$[\"yourapp.com\", \"you" +
+      "rworkspace.com\"]R\007domains\022q\n\021organizatio" +
+      "n_name\030\t \001(\tBD\222AA2*Name of the organizat" +
+      "ion of the connectionJ\023\"Your Organizatio" +
+      "n\"R\020organizationName\022u\n\014provider_key\030\n \001",
+      "(\tBR\222AO2CKey ID of the identity provider" +
+      " service that handles authenticationJ\010\"g" +
+      "oogle\"R\013providerKey\022\220\001\n\006key_id\030\013 \001(\tBy\222A" +
+      "v2[Alternative identifier for this conne" +
+      "ction, typically used in frontend applic" +
+      "ations or URLsJ\027\"conn_2123312131125533\"R" +
+      "\005keyId\022\220\001\n\ncreated_at\030\014 \001(\0132\032.google.pro" +
+      "tobuf.TimestampBU\222A@2&When this connecti" +
+      "on was first createdJ\026\"2023-01-15T14:30:" +
+      "00Z\"\340A\003\372\322\344\223\002\t\022\007PREVIEWR\tcreatedAt\022\220\003\n\016mc" +
+      "p_server_url\030\r \001(\tB\351\002\222A\342\0022\240\002MCP virtual " +
+      "server URL for this connection. Agents c" +
+      "an point directly at this URL to access " +
+      "only the tools for this connection, with" +
+      "out needing to call list_connections or " +
+      "execute_tool with a connection_name. Emp" +
+      "ty when the MCP virtual servers feature " +
+      "is not enabled for this environment.J=\"h" +
+      "ttps://acmecorp.scalekit.dev/mcp/v3/conn" +
+      "ections/gmail_work\"\340A\003R\014mcpServerUrl\022\314\002\n" +
+      "\tauth_mode\030\016 \001(\0162+.scalekit.v1.connectio" +
+      "ns.ConnectionAuthModeB\201\002\222A\375\0012\362\001Credentia" +
+      "l-sharing mode for this connection. USER" +
+      ": each end user authorizes their own cre" +
+      "dential. ORG_WIDE: one admin-authorized " +
+      "credential is shared across all users; e" +
+      "ach user still grants personal consent b" +
+      "efore it can act on their behalf.J\006\"USER" +
+      "\"R\010authMode\"\317\002\n\"ListOrganizationConnecti" +
+      "onsRequest\022\200\001\n\tpage_size\030\001 \001(\rBc\222AY2SMax" +
+      "imum number of organizations to return p" +
+      "er page. Value must be between 1 and 30." +
+      "J\00230\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token\030\002 \001" +
+      "(\tB\205\001\222A\201\0012aToken from a previous respons" +
+      "e for pagination. Provide this to retrie" +
+      "ve the next page of results.J\034eyJwYWdlIj" +
+      "oyLCJsaW1pdCI6MzB9R\tpageToken\"\227\002\n#ListOr" +
+      "ganizationConnectionsResponse\022&\n\017next_pa" +
+      "ge_token\030\001 \001(\tR\rnextPageToken\022\035\n\ntotal_s" +
+      "ize\030\002 \001(\rR\ttotalSize\022&\n\017prev_page_token\030" +
+      "\003 \001(\tR\rprevPageToken\022\200\001\n\013connections\030\004 \003" +
+      "(\0132\'.scalekit.v1.connections.ListConnect" +
+      "ionB5\222A220List of connections matching t" +
+      "he filter criteriaR\013connections\"\242\007\n$Sear" +
+      "chOrganizationConnectionsRequest\022l\n\005quer" +
+      "y\030\001 \001(\tBQ\222AG2-Search query Connection ID" +
+      " or Organization IDJ\026\"conn_1213124341233" +
+      "12\"\272H\004r\002\030dH\000R\005query\210\001\001\022@\n\010provider\030\002 \001(\t" +
+      "B\037\222A\0342\022Filter by providerJ\006\"OKTA\"H\001R\010pro" +
+      "vider\210\001\001\022}\n\006status\030\003 \001(\0162).scalekit.v1.c" +
+      "onnections.ConnectionStatusB5\222A*2\033Filter" +
+      " by connection statusJ\013\"COMPLETED\"\272H\005\202\001\002" +
+      "\020\001H\002R\006status\210\001\001\022\214\001\n\017connection_type\030\004 \001(" +
+      "\0162\'.scalekit.v1.connections.ConnectionTy" +
+      "peB5\222A*2\033Filter by connection statusJ\013\"C" +
+      "OMPLETED\"\272H\005\202\001\002\020\001H\003R\016connectionType\210\001\001\022O" +
+      "\n\007enabled\030\007 \001(\010B0\222A-2#Filter by connecti" +
+      "on enabled statusJ\006\"true\"H\004R\007enabled\210\001\001\022" +
+      "\200\001\n\tpage_size\030\005 \001(\rBc\222AY2SMaximum number" +
+      " of organizations to return per page. Va" +
+      "lue must be between 1 and 30.J\00230\272H\004*\002\030\036" +
+      "R\010pageSize\022\245\001\n\npage_token\030\006 \001(\tB\205\001\222A\201\0012a" +
+      "Token from a previous response for pagin" +
+      "ation. Provide this to retrieve the next" +
+      " page of results.J\034eyJwYWdlIjoyLCJsaW1pd" +
+      "CI6MzB9R\tpageTokenB\010\n\006_queryB\013\n\t_provide" +
+      "rB\t\n\007_statusB\022\n\020_connection_typeB\n\n\010_ena" +
+      "bled\"\231\002\n%SearchOrganizationConnectionsRe" +
+      "sponse\022&\n\017next_page_token\030\001 \001(\tR\rnextPag" +
+      "eToken\022\035\n\ntotal_size\030\002 \001(\rR\ttotalSize\022&\n" +
+      "\017prev_page_token\030\003 \001(\tR\rprevPageToken\022\200\001" +
+      "\n\013connections\030\004 \003(\0132\'.scalekit.v1.connec" +
+      "tions.ListConnectionB5\222A220List of conne" +
+      "ctions matching the filter criteriaR\013con" +
+      "nections\"\234\001\n\"ToggleEnvironmentConnection" +
+      "Request\022v\n\rconnection_id\030\002 \001(\tBQ\222AE2+Con" +
+      "nection ID. Unique ID for the connection" +
+      "J\026\"conn_121312434123312\"\272H\006r\004\020\001\030 R\014conne" +
+      "ctionId\"\236\002\n\027ToggleConnectionRequest\022\222\001\n\017" +
+      "organization_id\030\001 \001(\tBi\222A]2DUnique ident" +
+      "ifier of the organization associated wit" +
+      "h the connectionJ\025\"org_121312434123312\"\272" +
+      "H\006r\004\020\001\030 R\016organizationId\022h\n\002id\030\003 \001(\tBX\222A" +
+      "L22Unique identifier for the connection " +
+      "to be toggledJ\026\"conn_121312434123312\"\272H\006" +
+      "r\004\020\001\030 R\002idJ\004\010\002\020\003\"\274\002\n\030ToggleConnectionRes" +
+      "ponse\022\251\001\n\007enabled\030\001 \001(\010B\216\001\222A\212\0012\201\001Current" +
+      " state of the connection after the opera" +
+      "tion. True means the connection is now e" +
+      "nabled and can be used for authenticatio" +
+      "n.J\004trueR\007enabled\022b\n\rerror_message\030\002 \001(\t" +
+      "B8\222A52$Error message if the operation fa" +
+      "ilsJ\r\"placeholder\"H\000R\014errorMessage\210\001\001B\020\n" +
+      "\016_error_message\"\240\022\n\024OIDCConnectionConfig" +
+      "\022j\n\006issuer\030\001 \001(\0132\034.google.protobuf.Strin" +
+      "gValueB4\222A12\nIssuer URLJ#\"https://yourid" +
+      "p.com/service/oauth\"R\006issuer\022\252\001\n\022discove" +
+      "ry_endpoint\030\002 \001(\0132\034.google.protobuf.Stri" +
+      "ngValueB]\222AZ2\022Discovery EndpointJD\"https" +
+      "://youridp.com/service/oauth/.well-known" +
+      "/openid-configuration\"R\021discoveryEndpoin" +
+      "t\022\204\001\n\rauthorize_uri\030\003 \001(\0132\034.google.proto" +
+      "buf.StringValueBA\222A>2\rAuthorize URIJ-\"ht" +
+      "tps://youridp.com/service/oauth/authoriz" +
+      "e\"R\014authorizeUri\022t\n\ttoken_uri\030\004 \001(\0132\034.go" +
+      "ogle.protobuf.StringValueB9\222A62\tToken UR" +
+      "IJ)\"https://youridp.com/service/oauth/to" +
+      "ken\"R\010tokenUri\022\202\001\n\ruser_info_uri\030\005 \001(\0132\034" +
+      ".google.protobuf.StringValueB@\222A=2\rUser " +
+      "Info URIJ,\"https://youridp.com/service/o" +
+      "auth/userinfo\"R\013userInfoUri\022p\n\010jwks_uri\030" +
+      "\006 \001(\0132\034.google.protobuf.StringValueB7\222A4" +
+      "2\010JWKS URIJ(\"https://youridp.com/service" +
+      "/oauth/jwks\"R\007jwksUri\022\\\n\tclient_id\030\010 \001(\013" +
+      "2\034.google.protobuf.StringValueB!\222A\0362\tCli" +
+      "ent IDJ\021\"oauth_client_id\"R\010clientId\022l\n\rc" +
+      "lient_secret\030\t \001(\0132\034.google.protobuf.Str" +
+      "ingValueB)\222A&2\rClient SecretJ\025\"oauth_cli" +
+      "ent_secret\"R\014clientSecret\022c\n\006scopes\030\n \003(" +
+      "\0162\".scalekit.v1.connections.OIDCScopeB\'\222" +
+      "A$2\013OIDC ScopesJ\025[\"openid\", \"profile\"]R\006" +
+      "scopes\022r\n\017token_auth_type\030\013 \001(\0162&.scalek" +
+      "it.v1.connections.TokenAuthTypeB\"\222A\0372\017To" +
+      "ken Auth TypeJ\014\"URL_PARAMS\"R\rtokenAuthTy" +
+      "pe\022j\n\014redirect_uri\030\014 \001(\tBG\222AD2\014Redirect " +
+      "URIJ4\"https://yourapp.com/sso/v1/oidc/co" +
+      "nn_1234/callback\"R\013redirectUri\022V\n\014pkce_e" +
+      "nabled\030\r \001(\0132\032.google.protobuf.BoolValue" +
+      "B\027\222A\0242\014PKCE EnabledJ\004trueR\013pkceEnabled\022h" +
+      "\n\023idp_logout_required\030\016 \001(\0132\032.google.pro" +
+      "tobuf.BoolValueB\034\222A\0312\021Enable IDP logoutJ" +
+      "\004trueR\021idpLogoutRequired\022\264\001\n\030post_logout" +
+      "_redirect_uri\030\017 \001(\0132\034.google.protobuf.St" +
+      "ringValueB]\222AW2\030post logout redirect uri" +
+      "J;\"https://yourapp.com/sso/v1/oidc/conn_" +
+      "1234/logout/callback\"\340A\003R\025postLogoutRedi" +
+      "rectUri\022\352\001\n\037backchannel_logout_redirect_" +
+      "uri\030\020 \001(\0132\034.google.protobuf.StringValueB" +
+      "\204\001\222A~2<backchannel logout redirect uri w" +
+      "here idp sends logout_tokenJ>\"https://yo" +
+      "urapp.com/sso/v1/oidc/conn_1234/backchan" +
+      "nel-logout\"\340A\003R\034backchannelLogoutRedirec" +
+      "tUri\022\306\001\n\032sync_user_profile_on_login\030\021 \001(" +
+      "\0132\032.google.protobuf.BoolValueBn\222Ak2cIndi" +
+      "cates whether user profiles should be sy" +
+      "nchronized with the identity provider up" +
+      "on each log-in.J\004trueR\026syncUserProfileOn" +
+      "Login\022\272\001\n!jit_provisioning_with_sso_enab" +
+      "led\030\022 \001(\0132\032.google.protobuf.BoolValueBT\222" +
+      "AQ2IIndicates if Just In Time user provi" +
+      "sioning is enabled for the connectionJ\004t" +
+      "rueR\035jitProvisioningWithSsoEnabled\"\323\036\n\025O" +
+      "AuthConnectionConfig\022\204\001\n\rauthorize_uri\030\003" +
+      " \001(\0132\034.google.protobuf.StringValueBA\222A>2" +
+      "\rAuthorize URIJ-\"https://youridp.com/ser" +
+      "vice/oauth/authorize\"R\014authorizeUri\022t\n\tt" +
+      "oken_uri\030\004 \001(\0132\034.google.protobuf.StringV" +
+      "alueB9\222A62\tToken URIJ)\"https://youridp.c" +
+      "om/service/oauth/token\"R\010tokenUri\022\202\001\n\rus" +
+      "er_info_uri\030\005 \001(\0132\034.google.protobuf.Stri" +
+      "ngValueB@\222A=2\rUser Info URIJ,\"https://yo" +
+      "uridp.com/service/oauth/userinfo\"R\013userI" +
+      "nfoUri\022\\\n\tclient_id\030\010 \001(\0132\034.google.proto" +
+      "buf.StringValueB!\222A\0362\tClient IDJ\021\"oauth_" +
+      "client_id\"R\010clientId\022l\n\rclient_secret\030\t " +
+      "\001(\0132\034.google.protobuf.StringValueB)\222A&2\r" +
+      "Client SecretJ\025\"oauth_client_secret\"R\014cl" +
+      "ientSecret\022?\n\006scopes\030\n \003(\tB\'\222A$2\013OIDC Sc" +
+      "opesJ\025[\"openid\", \"profile\"]R\006scopes\022b\n\014r" +
+      "edirect_uri\030\014 \001(\tB?\222A<2\014Redirect URIJ,\"h" +
+      "ttps://yourapp.com/service/oauth/redirec" +
+      "t\"R\013redirectUri\022V\n\014pkce_enabled\030\r \001(\0132\032." +
+      "google.protobuf.BoolValueB\027\222A\0242\014PKCE Ena" +
+      "bledJ\004trueR\013pkceEnabled\022V\n\006prompt\030\016 \001(\0132" +
+      "\034.google.protobuf.StringValueB \222A\0352\023Prom" +
+      "pt for the userJ\006\"none\"R\006prompt\022m\n\022use_p" +
+      "latform_creds\030\017 \001(\0132\032.google.protobuf.Bo" +
+      "olValueB#\222A 2\030Use Scalekit credentialsJ\004" +
+      "trueR\020usePlatformCreds\022Z\n\013access_type\030\020 " +
+      "\001(\0132\034.google.protobuf.StringValueB\033\222A\0302\013" +
+      "Access TypeJ\t\"offline\"R\naccessType\022n\n\021cu" +
+      "stom_scope_name\030\021 \001(\0132\034.google.protobuf." +
+      "StringValueB$\222A!2\021Custom Scope NameJ\014\"us" +
+      "er_scope\"R\017customScopeName\022\306\001\n\032sync_user" +
+      "_profile_on_login\030\022 \001(\0132\032.google.protobu" +
+      "f.BoolValueBn\222Ak2cIndicates whether user" +
+      " profiles should be synchronized with th" +
+      "e identity provider upon each log-in.J\004t" +
+      "rueR\026syncUserProfileOnLogin\022k\n\021token_acc" +
+      "ess_type\030\023 \001(\0132\034.google.protobuf.StringV" +
+      "alueB!\222A\0362\021Token Access TypeJ\t\"offline\"R" +
+      "\017tokenAccessType\022\204\002\n\ttenant_id\030\024 \001(\0132\034.g" +
+      "oogle.protobuf.StringValueB\310\001\222A\304\0012\231\001Micr" +
+      "osoft Entra tenant ID. Required when usi" +
+      "ng a single-tenant or multi-tenant app r" +
+      "egistered in Microsoft Entra. Leave empt" +
+      "y to use the common endpoint.J&\"xxxxxxxx" +
+      "-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"R\010tenantId\022" +
+      "\307\001\n\007is_cimd\030\025 \001(\0132\032.google.protobuf.Bool" +
+      "ValueB\221\001\222A\212\0012\201\001Indicates whether this co" +
+      "nnection was registered using Client ID " +
+      "Metadata Document (CIMD) instead of Dyna" +
+      "mic Client Registration.J\004true\340A\003R\006isCim" +
+      "d\022\276\001\n\010app_name\030\026 \001(\0132\034.google.protobuf.S" +
+      "tringValueB\204\001\222A\200\0012mApplication name used" +
+      " by providers that require it as an auth" +
+      "orize query parameter (e.g., Trello\'s ap" +
+      "p_name).J\017\"My Trello App\"R\007appName\022\372\001\n\017o" +
+      "ptional_scopes\030\027 \001(\0132\'.scalekit.v1.conne" +
+      "ctions.OptionalScopesB\242\001\222A\236\0012\233\001Optional " +
+      "scopes configuration for identity provid" +
+      "ers that support or require additional s" +
+      "copes to be sent in a custom field durin" +
+      "g authentication requests.H\000R\016optionalSc" +
+      "opes\210\001\001\022\217\002\n\nextensions\030\030 \001(\0132(.scalekit." +
+      "v1.connections.OauthExtensionsB\277\001\222A\273\0012\270\001" +
+      "OAuth extension profiles for this connec" +
+      "tion, such as SMART on FHIR. Carries typ" +
+      "ed extension configuration plus a generi" +
+      "c escape hatch for provider-specific aut" +
+      "horize query parameters.H\001R\nextensions\210\001" +
+      "\001\022\370\003\n\032token_endpoint_auth_method\030\031 \001(\0132\034" +
+      ".google.protobuf.StringValueB\234\003\222A\230\0032\376\002Ho" +
+      "w client credentials are sent to the tok" +
+      "en endpoint during the authorization_cod" +
+      "e exchange. One of \"client_secret_basic\"" +
+      " (HTTP Basic Auth, required by some prov" +
+      "iders e.g. Reddit), \"client_secret_post\"" +
+      " (POST body params), or \"none\". Leave un" +
+      "set to keep the current default (POST bo" +
+      "dy params). Does not affect token refres" +
+      "h, which currently uses a separate auto-" +
+      "detected auth style.J\025\"client_secret_bas" +
+      "ic\"R\027tokenEndpointAuthMethod\022\346\004\n\031googlea" +
+      "ds_developer_token\030\032 \001(\0132\034.google.protob" +
+      "uf.StringValueB\213\004\222A\207\0042\352\003Google Ads API d" +
+      "eveloper token, issued once per company " +
+      "from the Google Ads API Center. Applies " +
+      "only to the GOOGLEADS provider, which re" +
+      "quires this static application-level cre" +
+      "dential on every REST call alongside the" +
+      " user\'s OAuth access token. Configure it" +
+      " once per connection; Scalekit stores it" +
+      " encrypted and injects it as the develop" +
+      "er-token header at tool-call time, so in" +
+      "dividual tool calls never carry it. Read" +
+      " responses return the value masked, show" +
+      "ing only the last four characters.J\030\"ABc" +
+      "DeFgHiJkLmNoPqRsTuV\"R\027googleadsDeveloper" +
+      "TokenB\022\n\020_optional_scopesB\r\n\013_extensions" +
+      "\"\231\005\n\017OauthExtensions\022\326\001\n\005smart\030\001 \001(\0132$.s" +
+      "calekit.v1.connections.SmartConfigB\224\001\222A\220" +
+      "\0012\215\001SMART on FHIR (SMART App Launch) con" +
+      "figuration. Set this to issue a SMART-co" +
+      "mpliant standalone launch authorization " +
+      "request to a FHIR server.H\000R\005smart\210\001\001\022\331\002" +
+      "\n\026extra_authorize_params\030\002 \003(\0132B.scaleki" +
+      "t.v1.connections.OauthExtensions.ExtraAu" +
+      "thorizeParamsEntryB\336\001\222A\332\0012\275\001Provider-spe" +
+      "cific query parameters added to the auth" +
+      "orization request. Reserved OAuth/OIDC p" +
+      "arameters (client_id, redirect_uri, scop" +
+      "e, state, code_challenge, aud, and simil" +
+      "ar) are rejected.J\030{\"custom_param\":\"valu" +
+      "e\"}R\024extraAuthorizeParams\032G\n\031ExtraAuthor" +
+      "izeParamsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value:\0028\001B\010\n\006_smart\"\257\003\n\013SmartCo" +
+      "nfig\022\346\001\n\003aud\030\001 \001(\tB\323\001\222A\317\0012\255\001FHIR resourc" +
+      "e server base URL, sent as the required " +
+      "\'aud\' authorization parameter per the SM" +
+      "ART App Launch specification. Binds the " +
+      "issued token to the intended FHIR server" +
+      ".J\035\"https://fhir.example.com/r4\"R\003aud\022\266\001" +
+      "\n\006domain\030\002 \001(\tB\235\001\222A\231\0012\202\001FHIR server doma" +
+      "in for the SMART on FHIR connection. Sto" +
+      "red alongside the audience and editable " +
+      "through the connection update API.J\022\"fhi" +
+      "r.example.com\"R\006domain\"\246\003\n\016OptionalScope" +
+      "s\022v\n\006scopes\030\001 \003(\tB^\222A[2CList of optional" +
+      " scopes that can be requested during aut" +
+      "henticationJ\024[\"scope1\", \"scope2\"]R\006scope" +
+      "s\022\233\002\n\nfield_name\030\002 \001(\tB\373\001\222A\367\0012\325\001Name of " +
+      "the field in which scope should be sent " +
+      "in the authentication request. This is r" +
+      "equired by some identity providers that " +
+      "expect scopes to be sent in a custom fie" +
+      "ld instead of the standard \'scope\' param" +
+      "eter.J\035\"optional_scope or bot_scope\"R\tfi" +
+      "eldName\"\200\003\n\017GoogleDWDConfig\022\247\001\n\024service_" +
+      "account_json\030\001 \001(\0132\034.google.protobuf.Str" +
+      "ingValueBW\222AQ2OGoogle Cloud service acco" +
+      "unt JSON key. Write-only: reads return a" +
+      " masked value.\340A\004R\022serviceAccountJson\0229\n" +
+      "\006scopes\030\002 \003(\tB!\222A\0362\034OAuth 2.0 scopes to " +
+      "request.R\006scopes\022\207\001\n\ttoken_uri\030\003 \001(\0132\034.g" +
+      "oogle.protobuf.StringValueBL\222AI2GGoogle " +
+      "token endpoint. Defaults to https://oaut" +
+      "h2.googleapis.com/token.R\010tokenUri\"\364\007\n\022P" +
+      "asswordLessConfig\022]\n\004type\030\001 \001(\0162).scalek" +
+      "it.v1.connections.PasswordlessTypeB\036\222A\0332" +
+      "\021Passwordless TypeJ\006\"LINK\"R\004type\022W\n\tfreq" +
+      "uency\030\002 \001(\0132\034.google.protobuf.UInt32Valu" +
+      "eB\026\222A\0232\016Link FrequencyJ\0011H\000R\tfrequency\210\001" +
+      "\001\022a\n\010validity\030\003 \001(\0132\034.google.protobuf.UI" +
+      "nt32ValueB\"\222A\0372\030Link Validity in Seconds" +
+      "J\003600H\001R\010validity\210\001\001\022\206\001\n\033enforce_same_br" +
+      "owser_origin\030\004 \001(\0132\032.google.protobuf.Boo" +
+      "lValueB&\222A#2\033Enforce Same Browser Origin" +
+      "J\004trueH\002R\030enforceSameBrowserOrigin\210\001\001\022t\n" +
+      "\025code_challenge_length\030\005 \001(\0132\034.google.pr" +
+      "otobuf.UInt32ValueB\035\222A\0322\025Code Challenge " +
+      "LengthJ\0016H\003R\023codeChallengeLength\210\001\001\022\204\001\n\023" +
+      "code_challenge_type\030\006 \001(\0162*.scalekit.v1." +
+      "connections.CodeChallengeTypeB#\222A 2\023Code" +
+      " Challenge TypeJ\t\"NUMERIC\"H\004R\021codeChalle" +
+      "ngeType\210\001\001\022\235\001\n-regenerate_passwordless_c" +
+      "redentials_on_resend\030\007 \001(\0132\032.google.prot" +
+      "obuf.BoolValueB\032\222A\0272\017Regenerate the J\004tr" +
+      "ueH\005R)regeneratePasswordlessCredentialsO" +
+      "nResend\210\001\001B\014\n\n_frequencyB\013\n\t_validityB\036\n" +
+      "\034_enforce_same_browser_originB\030\n\026_code_c" +
+      "hallenge_lengthB\026\n\024_code_challenge_typeB" +
+      "0\n._regenerate_passwordless_credentials_" +
+      "on_resend\"P\n\020StaticAuthConfig\022<\n\rstatic_" +
+      "config\030\001 \001(\0132\027.google.protobuf.StructR\014s" +
+      "taticConfig\"\304\"\n\024WebAuthConfiguration\022@\n\002" +
+      "rp\030\001 \001(\01320.scalekit.v1.connections.WebAu" +
+      "thConfiguration.RpR\002rp\022[\n\013attestation\030\002 " +
+      "\001(\01329.scalekit.v1.connections.WebAuthCon" +
+      "figuration.AttestationR\013attestation\022d\n\016a" +
+      "uthenticators\030\003 \001(\0132<.scalekit.v1.connec" +
+      "tions.WebAuthConfiguration.Authenticator" +
+      "sR\016authenticators\022}\n\027authenticator_selec" +
+      "tion\030\004 \001(\0132D.scalekit.v1.connections.Web" +
+      "AuthConfiguration.AuthenticatorSelection" +
+      "R\026authenticatorSelection\022O\n\007timeout\030\005 \001(" +
+      "\01325.scalekit.v1.connections.WebAuthConfi" +
+      "guration.TimeoutR\007timeout\022d\n\030enable_auto" +
+      "_registration\030\006 \001(\010B*\222A\'2%Enable auto re" +
+      "gistration for WebAuthnR\026enableAutoRegis" +
+      "tration\022X\n\023show_passkey_button\030\007 \001(\010B(\222A" +
+      "%2#Show passkey button on login screenR\021" +
+      "showPasskeyButton\022g\n\030enable_conditional_" +
+      "login\030\010 \001(\010B-\222A*2(Allow autofill of pass" +
+      "keys in login pageR\026enableConditionalLog" +
+      "in\032H\n\002Rp\022\034\n\003ids\030\001 \003(\tB\n\272H\007\222\001\004\010\001\020\nR\003ids\022$" +
+      "\n\007origins\030\002 \003(\tB\n\272H\007\222\001\004\010\001\020\nR\007origins\032\301\001\n" +
+      "\013Attestation\022p\n\025conveyance_preference\030\001 " +
+      "\001(\0132\034.google.protobuf.StringValueB\035\272H\032r\030" +
+      "R\004noneR\010indirectR\006directR\024conveyancePref" +
+      "erence\022@\n\027enterprise_approved_ids\030\002 \003(\tB" +
+      "\010\272H\005\222\001\002\0202R\025enterpriseApprovedIds\032\360\023\n\016Aut" +
+      "henticators\022\333\002\n\016validate_entry\030\001 \001(\0132\032.g" +
+      "oogle.protobuf.BoolValueB\227\002\222A\223\002\032\032.google" +
+      ".protobuf.BoolValue2\364\001requires that the " +
+      "provided metadata has an entry for the g" +
+      "iven authenticator to be considered vali" +
+      "d. By default an AAGUID which has a zero" +
+      " value should fail validation if validat" +
+      "e_entry_permit_zero_aaguid is not provid" +
+      "ed with the value of true.R\rvalidateEntr" +
+      "y\022\217\002\n!validate_entry_permit_zero_aaguid\030" +
+      "\002 \001(\0132\032.google.protobuf.BoolValueB\250\001\222A\244\001" +
+      "2\241\001is an option that permits a zero\'d AA" +
+      "GUID from an attestation statement to au" +
+      "tomatically pass metadata validations. G" +
+      "enerally helpful to use with validate_en" +
+      "try.R\035validateEntryPermitZeroAaguid\022\306\001\n\020" +
+      "validate_anchors\030\003 \001(\0132\032.google.protobuf" +
+      ".BoolValueB\177\222A|2zwhen set to true enable" +
+      "s the validation of the attestation stat" +
+      "ement against the trust anchor from the " +
+      "metadata statement.R\017validateAnchors\022\276\001\n" +
+      "\017validate_status\030\004 \001(\0132\032.google.protobuf" +
+      ".BoolValueBy\222Av2twhen set to true enable" +
+      "s the validation of the attestation stat" +
+      "ements AAGUID against the desired and un" +
+      "desired listsR\016validateStatus\022\341\001\n\031valida" +
+      "te_attestation_type\030\005 \001(\0132\032.google.proto" +
+      "buf.BoolValueB\210\001\222A\204\0012\201\001when set to true " +
+      "enables the validation of the attestatio" +
+      "n statements type against the known type" +
+      "s the authenticator can produce.R\027valida" +
+      "teAttestationType\022\273\004\n\034desired_authentica" +
+      "tor_status\030\006 \003(\tB\370\003\222A\235\0012\226\001provides the l" +
+      "ist of statuses which are considered und" +
+      "esirable for status report validation pu" +
+      "rposes. Should be used with validate_sta" +
+      "tus set to true.:\002[]\272H\323\002\222\001\317\002\020\n\"\312\002r\307\002R\022NO" +
+      "T_FIDO_CERTIFIEDR\016FIDO_CERTIFIEDR\030USER_V" +
+      "ERIFICATION_BYPASSR\032ATTESTATION_KEY_COMP" +
+      "ROMISER\032USER_KEY_REMOTE_COMPROMISER\034USER" +
+      "_KEY_PHYSICAL_COMPROMISER\020UPDATE_AVAILAB" +
+      "LER\007REVOKEDR\030SELF_ASSERTION_SUBMITTEDR\021F" +
+      "IDO_CERTIFIED_L1R\025FIDO_CERTIFIED_L1plusR" +
+      "\021FIDO_CERTIFIED_L2R\025FIDO_CERTIFIED_L2plu" +
+      "sR\021FIDO_CERTIFIED_L3R\025FIDO_CERTIFIED_L3p" +
+      "lusR\032desiredAuthenticatorStatus\022\301\005\n\036unde" +
+      "sired_authenticator_status\030\007 \003(\tB\372\004\222A\237\0022" +
+      "\226\001provides the list of statuses which ar",
+      "e considered undesirable for status repo" +
+      "rt validation purposes. Should be used w" +
+      "ith validate_status set to true.:\203\001[\'ATT" +
+      "ESTATION_KEY_COMPROMISE\', \'USER_VERIFICA" +
+      "TION_BYPASS\', \'USER_KEY_REMOTE_COMPROMIS" +
+      "E\', \'USER_KEY_PHYSICAL_COMPROMISE\', \'REV" +
+      "OKED\']\272H\323\002\222\001\317\002\020\n\"\312\002r\307\002R\022NOT_FIDO_CERTIFI" +
+      "EDR\016FIDO_CERTIFIEDR\030USER_VERIFICATION_BY" +
+      "PASSR\032ATTESTATION_KEY_COMPROMISER\032USER_K" +
+      "EY_REMOTE_COMPROMISER\034USER_KEY_PHYSICAL_" +
+      "COMPROMISER\020UPDATE_AVAILABLER\007REVOKEDR\030S" +
+      "ELF_ASSERTION_SUBMITTEDR\021FIDO_CERTIFIED_" +
+      "L1R\025FIDO_CERTIFIED_L1plusR\021FIDO_CERTIFIE" +
+      "D_L2R\025FIDO_CERTIFIED_L2plusR\021FIDO_CERTIF" +
+      "IED_L3R\025FIDO_CERTIFIED_L3plusR\034undesired" +
+      "AuthenticatorStatus\032\206\002\n\026AuthenticatorSel" +
+      "ection\022r\n\021user_verification\030\001 \001(\0132\034.goog" +
+      "le.protobuf.StringValueB\'\272H$r\"R\010required" +
+      "R\tpreferredR\013discouragedR\020userVerificati" +
+      "on\022x\n\030authenticator_attachment\030\002 \001(\0132\034.g" +
+      "oogle.protobuf.StringValueB\037\272H\034r\032R\010platf" +
+      "ormR\016cross-platformR\027authenticatorAttach" +
+      "ment\032\243\004\n\007Timeout\022x\n\014registration\030\001 \001(\0132\031" +
+      ".google.protobuf.DurationB9\222A\'2\035Registra" +
+      "tion timeout duration:\006\"300s\"\272H\014\252\001\t\"\003\010\210\016" +
+      "2\002\010xR\014registration\022\245\001\n\020registration_uvd\030" +
+      "\002 \001(\0132\031.google.protobuf.DurationB_\222AM2CR" +
+      "egistration timeout duration when user v" +
+      "erification is discouraged:\006\"300s\"\272H\014\252\001\t" +
+      "\"\003\010\210\0162\002\010xR\017registrationUvd\022c\n\005login\030\003 \001(" +
+      "\0132\031.google.protobuf.DurationB2\222A 2\026Login" +
+      " timeout duration:\006\"300s\"\272H\014\252\001\t\"\003\010\210\0162\002\010x" +
+      "R\005login\022\220\001\n\tlogin_uvd\030\004 \001(\0132\031.google.pro" +
+      "tobuf.DurationBX\222AF2<Login timeout durat" +
+      "ion when user verification is discourage" +
+      "d:\006\"300s\"\272H\014\252\001\t\"\003\010\210\0162\002\010xR\010loginUvd\"\367\025\n\033S" +
+      "AMLConnectionConfigRequest\022\212\001\n\020idp_metad" +
+      "ata_url\030\001 \001(\0132\034.google.protobuf.StringVa" +
+      "lueBB\222A?2\020IDP Metadata URLJ+\"https://you" +
+      "ridp.com/service/saml/metadata\"R\016idpMeta" +
+      "dataUrl\022x\n\ridp_entity_id\030\002 \001(\0132\034.google." +
+      "protobuf.StringValueB6\222A32\rIDP Entity ID" +
+      "J\"\"https://youridp.com/service/saml\"R\013id" +
+      "pEntityId\022v\n\013idp_sso_url\030\003 \001(\0132\034.google." +
+      "protobuf.StringValueB8\222A52\013IDP SSO URLJ&" +
+      "\"https://youridp.com/service/saml/sso\"R\t" +
+      "idpSsoUrl\022[\n\017idp_certificate\030\004 \001(\0132\034.goo" +
+      "gle.protobuf.StringValueB\024\222A\0212\017IDP Certi" +
+      "ficateR\016idpCertificate\022v\n\013idp_slo_url\030\005 " +
+      "\001(\0132\034.google.protobuf.StringValueB8\222A52\013" +
+      "IDP SLO URLJ&\"https://youridp.com/servic" +
+      "e/saml/slo\"R\tidpSloUrl\022l\n\017ui_button_titl" +
+      "e\030\006 \001(\0132\034.google.protobuf.StringValueB&\222" +
+      "A#2\017UI Button TitleJ\020\"Login with SSO\"R\ru" +
+      "iButtonTitle\022t\n\022idp_name_id_format\030\007 \001(\016" +
+      "2%.scalekit.v1.connections.NameIdFormatB" +
+      " \222A\0352\022IDP Name ID FormatJ\007\"EMAIL\"R\017idpNa" +
+      "meIdFormat\022\211\001\n\027idp_sso_request_binding\030\010" +
+      " \001(\0162\'.scalekit.v1.connections.RequestBi" +
+      "ndingB)\222A&2\027IDP SSO Request BindingJ\013\"HT" +
+      "TP_POST\"R\024idpSsoRequestBinding\022\215\001\n\027idp_s" +
+      "lo_request_binding\030\t \001(\0162\'.scalekit.v1.c" +
+      "onnections.RequestBindingB-\222A*2\027IDP SLO " +
+      "Request BindingJ\017\"HTTP_REDIRECT\"R\024idpSlo" +
+      "RequestBinding\022\223\001\n\023saml_signing_option\030\n" +
+      " \001(\0162+.scalekit.v1.connections.SAMLSigni" +
+      "ngOptionsB6\222A32\023SAML Signing OptionJ\034\"SA" +
+      "ML_ONLY_RESPONSE_SIGNING\"R\021samlSigningOp" +
+      "tion\022S\n\013force_authn\030\016 \001(\0132\032.google.proto" +
+      "buf.BoolValueB\026\222A\0232\013Force AuthnJ\004trueR\nf" +
+      "orceAuthn\022\226\001\n\024default_redirect_uri\030\017 \001(\013" +
+      "2\034.google.protobuf.StringValueBF\222AC2\024Def" +
+      "ault Redirect URIJ+\"https://yourapp.com/" +
+      "service/saml/redirect\"R\022defaultRedirectU" +
+      "ri\022k\n\023assertion_encrypted\030\020 \001(\0132\032.google" +
+      ".protobuf.BoolValueB\036\222A\0332\023Assertion Encr" +
+      "yptedJ\004trueR\022assertionEncrypted\022j\n\023want_" +
+      "request_signed\030\021 \001(\0132\032.google.protobuf.B" +
+      "oolValueB\036\222A\0332\023Want Request SignedJ\004true" +
+      "R\021wantRequestSigned\022q\n\016certificate_id\030\022 " +
+      "\001(\0132\034.google.protobuf.StringValueB,\222A)2\016" +
+      "Certificate IDJ\027\"cer_35585423166144613\"R" +
+      "\rcertificateId\022b\n\020idp_slo_required\030\023 \001(\013" +
+      "2\032.google.protobuf.BoolValueB\034\222A\0312\021Enabl" +
+      "e IDP logoutJ\004trueR\016idpSloRequired\022\220\001\n\014s" +
+      "p_entity_id\030\024 \001(\0132\034.google.protobuf.Stri" +
+      "ngValueBP\222AM2\032Service Provider Entity ID" +
+      "J/\"https://env.scalekit.com/sso/v1/saml/" +
+      "conn_123\"R\nspEntityId\022\237\001\n\020sp_assertion_u" +
+      "rl\030\025 \001(\0132\034.google.protobuf.StringValueBW" +
+      "\222AT2\030Service Provider SSO URLJ8\"https://" +
+      "env.scalekit.com/sso/v1/saml/conn_123/ca" +
+      "llback\"R\016spAssertionUrl\022\216\001\n\nsp_slo_url\030\026" +
+      " \001(\0132\034.google.protobuf.StringValueBR\222AO2" +
+      "\030Service Provider SLO URLJ3\"https://env." +
+      "scalekit.com/sso/v1/saml/conn_123/slo\"R\010" +
+      "spSloUrl\022\306\001\n\032sync_user_profile_on_login\030" +
+      "\027 \001(\0132\032.google.protobuf.BoolValueBn\222Ak2c" +
+      "Indicates whether user profiles should b" +
+      "e synchronized with the identity provide" +
+      "r upon each log-in.J\004trueR\026syncUserProfi" +
+      "leOnLogin\022\272\001\n!jit_provisioning_with_sso_" +
+      "enabled\030\030 \001(\0132\032.google.protobuf.BoolValu" +
+      "eBT\222AQ2IIndicates if Just In Time user p" +
+      "rovisioning is enabled for the connectio" +
+      "nJ\004trueR\035jitProvisioningWithSsoEnabledJ\004" +
+      "\010\013\020\014\"\377\026\n\034SAMLConnectionConfigResponse\022W\n" +
+      "\014sp_entity_id\030\001 \001(\tB5\222A22\014SP Entity IDJ\"" +
+      "\"https://yourapp.com/service/saml\"R\nspEn" +
+      "tityId\022m\n\020sp_assertion_url\030\002 \001(\tBC\222A@2\020S" +
+      "P Assertion URLJ,\"https://youridp.com/se" +
+      "rvice/saml/assertion\"R\016spAssertionUrl\022i\n" +
+      "\017sp_metadata_url\030\003 \001(\tBA\222A>2\017SP Metadata" +
+      " URLJ+\"https://youridp.com/service/saml/" +
+      "metadata\"R\rspMetadataUrl\022\212\001\n\020idp_metadat" +
+      "a_url\030\004 \001(\0132\034.google.protobuf.StringValu" +
+      "eBB\222A?2\020IDP Metadata URLJ+\"https://youri" +
+      "dp.com/service/saml/metadata\"R\016idpMetada" +
+      "taUrl\022x\n\ridp_entity_id\030\005 \001(\0132\034.google.pr" +
+      "otobuf.StringValueB6\222A32\rIDP Entity IDJ\"" +
+      "\"https://youridp.com/service/saml\"R\013idpE" +
+      "ntityId\022v\n\013idp_sso_url\030\006 \001(\0132\034.google.pr" +
+      "otobuf.StringValueB8\222A52\013IDP SSO URLJ&\"h" +
+      "ttps://youridp.com/service/saml/sso\"R\tid" +
+      "pSsoUrl\022i\n\020idp_certificates\030\007 \003(\0132\'.scal" +
+      "ekit.v1.connections.IDPCertificateB\025\222A\0222" +
+      "\020IDP CertificatesR\017idpCertificates\022v\n\013id" +
+      "p_slo_url\030\010 \001(\0132\034.google.protobuf.String" +
+      "ValueB8\222A52\013IDP SLO URLJ&\"https://yourid" +
+      "p.com/service/saml/slo\"R\tidpSloUrl\022l\n\017ui" +
+      "_button_title\030\t \001(\0132\034.google.protobuf.St" +
+      "ringValueB&\222A#2\017UI Button TitleJ\020\"Login " +
+      "with SSO\"R\ruiButtonTitle\022t\n\022idp_name_id_" +
+      "format\030\n \001(\0162%.scalekit.v1.connections.N" +
+      "ameIdFormatB \222A\0352\022IDP Name ID FormatJ\007\"E" +
+      "MAIL\"R\017idpNameIdFormat\022\211\001\n\027idp_sso_reque" +
+      "st_binding\030\013 \001(\0162\'.scalekit.v1.connectio" +
+      "ns.RequestBindingB)\222A&2\027IDP SSO Request " +
+      "BindingJ\013\"HTTP_POST\"R\024idpSsoRequestBindi" +
+      "ng\022\211\001\n\027idp_slo_request_binding\030\014 \001(\0162\'.s" +
+      "calekit.v1.connections.RequestBindingB)\222" +
+      "A&2\027IDP SLO Request BindingJ\013\"HTTP_POST\"" +
+      "R\024idpSloRequestBinding\022\223\001\n\023saml_signing_" +
+      "option\030\r \001(\0162+.scalekit.v1.connections.S" +
+      "AMLSigningOptionsB6\222A32\023SAML Signing Opt" +
+      "ionJ\034\"SAML_ONLY_RESPONSE_SIGNING\"R\021samlS" +
+      "igningOption\022{\n\031allow_idp_initiated_logi" +
+      "n\030\016 \001(\0132\032.google.protobuf.BoolValueB$\222A!" +
+      "2\031Allow IDP Initiated LoginJ\004trueR\026allow" +
+      "IdpInitiatedLogin\022S\n\013force_authn\030\017 \001(\0132\032" +
+      ".google.protobuf.BoolValueB\026\222A\0232\013Force A" +
+      "uthnJ\004trueR\nforceAuthn\022\226\001\n\024default_redir" +
+      "ect_uri\030\020 \001(\0132\034.google.protobuf.StringVa" +
+      "lueBF\222AC2\024Default Redirect URIJ+\"https:/" +
+      "/yourapp.com/service/saml/redirect\"R\022def" +
+      "aultRedirectUri\022k\n\023assertion_encrypted\030\021" +
+      " \001(\0132\032.google.protobuf.BoolValueB\036\222A\0332\023A" +
+      "ssertion EncryptedJ\004trueR\022assertionEncry" +
+      "pted\022j\n\023want_request_signed\030\022 \001(\0132\032.goog" +
+      "le.protobuf.BoolValueB\036\222A\0332\023Want Request" +
+      " SignedJ\004trueR\021wantRequestSigned\022q\n\016cert" +
+      "ificate_id\030\023 \001(\0132\034.google.protobuf.Strin" +
+      "gValueB,\222A)2\016Certificate IDJ\027\"cer_355854" +
+      "23166144613\"R\rcertificateId\022b\n\020idp_slo_r" +
+      "equired\030\024 \001(\0132\032.google.protobuf.BoolValu" +
+      "eB\034\222A\0312\021Enable IDP logoutJ\004trueR\016idpSloR" +
+      "equired\022\226\001\n\nsp_slo_url\030\025 \001(\0132\034.google.pr" +
+      "otobuf.StringValueBZ\222AT2\030Service Provide" +
+      "r SLO urlJ8\"https://yourapp.com/sso/v1/s" +
+      "aml/conn_1234/slo/callback\"\340A\003R\010spSloUrl" +
+      "\022\306\001\n\032sync_user_profile_on_login\030\026 \001(\0132\032." +
+      "google.protobuf.BoolValueBn\222Ak2cIndicate" +
+      "s whether user profiles should be synchr" +
+      "onized with the identity provider upon e" +
+      "ach log-in.J\004trueR\026syncUserProfileOnLogi" +
+      "n\022\272\001\n!jit_provisioning_with_sso_enabled\030" +
+      "\027 \001(\0132\032.google.protobuf.BoolValueBT\222AQ2I" +
+      "Indicates if Just In Time user provision" +
+      "ing is enabled for the connectionJ\004trueR" +
+      "\035jitProvisioningWithSsoEnabled\"\277\003\n\016IDPCe" +
+      "rtificate\0226\n\013certificate\030\001 \001(\tB\024\222A\0212\017IDP" +
+      " CertificateR\013certificate\022s\n\013create_time" +
+      "\030\002 \001(\0132\032.google.protobuf.TimestampB6\222A32" +
+      "\031Certificate Creation TimeJ\026\"2021-09-01T" +
+      "00:00:00Z\"R\ncreateTime\022q\n\013expiry_time\030\003 " +
+      "\001(\0132\032.google.protobuf.TimestampB4\222A12\027Ce" +
+      "rtificate Expiry TimeJ\026\"2021-09-01T00:00" +
+      ":00Z\"R\nexpiryTime\0228\n\002id\030\004 \001(\tB(\222A%2\016Cert" +
+      "ificate IDJ\023\"cert_123123123123\"R\002id\022S\n\006i" +
+      "ssuer\030\005 \001(\tB;\222A82\022Certificate IssuerJ\"\"h" +
+      "ttps://youridp.com/service/saml\"R\006issuer" +
+      "\"b\n\026GetOIDCMetadataRequest\022H\n\010metadata\030\001" +
+      " \001(\0132,.scalekit.v1.connections.OIDCMetad" +
+      "ataRequestR\010metadata\"9\n\023OIDCMetadataRequ" +
+      "est\022\"\n\006issuer\030\001 \001(\tB\n\272H\007r\005\020\001\030\310\001R\006issuer\"" +
+      "\327\001\n\027GetOIDCMetadataResponse\022\026\n\006issuer\030\001 " +
+      "\001(\tR\006issuer\0225\n\026authorization_endpoint\030\002 " +
+      "\001(\tR\025authorizationEndpoint\022%\n\016token_endp" +
+      "oint\030\003 \001(\tR\rtokenEndpoint\022+\n\021userinfo_en" +
+      "dpoint\030\004 \001(\tR\020userinfoEndpoint\022\031\n\010jwks_u" +
+      "ri\030\005 \001(\tR\007jwksUri\"b\n\026GetSAMLMetadataRequ" +
+      "est\022H\n\010metadata\030\001 \001(\0132,.scalekit.v1.conn" +
+      "ections.SAMLMetadataRequestR\010metadata\"D\n" +
+      "\023SAMLMetadataRequest\022-\n\014metadata_url\030\001 \001" +
+      "(\tB\n\272H\007r\005\020\001\030\310\001R\013metadataUrl\"\264\002\n\027GetSAMLM" +
+      "etadataResponse\022\"\n\ridp_entity_id\030\001 \001(\tR\013" +
+      "idpEntityId\022\036\n\013idp_sso_url\030\002 \001(\tR\tidpSso" +
+      "Url\022\036\n\013idp_slo_url\030\003 \001(\tR\tidpSloUrl\022)\n\020i" +
+      "dp_certificates\030\004 \003(\tR\017idpCertificates\022+" +
+      "\n\022idp_name_id_format\030\005 \001(\tR\017idpNameIdFor" +
+      "mat\022\'\n\017request_binding\030\006 \001(\tR\016requestBin" +
+      "ding\0224\n\026want_assertions_signed\030\007 \001(\010R\024wa" +
+      "ntAssertionsSigned\"u\n GetSAMLCertificate" +
+      "DetailsRequest\022Q\n\013certificate\030\001 \001(\0132/.sc" +
+      "alekit.v1.connections.SAMLCertificateReq" +
+      "uestR\013certificate\"5\n\026SAMLCertificateRequ" +
+      "est\022\033\n\004text\030\001 \001(\tB\007\272H\004r\002\020\001R\004text\"\245\001\n!Get" +
+      "SAMLCertificateDetailsResponse\022\022\n\004text\030\001" +
+      " \001(\tR\004text\022\033\n\tnot_after\030\002 \001(\003R\010notAfter\022" +
+      "\035\n\nnot_before\030\003 \001(\003R\tnotBefore\022\030\n\007subjec" +
+      "t\030\004 \001(\tR\007subject\022\026\n\006issuer\030\005 \001(\tR\006issuer" +
+      "\"\206\001\n\036GetConnectionTestResultRequest\022,\n\rc" +
+      "onnection_id\030\001 \001(\tB\007\272H\004r\002\020\001R\014connectionI" +
+      "d\0226\n\017test_request_id\030\002 \001(\tB\016\272H\013r\t\020\001:\005tes" +
+      "t_R\rtestRequestId\"\275\002\n\037GetConnectionTestR" +
+      "esultResponse\022A\n\006status\030\001 \001(\0162).scalekit" +
+      ".v1.connections.TestResultStatusR\006status" +
+      "\022 \n\tuser_info\030\002 \001(\tH\000R\010userInfo\210\001\001\022\031\n\005er" +
+      "ror\030\003 \001(\tH\001R\005error\210\001\001\0220\n\021error_descripti" +
+      "on\030\004 \001(\tH\002R\020errorDescription\210\001\001\022(\n\rerror" +
+      "_details\030\005 \001(\tH\003R\014errorDetails\210\001\001B\014\n\n_us" +
+      "er_infoB\010\n\006_errorB\024\n\022_error_descriptionB" +
+      "\020\n\016_error_details\"\032\n\030PasswordConnectionC" +
+      "onfig\"9\n\005Flags\022\031\n\010is_login\030\001 \001(\010R\007isLogi" +
+      "n\022\025\n\006is_app\030\002 \001(\010R\005isApp\"\321\004\n\031ListAppConn" +
+      "ectionsRequest\022\200\001\n\tpage_size\030\001 \001(\rBc\222AY2" +
+      "SMaximum number of organizations to retu" +
+      "rn per page. Value must be between 1 and" +
+      " 30.J\00230\272H\004*\002\030\036R\010pageSize\022\245\001\n\npage_token" +
+      "\030\002 \001(\tB\205\001\222A\201\0012aToken from a previous res" +
+      "ponse for pagination. Provide this to re" +
+      "trieve the next page of results.J\034eyJwYW" +
+      "dlIjoyLCJsaW1pdCI6MzB9R\tpageToken\022U\n\010pro" +
+      "vider\030\003 \001(\tB4\222A(2\036Filter connections by " +
+      "providerJ\006\"OKTA\"\272H\006r\004\020\001\0302H\000R\010provider\210\001\001" +
+      "\022\232\001\n\005query\030\004 \001(\tB\177\222As2hFree-text search " +
+      "that matches connections by connection n" +
+      "ame (key ID) or provider. Minimum 3 char" +
+      "acters.J\007\"slack\"\272H\006r\004\020\003\030dH\001R\005query\210\001\001B\013\n" +
+      "\t_providerB\010\n\006_query\"\352\003\n\032ListAppConnecti" +
+      "onsResponse\022\201\001\n\013connections\030\001 \003(\0132\'.scal" +
+      "ekit.v1.connections.ListConnectionB6\222A32" +
+      "1List of connections matching the reques" +
+      "t criteriaR\013connections\022o\n\017next_page_tok" +
+      "en\030\002 \001(\tBG\222AD2\"Token for the next page o" +
       "f resultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6MzB9" +
-      "\"R\rprevPageToken\022b\n\ntotal_size\030\004 \001(\rBC\222A" +
-      "@29Total number of connections matching " +
-      "the request criteriaJ\003100R\ttotalSize\"\213\001\n" +
-      "\033GetConnectionContextRequest\0228\n\rconnecti" +
-      "on_id\030\001 \001(\tB\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connec" +
-      "tionId\0222\n\017organization_id\030\002 \001(\tB\t\272H\006r\004\020\000" +
-      "\030 R\016organizationId\"Q\n\034GetConnectionConte" +
-      "xtResponse\0221\n\007context\030\001 \001(\0132\027.google.pro" +
-      "tobuf.StructR\007context\"\301\001\n\036UpdateConnecti" +
-      "onContextRequest\0228\n\rconnection_id\030\001 \001(\tB" +
-      "\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connectionId\0222\n\017or" +
-      "ganization_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R\016organiza" +
-      "tionId\0221\n\007context\030\003 \001(\0132\027.google.protobu" +
-      "f.StructR\007context*W\n\021CodeChallengeType\022#" +
-      "\n\037CODE_CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n\007N" +
-      "UMERIC\020\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021Configurat" +
-      "ionType\022\"\n\036CONFIGURATION_TYPE_UNSPECIFIE" +
-      "D\020\000\022\r\n\tDISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014NameId" +
-      "Format\022\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSPEC" +
-      "IFIED\020\001\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nPER" +
-      "SISTENT\020\004*U\n\020PasswordlessType\022 \n\034Passwor" +
-      "dlessType_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003OTP" +
-      "\020\002\022\014\n\010LINK_OTP\020\003*9\n\020TestResultStatus\022\013\n\007" +
-      "PENDING\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001\n\022" +
-      "SAMLSigningOptions\022$\n SAML_SIGNING_OPTIO" +
-      "NS_UNSPECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SAML" +
-      "_ONLY_RESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_AS" +
-      "SERTION_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASSER" +
-      "TION_SIGNING\020\004\022&\n\"SAML_RESPONSE_OR_ASSER" +
-      "TION_SIGNING\020\005*S\n\016RequestBinding\022\037\n\033REQU" +
-      "EST_BINDING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST\020\001" +
-      "\022\021\n\rHTTP_REDIRECT\020\002*P\n\rTokenAuthType\022\037\n\033" +
-      "TOKEN_AUTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_PAR" +
-      "AMS\020\001\022\016\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026OI" +
-      "DC_SCOPE_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007pr" +
-      "ofile\020\002\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005phone" +
-      "\020\005*\356\001\n\016ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004OI" +
-      "DC\020\001\022\010\n\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020\004\022" +
-      "\020\n\014PASSWORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER\020\007" +
-      "\022\013\n\007API_KEY\020\010\022\014\n\010WEBAUTHN\020\t\022\r\n\tOAUTH_M2M" +
-      "\020\n\022\021\n\rTRELLO_OAUTH1\020\013\022\016\n\nGOOGLE_DWD\020\014\022\017\n" +
-      "\013TRUSTED_IDP\020\r\022\016\n\nSMART_FHIR\020\016\022\013\n\007NO_AUT" +
-      "H\020\017*`\n\020ConnectionStatus\022!\n\035CONNECTION_ST" +
-      "ATUS_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_PROG" +
-      "RESS\020\002\022\r\n\tCOMPLETED\020\003*\230\002\n\022ConnectionProv" +
-      "ider\022#\n\037CONNECTION_PROVIDER_UNSPECIFIED\020" +
-      "\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020" +
-      "\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENT" +
-      "ITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITH" +
-      "UB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESF" +
-      "ORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016" +
-      "\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\0202\222G\n\021ConnectionS" +
-      "ervice\022\221\003\n\033CreateEnvironmentConnection\022;" +
-      ".scalekit.v1.connections.CreateEnvironme" +
-      "ntConnectionRequest\0321.scalekit.v1.connec" +
-      "tions.CreateConnectionResponse\"\201\002\222A\301\001\n\013C" +
-      "onnections\022\027Create a new connection\0328Est" +
-      "ablish a new connection for the specifie" +
-      "d environmentJ_\n\003201\022X\n\037Connection creat" +
-      "ed successfully\0225\n3\0321.scalekit.v1.connec" +
-      "tions.CreateConnectionResponse\202\265\030\002\030D\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002!\"\023/api/v1/connections:\n" +
-      "connection\022\263\003\n\020CreateConnection\0220.scalek" +
-      "it.v1.connections.CreateConnectionReques" +
-      "t\0321.scalekit.v1.connections.CreateConnec" +
-      "tionResponse\"\271\002\222A\306\001\n\013Connections\022\027Create" +
-      " a new connection\032=Establish a new SSO c" +
-      "onnection for the specified organization" +
-      "J_\n\003201\022X\n\037Connection created successful" +
-      "ly\0225\n3\0321.scalekit.v1.connections.CreateC" +
-      "onnectionResponse\202\265\030\025\n\021connections_write" +
-      "\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002A\"3/api/v1/organiz" +
-      "ations/{organization_id}/connections:\nco" +
-      "nnection\022\315\004\n\031AssignDomainsToConnection\0229" +
-      ".scalekit.v1.connections.AssignDomainsTo" +
-      "ConnectionRequest\032:.scalekit.v1.connecti" +
-      "ons.AssignDomainsToConnectionResponse\"\270\003" +
-      "\222A\266\002\n\013Connections\022\036Assign domains to a c" +
-      "onnection\032\236\001Assigns one or more domains " +
-      "to a specific connection within an organ" +
-      "ization. This allows the connection to b" +
-      "e used for authentication on the specifi" +
-      "ed domainsJf\n\003200\022_\n\035Domains assigned su" +
-      "ccessfully\022>\n<\032:.scalekit.v1.connections" +
-      ".AssignDomainsToConnectionResponse\202\265\030\025\n\021" +
-      "connections_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P" +
-      "\032K/api/v1/organizations/{organization_id" +
-      "}/connections/{connection_id}/domains:\001*" +
-      "\022\263\003\n\030GetEnvironmentConnection\0228.scalekit" +
-      ".v1.connections.GetEnvironmentConnection" +
-      "Request\032..scalekit.v1.connections.GetCon" +
-      "nectionResponse\"\254\002\222A\347\001\n\013Connections\022\033Ret" +
-      "rieve connection details\032SObtain detaile" +
-      "d information about a specific connectio" +
-      "n using its unique identifierJf\n\003200\022_\n)" +
-      "Successfully retrieved connection detail" +
-      "s\0222\n0\032..scalekit.v1.connections.GetConne" +
-      "ctionResponse\202\265\030\003\030\304\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "%\022#/api/v1/connections/{connection_id}\022\317" +
-      "\004\n\rGetConnection\022-.scalekit.v1.connectio" +
-      "ns.GetConnectionRequest\032..scalekit.v1.co" +
-      "nnections.GetConnectionResponse\"\336\003\222A\201\003\n\013" +
-      "Connections\022\026Get connection details\032\321\001Re" +
-      "trieves the complete configuration and s" +
-      "tatus details for a specific connection " +
-      "by its ID within an organization. Return" +
-      "s all connection properties including pr" +
-      "ovider settings, protocols, and current " +
-      "status.J\205\001\n\003200\022~\nHSuccessfully retrieve" +
-      "d connection details for the specified o" +
-      "rganization\0222\n0\032..scalekit.v1.connection" +
-      "s.GetConnectionResponse\202\265\030\025\n\020connections" +
-      "_read\030\364\001\202\323\344\223\002:\0228/api/v1/organizations/{o" +
-      "rganization_id}/connections/{id}\022\344\002\n\017Lis" +
-      "tConnections\022/.scalekit.v1.connections.L" +
-      "istConnectionsRequest\0320.scalekit.v1.conn" +
-      "ections.ListConnectionsResponse\"\355\001\222A\266\001\n\013" +
-      "Connections\022\020List connections\0322Retrieves" +
-      " a list of connections in the environmen" +
-      "tJa\n\003200\022Z\n\"Successfully retrieved conne" +
-      "ctions\0224\n2\0320.scalekit.v1.connections.Lis" +
-      "tConnectionsResponse\202\265\030\024\n\020connections_re" +
-      "ad\030t\202\323\344\223\002\025\022\023/api/v1/connections\022\265\003\n\033List" +
-      "OrganizationConnections\022;.scalekit.v1.co" +
-      "nnections.ListOrganizationConnectionsReq" +
-      "uest\032<.scalekit.v1.connections.ListOrgan" +
-      "izationConnectionsResponse\"\232\002\222A\326\001\n\013Conne" +
-      "ctions\022\035List organization connections\0329R" +
-      "etrieves a list of connections for all t" +
-      "he organizationsJm\n\003200\022f\n\"Successfully " +
-      "retrieved connections\022@\n>\032<.scalekit.v1." +
-      "connections.ListOrganizationConnectionsR" +
-      "esponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api" +
-      "/v1/organizations/-/connections\022\315\003\n\035Sear" +
-      "chOrganizationConnections\022=.scalekit.v1." +
-      "connections.SearchOrganizationConnection" +
-      "sRequest\032>.scalekit.v1.connections.Searc" +
-      "hOrganizationConnectionsResponse\"\254\002\222A\341\001\n" +
-      "\013Connections\022\037Search organization connec" +
-      "tions\032DSearch with query or filters prov" +
-      "ided and return list of connectionsJk\n\0032" +
-      "00\022d\n\036Successfully found connections\022B\n@" +
-      "\032>.scalekit.v1.connections.SearchOrganiz" +
-      "ationConnectionsResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PR" +
-      "EVIEW\202\323\344\223\002,\022*/api/v1/organizations/-/con" +
-      "nections:search\022\361\002\n\033UpdateEnvironmentCon" +
-      "nection\022;.scalekit.v1.connections.Update" +
-      "EnvironmentConnectionRequest\0321.scalekit." +
-      "v1.connections.UpdateConnectionResponse\"" +
-      "\341\001\222A\221\001\n\013Connections\022\023Update a connection" +
-      "\032\027Update a SSO ConnectionJT\n\003200\022M\n\024Upda" +
-      "ted Successfully\0225\n3\0321.scalekit.v1.conne" +
-      "ctions.UpdateConnectionResponse\202\265\030\002\030D\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\00212#/api/v1/connections/" +
-      "{connection_id}:\nconnection\022\224\003\n\020UpdateCo" +
-      "nnection\0220.scalekit.v1.connections.Updat" +
-      "eConnectionRequest\0321.scalekit.v1.connect" +
-      "ions.UpdateConnectionResponse\"\232\002\222A\242\001\n\013Co" +
-      "nnections\022$Update a connection for organ" +
-      "ization\032\027Update a SSO ConnectionJT\n\003200\022" +
-      "M\n\024Updated Successfully\0225\n3\0321.scalekit.v" +
-      "1.connections.UpdateConnectionResponse\202\265" +
-      "\030\025\n\021connections_write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002F28/api/v1/organizations/{organizatio" +
-      "n_id}/connections/{id}:\nconnection\022\222\002\n\033D" +
-      "eleteEnvironmentConnection\022;.scalekit.v1" +
-      ".connections.DeleteEnvironmentConnection" +
-      "Request\032\026.google.protobuf.Empty\"\235\001\222AZ\n\013C" +
-      "onnections\022\023Delete a connection\032\027Delete " +
-      "a SSO ConnectionJ\035\n\003200\022\026\n\024Deleted Succe" +
-      "ssfully\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api" +
-      "/v1/connections/{connection_id}\022\367\003\n\020Dele" +
-      "teConnection\0220.scalekit.v1.connections.D" +
-      "eleteConnectionRequest\032\026.google.protobuf" +
-      ".Empty\"\230\003\222A\316\002\n\013Connections\022\025Delete SSO c" +
-      "onnection\032\371\001Deletes an SSO connection fr" +
-      "om the specified organization by connect" +
-      "ion ID. Use this endpoint when an identi" +
-      "ty provider integration is no longer nee" +
-      "ded for the organization. Returns an emp" +
-      "ty response after the SSO connection is " +
-      "deleted successfully.J,\n\003200\022%\n#SSO conn" +
-      "ection deleted successfully\202\265\030\002\030d\202\323\344\223\002:*" +
-      "8/api/v1/organizations/{organization_id}" +
-      "/connections/{id}\022\337\002\n\033EnableEnvironmentC" +
-      "onnection\022;.scalekit.v1.connections.Togg" +
-      "leEnvironmentConnectionRequest\0321.scaleki" +
+      "\"R\rnextPageToken\022s\n\017prev_page_token\030\003 \001(" +
+      "\tBK\222AH2&Token for the previous page of r" +
+      "esultsJ\036\"eyJwYWdlIjoyLCJsaW1pdCI6MzB9\"R\r" +
+      "prevPageToken\022b\n\ntotal_size\030\004 \001(\rBC\222A@29" +
+      "Total number of connections matching the" +
+      " request criteriaJ\003100R\ttotalSize\"\213\001\n\033Ge" +
+      "tConnectionContextRequest\0228\n\rconnection_" +
+      "id\030\001 \001(\tB\023\272H\020r\013\020\001\030 :\005conn_\310\001\001R\014connectio" +
+      "nId\0222\n\017organization_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R" +
+      "\016organizationId\"Q\n\034GetConnectionContextR" +
+      "esponse\0221\n\007context\030\001 \001(\0132\027.google.protob" +
+      "uf.StructR\007context\"\301\001\n\036UpdateConnectionC" +
+      "ontextRequest\0228\n\rconnection_id\030\001 \001(\tB\023\272H" +
+      "\020r\013\020\001\030 :\005conn_\310\001\001R\014connectionId\0222\n\017organ" +
+      "ization_id\030\002 \001(\tB\t\272H\006r\004\020\000\030 R\016organizatio" +
+      "nId\0221\n\007context\030\003 \001(\0132\027.google.protobuf.S" +
+      "tructR\007context*W\n\021CodeChallengeType\022#\n\037C" +
+      "ODE_CHALLENGE_TYPE_UNSPECIFIED\020\000\022\013\n\007NUME" +
+      "RIC\020\001\022\020\n\014ALPHANUMERIC\020\002*R\n\021Configuration" +
+      "Type\022\"\n\036CONFIGURATION_TYPE_UNSPECIFIED\020\000" +
+      "\022\r\n\tDISCOVERY\020\001\022\n\n\006MANUAL\020\002*a\n\014NameIdFor" +
+      "mat\022\026\n\022NAME_ID_FORMAT_NIL\020\000\022\017\n\013UNSPECIFI" +
+      "ED\020\001\022\t\n\005EMAIL\020\002\022\r\n\tTRANSIENT\020\003\022\016\n\nPERSIS" +
+      "TENT\020\004*U\n\020PasswordlessType\022 \n\034Passwordle" +
+      "ssType_UNSPECIFIED\020\000\022\010\n\004LINK\020\001\022\007\n\003OTP\020\002\022" +
+      "\014\n\010LINK_OTP\020\003*9\n\020TestResultStatus\022\013\n\007PEN" +
+      "DING\020\000\022\013\n\007SUCCESS\020\001\022\013\n\007FAILURE\020\002*\330\001\n\022SAM" +
+      "LSigningOptions\022$\n SAML_SIGNING_OPTIONS_" +
+      "UNSPECIFIED\020\000\022\016\n\nNO_SIGNING\020\001\022\036\n\032SAML_ON" +
+      "LY_RESPONSE_SIGNING\020\002\022\037\n\033SAML_ONLY_ASSER" +
+      "TION_SIGNING\020\003\022#\n\037SAML_RESPONSE_ASSERTIO" +
+      "N_SIGNING\020\004\022&\n\"SAML_RESPONSE_OR_ASSERTIO" +
+      "N_SIGNING\020\005*S\n\016RequestBinding\022\037\n\033REQUEST" +
+      "_BINDING_UNSPECIFIED\020\000\022\r\n\tHTTP_POST\020\001\022\021\n" +
+      "\rHTTP_REDIRECT\020\002*P\n\rTokenAuthType\022\037\n\033TOK" +
+      "EN_AUTH_TYPE_UNSPECIFIED\020\000\022\016\n\nURL_PARAMS" +
+      "\020\001\022\016\n\nBASIC_AUTH\020\002*c\n\tOIDCScope\022\032\n\026OIDC_" +
+      "SCOPE_UNSPECIFIED\020\000\022\n\n\006openid\020\001\022\013\n\007profi" +
+      "le\020\002\022\t\n\005email\020\003\022\013\n\007address\020\004\022\t\n\005phone\020\005*" +
+      "\356\001\n\016ConnectionType\022\013\n\007INVALID\020\000\022\010\n\004OIDC\020" +
+      "\001\022\010\n\004SAML\020\002\022\014\n\010PASSWORD\020\003\022\t\n\005OAUTH\020\004\022\020\n\014" +
+      "PASSWORDLESS\020\005\022\t\n\005BASIC\020\006\022\n\n\006BEARER\020\007\022\013\n" +
+      "\007API_KEY\020\010\022\014\n\010WEBAUTHN\020\t\022\r\n\tOAUTH_M2M\020\n\022" +
+      "\021\n\rTRELLO_OAUTH1\020\013\022\016\n\nGOOGLE_DWD\020\014\022\017\n\013TR" +
+      "USTED_IDP\020\r\022\016\n\nSMART_FHIR\020\016\022\013\n\007NO_AUTH\020\017" +
+      "*`\n\020ConnectionStatus\022!\n\035CONNECTION_STATU" +
+      "S_UNSPECIFIED\020\000\022\t\n\005DRAFT\020\001\022\017\n\013IN_PROGRES" +
+      "S\020\002\022\r\n\tCOMPLETED\020\003*R\n\022ConnectionAuthMode" +
+      "\022$\n CONNECTION_AUTH_MODE_UNSPECIFIED\020\000\022\010" +
+      "\n\004USER\020\001\022\014\n\010ORG_WIDE\020\002*\230\002\n\022ConnectionPro" +
+      "vider\022#\n\037CONNECTION_PROVIDER_UNSPECIFIED" +
+      "\020\000\022\010\n\004OKTA\020\001\022\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD" +
+      "\020\003\022\t\n\005AUTH0\020\004\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDEN" +
+      "TITY\020\006\022\r\n\tJUMPCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GIT" +
+      "HUB\020\t\022\n\n\006GITLAB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALES" +
+      "FORCE\020\014\022\r\n\tMICROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020" +
+      "\016\022\014\n\010SCALEKIT\020\017\022\010\n\004ADFS\020\0202\363H\n\021Connection" +
+      "Service\022\234\003\n\033CreateEnvironmentConnection\022" +
+      ";.scalekit.v1.connections.CreateEnvironm" +
+      "entConnectionRequest\0321.scalekit.v1.conne" +
+      "ctions.CreateConnectionResponse\"\214\002\222A\301\001\n\013" +
+      "Connections\022\027Create a new connection\0328Es" +
+      "tablish a new connection for the specifi" +
+      "ed environmentJ_\n\003201\022X\n\037Connection crea" +
+      "ted successfully\0225\n3\0321.scalekit.v1.conne" +
+      "ctions.CreateConnectionResponse\202\265\030\r\n\tsso" +
+      ":write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\"\023/api/v1/c" +
+      "onnections:\nconnection\022\276\003\n\020CreateConnect" +
+      "ion\0220.scalekit.v1.connections.CreateConn" +
+      "ectionRequest\0321.scalekit.v1.connections." +
+      "CreateConnectionResponse\"\304\002\222A\306\001\n\013Connect" +
+      "ions\022\027Create a new connection\032=Establish" +
+      " a new SSO connection for the specified " +
+      "organizationJ_\n\003201\022X\n\037Connection create" +
+      "d successfully\0225\n3\0321.scalekit.v1.connect" +
+      "ions.CreateConnectionResponse\202\265\030 \n\021conne" +
+      "ctions_write\n\tsso:write\030t\372\322\344\223\002\t\022\007PREVIEW" +
+      "\202\323\344\223\002A\"3/api/v1/organizations/{organizat" +
+      "ion_id}/connections:\nconnection\022\330\004\n\031Assi" +
+      "gnDomainsToConnection\0229.scalekit.v1.conn" +
+      "ections.AssignDomainsToConnectionRequest" +
+      "\032:.scalekit.v1.connections.AssignDomains" +
+      "ToConnectionResponse\"\303\003\222A\266\002\n\013Connections" +
+      "\022\036Assign domains to a connection\032\236\001Assig" +
+      "ns one or more domains to a specific con" +
+      "nection within an organization. This all" +
+      "ows the connection to be used for authen" +
+      "tication on the specified domainsJf\n\003200" +
+      "\022_\n\035Domains assigned successfully\022>\n<\032:." +
+      "scalekit.v1.connections.AssignDomainsToC" +
+      "onnectionResponse\202\265\030 \n\021connections_write" +
+      "\n\tsso:write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002P\032K/api" +
+      "/v1/organizations/{organization_id}/conn" +
+      "ections/{connection_id}/domains:\001*\022\275\003\n\030G" +
+      "etEnvironmentConnection\0228.scalekit.v1.co" +
+      "nnections.GetEnvironmentConnectionReques" +
+      "t\032..scalekit.v1.connections.GetConnectio" +
+      "nResponse\"\266\002\222A\347\001\n\013Connections\022\033Retrieve " +
+      "connection details\032SObtain detailed info" +
+      "rmation about a specific connection usin" +
+      "g its unique identifierJf\n\003200\022_\n)Succes" +
+      "sfully retrieved connection details\0222\n0\032" +
+      "..scalekit.v1.connections.GetConnectionR" +
+      "esponse\202\265\030\r\n\010sso:read\030\304\001\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002%\022#/api/v1/connections/{connection_i" +
+      "d}\022\331\004\n\rGetConnection\022-.scalekit.v1.conne" +
+      "ctions.GetConnectionRequest\032..scalekit.v" +
+      "1.connections.GetConnectionResponse\"\350\003\222A" +
+      "\201\003\n\013Connections\022\026Get connection details\032" +
+      "\321\001Retrieves the complete configuration a" +
+      "nd status details for a specific connect" +
+      "ion by its ID within an organization. Re" +
+      "turns all connection properties includin" +
+      "g provider settings, protocols, and curr" +
+      "ent status.J\205\001\n\003200\022~\nHSuccessfully retr" +
+      "ieved connection details for the specifi" +
+      "ed organization\0222\n0\032..scalekit.v1.connec" +
+      "tions.GetConnectionResponse\202\265\030\037\n\020connect" +
+      "ions_read\n\010sso:read\030\364\001\202\323\344\223\002:\0228/api/v1/or" +
+      "ganizations/{organization_id}/connection" +
+      "s/{id}\022\356\002\n\017ListConnections\022/.scalekit.v1" +
+      ".connections.ListConnectionsRequest\0320.sc" +
+      "alekit.v1.connections.ListConnectionsRes" +
+      "ponse\"\367\001\222A\266\001\n\013Connections\022\020List connecti" +
+      "ons\0322Retrieves a list of connections in " +
+      "the environmentJa\n\003200\022Z\n\"Successfully r" +
+      "etrieved connections\0224\n2\0320.scalekit.v1.c" +
+      "onnections.ListConnectionsResponse\202\265\030\036\n\020" +
+      "connections_read\n\010sso:read\030t\202\323\344\223\002\025\022\023/api" +
+      "/v1/connections\022\277\003\n\033ListOrganizationConn" +
+      "ections\022;.scalekit.v1.connections.ListOr" +
+      "ganizationConnectionsRequest\032<.scalekit." +
+      "v1.connections.ListOrganizationConnectio" +
+      "nsResponse\"\244\002\222A\326\001\n\013Connections\022\035List org" +
+      "anization connections\0329Retrieves a list " +
+      "of connections for all the organizations" +
+      "Jm\n\003200\022f\n\"Successfully retrieved connec" +
+      "tions\022@\n>\032<.scalekit.v1.connections.List" +
+      "OrganizationConnectionsResponse\202\265\030\014\n\010sso" +
+      ":read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\022#/api/v1/or" +
+      "ganizations/-/connections\022\327\003\n\035SearchOrga" +
+      "nizationConnections\022=.scalekit.v1.connec" +
+      "tions.SearchOrganizationConnectionsReque" +
+      "st\032>.scalekit.v1.connections.SearchOrgan",
+      "izationConnectionsResponse\"\266\002\222A\341\001\n\013Conne" +
+      "ctions\022\037Search organization connections\032" +
+      "DSearch with query or filters provided a" +
+      "nd return list of connectionsJk\n\003200\022d\n\036" +
+      "Successfully found connections\022B\n@\032>.sca" +
+      "lekit.v1.connections.SearchOrganizationC" +
+      "onnectionsResponse\202\265\030\014\n\010sso:read\030D\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002,\022*/api/v1/organizations/-" +
+      "/connections:search\022\374\002\n\033UpdateEnvironmen" +
+      "tConnection\022;.scalekit.v1.connections.Up" +
+      "dateEnvironmentConnectionRequest\0321.scale" +
+      "kit.v1.connections.UpdateConnectionRespo" +
+      "nse\"\354\001\222A\221\001\n\013Connections\022\023Update a connec" +
+      "tion\032\027Update a SSO ConnectionJT\n\003200\022M\n\024" +
+      "Updated Successfully\0225\n3\0321.scalekit.v1.c" +
+      "onnections.UpdateConnectionResponse\202\265\030\r\n" +
+      "\tsso:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\00212#/api/" +
+      "v1/connections/{connection_id}:\nconnecti" +
+      "on\022\237\003\n\020UpdateConnection\0220.scalekit.v1.co" +
+      "nnections.UpdateConnectionRequest\0321.scal" +
+      "ekit.v1.connections.UpdateConnectionResp" +
+      "onse\"\245\002\222A\242\001\n\013Connections\022$Update a conne" +
+      "ction for organization\032\027Update a SSO Con" +
+      "nectionJT\n\003200\022M\n\024Updated Successfully\0225" +
+      "\n3\0321.scalekit.v1.connections.UpdateConne" +
+      "ctionResponse\202\265\030 \n\021connections_write\n\tss" +
+      "o:write\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002F28/api/v1/" +
+      "organizations/{organization_id}/connecti" +
+      "ons/{id}:\nconnection\022\235\002\n\033DeleteEnvironme" +
+      "ntConnection\022;.scalekit.v1.connections.D" +
+      "eleteEnvironmentConnectionRequest\032\026.goog" +
+      "le.protobuf.Empty\"\250\001\222AZ\n\013Connections\022\023De" +
+      "lete a connection\032\027Delete a SSO Connecti" +
+      "onJ\035\n\003200\022\026\n\024Deleted Successfully\202\265\030\r\n\ts" +
+      "so:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api/v1" +
+      "/connections/{connection_id}\022\202\004\n\020DeleteC" +
+      "onnection\0220.scalekit.v1.connections.Dele" +
+      "teConnectionRequest\032\026.google.protobuf.Em" +
+      "pty\"\243\003\222A\316\002\n\013Connections\022\025Delete SSO conn" +
+      "ection\032\371\001Deletes an SSO connection from " +
+      "the specified organization by connection" +
+      " ID. Use this endpoint when an identity " +
+      "provider integration is no longer needed" +
+      " for the organization. Returns an empty " +
+      "response after the SSO connection is del" +
+      "eted successfully.J,\n\003200\022%\n#SSO connect" +
+      "ion deleted successfully\202\265\030\r\n\tsso:write\030" +
+      "d\202\323\344\223\002:*8/api/v1/organizations/{organiza" +
+      "tion_id}/connections/{id}\022\352\002\n\033EnableEnvi" +
+      "ronmentConnection\022;.scalekit.v1.connecti" +
+      "ons.ToggleEnvironmentConnectionRequest\0321" +
+      ".scalekit.v1.connections.ToggleConnectio" +
+      "nResponse\"\332\001\222A\204\001\n\013Connections\022\023Enable a " +
+      "connection\032\027Enable a SSO ConnectionJG\n\0032" +
+      "00\022@\n\007Success\0225\n3\0321.scalekit.v1.connecti" +
+      "ons.ToggleConnectionResponse\202\265\030\r\n\tsso:wr" +
+      "ite\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002,2*/api/v1/conn" +
+      "ections/{connection_id}:enable\022\337\004\n\020Enabl" +
+      "eConnection\0220.scalekit.v1.connections.To" +
+      "ggleConnectionRequest\0321.scalekit.v1.conn" +
+      "ections.ToggleConnectionResponse\"\345\003\222A\366\002\n" +
+      "\013Connections\022\025Enable SSO connection\032\356\001Ac" +
+      "tivate an existing connection for the sp" +
+      "ecified organization. When enabled, user" +
+      "s can authenticate using this connection" +
+      ". This endpoint changes the connection s" +
+      "tate from disabled to enabled without mo" +
+      "difying other configuration settingsJ_\n\003" +
+      "200\022X\n\037Connection enabled successfully\0225" +
+      "\n3\0321.scalekit.v1.connections.ToggleConne" +
+      "ctionResponse\202\265\030 \n\021connections_write\n\tss" +
+      "o:write\030t\202\323\344\223\002A2?/api/v1/organizations/{" +
+      "organization_id}/connections/{id}:enable" +
+      "\022\356\002\n\034DisableEnvironmentConnection\022;.scal" +
+      "ekit.v1.connections.ToggleEnvironmentCon" +
+      "nectionRequest\0321.scalekit.v1.connections" +
+      ".ToggleConnectionResponse\"\335\001\222A\206\001\n\013Connec" +
+      "tions\022\024Disable a connection\032\030Disable a S" +
+      "SO ConnectionJG\n\003200\022@\n\007Success\0225\n3\0321.sc" +
+      "alekit.v1.connections.ToggleConnectionRe" +
+      "sponse\202\265\030\r\n\tsso:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002-2+/api/v1/connections/{connection_id" +
+      "}:disable\022\351\004\n\021DisableConnection\0220.scalek" +
+      "it.v1.connections.ToggleConnectionReques" +
+      "t\0321.scalekit.v1.connections.ToggleConnec" +
+      "tionResponse\"\356\003\222A\376\002\n\013Connections\022\026Disabl" +
+      "e SSO connection\032\364\001Deactivate an existin" +
+      "g connection for the specified organizat" +
+      "ion. When disabled, users cannot authent" +
+      "icate using this connection. This endpoi" +
+      "nt changes the connection state from ena" +
+      "bled to disabled without modifying other" +
+      " configuration settingsJ`\n\003200\022Y\n Connec" +
+      "tion disabled successfully\0225\n3\0321.scaleki" +
       "t.v1.connections.ToggleConnectionRespons" +
-      "e\"\317\001\222A\204\001\n\013Connections\022\023Enable a connecti" +
-      "on\032\027Enable a SSO ConnectionJG\n\003200\022@\n\007Su" +
-      "ccess\0225\n3\0321.scalekit.v1.connections.Togg" +
-      "leConnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002,2*/api/v1/connections/{connection" +
-      "_id}:enable\022\324\004\n\020EnableConnection\0220.scale" +
-      "kit.v1.connections.ToggleConnectionReque" +
-      "st\0321.scalekit.v1.connections.ToggleConne" +
-      "ctionResponse\"\332\003\222A\366\002\n\013Connections\022\025Enabl" +
-      "e SSO connection\032\356\001Activate an existing " +
-      "connection for the specified organizatio" +
-      "n. When enabled, users can authenticate " +
-      "using this connection. This endpoint cha" +
-      "nges the connection state from disabled " +
-      "to enabled without modifying other confi" +
-      "guration settingsJ_\n\003200\022X\n\037Connection e" +
-      "nabled successfully\0225\n3\0321.scalekit.v1.co" +
-      "nnections.ToggleConnectionResponse\202\265\030\025\n\021" +
-      "connections_write\030t\202\323\344\223\002A2?/api/v1/organ" +
-      "izations/{organization_id}/connections/{" +
-      "id}:enable\022\343\002\n\034DisableEnvironmentConnect" +
-      "ion\022;.scalekit.v1.connections.ToggleEnvi" +
-      "ronmentConnectionRequest\0321.scalekit.v1.c" +
-      "onnections.ToggleConnectionResponse\"\322\001\222A" +
-      "\206\001\n\013Connections\022\024Disable a connection\032\030D" +
-      "isable a SSO ConnectionJG\n\003200\022@\n\007Succes" +
-      "s\0225\n3\0321.scalekit.v1.connections.ToggleCo" +
-      "nnectionResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002-2+/api/v1/connections/{connection_id}" +
-      ":disable\022\336\004\n\021DisableConnection\0220.scaleki" +
-      "t.v1.connections.ToggleConnectionRequest" +
-      "\0321.scalekit.v1.connections.ToggleConnect",
-      "ionResponse\"\343\003\222A\376\002\n\013Connections\022\026Disable" +
-      " SSO connection\032\364\001Deactivate an existing" +
-      " connection for the specified organizati" +
-      "on. When disabled, users cannot authenti" +
-      "cate using this connection. This endpoin" +
-      "t changes the connection state from enab" +
-      "led to disabled without modifying other " +
-      "configuration settingsJ`\n\003200\022Y\n Connect" +
-      "ion disabled successfully\0225\n3\0321.scalekit" +
-      ".v1.connections.ToggleConnectionResponse" +
-      "\202\265\030\025\n\021connections_write\030t\202\323\344\223\002B2@/api/v1" +
-      "/organizations/{organization_id}/connect" +
-      "ions/{id}:disable\022\200\003\n\027GetConnectionTestR" +
-      "esult\0227.scalekit.v1.connections.GetConne" +
-      "ctionTestResultRequest\0328.scalekit.v1.con" +
+      "e\202\265\030 \n\021connections_write\n\tsso:write\030t\202\323\344" +
+      "\223\002B2@/api/v1/organizations/{organization" +
+      "_id}/connections/{id}:disable\022\212\003\n\027GetCon" +
+      "nectionTestResult\0227.scalekit.v1.connecti" +
+      "ons.GetConnectionTestResultRequest\0328.sca" +
+      "lekit.v1.connections.GetConnectionTestRe" +
+      "sultResponse\"\373\001\222A\215\001\n\013Connections\022\026Test c" +
+      "onnection result\032\026Connection test result" +
+      "JN\n\003200\022G\n\007Success\022<\n:\0328.scalekit.v1.con" +
       "nections.GetConnectionTestResultResponse" +
-      "\"\361\001\222A\215\001\n\013Connections\022\026Test connection re" +
-      "sult\032\026Connection test resultJN\n\003200\022G\n\007S" +
-      "uccess\022<\n:\0328.scalekit.v1.connections.Get" +
-      "ConnectionTestResultResponse\202\265\030\002\030t\372\322\344\223\002\t" +
-      "\022\007PREVIEW\202\323\344\223\002E\022C/api/v1/connections/{co" +
-      "nnection_id}/test-requests/{test_request" +
-      "_id}\022\366\002\n\022ListAppConnections\0222.scalekit.v" +
-      "1.connections.ListAppConnectionsRequest\032" +
-      "3.scalekit.v1.connections.ListAppConnect" +
-      "ionsResponse\"\366\001\222A\276\001\n\013Connections\022\024List A" +
-      "pp connections\0326Retrieves a list of app " +
-      "connections in the environmentJa\n\003200\022Z\n" +
-      "\"Successfully retrieved connections\0224\n2\032" +
-      "0.scalekit.v1.connections.ListConnection" +
-      "sResponse\202\265\030\002\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/a" +
-      "pi/v1/connections/app\022\321\003\n\024GetConnectionC" +
-      "ontext\0224.scalekit.v1.connections.GetConn" +
-      "ectionContextRequest\0325.scalekit.v1.conne" +
-      "ctions.GetConnectionContextResponse\"\313\002\222A" +
-      "\255\001\n\013Connections\022\026Get connection context\032" +
-      "<Retrieves the custom context data for a" +
-      " specific connection.J(\n\003200\022!\n\037Returns " +
-      "the connection context.J\036\n\003404\022\027\n\025Connec" +
-      "tion not found.\202\265\030\003\030\360\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
-      "\223\002~\022L/api/v1/organizations/{organization" +
-      "_id}/connections/{connection_id}/context" +
-      "sZ.\022,/api/v1/connections/{connection_id}" +
-      "/contexts\022\344\003\n\027UpdateConnectionContext\0227." +
-      "scalekit.v1.connections.UpdateConnection" +
-      "ContextRequest\032\026.google.protobuf.Empty\"\367" +
-      "\002\222A\307\001\n\013Connections\022\031Update connection co" +
-      "ntext\032:Updates the custom context data f" +
-      "or a specific connection.J&\n\003200\022\037\n\035Cont" +
-      "ext updated successfully.J\031\n\003400\022\022\n\020Inva" +
-      "lid request.J\036\n\003404\022\027\n\025Connection not fo" +
-      "und.\202\265\030\002\030p\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\220\001\032L/api/v" +
-      "1/organizations/{organization_id}/connec" +
-      "tions/{connection_id}/contexts:\007contextZ" +
-      "7\032,/api/v1/connections/{connection_id}/c" +
-      "ontexts:\007context\032\232\001\222A\226\001\n\013Connections\022\206\001M" +
-      "anage enterprise connections for your Sc" +
-      "alekit environment. This service provide" +
-      "s endpoints for retrieving, and updating" +
-      " connections.B\362\001\n)com.scalekit.grpc.scal" +
-      "ekit.v1.connectionsB\020ConnectionsProtoP\001Z" +
-      "5github.com/scalekit-inc/scalekit/pkg/gr" +
-      "pc/connections\242\002\003SVC\252\002\027Scalekit.V1.Conne" +
-      "ctions\312\002\027Scalekit\\V1\\Connections\342\002#Scale" +
-      "kit\\V1\\Connections\\GPBMetadata\352\002\031Scaleki" +
-      "t::V1::Connectionsb\006proto3"
+      "\202\265\030\014\n\010sso:read\030t\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002E\022C/" +
+      "api/v1/connections/{connection_id}/test-" +
+      "requests/{test_request_id}\022\215\003\n\022ListAppCo" +
+      "nnections\0222.scalekit.v1.connections.List" +
+      "AppConnectionsRequest\0323.scalekit.v1.conn" +
+      "ections.ListAppConnectionsResponse\"\215\002\222A\276" +
+      "\001\n\013Connections\022\024List App connections\0326Re" +
+      "trieves a list of app connections in the" +
+      " environmentJa\n\003200\022Z\n\"Successfully retr" +
+      "ieved connections\0224\n2\0320.scalekit.v1.conn" +
+      "ections.ListConnectionsResponse\202\265\030\031\n\025age" +
+      "nt_connectors:read\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
+      "\031\022\027/api/v1/connections/app\022\333\003\n\024GetConnec" +
+      "tionContext\0224.scalekit.v1.connections.Ge" +
+      "tConnectionContextRequest\0325.scalekit.v1." +
+      "connections.GetConnectionContextResponse" +
+      "\"\325\002\222A\255\001\n\013Connections\022\026Get connection con" +
+      "text\032<Retrieves the custom context data " +
+      "for a specific connection.J(\n\003200\022!\n\037Ret" +
+      "urns the connection context.J\036\n\003404\022\027\n\025C" +
+      "onnection not found.\202\265\030\r\n\010sso:read\030\360\001\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002~\022L/api/v1/organization" +
+      "s/{organization_id}/connections/{connect" +
+      "ion_id}/contextsZ.\022,/api/v1/connections/" +
+      "{connection_id}/contexts\022\357\003\n\027UpdateConne" +
+      "ctionContext\0227.scalekit.v1.connections.U" +
+      "pdateConnectionContextRequest\032\026.google.p" +
+      "rotobuf.Empty\"\202\003\222A\307\001\n\013Connections\022\031Updat" +
+      "e connection context\032:Updates the custom" +
+      " context data for a specific connection." +
+      "J&\n\003200\022\037\n\035Context updated successfully." +
+      "J\031\n\003400\022\022\n\020Invalid request.J\036\n\003404\022\027\n\025Co" +
+      "nnection not found.\202\265\030\r\n\tsso:write\030p\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002\220\001\032L/api/v1/organization" +
+      "s/{organization_id}/connections/{connect" +
+      "ion_id}/contexts:\007contextZ7\032,/api/v1/con" +
+      "nections/{connection_id}/contexts:\007conte" +
+      "xt\032\232\001\222A\226\001\n\013Connections\022\206\001Manage enterpri" +
+      "se connections for your Scalekit environ" +
+      "ment. This service provides endpoints fo" +
+      "r retrieving, and updating connections.B" +
+      "\362\001\n)com.scalekit.grpc.scalekit.v1.connec" +
+      "tionsB\020ConnectionsProtoP\001Z5github.com/sc" +
+      "alekit-inc/scalekit/pkg/grpc/connections" +
+      "\242\002\003SVC\252\002\027Scalekit.V1.Connections\312\002\027Scale" +
+      "kit\\V1\\Connections\342\002#Scalekit\\V1\\Connect" +
+      "ions\\GPBMetadata\352\002\031Scalekit::V1::Connect" +
+      "ionsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1691,13 +1778,13 @@ public final class ConnectionsProto {
     internal_static_scalekit_v1_connections_CreateConnection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_CreateConnection_descriptor,
-        new java.lang.String[] { "Provider", "Type", "ProviderKey", "KeyId", });
+        new java.lang.String[] { "Provider", "Type", "ProviderKey", "KeyId", "Context", "AuthMode", });
     internal_static_scalekit_v1_connections_Connection_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_connections_Connection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_Connection_descriptor,
-        new java.lang.String[] { "Id", "Provider", "Type", "Status", "Enabled", "DebugEnabled", "OrganizationId", "UiButtonTitle", "ConfigurationType", "TestConnectionUri", "AttributeMapping", "CreateTime", "UpdateTime", "OidcConfig", "SamlConfig", "OauthConfig", "PasswordlessConfig", "StaticConfig", "WebauthnConfig", "GoogleDwdConfig", "KeyId", "ProviderKey", "Domains", "McpServerUrl", "Settings", });
+        new java.lang.String[] { "Id", "Provider", "Type", "Status", "Enabled", "DebugEnabled", "OrganizationId", "UiButtonTitle", "ConfigurationType", "TestConnectionUri", "AttributeMapping", "CreateTime", "UpdateTime", "OidcConfig", "SamlConfig", "OauthConfig", "PasswordlessConfig", "StaticConfig", "WebauthnConfig", "GoogleDwdConfig", "KeyId", "ProviderKey", "Domains", "McpServerUrl", "ResolvedProxyUrl", "AuthMode", "Settings", });
     internal_static_scalekit_v1_connections_Connection_AttributeMappingEntry_descriptor =
       internal_static_scalekit_v1_connections_Connection_descriptor.getNestedTypes().get(0);
     internal_static_scalekit_v1_connections_Connection_AttributeMappingEntry_fieldAccessorTable = new
@@ -1787,7 +1874,7 @@ public final class ConnectionsProto {
     internal_static_scalekit_v1_connections_ListConnection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_ListConnection_descriptor,
-        new java.lang.String[] { "Id", "Provider", "Type", "Status", "Enabled", "OrganizationId", "UiButtonTitle", "Domains", "OrganizationName", "ProviderKey", "KeyId", "CreatedAt", "McpServerUrl", });
+        new java.lang.String[] { "Id", "Provider", "Type", "Status", "Enabled", "OrganizationId", "UiButtonTitle", "Domains", "OrganizationName", "ProviderKey", "KeyId", "CreatedAt", "McpServerUrl", "AuthMode", });
     internal_static_scalekit_v1_connections_ListOrganizationConnectionsRequest_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_scalekit_v1_connections_ListOrganizationConnectionsRequest_fieldAccessorTable = new
@@ -1841,7 +1928,7 @@ public final class ConnectionsProto {
     internal_static_scalekit_v1_connections_OAuthConnectionConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_connections_OAuthConnectionConfig_descriptor,
-        new java.lang.String[] { "AuthorizeUri", "TokenUri", "UserInfoUri", "ClientId", "ClientSecret", "Scopes", "RedirectUri", "PkceEnabled", "Prompt", "UsePlatformCreds", "AccessType", "CustomScopeName", "SyncUserProfileOnLogin", "TokenAccessType", "TenantId", "IsCimd", "AppName", "OptionalScopes", "Extensions", });
+        new java.lang.String[] { "AuthorizeUri", "TokenUri", "UserInfoUri", "ClientId", "ClientSecret", "Scopes", "RedirectUri", "PkceEnabled", "Prompt", "UsePlatformCreds", "AccessType", "CustomScopeName", "SyncUserProfileOnLogin", "TokenAccessType", "TenantId", "IsCimd", "AppName", "OptionalScopes", "Extensions", "TokenEndpointAuthMethod", "GoogleadsDeveloperToken", });
     internal_static_scalekit_v1_connections_OauthExtensions_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_scalekit_v1_connections_OauthExtensions_fieldAccessorTable = new

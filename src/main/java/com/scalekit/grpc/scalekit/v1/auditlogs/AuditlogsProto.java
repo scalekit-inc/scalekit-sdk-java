@@ -50,39 +50,113 @@ public final class AuditlogsProto {
       "o\032\033google/api/visibility.proto\032\037google/p" +
       "rotobuf/timestamp.proto\032.protoc-gen-open" +
       "apiv2/options/annotations.proto\032!scaleki" +
-      "t/v1/options/options.proto\"\260\003\n\022ListAuthL" +
-      "ogRequest\022\033\n\tpage_size\030\001 \001(\rR\010pageSize\022\035" +
-      "\n\npage_token\030\002 \001(\tR\tpageToken\022\024\n\005email\030\003" +
-      " \001(\tR\005email\022\026\n\006status\030\004 \003(\tR\006status\0229\n\ns" +
-      "tart_time\030\005 \001(\0132\032.google.protobuf.Timest" +
-      "ampR\tstartTime\0225\n\010end_time\030\006 \001(\0132\032.googl" +
-      "e.protobuf.TimestampR\007endTime\022\037\n\013resourc" +
-      "e_id\030\007 \001(\tR\nresourceId\022@\n\034connected_acco" +
-      "unt_identifier\030\010 \001(\tR\032connectedAccountId" +
-      "entifier\022[\n\tclient_id\030\t \001(\tB>\222A;2\'Filter" +
-      " authentication logs by client IDJ\020\"skc_" +
-      "1234567890\"R\010clientId\"\317\001\n\023ListAuthLogRes" +
-      "ponse\022&\n\017next_page_token\030\001 \001(\tR\rnextPage" +
-      "Token\022&\n\017prev_page_token\030\002 \001(\tR\rprevPage" +
-      "Token\022\035\n\ntotal_size\030\003 \001(\rR\ttotalSize\022I\n\014" +
-      "authRequests\030\004 \003(\0132%.scalekit.v1.auditlo" +
-      "gs.AuthLogRequestR\014authRequests\"\305\007\n\016Auth" +
-      "LogRequest\022\'\n\017organization_id\030\001 \001(\tR\016org" +
-      "anizationId\022%\n\016environment_id\030\002 \001(\tR\renv" +
-      "ironmentId\022#\n\rconnection_id\030\003 \001(\tR\014conne" +
-      "ctionId\022&\n\017auth_request_id\030\004 \001(\tR\rauthRe" +
-      "questId\022\024\n\005email\030\005 \001(\tR\005email\022\'\n\017connect" +
-      "ion_type\030\006 \001(\tR\016connectionType\022/\n\023connec" +
-      "tion_provider\030\007 \001(\tR\022connectionProvider\022" +
-      "\026\n\006status\030\010 \001(\tR\006status\0228\n\ttimestamp\030\t \001" +
-      "(\0132\032.google.protobuf.TimestampR\ttimestam" +
-      "p\022W\n\022connection_details\030\n \003(\0132(.scalekit" +
-      ".v1.auditlogs.ConnectionDetailsR\021connect" +
-      "ionDetails\022\032\n\010workflow\030\013 \001(\tR\010workflow\022\037" +
-      "\n\013resource_id\030\014 \001(\tR\nresourceId\022#\n\rresou" +
-      "rce_name\030\r \001(\tR\014resourceName\022#\n\rresource" +
-      "_type\030\016 \001(\tR\014resourceType\022@\n\034connected_a" +
-      "ccount_identifier\030\017 \001(\tR\032connectedAccoun" +
+      "t/v1/options/options.proto\"\304\013\n\022ListAuthL" +
+      "ogRequest\022\240\001\n\tpage_size\030\001 \001(\rB\202\001\222A\1772yMax" +
+      "imum number of authentication requests t" +
+      "o return in a single page. If omitted, t" +
+      "he server applies a default page size.J\002" +
+      "50R\010pageSize\022\220\001\n\npage_token\030\002 \001(\tBq\222An2g" +
+      "Opaque cursor from a previous response\'s" +
+      " next_page_token or prev_page_token. Omi" +
+      "t on the first request.J\003\"2\"R\tpageToken\022" +
+      "\206\001\n\005email\030\003 \001(\tBp\222Am2WFilter authenticat" +
+      "ion requests by the end-user email assoc" +
+      "iated with the login attempt.J\022\"user@exa" +
+      "mple.com\"R\005email\022\262\001\n\006status\030\004 \003(\tB\231\001\222A\225\001" +
+      "2|Filter by authentication request statu" +
+      "s. Accepted values: INITIATED, PENDING, " +
+      "SUCCESS, FAILED. Matching is case-insens" +
+      "itive.J\025[\"SUCCESS\", \"FAILED\"]R\006status\022\317\001" +
+      "\n\nstart_time\030\005 \001(\0132\032.google.protobuf.Tim" +
+      "estampB\223\001\222A\217\0012uInclusive lower bound for" +
+      " the authentication request timestamp (U" +
+      "TC). Only events at or after this time a" +
+      "re returned.J\026\"2024-01-01T00:00:00Z\"R\tst" +
+      "artTime\022\314\001\n\010end_time\030\006 \001(\0132\032.google.prot" +
+      "obuf.TimestampB\224\001\222A\220\0012vInclusive upper b" +
+      "ound for the authentication request time" +
+      "stamp (UTC). Only events at or before th" +
+      "is time are returned.J\026\"2024-12-31T23:59" +
+      ":59Z\"R\007endTime\022\217\001\n\013resource_id\030\007 \001(\tBn\222A" +
+      "k2WFilter authentication requests by res" +
+      "ource identifier (for example an MCP res" +
+      "ource ID).J\020\"res_1234567890\"R\nresourceId" +
+      "\022\251\001\n\034connected_account_identifier\030\010 \001(\tB" +
+      "g\222AU2?Filter authentication requests by " +
+      "connected account identifier.J\022\"user@exa" +
+      "mple.com\"\372\322\344\223\002\t\022\007PREVIEWR\032connectedAccou" +
+      "ntIdentifier\022[\n\tclient_id\030\t \001(\tB>\222A;2\'Fi" +
+      "lter authentication logs by client IDJ\020\"" +
+      "skc_1234567890\"R\010clientId\"\255\005\n\023ListAuthLo" +
+      "gResponse\022\255\001\n\017next_page_token\030\001 \001(\tB\204\001\222A" +
+      "\200\0012yOpaque cursor for the next page. Emp" +
+      "ty when the current page is the last. Pa" +
+      "ss back as page_token to fetch the next " +
+      "page.J\003\"3\"R\rnextPageToken\022\267\001\n\017prev_page_" +
+      "token\030\002 \001(\tB\216\001\222A\212\0012\202\001Opaque cursor for t" +
+      "he previous page. Empty when the current" +
+      " page is the first. Pass back as page_to" +
+      "ken to fetch the previous page.J\003\"1\"R\rpr" +
+      "evPageToken\022v\n\ntotal_size\030\003 \001(\rBW\222AT2MTo" +
+      "tal number of authentication requests ma" +
+      "tching the filter across all pages.J\003128" +
+      "R\ttotalSize\022\263\001\n\014authRequests\030\004 \003(\0132%.sca" +
+      "lekit.v1.auditlogs.AuthLogRequestBh\222Ae2c" +
+      "Authentication requests matching the fil" +
+      "ter, ordered most-recent first. Empty wh" +
+      "en no events match.R\014authRequests\"\343\022\n\016Au" +
+      "thLogRequest\022\221\001\n\017organization_id\030\001 \001(\tBh" +
+      "\222Ae2KOrganization ID associated with thi" +
+      "s authentication request, when resolved." +
+      "J\026\"org_1234567890123456\"R\016organizationId" +
+      "\022}\n\016environment_id\030\002 \001(\tBV\222AS29Environme" +
+      "nt ID where the authentication request o" +
+      "ccurred.J\026\"env_1234567890123456\"R\renviro" +
+      "nmentId\022~\n\rconnection_id\030\003 \001(\tBY\222AV2;Pri" +
+      "mary connection ID used for this authent" +
+      "ication request.J\027\"conn_1234567890123456" +
+      "\"R\014connectionId\022v\n\017auth_request_id\030\004 \001(\t" +
+      "BN\222AK22Unique identifier for this authen" +
+      "tication request.J\025\"ar_1234567890123456\"" +
+      "R\rauthRequestId\022y\n\005email\030\005 \001(\tBc\222A`2JEnd" +
+      "-user email associated with the authenti" +
+      "cation attempt, when available.J\022\"user@e" +
+      "xample.com\"R\005email\022p\n\017connection_type\030\006 " +
+      "\001(\tBG\222AD2:Type of the primary connection" +
+      " (for example OIDC or SAML).J\006\"OIDC\"R\016co" +
+      "nnectionType\022\210\001\n\023connection_provider\030\007 \001" +
+      "(\tBW\222AT2JIdentity provider for the prima" +
+      "ry connection (for example OKTA or GOOGL" +
+      "E).J\006\"OKTA\"R\022connectionProvider\022v\n\006statu" +
+      "s\030\010 \001(\tB^\222A[2NOutcome of the authenticat" +
+      "ion request: INITIATED, PENDING, SUCCESS" +
+      ", or FAILED.J\t\"SUCCESS\"R\006status\022\223\001\n\ttime" +
+      "stamp\030\t \001(\0132\032.google.protobuf.TimestampB" +
+      "Y\222AV2<UTC timestamp when this authentica" +
+      "tion request was recorded.J\026\"2024-06-15T" +
+      "14:30:00Z\"R\ttimestamp\022\277\001\n\022connection_det" +
+      "ails\030\n \003(\0132(.scalekit.v1.auditlogs.Conne" +
+      "ctionDetailsBf\222Ac2aConnections involved " +
+      "in this authentication request, includin" +
+      "g provider and organization context.R\021co" +
+      "nnectionDetails\022m\n\010workflow\030\013 \001(\tBQ\222AN2E" +
+      "Authentication workflow that produced th" +
+      "is log entry, when available.J\005\"sso\"R\010wo" +
+      "rkflow\022\206\001\n\013resource_id\030\014 \001(\tBe\222Ab2NResou" +
+      "rce identifier associated with this auth" +
+      "entication request, when present.J\020\"res_" +
+      "1234567890\"R\nresourceId\022\232\001\n\rresource_nam" +
+      "e\030\r \001(\tBu\222Ar2WDisplay name of the resour" +
+      "ce associated with this authentication r" +
+      "equest, when present.J\027\"Production MCP S" +
+      "erver\"R\014resourceName\022\200\001\n\rresource_type\030\016" +
+      " \001(\tB[\222AX2OType of the resource associat" +
+      "ed with this authentication request, whe" +
+      "n present.J\005\"mcp\"R\014resourceType\022\261\001\n\034conn" +
+      "ected_account_identifier\030\017 \001(\tBo\222A]2GCon" +
+      "nected account identifier associated wit" +
+      "h this authentication event.J\022\"user@exam" +
+      "ple.com\"\372\322\344\223\002\t\022\007PREVIEWR\032connectedAccoun" +
       "tIdentifier\022}\n\tclient_id\030\020 \001(\tB`\222A]2IUni" +
       "que identifier of the client associated " +
       "with this authentication eventJ\020\"skc_123" +
@@ -91,22 +165,60 @@ public final class AuditlogsProto {
       "lt\"R\nclientName\022f\n\013client_type\030\022 \001(\tBE\222A" +
       "B29Type of the client application (e.g.," +
       " ENV, NTV, SPA, M2M)J\005\"ENV\"R\nclientType\"" +
-      "\273\001\n\021ConnectionDetails\022#\n\rconnection_id\030\001" +
-      " \001(\tR\014connectionId\022\'\n\017organization_id\030\002 " +
-      "\001(\tR\016organizationId\022\'\n\017connection_type\030\003" +
-      " \001(\tR\016connectionType\022/\n\023connection_provi" +
-      "der\030\004 \001(\tR\022connectionProvider2\301\001\n\020AuditL" +
-      "ogsService\022\254\001\n\020ListAuthRequests\022).scalek" +
-      "it.v1.auditlogs.ListAuthLogRequest\032*.sca" +
-      "lekit.v1.auditlogs.ListAuthLogResponse\"A" +
-      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\022$/api/v1/log" +
-      "s/authentication/requestsB\344\001\n\'com.scalek" +
-      "it.grpc.scalekit.v1.auditlogsB\016Auditlogs" +
-      "ProtoP\001Z3github.com/scalekit-inc/scaleki" +
-      "t/pkg/grpc/auditlogs\242\002\003SVA\252\002\025Scalekit.V1" +
-      ".Auditlogs\312\002\025Scalekit\\V1\\Auditlogs\342\002!Sca" +
-      "lekit\\V1\\Auditlogs\\GPBMetadata\352\002\027Scaleki" +
-      "t::V1::Auditlogsb\006proto3"
+      "\277\003\n\021ConnectionDetails\022r\n\rconnection_id\030\001" +
+      " \001(\tBM\222AJ2/Connection ID for this connec" +
+      "tion detail entry.J\027\"conn_12345678901234" +
+      "56\"R\014connectionId\022m\n\017organization_id\030\002 \001" +
+      "(\tBD\222AA2\'Organization that owns this con" +
+      "nection.J\026\"org_1234567890123456\"R\016organi" +
+      "zationId\022a\n\017connection_type\030\003 \001(\tB8\222A52+" +
+      "Connection type (for example OIDC or SAM" +
+      "L).J\006\"OIDC\"R\016connectionType\022d\n\023connectio" +
+      "n_provider\030\004 \001(\tB3\222A02&Identity provider" +
+      " for this connection.J\006\"OKTA\"R\022connectio" +
+      "nProvider2\235\013\n\020AuditLogsService\022\244\t\n\020ListA" +
+      "uthRequests\022).scalekit.v1.auditlogs.List" +
+      "AuthLogRequest\032*.scalekit.v1.auditlogs.L" +
+      "istAuthLogResponse\"\270\010\222A\362\007\n\023Authenticatio" +
+      "n Logs\022\034List authentication requests\032\220\004R" +
+      "eturns a paginated list of authenticatio" +
+      "n request logs for the current environme" +
+      "nt, ordered most-recent first. Use this " +
+      "endpoint to audit login activity, invest" +
+      "igate failed authentications. Filter by " +
+      "email, status (INITIATED, PENDING, SUCCE" +
+      "SS, FAILED), time window, resource ID, o" +
+      "r client ID. Status filters are case-ins" +
+      "ensitive. The response includes cursor t" +
+      "okens for forward and backward paginatio" +
+      "n and the total matching count. Pass nex" +
+      "t_page_token or prev_page_token as page_" +
+      "token on the next call to page through r" +
+      "esults.J\246\001\n\003200\022\236\001\nlAuthentication reque" +
+      "sts page returned successfully; includes" +
+      " authRequests, pagination tokens, and to" +
+      "tal_size\022.\n,\032*.scalekit.v1.auditlogs.Lis" +
+      "tAuthLogResponseJ\247\001\n\003400\022\237\001\nvInvalid req" +
+      "uest - page_token is malformed, or statu" +
+      "s filter value is not one of INITIATED, " +
+      "PENDING, SUCCESS, or FAILED\022%\n#\032!#/defin" +
+      "itions/errdetailsErrorInfoJW\n\003401\022P\n\'Mis" +
+      "sing or invalid Authorization header\022%\n#" +
+      "\032!#/definitions/errdetailsErrorInfo\202\265\030\022\n" +
+      "\016auth_logs:read\030D\202\323\344\223\002&\022$/api/v1/logs/au" +
+      "thentication/requests\032\341\001\222A\335\001\n\023Authentica" +
+      "tion Logs\022\305\001Query authentication request" +
+      " logs for your environment. Use these en" +
+      "dpoints to audit login outcomes, trouble" +
+      "shoot failed authentications, and filter" +
+      " events by user, client, resource, or ti" +
+      "me range.B\344\001\n\'com.scalekit.grpc.scalekit" +
+      ".v1.auditlogsB\016AuditlogsProtoP\001Z3github." +
+      "com/scalekit-inc/scalekit/pkg/grpc/audit" +
+      "logs\242\002\003SVA\252\002\025Scalekit.V1.Auditlogs\312\002\025Sca" +
+      "lekit\\V1\\Auditlogs\342\002!Scalekit\\V1\\Auditlo" +
+      "gs\\GPBMetadata\352\002\027Scalekit::V1::Auditlogs" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -144,9 +256,11 @@ public final class AuditlogsProto {
         new java.lang.String[] { "ConnectionId", "OrganizationId", "ConnectionType", "ConnectionProvider", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.scalekit.grpc.google.api.VisibilityProto.fieldVisibility);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
-    registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);
     registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Field);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Operation);
+    registry.add(com.scalekit.grpc.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Tag);
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);

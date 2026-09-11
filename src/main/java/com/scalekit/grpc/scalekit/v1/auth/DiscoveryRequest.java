@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
   private DiscoveryRequest() {
     email_ = "";
     intent_ = 0;
+    gRecaptchaResponse_ = "";
   }
 
   @java.lang.Override
@@ -98,6 +99,45 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.auth.Intent.UNRECOGNIZED : result;
   }
 
+  public static final int G_RECAPTCHA_RESPONSE_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gRecaptchaResponse_ = "";
+  /**
+   * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The gRecaptchaResponse.
+   */
+  @java.lang.Override
+  public java.lang.String getGRecaptchaResponse() {
+    java.lang.Object ref = gRecaptchaResponse_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gRecaptchaResponse_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for gRecaptchaResponse.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getGRecaptchaResponseBytes() {
+    java.lang.Object ref = gRecaptchaResponse_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      gRecaptchaResponse_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -118,6 +158,9 @@ private static final long serialVersionUID = 0L;
     if (intent_ != com.scalekit.grpc.scalekit.v1.auth.Intent.INTENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, intent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gRecaptchaResponse_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gRecaptchaResponse_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -133,6 +176,9 @@ private static final long serialVersionUID = 0L;
     if (intent_ != com.scalekit.grpc.scalekit.v1.auth.Intent.INTENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, intent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gRecaptchaResponse_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gRecaptchaResponse_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -152,6 +198,8 @@ private static final long serialVersionUID = 0L;
     if (!getEmail()
         .equals(other.getEmail())) return false;
     if (intent_ != other.intent_) return false;
+    if (!getGRecaptchaResponse()
+        .equals(other.getGRecaptchaResponse())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -167,6 +215,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getEmail().hashCode();
     hash = (37 * hash) + INTENT_FIELD_NUMBER;
     hash = (53 * hash) + intent_;
+    hash = (37 * hash) + G_RECAPTCHA_RESPONSE_FIELD_NUMBER;
+    hash = (53 * hash) + getGRecaptchaResponse().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -300,6 +350,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       email_ = "";
       intent_ = 0;
+      gRecaptchaResponse_ = "";
       return this;
     }
 
@@ -338,6 +389,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.intent_ = intent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gRecaptchaResponse_ = gRecaptchaResponse_;
       }
     }
 
@@ -393,6 +447,11 @@ private static final long serialVersionUID = 0L;
       if (other.intent_ != 0) {
         setIntentValue(other.getIntentValue());
       }
+      if (!other.getGRecaptchaResponse().isEmpty()) {
+        gRecaptchaResponse_ = other.gRecaptchaResponse_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -429,6 +488,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
+            case 26: {
+              gRecaptchaResponse_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -567,6 +631,78 @@ private static final long serialVersionUID = 0L;
     public Builder clearIntent() {
       bitField0_ = (bitField0_ & ~0x00000002);
       intent_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gRecaptchaResponse_ = "";
+    /**
+     * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The gRecaptchaResponse.
+     */
+    public java.lang.String getGRecaptchaResponse() {
+      java.lang.Object ref = gRecaptchaResponse_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gRecaptchaResponse_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for gRecaptchaResponse.
+     */
+    public com.google.protobuf.ByteString
+        getGRecaptchaResponseBytes() {
+      java.lang.Object ref = gRecaptchaResponse_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gRecaptchaResponse_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The gRecaptchaResponse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGRecaptchaResponse(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      gRecaptchaResponse_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearGRecaptchaResponse() {
+      gRecaptchaResponse_ = getDefaultInstance().getGRecaptchaResponse();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string g_recaptcha_response = 3 [json_name = "gRecaptchaResponse", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for gRecaptchaResponse to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGRecaptchaResponseBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      gRecaptchaResponse_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -201,6 +201,68 @@ public final class MigrationServiceGrpc {
     return getMigrateEnvKeysMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> getReconcileConnectionsAccrualMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReconcileConnectionsAccrual",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> getReconcileConnectionsAccrualMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest, com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> getReconcileConnectionsAccrualMethod;
+    if ((getReconcileConnectionsAccrualMethod = MigrationServiceGrpc.getReconcileConnectionsAccrualMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getReconcileConnectionsAccrualMethod = MigrationServiceGrpc.getReconcileConnectionsAccrualMethod) == null) {
+          MigrationServiceGrpc.getReconcileConnectionsAccrualMethod = getReconcileConnectionsAccrualMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest, com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReconcileConnectionsAccrual"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("ReconcileConnectionsAccrual"))
+              .build();
+        }
+      }
+    }
+    return getReconcileConnectionsAccrualMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> getProjectBillingCatalogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProjectBillingCatalog",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> getProjectBillingCatalogMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest, com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> getProjectBillingCatalogMethod;
+    if ((getProjectBillingCatalogMethod = MigrationServiceGrpc.getProjectBillingCatalogMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getProjectBillingCatalogMethod = MigrationServiceGrpc.getProjectBillingCatalogMethod) == null) {
+          MigrationServiceGrpc.getProjectBillingCatalogMethod = getProjectBillingCatalogMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest, com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ProjectBillingCatalog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("ProjectBillingCatalog"))
+              .build();
+        }
+      }
+    }
+    return getProjectBillingCatalogMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -290,6 +352,20 @@ public final class MigrationServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateEnvKeysMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void reconcileConnectionsAccrual(com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReconcileConnectionsAccrualMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void projectBillingCatalog(com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getProjectBillingCatalogMethod(), responseObserver);
+    }
   }
 
   /**
@@ -366,6 +442,22 @@ public final class MigrationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getMigrateEnvKeysMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void reconcileConnectionsAccrual(com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReconcileConnectionsAccrualMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void projectBillingCatalog(com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProjectBillingCatalogMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -424,6 +516,20 @@ public final class MigrationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse migrateEnvKeys(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMigrateEnvKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse reconcileConnectionsAccrual(com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReconcileConnectionsAccrualMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse projectBillingCatalog(com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProjectBillingCatalogMethod(), getCallOptions(), request);
     }
   }
 
@@ -490,6 +596,22 @@ public final class MigrationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMigrateEnvKeysMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> reconcileConnectionsAccrual(
+        com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReconcileConnectionsAccrualMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse> projectBillingCatalog(
+        com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProjectBillingCatalogMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_MIGRATE_FSADATA = 0;
@@ -498,6 +620,8 @@ public final class MigrationServiceGrpc {
   private static final int METHODID_MIGRATE_ROLE_PERMISSIONS = 3;
   private static final int METHODID_MIGRATE_ENVIRONMENT_PERMISSIONS = 4;
   private static final int METHODID_MIGRATE_ENV_KEYS = 5;
+  private static final int METHODID_RECONCILE_CONNECTIONS_ACCRUAL = 6;
+  private static final int METHODID_PROJECT_BILLING_CATALOG = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -539,6 +663,14 @@ public final class MigrationServiceGrpc {
         case METHODID_MIGRATE_ENV_KEYS:
           serviceImpl.migrateEnvKeys((com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>) responseObserver);
+          break;
+        case METHODID_RECONCILE_CONNECTIONS_ACCRUAL:
+          serviceImpl.reconcileConnectionsAccrual((com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse>) responseObserver);
+          break;
+        case METHODID_PROJECT_BILLING_CATALOG:
+          serviceImpl.projectBillingCatalog((com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -600,6 +732,20 @@ public final class MigrationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest,
               com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>(
                 service, METHODID_MIGRATE_ENV_KEYS)))
+        .addMethod(
+          getReconcileConnectionsAccrualMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest,
+              com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse>(
+                service, METHODID_RECONCILE_CONNECTIONS_ACCRUAL)))
+        .addMethod(
+          getProjectBillingCatalogMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogRequest,
+              com.scalekit.grpc.scalekit.v1.migrations.ProjectBillingCatalogResponse>(
+                service, METHODID_PROJECT_BILLING_CATALOG)))
         .build();
   }
 
@@ -654,6 +800,8 @@ public final class MigrationServiceGrpc {
               .addMethod(getMigrateRolePermissionsMethod())
               .addMethod(getMigrateEnvironmentPermissionsMethod())
               .addMethod(getMigrateEnvKeysMethod())
+              .addMethod(getReconcileConnectionsAccrualMethod())
+              .addMethod(getProjectBillingCatalogMethod())
               .build();
         }
       }

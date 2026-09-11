@@ -170,4 +170,15 @@ public interface ListConnectionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMcpServerUrlBytes();
+
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 14 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authMode.
+   */
+  int getAuthModeValue();
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 14 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authMode.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode();
 }

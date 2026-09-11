@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     regionCode_ = 0;
     type_ = 0;
     authenticationMode_ = 0;
+    plans_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -158,6 +159,117 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.commons.AuthenticationMode.UNRECOGNIZED : result;
   }
 
+  public static final int PLANS_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> plans_;
+  /**
+   * <pre>
+   * Plan per product line, for a production environment — the only kind that is billed.
+   *
+   * Required only for workspaces billed per environment: there, at least one line must be selected (a
+   * production environment is a billing commitment, never provisioned on a silent default), and a line
+   * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+   * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+   * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+   *
+   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+   * product line" across every billing RPC.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> getPlansList() {
+    return plans_;
+  }
+  /**
+   * <pre>
+   * Plan per product line, for a production environment — the only kind that is billed.
+   *
+   * Required only for workspaces billed per environment: there, at least one line must be selected (a
+   * production environment is a billing commitment, never provisioned on a silent default), and a line
+   * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+   * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+   * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+   *
+   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+   * product line" across every billing RPC.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder> 
+      getPlansOrBuilderList() {
+    return plans_;
+  }
+  /**
+   * <pre>
+   * Plan per product line, for a production environment — the only kind that is billed.
+   *
+   * Required only for workspaces billed per environment: there, at least one line must be selected (a
+   * production environment is a billing commitment, never provisioned on a silent default), and a line
+   * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+   * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+   * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+   *
+   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+   * product line" across every billing RPC.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getPlansCount() {
+    return plans_.size();
+  }
+  /**
+   * <pre>
+   * Plan per product line, for a production environment — the only kind that is billed.
+   *
+   * Required only for workspaces billed per environment: there, at least one line must be selected (a
+   * production environment is a billing commitment, never provisioned on a silent default), and a line
+   * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+   * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+   * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+   *
+   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+   * product line" across every billing RPC.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.billing.LinePlan getPlans(int index) {
+    return plans_.get(index);
+  }
+  /**
+   * <pre>
+   * Plan per product line, for a production environment — the only kind that is billed.
+   *
+   * Required only for workspaces billed per environment: there, at least one line must be selected (a
+   * production environment is a billing commitment, never provisioned on a silent default), and a line
+   * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+   * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+   * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+   *
+   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+   * product line" across every billing RPC.
+   * </pre>
+   *
+   * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
+      int index) {
+    return plans_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -184,6 +296,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(8, authenticationMode_);
     }
+    for (int i = 0; i < plans_.size(); i++) {
+      output.writeMessage(9, plans_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +322,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, authenticationMode_);
+    }
+    for (int i = 0; i < plans_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, plans_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -237,6 +356,8 @@ private static final long serialVersionUID = 0L;
     if (hasAuthenticationMode()) {
       if (authenticationMode_ != other.authenticationMode_) return false;
     }
+    if (!getPlansList()
+        .equals(other.getPlansList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -261,6 +382,10 @@ private static final long serialVersionUID = 0L;
     if (hasAuthenticationMode()) {
       hash = (37 * hash) + AUTHENTICATION_MODE_FIELD_NUMBER;
       hash = (53 * hash) + authenticationMode_;
+    }
+    if (getPlansCount() > 0) {
+      hash = (37 * hash) + PLANS_FIELD_NUMBER;
+      hash = (53 * hash) + getPlansList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -397,6 +522,13 @@ private static final long serialVersionUID = 0L;
       regionCode_ = 0;
       type_ = 0;
       authenticationMode_ = 0;
+      if (plansBuilder_ == null) {
+        plans_ = java.util.Collections.emptyList();
+      } else {
+        plans_ = null;
+        plansBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -423,9 +555,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.scalekit.grpc.scalekit.v1.environments.CreateEnvironment buildPartial() {
       com.scalekit.grpc.scalekit.v1.environments.CreateEnvironment result = new com.scalekit.grpc.scalekit.v1.environments.CreateEnvironment(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.environments.CreateEnvironment result) {
+      if (plansBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          plans_ = java.util.Collections.unmodifiableList(plans_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.plans_ = plans_;
+      } else {
+        result.plans_ = plansBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.scalekit.grpc.scalekit.v1.environments.CreateEnvironment result) {
@@ -507,6 +652,32 @@ private static final long serialVersionUID = 0L;
       if (other.hasAuthenticationMode()) {
         setAuthenticationMode(other.getAuthenticationMode());
       }
+      if (plansBuilder_ == null) {
+        if (!other.plans_.isEmpty()) {
+          if (plans_.isEmpty()) {
+            plans_ = other.plans_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePlansIsMutable();
+            plans_.addAll(other.plans_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.plans_.isEmpty()) {
+          if (plansBuilder_.isEmpty()) {
+            plansBuilder_.dispose();
+            plansBuilder_ = null;
+            plans_ = other.plans_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            plansBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getPlansFieldBuilder() : null;
+          } else {
+            plansBuilder_.addAllMessages(other.plans_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -553,6 +724,19 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 64
+            case 74: {
+              com.scalekit.grpc.scalekit.v1.billing.LinePlan m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.billing.LinePlan.parser(),
+                      extensionRegistry);
+              if (plansBuilder_ == null) {
+                ensurePlansIsMutable();
+                plans_.add(m);
+              } else {
+                plansBuilder_.addMessage(m);
+              }
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -820,6 +1004,498 @@ private static final long serialVersionUID = 0L;
       authenticationMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> plans_ =
+      java.util.Collections.emptyList();
+    private void ensurePlansIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        plans_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.billing.LinePlan>(plans_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.billing.LinePlan, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder, com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder> plansBuilder_;
+
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> getPlansList() {
+      if (plansBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(plans_);
+      } else {
+        return plansBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getPlansCount() {
+      if (plansBuilder_ == null) {
+        return plans_.size();
+      } else {
+        return plansBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.LinePlan getPlans(int index) {
+      if (plansBuilder_ == null) {
+        return plans_.get(index);
+      } else {
+        return plansBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPlans(
+        int index, com.scalekit.grpc.scalekit.v1.billing.LinePlan value) {
+      if (plansBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePlansIsMutable();
+        plans_.set(index, value);
+        onChanged();
+      } else {
+        plansBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPlans(
+        int index, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder builderForValue) {
+      if (plansBuilder_ == null) {
+        ensurePlansIsMutable();
+        plans_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        plansBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPlans(com.scalekit.grpc.scalekit.v1.billing.LinePlan value) {
+      if (plansBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePlansIsMutable();
+        plans_.add(value);
+        onChanged();
+      } else {
+        plansBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPlans(
+        int index, com.scalekit.grpc.scalekit.v1.billing.LinePlan value) {
+      if (plansBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePlansIsMutable();
+        plans_.add(index, value);
+        onChanged();
+      } else {
+        plansBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPlans(
+        com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder builderForValue) {
+      if (plansBuilder_ == null) {
+        ensurePlansIsMutable();
+        plans_.add(builderForValue.build());
+        onChanged();
+      } else {
+        plansBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addPlans(
+        int index, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder builderForValue) {
+      if (plansBuilder_ == null) {
+        ensurePlansIsMutable();
+        plans_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        plansBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllPlans(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.billing.LinePlan> values) {
+      if (plansBuilder_ == null) {
+        ensurePlansIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, plans_);
+        onChanged();
+      } else {
+        plansBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPlans() {
+      if (plansBuilder_ == null) {
+        plans_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        plansBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removePlans(int index) {
+      if (plansBuilder_ == null) {
+        ensurePlansIsMutable();
+        plans_.remove(index);
+        onChanged();
+      } else {
+        plansBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder getPlansBuilder(
+        int index) {
+      return getPlansFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
+        int index) {
+      if (plansBuilder_ == null) {
+        return plans_.get(index);  } else {
+        return plansBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder> 
+         getPlansOrBuilderList() {
+      if (plansBuilder_ != null) {
+        return plansBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(plans_);
+      }
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder addPlansBuilder() {
+      return getPlansFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.billing.LinePlan.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder addPlansBuilder(
+        int index) {
+      return getPlansFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.billing.LinePlan.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Plan per product line, for a production environment — the only kind that is billed.
+     *
+     * Required only for workspaces billed per environment: there, at least one line must be selected (a
+     * production environment is a billing commitment, never provisioned on a silent default), and a line
+     * omitted from a non-empty selection goes on the free plan. Ignored for workspaces on legacy
+     * workspace-level subscription billing, whose production environments carry no per-line plan — sending
+     * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
+     *
+     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
+     * product line" across every billing RPC.
+     * </pre>
+     *
+     * <code>repeated .scalekit.v1.billing.LinePlan plans = 9 [json_name = "plans", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder> 
+         getPlansBuilderList() {
+      return getPlansFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.billing.LinePlan, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder, com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder> 
+        getPlansFieldBuilder() {
+      if (plansBuilder_ == null) {
+        plansBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.billing.LinePlan, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder, com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder>(
+                plans_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        plans_ = null;
+      }
+      return plansBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

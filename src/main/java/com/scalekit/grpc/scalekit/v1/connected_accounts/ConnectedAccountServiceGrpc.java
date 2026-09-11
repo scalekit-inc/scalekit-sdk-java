@@ -201,6 +201,37 @@ public final class ConnectedAccountServiceGrpc {
     return getGetMagicLinkForConnectedAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> getAuthorizeOrgWideCredentialMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AuthorizeOrgWideCredential",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> getAuthorizeOrgWideCredentialMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> getAuthorizeOrgWideCredentialMethod;
+    if ((getAuthorizeOrgWideCredentialMethod = ConnectedAccountServiceGrpc.getAuthorizeOrgWideCredentialMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getAuthorizeOrgWideCredentialMethod = ConnectedAccountServiceGrpc.getAuthorizeOrgWideCredentialMethod) == null) {
+          ConnectedAccountServiceGrpc.getAuthorizeOrgWideCredentialMethod = getAuthorizeOrgWideCredentialMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AuthorizeOrgWideCredential"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("AuthorizeOrgWideCredential"))
+              .build();
+        }
+      }
+    }
+    return getAuthorizeOrgWideCredentialMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest,
       com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountResponse> getGetConnectedAccountMethod;
 
@@ -590,6 +621,16 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Authorize the shared credential for an ORG_WIDE connection
+     * </pre>
+     */
+    default void authorizeOrgWideCredential(com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthorizeOrgWideCredentialMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account by ID
      * </pre>
      */
@@ -785,6 +826,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Authorize the shared credential for an ORG_WIDE connection
+     * </pre>
+     */
+    public void authorizeOrgWideCredential(com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAuthorizeOrgWideCredentialMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account by ID
      * </pre>
      */
@@ -968,6 +1020,16 @@ public final class ConnectedAccountServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse getMagicLinkForConnectedAccount(com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMagicLinkForConnectedAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Authorize the shared credential for an ORG_WIDE connection
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse authorizeOrgWideCredential(com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAuthorizeOrgWideCredentialMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1156,6 +1218,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Authorize the shared credential for an ORG_WIDE connection
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse> authorizeOrgWideCredential(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAuthorizeOrgWideCredentialMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get Connected Account by ID
      * </pre>
      */
@@ -1271,15 +1344,16 @@ public final class ConnectedAccountServiceGrpc {
   private static final int METHODID_UPDATE_CONNECTED_ACCOUNT = 3;
   private static final int METHODID_DELETE_CONNECTED_ACCOUNT = 4;
   private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 5;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT = 6;
-  private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 7;
-  private static final int METHODID_GET_REDIRECT_URL = 8;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 9;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 10;
-  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 11;
-  private static final int METHODID_LIST_MY_APP_CONNECTIONS = 12;
-  private static final int METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT = 13;
-  private static final int METHODID_GET_MY_CONNECTION_MAGIC_LINK = 14;
+  private static final int METHODID_AUTHORIZE_ORG_WIDE_CREDENTIAL = 6;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT = 7;
+  private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 8;
+  private static final int METHODID_GET_REDIRECT_URL = 9;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 10;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 11;
+  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 12;
+  private static final int METHODID_LIST_MY_APP_CONNECTIONS = 13;
+  private static final int METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT = 14;
+  private static final int METHODID_GET_MY_CONNECTION_MAGIC_LINK = 15;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1321,6 +1395,10 @@ public final class ConnectedAccountServiceGrpc {
         case METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT:
           serviceImpl.getMagicLinkForConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse>) responseObserver);
+          break;
+        case METHODID_AUTHORIZE_ORG_WIDE_CREDENTIAL:
+          serviceImpl.authorizeOrgWideCredential((com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse>) responseObserver);
           break;
         case METHODID_GET_CONNECTED_ACCOUNT:
           serviceImpl.getConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountRequest) request,
@@ -1418,6 +1496,13 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest,
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse>(
                 service, METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT)))
+        .addMethod(
+          getAuthorizeOrgWideCredentialMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.AuthorizeOrgWideCredentialResponse>(
+                service, METHODID_AUTHORIZE_ORG_WIDE_CREDENTIAL)))
         .addMethod(
           getGetConnectedAccountMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1535,6 +1620,7 @@ public final class ConnectedAccountServiceGrpc {
               .addMethod(getUpdateConnectedAccountMethod())
               .addMethod(getDeleteConnectedAccountMethod())
               .addMethod(getGetMagicLinkForConnectedAccountMethod())
+              .addMethod(getAuthorizeOrgWideCredentialMethod())
               .addMethod(getGetConnectedAccountMethod())
               .addMethod(getDisconnectConnectedAccountMethod())
               .addMethod(getGetRedirectUrlMethod())

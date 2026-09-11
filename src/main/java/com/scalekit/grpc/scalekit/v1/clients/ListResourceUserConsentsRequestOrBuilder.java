@@ -49,4 +49,19 @@ public interface ListResourceUserConsentsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
+
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the filter field is set.
+   */
+  boolean hasFilter();
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The filter.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilter getFilter();
+  /**
+   * <code>.scalekit.v1.clients.ResourceUserConsentFilter filter = 5 [json_name = "filter", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.ResourceUserConsentFilterOrBuilder getFilterOrBuilder();
 }

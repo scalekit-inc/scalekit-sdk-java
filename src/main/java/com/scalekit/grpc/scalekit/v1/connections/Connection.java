@@ -29,6 +29,8 @@ private static final long serialVersionUID = 0L;
     providerKey_ = "";
     domains_ = java.util.Collections.emptyList();
     mcpServerUrl_ = "";
+    resolvedProxyUrl_ = "";
+    authMode_ = 0;
   }
 
   @java.lang.Override
@@ -896,6 +898,71 @@ java.lang.String defaultValue) {
     }
   }
 
+  public static final int RESOLVED_PROXY_URL_FIELD_NUMBER = 30;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resolvedProxyUrl_ = "";
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resolvedProxyUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasResolvedProxyUrl() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resolvedProxyUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getResolvedProxyUrl() {
+    java.lang.Object ref = resolvedProxyUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resolvedProxyUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for resolvedProxyUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResolvedProxyUrlBytes() {
+    java.lang.Object ref = resolvedProxyUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resolvedProxyUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AUTH_MODE_FIELD_NUMBER = 31;
+  private int authMode_ = 0;
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authMode.
+   */
+  @java.lang.Override public int getAuthModeValue() {
+    return authMode_;
+  }
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authMode.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode() {
+    com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode result = com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.forNumber(authMode_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -984,6 +1051,12 @@ java.lang.String defaultValue) {
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, mcpServerUrl_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, resolvedProxyUrl_);
+    }
+    if (authMode_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.CONNECTION_AUTH_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(31, authMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1089,6 +1162,13 @@ java.lang.String defaultValue) {
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, mcpServerUrl_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, resolvedProxyUrl_);
+    }
+    if (authMode_ != com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.CONNECTION_AUTH_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(31, authMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1149,6 +1229,12 @@ java.lang.String defaultValue) {
       if (!getMcpServerUrl()
           .equals(other.getMcpServerUrl())) return false;
     }
+    if (hasResolvedProxyUrl() != other.hasResolvedProxyUrl()) return false;
+    if (hasResolvedProxyUrl()) {
+      if (!getResolvedProxyUrl()
+          .equals(other.getResolvedProxyUrl())) return false;
+    }
+    if (authMode_ != other.authMode_) return false;
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
       case 18:
@@ -1243,6 +1329,12 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + MCP_SERVER_URL_FIELD_NUMBER;
       hash = (53 * hash) + getMcpServerUrl().hashCode();
     }
+    if (hasResolvedProxyUrl()) {
+      hash = (37 * hash) + RESOLVED_PROXY_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedProxyUrl().hashCode();
+    }
+    hash = (37 * hash) + AUTH_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + authMode_;
     switch (settingsCase_) {
       case 18:
         hash = (37 * hash) + OIDC_CONFIG_FIELD_NUMBER;
@@ -1488,6 +1580,8 @@ java.lang.String defaultValue) {
       }
       bitField0_ = (bitField0_ & ~0x00400000);
       mcpServerUrl_ = "";
+      resolvedProxyUrl_ = "";
+      authMode_ = 0;
       settingsCase_ = 0;
       settings_ = null;
       return this;
@@ -1595,6 +1689,13 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.mcpServerUrl_ = mcpServerUrl_;
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.resolvedProxyUrl_ = resolvedProxyUrl_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.authMode_ = authMode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1763,6 +1864,14 @@ java.lang.String defaultValue) {
         mcpServerUrl_ = other.mcpServerUrl_;
         bitField0_ |= 0x00800000;
         onChanged();
+      }
+      if (other.hasResolvedProxyUrl()) {
+        resolvedProxyUrl_ = other.resolvedProxyUrl_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (other.authMode_ != 0) {
+        setAuthModeValue(other.getAuthModeValue());
       }
       switch (other.getSettingsCase()) {
         case OIDC_CONFIG: {
@@ -1973,6 +2082,16 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00800000;
               break;
             } // case 234
+            case 242: {
+              resolvedProxyUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x01000000;
+              break;
+            } // case 242
+            case 248: {
+              authMode_ = input.readEnum();
+              bitField0_ |= 0x02000000;
+              break;
+            } // case 248
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -4405,6 +4524,138 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       mcpServerUrl_ = value;
       bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resolvedProxyUrl_ = "";
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the resolvedProxyUrl field is set.
+     */
+    public boolean hasResolvedProxyUrl() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resolvedProxyUrl.
+     */
+    public java.lang.String getResolvedProxyUrl() {
+      java.lang.Object ref = resolvedProxyUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedProxyUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for resolvedProxyUrl.
+     */
+    public com.google.protobuf.ByteString
+        getResolvedProxyUrlBytes() {
+      java.lang.Object ref = resolvedProxyUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resolvedProxyUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resolvedProxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedProxyUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resolvedProxyUrl_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResolvedProxyUrl() {
+      resolvedProxyUrl_ = getDefaultInstance().getResolvedProxyUrl();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional string resolved_proxy_url = 30 [json_name = "resolvedProxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for resolvedProxyUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedProxyUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resolvedProxyUrl_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private int authMode_ = 0;
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for authMode.
+     */
+    @java.lang.Override public int getAuthModeValue() {
+      return authMode_;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for authMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthModeValue(int value) {
+      authMode_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The authMode.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode() {
+      com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode result = com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.forNumber(authMode_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The authMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthMode(com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x02000000;
+      authMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 31 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthMode() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      authMode_ = 0;
       onChanged();
       return this;
     }

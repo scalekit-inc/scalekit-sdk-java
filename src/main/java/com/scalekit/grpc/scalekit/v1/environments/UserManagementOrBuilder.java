@@ -189,4 +189,64 @@ public interface UserManagementOrBuilder extends
    * <code>.google.protobuf.BoolValue sync_user_profile_on_signin = 11 [json_name = "syncUserProfileOnSignin"];</code>
    */
   com.google.protobuf.BoolValueOrBuilder getSyncUserProfileOnSigninOrBuilder();
+
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   * @return Whether the enableBotDetection field is set.
+   */
+  boolean hasEnableBotDetection();
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   * @return The enableBotDetection.
+   */
+  com.google.protobuf.BoolValue getEnableBotDetection();
+  /**
+   * <pre>
+   * Indicates whether bot detection (Google reCAPTCHA) is enabled on login/signup.
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_bot_detection = 12 [json_name = "enableBotDetection"];</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableBotDetectionOrBuilder();
+
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   * @return Whether the enableFailOpen field is set.
+   */
+  boolean hasEnableFailOpen();
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   * @return The enableFailOpen.
+   */
+  com.google.protobuf.BoolValue getEnableFailOpen();
+  /**
+   * <pre>
+   * When bot detection is enabled, indicates whether login/signup should be allowed
+   * if the reCAPTCHA check cannot be performed (widget failed to load, or Google's
+   * verification service is unreachable). Defaults to false (fail closed).
+   * </pre>
+   *
+   * <code>.google.protobuf.BoolValue enable_fail_open = 13 [json_name = "enableFailOpen"];</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getEnableFailOpenOrBuilder();
 }

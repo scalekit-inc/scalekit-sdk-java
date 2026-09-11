@@ -142,4 +142,15 @@ public interface ListConnectedAccountsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getConnectionNamesBytes(int index);
+
+  /**
+   * <code>optional bool is_org_wide_credential = 10 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the isOrgWideCredential field is set.
+   */
+  boolean hasIsOrgWideCredential();
+  /**
+   * <code>optional bool is_org_wide_credential = 10 [json_name = "isOrgWideCredential", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The isOrgWideCredential.
+   */
+  boolean getIsOrgWideCredential();
 }

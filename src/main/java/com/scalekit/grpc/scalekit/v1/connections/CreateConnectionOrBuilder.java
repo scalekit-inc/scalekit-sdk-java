@@ -58,4 +58,30 @@ public interface CreateConnectionOrBuilder extends
    */
   com.google.protobuf.ByteString
       getKeyIdBytes();
+
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the context field is set.
+   */
+  boolean hasContext();
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The context.
+   */
+  com.google.protobuf.Struct getContext();
+  /**
+   * <code>.google.protobuf.Struct context = 5 [json_name = "context", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.StructOrBuilder getContextOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for authMode.
+   */
+  int getAuthModeValue();
+  /**
+   * <code>.scalekit.v1.connections.ConnectionAuthMode auth_mode = 6 [json_name = "authMode", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The authMode.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode getAuthMode();
 }

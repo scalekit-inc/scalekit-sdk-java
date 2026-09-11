@@ -22,4 +22,29 @@ public interface GetMemberResponseOrBuilder extends
    * <code>.scalekit.v1.members.Member member = 1 [json_name = "member"];</code>
    */
   com.scalekit.grpc.scalekit.v1.members.MemberOrBuilder getMemberOrBuilder();
+
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the dashboardPermissions.
+   */
+  java.util.List<java.lang.String>
+      getDashboardPermissionsList();
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of dashboardPermissions.
+   */
+  int getDashboardPermissionsCount();
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The dashboardPermissions at the given index.
+   */
+  java.lang.String getDashboardPermissions(int index);
+  /**
+   * <code>repeated string dashboard_permissions = 2 [json_name = "dashboardPermissions", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dashboardPermissions at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDashboardPermissionsBytes(int index);
 }

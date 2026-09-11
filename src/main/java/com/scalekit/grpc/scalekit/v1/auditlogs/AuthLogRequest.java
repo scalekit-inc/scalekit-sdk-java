@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object organizationId_ = "";
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The organizationId.
    */
   @java.lang.Override
@@ -78,7 +78,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+   * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for organizationId.
    */
   @java.lang.Override
@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object environmentId_ = "";
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The environmentId.
    */
   @java.lang.Override
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+   * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for environmentId.
    */
   @java.lang.Override
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionId_ = "";
   /**
-   * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionId.
    */
   @java.lang.Override
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+   * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionId.
    */
   @java.lang.Override
@@ -178,7 +178,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object authRequestId_ = "";
   /**
-   * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+   * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The authRequestId.
    */
   @java.lang.Override
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+   * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for authRequestId.
    */
   @java.lang.Override
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
   /**
-   * <code>string email = 5 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The email.
    */
   @java.lang.Override
@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string email = 5 [json_name = "email"];</code>
+   * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionType_ = "";
   /**
-   * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionType.
    */
   @java.lang.Override
@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+   * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionType.
    */
   @java.lang.Override
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionProvider_ = "";
   /**
-   * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectionProvider.
    */
   @java.lang.Override
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+   * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectionProvider.
    */
   @java.lang.Override
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
   /**
-   * <code>string status = 8 [json_name = "status"];</code>
+   * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The status.
    */
   @java.lang.Override
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string status = 8 [json_name = "status"];</code>
+   * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for status.
    */
   @java.lang.Override
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
   public static final int TIMESTAMP_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp timestamp_;
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the timestamp field is set.
    */
   @java.lang.Override
@@ -380,7 +380,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
   /**
-   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+   * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
@@ -399,14 +399,14 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails> connectionDetails_;
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails> getConnectionDetailsList() {
     return connectionDetails_;
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder> 
@@ -414,21 +414,21 @@ private static final long serialVersionUID = 0L;
     return connectionDetails_;
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public int getConnectionDetailsCount() {
     return connectionDetails_.size();
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails getConnectionDetails(int index) {
     return connectionDetails_.get(index);
   }
   /**
-   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+   * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder getConnectionDetailsOrBuilder(
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object workflow_ = "";
   /**
-   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The workflow.
    */
   @java.lang.Override
@@ -457,7 +457,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string workflow = 11 [json_name = "workflow"];</code>
+   * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for workflow.
    */
   @java.lang.Override
@@ -479,7 +479,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceId_ = "";
   /**
-   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceId.
    */
   @java.lang.Override
@@ -496,7 +496,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceId.
    */
   @java.lang.Override
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceName_ = "";
   /**
-   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceName.
    */
   @java.lang.Override
@@ -535,7 +535,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+   * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceName.
    */
   @java.lang.Override
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceType_ = "";
   /**
-   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceType.
    */
   @java.lang.Override
@@ -574,7 +574,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+   * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceType.
    */
   @java.lang.Override
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectedAccountIdentifier_ = "";
   /**
-   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectedAccountIdentifier.
    */
   @java.lang.Override
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectedAccountIdentifier.
    */
   @java.lang.Override
@@ -1554,7 +1554,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object organizationId_ = "";
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The organizationId.
      */
     public java.lang.String getOrganizationId() {
@@ -1570,7 +1570,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for organizationId.
      */
     public com.google.protobuf.ByteString
@@ -1587,7 +1587,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The organizationId to set.
      * @return This builder for chaining.
      */
@@ -1600,7 +1600,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizationId() {
@@ -1610,7 +1610,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string organization_id = 1 [json_name = "organizationId"];</code>
+     * <code>string organization_id = 1 [json_name = "organizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for organizationId to set.
      * @return This builder for chaining.
      */
@@ -1626,7 +1626,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object environmentId_ = "";
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The environmentId.
      */
     public java.lang.String getEnvironmentId() {
@@ -1642,7 +1642,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for environmentId.
      */
     public com.google.protobuf.ByteString
@@ -1659,7 +1659,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The environmentId to set.
      * @return This builder for chaining.
      */
@@ -1672,7 +1672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEnvironmentId() {
@@ -1682,7 +1682,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string environment_id = 2 [json_name = "environmentId"];</code>
+     * <code>string environment_id = 2 [json_name = "environmentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for environmentId to set.
      * @return This builder for chaining.
      */
@@ -1698,7 +1698,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectionId_ = "";
     /**
-     * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectionId.
      */
     public java.lang.String getConnectionId() {
@@ -1714,7 +1714,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectionId.
      */
     public com.google.protobuf.ByteString
@@ -1731,7 +1731,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectionId to set.
      * @return This builder for chaining.
      */
@@ -1744,7 +1744,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectionId() {
@@ -1754,7 +1754,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_id = 3 [json_name = "connectionId"];</code>
+     * <code>string connection_id = 3 [json_name = "connectionId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectionId to set.
      * @return This builder for chaining.
      */
@@ -1770,7 +1770,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object authRequestId_ = "";
     /**
-     * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+     * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The authRequestId.
      */
     public java.lang.String getAuthRequestId() {
@@ -1786,7 +1786,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+     * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for authRequestId.
      */
     public com.google.protobuf.ByteString
@@ -1803,7 +1803,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+     * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The authRequestId to set.
      * @return This builder for chaining.
      */
@@ -1816,7 +1816,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+     * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearAuthRequestId() {
@@ -1826,7 +1826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string auth_request_id = 4 [json_name = "authRequestId"];</code>
+     * <code>string auth_request_id = 4 [json_name = "authRequestId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for authRequestId to set.
      * @return This builder for chaining.
      */
@@ -1842,7 +1842,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object email_ = "";
     /**
-     * <code>string email = 5 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The email.
      */
     public java.lang.String getEmail() {
@@ -1858,7 +1858,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 5 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for email.
      */
     public com.google.protobuf.ByteString
@@ -1875,7 +1875,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string email = 5 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -1888,7 +1888,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string email = 5 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
@@ -1898,7 +1898,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string email = 5 [json_name = "email"];</code>
+     * <code>string email = 5 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -1914,7 +1914,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectionType_ = "";
     /**
-     * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+     * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectionType.
      */
     public java.lang.String getConnectionType() {
@@ -1930,7 +1930,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+     * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectionType.
      */
     public com.google.protobuf.ByteString
@@ -1947,7 +1947,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+     * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectionType to set.
      * @return This builder for chaining.
      */
@@ -1960,7 +1960,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+     * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectionType() {
@@ -1970,7 +1970,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_type = 6 [json_name = "connectionType"];</code>
+     * <code>string connection_type = 6 [json_name = "connectionType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectionType to set.
      * @return This builder for chaining.
      */
@@ -1986,7 +1986,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectionProvider_ = "";
     /**
-     * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+     * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectionProvider.
      */
     public java.lang.String getConnectionProvider() {
@@ -2002,7 +2002,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+     * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectionProvider.
      */
     public com.google.protobuf.ByteString
@@ -2019,7 +2019,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+     * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectionProvider to set.
      * @return This builder for chaining.
      */
@@ -2032,7 +2032,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+     * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectionProvider() {
@@ -2042,7 +2042,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connection_provider = 7 [json_name = "connectionProvider"];</code>
+     * <code>string connection_provider = 7 [json_name = "connectionProvider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectionProvider to set.
      * @return This builder for chaining.
      */
@@ -2058,7 +2058,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object status_ = "";
     /**
-     * <code>string status = 8 [json_name = "status"];</code>
+     * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The status.
      */
     public java.lang.String getStatus() {
@@ -2074,7 +2074,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 8 [json_name = "status"];</code>
+     * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for status.
      */
     public com.google.protobuf.ByteString
@@ -2091,7 +2091,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string status = 8 [json_name = "status"];</code>
+     * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -2104,7 +2104,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 8 [json_name = "status"];</code>
+     * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -2114,7 +2114,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string status = 8 [json_name = "status"];</code>
+     * <code>string status = 8 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
@@ -2132,14 +2132,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The timestamp.
      */
     public com.google.protobuf.Timestamp getTimestamp() {
@@ -2150,7 +2150,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
@@ -2166,7 +2166,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setTimestamp(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2180,7 +2180,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
@@ -2201,7 +2201,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearTimestamp() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -2214,7 +2214,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
       bitField0_ |= 0x00000100;
@@ -2222,7 +2222,7 @@ private static final long serialVersionUID = 0L;
       return getTimestampFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
       if (timestampBuilder_ != null) {
@@ -2233,7 +2233,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp"];</code>
+     * <code>.google.protobuf.Timestamp timestamp = 9 [json_name = "timestamp", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2262,7 +2262,7 @@ private static final long serialVersionUID = 0L;
         com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder> connectionDetailsBuilder_;
 
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails> getConnectionDetailsList() {
       if (connectionDetailsBuilder_ == null) {
@@ -2272,7 +2272,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public int getConnectionDetailsCount() {
       if (connectionDetailsBuilder_ == null) {
@@ -2282,7 +2282,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails getConnectionDetails(int index) {
       if (connectionDetailsBuilder_ == null) {
@@ -2292,7 +2292,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectionDetails(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails value) {
@@ -2309,7 +2309,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setConnectionDetails(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder builderForValue) {
@@ -2323,7 +2323,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectionDetails(com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails value) {
       if (connectionDetailsBuilder_ == null) {
@@ -2339,7 +2339,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectionDetails(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails value) {
@@ -2356,7 +2356,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectionDetails(
         com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder builderForValue) {
@@ -2370,7 +2370,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addConnectionDetails(
         int index, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder builderForValue) {
@@ -2384,7 +2384,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder addAllConnectionDetails(
         java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails> values) {
@@ -2399,7 +2399,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearConnectionDetails() {
       if (connectionDetailsBuilder_ == null) {
@@ -2412,7 +2412,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder removeConnectionDetails(int index) {
       if (connectionDetailsBuilder_ == null) {
@@ -2425,14 +2425,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder getConnectionDetailsBuilder(
         int index) {
       return getConnectionDetailsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder getConnectionDetailsOrBuilder(
         int index) {
@@ -2442,7 +2442,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<? extends com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetailsOrBuilder> 
          getConnectionDetailsOrBuilderList() {
@@ -2453,14 +2453,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder addConnectionDetailsBuilder() {
       return getConnectionDetailsFieldBuilder().addBuilder(
           com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder addConnectionDetailsBuilder(
         int index) {
@@ -2468,7 +2468,7 @@ private static final long serialVersionUID = 0L;
           index, com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.getDefaultInstance());
     }
     /**
-     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails"];</code>
+     * <code>repeated .scalekit.v1.auditlogs.ConnectionDetails connection_details = 10 [json_name = "connectionDetails", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public java.util.List<com.scalekit.grpc.scalekit.v1.auditlogs.ConnectionDetails.Builder> 
          getConnectionDetailsBuilderList() {
@@ -2491,7 +2491,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object workflow_ = "";
     /**
-     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The workflow.
      */
     public java.lang.String getWorkflow() {
@@ -2507,7 +2507,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for workflow.
      */
     public com.google.protobuf.ByteString
@@ -2524,7 +2524,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The workflow to set.
      * @return This builder for chaining.
      */
@@ -2537,7 +2537,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearWorkflow() {
@@ -2547,7 +2547,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string workflow = 11 [json_name = "workflow"];</code>
+     * <code>string workflow = 11 [json_name = "workflow", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for workflow to set.
      * @return This builder for chaining.
      */
@@ -2563,7 +2563,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceId_ = "";
     /**
-     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The resourceId.
      */
     public java.lang.String getResourceId() {
@@ -2579,7 +2579,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for resourceId.
      */
     public com.google.protobuf.ByteString
@@ -2596,7 +2596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The resourceId to set.
      * @return This builder for chaining.
      */
@@ -2609,7 +2609,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearResourceId() {
@@ -2619,7 +2619,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_id = 12 [json_name = "resourceId"];</code>
+     * <code>string resource_id = 12 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for resourceId to set.
      * @return This builder for chaining.
      */
@@ -2635,7 +2635,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceName_ = "";
     /**
-     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The resourceName.
      */
     public java.lang.String getResourceName() {
@@ -2651,7 +2651,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for resourceName.
      */
     public com.google.protobuf.ByteString
@@ -2668,7 +2668,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The resourceName to set.
      * @return This builder for chaining.
      */
@@ -2681,7 +2681,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearResourceName() {
@@ -2691,7 +2691,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_name = 13 [json_name = "resourceName"];</code>
+     * <code>string resource_name = 13 [json_name = "resourceName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for resourceName to set.
      * @return This builder for chaining.
      */
@@ -2707,7 +2707,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceType_ = "";
     /**
-     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The resourceType.
      */
     public java.lang.String getResourceType() {
@@ -2723,7 +2723,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for resourceType.
      */
     public com.google.protobuf.ByteString
@@ -2740,7 +2740,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The resourceType to set.
      * @return This builder for chaining.
      */
@@ -2753,7 +2753,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearResourceType() {
@@ -2763,7 +2763,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string resource_type = 14 [json_name = "resourceType"];</code>
+     * <code>string resource_type = 14 [json_name = "resourceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for resourceType to set.
      * @return This builder for chaining.
      */
@@ -2779,7 +2779,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object connectedAccountIdentifier_ = "";
     /**
-     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The connectedAccountIdentifier.
      */
     public java.lang.String getConnectedAccountIdentifier() {
@@ -2795,7 +2795,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for connectedAccountIdentifier.
      */
     public com.google.protobuf.ByteString
@@ -2812,7 +2812,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The connectedAccountIdentifier to set.
      * @return This builder for chaining.
      */
@@ -2825,7 +2825,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearConnectedAccountIdentifier() {
@@ -2835,7 +2835,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier"];</code>
+     * <code>string connected_account_identifier = 15 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for connectedAccountIdentifier to set.
      * @return This builder for chaining.
      */

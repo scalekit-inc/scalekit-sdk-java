@@ -541,161 +541,168 @@ public final class InterceptorsProto {
       "ision\022$\n INTERCEPTOR_DECISION_UNSPECIFIE" +
       "D\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002*K\n\016AuthConfigTy" +
       "pe\022 \n\034AUTH_CONFIG_TYPE_UNSPECIFIED\020\000\022\013\n\007" +
-      "API_KEY\020\001\022\n\n\006OAUTH2\020\0022\376-\n\022InterceptorSer" +
-      "vice\022\274\001\n\021CreateInterceptor\0222.scalekit.v1" +
+      "API_KEY\020\001\022\n\n\006OAUTH2\020\0022\2450\n\022InterceptorSer" +
+      "vice\022\320\001\n\021CreateInterceptor\0222.scalekit.v1" +
       ".interceptors.CreateInterceptorRequest\0323" +
       ".scalekit.v1.interceptors.CreateIntercep" +
-      "torResponse\">\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#" +
-      "\"\024/api/v1/interceptors:\013interceptor\022\253\001\n\016" +
-      "GetInterceptor\022/.scalekit.v1.interceptor" +
-      "s.GetInterceptorRequest\0320.scalekit.v1.in" +
-      "terceptors.GetInterceptorResponse\"6\202\265\030\002\030" +
-      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031/api/v1/intercep" +
-      "tors/{id}\022\254\001\n\020ListInterceptors\0221.scaleki" +
-      "t.v1.interceptors.ListInterceptorsReques" +
-      "t\0322.scalekit.v1.interceptors.ListInterce" +
-      "ptorsResponse\"1\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\026\022\024/api/v1/interceptors\022\301\001\n\021UpdateInter" +
-      "ceptor\0222.scalekit.v1.interceptors.Update" +
-      "InterceptorRequest\0323.scalekit.v1.interce" +
-      "ptors.UpdateInterceptorResponse\"C\202\265\030\002\030D\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/api/v1/intercepto" +
-      "rs/{id}:\013interceptor\022\227\001\n\021DeleteIntercept" +
-      "or\0222.scalekit.v1.interceptors.DeleteInte" +
-      "rceptorRequest\032\026.google.protobuf.Empty\"6" +
-      "\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033*\031/api/v1/int" +
-      "erceptors/{id}\022\236\001\n\021EnableInterceptor\0222.s" +
-      "calekit.v1.interceptors.EnableIntercepto" +
-      "rRequest\032\026.google.protobuf.Empty\"=\202\265\030\002\030D" +
-      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /api/v1/intercept" +
-      "ors/{id}:enable\022\241\001\n\022DisableInterceptor\0223" +
-      ".scalekit.v1.interceptors.DisableInterce" +
-      "ptorRequest\032\026.google.protobuf.Empty\">\202\265\030" +
-      "\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#2!/api/v1/interc" +
-      "eptors/{id}:disable\022\371\001\n\017TestInterceptor\022" +
-      "0.scalekit.v1.interceptors.TestIntercept" +
-      "orRequest\0321.scalekit.v1.interceptors.Tes" +
-      "tInterceptorResponse\"\200\001\222A<\022\023Test an Inte" +
-      "rceptor\032%Test an interceptor with sample" +
-      " data.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\"\036/api/" +
-      "v1/interceptors/{id}/test:\004data\022\246\006\n\023Upse" +
-      "rtTokenTemplate\0224.scalekit.v1.intercepto" +
-      "rs.UpsertTokenTemplateRequest\0325.scalekit" +
-      ".v1.interceptors.UpsertTokenTemplateResp" +
-      "onse\"\241\005\222A\346\004\n\014Interceptors\022 Create or rep" +
-      "lace token template\032\370\002Creates or replace" +
-      "s the token template for the environment" +
-      ". The template is validated for syntax, " +
-      "claim count, and restricted keys before " +
-      "being persisted. If an ACCESS_TOKEN_CREA" +
-      "TION interceptor already exists, its tem" +
-      "plate is updated in place and the enable" +
-      "d state is preserved. If none exists, a " +
-      "new disabled interceptor is created. Ret" +
-      "urns the saved template configuration.Je" +
-      "\n\003200\022^\n!Token template saved successful" +
-      "ly\0229\n7\0325.scalekit.v1.interceptors.Upsert" +
-      "TokenTemplateResponseJR\n\003400\022K\nIInvalid " +
-      "template \342\200\224 syntax error, restricted ke" +
-      "y, or exceeds claim limit\202\265\030\002\030D\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002\034\032\027/api/v1/token-templates:\001*",
-      "\022\365\003\n\020GetTokenTemplate\0221.scalekit.v1.inte" +
-      "rceptors.GetTokenTemplateRequest\0322.scale" +
-      "kit.v1.interceptors.GetTokenTemplateResp" +
-      "onse\"\371\002\222A\301\002\n\014Interceptors\022\027Retrieve toke" +
-      "n template\032kReturns the currently saved " +
-      "token template for the environment, incl" +
-      "uding its enabled state and timestamps.J" +
-      "f\n\003200\022_\n%Token template retrieved succe" +
-      "ssfully\0226\n4\0322.scalekit.v1.interceptors.G" +
-      "etTokenTemplateResponseJC\n\003404\022<\n:No tok" +
-      "en template has been configured for this" +
-      " environment\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022" +
-      "\027/api/v1/token-templates\022\342\003\n\023DeleteToken" +
-      "Template\0224.scalekit.v1.interceptors.Dele" +
-      "teTokenTemplateRequest\032\026.google.protobuf" +
-      ".Empty\"\374\002\222A\304\002\n\014Interceptors\022\025Delete toke" +
-      "n template\032\251\001Deletes the token template " +
-      "for the environment. Custom claims stop " +
-      "being added to tokens immediately. A sub" +
-      "sequent UpsertTokenTemplate creates a fr" +
-      "esh disabled template.J,\n\003200\022%\n#Token t" +
-      "emplate deleted successfullyJC\n\003404\022<\n:N" +
-      "o token template has been configured for" +
-      " this environment\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
-      "\344\223\002\031*\027/api/v1/token-templates\022\246\004\n\023Enable" +
+      "torResponse\"R\202\265\030\026\n\022interceptors:write\030D\372" +
+      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#\"\024/api/v1/intercepto" +
+      "rs:\013interceptor\022\276\001\n\016GetInterceptor\022/.sca" +
+      "lekit.v1.interceptors.GetInterceptorRequ" +
+      "est\0320.scalekit.v1.interceptors.GetInterc" +
+      "eptorResponse\"I\202\265\030\025\n\021interceptors:read\030D" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\033\022\031/api/v1/intercept" +
+      "ors/{id}\022\277\001\n\020ListInterceptors\0221.scalekit" +
+      ".v1.interceptors.ListInterceptorsRequest" +
+      "\0322.scalekit.v1.interceptors.ListIntercep" +
+      "torsResponse\"D\202\265\030\025\n\021interceptors:read\030D\372" +
+      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024/api/v1/intercepto" +
+      "rs\022\325\001\n\021UpdateInterceptor\0222.scalekit.v1.i" +
+      "nterceptors.UpdateInterceptorRequest\0323.s" +
+      "calekit.v1.interceptors.UpdateIntercepto" +
+      "rResponse\"W\202\265\030\026\n\022interceptors:write\030D\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002(2\031/api/v1/interceptors" +
+      "/{id}:\013interceptor\022\253\001\n\021DeleteInterceptor" +
+      "\0222.scalekit.v1.interceptors.DeleteInterc" +
+      "eptorRequest\032\026.google.protobuf.Empty\"J\202\265" +
+      "\030\026\n\022interceptors:write\030D\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002\033*\031/api/v1/interceptors/{id}\022\262\001\n\021Ena" +
+      "bleInterceptor\0222.scalekit.v1.interceptor" +
+      "s.EnableInterceptorRequest\032\026.google.prot" +
+      "obuf.Empty\"Q\202\265\030\026\n\022interceptors:write\030D\372\322" +
+      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\"2 /api/v1/interceptor" +
+      "s/{id}:enable\022\265\001\n\022DisableInterceptor\0223.s" +
+      "calekit.v1.interceptors.DisableIntercept" +
+      "orRequest\032\026.google.protobuf.Empty\"R\202\265\030\026\n" +
+      "\022interceptors:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002#2!/api/v1/interceptors/{id}:disable\022\215\002" +
+      "\n\017TestInterceptor\0220.scalekit.v1.intercep" +
+      "tors.TestInterceptorRequest\0321.scalekit.v" +
+      "1.interceptors.TestInterceptorResponse\"\224" +
+      "\001\222A<\022\023Test an Interceptor\032%Test an inter" +
+      "ceptor with sample data.\202\265\030\026\n\022intercepto" +
+      "rs:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002&\"\036/api/v1" +
+      "/interceptors/{id}/test:\004data\022\272\006\n\023Upsert" +
       "TokenTemplate\0224.scalekit.v1.interceptors" +
-      ".EnableTokenTemplateRequest\032\026.google.pro" +
-      "tobuf.Empty\"\300\003\222A\201\003\n\014Interceptors\022\025Enable" +
-      " token template\032\236\001Activates the token te" +
-      "mplate so it begins affecting issued acc" +
-      "ess tokens. The template must have been " +
-      "saved with UpsertTokenTemplate before it" +
-      " can be enabled.J,\n\003200\022%\n#Token templat" +
-      "e enabled successfullyJF\n\003400\022?\n=No temp" +
-      "late has been saved \342\200\224 call UpsertToken" +
-      "Template firstJC\n\003404\022<\n:No token templa" +
-      "te has been configured for this environm" +
-      "ent\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 2\036/api/v1/" +
-      "token-templates:enable\022\314\003\n\024DisableTokenT" +
-      "emplate\0225.scalekit.v1.interceptors.Disab" +
-      "leTokenTemplateRequest\032\026.google.protobuf" +
-      ".Empty\"\344\002\222A\244\002\n\014Interceptors\022\026Disable tok" +
-      "en template\032\207\001Deactivates the token temp" +
-      "late so it stops affecting issued access" +
-      " tokens. The saved template is preserved" +
-      " and can be re-enabled later.J-\n\003200\022&\n$" +
-      "Token template disabled successfullyJC\n\003" +
-      "404\022<\n:No token template has been config" +
-      "ured for this environment\202\265\030\002\030D\372\322\344\223\002\t\022\007P" +
-      "REVIEW\202\323\344\223\002!2\037/api/v1/token-templates:di" +
-      "sable\022\332\006\n\024PreviewTokenTemplate\0225.scaleki" +
-      "t.v1.interceptors.PreviewTokenTemplateRe" +
-      "quest\0326.scalekit.v1.interceptors.Preview" +
-      "TokenTemplateResponse\"\322\005\222A\217\005\n\014Intercepto" +
-      "rs\022\026Preview token template\032\260\002Evaluates a" +
-      "n inline token template against real use" +
-      "r and organization data without saving i" +
-      "t. Use this to verify that your template" +
-      " produces the expected claims before sav" +
-      "ing. Evaluation errors are returned in t" +
-      "he response body rather than as HTTP err" +
-      "ors \342\200\224 check the error field even on a " +
-      "200 response.J\232\001\n\003200\022\222\001\nTTemplate evalu" +
-      "ated; resolved claims, omitted keys, and" +
-      " any evaluation error returned\022:\n8\0326.sca" +
-      "lekit.v1.interceptors.PreviewTokenTempla" +
-      "teResponseJh\n\003400\022a\n_Template is not val" +
-      "id JSON, contains an expression syntax e" +
-      "rror, or uses a restricted claim keyJ-\n\003" +
-      "404\022&\n$User not found for the given user" +
-      "_id\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002$\"\037/api/v1/" +
-      "token-templates/preview:\001*\022\321\005\n\027GetTokenT" +
-      "emplateContext\0228.scalekit.v1.interceptor" +
-      "s.GetTokenTemplateContextRequest\0329.scale" +
-      "kit.v1.interceptors.GetTokenTemplateCont" +
-      "extResponse\"\300\004\222A\200\004\n\014Interceptors\022%List t" +
-      "oken template context variables\032\302\002Return" +
-      "s the full schema of variables available" +
-      " inside a token template \342\200\224 user, organ" +
-      "ization, m2m_token_claims, and intercept" +
-      "or_context \342\200\224 with field names and type" +
-      "s. Derived from the actual runtime data " +
-      "model, so it always reflects the current" +
-      " set of available keys. Use this to powe" +
-      "r autocomplete in a template editor.J\203\001\n" +
-      "\003200\022|\n;Available template variables and" +
-      " their nested field schemas\022=\n;\0329.scalek" +
-      "it.v1.interceptors.GetTokenTemplateConte" +
-      "xtResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/" +
-      "api/v1/token-templates/contextB\371\001\n*com.s" +
-      "calekit.grpc.scalekit.v1.interceptorsB\021I" +
-      "nterceptorsProtoP\001Z6github.com/scalekit-" +
-      "inc/scalekit/pkg/grpc/interceptors\242\002\003SVI" +
-      "\252\002\030Scalekit.V1.Interceptors\312\002\030Scalekit\\V" +
-      "1\\Interceptors\342\002$Scalekit\\V1\\Interceptor" +
-      "s\\GPBMetadata\352\002\032Scalekit::V1::Intercepto" +
-      "rsb\006proto3"
+      ".UpsertTokenTemplateRequest\0325.scalekit.v" +
+      "1.interceptors.UpsertTokenTemplateRespon" +
+      "se\"\265\005\222A\346\004\n\014Interceptors\022 Create or repla" +
+      "ce token template\032\370\002Creates or replaces " +
+      "the token template for the environment. " +
+      "The template is validated for syntax, cl" +
+      "aim count, and restricted keys before be" +
+      "ing persisted. If an ACCESS_TOKEN_CREATI" +
+      "ON interceptor already exists, its templ" +
+      "ate is updated in place and the enabled " +
+      "state is preserved. If none exists, a ne" +
+      "w disabled interceptor is created. Retur" +
+      "ns the saved template configuration.Je\n\003" +
+      "200\022^\n!Token template saved successfully" +
+      "\0229\n7\0325.scalekit.v1.interceptors.UpsertTo",
+      "kenTemplateResponseJR\n\003400\022K\nIInvalid te" +
+      "mplate \342\200\224 syntax error, restricted key," +
+      " or exceeds claim limit\202\265\030\026\n\022interceptor" +
+      "s:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\032\027/api/v1/" +
+      "token-templates:\001*\022\210\004\n\020GetTokenTemplate\022" +
+      "1.scalekit.v1.interceptors.GetTokenTempl" +
+      "ateRequest\0322.scalekit.v1.interceptors.Ge" +
+      "tTokenTemplateResponse\"\214\003\222A\301\002\n\014Intercept" +
+      "ors\022\027Retrieve token template\032kReturns th" +
+      "e currently saved token template for the" +
+      " environment, including its enabled stat" +
+      "e and timestamps.Jf\n\003200\022_\n%Token templa" +
+      "te retrieved successfully\0226\n4\0322.scalekit" +
+      ".v1.interceptors.GetTokenTemplateRespons" +
+      "eJC\n\003404\022<\n:No token template has been c" +
+      "onfigured for this environment\202\265\030\025\n\021inte" +
+      "rceptors:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/a" +
+      "pi/v1/token-templates\022\366\003\n\023DeleteTokenTem" +
+      "plate\0224.scalekit.v1.interceptors.DeleteT" +
+      "okenTemplateRequest\032\026.google.protobuf.Em" +
+      "pty\"\220\003\222A\304\002\n\014Interceptors\022\025Delete token t" +
+      "emplate\032\251\001Deletes the token template for" +
+      " the environment. Custom claims stop bei" +
+      "ng added to tokens immediately. A subseq" +
+      "uent UpsertTokenTemplate creates a fresh" +
+      " disabled template.J,\n\003200\022%\n#Token temp" +
+      "late deleted successfullyJC\n\003404\022<\n:No t" +
+      "oken template has been configured for th" +
+      "is environment\202\265\030\026\n\022interceptors:write\030D" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031*\027/api/v1/token-tem" +
+      "plates\022\272\004\n\023EnableTokenTemplate\0224.scaleki" +
+      "t.v1.interceptors.EnableTokenTemplateReq" +
+      "uest\032\026.google.protobuf.Empty\"\324\003\222A\201\003\n\014Int" +
+      "erceptors\022\025Enable token template\032\236\001Activ" +
+      "ates the token template so it begins aff" +
+      "ecting issued access tokens. The templat" +
+      "e must have been saved with UpsertTokenT" +
+      "emplate before it can be enabled.J,\n\003200" +
+      "\022%\n#Token template enabled successfullyJ" +
+      "F\n\003400\022?\n=No template has been saved \342\200\224" +
+      " call UpsertTokenTemplate firstJC\n\003404\022<" +
+      "\n:No token template has been configured " +
+      "for this environment\202\265\030\026\n\022interceptors:w" +
+      "rite\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 2\036/api/v1/tok" +
+      "en-templates:enable\022\340\003\n\024DisableTokenTemp" +
+      "late\0225.scalekit.v1.interceptors.DisableT" +
+      "okenTemplateRequest\032\026.google.protobuf.Em" +
+      "pty\"\370\002\222A\244\002\n\014Interceptors\022\026Disable token " +
+      "template\032\207\001Deactivates the token templat" +
+      "e so it stops affecting issued access to" +
+      "kens. The saved template is preserved an" +
+      "d can be re-enabled later.J-\n\003200\022&\n$Tok" +
+      "en template disabled successfullyJC\n\003404" +
+      "\022<\n:No token template has been configure" +
+      "d for this environment\202\265\030\026\n\022interceptors" +
+      ":write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!2\037/api/v1/t" +
+      "oken-templates:disable\022\355\006\n\024PreviewTokenT" +
+      "emplate\0225.scalekit.v1.interceptors.Previ" +
+      "ewTokenTemplateRequest\0326.scalekit.v1.int" +
+      "erceptors.PreviewTokenTemplateResponse\"\345" +
+      "\005\222A\217\005\n\014Interceptors\022\026Preview token templ" +
+      "ate\032\260\002Evaluates an inline token template" +
+      " against real user and organization data" +
+      " without saving it. Use this to verify t" +
+      "hat your template produces the expected " +
+      "claims before saving. Evaluation errors " +
+      "are returned in the response body rather" +
+      " than as HTTP errors \342\200\224 check the error" +
+      " field even on a 200 response.J\232\001\n\003200\022\222" +
+      "\001\nTTemplate evaluated; resolved claims, " +
+      "omitted keys, and any evaluation error r" +
+      "eturned\022:\n8\0326.scalekit.v1.interceptors.P" +
+      "reviewTokenTemplateResponseJh\n\003400\022a\n_Te" +
+      "mplate is not valid JSON, contains an ex" +
+      "pression syntax error, or uses a restric" +
+      "ted claim keyJ-\n\003404\022&\n$User not found f" +
+      "or the given user_id\202\265\030\025\n\021interceptors:r" +
+      "ead\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002$\"\037/api/v1/toke" +
+      "n-templates/preview:\001*\022\344\005\n\027GetTokenTempl" +
+      "ateContext\0228.scalekit.v1.interceptors.Ge" +
+      "tTokenTemplateContextRequest\0329.scalekit." +
+      "v1.interceptors.GetTokenTemplateContextR" +
+      "esponse\"\323\004\222A\200\004\n\014Interceptors\022%List token" +
+      " template context variables\032\302\002Returns th" +
+      "e full schema of variables available ins" +
+      "ide a token template \342\200\224 user, organizat" +
+      "ion, m2m_token_claims, and interceptor_c" +
+      "ontext \342\200\224 with field names and types. D" +
+      "erived from the actual runtime data mode" +
+      "l, so it always reflects the current set" +
+      " of available keys. Use this to power au" +
+      "tocomplete in a template editor.J\203\001\n\003200" +
+      "\022|\n;Available template variables and the" +
+      "ir nested field schemas\022=\n;\0329.scalekit.v" +
+      "1.interceptors.GetTokenTemplateContextRe" +
+      "sponse\202\265\030\025\n\021interceptors:read\030D\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002!\022\037/api/v1/token-templates/co" +
+      "ntextB\371\001\n*com.scalekit.grpc.scalekit.v1." +
+      "interceptorsB\021InterceptorsProtoP\001Z6githu" +
+      "b.com/scalekit-inc/scalekit/pkg/grpc/int" +
+      "erceptors\242\002\003SVI\252\002\030Scalekit.V1.Intercepto" +
+      "rs\312\002\030Scalekit\\V1\\Interceptors\342\002$Scalekit" +
+      "\\V1\\Interceptors\\GPBMetadata\352\002\032Scalekit:" +
+      ":V1::Interceptorsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

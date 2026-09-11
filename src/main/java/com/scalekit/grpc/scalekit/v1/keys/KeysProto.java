@@ -430,10 +430,10 @@ public final class KeysProto {
       " wrapped under it.J\0011\272H\004\032\002 \000R\007version*c\n" +
       "\nDEKKeyType\022\034\n\030DEK_KEY_TYPE_UNSPECIFIED\020" +
       "\000\022\023\n\017ENVIRONMENT_KEY\020\001\022\010\n\004BYOK\020\002\022\030\n\024SCAL" +
-      "EKIT_MANAGED_KEY\020\0032\317G\n\024KeyManagementServ" +
-      "ice\022\362\004\n\tCreateDEK\022\".scalekit.v1.keys.Cre" +
+      "EKIT_MANAGED_KEY\020\0032\224I\n\024KeyManagementServ" +
+      "ice\022\211\005\n\tCreateDEK\022\".scalekit.v1.keys.Cre" +
       "ateDEKRequest\032#.scalekit.v1.keys.CreateD" +
-      "EKResponse\"\233\004\222A\346\003\n\016Key Management\022\014Creat" +
+      "EKResponse\"\262\004\222A\346\003\n\016Key Management\022\014Creat" +
       "e a DEK\032\333\001Creates a new Data Encryption " +
       "Key (DEK) in CREATED state. The DEK is n" +
       "ot active and will not be used for encry" +
@@ -445,226 +445,231 @@ public final class KeysProto {
       "alekit.v1.keys.CreateDEKResponseJm\n\003400\022" +
       "f\ndInvalid request \342\200\224 provider and key_" +
       "ref are required when key_type is BYOK o" +
-      "r SCALEKIT_MANAGED_KEY.\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002\026\"\021/api/v1/keys/deks:\001*\022\370\004\n\013Act" +
-      "ivateDEK\022$.scalekit.v1.keys.ActivateDEKR" +
-      "equest\032%.scalekit.v1.keys.ActivateDEKRes" +
-      "ponse\"\233\004\222A\317\003\n\016Key Management\022\016Activate a" +
-      " DEK\032\326\001Promotes a CREATED DEK version to" +
-      " ACTIVE and deprecates all other DEK ver" +
-      "sions. Only CREATED DEKs can be activate" +
-      "d. After activation, call ReencryptData " +
-      "to re-encrypt existing application secre" +
-      "ts under the new key.J\213\001\n\003200\022\203\001\nVDEK ac" +
-      "tivated. The specified version is now AC" +
-      "TIVE; all other versions are DEPRECATED." +
-      "\022)\n\'\032%.scalekit.v1.keys.ActivateDEKRespo" +
-      "nseJ%\n\003400\022\036\n\034DEK is not in CREATED stat" +
-      "e.J\037\n\003404\022\030\n\026DEK version not found.\202\265\030\002\030" +
-      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"(/api/v1/keys/dek" +
-      "s/{dek_version}:activate:\001*\022\316\005\n\rReencryp" +
-      "tData\022&.scalekit.v1.keys.ReencryptDataRe" +
-      "quest\032\'.scalekit.v1.keys.ReencryptDataRe" +
-      "sponse\"\353\004\222A\254\004\n\016Key Management\022\017Re-encryp" +
-      "t data\032\276\002Re-encrypts all application sec" +
-      "rets (connection client secrets, OIDC cl" +
-      "ient secrets, API tokens, connected acco" +
-      "unts, interceptor secrets, and signing k" +
-      "eys) under the currently active DEK. Run" +
-      " this after ActivateDEK to complete key " +
-      "migration. This operation is required be" +
-      "fore a deprecated DEK version can be des" +
-      "troyed.Jy\n\003200\022r\nCRe-encryption complete" +
-      ". Returns the number of records re-encry" +
-      "pted.\022+\n)\032\'.scalekit.v1.keys.ReencryptDa" +
-      "taResponseJ,\n\003400\022%\n#DEK version is not " +
-      "in ACTIVE state.J\037\n\003404\022\030\n\026DEK version n" +
-      "ot found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \"\033/a" +
-      "pi/v1/keys/deks:reencrypt:\001*\022\313\003\n\010ListDEK" +
-      "s\022!.scalekit.v1.keys.ListDEKsRequest\032\".s" +
-      "calekit.v1.keys.ListDEKsResponse\"\367\002\222A\305\002\n" +
-      "\016Key Management\022\tList DEKs\032\325\001Lists Data " +
-      "Encryption Key (DEK) versions for the cu" +
-      "rrent environment with pagination. Suppo" +
+      "r SCALEKIT_MANAGED_KEY.\202\265\030\031\n\025encryption_" +
+      "keys:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\"\021/api/" +
+      "v1/keys/deks:\001*\022\217\005\n\013ActivateDEK\022$.scalek" +
+      "it.v1.keys.ActivateDEKRequest\032%.scalekit" +
+      ".v1.keys.ActivateDEKResponse\"\262\004\222A\317\003\n\016Key" +
+      " Management\022\016Activate a DEK\032\326\001Promotes a" +
+      " CREATED DEK version to ACTIVE and depre" +
+      "cates all other DEK versions. Only CREAT" +
+      "ED DEKs can be activated. After activati" +
+      "on, call ReencryptData to re-encrypt exi" +
+      "sting application secrets under the new " +
+      "key.J\213\001\n\003200\022\203\001\nVDEK activated. The spec" +
+      "ified version is now ACTIVE; all other v" +
+      "ersions are DEPRECATED.\022)\n\'\032%.scalekit.v" +
+      "1.keys.ActivateDEKResponseJ%\n\003400\022\036\n\034DEK" +
+      " is not in CREATED state.J\037\n\003404\022\030\n\026DEK " +
+      "version not found.\202\265\030\031\n\025encryption_keys:" +
+      "write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002-\"(/api/v1/ke" +
+      "ys/deks/{dek_version}:activate:\001*\022\345\005\n\rRe" +
+      "encryptData\022&.scalekit.v1.keys.Reencrypt" +
+      "DataRequest\032\'.scalekit.v1.keys.Reencrypt" +
+      "DataResponse\"\202\005\222A\254\004\n\016Key Management\022\017Re-" +
+      "encrypt data\032\276\002Re-encrypts all applicati" +
+      "on secrets (connection client secrets, O" +
+      "IDC client secrets, API tokens, connecte" +
+      "d accounts, interceptor secrets, and sig" +
+      "ning keys) under the currently active DE" +
+      "K. Run this after ActivateDEK to complet" +
+      "e key migration. This operation is requi" +
+      "red before a deprecated DEK version can " +
+      "be destroyed.Jy\n\003200\022r\nCRe-encryption co" +
+      "mplete. Returns the number of records re" +
+      "-encrypted.\022+\n)\032\'.scalekit.v1.keys.Reenc" +
+      "ryptDataResponseJ,\n\003400\022%\n#DEK version i" +
+      "s not in ACTIVE state.J\037\n\003404\022\030\n\026DEK ver" +
+      "sion not found.\202\265\030\031\n\025encryption_keys:wri" +
+      "te\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002 \"\033/api/v1/keys/" +
+      "deks:reencrypt:\001*\022\341\003\n\010ListDEKs\022!.scaleki" +
+      "t.v1.keys.ListDEKsRequest\032\".scalekit.v1." +
+      "keys.ListDEKsResponse\"\215\003\222A\305\002\n\016Key Manage" +
+      "ment\022\tList DEKs\032\325\001Lists Data Encryption " +
+      "Key (DEK) versions for the current envir" +
+      "onment with pagination. Supports optiona" +
+      "l status filter (CREATED, ACTIVE, DEPREC" +
+      "ATED). Use next_page_token from the resp" +
+      "onse to fetch subsequent pages.JP\n\003200\022I" +
+      "\n\037Paginated list of DEK versions.\022&\n$\032\"." +
+      "scalekit.v1.keys.ListDEKsResponse\202\265\030\030\n\024e" +
+      "ncryption_keys:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
+      "\002\023\022\021/api/v1/keys/deks\022\344\003\n\006GetDEK\022\037.scale" +
+      "kit.v1.keys.GetDEKRequest\032 .scalekit.v1." +
+      "keys.GetDEKResponse\"\226\003\222A\300\002\n\016Key Manageme" +
+      "nt\022\tGet a DEK\032\274\001Returns a single Data En" +
+      "cryption Key (DEK) version by its versio" +
+      "n number. Use this to check the current " +
+      "status of a specific DEK version before " +
+      "activating, re-encrypting, or destroying" +
+      " it.JC\n\003200\022<\n\024DEK version details.\022$\n\"\032" +
+      " .scalekit.v1.keys.GetDEKResponseJ\037\n\003404" +
+      "\022\030\n\026DEK version not found.\202\265\030\030\n\024encrypti" +
+      "on_keys:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002!\022\037/ap" +
+      "i/v1/keys/deks/{dek_version}\022\346\004\n\010PatchDE" +
+      "K\022!.scalekit.v1.keys.PatchDEKRequest\032\".s" +
+      "calekit.v1.keys.PatchDEKResponse\"\222\004\222A\270\003\n" +
+      "\016Key Management\022\014Update a DEK\032\355\001Updates " +
+      "the key_type, provider, and key_ref of a" +
+      " DEK version. Only allowed on DEKs in CR" +
+      "EATED state \342\200\224 use this to correct a mi" +
+      "sconfigured provider or key reference be" +
+      "fore activation. Once a DEK is activated" +
+      " it can no longer be patched.JJ\n\003200\022C\n\031" +
+      "DEK updated successfully.\022&\n$\032\".scalekit" +
+      ".v1.keys.PatchDEKResponseJ;\n\003400\0224\n2DEK " +
+      "is not in CREATED state and cannot be pa" +
+      "tched.J\037\n\003404\022\030\n\026DEK version not found.\202" +
+      "\265\030\031\n\025encryption_keys:write\030D\372\322\344\223\002\t\022\007PREV" +
+      "IEW\202\323\344\223\002$2\037/api/v1/keys/deks/{dek_versio" +
+      "n}:\001*\022\321\004\n\nDestroyDEK\022#.scalekit.v1.keys." +
+      "DestroyDEKRequest\032\026.google.protobuf.Empt" +
+      "y\"\205\004\222A\254\003\n\016Key Management\022\rDestroy a DEK\032" +
+      "\346\001Permanently deletes a DEK version from" +
+      " the database. Only allowed on DEPRECATE" +
+      "D DEKs where ReencryptData has been run " +
+      "(rotated_at is set), ensuring no data re" +
+      "mains encrypted under this key. WARNING:" +
+      " This operation is irreversible.J!\n\003200\022" +
+      "\032\n\030DEK permanently deleted.J^\n\003400\022W\nUDE" +
+      "K cannot be destroyed: it is not DEPRECA" +
+      "TED, or ReencryptData has not been run y" +
+      "et.J\037\n\003404\022\030\n\026DEK version not found.\202\265\030\033" +
+      "\n\027encryption_keys:destroy\030D\372\322\344\223\002\t\022\007PREVI" +
+      "EW\202\323\344\223\002!*\037/api/v1/keys/deks/{dek_version" +
+      "}\022\357\003\n\020GetBYOKSetupInfo\022).scalekit.v1.key" +
+      "s.GetBYOKSetupInfoRequest\032*.scalekit.v1." +
+      "keys.GetBYOKSetupInfoResponse\"\203\003\222A\264\002\n\016Ke" +
+      "y Management\022\023Get BYOK setup info\032\272\001Retu" +
+      "rns the Scalekit GCP service account ema" +
+      "il that customers must grant roles/cloud" +
+      "kms.cryptoKeyEncrypterDecrypter and role" +
+      "s/cloudkms.viewer on their KMS key befor" +
+      "e creating a BYOK DEK.JP\n\003200\022I\n\027BYOK se" +
+      "tup information.\022.\n,\032*.scalekit.v1.keys." +
+      "GetBYOKSetupInfoResponse\202\265\030\024\n\020master_key" +
+      "s:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\022\034/api/v1/k" +
+      "eys/byok/setup-info\022\205\007\n\rVerifyBYOKKey\022&." +
+      "scalekit.v1.keys.VerifyBYOKKeyRequest\032\'." +
+      "scalekit.v1.keys.VerifyBYOKKeyResponse\"\242" +
+      "\006\222A\324\005\n\016Key Management\022\026Verify BYOK key a" +
+      "ccess\032\221\002Verifies that Scalekit\'s BYOK se" +
+      "rvice account has the necessary IAM perm" +
+      "issions to encrypt data using the specif" +
+      "ied GCP KMS key. Performs a test encrypt" +
+      "ion with a harmless payload. Use this be" +
+      "fore calling CreateDEK to validate your " +
+      "IAM configuration and catch errors early" +
+      ".Ju\n\003200\022n\n?Key is accessible and IAM pe" +
+      "rmissions are correctly configured.\022+\n)\032" +
+      "\'.scalekit.v1.keys.VerifyBYOKKeyResponse" +
+      "J<\n\003400\0225\n3Invalid request \342\200\224 provider " +
+      "or key_ref is missing.J\202\001\n\003403\022{\nyIAM pe" +
+      "rmission denied \342\200\224 Scalekit service acc" +
+      "ount lacks roles/cloudkms.cryptoKeyEncry" +
+      "pterDecrypter on the specified key.J\\\n\0034" +
+      "04\022U\nSKMS key not found \342\200\224 the key_ref " +
+      "does not exist or the key version is not" +
+      " enabled.\202\265\030\024\n\020master_keys:read\030D\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002\035\"\030/api/v1/keys/byok/verify" +
+      ":\001*\022\252\004\n\017CreateMasterKey\022(.scalekit.v1.ke" +
+      "ys.CreateMasterKeyRequest\032).scalekit.v1." +
+      "keys.CreateMasterKeyResponse\"\301\003\222A\212\003\n\016Key" +
+      " Management\022\023Create a master key\032\253\001Creat" +
+      "es a new master key version in CREATED s" +
+      "tate. The master key is not used for enc" +
+      "ryption until ActivateMasterKey is calle",
+      "d. Restricted to the Scalekit platform c" +
+      "lient.J\215\001\n\003200\022\205\001\nTMaster key created in" +
+      " CREATED state. Call ActivateMasterKey t" +
+      "o promote it to ACTIVE.\022-\n+\032).scalekit.v" +
+      "1.keys.CreateMasterKeyResponseJ%\n\003400\022\036\n" +
+      "\034Invalid provider or key_ref.\202\265\030\002\030\004\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\002\030\"\023/api/v1/keys/master:\001*" +
+      "\022\254\005\n\021ActivateMasterKey\022*.scalekit.v1.key" +
+      "s.ActivateMasterKeyRequest\032+.scalekit.v1" +
+      ".keys.ActivateMasterKeyResponse\"\275\004\222A\363\003\n\016" +
+      "Key Management\022\025Activate a master key\032\330\001" +
+      "Promotes a CREATED master key version to" +
+      " ACTIVE and deprecates all other master " +
+      "key versions. Only CREATED master keys c" +
+      "an be activated. After activation, call " +
+      "RewrapDEKs to re-wrap all DEKs under the" +
+      " new master key.J\230\001\n\003200\022\220\001\n]Master key " +
+      "activated. The specified version is now " +
+      "ACTIVE; all other versions are DEPRECATE" +
+      "D.\022/\n-\032+.scalekit.v1.keys.ActivateMaster" +
+      "KeyResponseJ,\n\003400\022%\n#Master key is not " +
+      "in CREATED state.J&\n\003404\022\037\n\035Master key v" +
+      "ersion not found.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002+\"&/api/v1/keys/master/{version}:acti" +
+      "vate:\001*\022\204\004\n\nRewrapDEKs\022#.scalekit.v1.key" +
+      "s.RewrapDEKsRequest\032$.scalekit.v1.keys.R" +
+      "ewrapDEKsResponse\"\252\003\222A\354\002\n\016Key Management" +
+      "\022\013Rewrap DEKs\032\267\001Re-wraps all DEKs under " +
+      "the currently active master key. Run thi" +
+      "s after ActivateMasterKey to complete ma" +
+      "ster key rotation. Required before the o" +
+      "ld master key version can be destroyed.J" +
+      "m\n\003200\022f\n:DEK rewrap complete. Returns t" +
+      "he number of DEKs rewrapped.\022(\n&\032$.scale" +
+      "kit.v1.keys.RewrapDEKsResponseJ$\n\003400\022\035\n" +
+      "\033No ACTIVE master key found.\202\265\030\002\030\004\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002\037\"\032/api/v1/keys/master:rew" +
+      "rap:\001*\022\310\003\n\016ListMasterKeys\022\'.scalekit.v1." +
+      "keys.ListMasterKeysRequest\032(.scalekit.v1" +
+      ".keys.ListMasterKeysResponse\"\342\002\222A\256\002\n\016Key" +
+      " Management\022\020List master keys\032\252\001Lists ma" +
+      "ster key versions with pagination. Suppo" +
       "rts optional status filter (CREATED, ACT" +
       "IVE, DEPRECATED). Use next_page_token fr" +
       "om the response to fetch subsequent page" +
-      "s.JP\n\003200\022I\n\037Paginated list of DEK versi" +
-      "ons.\022&\n$\032\".scalekit.v1.keys.ListDEKsResp" +
-      "onse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\023\022\021/api/v1" +
-      "/keys/deks\022\316\003\n\006GetDEK\022\037.scalekit.v1.keys" +
-      ".GetDEKRequest\032 .scalekit.v1.keys.GetDEK" +
-      "Response\"\200\003\222A\300\002\n\016Key Management\022\tGet a D" +
-      "EK\032\274\001Returns a single Data Encryption Ke" +
-      "y (DEK) version by its version number. U" +
-      "se this to check the current status of a" +
-      " specific DEK version before activating," +
-      " re-encrypting, or destroying it.JC\n\003200" +
-      "\022<\n\024DEK version details.\022$\n\"\032 .scalekit." +
-      "v1.keys.GetDEKResponseJ\037\n\003404\022\030\n\026DEK ver" +
-      "sion not found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002!\022\037/api/v1/keys/deks/{dek_version}\022\317\004\n\010" +
-      "PatchDEK\022!.scalekit.v1.keys.PatchDEKRequ" +
-      "est\032\".scalekit.v1.keys.PatchDEKResponse\"" +
-      "\373\003\222A\270\003\n\016Key Management\022\014Update a DEK\032\355\001U" +
-      "pdates the key_type, provider, and key_r" +
-      "ef of a DEK version. Only allowed on DEK" +
-      "s in CREATED state \342\200\224 use this to corre" +
-      "ct a misconfigured provider or key refer" +
-      "ence before activation. Once a DEK is ac" +
-      "tivated it can no longer be patched.JJ\n\003" +
-      "200\022C\n\031DEK updated successfully.\022&\n$\032\".s" +
-      "calekit.v1.keys.PatchDEKResponseJ;\n\003400\022" +
-      "4\n2DEK is not in CREATED state and canno" +
-      "t be patched.J\037\n\003404\022\030\n\026DEK version not " +
-      "found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002$2\037/api/" +
-      "v1/keys/deks/{dek_version}:\001*\022\270\004\n\nDestro" +
-      "yDEK\022#.scalekit.v1.keys.DestroyDEKReques" +
-      "t\032\026.google.protobuf.Empty\"\354\003\222A\254\003\n\016Key Ma" +
-      "nagement\022\rDestroy a DEK\032\346\001Permanently de" +
-      "letes a DEK version from the database. O" +
-      "nly allowed on DEPRECATED DEKs where Ree" +
-      "ncryptData has been run (rotated_at is s" +
-      "et), ensuring no data remains encrypted " +
-      "under this key. WARNING: This operation " +
-      "is irreversible.J!\n\003200\022\032\n\030DEK permanent" +
-      "ly deleted.J^\n\003400\022W\nUDEK cannot be dest" +
-      "royed: it is not DEPRECATED, or Reencryp" +
-      "tData has not been run yet.J\037\n\003404\022\030\n\026DE" +
-      "K version not found.\202\265\030\002\030D\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002!*\037/api/v1/keys/deks/{dek_version}" +
-      "\022\335\003\n\020GetBYOKSetupInfo\022).scalekit.v1.keys" +
-      ".GetBYOKSetupInfoRequest\032*.scalekit.v1.k" +
-      "eys.GetBYOKSetupInfoResponse\"\361\002\222A\264\002\n\016Key" +
-      " Management\022\023Get BYOK setup info\032\272\001Retur" +
-      "ns the Scalekit GCP service account emai" +
-      "l that customers must grant roles/cloudk" +
-      "ms.cryptoKeyEncrypterDecrypter and roles" +
-      "/cloudkms.viewer on their KMS key before" +
-      " creating a BYOK DEK.JP\n\003200\022I\n\027BYOK set" +
-      "up information.\022.\n,\032*.scalekit.v1.keys.G" +
-      "etBYOKSetupInfoResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PRE" +
-      "VIEW\202\323\344\223\002\036\022\034/api/v1/keys/byok/setup-info" +
-      "\022\363\006\n\rVerifyBYOKKey\022&.scalekit.v1.keys.Ve" +
-      "rifyBYOKKeyRequest\032\'.scalekit.v1.keys.Ve" +
-      "rifyBYOKKeyResponse\"\220\006\222A\324\005\n\016Key Manageme" +
-      "nt\022\026Verify BYOK key access\032\221\002Verifies th" +
-      "at Scalekit\'s BYOK service account has t" +
-      "he necessary IAM permissions to encrypt " +
-      "data using the specified GCP KMS key. Pe" +
-      "rforms a test encryption with a harmless" +
-      " payload. Use this before calling Create" +
-      "DEK to validate your IAM configuration a" +
-      "nd catch errors early.Ju\n\003200\022n\n?Key is " +
-      "accessible and IAM permissions are corre" +
-      "ctly configured.\022+\n)\032\'.scalekit.v1.keys." +
-      "VerifyBYOKKeyResponseJ<\n\003400\0225\n3Invalid " +
-      "request \342\200\224 provider or key_ref is missi" +
-      "ng.J\202\001\n\003403\022{\nyIAM permission denied \342\200\224" +
-      " Scalekit service account lacks roles/cl" +
-      "oudkms.cryptoKeyEncrypterDecrypter on th" +
-      "e specified key.J\\\n\003404\022U\nSKMS key not f" +
-      "ound \342\200\224 the key_ref does not exist or t" +
-      "he key version is not enabled.\202\265\030\002\030D\372\322\344\223" +
-      "\002\t\022\007PREVIEW\202\323\344\223\002\035\"\030/api/v1/keys/byok/ver" +
-      "ify:\001*\022\252\004\n\017CreateMasterKey\022(.scalekit.v1" +
-      ".keys.CreateMasterKeyRequest\032).scalekit." +
-      "v1.keys.CreateMasterKeyResponse\"\301\003\222A\212\003\n\016" +
-      "Key Management\022\023Create a master key\032\253\001Cr" +
-      "eates a new master key version in CREATE" +
-      "D state. The master key is not used for " +
-      "encryption until ActivateMasterKey is ca" +
-      "lled. Restricted to the Scalekit platfor" +
-      "m client.J\215\001\n\003200\022\205\001\nTMaster key created" +
-      " in CREATED state. Call ActivateMasterKe" +
-      "y to promote it to ACTIVE.\022-\n+\032).scaleki" +
-      "t.v1.keys.CreateMasterKeyResponseJ%\n\003400",
-      "\022\036\n\034Invalid provider or key_ref.\202\265\030\002\030\004\372\322" +
-      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\030\"\023/api/v1/keys/master" +
-      ":\001*\022\254\005\n\021ActivateMasterKey\022*.scalekit.v1." +
-      "keys.ActivateMasterKeyRequest\032+.scalekit" +
-      ".v1.keys.ActivateMasterKeyResponse\"\275\004\222A\363" +
-      "\003\n\016Key Management\022\025Activate a master key" +
-      "\032\330\001Promotes a CREATED master key version" +
-      " to ACTIVE and deprecates all other mast" +
-      "er key versions. Only CREATED master key" +
-      "s can be activated. After activation, ca" +
-      "ll RewrapDEKs to re-wrap all DEKs under " +
-      "the new master key.J\230\001\n\003200\022\220\001\n]Master k" +
-      "ey activated. The specified version is n" +
-      "ow ACTIVE; all other versions are DEPREC" +
-      "ATED.\022/\n-\032+.scalekit.v1.keys.ActivateMas" +
-      "terKeyResponseJ,\n\003400\022%\n#Master key is n" +
-      "ot in CREATED state.J&\n\003404\022\037\n\035Master ke" +
-      "y version not found.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002+\"&/api/v1/keys/master/{version}:a" +
-      "ctivate:\001*\022\204\004\n\nRewrapDEKs\022#.scalekit.v1." +
-      "keys.RewrapDEKsRequest\032$.scalekit.v1.key" +
-      "s.RewrapDEKsResponse\"\252\003\222A\354\002\n\016Key Managem" +
-      "ent\022\013Rewrap DEKs\032\267\001Re-wraps all DEKs und" +
-      "er the currently active master key. Run " +
-      "this after ActivateMasterKey to complete" +
-      " master key rotation. Required before th" +
-      "e old master key version can be destroye" +
-      "d.Jm\n\003200\022f\n:DEK rewrap complete. Return" +
-      "s the number of DEKs rewrapped.\022(\n&\032$.sc" +
-      "alekit.v1.keys.RewrapDEKsResponseJ$\n\003400" +
-      "\022\035\n\033No ACTIVE master key found.\202\265\030\002\030\004\372\322\344" +
-      "\223\002\t\022\007PREVIEW\202\323\344\223\002\037\"\032/api/v1/keys/master:" +
-      "rewrap:\001*\022\310\003\n\016ListMasterKeys\022\'.scalekit." +
-      "v1.keys.ListMasterKeysRequest\032(.scalekit" +
-      ".v1.keys.ListMasterKeysResponse\"\342\002\222A\256\002\n\016" +
-      "Key Management\022\020List master keys\032\252\001Lists" +
-      " master key versions with pagination. Su" +
-      "pports optional status filter (CREATED, " +
-      "ACTIVE, DEPRECATED). Use next_page_token" +
-      " from the response to fetch subsequent p" +
-      "ages.J]\n\003200\022V\n&Paginated list of master" +
-      " key versions.\022,\n*\032(.scalekit.v1.keys.Li" +
-      "stMasterKeysResponse\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002\025\022\023/api/v1/keys/master\022\363\003\n\014GetMast" +
-      "erKey\022%.scalekit.v1.keys.GetMasterKeyReq" +
-      "uest\032&.scalekit.v1.keys.GetMasterKeyResp" +
-      "onse\"\223\003\222A\325\002\n\016Key Management\022\020Get a maste" +
-      "r key\032\266\001Returns a single master key vers" +
-      "ion by its version number. Use this to c" +
-      "heck the current status of a specific ma" +
-      "ster key version before activating, rewr" +
-      "apping DEKs, or destroying it.JP\n\003200\022I\n" +
-      "\033Master key version details.\022*\n(\032&.scale" +
-      "kit.v1.keys.GetMasterKeyResponseJ&\n\003404\022" +
-      "\037\n\035Master key version not found.\202\265\030\002\030\004\372\322" +
-      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037\022\035/api/v1/keys/master" +
-      "/{version}\022\345\004\n\020DestroyMasterKey\022).scalek" +
-      "it.v1.keys.DestroyMasterKeyRequest\032\026.goo" +
-      "gle.protobuf.Empty\"\215\004\222A\317\003\n\016Key Managemen" +
-      "t\022\024Destroy a master key\032\341\001Permanently de" +
-      "letes a master key version. Only allowed" +
-      " on DEPRECATED master keys with no DEKs " +
-      "still wrapped under them. Call RewrapDEK" +
-      "s first to migrate all DEKs to the new m" +
-      "aster key. WARNING: This operation is ir" +
-      "reversible.J(\n\003200\022!\n\037Master key permane" +
-      "ntly deleted.Jq\n\003400\022j\nhMaster key canno" +
-      "t be destroyed: it is ACTIVE, or DEKs ar" +
-      "e still wrapped under it. Call RewrapDEK" +
-      "s first.J&\n\003404\022\037\n\035Master key version no" +
-      "t found.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037*\035/ap" +
-      "i/v1/keys/master/{version}\032\347\002\222A\343\002\n\016Key M" +
-      "anagement\022\320\002Encryption key management us" +
-      "ing envelope encryption. Every phase of " +
-      "the key lifecycle \342\200\224 creation, activati" +
-      "on, re-encryption, and destruction \342\200\224 i" +
-      "s an explicit, user-triggered action. Su" +
-      "pports ENVIRONMENT_KEY (Scalekit-managed" +
-      " envelope encryption), SCALEKIT_MANAGED_" +
-      "KEY (Scalekit-managed KMS key), and BYOK" +
-      " (Bring Your Own Key) modes.B\301\001\n\"com.sca" +
-      "lekit.grpc.scalekit.v1.keysB\tKeysProtoP\001" +
-      "Z.github.com/scalekit-inc/scalekit/pkg/g" +
-      "rpc/keys\242\002\003SVK\252\002\020Scalekit.V1.Keys\312\002\020Scal" +
-      "ekit\\V1\\Keys\342\002\034Scalekit\\V1\\Keys\\GPBMetad" +
-      "ata\352\002\022Scalekit::V1::Keysb\006proto3"
+      "s.J]\n\003200\022V\n&Paginated list of master ke" +
+      "y versions.\022,\n*\032(.scalekit.v1.keys.ListM" +
+      "asterKeysResponse\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002\025\022\023/api/v1/keys/master\022\363\003\n\014GetMasterK" +
+      "ey\022%.scalekit.v1.keys.GetMasterKeyReques" +
+      "t\032&.scalekit.v1.keys.GetMasterKeyRespons" +
+      "e\"\223\003\222A\325\002\n\016Key Management\022\020Get a master k" +
+      "ey\032\266\001Returns a single master key version" +
+      " by its version number. Use this to chec" +
+      "k the current status of a specific maste" +
+      "r key version before activating, rewrapp" +
+      "ing DEKs, or destroying it.JP\n\003200\022I\n\033Ma" +
+      "ster key version details.\022*\n(\032&.scalekit" +
+      ".v1.keys.GetMasterKeyResponseJ&\n\003404\022\037\n\035" +
+      "Master key version not found.\202\265\030\002\030\004\372\322\344\223\002" +
+      "\t\022\007PREVIEW\202\323\344\223\002\037\022\035/api/v1/keys/master/{v" +
+      "ersion}\022\345\004\n\020DestroyMasterKey\022).scalekit." +
+      "v1.keys.DestroyMasterKeyRequest\032\026.google" +
+      ".protobuf.Empty\"\215\004\222A\317\003\n\016Key Management\022\024" +
+      "Destroy a master key\032\341\001Permanently delet" +
+      "es a master key version. Only allowed on" +
+      " DEPRECATED master keys with no DEKs sti" +
+      "ll wrapped under them. Call RewrapDEKs f" +
+      "irst to migrate all DEKs to the new mast" +
+      "er key. WARNING: This operation is irrev" +
+      "ersible.J(\n\003200\022!\n\037Master key permanentl" +
+      "y deleted.Jq\n\003400\022j\nhMaster key cannot b" +
+      "e destroyed: it is ACTIVE, or DEKs are s" +
+      "till wrapped under it. Call RewrapDEKs f" +
+      "irst.J&\n\003404\022\037\n\035Master key version not f" +
+      "ound.\202\265\030\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\037*\035/api/v" +
+      "1/keys/master/{version}\032\347\002\222A\343\002\n\016Key Mana" +
+      "gement\022\320\002Encryption key management using" +
+      " envelope encryption. Every phase of the" +
+      " key lifecycle \342\200\224 creation, activation," +
+      " re-encryption, and destruction \342\200\224 is a" +
+      "n explicit, user-triggered action. Suppo" +
+      "rts ENVIRONMENT_KEY (Scalekit-managed en" +
+      "velope encryption), SCALEKIT_MANAGED_KEY" +
+      " (Scalekit-managed KMS key), and BYOK (B" +
+      "ring Your Own Key) modes.B\301\001\n\"com.scalek" +
+      "it.grpc.scalekit.v1.keysB\tKeysProtoP\001Z.g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/keys\242\002\003SVK\252\002\020Scalekit.V1.Keys\312\002\020Scaleki" +
+      "t\\V1\\Keys\342\002\034Scalekit\\V1\\Keys\\GPBMetadata" +
+      "\352\002\022Scalekit::V1::Keysb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

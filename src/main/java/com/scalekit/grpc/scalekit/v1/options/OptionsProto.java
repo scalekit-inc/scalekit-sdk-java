@@ -9,6 +9,8 @@ public final class OptionsProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
     registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.authOption);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentTool);
+    registry.add(com.scalekit.grpc.scalekit.v1.options.OptionsProto.agentField);
   }
 
   public static void registerAllExtensions(
@@ -27,11 +29,58 @@ public final class OptionsProto {
           .newFileScopedGeneratedExtension(
         com.scalekit.grpc.scalekit.v1.options.AuthOption.class,
         com.scalekit.grpc.scalekit.v1.options.AuthOption.getDefaultInstance());
+  public static final int AGENT_TOOL_FIELD_NUMBER = 50001;
+  /**
+   * <pre>
+   * Exposes this RPC to the support agent as a callable tool. The
+   * protoc-gen-agenttool plugin generates a tool definition (model-facing name and
+   * description, JSON Schema for the request, and a response projection) for every
+   * RPC that carries this option. RPCs without it are never reachable by the agent.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.MethodOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.MethodOptions,
+      com.scalekit.grpc.scalekit.v1.options.AgentToolOption> agentTool = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        com.scalekit.grpc.scalekit.v1.options.AgentToolOption.class,
+        com.scalekit.grpc.scalekit.v1.options.AgentToolOption.getDefaultInstance());
+  public static final int AGENT_FIELD_FIELD_NUMBER = 50002;
+  /**
+   * <pre>
+   * Controls whether the support agent sees this field. Applies to request fields
+   * (schema generation) and response fields (output projection).
+   *
+   * Absence of this option means the field IS exposed. See AgentFieldOption for the
+   * full presence rules — an absent option and `{expose: false}` are not the same.
+   * </pre>
+   *
+   * <code>extend .google.protobuf.FieldOptions { ... }</code>
+   */
+  public static final
+    com.google.protobuf.GeneratedMessage.GeneratedExtension<
+      com.google.protobuf.DescriptorProtos.FieldOptions,
+      com.scalekit.grpc.scalekit.v1.options.AgentFieldOption> agentField = com.google.protobuf.GeneratedMessage
+          .newFileScopedGeneratedExtension(
+        com.scalekit.grpc.scalekit.v1.options.AgentFieldOption.class,
+        com.scalekit.grpc.scalekit.v1.options.AgentFieldOption.getDefaultInstance());
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_options_AuthOption_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_options_AuthOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_options_AgentToolOption_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_options_AgentToolOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_options_AgentFieldOption_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_options_AgentFieldOption_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,34 +97,47 @@ public final class OptionsProto {
       "henticationTypeR\022authenticationType\022 \n\013p" +
       "ermissions\030\001 \003(\tR\013permissions\0223\n\006policy\030" +
       "\002 \001(\0162\033.scalekit.v1.options.PolicyR\006poli" +
-      "cy**\n\006Policy\022\010\n\004DENY\020\000\022\013\n\007PARTIAL\020\001\022\t\n\005A" +
-      "LLOW\020\002*\325\005\n\022AuthenticationType\022\013\n\007BLOCKED" +
-      "\020\000\022\010\n\004NONE\020\001\022\r\n\tWORKSPACE\020@\022\023\n\017CUSTOMER_" +
-      "PORTAL\020 \022\013\n\007SESSION\020\020\022\025\n\021WORKSPACE_SESSI" +
-      "ON\020P\022\024\n\020WORKSPACE_CLIENT\020D\022%\n!WORKSPACE_" +
-      "SESSION_CUSTOMER_PORTAL\020p\022,\n(WORKSPACE_S" +
-      "ESSION_CUSTOMER_PORTAL_CLIENT\020t\022$\n WORKS" +
-      "PACE_CUSTOMER_PORTAL_CLIENT\020d\022\035\n\031WORKSPA" +
-      "CE_CUSTOMER_PORTAL\020`\022\010\n\004USER\020\010\022\n\n\006CLIENT" +
-      "\020\004\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORKSPACE_SESS" +
-      "ION_CLIENT\020T\022\"\n\036CUSTOMER_PORTAL_SESSION_" +
-      "CLIENT\0204\022\020\n\014SESSION_USER\020\030\022\023\n\016ACTIONS_PO" +
-      "RTAL\020\200\001\0225\n0WORKSPACE_SESSION_CUSTOMER_PO" +
-      "RTAL_ACTIONS_PORTAL\020\360\001\022<\n7WORKSPACE_SESS" +
-      "ION_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIEN" +
-      "T\020\364\001\022\035\n\030WORKSPACE_ACTIONS_PORTAL\020\300\001\022$\n\037W" +
-      "ORKSPACE_ACTIONS_PORTAL_CLIENT\020\304\001\0224\n/WOR" +
-      "KSPACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CL" +
-      "IENT\020\344\001\022-\n(WORKSPACE_CUSTOMER_PORTAL_ACT" +
-      "IONS_PORTAL\020\340\001:b\n\013auth_option\022\036.google.p" +
-      "rotobuf.MethodOptions\030\320\206\003 \001(\0132\037.scalekit" +
-      ".v1.options.AuthOptionR\nauthOptionB\331\001\n%c" +
-      "om.scalekit.grpc.scalekit.v1.optionsB\014Op" +
-      "tionsProtoP\001Z4github.com/scalekit-inc/sc" +
-      "alekit/pkg/grpc/authoption\242\002\003SVO\252\002\023Scale" +
-      "kit.V1.Options\312\002\023Scalekit\\V1\\Options\342\002\037S" +
-      "calekit\\V1\\Options\\GPBMetadata\352\002\025Scaleki" +
-      "t::V1::Optionsb\006proto3"
+      "cy\"\277\001\n\017AgentToolOption\022\022\n\004name\030\001 \001(\tR\004na" +
+      "me\022 \n\013description\030\002 \001(\tR\013description\0229\n\010" +
+      "mutation\030\003 \001(\0162\035.scalekit.v1.options.Mut" +
+      "ationR\010mutation\022\030\n\007summary\030\004 \001(\tR\007summar" +
+      "y\022!\n\014scope_fields\030\005 \003(\tR\013scopeFields\"*\n\020" +
+      "AgentFieldOption\022\026\n\006expose\030\001 \001(\010R\006expose" +
+      "**\n\006Policy\022\010\n\004DENY\020\000\022\013\n\007PARTIAL\020\001\022\t\n\005ALL" +
+      "OW\020\002*\325\005\n\022AuthenticationType\022\013\n\007BLOCKED\020\000" +
+      "\022\010\n\004NONE\020\001\022\r\n\tWORKSPACE\020@\022\023\n\017CUSTOMER_PO" +
+      "RTAL\020 \022\013\n\007SESSION\020\020\022\025\n\021WORKSPACE_SESSION" +
+      "\020P\022\024\n\020WORKSPACE_CLIENT\020D\022%\n!WORKSPACE_SE" +
+      "SSION_CUSTOMER_PORTAL\020p\022,\n(WORKSPACE_SES" +
+      "SION_CUSTOMER_PORTAL_CLIENT\020t\022$\n WORKSPA" +
+      "CE_CUSTOMER_PORTAL_CLIENT\020d\022\035\n\031WORKSPACE" +
+      "_CUSTOMER_PORTAL\020`\022\010\n\004USER\020\010\022\n\n\006CLIENT\020\004" +
+      "\022\022\n\016SESSION_CLIENT\020\024\022\034\n\030WORKSPACE_SESSIO" +
+      "N_CLIENT\020T\022\"\n\036CUSTOMER_PORTAL_SESSION_CL" +
+      "IENT\0204\022\020\n\014SESSION_USER\020\030\022\023\n\016ACTIONS_PORT" +
+      "AL\020\200\001\0225\n0WORKSPACE_SESSION_CUSTOMER_PORT" +
+      "AL_ACTIONS_PORTAL\020\360\001\022<\n7WORKSPACE_SESSIO" +
+      "N_CUSTOMER_PORTAL_ACTIONS_PORTAL_CLIENT\020" +
+      "\364\001\022\035\n\030WORKSPACE_ACTIONS_PORTAL\020\300\001\022$\n\037WOR" +
+      "KSPACE_ACTIONS_PORTAL_CLIENT\020\304\001\0224\n/WORKS" +
+      "PACE_ACTIONS_PORTAL_CUSTOMER_PORTAL_CLIE" +
+      "NT\020\344\001\022-\n(WORKSPACE_CUSTOMER_PORTAL_ACTIO" +
+      "NS_PORTAL\020\340\001*9\n\010Mutation\022\030\n\024MUTATION_UNS" +
+      "PECIFIED\020\000\022\010\n\004READ\020\001\022\t\n\005WRITE\020\002:b\n\013auth_" +
+      "option\022\036.google.protobuf.MethodOptions\030\320" +
+      "\206\003 \001(\0132\037.scalekit.v1.options.AuthOptionR" +
+      "\nauthOption:e\n\nagent_tool\022\036.google.proto" +
+      "buf.MethodOptions\030\321\206\003 \001(\0132$.scalekit.v1." +
+      "options.AgentToolOptionR\tagentTool:g\n\013ag" +
+      "ent_field\022\035.google.protobuf.FieldOptions" +
+      "\030\322\206\003 \001(\0132%.scalekit.v1.options.AgentFiel" +
+      "dOptionR\nagentFieldB\331\001\n%com.scalekit.grp" +
+      "c.scalekit.v1.optionsB\014OptionsProtoP\001Z4g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/authoption\242\002\003SVO\252\002\023Scalekit.V1.Options\312" +
+      "\002\023Scalekit\\V1\\Options\342\002\037Scalekit\\V1\\Opti" +
+      "ons\\GPBMetadata\352\002\025Scalekit::V1::Optionsb" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -88,7 +150,21 @@ public final class OptionsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_options_AuthOption_descriptor,
         new java.lang.String[] { "AuthenticationType", "Permissions", "Policy", });
+    internal_static_scalekit_v1_options_AgentToolOption_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_scalekit_v1_options_AgentToolOption_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_options_AgentToolOption_descriptor,
+        new java.lang.String[] { "Name", "Description", "Mutation", "Summary", "ScopeFields", });
+    internal_static_scalekit_v1_options_AgentFieldOption_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_scalekit_v1_options_AgentFieldOption_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_options_AgentFieldOption_descriptor,
+        new java.lang.String[] { "Expose", });
     authOption.internalInit(descriptor.getExtensions().get(0));
+    agentTool.internalInit(descriptor.getExtensions().get(1));
+    agentField.internalInit(descriptor.getExtensions().get(2));
     com.google.protobuf.DescriptorProtos.getDescriptor();
   }
 

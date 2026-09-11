@@ -9,54 +9,54 @@ public interface ListAuthLogRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 page_size = 1 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>string page_token = 2 [json_name = "pageToken"];</code>
+   * <code>string page_token = 2 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <code>string page_token = 2 [json_name = "pageToken"];</code>
+   * <code>string page_token = 2 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString
       getPageTokenBytes();
 
   /**
-   * <code>string email = 3 [json_name = "email"];</code>
+   * <code>string email = 3 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>string email = 3 [json_name = "email"];</code>
+   * <code>string email = 3 [json_name = "email", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * <code>repeated string status = 4 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the status.
    */
   java.util.List<java.lang.String>
       getStatusList();
   /**
-   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * <code>repeated string status = 4 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of status.
    */
   int getStatusCount();
   /**
-   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * <code>repeated string status = 4 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The status at the given index.
    */
   java.lang.String getStatus(int index);
   /**
-   * <code>repeated string status = 4 [json_name = "status"];</code>
+   * <code>repeated string status = 4 [json_name = "status", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the status at the given index.
    */
@@ -64,54 +64,54 @@ public interface ListAuthLogRequestOrBuilder extends
       getStatusBytes(int index);
 
   /**
-   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
-   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
-   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime"];</code>
+   * <code>.google.protobuf.Timestamp start_time = 5 [json_name = "startTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
-   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
-   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime"];</code>
+   * <code>.google.protobuf.Timestamp end_time = 6 [json_name = "endTime", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
-   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 7 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The resourceId.
    */
   java.lang.String getResourceId();
   /**
-   * <code>string resource_id = 7 [json_name = "resourceId"];</code>
+   * <code>string resource_id = 7 [json_name = "resourceId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for resourceId.
    */
   com.google.protobuf.ByteString
       getResourceIdBytes();
 
   /**
-   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The connectedAccountIdentifier.
    */
   java.lang.String getConnectedAccountIdentifier();
   /**
-   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier"];</code>
+   * <code>string connected_account_identifier = 8 [json_name = "connectedAccountIdentifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for connectedAccountIdentifier.
    */
   com.google.protobuf.ByteString

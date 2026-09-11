@@ -139,6 +139,37 @@ public final class ToolServiceGrpc {
     return getListAvailableToolsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> getSearchToolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchTools",
+      requestType = com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> getSearchToolsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest, com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> getSearchToolsMethod;
+    if ((getSearchToolsMethod = ToolServiceGrpc.getSearchToolsMethod) == null) {
+      synchronized (ToolServiceGrpc.class) {
+        if ((getSearchToolsMethod = ToolServiceGrpc.getSearchToolsMethod) == null) {
+          ToolServiceGrpc.getSearchToolsMethod = getSearchToolsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest, com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchTools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ToolServiceMethodDescriptorSupplier("SearchTools"))
+              .build();
+        }
+      }
+    }
+    return getSearchToolsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest,
       com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> getSetToolDefaultMethod;
 
@@ -263,6 +294,37 @@ public final class ToolServiceGrpc {
     return getExecuteToolMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> getRefreshToolsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefreshTools",
+      requestType = com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest,
+      com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> getRefreshToolsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest, com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> getRefreshToolsMethod;
+    if ((getRefreshToolsMethod = ToolServiceGrpc.getRefreshToolsMethod) == null) {
+      synchronized (ToolServiceGrpc.class) {
+        if ((getRefreshToolsMethod = ToolServiceGrpc.getRefreshToolsMethod) == null) {
+          ToolServiceGrpc.getRefreshToolsMethod = getRefreshToolsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest, com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RefreshTools"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ToolServiceMethodDescriptorSupplier("RefreshTools"))
+              .build();
+        }
+      }
+    }
+    return getRefreshToolsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -340,6 +402,16 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search tools by natural-language query
+     * </pre>
+     */
+    default void searchTools(com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchToolsMethod(), responseObserver);
+    }
+
+    /**
      */
     default void setToolDefault(com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> responseObserver) {
@@ -368,6 +440,13 @@ public final class ToolServiceGrpc {
     default void executeTool(com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExecuteToolMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void refreshTools(com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRefreshToolsMethod(), responseObserver);
     }
   }
 
@@ -431,6 +510,17 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search tools by natural-language query
+     * </pre>
+     */
+    public void searchTools(com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchToolsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void setToolDefault(com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> responseObserver) {
@@ -463,6 +553,14 @@ public final class ToolServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExecuteToolMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void refreshTools(com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefreshToolsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -511,6 +609,16 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search tools by natural-language query
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse searchTools(com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchToolsMethod(), getCallOptions(), request);
+    }
+
+    /**
      */
     public com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse setToolDefault(com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -539,6 +647,13 @@ public final class ToolServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse executeTool(com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExecuteToolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse refreshTools(com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefreshToolsMethod(), getCallOptions(), request);
     }
   }
 
@@ -591,6 +706,17 @@ public final class ToolServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Search tools by natural-language query
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse> searchTools(
+        com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchToolsMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse> setToolDefault(
         com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest request) {
@@ -624,16 +750,26 @@ public final class ToolServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExecuteToolMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse> refreshTools(
+        com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefreshToolsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TOOL = 0;
   private static final int METHODID_LIST_TOOLS = 1;
   private static final int METHODID_LIST_SCOPED_TOOLS = 2;
   private static final int METHODID_LIST_AVAILABLE_TOOLS = 3;
-  private static final int METHODID_SET_TOOL_DEFAULT = 4;
-  private static final int METHODID_UPDATE_TOOL = 5;
-  private static final int METHODID_DELETE_TOOL = 6;
-  private static final int METHODID_EXECUTE_TOOL = 7;
+  private static final int METHODID_SEARCH_TOOLS = 4;
+  private static final int METHODID_SET_TOOL_DEFAULT = 5;
+  private static final int METHODID_UPDATE_TOOL = 6;
+  private static final int METHODID_DELETE_TOOL = 7;
+  private static final int METHODID_EXECUTE_TOOL = 8;
+  private static final int METHODID_REFRESH_TOOLS = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -668,6 +804,10 @@ public final class ToolServiceGrpc {
           serviceImpl.listAvailableTools((com.scalekit.grpc.scalekit.v1.tools.ListAvailableToolsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ListAvailableToolsResponse>) responseObserver);
           break;
+        case METHODID_SEARCH_TOOLS:
+          serviceImpl.searchTools((com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse>) responseObserver);
+          break;
         case METHODID_SET_TOOL_DEFAULT:
           serviceImpl.setToolDefault((com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.SetToolDefaultResponse>) responseObserver);
@@ -683,6 +823,10 @@ public final class ToolServiceGrpc {
         case METHODID_EXECUTE_TOOL:
           serviceImpl.executeTool((com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse>) responseObserver);
+          break;
+        case METHODID_REFRESH_TOOLS:
+          serviceImpl.refreshTools((com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -731,6 +875,13 @@ public final class ToolServiceGrpc {
               com.scalekit.grpc.scalekit.v1.tools.ListAvailableToolsResponse>(
                 service, METHODID_LIST_AVAILABLE_TOOLS)))
         .addMethod(
+          getSearchToolsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.tools.SearchToolsRequest,
+              com.scalekit.grpc.scalekit.v1.tools.SearchToolsResponse>(
+                service, METHODID_SEARCH_TOOLS)))
+        .addMethod(
           getSetToolDefaultMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -758,6 +909,13 @@ public final class ToolServiceGrpc {
               com.scalekit.grpc.scalekit.v1.tools.ExecuteToolRequest,
               com.scalekit.grpc.scalekit.v1.tools.ExecuteToolResponse>(
                 service, METHODID_EXECUTE_TOOL)))
+        .addMethod(
+          getRefreshToolsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.tools.RefreshToolsRequest,
+              com.scalekit.grpc.scalekit.v1.tools.RefreshToolsResponse>(
+                service, METHODID_REFRESH_TOOLS)))
         .build();
   }
 
@@ -810,10 +968,12 @@ public final class ToolServiceGrpc {
               .addMethod(getListToolsMethod())
               .addMethod(getListScopedToolsMethod())
               .addMethod(getListAvailableToolsMethod())
+              .addMethod(getSearchToolsMethod())
               .addMethod(getSetToolDefaultMethod())
               .addMethod(getUpdateToolMethod())
               .addMethod(getDeleteToolMethod())
               .addMethod(getExecuteToolMethod())
+              .addMethod(getRefreshToolsMethod())
               .build();
         }
       }

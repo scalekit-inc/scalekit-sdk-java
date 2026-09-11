@@ -209,7 +209,7 @@ java.lang.String defaultValue);
    * Organization Settings
    * </pre>
    *
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
@@ -218,7 +218,7 @@ java.lang.String defaultValue);
    * Organization Settings
    * </pre>
    *
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings", (.scalekit.v1.options.agent_field) = { ... }</code>
    * @return The settings.
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettings getSettings();
@@ -227,7 +227,7 @@ java.lang.String defaultValue);
    * Organization Settings
    * </pre>
    *
-   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings"];</code>
+   * <code>.scalekit.v1.organizations.OrganizationSettings settings = 8 [json_name = "settings", (.scalekit.v1.options.agent_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.organizations.OrganizationSettingsOrBuilder getSettingsOrBuilder();
 
