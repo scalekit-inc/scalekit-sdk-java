@@ -1,7 +1,14 @@
+import com.google.protobuf.FieldMask;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,6 +28,10 @@ public class ResourceConsentClientTests {
     // hold whether or not the resource currently has consents.
     private static final String TEST_RESOURCE_ID = "res_142388122116685880";
 
+    // Syntactically valid but nonexistent, used to prove deleteResourceClient's
+    // ownership check refuses a client/resource pairing that does not match.
+    private static final String OTHER_RESOURCE_ID = "res_999999999999999999";
+
     @BeforeAll
     static void init() {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
@@ -35,6 +46,137 @@ public class ResourceConsentClientTests {
         );
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
+    }
+
+    @Test
+    void testCreateResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient("", ResourceClient.newBuilder().setName("Test").build()));
+    }
+
+    @Test
+    void testCreateResourceClientRequiresClient() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID, null));
+    }
+
+    @Test
+    void testGetResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResourceClient("", "m2m_dummy"));
+    }
+
+    @Test
+    void testGetResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResourceClient(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testListResourceClientsRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResourceClients(""));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient("", "m2m_dummy",
+                        ResourceClient.newBuilder().setName("Test").build(), null));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient(TEST_RESOURCE_ID, "",
+                        ResourceClient.newBuilder().setName("Test").build(), null));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresClient() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient(TEST_RESOURCE_ID, "m2m_dummy", null, null));
+    }
+
+    @Test
+    void testDeleteResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClient("", "m2m_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testCreateGetListUpdateDeleteResourceClient() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Java SDK Test Client")
+                        .setDescription("Integration test client")
+                        .addScopes("test:e2e_resource_scope")
+                        .build());
+
+        assertNotNull(created);
+        assertNotNull(created.getClient());
+        assertFalse(created.getPlainSecret().isEmpty());
+        String clientId = created.getClient().getClientId();
+        assertEquals("Java SDK Test Client", created.getClient().getName());
+        assertEquals(TEST_RESOURCE_ID, created.getClient().getResourceId());
+
+        boolean[] deleted = {false};
+        try {
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertNotNull(fetched.getClient());
+            assertEquals(clientId, fetched.getClient().getClientId());
+
+            ListResourceClientsResponse list = client.resources().listResourceClients(TEST_RESOURCE_ID);
+            assertTrue(list.getClientsList().stream().anyMatch(c -> c.getClientId().equals(clientId)),
+                    "created client should appear in list");
+
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().setName("Java SDK Test Client Updated").build(),
+                    FieldMask.newBuilder().addPaths("name").build());
+            assertEquals("Java SDK Test Client Updated", updated.getClient().getName());
+
+            DeleteResourceClientResponse deleteResponse = client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+            assertNotNull(deleteResponse);
+            deleted[0] = true;
+
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().getResourceClient(TEST_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+        } finally {
+            if (!deleted[0]) {
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+            }
+        }
+    }
+
+    // OTHER_RESOURCE_ID doesn't exist, so the client can't belong to it — the
+    // server's own resource-scoping on getResourceClient refuses the delete
+    // (NOT_FOUND) before it ever runs, and the SDK-side ownership check in
+    // deleteResourceClient is the second line of defense for a backend that
+    // didn't enforce this.
+    @Test
+    void testDeleteResourceClientRefusesWrongResource() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Ownership Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().deleteResourceClient(OTHER_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+
+            // The client must still exist under its real resource.
+            GetResourceClientResponse stillThere = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertEquals(clientId, stillThere.getClient().getClientId());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
     }
 
     @Test

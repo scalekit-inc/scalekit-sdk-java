@@ -1,5 +1,6 @@
 package com.scalekit.api.impl;
 
+import com.google.protobuf.FieldMask;
 import com.scalekit.Environment;
 import com.scalekit.api.ResourceConsentClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
@@ -24,6 +25,110 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
         this.clientStub = ClientServiceGrpc
                 .newBlockingStub(channel)
                 .withCallCredentials(this.credentials);
+    }
+
+    @Override
+    public CreateResourceClientResponse createResourceClient(String resourceId, ResourceClient client) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (client == null) {
+            throw new IllegalArgumentException("client is required");
+        }
+        CreateResourceClientRequest request = CreateResourceClientRequest.newBuilder()
+                .setResourceId(resourceId)
+                .setClient(client)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .createResourceClient(request),
+                this.credentials);
+    }
+
+    @Override
+    public GetResourceClientResponse getResourceClient(String resourceId, String clientId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (clientId == null || clientId.isEmpty()) {
+            throw new IllegalArgumentException("clientId is required");
+        }
+        GetResourceClientRequest request = GetResourceClientRequest.newBuilder()
+                .setResourceId(resourceId)
+                .setClientId(clientId)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .getResourceClient(request),
+                this.credentials);
+    }
+
+    @Override
+    public ListResourceClientsResponse listResourceClients(String resourceId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        ListResourceClientsRequest request = ListResourceClientsRequest.newBuilder()
+                .setResourceId(resourceId)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .listResourceClients(request),
+                this.credentials);
+    }
+
+    @Override
+    public UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, ResourceClient client, FieldMask updateMask) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (clientId == null || clientId.isEmpty()) {
+            throw new IllegalArgumentException("clientId is required");
+        }
+        if (client == null) {
+            throw new IllegalArgumentException("client is required");
+        }
+        UpdateResourceClientRequest.Builder request = UpdateResourceClientRequest.newBuilder()
+                .setResourceId(resourceId)
+                .setClientId(clientId)
+                .setClient(client);
+        if (updateMask != null) {
+            request.setUpdateMask(updateMask);
+        }
+        UpdateResourceClientRequest builtRequest = request.build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .updateResourceClient(builtRequest),
+                this.credentials);
+    }
+
+    @Override
+    public DeleteResourceClientResponse deleteResourceClient(String resourceId, String clientId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (clientId == null || clientId.isEmpty()) {
+            throw new IllegalArgumentException("clientId is required");
+        }
+
+        GetResourceClientResponse fetched = getResourceClient(resourceId, clientId);
+        if (fetched.getClient() == null || !resourceId.equals(fetched.getClient().getResourceId())) {
+            throw new IllegalArgumentException("Client " + clientId + " does not belong to resource " + resourceId);
+        }
+
+        DeleteResourceClientRequest request = DeleteResourceClientRequest.newBuilder()
+                .setResourceId(resourceId)
+                .setClientId(clientId)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .deleteResourceClient(request),
+                this.credentials);
     }
 
     @Override

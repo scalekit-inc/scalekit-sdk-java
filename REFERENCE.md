@@ -7670,6 +7670,367 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 
 ## Resources
 
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">createResourceClient</a>(resourceId, client) -> CreateResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new API client scoped to a resource, such as an MCP server.
+
+The response's `plainSecret` is the plaintext client secret, only available at creation time. `audience` is ignored for MCP_SERVER/MCP_GATEWAY resources, which get their audience from the resource itself.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+
+CreateResourceClientResponse response = client.resources().createResourceClient(
+  "res_142145647087190278",
+  ResourceClient.newBuilder()
+    .setName("My Resource Client")
+    .addScopes("read")
+    .addScopes("write")
+    .build()
+);
+
+System.out.println(response.getClient().getClientId() + " " + response.getPlainSecret());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource to create the client for (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**client:** `ResourceClient` - Proto message with the desired client properties (name, description, scopes, audience, customClaims, expiry, redirectUris). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">getResourceClient</a>(resourceId, clientId) -> GetResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a single API client scoped to a resource, along with the end-users who have granted it consent.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+
+GetResourceClientResponse response = client.resources().getResourceClient(
+  "res_142145647087190278",
+  "m2m_142145647087190278"
+);
+
+System.out.println(response.getClient().getName());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listResourceClients</a>(resourceId) -> ListResourceClientsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists every API client scoped to a resource.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.M2MClient;
+
+ListResourceClientsResponse response = client.resources().listResourceClients("res_142145647087190278");
+
+for (M2MClient resourceClient : response.getClientsList()) {
+  System.out.println(resourceClient.getClientId());
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource whose clients to list (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">updateResourceClient</a>(resourceId, clientId, client, updateMask) -> UpdateResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates an existing API client scoped to a resource.
+
+`updateMask` lists which fields of `client` to change. Verified against a live environment: the server only actually honors the mask for `scopes`, `customClaims` and `redirectUris` — include one of those paths with an empty value to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear). `audience` cannot be changed here at all — a resource client's audience is fixed to the resource it belongs to, by design, not something this call can widen or repoint.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.google.protobuf.FieldMask;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
+
+UpdateResourceClientResponse response = client.resources().updateResourceClient(
+  "res_142145647087190278",
+  "m2m_142145647087190278",
+  ResourceClient.newBuilder().addScopes("read").build(),
+  FieldMask.newBuilder().addPaths("scopes").build()
+);
+
+System.out.println(response.getClient().getScopesList());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to update. Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**client:** `ResourceClient` - Proto message with the fields to update. Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**updateMask:** `FieldMask` - Field paths in `client` to apply (see note above). Pass `null` to apply no partial-update mask.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">deleteResourceClient</a>(resourceId, clientId) -> DeleteResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Permanently deletes an API client scoped to a resource.
+
+`deleteResourceClient` shares its underlying delete path with client deletion in general, so nothing forces the given `clientId` to actually belong to `resourceId` — but this method lives under `client.resources()`, so callers reasonably expect it to only ever touch clients within that resource. This fetches the client first and verifies its own `resourceId` matches before deleting, and throws `IllegalArgumentException` instead of trusting the id pair blindly.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647087190278");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to delete. Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listUserConsents</a>(resourceId, options) -> ListResourceUserConsentsResponse</code></summary>
 <dl>
 <dd>
