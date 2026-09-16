@@ -8174,6 +8174,8 @@ client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647
 <dd>
 
 Creates a new secret for an API client scoped to a resource, verifying the client belongs to resourceId first. The plain secret value is returned only at creation time and cannot be retrieved again.
+
+The backend caps how many secrets a client can hold at once (a configurable limit — 5 in Scalekit's own dev environment, verified live; treat the exact number as environment-specific, not a fixed constant). Exceeding it throws (the server rejects it as `INVALID_ARGUMENT`, "only N secrets are allowed") — delete an existing secret first via `deleteResourceClientSecret`. The dashboard itself is more conservative than the server limit: it only shows an "Add new secret" action while a client has fewer than 2 secrets. Match whichever threshold — the actual server limit or the dashboard's stricter 2 — fits your own UX.
 </dd>
 </dl>
 </dd>
@@ -8236,6 +8238,8 @@ client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142
 <dd>
 
 Permanently deletes a secret from an API client scoped to a resource, verifying the client belongs to resourceId first.
+
+A client must always keep at least 1 secret. Calling this on a client's last remaining secret throws (the server rejects it as `INVALID_ARGUMENT`, "at least one secret is required"). Mirror the dashboard's own UX: only offer a "Revoke" action on a secret while the client has more than 1.
 </dd>
 </dl>
 </dd>
