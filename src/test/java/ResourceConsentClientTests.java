@@ -69,6 +69,14 @@ public class ResourceConsentClientTests {
     }
 
     @Test
+    void testListResourcesRequiresResourceType() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResources(null, 0, ""));
+
+        assertEquals("resourceType is required", exception.getMessage());
+    }
+
+    @Test
     void testGetResource() {
         GetResourceResponse response = client.resources().getResource(TEST_RESOURCE_ID);
 
@@ -88,17 +96,26 @@ public class ResourceConsentClientTests {
 
     @Test
     void testListResources() {
-        // pageSize 30 (the server-side max) to give the test resource the best
-        // chance of appearing on the first page regardless of how many other
+        // Page size 30 (the server-side max) to minimize page count, but still
+        // follow nextPageToken across pages rather than assuming the test
+        // resource lands on the first one, regardless of how many other
         // MCP_SERVER resources exist in whichever environment runs this test.
-        ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 30, "");
+        boolean found = false;
+        String pageToken = "";
+        ListResourcesResponse response;
+        do {
+            response = client.resources().listResources(ResourceType.MCP_SERVER, 30, pageToken);
+            assertNotNull(response);
+            assertNotNull(response.getResourcesList());
+            assertTrue(response.getTotalSize() >= 0);
+            if (response.getResourcesList().stream().anyMatch(r -> r.getId().equals(TEST_RESOURCE_ID))) {
+                found = true;
+                break;
+            }
+            pageToken = response.getNextPageToken();
+        } while (pageToken != null && !pageToken.isEmpty());
 
-        assertNotNull(response);
-        assertNotNull(response.getResourcesList());
-        assertTrue(response.getTotalSize() >= 0);
-        assertTrue(response.getResourcesList().stream()
-                        .anyMatch(r -> r.getId().equals(TEST_RESOURCE_ID)),
-                "the test resource should appear in the MCP_SERVER listing");
+        assertTrue(found, "the test resource should appear in the MCP_SERVER listing");
     }
 
     @Test

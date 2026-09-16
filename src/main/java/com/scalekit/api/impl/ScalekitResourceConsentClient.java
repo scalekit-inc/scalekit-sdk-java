@@ -45,6 +45,9 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
 
     @Override
     public ListResourcesResponse listResources(ResourceType resourceType, int pageSize, String pageToken) {
+        if (resourceType == null) {
+            throw new IllegalArgumentException("resourceType is required");
+        }
         if (pageSize < 0) {
             throw new IllegalArgumentException("pageSize must be 0 (server default) or a positive integer");
         }
