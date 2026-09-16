@@ -71,6 +71,9 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
         if (client == null) {
             throw new IllegalArgumentException("client is required");
         }
+        if (!client.getAudienceList().isEmpty()) {
+            throw new IllegalArgumentException("audience cannot be set via the SDK; it is always server-determined");
+        }
         CreateResourceClientRequest request = CreateResourceClientRequest.newBuilder()
                 .setResourceId(resourceId)
                 .setClient(client)
@@ -128,7 +131,7 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
             throw new IllegalArgumentException("client is required");
         }
         if (updateMask != null && updateMask.getPathsList().contains("audience")) {
-            throw new IllegalArgumentException("audience cannot be changed via update; it is fixed at creation");
+            throw new IllegalArgumentException("audience cannot be set via the SDK; it is always server-determined");
         }
         UpdateResourceClientRequest.Builder request = UpdateResourceClientRequest.newBuilder()
                 .setResourceId(resourceId)

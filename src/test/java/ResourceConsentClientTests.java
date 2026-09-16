@@ -385,11 +385,9 @@ public class ResourceConsentClientTests {
         }
     }
 
-    // Verified against a live environment: audience is ignored on create too
-    // (not just update) for an MCP_SERVER/MCP_GATEWAY resource, which gets its
-    // audience from the resource itself — so it comes back empty here even
-    // though a value was supplied, matching the documented update-time
-    // behavior (same finding as the Go SDK PR).
+    // Exercises every settable field on create. audience is deliberately
+    // excluded — it's not settable at all (see
+    // testCreateResourceClientRejectsAudience).
     @Test
     void testCreateResourceClientAllFields() {
         CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
@@ -397,7 +395,6 @@ public class ResourceConsentClientTests {
                         .setName("Java SDK All Fields Client")
                         .setDescription("exercises every field")
                         .addScopes("test:e2e_resource_scope")
-                        .addAudience("https://example.com/should-be-ignored")
                         .addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim.newBuilder()
                                 .setKey("team").setValue("sdk").build())
                         .setExpiry(3600)
@@ -407,7 +404,6 @@ public class ResourceConsentClientTests {
         String clientId = created.getClient().getClientId();
         try {
             assertEquals(java.util.Collections.singletonList("test:e2e_resource_scope"), created.getClient().getScopesList());
-            assertTrue(created.getClient().getAudienceList().isEmpty(), "audience is ignored on create for an MCP_SERVER resource");
             assertEquals(1, created.getClient().getCustomClaimsCount());
             assertEquals("team", created.getClient().getCustomClaims(0).getKey());
             assertEquals("sdk", created.getClient().getCustomClaims(0).getValue());
@@ -416,6 +412,21 @@ public class ResourceConsentClientTests {
         } finally {
             client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
         }
+    }
+
+    // Confirms audience can't be set via create, by design — the SDK rejects
+    // a non-empty audience outright, rather than sending a request that used
+    // to be honored server-side for non-MCP resource types.
+    @Test
+    void testCreateResourceClientRejectsAudience() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder()
+                                .setName("Audience Reject Test")
+                                .addAudience("https://example.com/should-not-apply")
+                                .build()));
+
+        assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
     }
 
     // Confirms name/description are truthy-gated, not mask-gated: a non-empty
@@ -462,8 +473,8 @@ public class ResourceConsentClientTests {
     }
 
     // Confirms audience can't be changed via update, by design — the SDK
-    // rejects an "audience" mask path outright, rather than sending a
-    // request that the server would just ignore.
+    // rejects an "audience" mask path outright, since audience is never
+    // settable through this SDK at all, on create or update.
     @Test
     void testUpdateResourceClientRejectsAudienceInMask() {
         CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
@@ -477,7 +488,7 @@ public class ResourceConsentClientTests {
                             ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
                             FieldMask.newBuilder().addPaths("audience").build()));
 
-            assertEquals("audience cannot be changed via update; it is fixed at creation", exception.getMessage());
+            assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
 
             GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
             assertEquals(originalAudience, fetched.getClient().getAudienceList());

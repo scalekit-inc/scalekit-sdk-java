@@ -7827,7 +7827,9 @@ System.out.println(response.getTotalSize() + " " + response.getResourcesList());
 
 Creates a new API client scoped to a resource, such as an MCP server.
 
-The response's `plainSecret` is the plaintext client secret, only available at creation time. `audience` is ignored for MCP_SERVER/MCP_GATEWAY resources, which get their audience from the resource itself.
+The response's `plainSecret` is the plaintext client secret, only available at creation time.
+
+`audience` cannot be set through this SDK — it is always server-determined, for any resource type. A non-empty `client.getAudienceList()` throws `IllegalArgumentException` rather than being silently forwarded.
 </dd>
 </dl>
 </dd>
@@ -8030,7 +8032,7 @@ Updates an existing API client scoped to a resource.
 
 `updateMask` lists which fields of `client` to change. Verified against a live environment: the server only actually honors the mask for `scopes`, `customClaims` and `redirectUris` — include one of those paths with an empty value to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear).
 
-`"audience"` is not a supported `updateMask` path — a resource client's audience is fixed at creation and can never be changed via update, for any resource type, so this throws `IllegalArgumentException` rather than silently accepting a path that can never take effect.
+`"audience"` is not a supported `updateMask` path — audience cannot be set through this SDK at all, on create or update, for any resource type, so this throws `IllegalArgumentException` rather than silently accepting a path that can never take effect.
 </dd>
 </dl>
 </dd>
