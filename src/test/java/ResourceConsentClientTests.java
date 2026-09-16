@@ -1,7 +1,18 @@
+import com.google.protobuf.FieldMask;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
+import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourcesResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
+import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,6 +32,10 @@ public class ResourceConsentClientTests {
     // hold whether or not the resource currently has consents.
     private static final String TEST_RESOURCE_ID = "res_142388122116685880";
 
+    // Syntactically valid but nonexistent, used to prove deleteResourceClient's
+    // ownership check refuses a client/resource pairing that does not match.
+    private static final String OTHER_RESOURCE_ID = "res_999999999999999999";
+
     @BeforeAll
     static void init() {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
@@ -35,6 +50,525 @@ public class ResourceConsentClientTests {
         );
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
+    }
+
+    @Test
+    void testGetResourceRequiresResourceId() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResource(""));
+
+        assertEquals("resourceId is required", exception.getMessage());
+    }
+
+    @Test
+    void testListResourcesRejectsNegativePageSize() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResources(ResourceType.MCP_SERVER, -1, ""));
+
+        assertEquals("pageSize must be 0 (server default) or a positive integer", exception.getMessage());
+    }
+
+    @Test
+    void testListResourcesRequiresResourceType() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResources(null, 0, ""));
+
+        assertEquals("resourceType is required", exception.getMessage());
+    }
+
+    @Test
+    void testGetResource() {
+        GetResourceResponse response = client.resources().getResource(TEST_RESOURCE_ID);
+
+        assertNotNull(response);
+        assertNotNull(response.getResource());
+        assertEquals(TEST_RESOURCE_ID, response.getResource().getId());
+        assertEquals(ResourceType.MCP_SERVER, response.getResource().getResourceType());
+        assertNotNull(response.getResource().getScopesList());
+    }
+
+    @Test
+    void testGetResourceRejectsMalformedResourceId() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().getResource("not-a-real-resource-id"));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testListResources() {
+        // Page size 30 (the server-side max) to minimize page count, but still
+        // follow nextPageToken across pages rather than assuming the test
+        // resource lands on the first one, regardless of how many other
+        // MCP_SERVER resources exist in whichever environment runs this test.
+        boolean found = false;
+        String pageToken = "";
+        ListResourcesResponse response;
+        do {
+            response = client.resources().listResources(ResourceType.MCP_SERVER, 30, pageToken);
+            assertNotNull(response);
+            assertNotNull(response.getResourcesList());
+            assertTrue(response.getTotalSize() >= 0);
+            if (response.getResourcesList().stream().anyMatch(r -> r.getId().equals(TEST_RESOURCE_ID))) {
+                found = true;
+                break;
+            }
+            pageToken = response.getNextPageToken();
+        } while (pageToken != null && !pageToken.isEmpty());
+
+        assertTrue(found, "the test resource should appear in the MCP_SERVER listing");
+    }
+
+    @Test
+    void testListResourcesWithPageSize() {
+        ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 1, "");
+
+        assertNotNull(response);
+        assertTrue(response.getResourcesList().size() <= 1);
+    }
+
+    // Confirms the server-side requirement documented on ListResourcesRequest:
+    // RESOURCE_TYPE_UNSPECIFIED is rejected outright, it is not "list every type".
+    @Test
+    void testListResourcesRejectsUnspecifiedType() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().listResources(ResourceType.RESOURCE_TYPE_UNSPECIFIED, 0, ""));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testCreateResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient("", ResourceClient.newBuilder().setName("Test").build()));
+    }
+
+    @Test
+    void testCreateResourceClientRequiresClient() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID, null));
+    }
+
+    @Test
+    void testGetResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResourceClient("", "m2m_dummy"));
+    }
+
+    @Test
+    void testGetResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResourceClient(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testListResourceClientsRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResourceClients(""));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient("", "m2m_dummy",
+                        ResourceClient.newBuilder().setName("Test").build(), null));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient(TEST_RESOURCE_ID, "",
+                        ResourceClient.newBuilder().setName("Test").build(), null));
+    }
+
+    @Test
+    void testUpdateResourceClientRequiresClient() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().updateResourceClient(TEST_RESOURCE_ID, "m2m_dummy", null, null));
+    }
+
+    @Test
+    void testDeleteResourceClientRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClient("", "m2m_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testCreateResourceClientSecretRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClientSecret("", "m2m_dummy"));
+    }
+
+    @Test
+    void testCreateResourceClientSecretRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClientSecret(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret("", "m2m_dummy", "secret_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, "", "secret_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresSecretId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, "m2m_dummy", ""));
+    }
+
+    @Test
+    void testCreateGetListUpdateDeleteResourceClient() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Java SDK Test Client")
+                        .setDescription("Integration test client")
+                        .addScopes("test:e2e_resource_scope")
+                        .build());
+
+        assertNotNull(created);
+        assertNotNull(created.getClient());
+        assertFalse(created.getPlainSecret().isEmpty());
+        String clientId = created.getClient().getClientId();
+        assertEquals("Java SDK Test Client", created.getClient().getName());
+        assertEquals(TEST_RESOURCE_ID, created.getClient().getResourceId());
+
+        boolean[] deleted = {false};
+        try {
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertNotNull(fetched.getClient());
+            assertEquals(clientId, fetched.getClient().getClientId());
+
+            ListResourceClientsResponse list = client.resources().listResourceClients(TEST_RESOURCE_ID);
+            assertTrue(list.getClientsList().stream().anyMatch(c -> c.getClientId().equals(clientId)),
+                    "created client should appear in list");
+
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().setName("Java SDK Test Client Updated").build(),
+                    FieldMask.newBuilder().addPaths("name").build());
+            assertEquals("Java SDK Test Client Updated", updated.getClient().getName());
+
+            DeleteResourceClientResponse deleteResponse = client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+            assertNotNull(deleteResponse);
+            deleted[0] = true;
+
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().getResourceClient(TEST_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+        } finally {
+            if (!deleted[0]) {
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+            }
+        }
+    }
+
+    // OTHER_RESOURCE_ID doesn't exist, so the client can't belong to it — the
+    // server's own resource-scoping on getResourceClient refuses the delete
+    // (NOT_FOUND) before it ever runs, and the SDK-side ownership check in
+    // deleteResourceClient is the second line of defense for a backend that
+    // didn't enforce this.
+    @Test
+    void testDeleteResourceClientRefusesWrongResource() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Ownership Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().deleteResourceClient(OTHER_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+
+            // The client must still exist under its real resource.
+            GetResourceClientResponse stillThere = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertEquals(clientId, stillThere.getClient().getClientId());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    @Test
+    void testCreateAndDeleteResourceClientSecret() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Secret Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            CreateClientSecretResponse secretResponse = client.resources().createResourceClientSecret(TEST_RESOURCE_ID, clientId);
+            assertNotNull(secretResponse);
+            assertFalse(secretResponse.getPlainSecret().isEmpty());
+            assertNotNull(secretResponse.getSecret());
+            assertFalse(secretResponse.getSecret().getId().isEmpty());
+
+            client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, clientId, secretResponse.getSecret().getId());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // OTHER_RESOURCE_ID doesn't exist, so the client can't belong to it —
+    // createResourceClientSecret's ownership check fetches the client via
+    // getResourceClient(OTHER_RESOURCE_ID, clientId) first, which the server's
+    // own resource-scoping on that call refuses (NOT_FOUND) before the
+    // resource-unaware secret-creation RPC itself is ever reached, mirroring
+    // testDeleteResourceClientRefusesWrongResource above.
+    @Test
+    void testCreateResourceClientSecretRefusesWrongResource() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Secret Ownership Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().createResourceClientSecret(OTHER_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // A resource client must always keep at least one secret — deleting the
+    // lone secret it's created with is refused by the server.
+    @Test
+    void testDeleteResourceClientSecretRefusesWhenLastRemaining() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Min Secret Limit Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertFalse(fetched.getClient().getSecretsList().isEmpty());
+            String onlySecretId = fetched.getClient().getSecretsList().get(0).getId();
+
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, clientId, onlySecretId));
+            assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // The server caps how many secrets a client can hold at once. The exact
+    // limit is environment-configurable (verified live: 5 in Scalekit's own
+    // dev environment, not the dashboard's stricter UI-only threshold of 2),
+    // so this probes until the server actually refuses rather than asserting
+    // a specific count.
+    @Test
+    void testCreateResourceClientSecretRefusesPastLimit() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Max Secret Limit Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            boolean limitHit = false;
+            for (int i = 0; i < 20; i++) {
+                try {
+                    client.resources().createResourceClientSecret(TEST_RESOURCE_ID, clientId);
+                } catch (APIException e) {
+                    assertEquals(Status.Code.INVALID_ARGUMENT.value(), e.getGrpcStatusCode());
+                    limitHit = true;
+                    break;
+                }
+            }
+            assertTrue(limitHit, "expected the server to eventually refuse creating another secret");
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Exercises every settable field on create. audience is deliberately
+    // excluded — it's not settable at all (see
+    // testCreateResourceClientRejectsAudience).
+    @Test
+    void testCreateResourceClientAllFields() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Java SDK All Fields Client")
+                        .setDescription("exercises every field")
+                        .addScopes("test:e2e_resource_scope")
+                        .addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim.newBuilder()
+                                .setKey("team").setValue("sdk").build())
+                        .setExpiry(3600)
+                        .addRedirectUris("https://example.com/callback")
+                        .build());
+
+        String clientId = created.getClient().getClientId();
+        try {
+            assertEquals(java.util.Collections.singletonList("test:e2e_resource_scope"), created.getClient().getScopesList());
+            assertEquals(1, created.getClient().getCustomClaimsCount());
+            assertEquals("team", created.getClient().getCustomClaims(0).getKey());
+            assertEquals("sdk", created.getClient().getCustomClaims(0).getValue());
+            assertEquals(3600, created.getClient().getExpiry());
+            assertEquals(java.util.Collections.singletonList("https://example.com/callback"), created.getClient().getRedirectUrisList());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms audience can't be set via create, by design — the SDK rejects
+    // a non-empty audience outright, rather than sending a request that used
+    // to be honored server-side for non-MCP resource types.
+    @Test
+    void testCreateResourceClientRejectsAudience() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder()
+                                .setName("Audience Reject Test")
+                                .addAudience("https://example.com/should-not-apply")
+                                .build()));
+
+        assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
+    }
+
+    // Confirms name/description are truthy-gated, not mask-gated: a non-empty
+    // value applies even when its path isn't in the update mask.
+    @Test
+    void testUpdateResourceClientNameDescriptionAppliedRegardlessOfMask() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Original Name").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder()
+                            .setName("Applied Despite Missing From Mask")
+                            .setDescription("also applied")
+                            .build(),
+                    FieldMask.newBuilder().addPaths("scopes").build()); // name and description deliberately left out
+
+            assertEquals("Applied Despite Missing From Mask", updated.getClient().getName());
+            assertEquals("also applied", updated.getClient().getDescription());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms an empty name/description does not clear the field, even when
+    // its path is in the mask — there's currently no way to clear either.
+    @Test
+    void testUpdateResourceClientEmptyStringIsNoOp() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Keep This Name").setDescription("keep this description").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().setName("").setDescription("").build(),
+                    FieldMask.newBuilder().addPaths("name").addPaths("description").build());
+
+            assertEquals("Keep This Name", updated.getClient().getName());
+            assertEquals("keep this description", updated.getClient().getDescription());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms audience can't be changed via update, by design — the SDK
+    // rejects an "audience" mask path outright, since audience is never
+    // settable through this SDK at all, on create or update.
+    @Test
+    void testUpdateResourceClientRejectsAudienceInMask() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Audience Immutable Test").build());
+        String clientId = created.getClient().getClientId();
+        java.util.List<String> originalAudience = created.getClient().getAudienceList();
+
+        try {
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                    client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                            ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
+                            FieldMask.newBuilder().addPaths("audience").build()));
+
+            assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
+
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertEquals(originalAudience, fetched.getClient().getAudienceList());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms scopes/customClaims/redirectUris — the three fields the mask
+    // actually governs — can be cleared by passing an empty value with the
+    // path included in the mask.
+    @Test
+    void testUpdateResourceClientClearsListFields() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Clear Fields Test")
+                        .addScopes("test:e2e_resource_scope")
+                        .addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim.newBuilder()
+                                .setKey("k").setValue("v").build())
+                        .addRedirectUris("https://example.com/callback")
+                        .build());
+        String clientId = created.getClient().getClientId();
+        assertFalse(created.getClient().getScopesList().isEmpty());
+        assertFalse(created.getClient().getCustomClaimsList().isEmpty());
+        assertFalse(created.getClient().getRedirectUrisList().isEmpty());
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().build(),
+                    FieldMask.newBuilder().addPaths("scopes").addPaths("custom_claims").addPaths("redirect_uris").build());
+
+            assertTrue(updated.getClient().getScopesList().isEmpty());
+            assertTrue(updated.getClient().getCustomClaimsList().isEmpty());
+            assertTrue(updated.getClient().getRedirectUrisList().isEmpty());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Documents the server's actual redirect URI validation, verified live
+    // (same finding as the Go SDK PR): a javascript: scheme and a URI with no
+    // scheme at all are both rejected.
+    @Test
+    void testCreateResourceClientRejectsJavascriptRedirectUri() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder().setName("Bad Redirect").addRedirectUris("javascript:alert(1)").build()));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testCreateResourceClientRejectsSchemelessRedirectUri() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder().setName("Bad Redirect").addRedirectUris("not-a-uri").build()));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    // Confirms a second delete on an already-deleted client fails rather than
+    // silently no-op-ing.
+    @Test
+    void testDoubleDeleteResourceClient() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Double Delete Test").build());
+        String clientId = created.getClient().getClientId();
+
+        DeleteResourceClientResponse first = client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        assertNotNull(first);
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId));
+        assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+    }
+
+    // Confirms a syntactically invalid client id is rejected by the server
+    // rather than treated as a not-found.
+    @Test
+    void testGetResourceClientRejectsMalformedClientId() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().getResourceClient(TEST_RESOURCE_ID, "not-a-real-client-id"));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
     }
 
     @Test
