@@ -165,6 +165,58 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
     }
 
     @Override
+    public CreateClientSecretResponse createResourceClientSecret(String resourceId, String clientId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (clientId == null || clientId.isEmpty()) {
+            throw new IllegalArgumentException("clientId is required");
+        }
+
+        GetResourceClientResponse fetched = getResourceClient(resourceId, clientId);
+        if (fetched.getClient() == null || !resourceId.equals(fetched.getClient().getResourceId())) {
+            throw new IllegalArgumentException("Client " + clientId + " does not belong to resource " + resourceId);
+        }
+
+        CreateClientSecretRequest request = CreateClientSecretRequest.newBuilder()
+                .setClientId(clientId)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .createClientSecret(request),
+                this.credentials);
+    }
+
+    @Override
+    public void deleteResourceClientSecret(String resourceId, String clientId, String secretId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        if (clientId == null || clientId.isEmpty()) {
+            throw new IllegalArgumentException("clientId is required");
+        }
+        if (secretId == null || secretId.isEmpty()) {
+            throw new IllegalArgumentException("secretId is required");
+        }
+
+        GetResourceClientResponse fetched = getResourceClient(resourceId, clientId);
+        if (fetched.getClient() == null || !resourceId.equals(fetched.getClient().getResourceId())) {
+            throw new IllegalArgumentException("Client " + clientId + " does not belong to resource " + resourceId);
+        }
+
+        DeleteClientSecretRequest request = DeleteClientSecretRequest.newBuilder()
+                .setClientId(clientId)
+                .setSecretId(secretId)
+                .build();
+        RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .deleteClientSecret(request),
+                this.credentials);
+    }
+
+    @Override
     public ListResourceUserConsentsResponse listUserConsents(String resourceId, ListUserConsentsOptions options) {
         if (resourceId == null || resourceId.isEmpty()) {
             throw new IllegalArgumentException("resourceId is required");

@@ -1,6 +1,7 @@
 package com.scalekit.api;
 
 import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
@@ -120,6 +121,33 @@ public interface ResourceConsentClient {
      * @return DeleteResourceClientResponse on success; throws if the client does not belong to resourceId
      */
     DeleteResourceClientResponse deleteResourceClient(String resourceId, String clientId);
+
+    /**
+     * Creates a new secret for an API client scoped to a resource.
+     *
+     * The underlying secret-creation call is keyed by clientId alone — it has
+     * no notion of a resource — so this fetches the client first and verifies
+     * it belongs to resourceId before creating a secret for it, the same
+     * ownership check deleteResourceClient applies.
+     *
+     * @param resourceId the resource the client must belong to (format: res_xxxxx)
+     * @param clientId the client id to create a secret for
+     * @return CreateClientSecretResponse with the new secret's plain value and metadata
+     */
+    CreateClientSecretResponse createResourceClientSecret(String resourceId, String clientId);
+
+    /**
+     * Permanently deletes a secret from an API client scoped to a resource.
+     *
+     * Like createResourceClientSecret, the underlying delete call is keyed by
+     * clientId alone, so this verifies the client belongs to resourceId first
+     * rather than trusting the id pair blindly.
+     *
+     * @param resourceId the resource the client must belong to (format: res_xxxxx)
+     * @param clientId the client id the secret belongs to
+     * @param secretId the secret id to delete
+     */
+    void deleteResourceClientSecret(String resourceId, String clientId, String secretId);
 
     /**
      * Lists the end-user consents granted against a resource, with pagination.

@@ -8161,6 +8161,138 @@ client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647
 </dl>
 </details>
 
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">createResourceClientSecret</a>(resourceId, clientId) -> CreateClientSecretResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new secret for an API client scoped to a resource, verifying the client belongs to resourceId first. The plain secret value is returned only at creation time and cannot be retrieved again.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142145647087190278");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to create a secret for. Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">deleteResourceClientSecret</a>(resourceId, clientId, secretId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Permanently deletes a secret from an API client scoped to a resource, verifying the client belongs to resourceId first.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142145647087190278", "sks_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID the secret belongs to. Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**secretId:** `String` - The secret ID to delete. Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listUserConsents</a>(resourceId, options) -> ListResourceUserConsentsResponse</code></summary>
 <dl>
 <dd>

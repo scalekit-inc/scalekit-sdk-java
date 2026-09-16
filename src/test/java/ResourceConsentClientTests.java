@@ -2,6 +2,7 @@ import com.google.protobuf.FieldMask;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
 import com.scalekit.exceptions.APIException;
+import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
@@ -180,6 +181,36 @@ public class ResourceConsentClientTests {
     }
 
     @Test
+    void testCreateResourceClientSecretRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClientSecret("", "m2m_dummy"));
+    }
+
+    @Test
+    void testCreateResourceClientSecretRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().createResourceClientSecret(TEST_RESOURCE_ID, ""));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresResourceId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret("", "m2m_dummy", "secret_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresClientId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, "", "secret_dummy"));
+    }
+
+    @Test
+    void testDeleteResourceClientSecretRequiresSecretId() {
+        assertThrows(IllegalArgumentException.class, () ->
+                client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, "m2m_dummy", ""));
+    }
+
+    @Test
     void testCreateGetListUpdateDeleteResourceClient() {
         CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
                 ResourceClient.newBuilder()
@@ -243,6 +274,46 @@ public class ResourceConsentClientTests {
             // The client must still exist under its real resource.
             GetResourceClientResponse stillThere = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
             assertEquals(clientId, stillThere.getClient().getClientId());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    @Test
+    void testCreateAndDeleteResourceClientSecret() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Secret Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            CreateClientSecretResponse secretResponse = client.resources().createResourceClientSecret(TEST_RESOURCE_ID, clientId);
+            assertNotNull(secretResponse);
+            assertFalse(secretResponse.getPlainSecret().isEmpty());
+            assertNotNull(secretResponse.getSecret());
+            assertFalse(secretResponse.getSecret().getId().isEmpty());
+
+            client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, clientId, secretResponse.getSecret().getId());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // OTHER_RESOURCE_ID doesn't exist, so the client can't belong to it —
+    // createResourceClientSecret's ownership check fetches the client via
+    // getResourceClient(OTHER_RESOURCE_ID, clientId) first, which the server's
+    // own resource-scoping on that call refuses (NOT_FOUND) before the
+    // resource-unaware secret-creation RPC itself is ever reached, mirroring
+    // testDeleteResourceClientRefusesWrongResource above.
+    @Test
+    void testCreateResourceClientSecretRefusesWrongResource() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Secret Ownership Test Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().createResourceClientSecret(OTHER_RESOURCE_ID, clientId));
+            assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
         } finally {
             client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
         }
