@@ -8065,7 +8065,7 @@ List<String> allowedScopes = resourceResponse.getResource().getScopesList().stre
 UpdateResourceClientResponse response = client.resources().updateResourceClient(
   "res_142145647087190278",
   "m2m_142145647087190278",
-  ResourceClient.newBuilder().addScopes(allowedScopes.get(0)).build(),
+  ResourceClient.newBuilder().addAllScopes(allowedScopes).build(),
   FieldMask.newBuilder().addPaths("scopes").build()
 );
 
