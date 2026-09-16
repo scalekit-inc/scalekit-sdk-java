@@ -7685,6 +7685,8 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 Retrieves a single resource, including its `scopes` allowlist.
 
 A resource client's `scopes` are only actually granted in an issued access token when they also appear in the resource's own `scopes` allowlist, so this is how callers can check what will actually survive that intersection before configuring a client's scopes.
+
+`getResource().getScopesList()` is every scope defined in the environment, not just the ones this resource allows — each entry carries an `enabled` flag, and only the ones with `getEnabled()` true are actually usable on this resource. Filter on that flag to get the actual allowlist.
 </dd>
 </dl>
 </dd>
@@ -7703,7 +7705,11 @@ import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 
 GetResourceResponse response = client.resources().getResource("res_142145647087190278");
 
-System.out.println(response.getResource().getName() + " " + response.getResource().getScopesList());
+List<String> allowedScopes = response.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
+System.out.println(response.getResource().getName() + " " + allowedScopes);
 ```
 </dd>
 </dl>

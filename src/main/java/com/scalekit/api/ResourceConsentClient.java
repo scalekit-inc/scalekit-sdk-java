@@ -34,8 +34,14 @@ public interface ResourceConsentClient {
      * allowlist, so this is how callers can check what will actually survive
      * that intersection before configuring a client's scopes.
      *
+     * The returned resource's scopes list is every scope defined in the
+     * environment, not just the ones this resource allows — each entry
+     * carries an enabled flag, and only the ones with getEnabled() true are
+     * actually usable on this resource. Filter on that flag to get the
+     * actual allowlist.
+     *
      * @param resourceId The resource to fetch (format: res_xxxxx)
-     * @return GetResourceResponse with the resource, including its scopes
+     * @return GetResourceResponse with the resource, including every environment scope annotated with enabled
      */
     GetResourceResponse getResource(String resourceId);
 
