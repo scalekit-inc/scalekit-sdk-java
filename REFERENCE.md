@@ -8035,8 +8035,6 @@ for (M2MClient resourceClient : response.getClientsList()) {
 <dd>
 
 Updates a resource client.
-
-`updateMask` lists which fields of `client` to change. Verified against a live environment: the server only actually honors the mask for `scopes`, `customClaims` and `redirectUris` — include one of those paths with an empty value to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear).
 </dd>
 </dl>
 </dd>
