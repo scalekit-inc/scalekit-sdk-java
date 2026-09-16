@@ -336,6 +336,55 @@ public class ResourceConsentClientTests {
         }
     }
 
+    // A resource client must always keep at least one secret — deleting the
+    // lone secret it's created with is refused by the server.
+    @Test
+    void testDeleteResourceClientSecretRefusesWhenLastRemaining() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Min Secret Limit Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertFalse(fetched.getClient().getSecretsList().isEmpty());
+            String onlySecretId = fetched.getClient().getSecretsList().get(0).getId();
+
+            APIException exception = assertThrows(APIException.class, () ->
+                    client.resources().deleteResourceClientSecret(TEST_RESOURCE_ID, clientId, onlySecretId));
+            assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // The server caps how many secrets a client can hold at once. The exact
+    // limit is environment-configurable (verified live: 5 in Scalekit's own
+    // dev environment, not the dashboard's stricter UI-only threshold of 2),
+    // so this probes until the server actually refuses rather than asserting
+    // a specific count.
+    @Test
+    void testCreateResourceClientSecretRefusesPastLimit() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Java SDK Max Secret Limit Client").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            boolean limitHit = false;
+            for (int i = 0; i < 20; i++) {
+                try {
+                    client.resources().createResourceClientSecret(TEST_RESOURCE_ID, clientId);
+                } catch (APIException e) {
+                    assertEquals(Status.Code.INVALID_ARGUMENT.value(), e.getGrpcStatusCode());
+                    limitHit = true;
+                    break;
+                }
+            }
+            assertTrue(limitHit, "expected the server to eventually refuse creating another secret");
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
     // Verified against a live environment: audience is ignored on create too
     // (not just update) for an MCP_SERVER/MCP_GATEWAY resource, which gets its
     // audience from the resource itself — so it comes back empty here even
