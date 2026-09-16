@@ -12,8 +12,9 @@ import io.grpc.ManagedChannel;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Implementation of the ResourceConsentClient interface for reading and
- * revoking the end-user consents granted against a resource.
+ * Implementation of the ResourceConsentClient interface for reading
+ * resources, managing the API clients scoped to a resource, and reading and
+ * revoking the end-user consents granted against one.
  */
 public class ScalekitResourceConsentClient implements ResourceConsentClient {
 
@@ -25,6 +26,38 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
         this.clientStub = ClientServiceGrpc
                 .newBlockingStub(channel)
                 .withCallCredentials(this.credentials);
+    }
+
+    @Override
+    public GetResourceResponse getResource(String resourceId) {
+        if (resourceId == null || resourceId.isEmpty()) {
+            throw new IllegalArgumentException("resourceId is required");
+        }
+        GetResourceRequest request = GetResourceRequest.newBuilder()
+                .setResourceId(resourceId)
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .getResource(request),
+                this.credentials);
+    }
+
+    @Override
+    public ListResourcesResponse listResources(ResourceType resourceType, int pageSize, String pageToken) {
+        if (pageSize < 0) {
+            throw new IllegalArgumentException("pageSize must be 0 (server default) or a positive integer");
+        }
+        ListResourcesRequest request = ListResourcesRequest.newBuilder()
+                .setResourceType(resourceType)
+                .setPageSize(pageSize)
+                .setPageToken(pageToken != null ? pageToken : "")
+                .build();
+        return RetryExecuter.executeWithRetry(() ->
+                this.clientStub
+                        .withDeadlineAfter(Environment.defaultConfig().timeout, TimeUnit.MILLISECONDS)
+                        .listResources(request),
+                this.credentials);
     }
 
     @Override

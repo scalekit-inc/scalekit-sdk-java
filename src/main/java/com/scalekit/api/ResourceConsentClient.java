@@ -4,17 +4,19 @@ import com.scalekit.api.util.ListUserConsentsOptions;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourcesResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
 import com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 import com.google.protobuf.FieldMask;
 
 /**
- * Interface for managing the API clients scoped to a resource, and for
- * reading and revoking the end-user consents granted against one, such as an
- * MCP server.
+ * Client for reading resources, managing the API clients scoped to a
+ * resource, and reading and revoking end-user consents granted against one.
  *
  * A consent records that one end user allowed a specific API client to act on
  * their behalf. Each consent identifies the user by its external user ID — the
@@ -22,6 +24,33 @@ import com.google.protobuf.FieldMask;
  * granted.
  */
 public interface ResourceConsentClient {
+
+    /**
+     * Retrieves a single resource, including its scopes allowlist.
+     *
+     * A resource client's scopes are only actually granted in an issued
+     * access token when they also appear in the resource's own scopes
+     * allowlist, so this is how callers can check what will actually survive
+     * that intersection before configuring a client's scopes.
+     *
+     * @param resourceId The resource to fetch (format: res_xxxxx)
+     * @return GetResourceResponse with the resource, including its scopes
+     */
+    GetResourceResponse getResource(String resourceId);
+
+    /**
+     * Lists resources of a given type, with pagination.
+     *
+     * resourceType is required — the server rejects
+     * RESOURCE_TYPE_UNSPECIFIED with an INVALID_ARGUMENT error rather than
+     * treating it as "list every type".
+     *
+     * @param resourceType The type of resource to list; required, not RESOURCE_TYPE_UNSPECIFIED
+     * @param pageSize     Max resources per page; 0 uses the server default, capped at 30 server-side
+     * @param pageToken    Cursor for the next page; empty for the first page
+     * @return ListResourcesResponse with resources and pagination cursors
+     */
+    ListResourcesResponse listResources(ResourceType resourceType, int pageSize, String pageToken);
 
     /**
      * Creates a new API client scoped to a resource.

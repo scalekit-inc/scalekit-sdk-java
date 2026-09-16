@@ -5,9 +5,12 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ListResourceUserConsentsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ListResourcesResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
@@ -46,6 +49,72 @@ public class ResourceConsentClientTests {
         );
 
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
+    }
+
+    @Test
+    void testGetResourceRequiresResourceId() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().getResource(""));
+
+        assertEquals("resourceId is required", exception.getMessage());
+    }
+
+    @Test
+    void testListResourcesRejectsNegativePageSize() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                client.resources().listResources(ResourceType.MCP_SERVER, -1, ""));
+
+        assertEquals("pageSize must be 0 (server default) or a positive integer", exception.getMessage());
+    }
+
+    @Test
+    void testGetResource() {
+        GetResourceResponse response = client.resources().getResource(TEST_RESOURCE_ID);
+
+        assertNotNull(response);
+        assertNotNull(response.getResource());
+        assertEquals(TEST_RESOURCE_ID, response.getResource().getId());
+        assertEquals(ResourceType.MCP_SERVER, response.getResource().getResourceType());
+        assertNotNull(response.getResource().getScopesList());
+    }
+
+    @Test
+    void testGetResourceRejectsMalformedResourceId() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().getResource("not-a-real-resource-id"));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testListResources() {
+        // pageSize 30 (the server-side max) to give the test resource the best
+        // chance of appearing on the first page regardless of how many other
+        // MCP_SERVER resources exist in whichever environment runs this test.
+        ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 30, "");
+
+        assertNotNull(response);
+        assertNotNull(response.getResourcesList());
+        assertTrue(response.getTotalSize() >= 0);
+        assertTrue(response.getResourcesList().stream()
+                        .anyMatch(r -> r.getId().equals(TEST_RESOURCE_ID)),
+                "the test resource should appear in the MCP_SERVER listing");
+    }
+
+    @Test
+    void testListResourcesWithPageSize() {
+        ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 1, "");
+
+        assertNotNull(response);
+        assertTrue(response.getResourcesList().size() <= 1);
+    }
+
+    // Confirms the server-side requirement documented on ListResourcesRequest:
+    // RESOURCE_TYPE_UNSPECIFIED is rejected outright, it is not "list every type".
+    @Test
+    void testListResourcesRejectsUnspecifiedType() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().listResources(ResourceType.RESOURCE_TYPE_UNSPECIFIED, 0, ""));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
     }
 
     @Test

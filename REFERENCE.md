@@ -7670,6 +7670,143 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 
 ## Resources
 
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">getResource</a>(resourceId) -> GetResourceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a single resource, including its `scopes` allowlist.
+
+A resource client's `scopes` are only actually granted in an issued access token when they also appear in the resource's own `scopes` allowlist, so this is how callers can check what will actually survive that intersection before configuring a client's scopes.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
+
+GetResourceResponse response = client.resources().getResource("res_142145647087190278");
+
+System.out.println(response.getResource().getName() + " " + response.getResource().getScopesList());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource to fetch (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listResources</a>(resourceType, pageSize, pageToken) -> ListResourcesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists resources of a given type, with pagination.
+
+`resourceType` is required — the server rejects `RESOURCE_TYPE_UNSPECIFIED` with an `INVALID_ARGUMENT` error rather than treating it as "list every type".
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.ListResourcesResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
+
+ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 20, "");
+
+System.out.println(response.getTotalSize() + " " + response.getResourcesList());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceType:** `ResourceType` - The type of resource to list. Required; `RESOURCE_TYPE_UNSPECIFIED` is rejected by the server.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Max resources per page (0 uses server default; capped at 30 server-side)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor for next page (null or empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">createResourceClient</a>(resourceId, client) -> CreateResourceClientResponse</code></summary>
 <dl>
 <dd>
