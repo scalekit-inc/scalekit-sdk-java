@@ -7704,6 +7704,7 @@ A resource client's `scopes` are only actually granted in an issued access token
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 
 GetResourceResponse response = client.resources().getResource("res_142145647087190278");
+System.out.println(response.getResource());
 
 List<String> allowedScopes = response.getResource().getScopesList().stream()
         .filter(Scope::getEnabled)
@@ -7825,11 +7826,9 @@ System.out.println(response.getTotalSize() + " " + response.getResourcesList());
 <dl>
 <dd>
 
-Creates a new API client scoped to a resource, such as an MCP server.
+Creates a resource client.
 
 The response's `plainSecret` is the plaintext client secret, only available at creation time.
-
-`audience` cannot be set through this SDK — it is always server-determined, for any resource type. A non-empty `client.getAudienceList()` throws `IllegalArgumentException` rather than being silently forwarded.
 </dd>
 </dl>
 </dd>
@@ -7845,11 +7844,18 @@ The response's `plainSecret` is the plaintext client secret, only available at c
 
 ```java
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+
+GetResourceResponse resourceResponse = client.resources().getResource("res_142145647087190278");
+List<String> allowedScopes = resourceResponse.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
 
 CreateResourceClientResponse response = client.resources().createResourceClient(
   "res_142145647087190278",
-  ResourceClient.newBuilder().setName("My Resource Client").build()
+  ResourceClient.newBuilder().setName("My Resource Client").addAllScopes(allowedScopes).build()
 );
 System.out.println(response.getClient().getClientId() + " " + response.getPlainSecret());
 ```
@@ -7898,7 +7904,7 @@ System.out.println(response.getClient().getClientId() + " " + response.getPlainS
 <dl>
 <dd>
 
-Retrieves a single API client scoped to a resource, along with the end-users who have granted it consent.
+Fetches a single resource client, along with the end-users who have granted it consent.
 </dd>
 </dl>
 </dd>
@@ -7967,7 +7973,7 @@ System.out.println(response.getClient().getName());
 <dl>
 <dd>
 
-Lists every API client scoped to a resource.
+Lists resource clients.
 </dd>
 </dl>
 </dd>
@@ -8028,11 +8034,9 @@ for (M2MClient resourceClient : response.getClientsList()) {
 <dl>
 <dd>
 
-Updates an existing API client scoped to a resource.
+Updates a resource client.
 
 `updateMask` lists which fields of `client` to change. Verified against a live environment: the server only actually honors the mask for `scopes`, `customClaims` and `redirectUris` — include one of those paths with an empty value to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear).
-
-`"audience"` is not a supported `updateMask` path — audience cannot be set through this SDK at all, on create or update, for any resource type, so this throws `IllegalArgumentException` rather than silently accepting a path that can never take effect.
 </dd>
 </dl>
 </dd>
@@ -8048,13 +8052,20 @@ Updates an existing API client scoped to a resource.
 
 ```java
 import com.google.protobuf.FieldMask;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
+
+GetResourceResponse resourceResponse = client.resources().getResource("res_142145647087190278");
+List<String> allowedScopes = resourceResponse.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
 
 UpdateResourceClientResponse response = client.resources().updateResourceClient(
   "res_142145647087190278",
   "m2m_142145647087190278",
-  ResourceClient.newBuilder().addScopes("read").build(),
+  ResourceClient.newBuilder().addScopes(allowedScopes.get(0)).build(),
   FieldMask.newBuilder().addPaths("scopes").build()
 );
 
@@ -8081,7 +8092,7 @@ System.out.println(response.getClient().getScopesList());
 <dl>
 <dd>
 
-**clientId:** `String` - The client ID to update. Required.
+**clientId:** `String` - The client ID to update (format: `m2m_xxxxx`). Required.
 
 </dd>
 </dl>
@@ -8121,7 +8132,7 @@ System.out.println(response.getClient().getScopesList());
 <dl>
 <dd>
 
-Permanently deletes the API client if it belongs to this resource. Throws if the client is missing or scoped to a different resource.
+Deletes resource clients. Throws if the client is missing or scoped to a different resource.
 </dd>
 </dl>
 </dd>
@@ -8159,7 +8170,7 @@ client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647
 <dl>
 <dd>
 
-**clientId:** `String` - The client ID to delete. Required.
+**clientId:** `String` - The client ID to delete (format: `m2m_xxxxx`). Required.
 
 </dd>
 </dl>
@@ -8183,9 +8194,9 @@ client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647
 <dl>
 <dd>
 
-Creates a new secret for an API client scoped to a resource, verifying the client belongs to resourceId first. The plain secret value is returned only at creation time and cannot be retrieved again.
+Creates a new secret for resource client. Only 2 client secrets are recommended to exist at a given point in time. If need for more secret creation arises, please use `deleteResourceClientSecret` to delete an existing secret first.
 
-The backend caps how many secrets a client can hold at once (a configurable limit — 5 in Scalekit's own dev environment, verified live; treat the exact number as environment-specific, not a fixed constant). Exceeding it throws (the server rejects it as `INVALID_ARGUMENT`, "only N secrets are allowed") — delete an existing secret first via `deleteResourceClientSecret`. The dashboard itself is more conservative than the server limit: it only shows an "Add new secret" action while a client has fewer than 2 secrets. Match whichever threshold — the actual server limit or the dashboard's stricter 2 — fits your own UX.
+The plaintext client secret, only available at creation time.
 </dd>
 </dl>
 </dd>
@@ -8223,7 +8234,7 @@ client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-**clientId:** `String` - The client ID to create a secret for. Required.
+**clientId:** `String` - The client ID to create a secret for (format: `m2m_xxxxx`). Required.
 
 </dd>
 </dl>
@@ -8247,9 +8258,7 @@ client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-Permanently deletes a secret from an API client scoped to a resource, verifying the client belongs to resourceId first.
-
-A client must always keep at least 1 secret. Calling this on a client's last remaining secret throws (the server rejects it as `INVALID_ARGUMENT`, "at least one secret is required"). Mirror the dashboard's own UX: only offer a "Revoke" action on a secret while the client has more than 1.
+Permanently deletes a secret from resource client. A client must always keep at least 1 secret. Calling this on a client's last remaining secret throws an error.
 </dd>
 </dl>
 </dd>
@@ -8287,7 +8296,7 @@ client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-**clientId:** `String` - The client ID the secret belongs to. Required.
+**clientId:** `String` - The client ID the secret belongs to (format: `m2m_xxxxx`). Required.
 
 </dd>
 </dl>
@@ -8295,7 +8304,7 @@ client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-**secretId:** `String` - The secret ID to delete. Required.
+**secretId:** `String` - The secret ID to delete (format: `sks_xxxxx`). Required.
 
 </dd>
 </dl>
