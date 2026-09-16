@@ -179,6 +179,176 @@ public class ResourceConsentClientTests {
         }
     }
 
+    // Verified against a live environment: audience is ignored on create too
+    // (not just update) for an MCP_SERVER/MCP_GATEWAY resource, which gets its
+    // audience from the resource itself — so it comes back empty here even
+    // though a value was supplied, matching the documented update-time
+    // behavior (same finding as the Go SDK PR).
+    @Test
+    void testCreateResourceClientAllFields() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Java SDK All Fields Client")
+                        .setDescription("exercises every field")
+                        .addScopes("test:e2e_resource_scope")
+                        .addAudience("https://example.com/should-be-ignored")
+                        .addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim.newBuilder()
+                                .setKey("team").setValue("sdk").build())
+                        .setExpiry(3600)
+                        .addRedirectUris("https://example.com/callback")
+                        .build());
+
+        String clientId = created.getClient().getClientId();
+        try {
+            assertEquals(java.util.Collections.singletonList("test:e2e_resource_scope"), created.getClient().getScopesList());
+            assertTrue(created.getClient().getAudienceList().isEmpty(), "audience is ignored on create for an MCP_SERVER resource");
+            assertEquals(1, created.getClient().getCustomClaimsCount());
+            assertEquals("team", created.getClient().getCustomClaims(0).getKey());
+            assertEquals("sdk", created.getClient().getCustomClaims(0).getValue());
+            assertEquals(3600, created.getClient().getExpiry());
+            assertEquals(java.util.Collections.singletonList("https://example.com/callback"), created.getClient().getRedirectUrisList());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms name/description are truthy-gated, not mask-gated: a non-empty
+    // value applies even when its path isn't in the update mask.
+    @Test
+    void testUpdateResourceClientNameDescriptionAppliedRegardlessOfMask() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Original Name").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder()
+                            .setName("Applied Despite Missing From Mask")
+                            .setDescription("also applied")
+                            .build(),
+                    FieldMask.newBuilder().addPaths("description").build()); // "name" deliberately left out
+
+            assertEquals("Applied Despite Missing From Mask", updated.getClient().getName());
+            assertEquals("also applied", updated.getClient().getDescription());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms an empty name/description does not clear the field, even when
+    // its path is in the mask — there's currently no way to clear either.
+    @Test
+    void testUpdateResourceClientEmptyStringIsNoOp() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Keep This Name").setDescription("keep this description").build());
+        String clientId = created.getClient().getClientId();
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().setName("").setDescription("").build(),
+                    FieldMask.newBuilder().addPaths("name").addPaths("description").build());
+
+            assertEquals("Keep This Name", updated.getClient().getName());
+            assertEquals("keep this description", updated.getClient().getDescription());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms audience can't be changed via update, by design, even with its
+    // path in the mask.
+    @Test
+    void testUpdateResourceClientAudienceImmutable() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Audience Immutable Test").build());
+        String clientId = created.getClient().getClientId();
+        java.util.List<String> originalAudience = created.getClient().getAudienceList();
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
+                    FieldMask.newBuilder().addPaths("audience").build());
+
+            assertEquals(originalAudience, updated.getClient().getAudienceList());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Confirms scopes/customClaims/redirectUris — the three fields the mask
+    // actually governs — can be cleared by passing an empty value with the
+    // path included in the mask.
+    @Test
+    void testUpdateResourceClientClearsListFields() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder()
+                        .setName("Clear Fields Test")
+                        .addScopes("test:e2e_resource_scope")
+                        .addCustomClaims(com.scalekit.grpc.scalekit.v1.clients.CustomClaim.newBuilder()
+                                .setKey("k").setValue("v").build())
+                        .addRedirectUris("https://example.com/callback")
+                        .build());
+        String clientId = created.getClient().getClientId();
+        assertFalse(created.getClient().getScopesList().isEmpty());
+        assertFalse(created.getClient().getCustomClaimsList().isEmpty());
+        assertFalse(created.getClient().getRedirectUrisList().isEmpty());
+
+        try {
+            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                    ResourceClient.newBuilder().build(),
+                    FieldMask.newBuilder().addPaths("scopes").addPaths("custom_claims").addPaths("redirect_uris").build());
+
+            assertTrue(updated.getClient().getScopesList().isEmpty());
+            assertTrue(updated.getClient().getCustomClaimsList().isEmpty());
+            assertTrue(updated.getClient().getRedirectUrisList().isEmpty());
+        } finally {
+            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        }
+    }
+
+    // Documents the server's actual redirect URI validation, verified live
+    // (same finding as the Go SDK PR): a javascript: scheme and a URI with no
+    // scheme at all are both rejected.
+    @Test
+    void testCreateResourceClientRejectsJavascriptRedirectUri() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder().setName("Bad Redirect").addRedirectUris("javascript:alert(1)").build()));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testCreateResourceClientRejectsSchemelessRedirectUri() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().createResourceClient(TEST_RESOURCE_ID,
+                        ResourceClient.newBuilder().setName("Bad Redirect").addRedirectUris("not-a-uri").build()));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    // Confirms a second delete on an already-deleted client fails rather than
+    // silently no-op-ing.
+    @Test
+    void testDoubleDeleteResourceClient() {
+        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
+                ResourceClient.newBuilder().setName("Double Delete Test").build());
+        String clientId = created.getClient().getClientId();
+
+        DeleteResourceClientResponse first = client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
+        assertNotNull(first);
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId));
+        assertEquals(Status.Code.NOT_FOUND.value(), exception.getGrpcStatusCode());
+    }
+
+    // Confirms a syntactically invalid client id is rejected by the server
+    // rather than treated as a not-found.
+    @Test
+    void testGetResourceClientRejectsMalformedClientId() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().getResourceClient(TEST_RESOURCE_ID, "not-a-real-client-id"));
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
     @Test
     void testListUserConsents() {
         ListResourceUserConsentsResponse response =
