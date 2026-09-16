@@ -461,21 +461,26 @@ public class ResourceConsentClientTests {
         }
     }
 
-    // Confirms audience can't be changed via update, by design, even with its
-    // path in the mask.
+    // Confirms audience can't be changed via update, by design — the SDK
+    // rejects an "audience" mask path outright, rather than sending a
+    // request that the server would just ignore.
     @Test
-    void testUpdateResourceClientAudienceImmutable() {
+    void testUpdateResourceClientRejectsAudienceInMask() {
         CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
                 ResourceClient.newBuilder().setName("Audience Immutable Test").build());
         String clientId = created.getClient().getClientId();
         java.util.List<String> originalAudience = created.getClient().getAudienceList();
 
         try {
-            UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                    ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
-                    FieldMask.newBuilder().addPaths("audience").build());
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                    client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
+                            ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
+                            FieldMask.newBuilder().addPaths("audience").build()));
 
-            assertEquals(originalAudience, updated.getClient().getAudienceList());
+            assertEquals("audience cannot be changed via update; it is fixed at creation", exception.getMessage());
+
+            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
+            assertEquals(originalAudience, fetched.getClient().getAudienceList());
         } finally {
             client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
         }

@@ -127,6 +127,9 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
         if (client == null) {
             throw new IllegalArgumentException("client is required");
         }
+        if (updateMask != null && updateMask.getPathsList().contains("audience")) {
+            throw new IllegalArgumentException("audience cannot be changed via update; it is fixed at creation");
+        }
         UpdateResourceClientRequest.Builder request = UpdateResourceClientRequest.newBuilder()
                 .setResourceId(resourceId)
                 .setClientId(clientId)
