@@ -128,7 +128,7 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
                 .setResourceId(resourceId)
                 .setClientId(clientId)
                 .setClient(client);
-        if (updateMask != null) {
+        if (updateMask != null && updateMask.getPathsCount() > 0) {
             request.setUpdateMask(updateMask);
         }
         UpdateResourceClientRequest builtRequest = request.build();

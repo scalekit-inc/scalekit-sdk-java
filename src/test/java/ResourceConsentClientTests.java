@@ -295,7 +295,7 @@ public class ResourceConsentClientTests {
                             .setName("Applied Despite Missing From Mask")
                             .setDescription("also applied")
                             .build(),
-                    FieldMask.newBuilder().addPaths("description").build()); // "name" deliberately left out
+                    FieldMask.newBuilder().addPaths("scopes").build()); // name and description deliberately left out
 
             assertEquals("Applied Despite Missing From Mask", updated.getClient().getName());
             assertEquals("also applied", updated.getClient().getDescription());

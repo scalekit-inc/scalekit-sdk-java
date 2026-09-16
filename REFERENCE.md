@@ -7841,13 +7841,8 @@ import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
 
 CreateResourceClientResponse response = client.resources().createResourceClient(
   "res_142145647087190278",
-  ResourceClient.newBuilder()
-    .setName("My Resource Client")
-    .addScopes("read")
-    .addScopes("write")
-    .build()
+  ResourceClient.newBuilder().setName("My Resource Client").build()
 );
-
 System.out.println(response.getClient().getClientId() + " " + response.getPlainSecret());
 ```
 </dd>
@@ -8116,9 +8111,7 @@ System.out.println(response.getClient().getScopesList());
 <dl>
 <dd>
 
-Permanently deletes an API client scoped to a resource.
-
-`deleteResourceClient` shares its underlying delete path with client deletion in general, so nothing forces the given `clientId` to actually belong to `resourceId` — but this method lives under `client.resources()`, so callers reasonably expect it to only ever touch clients within that resource. This fetches the client first and verifies its own `resourceId` matches before deleting, and throws `IllegalArgumentException` instead of trusting the id pair blindly.
+Permanently deletes the API client if it belongs to this resource. Throws if the client is missing or scoped to a different resource.
 </dd>
 </dl>
 </dd>
