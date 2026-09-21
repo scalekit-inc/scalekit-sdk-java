@@ -7670,6 +7670,10 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 
 ## Resources
 
+Manage the API clients scoped to a resource (such as an MCP server), and access the consents your end users grant against one. A consent records that one end user allowed a specific API client to act on their behalf. Each consent identifies the user by `externalUserId` — the identifier your application supplied when the consent was granted.
+
+Access via `client.resources()`.
+
 <details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">getResource</a>(resourceId) -> GetResourceResponse</code></summary>
 <dl>
 <dd>
@@ -7682,11 +7686,11 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 <dl>
 <dd>
 
-Retrieves a single resource, including its `scopes` allowlist.
+Retrieves a single resource by id.
 
-A resource client's `scopes` are only actually granted in an issued access token when they also appear in the resource's own `scopes` allowlist, so this is how callers can check what will actually survive that intersection before configuring a client's scopes.
+A resource client's `scopes` are only actually granted in an issued access token when they also appear in the resource's own `scopes` allowlist (the server intersects requested scopes against the environment's permissions, the resource's allowed scopes, and the client's own scopes) — call this first to see what the resource actually allows before creating or updating a resource client with scopes.
 
-`getResource().getScopesList()` is every scope defined in the environment, not just the ones this resource allows — each entry carries an `enabled` flag, and only the ones with `getEnabled()` true are actually usable on this resource. Filter on that flag to get the actual allowlist.
+The resource's `getScopesList()` returns every scope defined in the environment, not just the ones this resource allows — each entry carries an `enabled` flag, and only the ones with `getEnabled()` true are actually usable on this resource. Filter on that flag to get the actual allowlist.
 </dd>
 </dl>
 </dd>
@@ -7829,6 +7833,8 @@ System.out.println(response.getTotalSize() + " " + response.getResourcesList());
 Creates a resource client.
 
 The response's `plainSecret` is the plaintext client secret, only available at creation time.
+
+`audience` cannot be set through this SDK — it is always server-determined, for any resource type. A non-empty `client.getAudienceList()` throws `IllegalArgumentException` rather than being silently forwarded.
 </dd>
 </dl>
 </dd>
@@ -7859,6 +7865,8 @@ CreateResourceClientResponse response = client.resources().createResourceClient(
 );
 System.out.println(response.getClient().getClientId() + " " + response.getPlainSecret());
 ```
+
+`ResourceClient.newBuilder()` also accepts `setDescription`, `addAllCustomClaims`, `setExpiry` and `addAllRedirectUris` — see Parameters below.
 </dd>
 </dl>
 </dd>
@@ -7880,7 +7888,14 @@ System.out.println(response.getClient().getClientId() + " " + response.getPlainS
 <dl>
 <dd>
 
-**client:** `ResourceClient` - Proto message with the desired client properties (name, description, scopes, audience, customClaims, expiry, redirectUris). Required.
+**client:** `ResourceClient` - The desired client properties, built via `ResourceClient.newBuilder()`. Required.
+- `setName(String)` - Human-readable name for the client. Defaults to "Resource Client" if omitted.
+- `setDescription(String)` - Optional description.
+- `addAllScopes(Iterable<String>)` / `addScopes(String)` - Scopes to grant. These scopes should be the same or a subset of the scopes available for the resource.
+- `addAllCustomClaims(Iterable<CustomClaim>)` / `addCustomClaims(CustomClaim)` - Custom claims to embed in access tokens, as key/value pairs. Keep this to the essentials, since it increases token size.
+- `setExpiry(long)` - Access token lifetime in seconds. Defaults to the resource's configured expiry, or one day.
+- `addAllRedirectUris(Iterable<String>)` / `addRedirectUris(String)` - Allowed redirect URIs, for a pre-registered (non-DCR) client.
+- `addAllAudience(Iterable<String>)` / `addAudience(String)` - Not usable through this SDK: audience is always server-determined, for any resource type. A non-empty value throws `IllegalArgumentException`.
 
 </dd>
 </dl>
@@ -8035,6 +8050,10 @@ for (M2MClient resourceClient : response.getClientsList()) {
 <dd>
 
 Updates a resource client.
+
+`updateMask` lists which fields of `client` to change, using the proto's field names (for example `custom_claims`, not `customClaims`). Verified against a live environment: the server only actually honors the mask for `scopes`, `custom_claims` and `redirect_uris` — include one of those paths with an empty value (e.g. an empty scopes list) to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear).
+
+`"audience"` is not a supported `updateMask` path — audience cannot be set through this SDK at all, on create or update, for any resource type, so this throws `IllegalArgumentException` rather than silently accepting a path that can never take effect.
 </dd>
 </dl>
 </dd>
@@ -8098,7 +8117,14 @@ System.out.println(response.getClient().getScopesList());
 <dl>
 <dd>
 
-**client:** `ResourceClient` - Proto message with the fields to update. Required.
+**client:** `ResourceClient` - The fields to update, built via `ResourceClient.newBuilder()`. Required.
+- `setName(String)` - Updated name. An empty string is a no-op server-side, not a clear.
+- `setDescription(String)` - Updated description. An empty string is a no-op server-side, not a clear.
+- `addAllScopes(Iterable<String>)` - Updated scopes (replaces existing; pass an empty list, with `"scopes"` in `updateMask`, to clear). These scopes should be the same or a subset of the scopes available for the resource.
+- `addAllCustomClaims(Iterable<CustomClaim>)` - Custom claims to set (replaces existing; pass an empty list, with `"custom_claims"` in `updateMask`, to clear).
+- `setExpiry(long)` - Updated access token lifetime in seconds.
+- `addAllRedirectUris(Iterable<String>)` - Updated redirect URIs (replaces existing; pass an empty list, with `"redirect_uris"` in `updateMask`, to clear).
+- `addAllAudience(Iterable<String>)` - Not usable through this SDK: audience can never be changed via update, for any resource type. Including `"audience"` in `updateMask` throws `IllegalArgumentException`.
 
 </dd>
 </dl>
@@ -8209,7 +8235,10 @@ The plaintext client secret, only available at creation time.
 <dd>
 
 ```java
-client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142145647087190278");
+import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
+
+CreateClientSecretResponse response = client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142145647087190278");
+System.out.println(response.getPlainSecret());
 ```
 </dd>
 </dl>
@@ -8326,11 +8355,11 @@ client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-Lists the end-user consents granted against a resource, such as an MCP server, with pagination.
+Lists the end-user consents granted against a resource, with pagination.
 
-A consent records that one end user allowed a specific API client to act on their behalf. Each returned consent carries `id`, `externalUserId`, `clientId`, `clientName`, `scopes` and `grantedAt`; the response also carries `totalSize` plus `nextPageToken` and `prevPageToken` cursors.
+Each returned consent carries `id`, `externalUserId`, `clientId`, `clientName`, `scopes` and `grantedAt`. The response also carries `totalSize` plus `nextPageToken` and `prevPageToken` cursors.
 
-`externalUserId` is the identifier your application supplied for the user when the consent was granted. Set `userIds` to match it exactly and case-sensitively (maximum 25 values, combined with OR), or `search` for a case-insensitive substring match. When both are set, `userIds` wins and `search` is ignored.
+Filter by user in one of two ways. Pass `userIds` to match specific external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give both, `userIds` wins and `search` is ignored.
 </dd>
 </dl>
 </dd>
@@ -8384,7 +8413,11 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dl>
 <dd>
 
-**options:** `ListUserConsentsOptions` - `search` (case-insensitive substring match on external user IDs), `pageSize` (max 30; 0 uses the server default), `pageToken`, `userIds` (exact match, max 25). Pass `null` for no options.
+**options:** `ListUserConsentsOptions` - Optional filter, search and pagination options. Pass `null` for no options.
+- `search(String)` - Case-insensitive substring match on external user IDs. Ignored when `userIds` is set.
+- `pageSize(int)` - Page size, max 30. 0 uses the server default.
+- `pageToken(String)` - Pagination cursor from a previous response (`nextPageToken`/`prevPageToken`).
+- `userIds(List<String>)` - Exact match on external user IDs, max 25. Takes precedence over `search`.
 
 </dd>
 </dl>
@@ -8412,7 +8445,7 @@ Revokes a single end-user consent held by an API client.
 
 Deletes the consent, so the client is prompted for consent again on its next authorization attempt, and revokes every active refresh token issued to that client for the same user. Access tokens already issued stay valid until they expire.
 
-Note that `clientId` is the API client that holds the consent (`m2m_` prefix), not the resource id.
+Note that `clientId` is the API client that holds the consent (`m2m_` prefix), not the resource id. This matches the underlying route `DELETE /clients/{client_id}/consents/{consent_id}`.
 </dd>
 </dl>
 </dd>
