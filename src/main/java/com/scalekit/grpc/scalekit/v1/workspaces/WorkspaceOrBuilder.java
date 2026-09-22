@@ -146,4 +146,15 @@ public interface WorkspaceOrBuilder extends
    * @return The billingMode.
    */
   com.scalekit.grpc.scalekit.v1.workspaces.BillingMode getBillingMode();
+
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for workspaceType.
+   */
+  int getWorkspaceTypeValue();
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The workspaceType.
+   */
+  com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType getWorkspaceType();
 }

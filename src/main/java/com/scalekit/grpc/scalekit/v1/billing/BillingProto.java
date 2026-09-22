@@ -106,20 +106,55 @@ public final class BillingProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_billing_LinePlan_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor;
+    internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor;
+    internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_fieldAccessorTable;
+      internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_billing_ExceededAllowance_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_billing_ExceededAllowance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetBillingUsageRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetBillingUsageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetBillingUsageResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetBillingUsageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_MetricUsage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_MetricUsage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetBillingConnectionCountsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetBillingConnectionCountsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -242,181 +277,290 @@ public final class BillingProto {
       "entSecret\"\037\n\035ListEnvironmentBillingReque" +
       "st\"m\n\036ListEnvironmentBillingResponse\022K\n\014" +
       "environments\030\001 \003(\0132\'.scalekit.v1.billing" +
-      ".EnvironmentBillingR\014environments\"\222\002\n\022En" +
+      ".EnvironmentBillingR\014environments\"\353\006\n\022En" +
       "vironmentBilling\022%\n\016environment_id\030\001 \001(\t" +
       "R\renvironmentId\022)\n\020environment_name\030\002 \001(" +
       "\tR\017environmentName\0223\n\005plans\030\003 \003(\0132\035.scal" +
       "ekit.v1.billing.LinePlanR\005plans\022\'\n\017catal" +
       "og_version\030\004 \001(\005R\016catalogVersion\022L\n\017cont" +
       "ract_status\030\005 \001(\0162#.scalekit.v1.billing." +
-      "ContractStatusR\016contractStatus\"2\n\010LinePl" +
-      "an\022\022\n\004line\030\001 \001(\tR\004line\022\022\n\004tier\030\002 \001(\tR\004ti" +
-      "er\"z\n\034UpdateEnvironmentPlanRequest\022%\n\016en" +
-      "vironment_id\030\001 \001(\tR\renvironmentId\0223\n\005pla" +
-      "ns\030\002 \003(\0132\035.scalekit.v1.billing.LinePlanR" +
-      "\005plans\"\226\002\n\035UpdateEnvironmentPlanResponse" +
-      "\0223\n\005plans\030\001 \003(\0132\035.scalekit.v1.billing.Li" +
-      "nePlanR\005plans\022\277\001\n\010exceeded\030\002 \003(\0132&.scale" +
-      "kit.v1.billing.ExceededAllowanceB{\222Ax2vR" +
-      "eserved: not populated yet. Will list al" +
-      "lowances the new plan sets below current" +
-      " usage once usage counters are wired.R\010e" +
-      "xceeded\"\310\001\n\021ExceededAllowance\022 \n\013entitle" +
-      "ment\030\001 \001(\tR\013entitlement\022\022\n\004line\030\002 \001(\tR\004l" +
-      "ine\022\034\n\tallowance\030\003 \001(\003R\tallowance\022#\n\rcur" +
-      "rent_usage\030\004 \001(\003R\014currentUsage\022:\n\ton_exc" +
-      "eed\030\005 \001(\0162\035.scalekit.v1.billing.OnExceed" +
-      "R\010onExceed*b\n\017EntitlementKind\022 \n\034ENTITLE" +
-      "MENT_KIND_UNSPECIFIED\020\000\022\n\n\006VOLUME\020\001\022\010\n\004F" +
-      "LAT\020\002\022\013\n\007BOOLEAN\020\003\022\n\n\006SCALAR\020\004*I\n\005Grant\022" +
-      "\025\n\021GRANT_UNSPECIFIED\020\000\022\014\n\010INCLUDED\020\001\022\017\n\013" +
-      "PURCHASABLE\020\002\022\n\n\006ABSENT\020\003*G\n\010OnExceed\022\031\n" +
-      "\025ON_EXCEED_UNSPECIFIED\020\000\022\010\n\004BILL\020\001\022\t\n\005BL" +
-      "OCK\020\002\022\013\n\007UPGRADE\020\003*`\n\013BillingMode\022\034\n\030BIL" +
-      "LING_MODE_UNSPECIFIED\020\000\022\n\n\006STRIPE\020\001\022\030\n\024S" +
-      "TRIPE_AND_METRONOME\020\002\022\r\n\tMETRONOME\020\003*f\n\024" +
-      "BillingAccountStatus\022&\n\"BILLING_ACCOUNT_" +
-      "STATUS_UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\n\n\006ACT" +
-      "IVE\020\002\022\r\n\tSUSPENDED\020\003*S\n\nCardStatus\022\033\n\027CA" +
-      "RD_STATUS_UNSPECIFIED\020\000\022\010\n\004NONE\020\001\022\020\n\014CAR" +
-      "D_PENDING\020\002\022\014\n\010VERIFIED\020\003*J\n\rPaymentStat" +
-      "us\022\036\n\032PAYMENT_STATUS_UNSPECIFIED\020\000\022\013\n\007CU" +
-      "RRENT\020\001\022\014\n\010PAST_DUE\020\002*x\n\016ContractStatus\022" +
-      "\037\n\033CONTRACT_STATUS_UNSPECIFIED\020\000\022\023\n\017CONT" +
-      "RACT_ACTIVE\020\001\022\025\n\021CONTRACT_ARCHIVED\020\002\022\031\n\025" +
-      "CONTRACT_PROVISIONING\020\0032\246\'\n\016BillingServi" +
-      "ce\022\364\004\n\020GetBillingConfig\022,.scalekit.v1.bi" +
-      "lling.GetBillingConfigRequest\032-.scalekit" +
-      ".v1.billing.GetBillingConfigResponse\"\202\004\222" +
-      "A\313\003\n\007Billing\022\031Get billing configuration\032" +
-      "\321\002Returns configuration needed to bootst" +
-      "rap client-side billing integrations, su" +
-      "ch as the Stripe publishable key used to" +
-      " initialize Stripe.js before mounting an" +
-      " embedded Checkout session. This is a si" +
-      "ngle deployment-wide value, not scoped t" +
-      "o the workspace\'s enrolment state, so it" +
-      " is available even before AddPaymentMeth" +
-      "od has been called.JQ\n\003200\022J\n\025Billing co" +
-      "nfiguration\0221\n/\032-.scalekit.v1.billing.Ge" +
-      "tBillingConfigResponse\202\265\030\002\030D\372\322\344\223\002\t\022\007PREV" +
-      "IEW\202\323\344\223\002\030\022\026/api/v1/billing:config\022\334\005\n\021Ge" +
-      "tBillingCatalog\022-.scalekit.v1.billing.Ge" +
-      "tBillingCatalogRequest\032..scalekit.v1.bil" +
-      "ling.GetBillingCatalogResponse\"\347\004\222A\241\004\n\007B" +
-      "illing\022\027Get the billing catalog\032\342\002Return" +
-      "s the product lines, plans and prices to" +
-      " render a pricing or plan page. Resolves" +
-      " the catalog version the caller should s" +
-      "ee: an explicitly requested version, els" +
-      "e the version this workspace is pinned t" +
-      "o, else the region\'s current version. A " +
-      "workspace keeps seeing its own pinned ve" +
-      "rsion\'s allowances after new customers h" +
-      "ave moved on to a later one.Ja\n\003200\022Z\n$T" +
-      "he catalog for the resolved version\0222\n0\032" +
-      "..scalekit.v1.billing.GetBillingCatalogR" +
-      "esponseJ5\n\003404\022.\n,The requested catalog " +
-      "version does not exist\202\265\030\020\n\014billing:read" +
-      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/billing" +
-      "/catalog\022\364\006\n\021GetBillingAccount\022-.scaleki" +
-      "t.v1.billing.GetBillingAccountRequest\032.." +
-      "scalekit.v1.billing.GetBillingAccountRes" +
-      "ponse\"\377\005\222A\271\005\n\007Billing\022!Get the workspace" +
-      " billing account\032\256\004Returns the workspace" +
-      "\'s billing state regardless of billing g" +
-      "eneration: lifecycle status, whether a p" +
-      "ayment method has been captured, payment" +
-      " health, billing identifiers, and the pi" +
-      "nned catalog version. A workspace with n" +
-      "o billing artifacts yet reports a pendin" +
-      "g account with no card \342\200\224 that is data," +
-      " not an error. Card capture is asynchron" +
-      "ous \342\200\224 AddPaymentMethod returns a Check" +
-      "out session for the client to mount, and" +
-      " the card is only verified when Stripe r" +
-      "eports the session complete \342\200\224 so poll " +
-      "this to know when production environment" +
-      "s can be created.JZ\n\003200\022S\n\035The workspac" +
-      "e\'s billing state\0222\n0\032..scalekit.v1.bill" +
-      "ing.GetBillingAccountResponse\202\265\030\020\n\014billi" +
-      "ng:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/api/v1/" +
-      "billing/account\022\363\010\n\020AddPaymentMethod\022,.s" +
-      "calekit.v1.billing.AddPaymentMethodReque" +
-      "st\032-.scalekit.v1.billing.AddPaymentMetho" +
-      "dResponse\"\201\010\222A\254\007\n\007Billing\022\024Add a payment" +
-      " method\032\274\005Starts Stripe Checkout in setu" +
-      "p mode to capture a payment method, enro" +
-      "lling the workspace in billing when it i" +
-      "s not already. No charge is made \342\200\224 set" +
-      "up mode stores a card for later use. Use" +
-      " this before creating a production envir" +
-      "onment, which requires a verified paymen" +
-      "t method. The session is always embedded" +
-      ": mount it in your own page with Stripe." +
-      "js EmbeddedCheckout using the returned c" +
-      "lient_secret and the publishable key fro" +
-      "m GetBillingConfig. The account becomes " +
-      "active once the card is verified via the" +
-      " checkout completion webhook, so poll Ge" +
-      "tBillingAccount to learn when that has h" +
-      "appened. Idempotent \342\200\224 a workspace that" +
-      " already has a payment method gets no ne" +
-      "w session unless force is set.J\226\001\n\003200\022\216" +
-      "\001\nYIncludes the client secret for mounti" +
-      "ng embedded Checkout, and the billing ac" +
-      "count status\0221\n/\032-.scalekit.v1.billing.A" +
-      "ddPaymentMethodResponseJ3\n\003400\022,\n*Billin" +
-      "g is not enabled for this deployment\202\265\030\021" +
-      "\n\rbilling:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\'\"\"" +
-      "/api/v1/billing:add-payment-method:\001*\022\300\004" +
-      "\n\026ListEnvironmentBilling\0222.scalekit.v1.b" +
-      "illing.ListEnvironmentBillingRequest\0323.s" +
-      "calekit.v1.billing.ListEnvironmentBillin" +
-      "gResponse\"\274\003\222A\361\002\n\007Billing\022\030List environm" +
-      "ent billing\032\347\001Lists every production env" +
-      "ironment in the workspace with the plan " +
-      "it is on for each product line, its bill" +
-      "ing contract, and the catalog version it" +
-      "s prices are pinned to. Development envi" +
-      "ronments are not billed and are not retu" +
-      "rned.Jb\n\003200\022[\n One entry per billed env" +
-      "ironment\0227\n5\0323.scalekit.v1.billing.ListE" +
-      "nvironmentBillingResponse\202\265\030\020\n\014billing:r" +
-      "ead\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\036\022\034/api/v1/bill" +
-      "ing/environments\022\215\010\n\025UpdateEnvironmentPl" +
-      "an\0221.scalekit.v1.billing.UpdateEnvironme" +
-      "ntPlanRequest\0322.scalekit.v1.billing.Upda" +
-      "teEnvironmentPlanResponse\"\214\007\222A\247\006\n\007Billin" +
-      "g\022\034Change an environment\'s plan\032\205\004Moves " +
-      "a production environment to a different " +
-      "plan on one or more product lines. Lines" +
-      " omitted from the request keep their cur" +
-      "rent plan. Prices stay pinned to the wor" +
-      "kspace\'s catalog version, so a plan chan" +
-      "ge never re-prices the lines it does not" +
-      " touch. A downgrade is applied even when" +
-      " current usage exceeds the new plan\'s al" +
-      "lowance. The exceeded-allowance list in " +
-      "the response is reserved for that report" +
-      "ing and is not populated yet, so a calle" +
-      "r cannot currently tell from this respon" +
-      "se what the change constrained.J\234\001\n\003200\022" +
-      "\224\001\nZThe environment\'s new plan. The exce" +
-      "eded-allowance list is reserved and not " +
-      "populated yet.\0226\n4\0322.scalekit.v1.billing" +
-      ".UpdateEnvironmentPlanResponseJ%\n\003400\022\036\n" +
-      "\034Unknown product line or planJ0\n\003404\022)\n\'" +
-      "The environment has no billing contract\202" +
-      "\265\030\021\n\rbilling:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "722/api/v1/billing/environments/{environ" +
-      "ment_id}/plan:\001*B\326\001\n%com.scalekit.grpc.s" +
-      "calekit.v1.billingB\014BillingProtoP\001Z1gith" +
-      "ub.com/scalekit-inc/scalekit/pkg/grpc/bi" +
-      "lling\242\002\003SVB\252\002\023Scalekit.V1.Billing\312\002\023Scal" +
-      "ekit\\V1\\Billing\342\002\037Scalekit\\V1\\Billing\\GP" +
-      "BMetadata\352\002\025Scalekit::V1::Billingb\006proto" +
-      "3"
+      "ContractStatusR\016contractStatus\022t\n\007add_on" +
+      "s\030\006 \003(\tB[\222AX2VEntitlement keys this envi" +
+      "ronment currently pays for standalone, i" +
+      "ndependent of plans.R\006addOns\022~\n\023purchasa" +
+      "ble_add_ons\030\007 \003(\tBN\222AK2IEntitlement keys" +
+      " this environment can still buy, given i" +
+      "ts current plans.R\021purchasableAddOns\022e\n\017" +
+      "full_stack_auth\030\010 \001(\010B=\222A:28Whether Full" +
+      " Stack Auth is enabled for this environm" +
+      "ent.R\rfullStackAuth\022\177\n\014period_start\030\t \001(" +
+      "\tB\\\222AY2?Billing period start for this en" +
+      "vironment\'s contract, RFC 3339.J\026\"2024-0" +
+      "1-01T00:00:00Z\"R\013periodStart\022y\n\nperiod_e" +
+      "nd\030\n \001(\tBZ\222AW2=Billing period end for th" +
+      "is environment\'s contract, RFC 3339.J\026\"2" +
+      "024-02-01T00:00:00Z\"R\tperiodEnd\"2\n\010LineP" +
+      "lan\022\022\n\004line\030\001 \001(\tR\004line\022\022\n\004tier\030\002 \001(\tR\004t" +
+      "ier\"\301\002\n\030UpdateBillingPlanRequest\0223\n\005plan" +
+      "s\030\002 \003(\0132\035.scalekit.v1.billing.LinePlanR\005" +
+      "plans\022\351\001\n\007add_ons\030\003 \003(\tB\317\001\222A\313\0012\310\001Complet" +
+      "e set of standalone add-ons this environ" +
+      "ment should have after the call. Not a d" +
+      "elta. Omit or send empty to cancel every" +
+      " add-on. To leave add-ons unchanged, res" +
+      "ubmit EnvironmentBilling.add_ons.R\006addOn" +
+      "sJ\004\010\001\020\002\"\253\002\n\031UpdateBillingPlanResponse\0223\n" +
+      "\005plans\030\001 \003(\0132\035.scalekit.v1.billing.LineP" +
+      "lanR\005plans\022\027\n\007add_ons\030\003 \003(\tR\006addOns\022\277\001\n\010" +
+      "exceeded\030\002 \003(\0132&.scalekit.v1.billing.Exc" +
+      "eededAllowanceB{\222Ax2vReserved: not popul" +
+      "ated yet. Will list allowances the new p" +
+      "lan sets below current usage once usage " +
+      "counters are wired.R\010exceeded\"\310\001\n\021Exceed" +
+      "edAllowance\022 \n\013entitlement\030\001 \001(\tR\013entitl" +
+      "ement\022\022\n\004line\030\002 \001(\tR\004line\022\034\n\tallowance\030\003" +
+      " \001(\003R\tallowance\022#\n\rcurrent_usage\030\004 \001(\003R\014" +
+      "currentUsage\022:\n\ton_exceed\030\005 \001(\0162\035.scalek" +
+      "it.v1.billing.OnExceedR\010onExceed\"\036\n\026GetB" +
+      "illingUsageRequestJ\004\010\001\020\002\"\245\002\n\027GetBillingU" +
+      "sageResponse\022:\n\007metrics\030\001 \003(\0132 .scalekit" +
+      ".v1.billing.MetricUsageR\007metrics\022i\n\014peri" +
+      "od_start\030\002 \001(\tBF\222AC2)Billing period star" +
+      "t, RFC 3339 timestamp.J\026\"2024-01-01T00:0" +
+      "0:00Z\"R\013periodStart\022c\n\nperiod_end\030\003 \001(\tB" +
+      "D\222AA2\'Billing period end, RFC 3339 times" +
+      "tamp.J\026\"2024-02-01T00:00:00Z\"R\tperiodEnd" +
+      "\"\311\001\n\013MetricUsage\022 \n\013entitlement\030\001 \001(\tR\013e" +
+      "ntitlement\022\022\n\004line\030\002 \001(\tR\004line\022<\n\tallowa" +
+      "nce\030\003 \001(\0132\036.scalekit.v1.billing.Allowanc" +
+      "eR\tallowance\022#\n\rcurrent_usage\030\004 \001(\001R\014cur" +
+      "rentUsage\022!\n\014display_name\030\005 \001(\tR\013display" +
+      "Name\")\n!GetBillingConnectionCountsReques" +
+      "tJ\004\010\001\020\002\"x\n\"GetBillingConnectionCountsRes" +
+      "ponse\022\'\n\017sso_connections\030\001 \001(\003R\016ssoConne" +
+      "ctions\022)\n\020scim_connections\030\002 \001(\003R\017scimCo" +
+      "nnections\"&\n\036GetInvoicesDashboardUrlRequ" +
+      "estJ\004\010\001\020\002\"3\n\037GetInvoicesDashboardUrlResp" +
+      "onse\022\020\n\003url\030\001 \001(\tR\003url*b\n\017EntitlementKin" +
+      "d\022 \n\034ENTITLEMENT_KIND_UNSPECIFIED\020\000\022\n\n\006V" +
+      "OLUME\020\001\022\010\n\004FLAT\020\002\022\013\n\007BOOLEAN\020\003\022\n\n\006SCALAR" +
+      "\020\004*I\n\005Grant\022\025\n\021GRANT_UNSPECIFIED\020\000\022\014\n\010IN" +
+      "CLUDED\020\001\022\017\n\013PURCHASABLE\020\002\022\n\n\006ABSENT\020\003*G\n" +
+      "\010OnExceed\022\031\n\025ON_EXCEED_UNSPECIFIED\020\000\022\010\n\004" +
+      "BILL\020\001\022\t\n\005BLOCK\020\002\022\013\n\007UPGRADE\020\003*b\n\013Billin" +
+      "gMode\022\034\n\030BILLING_MODE_UNSPECIFIED\020\000\022\n\n\006S" +
+      "TRIPE\020\001\022\r\n\tMETRONOME\020\003\"\004\010\002\020\002*\024STRIPE_AND" +
+      "_METRONOME*f\n\024BillingAccountStatus\022&\n\"BI" +
+      "LLING_ACCOUNT_STATUS_UNSPECIFIED\020\000\022\013\n\007PE" +
+      "NDING\020\001\022\n\n\006ACTIVE\020\002\022\r\n\tSUSPENDED\020\003*S\n\nCa" +
+      "rdStatus\022\033\n\027CARD_STATUS_UNSPECIFIED\020\000\022\010\n" +
+      "\004NONE\020\001\022\020\n\014CARD_PENDING\020\002\022\014\n\010VERIFIED\020\003*" +
+      "J\n\rPaymentStatus\022\036\n\032PAYMENT_STATUS_UNSPE" +
+      "CIFIED\020\000\022\013\n\007CURRENT\020\001\022\014\n\010PAST_DUE\020\002*x\n\016C" +
+      "ontractStatus\022\037\n\033CONTRACT_STATUS_UNSPECI" +
+      "FIED\020\000\022\023\n\017CONTRACT_ACTIVE\020\001\022\025\n\021CONTRACT_" +
+      "ARCHIVED\020\002\022\031\n\025CONTRACT_PROVISIONING\020\0032\376<" +
+      "\n\016BillingService\022\364\004\n\020GetBillingConfig\022,." +
+      "scalekit.v1.billing.GetBillingConfigRequ" +
+      "est\032-.scalekit.v1.billing.GetBillingConf" +
+      "igResponse\"\202\004\222A\313\003\n\007Billing\022\031Get billing " +
+      "configuration\032\321\002Returns configuration ne" +
+      "eded to bootstrap client-side billing in" +
+      "tegrations, such as the Stripe publishab" +
+      "le key used to initialize Stripe.js befo" +
+      "re mounting an embedded Checkout session" +
+      ". This is a single deployment-wide value" +
+      ", not scoped to the workspace\'s enrolmen" +
+      "t state, so it is available even before " +
+      "AddPaymentMethod has been called.JQ\n\003200" +
+      "\022J\n\025Billing configuration\0221\n/\032-.scalekit" +
+      ".v1.billing.GetBillingConfigResponse\202\265\030\002" +
+      "\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\030\022\026/api/v1/billing" +
+      ":config\022\334\005\n\021GetBillingCatalog\022-.scalekit" +
+      ".v1.billing.GetBillingCatalogRequest\032..s" +
+      "calekit.v1.billing.GetBillingCatalogResp" +
+      "onse\"\347\004\222A\241\004\n\007Billing\022\027Get the billing ca" +
+      "talog\032\342\002Returns the product lines, plans" +
+      " and prices to render a pricing or plan " +
+      "page. Resolves the catalog version the c" +
+      "aller should see: an explicitly requeste" +
+      "d version, else the version this workspa" +
+      "ce is pinned to, else the region\'s curre" +
+      "nt version. A workspace keeps seeing its" +
+      " own pinned version\'s allowances after n" +
+      "ew customers have moved on to a later on" +
+      "e.Ja\n\003200\022Z\n$The catalog for the resolve" +
+      "d version\0222\n0\032..scalekit.v1.billing.GetB" +
+      "illingCatalogResponseJ5\n\003404\022.\n,The requ" +
+      "ested catalog version does not exist\202\265\030\020" +
+      "\n\014billing:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\031\022\027/" +
+      "api/v1/billing/catalog\022\364\006\n\021GetBillingAcc" +
+      "ount\022-.scalekit.v1.billing.GetBillingAcc" +
+      "ountRequest\032..scalekit.v1.billing.GetBil" +
+      "lingAccountResponse\"\377\005\222A\271\005\n\007Billing\022!Get" +
+      " the workspace billing account\032\256\004Returns" +
+      " the workspace\'s billing state regardles" +
+      "s of billing generation: lifecycle statu" +
+      "s, whether a payment method has been cap" +
+      "tured, payment health, billing identifie" +
+      "rs, and the pinned catalog version. A wo" +
+      "rkspace with no billing artifacts yet re" +
+      "ports a pending account with no card \342\200\224" +
+      " that is data, not an error. Card captur" +
+      "e is asynchronous \342\200\224 AddPaymentMethod r" +
+      "eturns a Checkout session for the client" +
+      " to mount, and the card is only verified" +
+      " when Stripe reports the session complet" +
+      "e \342\200\224 so poll this to know when producti" +
+      "on environments can be created.JZ\n\003200\022S" +
+      "\n\035The workspace\'s billing state\0222\n0\032..sc" +
+      "alekit.v1.billing.GetBillingAccountRespo" +
+      "nse\202\265\030\020\n\014billing:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323" +
+      "\344\223\002\031\022\027/api/v1/billing/account\022\363\010\n\020AddPay" +
+      "mentMethod\022,.scalekit.v1.billing.AddPaym" +
+      "entMethodRequest\032-.scalekit.v1.billing.A" +
+      "ddPaymentMethodResponse\"\201\010\222A\254\007\n\007Billing\022" +
+      "\024Add a payment method\032\274\005Starts Stripe Ch" +
+      "eckout in setup mode to capture a paymen" +
+      "t method, enrolling the workspace in bil" +
+      "ling when it is not already. No charge i" +
+      "s made \342\200\224 setup mode stores a card for " +
+      "later use. Use this before creating a pr" +
+      "oduction environment, which requires a v" +
+      "erified payment method. The session is a" +
+      "lways embedded: mount it in your own pag" +
+      "e with Stripe.js EmbeddedCheckout using " +
+      "the returned client_secret and the publi" +
+      "shable key from GetBillingConfig. The ac" +
+      "count becomes active once the card is ve" +
+      "rified via the checkout completion webho" +
+      "ok, so poll GetBillingAccount to learn w" +
+      "hen that has happened. Idempotent \342\200\224 a " +
+      "workspace that already has a payment met" +
+      "hod gets no new session unless force is " +
+      "set.J\226\001\n\003200\022\216\001\nYIncludes the client sec" +
+      "ret for mounting embedded Checkout, and " +
+      "the billing account status\0221\n/\032-.scaleki" +
+      "t.v1.billing.AddPaymentMethodResponseJ3\n" +
+      "\003400\022,\n*Billing is not enabled for this " +
+      "deployment\202\265\030\021\n\rbilling:write\030D\372\322\344\223\002\t\022\007P" +
+      "REVIEW\202\323\344\223\002\'\"\"/api/v1/billing:add-paymen" +
+      "t-method:\001*\022\372\004\n\026ListEnvironmentBilling\0222" +
+      ".scalekit.v1.billing.ListEnvironmentBill" +
+      "ingRequest\0323.scalekit.v1.billing.ListEnv" +
+      "ironmentBillingResponse\"\366\003\222A\253\003\n\007Billing\022" +
+      "\030List environment billing\032\241\002Lists every " +
+      "production environment in the workspace " +
+      "with the plan it is on for each product " +
+      "line, standalone add-ons it pays for, ad" +
+      "d-ons it can still buy, its billing cont" +
+      "ract, and the catalog version its prices" +
+      " are pinned to. Development environments" +
+      " are not billed and are not returned.Jb\n" +
+      "\003200\022[\n One entry per billed environment" +
+      "\0227\n5\0323.scalekit.v1.billing.ListEnvironme" +
+      "ntBillingResponse\202\265\030\020\n\014billing:read\030D\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002\036\022\034/api/v1/billing/envi" +
+      "ronments\022\364\t\n\021UpdateBillingPlan\022-.scaleki" +
+      "t.v1.billing.UpdateBillingPlanRequest\032.." +
+      "scalekit.v1.billing.UpdateBillingPlanRes" +
+      "ponse\"\377\010\222A\270\010\n\007Billing\022%Change the curren" +
+      "t environment\'s plan\032\221\006Moves the CURRENT" +
+      " production environment \342\200\224 the one this" +
+      " request\'s environment context resolves " +
+      "to \342\200\224 to a different plan on one or mor" +
+      "e product lines. Lines omitted from the " +
+      "request keep their current plan. Prices " +
+      "stay pinned to the workspace\'s catalog v" +
+      "ersion, so a plan change never re-prices" +
+      " the lines it does not touch. A downgrad" +
+      "e is applied even when current usage exc" +
+      "eeds the new plan\'s allowance. The excee" +
+      "ded-allowance list in the response is re" +
+      "served for that reporting and is not pop" +
+      "ulated yet, so a caller cannot currently" +
+      " tell from this response what the change" +
+      " constrained. add_ons is the complete se" +
+      "t of standalone add-ons after the call. " +
+      "Omit it or send an empty list to cancel " +
+      "every add-on. Resubmit EnvironmentBillin" +
+      "g.add_ons when you only want to change t" +
+      "he plan.J\230\001\n\003200\022\220\001\nZThe environment\'s n" +
+      "ew plan. The exceeded-allowance list is " +
+      "reserved and not populated yet.\0222\n0\032..sc" +
+      "alekit.v1.billing.UpdateBillingPlanRespo" +
+      "nseJ%\n\003400\022\036\n\034Unknown product line or pl" +
+      "anJ0\n\003404\022)\n\'The environment has no bill" +
+      "ing contract\202\265\030\021\n\rbilling:write\030D\372\322\344\223\002\t\022" +
+      "\007PREVIEW\202\323\344\223\002\0312\024/api/v1/billing/plan:\001*\022" +
+      "\343\005\n\017GetBillingUsage\022+.scalekit.v1.billin" +
+      "g.GetBillingUsageRequest\032,.scalekit.v1.b" +
+      "illing.GetBillingUsageResponse\"\364\004\222A\260\004\n\007B" +
+      "illing\0222Get the current environment\'s cu" +
+      "rrent-period usage\032\321\001Returns current-per" +
+      "iod usage against allowance for every me" +
+      "tered entitlement on this environment\'s " +
+      "plan. Only meaningful on a Metronome-gen" +
+      "eration billing account; a Stripe-genera" +
+      "tion account returns an error.J\177\n\003200\022x\n" +
+      "DOne entry per metered entitlement gover" +
+      "ned by the environment\'s plan\0220\n.\032,.scal" +
+      "ekit.v1.billing.GetBillingUsageResponseJ" +
+      "2\n\003400\022+\n)The workspace has no billing c" +
+      "ustomer yetJh\n\003404\022a\n_The environment ha" +
+      "s no billing contract, or this account i" +
+      "s not on Metronome-generation billing\202\265\030" +
+      "\020\n\014billing:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025" +
+      "/api/v1/billing/usage\022\235\006\n\032GetBillingConn" +
+      "ectionCounts\0226.scalekit.v1.billing.GetBi" +
+      "llingConnectionCountsRequest\0327.scalekit." +
+      "v1.billing.GetBillingConnectionCountsRes" +
+      "ponse\"\215\005\222A\275\004\n\007Billing\022KGet the current e" +
+      "nvironment\'s live SSO connection and SCI" +
+      "M directory counts\032\371\001Returns the live co" +
+      "unt of active SSO connections and active" +
+      " SCIM directories in this environment, r" +
+      "ead from the database. Do not use GetBil" +
+      "lingUsage for this: that value is fracti" +
+      "onal connection-months accrued this peri" +
+      "od, not a point-in-time count.J\177\n\003200\022x\n" +
+      "9Live connection and directory counts fo" +
+      "r this environment\022;\n9\0327.scalekit.v1.bil" +
+      "ling.GetBillingConnectionCountsResponseJ" +
+      "h\n\003404\022a\n_The environment has no billing" +
+      " contract, or this account is not on Met" +
+      "ronome-generation billing\202\265\030\020\n\014billing:r" +
+      "ead\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002#\022!/api/v1/bill" +
+      "ing/connection-counts\022\256\007\n\027GetInvoicesDas" +
+      "hboardUrl\0223.scalekit.v1.billing.GetInvoi" +
+      "cesDashboardUrlRequest\0324.scalekit.v1.bil" +
+      "ling.GetInvoicesDashboardUrlResponse\"\247\006\222" +
+      "A\326\005\n\007Billing\022DGet an embeddable invoices" +
+      " dashboard URL for the current environme" +
+      "nt\032\307\002Returns a short-lived, authenticate" +
+      "d URL for Metronome\'s hosted invoices da" +
+      "shboard, scoped to this environment\'s bi" +
+      "lling contract. Mint a fresh URL per vie" +
+      "w rather than caching it \342\200\224 the URL its" +
+      "elf is a bearer credential. Only meaning" +
+      "ful on a Metronome-generation billing ac" +
+      "count; a Stripe-generation account retur" +
+      "ns an error.J^\n\003200\022W\n\033An embeddable das" +
+      "hboard URL\0228\n6\0324.scalekit.v1.billing.Get" +
+      "InvoicesDashboardUrlResponseJq\n\003400\022j\nhT" +
+      "he workspace has no billing customer yet" +
+      ", or this environment\'s billing contract" +
+      " is not provisioned yetJh\n\003404\022a\n_The en" +
+      "vironment has no billing contract, or th" +
+      "is account is not on Metronome-generatio" +
+      "n billing\202\265\030\020\n\014billing:read\030D\372\322\344\223\002\t\022\007PRE" +
+      "VIEW\202\323\344\223\002$\022\"/api/v1/billing/invoices-das" +
+      "hboardB\326\001\n%com.scalekit.grpc.scalekit.v1" +
+      ".billingB\014BillingProtoP\001Z1github.com/sca" +
+      "lekit-inc/scalekit/pkg/grpc/billing\242\002\003SV" +
+      "B\252\002\023Scalekit.V1.Billing\312\002\023Scalekit\\V1\\Bi" +
+      "lling\342\002\037Scalekit\\V1\\Billing\\GPBMetadata\352" +
+      "\002\025Scalekit::V1::Billingb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -527,31 +671,73 @@ public final class BillingProto {
     internal_static_scalekit_v1_billing_EnvironmentBilling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_billing_EnvironmentBilling_descriptor,
-        new java.lang.String[] { "EnvironmentId", "EnvironmentName", "Plans", "CatalogVersion", "ContractStatus", });
+        new java.lang.String[] { "EnvironmentId", "EnvironmentName", "Plans", "CatalogVersion", "ContractStatus", "AddOns", "PurchasableAddOns", "FullStackAuth", "PeriodStart", "PeriodEnd", });
     internal_static_scalekit_v1_billing_LinePlan_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_scalekit_v1_billing_LinePlan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_billing_LinePlan_descriptor,
         new java.lang.String[] { "Line", "Tier", });
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor =
+    internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_fieldAccessorTable = new
+    internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor,
-        new java.lang.String[] { "EnvironmentId", "Plans", });
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor =
+        internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor,
+        new java.lang.String[] { "Plans", "AddOns", });
+    internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor =
       getDescriptor().getMessageTypes().get(19);
-    internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_fieldAccessorTable = new
+    internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor,
-        new java.lang.String[] { "Plans", "Exceeded", });
+        internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor,
+        new java.lang.String[] { "Plans", "AddOns", "Exceeded", });
     internal_static_scalekit_v1_billing_ExceededAllowance_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_scalekit_v1_billing_ExceededAllowance_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_billing_ExceededAllowance_descriptor,
         new java.lang.String[] { "Entitlement", "Line", "Allowance", "CurrentUsage", "OnExceed", });
+    internal_static_scalekit_v1_billing_GetBillingUsageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_scalekit_v1_billing_GetBillingUsageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetBillingUsageRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_billing_GetBillingUsageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_scalekit_v1_billing_GetBillingUsageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetBillingUsageResponse_descriptor,
+        new java.lang.String[] { "Metrics", "PeriodStart", "PeriodEnd", });
+    internal_static_scalekit_v1_billing_MetricUsage_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_scalekit_v1_billing_MetricUsage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_MetricUsage_descriptor,
+        new java.lang.String[] { "Entitlement", "Line", "Allowance", "CurrentUsage", "DisplayName", });
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetBillingConnectionCountsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_scalekit_v1_billing_GetBillingConnectionCountsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetBillingConnectionCountsResponse_descriptor,
+        new java.lang.String[] { "SsoConnections", "ScimConnections", });
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_scalekit_v1_billing_GetInvoicesDashboardUrlResponse_descriptor,
+        new java.lang.String[] { "Url", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);

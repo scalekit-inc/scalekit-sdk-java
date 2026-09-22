@@ -43,4 +43,16 @@ public interface PortalSettingsOrBuilder extends
    * @return The enableConnDelete.
    */
   boolean getEnableConnDelete();
+
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen uses the two-column layout.
+   * Rollout-driven (feature flag). The dashboard forwards it to the consent preview so the
+   * preview renders the same layout the environment's end users see.
+   * </pre>
+   *
+   * <code>bool mcp_consent_screen_v2 = 4 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpConsentScreenV2.
+   */
+  boolean getMcpConsentScreenV2();
 }

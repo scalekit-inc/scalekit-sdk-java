@@ -177,35 +177,128 @@ public final class BillingServiceGrpc {
     return getListEnvironmentBillingMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest,
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> getUpdateEnvironmentPlanMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> getUpdateBillingPlanMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateEnvironmentPlan",
-      requestType = com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.class,
-      responseType = com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBillingPlan",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest,
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> getUpdateEnvironmentPlanMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> getUpdateEnvironmentPlanMethod;
-    if ((getUpdateEnvironmentPlanMethod = BillingServiceGrpc.getUpdateEnvironmentPlanMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> getUpdateBillingPlanMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> getUpdateBillingPlanMethod;
+    if ((getUpdateBillingPlanMethod = BillingServiceGrpc.getUpdateBillingPlanMethod) == null) {
       synchronized (BillingServiceGrpc.class) {
-        if ((getUpdateEnvironmentPlanMethod = BillingServiceGrpc.getUpdateEnvironmentPlanMethod) == null) {
-          BillingServiceGrpc.getUpdateEnvironmentPlanMethod = getUpdateEnvironmentPlanMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse>newBuilder()
+        if ((getUpdateBillingPlanMethod = BillingServiceGrpc.getUpdateBillingPlanMethod) == null) {
+          BillingServiceGrpc.getUpdateBillingPlanMethod = getUpdateBillingPlanMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateEnvironmentPlan"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBillingPlan"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("UpdateEnvironmentPlan"))
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("UpdateBillingPlan"))
               .build();
         }
       }
     }
-    return getUpdateEnvironmentPlanMethod;
+    return getUpdateBillingPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> getGetBillingUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBillingUsage",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> getGetBillingUsageMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest, com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> getGetBillingUsageMethod;
+    if ((getGetBillingUsageMethod = BillingServiceGrpc.getGetBillingUsageMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getGetBillingUsageMethod = BillingServiceGrpc.getGetBillingUsageMethod) == null) {
+          BillingServiceGrpc.getGetBillingUsageMethod = getGetBillingUsageMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest, com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBillingUsage"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("GetBillingUsage"))
+              .build();
+        }
+      }
+    }
+    return getGetBillingUsageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> getGetBillingConnectionCountsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBillingConnectionCounts",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> getGetBillingConnectionCountsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest, com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> getGetBillingConnectionCountsMethod;
+    if ((getGetBillingConnectionCountsMethod = BillingServiceGrpc.getGetBillingConnectionCountsMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getGetBillingConnectionCountsMethod = BillingServiceGrpc.getGetBillingConnectionCountsMethod) == null) {
+          BillingServiceGrpc.getGetBillingConnectionCountsMethod = getGetBillingConnectionCountsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest, com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBillingConnectionCounts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("GetBillingConnectionCounts"))
+              .build();
+        }
+      }
+    }
+    return getGetBillingConnectionCountsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> getGetInvoicesDashboardUrlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInvoicesDashboardUrl",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> getGetInvoicesDashboardUrlMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest, com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> getGetInvoicesDashboardUrlMethod;
+    if ((getGetInvoicesDashboardUrlMethod = BillingServiceGrpc.getGetInvoicesDashboardUrlMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getGetInvoicesDashboardUrlMethod = BillingServiceGrpc.getGetInvoicesDashboardUrlMethod) == null) {
+          BillingServiceGrpc.getGetInvoicesDashboardUrlMethod = getGetInvoicesDashboardUrlMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest, com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetInvoicesDashboardUrl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("GetInvoicesDashboardUrl"))
+              .build();
+        }
+      }
+    }
+    return getGetInvoicesDashboardUrlMethod;
   }
 
   /**
@@ -322,12 +415,57 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
-     * UpdateEnvironmentPlan changes an environment's plan on one or more lines.
+     * UpdateBillingPlan changes an environment's plan on one or more lines.
      * </pre>
      */
-    default void updateEnvironmentPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEnvironmentPlanMethod(), responseObserver);
+    default void updateBillingPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBillingPlanMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetBillingUsage returns current-period usage against allowance for every metered
+     * entitlement on an environment's plan. Metronome's own embeddable usage dashboard cannot be
+     * scoped to one environment (only the invoices dashboard supports a contract_id filter), so this
+     * is a first-party view built on the same per-environment usage query this backend already uses
+     * for auto-upgrade checks.
+     * </pre>
+     */
+    default void getBillingUsage(com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBillingUsageMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetBillingConnectionCounts returns how many SSO connections and SCIM directories are active in
+     * this environment RIGHT NOW — a live database count, deliberately NOT read from GetBillingUsage:
+     * that endpoint's current_usage is fractional connection-MONTHS accrued so far in the billing period
+     * (e.g. 0.97), which answers "how much will this bill", not "how many exist right now", and reads
+     * through Metronome's own ingest pipeline (async, dedup-protected — see specs/billing_redesign/spec.md
+     * §9), which can lag a just-created or just-disabled connection by more than an instant. A caller
+     * deciding whether creating ONE MORE connection would exceed a plan's included allowance needs the
+     * count this RPC gives, not that one.
+     * </pre>
+     */
+    default void getBillingConnectionCounts(com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBillingConnectionCountsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetInvoicesDashboardUrl mints a short-lived, iframe-embeddable URL for Metronome's own hosted
+     * invoices dashboard, scoped to this one environment's contract via Metronome's contract_id
+     * dashboard option — the only dashboard type that supports a per-contract filter at all. Unlike
+     * GetBillingUsage, no first-party invoice UI is built here: the invoices dashboard needs no
+     * custom rendering, just embedding.
+     * </pre>
+     */
+    default void getInvoicesDashboardUrl(com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInvoicesDashboardUrlMethod(), responseObserver);
     }
   }
 
@@ -436,13 +574,61 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
-     * UpdateEnvironmentPlan changes an environment's plan on one or more lines.
+     * UpdateBillingPlan changes an environment's plan on one or more lines.
      * </pre>
      */
-    public void updateEnvironmentPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest request,
-        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> responseObserver) {
+    public void updateBillingPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateEnvironmentPlanMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getUpdateBillingPlanMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetBillingUsage returns current-period usage against allowance for every metered
+     * entitlement on an environment's plan. Metronome's own embeddable usage dashboard cannot be
+     * scoped to one environment (only the invoices dashboard supports a contract_id filter), so this
+     * is a first-party view built on the same per-environment usage query this backend already uses
+     * for auto-upgrade checks.
+     * </pre>
+     */
+    public void getBillingUsage(com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBillingUsageMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetBillingConnectionCounts returns how many SSO connections and SCIM directories are active in
+     * this environment RIGHT NOW — a live database count, deliberately NOT read from GetBillingUsage:
+     * that endpoint's current_usage is fractional connection-MONTHS accrued so far in the billing period
+     * (e.g. 0.97), which answers "how much will this bill", not "how many exist right now", and reads
+     * through Metronome's own ingest pipeline (async, dedup-protected — see specs/billing_redesign/spec.md
+     * §9), which can lag a just-created or just-disabled connection by more than an instant. A caller
+     * deciding whether creating ONE MORE connection would exceed a plan's included allowance needs the
+     * count this RPC gives, not that one.
+     * </pre>
+     */
+    public void getBillingConnectionCounts(com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBillingConnectionCountsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetInvoicesDashboardUrl mints a short-lived, iframe-embeddable URL for Metronome's own hosted
+     * invoices dashboard, scoped to this one environment's contract via Metronome's contract_id
+     * dashboard option — the only dashboard type that supports a per-contract filter at all. Unlike
+     * GetBillingUsage, no first-party invoice UI is built here: the invoices dashboard needs no
+     * custom rendering, just embedding.
+     * </pre>
+     */
+    public void getInvoicesDashboardUrl(com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetInvoicesDashboardUrlMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -528,12 +714,57 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
-     * UpdateEnvironmentPlan changes an environment's plan on one or more lines.
+     * UpdateBillingPlan changes an environment's plan on one or more lines.
      * </pre>
      */
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse updateEnvironmentPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest request) {
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse updateBillingPlan(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateEnvironmentPlanMethod(), getCallOptions(), request);
+          getChannel(), getUpdateBillingPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetBillingUsage returns current-period usage against allowance for every metered
+     * entitlement on an environment's plan. Metronome's own embeddable usage dashboard cannot be
+     * scoped to one environment (only the invoices dashboard supports a contract_id filter), so this
+     * is a first-party view built on the same per-environment usage query this backend already uses
+     * for auto-upgrade checks.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse getBillingUsage(com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBillingUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetBillingConnectionCounts returns how many SSO connections and SCIM directories are active in
+     * this environment RIGHT NOW — a live database count, deliberately NOT read from GetBillingUsage:
+     * that endpoint's current_usage is fractional connection-MONTHS accrued so far in the billing period
+     * (e.g. 0.97), which answers "how much will this bill", not "how many exist right now", and reads
+     * through Metronome's own ingest pipeline (async, dedup-protected — see specs/billing_redesign/spec.md
+     * §9), which can lag a just-created or just-disabled connection by more than an instant. A caller
+     * deciding whether creating ONE MORE connection would exceed a plan's included allowance needs the
+     * count this RPC gives, not that one.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse getBillingConnectionCounts(com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBillingConnectionCountsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetInvoicesDashboardUrl mints a short-lived, iframe-embeddable URL for Metronome's own hosted
+     * invoices dashboard, scoped to this one environment's contract via Metronome's contract_id
+     * dashboard option — the only dashboard type that supports a per-contract filter at all. Unlike
+     * GetBillingUsage, no first-party invoice UI is built here: the invoices dashboard needs no
+     * custom rendering, just embedding.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse getInvoicesDashboardUrl(com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInvoicesDashboardUrlMethod(), getCallOptions(), request);
     }
   }
 
@@ -624,13 +855,61 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
-     * UpdateEnvironmentPlan changes an environment's plan on one or more lines.
+     * UpdateBillingPlan changes an environment's plan on one or more lines.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse> updateEnvironmentPlan(
-        com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse> updateBillingPlan(
+        com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateEnvironmentPlanMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateBillingPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * GetBillingUsage returns current-period usage against allowance for every metered
+     * entitlement on an environment's plan. Metronome's own embeddable usage dashboard cannot be
+     * scoped to one environment (only the invoices dashboard supports a contract_id filter), so this
+     * is a first-party view built on the same per-environment usage query this backend already uses
+     * for auto-upgrade checks.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse> getBillingUsage(
+        com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBillingUsageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * GetBillingConnectionCounts returns how many SSO connections and SCIM directories are active in
+     * this environment RIGHT NOW — a live database count, deliberately NOT read from GetBillingUsage:
+     * that endpoint's current_usage is fractional connection-MONTHS accrued so far in the billing period
+     * (e.g. 0.97), which answers "how much will this bill", not "how many exist right now", and reads
+     * through Metronome's own ingest pipeline (async, dedup-protected — see specs/billing_redesign/spec.md
+     * §9), which can lag a just-created or just-disabled connection by more than an instant. A caller
+     * deciding whether creating ONE MORE connection would exceed a plan's included allowance needs the
+     * count this RPC gives, not that one.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse> getBillingConnectionCounts(
+        com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBillingConnectionCountsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * GetInvoicesDashboardUrl mints a short-lived, iframe-embeddable URL for Metronome's own hosted
+     * invoices dashboard, scoped to this one environment's contract via Metronome's contract_id
+     * dashboard option — the only dashboard type that supports a per-contract filter at all. Unlike
+     * GetBillingUsage, no first-party invoice UI is built here: the invoices dashboard needs no
+     * custom rendering, just embedding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> getInvoicesDashboardUrl(
+        com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetInvoicesDashboardUrlMethod(), getCallOptions()), request);
     }
   }
 
@@ -639,7 +918,10 @@ public final class BillingServiceGrpc {
   private static final int METHODID_GET_BILLING_ACCOUNT = 2;
   private static final int METHODID_ADD_PAYMENT_METHOD = 3;
   private static final int METHODID_LIST_ENVIRONMENT_BILLING = 4;
-  private static final int METHODID_UPDATE_ENVIRONMENT_PLAN = 5;
+  private static final int METHODID_UPDATE_BILLING_PLAN = 5;
+  private static final int METHODID_GET_BILLING_USAGE = 6;
+  private static final int METHODID_GET_BILLING_CONNECTION_COUNTS = 7;
+  private static final int METHODID_GET_INVOICES_DASHBOARD_URL = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -678,9 +960,21 @@ public final class BillingServiceGrpc {
           serviceImpl.listEnvironmentBilling((com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingResponse>) responseObserver);
           break;
-        case METHODID_UPDATE_ENVIRONMENT_PLAN:
-          serviceImpl.updateEnvironmentPlan((com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest) request,
-              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse>) responseObserver);
+        case METHODID_UPDATE_BILLING_PLAN:
+          serviceImpl.updateBillingPlan((com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse>) responseObserver);
+          break;
+        case METHODID_GET_BILLING_USAGE:
+          serviceImpl.getBillingUsage((com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse>) responseObserver);
+          break;
+        case METHODID_GET_BILLING_CONNECTION_COUNTS:
+          serviceImpl.getBillingConnectionCounts((com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse>) responseObserver);
+          break;
+        case METHODID_GET_INVOICES_DASHBOARD_URL:
+          serviceImpl.getInvoicesDashboardUrl((com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -736,12 +1030,33 @@ public final class BillingServiceGrpc {
               com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingResponse>(
                 service, METHODID_LIST_ENVIRONMENT_BILLING)))
         .addMethod(
-          getUpdateEnvironmentPlanMethod(),
+          getUpdateBillingPlanMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest,
-              com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse>(
-                service, METHODID_UPDATE_ENVIRONMENT_PLAN)))
+              com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest,
+              com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse>(
+                service, METHODID_UPDATE_BILLING_PLAN)))
+        .addMethod(
+          getGetBillingUsageMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageRequest,
+              com.scalekit.grpc.scalekit.v1.billing.GetBillingUsageResponse>(
+                service, METHODID_GET_BILLING_USAGE)))
+        .addMethod(
+          getGetBillingConnectionCountsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsRequest,
+              com.scalekit.grpc.scalekit.v1.billing.GetBillingConnectionCountsResponse>(
+                service, METHODID_GET_BILLING_CONNECTION_COUNTS)))
+        .addMethod(
+          getGetInvoicesDashboardUrlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest,
+              com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse>(
+                service, METHODID_GET_INVOICES_DASHBOARD_URL)))
         .build();
   }
 
@@ -795,7 +1110,10 @@ public final class BillingServiceGrpc {
               .addMethod(getGetBillingAccountMethod())
               .addMethod(getAddPaymentMethodMethod())
               .addMethod(getListEnvironmentBillingMethod())
-              .addMethod(getUpdateEnvironmentPlanMethod())
+              .addMethod(getUpdateBillingPlanMethod())
+              .addMethod(getGetBillingUsageMethod())
+              .addMethod(getGetBillingConnectionCountsMethod())
+              .addMethod(getGetInvoicesDashboardUrlMethod())
               .build();
         }
       }

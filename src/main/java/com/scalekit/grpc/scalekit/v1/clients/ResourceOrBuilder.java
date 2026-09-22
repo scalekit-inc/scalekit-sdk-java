@@ -240,4 +240,40 @@ public interface ResourceOrBuilder extends
    * @return The xaaEnabled.
    */
   boolean getXaaEnabled();
+
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> 
+      getCimdClientAllowlistList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry getCimdClientAllowlist(int index);
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getCimdClientAllowlistCount();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> 
+      getCimdClientAllowlistOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder getCimdClientAllowlistOrBuilder(
+      int index);
+
+  /**
+   * <code>bool cimd_client_allowlist_enabled = 23 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The cimdClientAllowlistEnabled.
+   */
+  boolean getCimdClientAllowlistEnabled();
+
+  /**
+   * <code>bool resource_scope_selection_allowed = 24 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopeSelectionAllowed.
+   */
+  boolean getResourceScopeSelectionAllowed();
 }

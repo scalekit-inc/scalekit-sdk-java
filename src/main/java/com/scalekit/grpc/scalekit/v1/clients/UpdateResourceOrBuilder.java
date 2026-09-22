@@ -192,5 +192,59 @@ public interface UpdateResourceOrBuilder extends
    */
   com.google.protobuf.BoolValueOrBuilder getXaaEnabledOrBuilder();
 
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 17 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> 
+      getCimdClientAllowlistList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 17 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry getCimdClientAllowlist(int index);
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 17 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  int getCimdClientAllowlistCount();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 17 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> 
+      getCimdClientAllowlistOrBuilderList();
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 17 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder getCimdClientAllowlistOrBuilder(
+      int index);
+
+  /**
+   * <code>.google.protobuf.BoolValue cimd_client_allowlist_enabled = 18 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the cimdClientAllowlistEnabled field is set.
+   */
+  boolean hasCimdClientAllowlistEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue cimd_client_allowlist_enabled = 18 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The cimdClientAllowlistEnabled.
+   */
+  com.google.protobuf.BoolValue getCimdClientAllowlistEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue cimd_client_allowlist_enabled = 18 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getCimdClientAllowlistEnabledOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue resource_scope_selection_allowed = 19 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resourceScopeSelectionAllowed field is set.
+   */
+  boolean hasResourceScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue resource_scope_selection_allowed = 19 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopeSelectionAllowed.
+   */
+  com.google.protobuf.BoolValue getResourceScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue resource_scope_selection_allowed = 19 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getResourceScopeSelectionAllowedOrBuilder();
+
   com.scalekit.grpc.scalekit.v1.clients.UpdateResource.SettingsCase getSettingsCase();
 }

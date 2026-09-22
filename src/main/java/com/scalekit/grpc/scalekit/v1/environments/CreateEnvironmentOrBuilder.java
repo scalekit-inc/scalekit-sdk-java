@@ -78,7 +78,7 @@ public interface CreateEnvironmentOrBuilder extends
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -97,7 +97,7 @@ public interface CreateEnvironmentOrBuilder extends
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -115,7 +115,7 @@ public interface CreateEnvironmentOrBuilder extends
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -133,7 +133,7 @@ public interface CreateEnvironmentOrBuilder extends
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -152,7 +152,7 @@ public interface CreateEnvironmentOrBuilder extends
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -161,4 +161,73 @@ public interface CreateEnvironmentOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the addOns.
+   */
+  java.util.List<java.lang.String>
+      getAddOnsList();
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of addOns.
+   */
+  int getAddOnsCount();
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  java.lang.String getAddOns(int index);
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAddOnsBytes(int index);
 }

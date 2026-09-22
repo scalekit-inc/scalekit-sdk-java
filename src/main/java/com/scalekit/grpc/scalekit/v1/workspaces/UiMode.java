@@ -104,7 +104,7 @@ public enum UiMode
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(6);
+    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(7);
   }
 
   private static final UiMode[] VALUES = values();
