@@ -96,6 +96,23 @@ private static final long serialVersionUID = 0L;
     return enableConnDelete_;
   }
 
+  public static final int MCP_CONSENT_SCREEN_V2_FIELD_NUMBER = 4;
+  private boolean mcpConsentScreenV2_ = false;
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen uses the two-column layout.
+   * Rollout-driven (feature flag). The dashboard forwards it to the consent preview so the
+   * preview renders the same layout the environment's end users see.
+   * </pre>
+   *
+   * <code>bool mcp_consent_screen_v2 = 4 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpConsentScreenV2.
+   */
+  @java.lang.Override
+  public boolean getMcpConsentScreenV2() {
+    return mcpConsentScreenV2_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -119,6 +136,9 @@ private static final long serialVersionUID = 0L;
     if (enableConnDelete_ != false) {
       output.writeBool(3, enableConnDelete_);
     }
+    if (mcpConsentScreenV2_ != false) {
+      output.writeBool(4, mcpConsentScreenV2_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -139,6 +159,10 @@ private static final long serialVersionUID = 0L;
     if (enableConnDelete_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, enableConnDelete_);
+    }
+    if (mcpConsentScreenV2_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, mcpConsentScreenV2_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -161,6 +185,8 @@ private static final long serialVersionUID = 0L;
         != other.getNewSelfServeSsoScim()) return false;
     if (getEnableConnDelete()
         != other.getEnableConnDelete()) return false;
+    if (getMcpConsentScreenV2()
+        != other.getMcpConsentScreenV2()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +207,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLE_CONN_DELETE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableConnDelete());
+    hash = (37 * hash) + MCP_CONSENT_SCREEN_V2_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getMcpConsentScreenV2());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +350,7 @@ private static final long serialVersionUID = 0L;
       customBranding_ = false;
       newSelfServeSsoScim_ = false;
       enableConnDelete_ = false;
+      mcpConsentScreenV2_ = false;
       return this;
     }
 
@@ -362,6 +392,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.enableConnDelete_ = enableConnDelete_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mcpConsentScreenV2_ = mcpConsentScreenV2_;
       }
     }
 
@@ -418,6 +451,9 @@ private static final long serialVersionUID = 0L;
       if (other.getEnableConnDelete() != false) {
         setEnableConnDelete(other.getEnableConnDelete());
       }
+      if (other.getMcpConsentScreenV2() != false) {
+        setMcpConsentScreenV2(other.getMcpConsentScreenV2());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -459,6 +495,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 24
+            case 32: {
+              mcpConsentScreenV2_ = input.readBool();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -622,6 +663,56 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnableConnDelete() {
       bitField0_ = (bitField0_ & ~0x00000004);
       enableConnDelete_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean mcpConsentScreenV2_ ;
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen uses the two-column layout.
+     * Rollout-driven (feature flag). The dashboard forwards it to the consent preview so the
+     * preview renders the same layout the environment's end users see.
+     * </pre>
+     *
+     * <code>bool mcp_consent_screen_v2 = 4 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The mcpConsentScreenV2.
+     */
+    @java.lang.Override
+    public boolean getMcpConsentScreenV2() {
+      return mcpConsentScreenV2_;
+    }
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen uses the two-column layout.
+     * Rollout-driven (feature flag). The dashboard forwards it to the consent preview so the
+     * preview renders the same layout the environment's end users see.
+     * </pre>
+     *
+     * <code>bool mcp_consent_screen_v2 = 4 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The mcpConsentScreenV2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpConsentScreenV2(boolean value) {
+
+      mcpConsentScreenV2_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen uses the two-column layout.
+     * Rollout-driven (feature flag). The dashboard forwards it to the consent preview so the
+     * preview renders the same layout the environment's end users see.
+     * </pre>
+     *
+     * <code>bool mcp_consent_screen_v2 = 4 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMcpConsentScreenV2() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      mcpConsentScreenV2_ = false;
       onChanged();
       return this;
     }

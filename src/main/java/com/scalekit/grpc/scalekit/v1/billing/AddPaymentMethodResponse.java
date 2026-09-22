@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-   *     See scalekit/v1/billing/billing.proto;l=420
+   *     See scalekit/v1/billing/billing.proto;l=544
    * @return The checkoutUrl.
    */
   @java.lang.Override
@@ -79,7 +79,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-   *     See scalekit/v1/billing/billing.proto;l=420
+   *     See scalekit/v1/billing/billing.proto;l=544
    * @return The bytes for checkoutUrl.
    */
   @java.lang.Override
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-     *     See scalekit/v1/billing/billing.proto;l=420
+     *     See scalekit/v1/billing/billing.proto;l=544
      * @return The checkoutUrl.
      */
     @java.lang.Deprecated public java.lang.String getCheckoutUrl() {
@@ -610,7 +610,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-     *     See scalekit/v1/billing/billing.proto;l=420
+     *     See scalekit/v1/billing/billing.proto;l=544
      * @return The bytes for checkoutUrl.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -635,7 +635,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-     *     See scalekit/v1/billing/billing.proto;l=420
+     *     See scalekit/v1/billing/billing.proto;l=544
      * @param value The checkoutUrl to set.
      * @return This builder for chaining.
      */
@@ -656,7 +656,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-     *     See scalekit/v1/billing/billing.proto;l=420
+     *     See scalekit/v1/billing/billing.proto;l=544
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearCheckoutUrl() {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-     *     See scalekit/v1/billing/billing.proto;l=420
+     *     See scalekit/v1/billing/billing.proto;l=544
      * @param value The bytes for checkoutUrl to set.
      * @return This builder for chaining.
      */

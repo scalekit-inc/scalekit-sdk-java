@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     protectedMetadataUri_ = "";
     resourceId_ = "";
     scopes_ = java.util.Collections.emptyList();
+    cimdClientAllowlist_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -602,6 +603,69 @@ private static final long serialVersionUID = 0L;
     return xaaEnabled_;
   }
 
+  public static final int CIMD_CLIENT_ALLOWLIST_FIELD_NUMBER = 22;
+  @SuppressWarnings("serial")
+  private java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> cimdClientAllowlist_;
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> getCimdClientAllowlistList() {
+    return cimdClientAllowlist_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> 
+      getCimdClientAllowlistOrBuilderList() {
+    return cimdClientAllowlist_;
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public int getCimdClientAllowlistCount() {
+    return cimdClientAllowlist_.size();
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry getCimdClientAllowlist(int index) {
+    return cimdClientAllowlist_.get(index);
+  }
+  /**
+   * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder getCimdClientAllowlistOrBuilder(
+      int index) {
+    return cimdClientAllowlist_.get(index);
+  }
+
+  public static final int CIMD_CLIENT_ALLOWLIST_ENABLED_FIELD_NUMBER = 23;
+  private boolean cimdClientAllowlistEnabled_ = false;
+  /**
+   * <code>bool cimd_client_allowlist_enabled = 23 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The cimdClientAllowlistEnabled.
+   */
+  @java.lang.Override
+  public boolean getCimdClientAllowlistEnabled() {
+    return cimdClientAllowlistEnabled_;
+  }
+
+  public static final int RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER = 24;
+  private boolean resourceScopeSelectionAllowed_ = false;
+  /**
+   * <code>bool resource_scope_selection_allowed = 24 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopeSelectionAllowed.
+   */
+  @java.lang.Override
+  public boolean getResourceScopeSelectionAllowed() {
+    return resourceScopeSelectionAllowed_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -678,6 +742,15 @@ private static final long serialVersionUID = 0L;
     }
     if (xaaEnabled_ != false) {
       output.writeBool(21, xaaEnabled_);
+    }
+    for (int i = 0; i < cimdClientAllowlist_.size(); i++) {
+      output.writeMessage(22, cimdClientAllowlist_.get(i));
+    }
+    if (cimdClientAllowlistEnabled_ != false) {
+      output.writeBool(23, cimdClientAllowlistEnabled_);
+    }
+    if (resourceScopeSelectionAllowed_ != false) {
+      output.writeBool(24, resourceScopeSelectionAllowed_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -764,6 +837,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(21, xaaEnabled_);
     }
+    for (int i = 0; i < cimdClientAllowlist_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(22, cimdClientAllowlist_.get(i));
+    }
+    if (cimdClientAllowlistEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(23, cimdClientAllowlistEnabled_);
+    }
+    if (resourceScopeSelectionAllowed_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(24, resourceScopeSelectionAllowed_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -832,6 +917,12 @@ private static final long serialVersionUID = 0L;
         != other.getEnableCimd()) return false;
     if (getXaaEnabled()
         != other.getXaaEnabled()) return false;
+    if (!getCimdClientAllowlistList()
+        .equals(other.getCimdClientAllowlistList())) return false;
+    if (getCimdClientAllowlistEnabled()
+        != other.getCimdClientAllowlistEnabled()) return false;
+    if (getResourceScopeSelectionAllowed()
+        != other.getResourceScopeSelectionAllowed()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -902,6 +993,16 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + XAA_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getXaaEnabled());
+    if (getCimdClientAllowlistCount() > 0) {
+      hash = (37 * hash) + CIMD_CLIENT_ALLOWLIST_FIELD_NUMBER;
+      hash = (53 * hash) + getCimdClientAllowlistList().hashCode();
+    }
+    hash = (37 * hash) + CIMD_CLIENT_ALLOWLIST_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getCimdClientAllowlistEnabled());
+    hash = (37 * hash) + RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getResourceScopeSelectionAllowed());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1037,6 +1138,7 @@ private static final long serialVersionUID = 0L;
         getProtectedMetadataFieldBuilder();
         getScopesFieldBuilder();
         getConnectionDetailsFieldBuilder();
+        getCimdClientAllowlistFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1086,6 +1188,15 @@ private static final long serialVersionUID = 0L;
       intersectScopesUserPermission_ = false;
       enableCimd_ = false;
       xaaEnabled_ = false;
+      if (cimdClientAllowlistBuilder_ == null) {
+        cimdClientAllowlist_ = java.util.Collections.emptyList();
+      } else {
+        cimdClientAllowlist_ = null;
+        cimdClientAllowlistBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00200000);
+      cimdClientAllowlistEnabled_ = false;
+      resourceScopeSelectionAllowed_ = false;
       return this;
     }
 
@@ -1127,6 +1238,15 @@ private static final long serialVersionUID = 0L;
         result.scopes_ = scopes_;
       } else {
         result.scopes_ = scopesBuilder_.build();
+      }
+      if (cimdClientAllowlistBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)) {
+          cimdClientAllowlist_ = java.util.Collections.unmodifiableList(cimdClientAllowlist_);
+          bitField0_ = (bitField0_ & ~0x00200000);
+        }
+        result.cimdClientAllowlist_ = cimdClientAllowlist_;
+      } else {
+        result.cimdClientAllowlist_ = cimdClientAllowlistBuilder_.build();
       }
     }
 
@@ -1204,6 +1324,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.xaaEnabled_ = xaaEnabled_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.cimdClientAllowlistEnabled_ = cimdClientAllowlistEnabled_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.resourceScopeSelectionAllowed_ = resourceScopeSelectionAllowed_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1354,6 +1480,38 @@ private static final long serialVersionUID = 0L;
       if (other.getXaaEnabled() != false) {
         setXaaEnabled(other.getXaaEnabled());
       }
+      if (cimdClientAllowlistBuilder_ == null) {
+        if (!other.cimdClientAllowlist_.isEmpty()) {
+          if (cimdClientAllowlist_.isEmpty()) {
+            cimdClientAllowlist_ = other.cimdClientAllowlist_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+          } else {
+            ensureCimdClientAllowlistIsMutable();
+            cimdClientAllowlist_.addAll(other.cimdClientAllowlist_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cimdClientAllowlist_.isEmpty()) {
+          if (cimdClientAllowlistBuilder_.isEmpty()) {
+            cimdClientAllowlistBuilder_.dispose();
+            cimdClientAllowlistBuilder_ = null;
+            cimdClientAllowlist_ = other.cimdClientAllowlist_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+            cimdClientAllowlistBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCimdClientAllowlistFieldBuilder() : null;
+          } else {
+            cimdClientAllowlistBuilder_.addAllMessages(other.cimdClientAllowlist_);
+          }
+        }
+      }
+      if (other.getCimdClientAllowlistEnabled() != false) {
+        setCimdClientAllowlistEnabled(other.getCimdClientAllowlistEnabled());
+      }
+      if (other.getResourceScopeSelectionAllowed() != false) {
+        setResourceScopeSelectionAllowed(other.getResourceScopeSelectionAllowed());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1501,6 +1659,29 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00100000;
               break;
             } // case 168
+            case 178: {
+              com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry m =
+                  input.readMessage(
+                      com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.parser(),
+                      extensionRegistry);
+              if (cimdClientAllowlistBuilder_ == null) {
+                ensureCimdClientAllowlistIsMutable();
+                cimdClientAllowlist_.add(m);
+              } else {
+                cimdClientAllowlistBuilder_.addMessage(m);
+              }
+              break;
+            } // case 178
+            case 184: {
+              cimdClientAllowlistEnabled_ = input.readBool();
+              bitField0_ |= 0x00400000;
+              break;
+            } // case 184
+            case 192: {
+              resourceScopeSelectionAllowed_ = input.readBool();
+              bitField0_ |= 0x00800000;
+              break;
+            } // case 192
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3091,6 +3272,310 @@ private static final long serialVersionUID = 0L;
     public Builder clearXaaEnabled() {
       bitField0_ = (bitField0_ & ~0x00100000);
       xaaEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> cimdClientAllowlist_ =
+      java.util.Collections.emptyList();
+    private void ensureCimdClientAllowlistIsMutable() {
+      if (!((bitField0_ & 0x00200000) != 0)) {
+        cimdClientAllowlist_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry>(cimdClientAllowlist_);
+        bitField0_ |= 0x00200000;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> cimdClientAllowlistBuilder_;
+
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> getCimdClientAllowlistList() {
+      if (cimdClientAllowlistBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cimdClientAllowlist_);
+      } else {
+        return cimdClientAllowlistBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public int getCimdClientAllowlistCount() {
+      if (cimdClientAllowlistBuilder_ == null) {
+        return cimdClientAllowlist_.size();
+      } else {
+        return cimdClientAllowlistBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry getCimdClientAllowlist(int index) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        return cimdClientAllowlist_.get(index);
+      } else {
+        return cimdClientAllowlistBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCimdClientAllowlist(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry value) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.set(index, value);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setCimdClientAllowlist(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder builderForValue) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCimdClientAllowlist(com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry value) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.add(value);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCimdClientAllowlist(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry value) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.add(index, value);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCimdClientAllowlist(
+        com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder builderForValue) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addCimdClientAllowlist(
+        int index, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder builderForValue) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder addAllCimdClientAllowlist(
+        java.lang.Iterable<? extends com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry> values) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        ensureCimdClientAllowlistIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, cimdClientAllowlist_);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearCimdClientAllowlist() {
+      if (cimdClientAllowlistBuilder_ == null) {
+        cimdClientAllowlist_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00200000);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder removeCimdClientAllowlist(int index) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        ensureCimdClientAllowlistIsMutable();
+        cimdClientAllowlist_.remove(index);
+        onChanged();
+      } else {
+        cimdClientAllowlistBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder getCimdClientAllowlistBuilder(
+        int index) {
+      return getCimdClientAllowlistFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder getCimdClientAllowlistOrBuilder(
+        int index) {
+      if (cimdClientAllowlistBuilder_ == null) {
+        return cimdClientAllowlist_.get(index);  } else {
+        return cimdClientAllowlistBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<? extends com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> 
+         getCimdClientAllowlistOrBuilderList() {
+      if (cimdClientAllowlistBuilder_ != null) {
+        return cimdClientAllowlistBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cimdClientAllowlist_);
+      }
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder addCimdClientAllowlistBuilder() {
+      return getCimdClientAllowlistFieldBuilder().addBuilder(
+          com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder addCimdClientAllowlistBuilder(
+        int index) {
+      return getCimdClientAllowlistFieldBuilder().addBuilder(
+          index, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .scalekit.v1.clients.CimdAllowlistEntry cimd_client_allowlist = 22 [json_name = "cimdClientAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public java.util.List<com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder> 
+         getCimdClientAllowlistBuilderList() {
+      return getCimdClientAllowlistFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder> 
+        getCimdClientAllowlistFieldBuilder() {
+      if (cimdClientAllowlistBuilder_ == null) {
+        cimdClientAllowlistBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntry.Builder, com.scalekit.grpc.scalekit.v1.clients.CimdAllowlistEntryOrBuilder>(
+                cimdClientAllowlist_,
+                ((bitField0_ & 0x00200000) != 0),
+                getParentForChildren(),
+                isClean());
+        cimdClientAllowlist_ = null;
+      }
+      return cimdClientAllowlistBuilder_;
+    }
+
+    private boolean cimdClientAllowlistEnabled_ ;
+    /**
+     * <code>bool cimd_client_allowlist_enabled = 23 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The cimdClientAllowlistEnabled.
+     */
+    @java.lang.Override
+    public boolean getCimdClientAllowlistEnabled() {
+      return cimdClientAllowlistEnabled_;
+    }
+    /**
+     * <code>bool cimd_client_allowlist_enabled = 23 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The cimdClientAllowlistEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCimdClientAllowlistEnabled(boolean value) {
+
+      cimdClientAllowlistEnabled_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool cimd_client_allowlist_enabled = 23 [json_name = "cimdClientAllowlistEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCimdClientAllowlistEnabled() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      cimdClientAllowlistEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean resourceScopeSelectionAllowed_ ;
+    /**
+     * <code>bool resource_scope_selection_allowed = 24 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceScopeSelectionAllowed.
+     */
+    @java.lang.Override
+    public boolean getResourceScopeSelectionAllowed() {
+      return resourceScopeSelectionAllowed_;
+    }
+    /**
+     * <code>bool resource_scope_selection_allowed = 24 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resourceScopeSelectionAllowed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceScopeSelectionAllowed(boolean value) {
+
+      resourceScopeSelectionAllowed_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool resource_scope_selection_allowed = 24 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceScopeSelectionAllowed() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      resourceScopeSelectionAllowed_ = false;
       onChanged();
       return this;
     }

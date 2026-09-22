@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.billing;
 
-public interface UpdateEnvironmentPlanResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.billing.UpdateEnvironmentPlanResponse)
+public interface UpdateBillingPlanResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.billing.UpdateBillingPlanResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -51,6 +51,51 @@ public interface UpdateEnvironmentPlanResponseOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @return A list containing the addOns.
+   */
+  java.util.List<java.lang.String>
+      getAddOnsList();
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @return The count of addOns.
+   */
+  int getAddOnsCount();
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  java.lang.String getAddOns(int index);
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAddOnsBytes(int index);
 
   /**
    * <pre>

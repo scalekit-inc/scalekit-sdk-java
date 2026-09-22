@@ -81,10 +81,10 @@ public final class AuthProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_scalekit_v1_auth_OTPRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_scalekit_v1_auth_ResendPasswordlessRequest_descriptor;
+    internal_static_scalekit_v1_auth_ResendAuthPasswordlessRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_scalekit_v1_auth_ResendPasswordlessRequest_fieldAccessorTable;
+      internal_static_scalekit_v1_auth_ResendAuthPasswordlessRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_scalekit_v1_auth_ListUserOrganizationsResponse_descriptor;
   static final 
@@ -208,7 +208,7 @@ public final class AuthProto {
       "\\\n\033DiscoveryAuthMethodResponse\022=\n\013auth_m" +
       "ethod\030\001 \001(\0132\034.scalekit.v1.auth.AuthMetho" +
       "dR\nauthMethod\"\036\n\034GetAuthCustomizationsRe" +
-      "quest\"\217\003\n\016PortalSettings\022\230\001\n\017custom_bran" +
+      "quest\"\367\004\n\016PortalSettings\022\230\001\n\017custom_bran" +
       "ding\030\001 \001(\010Bo\222Al2dIndicates whether custo" +
       "m portal branding is enabled for this wo" +
       "rkspace based on billing subscriptionJ\004t" +
@@ -217,237 +217,243 @@ public final class AuthProto {
       "the new self-serve SSO/SCIM flow should " +
       "be shown in the hosted pages (rollout-dr" +
       "iven, not billing-derived)J\005falseH\000R\023new" +
-      "SelfServeSsoScim\210\001\001B\032\n\030_new_self_serve_s" +
-      "so_scim\"\316\002\n\035GetAuthCustomizationsRespons" +
-      "e\022N\n\026customization_settings\030\002 \001(\0132\027.goog" +
-      "le.protobuf.StructR\025customizationSetting" +
-      "s\022A\n\010settings\030\003 \001(\0132 .scalekit.v1.auth.P" +
-      "ortalSettingsB\003\340A\003R\010settings\022z\n\033organiza" +
-      "tion_customizations\030\004 \001(\0132/.scalekit.v1." +
-      "commons.OrganizationCustomizationsB\003\340A\003H" +
-      "\000R\032organizationCustomizations\210\001\001B\036\n\034_org" +
-      "anization_customizations\"N\n\027GetAuthFeatu" +
-      "resResponse\0223\n\010features\030\001 \001(\0132\027.google.p" +
-      "rotobuf.StructR\010features\"U\n\034VerifyPasswo" +
-      "rdLessOtpRequest\0225\n\007otp_req\030\002 \001(\0132\034.scal" +
-      "ekit.v1.auth.OTPRequestR\006otpReq\"\037\n\035Verif" +
-      "yPasswordLessOtpResponse\"\304\002\n\nOTPRequest\022" +
-      "[\n\016code_challenge\030\001 \001(\tB4\222A(2\034OTP sent t" +
-      "o the user\'s emailJ\010\"123456\"\272H\006r\004\020\005\030\006R\rc" +
-      "odeChallenge\022\330\001\n\024g_recaptcha_response\030\002 " +
-      "\001(\tB\245\001\222A\241\0012\206\001reCAPTCHA v2 response token" +
-      " from the client widget. Omit when recap" +
-      "tcha_skip_login_signup flag is enabled o" +
-      "r the widget fails to load.J\026\"03AGdBq24." +
-      "..token...\"R\022gRecaptchaResponse\"\366\001\n\031Rese" +
-      "ndPasswordlessRequest\022\330\001\n\024g_recaptcha_re" +
-      "sponse\030\001 \001(\tB\245\001\222A\241\0012\206\001reCAPTCHA v2 respo" +
-      "nse token from the client widget. Omit w" +
-      "hen recaptcha_skip_login_signup flag is " +
-      "enabled or the widget fails to load.J\026\"0" +
-      "3AGdBq24...token...\"R\022gRecaptchaResponse" +
-      "\"\324\001\n\035ListUserOrganizationsResponse\022D\n\ror" +
-      "ganizations\030\001 \003(\0132\036.scalekit.v1.auth.Org" +
-      "anizationR\rorganizations\0221\n\004user\030\002 \001(\0132\035" +
-      ".scalekit.v1.auth.UserDetailsR\004user\022:\n\006i" +
-      "ntent\030\003 \001(\0162\030.scalekit.v1.auth.IntentB\010\272" +
-      "H\005\202\001\002\020\001R\006intent\"\347\005\n\014Organization\022\016\n\002id\030\001" +
-      " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022+\n\021membersh" +
-      "ip_status\030\003 \001(\tR\020membershipStatus\022=\n\030inv" +
-      "itation_inviter_email\030\004 \001(\tH\000R\026invitatio" +
-      "nInviterEmail\210\001\001\022U\n\026invitation_accepted_" +
-      "at\030\005 \001(\0132\032.google.protobuf.TimestampH\001R\024" +
-      "invitationAcceptedAt\210\001\001\022S\n\025invitation_cr" +
-      "eated_at\030\006 \001(\0132\032.google.protobuf.Timesta" +
-      "mpH\002R\023invitationCreatedAt\210\001\001\022S\n\025invitati" +
-      "on_expires_at\030\007 \001(\0132\032.google.protobuf.Ti" +
-      "mestampH\003R\023invitationExpiresAt\210\001\001\022\314\001\n\010lo" +
-      "go_url\030\010 \001(\tB\253\001\222A\237\0012_HTTPS URL of the or" +
-      "ganization\'s logo image. Maximum 2048 ch" +
-      "aracters. Must use the https scheme.J\'\"h" +
-      "ttps://cdn.example.com/acme-logo.png\"x\200\020" +
-      "\212\001\t^https://\242\002\003uri\272H\005r\003\030\200\020H\004R\007logoUrl\210\001\001" +
-      "B\033\n\031_invitation_inviter_emailB\031\n\027_invita" +
-      "tion_accepted_atB\030\n\026_invitation_created_" +
-      "atB\030\n\026_invitation_expires_atB\013\n\t_logo_ur" +
-      "l\"_\n\013UserDetails\022\024\n\005email\030\001 \001(\tR\005email\022\035" +
-      "\n\nfirst_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_na" +
-      "me\030\003 \001(\tR\010lastName\"\304\001\n\031SignupOrganizatio" +
-      "nRequest\022+\n\021organization_name\030\001 \001(\tR\020org" +
-      "anizationName\022\035\n\nfirst_name\030\002 \001(\tR\tfirst" +
-      "Name\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\033\n\tful" +
-      "l_name\030\004 \001(\tR\010fullName\022!\n\014phone_number\030\005" +
-      " \001(\tR\013phoneNumber\"r\n\032SignupOrganizationR" +
-      "esponse\022\'\n\017organization_id\030\001 \001(\tR\016organi" +
-      "zationId\022+\n\021organization_name\030\002 \001(\tR\020org" +
-      "anizationName\"\326\002\n\035UpdateLoginUserDetails" +
-      "Request\022v\n\rconnection_id\030\001 \001(\tBQ\222AE2+Con" +
-      "nection ID. Unique ID for the connection" +
-      "J\026\"conn_121312434123312\"\272H\006r\004\020\001\030 R\014conne" +
-      "ctionId\022\220\001\n\020login_request_id\030\002 \001(\tBf\222A]2" +
-      "BLogin Request ID that was shared as par" +
-      "t of authorization initiateJ\027\"lri_734150" +
-      "99636808061\"\272H\003\310\001\001R\016loginRequestId\022*\n\004us" +
-      "er\030\003 \001(\0132\026.scalekit.v1.auth.UserR\004user\"\322" +
-      "\001\n\036UpdateLoginUserDetailsResponse\022\257\001\n\017au" +
-      "th_request_id\030\001 \001(\tB\206\001\222A\202\0012gThe auth req" +
-      "uest ID which can be used to look up the" +
-      " authentication journey of the user usin" +
-      "g auth logsJ\027\"req_73415099636808061\"R\rau" +
-      "thRequestId\"\266\023\n\004User\022\245\001\n\003sub\030\001 \001(\tB\222\001\222A\216" +
-      "\0012~Subject identifier for the user (typi" +
-      "cally a unique user ID from the identity" +
-      " provider). Required unless login_failed" +
-      " is true.J\014\"1234567890\"R\003sub\022r\n\005email\030\002 " +
-      "\001(\tB\\\222AY2CUser\'s primary email address. " +
-      "Required unless login_failed is true.J\022\"" +
-      "user@example.com\"R\005email\022=\n\ngiven_name\030\003" +
-      " \001(\tB\036\222A\0332\021User\'s first nameJ\006\"John\"R\tgi" +
-      "venName\022=\n\013family_name\030\004 \001(\tB\034\222A\0312\020User\'" +
-      "s last nameJ\005\"Doe\"R\nfamilyName\022\210\001\n\016email" +
-      "_verified\030\005 \001(\010Ba\222A^2VIndicates whether " +
-      "the user\'s email address has been verifi" +
-      "ed by the identity provider.J\004trueR\remai" +
-      "lVerified\022c\n\014phone_number\030\006 \001(\tB@\222A=2,Us" +
-      "er\'s primary phone number in E.164 forma" +
-      "t.J\r\"+1234567890\"R\013phoneNumber\022\225\001\n\025phone" +
-      "_number_verified\030\007 \001(\010Ba\222A^2UIndicates w" +
-      "hether the user\'s phone number has been " +
-      "verified by the identity provider.J\005fals" +
-      "eR\023phoneNumberVerified\022B\n\004name\030\010 \001(\tB.\222A" +
-      "+2\035Full display name of the userJ\n\"John " +
-      "Doe\"R\004name\022b\n\022preferred_username\030\t \001(\tB3" +
-      "\222A02#User\'s preferred username or handle" +
-      "J\t\"johndoe\"R\021preferredUsername\022b\n\007pictur" +
-      "e\030\n \001(\tBH\222AE2!URL to the user\'s profile " +
-      "pictureJ \"https://example.com/avatar.jpg" +
-      "\"R\007picture\022X\n\006gender\030\013 \001(\tB@\222A=23User\'s " +
-      "gender as reported by the identity provi" +
-      "der.J\006\"male\"R\006gender\022e\n\006locale\030\014 \001(\tBM\222A" +
-      "J2?User\'s locale or language preference " +
-      "(IETF BCP 47 language tag)J\007\"en-US\"R\006loc" +
-      "ale\022f\n\006groups\030\r \003(\tBN\222AK2/List of group " +
-      "names or IDs the user belongs to.J\030[\"adm" +
-      "ins\", \"developers\"]R\006groups\022\362\001\n\021custom_a" +
-      "ttributes\030\016 \001(\0132\027.google.protobuf.Struct" +
-      "B\253\001\222A\247\0012mCustom attributes for the user," +
-      " represented as a key-value map. Used fo" +
-      "r additional identity provider claims.J6" +
-      "{\"department\": \"Engineering\", \"employee_" +
-      "id\": \"E12345\"}R\020customAttributes\022\261\001\n\030org" +
-      "anization_external_id\030\017 \001(\tBr\222Ao2EIdenti" +
-      "fier for the user\342\200\231s organization withi" +
-      "n the identity providerJ&\"132d085d-d89d-" +
-      "4a2e-95bb-49bde680d14f\"H\000R\026organizationE" +
-      "xternalId\210\001\001\022S\n\005roles\030\020 \003(\tB=\222A:2#List o" +
-      "f roles assigned to the user.J\023[\"admin\"," +
-      " \"editor\"]R\005roles\022\275\001\n\032organization_exter" +
-      "nal_name\030\021 \001(\tBz\222Ao2`Name of the organiz" +
-      "ation the user is authenticating into. U" +
-      "sed to display on the consent screen.J\013\"" +
-      "Acme Corp\"\272H\005r\003\030\310\001H\001R\030organizationExtern" +
-      "alName\210\001\001\022\255\001\n\014login_failed\030\022 \001(\010B\211\001\222A\205\0012" +
-      "|Indicates the upstream login attempt fa" +
-      "iled. When true, the login request shoul" +
-      "d be treated as failed rather than compl" +
-      "eted.J\005falseR\013loginFailed:\254\001\272H\250\001\032\245\001\n+use" +
-      "r.sub_email_required_unless_login_failed" +
-      "\022;sub and email must be non-empty unless" +
-      " login_failed is true\0329this.login_failed" +
-      " || (this.sub != \'\' && this.email != \'\')" +
-      "B\033\n\031_organization_external_idB\035\n\033_organi" +
-      "zation_external_name\"\261\002\n\024GetAuthStateRes" +
-      "ponse\022:\n\nauth_state\030\001 \001(\0162\033.scalekit.v1." +
-      "auth.AuthStateR\tauthState\0221\n\004user\030\002 \001(\0132" +
-      "\035.scalekit.v1.auth.UserDetailsR\004user\022\251\001\n" +
-      "\nlogin_hint\030\003 \001(\tB\211\001\222A\205\0012oLogin hint fro" +
-      "m the original authorize request. Typica" +
-      "lly an email address used to pre-fill th" +
-      "e login UI input.J\022\"user@example.com\"R\tl" +
-      "oginHint\"\214\001\n\023GetAuthErrorRequest\022u\n\010erro" +
-      "r_id\030\001 \001(\tBZ\222AH2.Unique identifier for t" +
-      "he authentication errorJ\026\"err_1234567890" +
-      "abcdef\"\272H\014r\n\020\001\030@:\004err_R\007errorId\"Y\n\024GetAu" +
-      "thErrorResponse\022\024\n\005error\030\001 \001(\tR\005error\022+\n" +
-      "\021error_description\030\002 \001(\tR\020errorDescripti" +
-      "on*:\n\006Intent\022\026\n\022INTENT_UNSPECIFIED\020\000\022\013\n\007" +
-      "sign_in\020\001\022\013\n\007sign_up\020\002*\264\004\n\tAuthState\022\032\n\026" +
-      "AUTH_STATE_UNSPECIFIED\020\000\022\036\n\032AUTHENTICATI" +
-      "ON_IN_PROGRESS\020\001\022\031\n\025ORGANIZATION_SWITCHE" +
-      "R\020\002\022\031\n\025ORGANIZATION_SELECTED\020\003\022\027\n\023ORGANI" +
-      "ZATION_SIGNUP\020\004\022 \n\034ORGANIZATION_SWITCHER" +
-      "_SIGNUP\020\005\022\034\n\030OTP_VERIFICATION_PENDING\020\006\022" +
-      "\023\n\017MAGIC_LINK_SENT\020\007\022&\n\"LINK_SENT_OTP_VE" +
-      "RIFICATION_PENDING\020\010\022\020\n\014OTP_VERIFIED\020\t\022\021" +
-      "\n\rLINK_VERIFIED\020\n\022\025\n\021SSO_AUTHENTICATED\020\013" +
-      "\022\024\n\020ORG_USER_CREATED\020\014\022\034\n\030AUTHENTICATION" +
-      "_COMPLETED\020\r\022\031\n\025AUTHENTICATION_FAILED\020\016\022" +
-      "\025\n\021WEBAUTHN_VERIFIED\020\017\022 \n\034VERIFICATION_M" +
-      "AGIC_LINK_SENT\020\020\022$\n VERIFICATION_MAGIC_L" +
-      "INK_OTP_SENT\020\021\022\031\n\025VERIFICATION_OTP_SENT\020" +
-      "\022\022\032\n\026VERIFICATION_COMPLETED\020\0232\335\021\n\013AuthSe" +
-      "rvice\022\230\001\n\017ListAuthMethods\022(.scalekit.v1." +
-      "auth.ListAuthMethodsRequest\032).scalekit.v" +
-      "1.auth.ListAuthMethodsResponse\"0\202\265\030\002\030\001\372\322" +
-      "\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\022\023/api/v1/authmethods" +
-      "\022\272\001\n\023DiscoveryAuthMethod\022,.scalekit.v1.a" +
-      "uth.DiscoveryAuthMethodRequest\032-.scaleki" +
-      "t.v1.auth.DiscoveryAuthMethodResponse\"F\202" +
-      "\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\"\026/api/v1/auth" +
-      ":discovery:\021discovery_request\022\300\001\n\025Verify" +
-      "PasswordLessOtp\022..scalekit.v1.auth.Verif" +
-      "yPasswordLessOtpRequest\032/.scalekit.v1.au" +
-      "th.VerifyPasswordLessOtpResponse\"F\202\265\030\002\030\001" +
-      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\" /api/v1/auth/pass" +
-      "wordless:verify:\007otp_req\022\233\001\n\022ResendPassw" +
-      "ordless\022+.scalekit.v1.auth.ResendPasswor" +
-      "dlessRequest\032\026.google.protobuf.Empty\"@\202\265" +
-      "\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\" /api/v1/auth/" +
-      "passwordless:resend:\001*\022\231\001\n\025ListUserOrgan" +
-      "izations\022\026.google.protobuf.Empty\032/.scale" +
-      "kit.v1.auth.ListUserOrganizationsRespons" +
-      "e\"7\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api/v1/" +
-      "auth:organizations\022\244\001\n\022SignupOrganizatio" +
-      "n\022+.scalekit.v1.auth.SignupOrganizationR" +
-      "equest\032,.scalekit.v1.auth.SignupOrganiza" +
-      "tionResponse\"3\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002" +
-      "\030\"\023/api/v1/auth:signup:\001*\022\177\n\014GetAuthStat" +
-      "e\022\026.google.protobuf.Empty\032&.scalekit.v1." +
-      "auth.GetAuthStateResponse\"/\202\265\030\002\030\001\372\322\344\223\002\t\022" +
-      "\007PREVIEW\202\323\344\223\002\024\022\022/api/v1/auth/state\022\266\001\n\014G" +
-      "etAuthError\022%.scalekit.v1.auth.GetAuthEr" +
-      "rorRequest\032&.scalekit.v1.auth.GetAuthErr" +
-      "orResponse\"W\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002<\022" +
-      "\031/api/v1/errors/{error_id}Z\037\022\035/api/v1/au" +
-      "th/error/{error_id}\022j\n\006Logout\022\026.google.p" +
-      "rotobuf.Empty\032\026.google.protobuf.Empty\"0\202" +
-      "\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\"\023/api/v1/auth" +
-      "/logout\022\262\001\n\025GetAuthCustomizations\022..scal" +
-      "ekit.v1.auth.GetAuthCustomizationsReques" +
-      "t\032/.scalekit.v1.auth.GetAuthCustomizatio" +
-      "nsResponse\"8\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\035\022" +
-      "\033/api/v1/auth:customizations\022\210\001\n\017GetAuth" +
-      "Features\022\026.google.protobuf.Empty\032).scale" +
-      "kit.v1.auth.GetAuthFeaturesResponse\"2\202\265\030" +
-      "\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/api/v1/auth:f" +
-      "eatures\022\353\003\n\026UpdateLoginUserDetails\022/.sca" +
-      "lekit.v1.auth.UpdateLoginUserDetailsRequ" +
-      "est\0320.scalekit.v1.auth.UpdateLoginUserDe" +
-      "tailsResponse\"\355\002\222A\375\001\n\013Connections\022%Updat" +
-      "e User Details for login request\032%Update" +
-      " User Details for login requestJ\237\001\n\003200\022" +
-      "\227\001\n_User details submitted successfully;" +
-      " returns the auth request ID for the aut" +
-      "hentication journey\0224\n2\0320.scalekit.v1.au" +
-      "th.UpdateLoginUserDetailsResponse\202\265\030\002\030\004\372" +
-      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002Q\"I/api/v1/connection" +
-      "s/{connection_id}/auth-requests/{login_r" +
-      "equest_id}/user:\004userB\301\001\n\"com.scalekit.g" +
-      "rpc.scalekit.v1.authB\tAuthProtoP\001Z.githu" +
-      "b.com/scalekit-inc/scalekit/pkg/grpc/aut" +
-      "h\242\002\003SVA\252\002\020Scalekit.V1.Auth\312\002\020Scalekit\\V1" +
-      "\\Auth\342\002\034Scalekit\\V1\\Auth\\GPBMetadata\352\002\022S" +
-      "calekit::V1::Authb\006proto3"
+      "SelfServeSsoScim\210\001\001\022\313\001\n\025mcp_consent_scre" +
+      "en_v2\030\003 \001(\010B\222\001\222A\216\0012\204\001Indicates whether t" +
+      "he MCP consent screen should use the two" +
+      "-column layout (rollout-driven). Present" +
+      " only for consent-screen requestsJ\005false" +
+      "H\001R\022mcpConsentScreenV2\210\001\001B\032\n\030_new_self_s" +
+      "erve_sso_scimB\030\n\026_mcp_consent_screen_v2\"" +
+      "\316\002\n\035GetAuthCustomizationsResponse\022N\n\026cus" +
+      "tomization_settings\030\002 \001(\0132\027.google.proto" +
+      "buf.StructR\025customizationSettings\022A\n\010set" +
+      "tings\030\003 \001(\0132 .scalekit.v1.auth.PortalSet" +
+      "tingsB\003\340A\003R\010settings\022z\n\033organization_cus" +
+      "tomizations\030\004 \001(\0132/.scalekit.v1.commons." +
+      "OrganizationCustomizationsB\003\340A\003H\000R\032organ" +
+      "izationCustomizations\210\001\001B\036\n\034_organizatio" +
+      "n_customizations\"N\n\027GetAuthFeaturesRespo" +
+      "nse\0223\n\010features\030\001 \001(\0132\027.google.protobuf." +
+      "StructR\010features\"U\n\034VerifyPasswordLessOt" +
+      "pRequest\0225\n\007otp_req\030\002 \001(\0132\034.scalekit.v1." +
+      "auth.OTPRequestR\006otpReq\"\037\n\035VerifyPasswor" +
+      "dLessOtpResponse\"\304\002\n\nOTPRequest\022[\n\016code_" +
+      "challenge\030\001 \001(\tB4\222A(2\034OTP sent to the us" +
+      "er\'s emailJ\010\"123456\"\272H\006r\004\020\005\030\006R\rcodeChall" +
+      "enge\022\330\001\n\024g_recaptcha_response\030\002 \001(\tB\245\001\222A" +
+      "\241\0012\206\001reCAPTCHA v2 response token from th" +
+      "e client widget. Omit when recaptcha_ski" +
+      "p_login_signup flag is enabled or the wi" +
+      "dget fails to load.J\026\"03AGdBq24...token." +
+      "..\"R\022gRecaptchaResponse\"\372\001\n\035ResendAuthPa" +
+      "sswordlessRequest\022\330\001\n\024g_recaptcha_respon" +
+      "se\030\001 \001(\tB\245\001\222A\241\0012\206\001reCAPTCHA v2 response " +
+      "token from the client widget. Omit when " +
+      "recaptcha_skip_login_signup flag is enab" +
+      "led or the widget fails to load.J\026\"03AGd" +
+      "Bq24...token...\"R\022gRecaptchaResponse\"\324\001\n" +
+      "\035ListUserOrganizationsResponse\022D\n\rorgani" +
+      "zations\030\001 \003(\0132\036.scalekit.v1.auth.Organiz" +
+      "ationR\rorganizations\0221\n\004user\030\002 \001(\0132\035.sca" +
+      "lekit.v1.auth.UserDetailsR\004user\022:\n\006inten" +
+      "t\030\003 \001(\0162\030.scalekit.v1.auth.IntentB\010\272H\005\202\001" +
+      "\002\020\001R\006intent\"\347\005\n\014Organization\022\016\n\002id\030\001 \001(\t" +
+      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022+\n\021membership_s" +
+      "tatus\030\003 \001(\tR\020membershipStatus\022=\n\030invitat" +
+      "ion_inviter_email\030\004 \001(\tH\000R\026invitationInv" +
+      "iterEmail\210\001\001\022U\n\026invitation_accepted_at\030\005" +
+      " \001(\0132\032.google.protobuf.TimestampH\001R\024invi" +
+      "tationAcceptedAt\210\001\001\022S\n\025invitation_create" +
+      "d_at\030\006 \001(\0132\032.google.protobuf.TimestampH\002" +
+      "R\023invitationCreatedAt\210\001\001\022S\n\025invitation_e" +
+      "xpires_at\030\007 \001(\0132\032.google.protobuf.Timest" +
+      "ampH\003R\023invitationExpiresAt\210\001\001\022\314\001\n\010logo_u" +
+      "rl\030\010 \001(\tB\253\001\222A\237\0012_HTTPS URL of the organi" +
+      "zation\'s logo image. Maximum 2048 charac" +
+      "ters. Must use the https scheme.J\'\"https" +
+      "://cdn.example.com/acme-logo.png\"x\200\020\212\001\t^" +
+      "https://\242\002\003uri\272H\005r\003\030\200\020H\004R\007logoUrl\210\001\001B\033\n\031" +
+      "_invitation_inviter_emailB\031\n\027_invitation" +
+      "_accepted_atB\030\n\026_invitation_created_atB\030" +
+      "\n\026_invitation_expires_atB\013\n\t_logo_url\"_\n" +
+      "\013UserDetails\022\024\n\005email\030\001 \001(\tR\005email\022\035\n\nfi" +
+      "rst_name\030\002 \001(\tR\tfirstName\022\033\n\tlast_name\030\003" +
+      " \001(\tR\010lastName\"\304\001\n\031SignupOrganizationReq" +
+      "uest\022+\n\021organization_name\030\001 \001(\tR\020organiz" +
+      "ationName\022\035\n\nfirst_name\030\002 \001(\tR\tfirstName" +
+      "\022\033\n\tlast_name\030\003 \001(\tR\010lastName\022\033\n\tfull_na" +
+      "me\030\004 \001(\tR\010fullName\022!\n\014phone_number\030\005 \001(\t" +
+      "R\013phoneNumber\"r\n\032SignupOrganizationRespo" +
+      "nse\022\'\n\017organization_id\030\001 \001(\tR\016organizati" +
+      "onId\022+\n\021organization_name\030\002 \001(\tR\020organiz" +
+      "ationName\"\326\002\n\035UpdateLoginUserDetailsRequ" +
+      "est\022v\n\rconnection_id\030\001 \001(\tBQ\222AE2+Connect" +
+      "ion ID. Unique ID for the connectionJ\026\"c" +
+      "onn_121312434123312\"\272H\006r\004\020\001\030 R\014connectio" +
+      "nId\022\220\001\n\020login_request_id\030\002 \001(\tBf\222A]2BLog" +
+      "in Request ID that was shared as part of" +
+      " authorization initiateJ\027\"lri_7341509963" +
+      "6808061\"\272H\003\310\001\001R\016loginRequestId\022*\n\004user\030\003" +
+      " \001(\0132\026.scalekit.v1.auth.UserR\004user\"\322\001\n\036U" +
+      "pdateLoginUserDetailsResponse\022\257\001\n\017auth_r" +
+      "equest_id\030\001 \001(\tB\206\001\222A\202\0012gThe auth request" +
+      " ID which can be used to look up the aut" +
+      "hentication journey of the user using au" +
+      "th logsJ\027\"req_73415099636808061\"R\rauthRe" +
+      "questId\"\266\023\n\004User\022\245\001\n\003sub\030\001 \001(\tB\222\001\222A\216\0012~S" +
+      "ubject identifier for the user (typicall" +
+      "y a unique user ID from the identity pro" +
+      "vider). Required unless login_failed is " +
+      "true.J\014\"1234567890\"R\003sub\022r\n\005email\030\002 \001(\tB" +
+      "\\\222AY2CUser\'s primary email address. Requ" +
+      "ired unless login_failed is true.J\022\"user" +
+      "@example.com\"R\005email\022=\n\ngiven_name\030\003 \001(\t" +
+      "B\036\222A\0332\021User\'s first nameJ\006\"John\"R\tgivenN" +
+      "ame\022=\n\013family_name\030\004 \001(\tB\034\222A\0312\020User\'s la" +
+      "st nameJ\005\"Doe\"R\nfamilyName\022\210\001\n\016email_ver" +
+      "ified\030\005 \001(\010Ba\222A^2VIndicates whether the " +
+      "user\'s email address has been verified b" +
+      "y the identity provider.J\004trueR\remailVer" +
+      "ified\022c\n\014phone_number\030\006 \001(\tB@\222A=2,User\'s" +
+      " primary phone number in E.164 format.J\r" +
+      "\"+1234567890\"R\013phoneNumber\022\225\001\n\025phone_num" +
+      "ber_verified\030\007 \001(\010Ba\222A^2UIndicates wheth" +
+      "er the user\'s phone number has been veri" +
+      "fied by the identity provider.J\005falseR\023p" +
+      "honeNumberVerified\022B\n\004name\030\010 \001(\tB.\222A+2\035F" +
+      "ull display name of the userJ\n\"John Doe\"" +
+      "R\004name\022b\n\022preferred_username\030\t \001(\tB3\222A02" +
+      "#User\'s preferred username or handleJ\t\"j" +
+      "ohndoe\"R\021preferredUsername\022b\n\007picture\030\n " +
+      "\001(\tBH\222AE2!URL to the user\'s profile pict" +
+      "ureJ \"https://example.com/avatar.jpg\"R\007p" +
+      "icture\022X\n\006gender\030\013 \001(\tB@\222A=23User\'s gend" +
+      "er as reported by the identity provider." +
+      "J\006\"male\"R\006gender\022e\n\006locale\030\014 \001(\tBM\222AJ2?U" +
+      "ser\'s locale or language preference (IET" +
+      "F BCP 47 language tag)J\007\"en-US\"R\006locale\022" +
+      "f\n\006groups\030\r \003(\tBN\222AK2/List of group name" +
+      "s or IDs the user belongs to.J\030[\"admins\"" +
+      ", \"developers\"]R\006groups\022\362\001\n\021custom_attri" +
+      "butes\030\016 \001(\0132\027.google.protobuf.StructB\253\001\222" +
+      "A\247\0012mCustom attributes for the user, rep" +
+      "resented as a key-value map. Used for ad" +
+      "ditional identity provider claims.J6{\"de" +
+      "partment\": \"Engineering\", \"employee_id\":" +
+      " \"E12345\"}R\020customAttributes\022\261\001\n\030organiz" +
+      "ation_external_id\030\017 \001(\tBr\222Ao2EIdentifier" +
+      " for the user\342\200\231s organization within th" +
+      "e identity providerJ&\"132d085d-d89d-4a2e" +
+      "-95bb-49bde680d14f\"H\000R\026organizationExter" +
+      "nalId\210\001\001\022S\n\005roles\030\020 \003(\tB=\222A:2#List of ro" +
+      "les assigned to the user.J\023[\"admin\", \"ed" +
+      "itor\"]R\005roles\022\275\001\n\032organization_external_" +
+      "name\030\021 \001(\tBz\222Ao2`Name of the organizatio" +
+      "n the user is authenticating into. Used " +
+      "to display on the consent screen.J\013\"Acme" +
+      " Corp\"\272H\005r\003\030\310\001H\001R\030organizationExternalNa" +
+      "me\210\001\001\022\255\001\n\014login_failed\030\022 \001(\010B\211\001\222A\205\0012|Ind" +
+      "icates the upstream login attempt failed" +
+      ". When true, the login request should be" +
+      " treated as failed rather than completed" +
+      ".J\005falseR\013loginFailed:\254\001\272H\250\001\032\245\001\n+user.su" +
+      "b_email_required_unless_login_failed\022;su" +
+      "b and email must be non-empty unless log" +
+      "in_failed is true\0329this.login_failed || " +
+      "(this.sub != \'\' && this.email != \'\')B\033\n\031" +
+      "_organization_external_idB\035\n\033_organizati" +
+      "on_external_name\"\261\002\n\024GetAuthStateRespons" +
+      "e\022:\n\nauth_state\030\001 \001(\0162\033.scalekit.v1.auth" +
+      ".AuthStateR\tauthState\0221\n\004user\030\002 \001(\0132\035.sc" +
+      "alekit.v1.auth.UserDetailsR\004user\022\251\001\n\nlog" +
+      "in_hint\030\003 \001(\tB\211\001\222A\205\0012oLogin hint from th" +
+      "e original authorize request. Typically " +
+      "an email address used to pre-fill the lo" +
+      "gin UI input.J\022\"user@example.com\"R\tlogin" +
+      "Hint\"\214\001\n\023GetAuthErrorRequest\022u\n\010error_id" +
+      "\030\001 \001(\tBZ\222AH2.Unique identifier for the a" +
+      "uthentication errorJ\026\"err_1234567890abcd" +
+      "ef\"\272H\014r\n\020\001\030@:\004err_R\007errorId\"Y\n\024GetAuthEr" +
+      "rorResponse\022\024\n\005error\030\001 \001(\tR\005error\022+\n\021err" +
+      "or_description\030\002 \001(\tR\020errorDescription*:" +
+      "\n\006Intent\022\026\n\022INTENT_UNSPECIFIED\020\000\022\013\n\007sign" +
+      "_in\020\001\022\013\n\007sign_up\020\002*\264\004\n\tAuthState\022\032\n\026AUTH" +
+      "_STATE_UNSPECIFIED\020\000\022\036\n\032AUTHENTICATION_I" +
+      "N_PROGRESS\020\001\022\031\n\025ORGANIZATION_SWITCHER\020\002\022" +
+      "\031\n\025ORGANIZATION_SELECTED\020\003\022\027\n\023ORGANIZATI" +
+      "ON_SIGNUP\020\004\022 \n\034ORGANIZATION_SWITCHER_SIG" +
+      "NUP\020\005\022\034\n\030OTP_VERIFICATION_PENDING\020\006\022\023\n\017M" +
+      "AGIC_LINK_SENT\020\007\022&\n\"LINK_SENT_OTP_VERIFI" +
+      "CATION_PENDING\020\010\022\020\n\014OTP_VERIFIED\020\t\022\021\n\rLI" +
+      "NK_VERIFIED\020\n\022\025\n\021SSO_AUTHENTICATED\020\013\022\024\n\020" +
+      "ORG_USER_CREATED\020\014\022\034\n\030AUTHENTICATION_COM" +
+      "PLETED\020\r\022\031\n\025AUTHENTICATION_FAILED\020\016\022\025\n\021W" +
+      "EBAUTHN_VERIFIED\020\017\022 \n\034VERIFICATION_MAGIC" +
+      "_LINK_SENT\020\020\022$\n VERIFICATION_MAGIC_LINK_" +
+      "OTP_SENT\020\021\022\031\n\025VERIFICATION_OTP_SENT\020\022\022\032\n" +
+      "\026VERIFICATION_COMPLETED\020\0232\345\021\n\013AuthServic" +
+      "e\022\230\001\n\017ListAuthMethods\022(.scalekit.v1.auth" +
+      ".ListAuthMethodsRequest\032).scalekit.v1.au" +
+      "th.ListAuthMethodsResponse\"0\202\265\030\002\030\001\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002\025\022\023/api/v1/authmethods\022\272\001\n" +
+      "\023DiscoveryAuthMethod\022,.scalekit.v1.auth." +
+      "DiscoveryAuthMethodRequest\032-.scalekit.v1" +
+      ".auth.DiscoveryAuthMethodResponse\"F\202\265\030\002\030" +
+      "\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002+\"\026/api/v1/auth:dis" +
+      "covery:\021discovery_request\022\300\001\n\025VerifyPass" +
+      "wordLessOtp\022..scalekit.v1.auth.VerifyPas" +
+      "swordLessOtpRequest\032/.scalekit.v1.auth.V" +
+      "erifyPasswordLessOtpResponse\"F\202\265\030\002\030\001\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002+\" /api/v1/auth/password" +
+      "less:verify:\007otp_req\022\243\001\n\026ResendAuthPassw" +
+      "ordless\022/.scalekit.v1.auth.ResendAuthPas" +
+      "swordlessRequest\032\026.google.protobuf.Empty" +
+      "\"@\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%\" /api/v1/a" +
+      "uth/passwordless:resend:\001*\022\231\001\n\025ListUserO" +
+      "rganizations\022\026.google.protobuf.Empty\032/.s" +
+      "calekit.v1.auth.ListUserOrganizationsRes" +
+      "ponse\"7\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\034\022\032/api" +
+      "/v1/auth:organizations\022\244\001\n\022SignupOrganiz" +
+      "ation\022+.scalekit.v1.auth.SignupOrganizat" +
+      "ionRequest\032,.scalekit.v1.auth.SignupOrga" +
+      "nizationResponse\"3\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202" +
+      "\323\344\223\002\030\"\023/api/v1/auth:signup:\001*\022\177\n\014GetAuth" +
+      "State\022\026.google.protobuf.Empty\032&.scalekit" +
+      ".v1.auth.GetAuthStateResponse\"/\202\265\030\002\030\001\372\322\344" +
+      "\223\002\t\022\007PREVIEW\202\323\344\223\002\024\022\022/api/v1/auth/state\022\266" +
+      "\001\n\014GetAuthError\022%.scalekit.v1.auth.GetAu" +
+      "thErrorRequest\032&.scalekit.v1.auth.GetAut" +
+      "hErrorResponse\"W\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002<\022\031/api/v1/errors/{error_id}Z\037\022\035/api/v" +
+      "1/auth/error/{error_id}\022j\n\006Logout\022\026.goog" +
+      "le.protobuf.Empty\032\026.google.protobuf.Empt" +
+      "y\"0\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\025\"\023/api/v1/" +
+      "auth/logout\022\262\001\n\025GetAuthCustomizations\022.." +
+      "scalekit.v1.auth.GetAuthCustomizationsRe" +
+      "quest\032/.scalekit.v1.auth.GetAuthCustomiz" +
+      "ationsResponse\"8\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002\035\022\033/api/v1/auth:customizations\022\210\001\n\017Get" +
+      "AuthFeatures\022\026.google.protobuf.Empty\032).s" +
+      "calekit.v1.auth.GetAuthFeaturesResponse\"" +
+      "2\202\265\030\002\030\001\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/api/v1/au" +
+      "th:features\022\353\003\n\026UpdateLoginUserDetails\022/" +
+      ".scalekit.v1.auth.UpdateLoginUserDetails" +
+      "Request\0320.scalekit.v1.auth.UpdateLoginUs" +
+      "erDetailsResponse\"\355\002\222A\375\001\n\013Connections\022%U" +
+      "pdate User Details for login request\032%Up" +
+      "date User Details for login requestJ\237\001\n\003" +
+      "200\022\227\001\n_User details submitted successfu" +
+      "lly; returns the auth request ID for the" +
+      " authentication journey\0224\n2\0320.scalekit.v" +
+      "1.auth.UpdateLoginUserDetailsResponse\202\265\030" +
+      "\002\030\004\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002Q\"I/api/v1/connec" +
+      "tions/{connection_id}/auth-requests/{log" +
+      "in_request_id}/user:\004userB\301\001\n\"com.scalek" +
+      "it.grpc.scalekit.v1.authB\tAuthProtoP\001Z.g" +
+      "ithub.com/scalekit-inc/scalekit/pkg/grpc" +
+      "/auth\242\002\003SVA\252\002\020Scalekit.V1.Auth\312\002\020Scaleki" +
+      "t\\V1\\Auth\342\002\034Scalekit\\V1\\Auth\\GPBMetadata" +
+      "\352\002\022Scalekit::V1::Authb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -511,7 +517,7 @@ public final class AuthProto {
     internal_static_scalekit_v1_auth_PortalSettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_PortalSettings_descriptor,
-        new java.lang.String[] { "CustomBranding", "NewSelfServeSsoScim", });
+        new java.lang.String[] { "CustomBranding", "NewSelfServeSsoScim", "McpConsentScreenV2", });
     internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_scalekit_v1_auth_GetAuthCustomizationsResponse_fieldAccessorTable = new
@@ -542,11 +548,11 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_auth_OTPRequest_descriptor,
         new java.lang.String[] { "CodeChallenge", "GRecaptchaResponse", });
-    internal_static_scalekit_v1_auth_ResendPasswordlessRequest_descriptor =
+    internal_static_scalekit_v1_auth_ResendAuthPasswordlessRequest_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_scalekit_v1_auth_ResendPasswordlessRequest_fieldAccessorTable = new
+    internal_static_scalekit_v1_auth_ResendAuthPasswordlessRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_scalekit_v1_auth_ResendPasswordlessRequest_descriptor,
+        internal_static_scalekit_v1_auth_ResendAuthPasswordlessRequest_descriptor,
         new java.lang.String[] { "GRecaptchaResponse", });
     internal_static_scalekit_v1_auth_ListUserOrganizationsResponse_descriptor =
       getDescriptor().getMessageTypes().get(14);

@@ -104,7 +104,7 @@ public enum BillingSubscriptionStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(1);
+    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final BillingSubscriptionStatus[] VALUES = values();

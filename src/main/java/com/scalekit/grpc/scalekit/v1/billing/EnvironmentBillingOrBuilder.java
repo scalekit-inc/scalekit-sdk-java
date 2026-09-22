@@ -96,4 +96,194 @@ public interface EnvironmentBillingOrBuilder extends
    * @return The contractStatus.
    */
   com.scalekit.grpc.scalekit.v1.billing.ContractStatus getContractStatus();
+
+  /**
+   * <pre>
+   * Entitlement keys this environment currently pays for standalone, independent of `plans` — e.g. EU
+   * data residency bought while on a plan that doesn't include it for free. A key that a later plan
+   * change makes GrantIncluded stops appearing here (and stops being billed separately) without any
+   * action from the caller — see UpdateBillingPlanRequest.add_ons.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 6 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the addOns.
+   */
+  java.util.List<java.lang.String>
+      getAddOnsList();
+  /**
+   * <pre>
+   * Entitlement keys this environment currently pays for standalone, independent of `plans` — e.g. EU
+   * data residency bought while on a plan that doesn't include it for free. A key that a later plan
+   * change makes GrantIncluded stops appearing here (and stops being billed separately) without any
+   * action from the caller — see UpdateBillingPlanRequest.add_ons.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 6 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of addOns.
+   */
+  int getAddOnsCount();
+  /**
+   * <pre>
+   * Entitlement keys this environment currently pays for standalone, independent of `plans` — e.g. EU
+   * data residency bought while on a plan that doesn't include it for free. A key that a later plan
+   * change makes GrantIncluded stops appearing here (and stops being billed separately) without any
+   * action from the caller — see UpdateBillingPlanRequest.add_ons.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 6 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  java.lang.String getAddOns(int index);
+  /**
+   * <pre>
+   * Entitlement keys this environment currently pays for standalone, independent of `plans` — e.g. EU
+   * data residency bought while on a plan that doesn't include it for free. A key that a later plan
+   * change makes GrantIncluded stops appearing here (and stops being billed separately) without any
+   * action from the caller — see UpdateBillingPlanRequest.add_ons.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 6 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  com.google.protobuf.ByteString
+      getAddOnsBytes(int index);
+
+  /**
+   * <pre>
+   * Entitlement keys this environment can still BUY, given its current `plans`. Disjoint from
+   * `add_ons`: a key already purchased, or one a plan already includes for free, is not for sale and
+   * does not appear here.
+   *
+   * Resolved server-side rather than derived by the caller from the catalog, because purchasability is
+   * not a property of the plan alone — `customization_branding` is sold only on a modular-auth
+   * environment (see `full_stack_auth`), which the catalog has no way to express. A caller that filtered
+   * the catalog itself would offer an add-on this API then refuses.
+   * </pre>
+   *
+   * <code>repeated string purchasable_add_ons = 7 [json_name = "purchasableAddOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the purchasableAddOns.
+   */
+  java.util.List<java.lang.String>
+      getPurchasableAddOnsList();
+  /**
+   * <pre>
+   * Entitlement keys this environment can still BUY, given its current `plans`. Disjoint from
+   * `add_ons`: a key already purchased, or one a plan already includes for free, is not for sale and
+   * does not appear here.
+   *
+   * Resolved server-side rather than derived by the caller from the catalog, because purchasability is
+   * not a property of the plan alone — `customization_branding` is sold only on a modular-auth
+   * environment (see `full_stack_auth`), which the catalog has no way to express. A caller that filtered
+   * the catalog itself would offer an add-on this API then refuses.
+   * </pre>
+   *
+   * <code>repeated string purchasable_add_ons = 7 [json_name = "purchasableAddOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of purchasableAddOns.
+   */
+  int getPurchasableAddOnsCount();
+  /**
+   * <pre>
+   * Entitlement keys this environment can still BUY, given its current `plans`. Disjoint from
+   * `add_ons`: a key already purchased, or one a plan already includes for free, is not for sale and
+   * does not appear here.
+   *
+   * Resolved server-side rather than derived by the caller from the catalog, because purchasability is
+   * not a property of the plan alone — `customization_branding` is sold only on a modular-auth
+   * environment (see `full_stack_auth`), which the catalog has no way to express. A caller that filtered
+   * the catalog itself would offer an add-on this API then refuses.
+   * </pre>
+   *
+   * <code>repeated string purchasable_add_ons = 7 [json_name = "purchasableAddOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The purchasableAddOns at the given index.
+   */
+  java.lang.String getPurchasableAddOns(int index);
+  /**
+   * <pre>
+   * Entitlement keys this environment can still BUY, given its current `plans`. Disjoint from
+   * `add_ons`: a key already purchased, or one a plan already includes for free, is not for sale and
+   * does not appear here.
+   *
+   * Resolved server-side rather than derived by the caller from the catalog, because purchasability is
+   * not a property of the plan alone — `customization_branding` is sold only on a modular-auth
+   * environment (see `full_stack_auth`), which the catalog has no way to express. A caller that filtered
+   * the catalog itself would offer an add-on this API then refuses.
+   * </pre>
+   *
+   * <code>repeated string purchasable_add_ons = 7 [json_name = "purchasableAddOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the purchasableAddOns at the given index.
+   */
+  com.google.protobuf.ByteString
+      getPurchasableAddOnsBytes(int index);
+
+  /**
+   * <pre>
+   * Whether Full Stack Auth is enabled for this environment — session management, user management and
+   * the login box all on. Carried here so a caller resolving a PROSPECTIVE plan (the plan wizard, which
+   * prices tiers the server has not seen yet) can apply the same modular-auth condition
+   * `purchasable_add_ons` already reflects, instead of computing FSA independently and disagreeing.
+   *
+   * Not a feature-flag mirror: it is computed from the three settings above, so it follows an
+   * environment being switched between modular and full-stack after creation.
+   * </pre>
+   *
+   * <code>bool full_stack_auth = 8 [json_name = "fullStackAuth", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The fullStackAuth.
+   */
+  boolean getFullStackAuth();
+
+  /**
+   * <pre>
+   * This environment's CURRENT billing period, from its own contract anchor — the same
+   * `contract.BillingPeriod(now)` GetBillingUsage reports, carried here so a caller showing the plan
+   * does not have to fetch usage purely to date it.
+   *
+   * Per environment, deliberately: the anchor is a property of each contract, so two production
+   * environments created on different days have different periods. There is no workspace-level answer
+   * (GetBillingAccount is workspace-scoped and would have to pick one contract arbitrarily).
+   *
+   * Always populated: this listing is built BY iterating contracts, so every row has one, and
+   * BillingPeriod falls back to the calendar month for a contract with no anchor rather than failing.
+   * An environment with no contract has no row here at all, which is why there is no "empty" case.
+   * </pre>
+   *
+   * <code>string period_start = 9 [json_name = "periodStart", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The periodStart.
+   */
+  java.lang.String getPeriodStart();
+  /**
+   * <pre>
+   * This environment's CURRENT billing period, from its own contract anchor — the same
+   * `contract.BillingPeriod(now)` GetBillingUsage reports, carried here so a caller showing the plan
+   * does not have to fetch usage purely to date it.
+   *
+   * Per environment, deliberately: the anchor is a property of each contract, so two production
+   * environments created on different days have different periods. There is no workspace-level answer
+   * (GetBillingAccount is workspace-scoped and would have to pick one contract arbitrarily).
+   *
+   * Always populated: this listing is built BY iterating contracts, so every row has one, and
+   * BillingPeriod falls back to the calendar month for a contract with no anchor rather than failing.
+   * An environment with no contract has no row here at all, which is why there is no "empty" case.
+   * </pre>
+   *
+   * <code>string period_start = 9 [json_name = "periodStart", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for periodStart.
+   */
+  com.google.protobuf.ByteString
+      getPeriodStartBytes();
+
+  /**
+   * <code>string period_end = 10 [json_name = "periodEnd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The periodEnd.
+   */
+  java.lang.String getPeriodEnd();
+  /**
+   * <code>string period_end = 10 [json_name = "periodEnd", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for periodEnd.
+   */
+  com.google.protobuf.ByteString
+      getPeriodEndBytes();
 }

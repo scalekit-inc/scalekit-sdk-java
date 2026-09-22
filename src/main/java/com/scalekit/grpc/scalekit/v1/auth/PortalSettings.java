@@ -94,6 +94,37 @@ private static final long serialVersionUID = 0L;
     return newSelfServeSsoScim_;
   }
 
+  public static final int MCP_CONSENT_SCREEN_V2_FIELD_NUMBER = 3;
+  private boolean mcpConsentScreenV2_ = false;
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+   * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+   * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+   * </pre>
+   *
+   * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the mcpConsentScreenV2 field is set.
+   */
+  @java.lang.Override
+  public boolean hasMcpConsentScreenV2() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+   * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+   * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+   * </pre>
+   *
+   * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpConsentScreenV2.
+   */
+  @java.lang.Override
+  public boolean getMcpConsentScreenV2() {
+    return mcpConsentScreenV2_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -114,6 +145,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(2, newSelfServeSsoScim_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(3, mcpConsentScreenV2_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -130,6 +164,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, newSelfServeSsoScim_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, mcpConsentScreenV2_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -153,6 +191,11 @@ private static final long serialVersionUID = 0L;
       if (getNewSelfServeSsoScim()
           != other.getNewSelfServeSsoScim()) return false;
     }
+    if (hasMcpConsentScreenV2() != other.hasMcpConsentScreenV2()) return false;
+    if (hasMcpConsentScreenV2()) {
+      if (getMcpConsentScreenV2()
+          != other.getMcpConsentScreenV2()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -171,6 +214,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NEW_SELF_SERVE_SSO_SCIM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNewSelfServeSsoScim());
+    }
+    if (hasMcpConsentScreenV2()) {
+      hash = (37 * hash) + MCP_CONSENT_SCREEN_V2_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMcpConsentScreenV2());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -310,6 +358,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       customBranding_ = false;
       newSelfServeSsoScim_ = false;
+      mcpConsentScreenV2_ = false;
       return this;
     }
 
@@ -350,6 +399,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.newSelfServeSsoScim_ = newSelfServeSsoScim_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mcpConsentScreenV2_ = mcpConsentScreenV2_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -404,6 +457,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasNewSelfServeSsoScim()) {
         setNewSelfServeSsoScim(other.getNewSelfServeSsoScim());
       }
+      if (other.hasMcpConsentScreenV2()) {
+        setMcpConsentScreenV2(other.getMcpConsentScreenV2());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -440,6 +496,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 16
+            case 24: {
+              mcpConsentScreenV2_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -568,6 +629,70 @@ private static final long serialVersionUID = 0L;
     public Builder clearNewSelfServeSsoScim() {
       bitField0_ = (bitField0_ & ~0x00000002);
       newSelfServeSsoScim_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean mcpConsentScreenV2_ ;
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+     * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+     * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+     * </pre>
+     *
+     * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the mcpConsentScreenV2 field is set.
+     */
+    @java.lang.Override
+    public boolean hasMcpConsentScreenV2() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+     * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+     * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+     * </pre>
+     *
+     * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The mcpConsentScreenV2.
+     */
+    @java.lang.Override
+    public boolean getMcpConsentScreenV2() {
+      return mcpConsentScreenV2_;
+    }
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+     * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+     * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+     * </pre>
+     *
+     * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The mcpConsentScreenV2 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMcpConsentScreenV2(boolean value) {
+
+      mcpConsentScreenV2_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+     * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+     * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+     * </pre>
+     *
+     * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMcpConsentScreenV2() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      mcpConsentScreenV2_ = false;
       onChanged();
       return this;
     }

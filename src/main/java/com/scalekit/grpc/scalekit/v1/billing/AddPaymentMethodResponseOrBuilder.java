@@ -17,7 +17,7 @@ public interface AddPaymentMethodResponseOrBuilder extends
    *
    * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-   *     See scalekit/v1/billing/billing.proto;l=420
+   *     See scalekit/v1/billing/billing.proto;l=544
    * @return The checkoutUrl.
    */
   @java.lang.Deprecated java.lang.String getCheckoutUrl();
@@ -30,7 +30,7 @@ public interface AddPaymentMethodResponseOrBuilder extends
    *
    * <code>string checkout_url = 1 [json_name = "checkoutUrl", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @deprecated scalekit.v1.billing.AddPaymentMethodResponse.checkout_url is deprecated.
-   *     See scalekit/v1/billing/billing.proto;l=420
+   *     See scalekit/v1/billing/billing.proto;l=544
    * @return The bytes for checkoutUrl.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

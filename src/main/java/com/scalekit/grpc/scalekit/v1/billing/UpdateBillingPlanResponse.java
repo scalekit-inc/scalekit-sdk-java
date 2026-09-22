@@ -5,19 +5,21 @@
 package com.scalekit.grpc.scalekit.v1.billing;
 
 /**
- * Protobuf type {@code scalekit.v1.billing.UpdateEnvironmentPlanResponse}
+ * Protobuf type {@code scalekit.v1.billing.UpdateBillingPlanResponse}
  */
-public final class UpdateEnvironmentPlanResponse extends
+public final class UpdateBillingPlanResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.billing.UpdateEnvironmentPlanResponse)
-    UpdateEnvironmentPlanResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.billing.UpdateBillingPlanResponse)
+    UpdateBillingPlanResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UpdateEnvironmentPlanResponse.newBuilder() to construct.
-  private UpdateEnvironmentPlanResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateBillingPlanResponse.newBuilder() to construct.
+  private UpdateBillingPlanResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateEnvironmentPlanResponse() {
+  private UpdateBillingPlanResponse() {
     plans_ = java.util.Collections.emptyList();
+    addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     exceeded_ = java.util.Collections.emptyList();
   }
 
@@ -25,20 +27,20 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UpdateEnvironmentPlanResponse();
+    return new UpdateBillingPlanResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor;
+    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.class, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.Builder.class);
+            com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.Builder.class);
   }
 
   public static final int PLANS_FIELD_NUMBER = 1;
@@ -100,6 +102,63 @@ private static final long serialVersionUID = 0L;
   public com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
       int index) {
     return plans_.get(index);
+  }
+
+  public static final int ADD_ONS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList addOns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @return A list containing the addOns.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAddOnsList() {
+    return addOns_;
+  }
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @return The count of addOns.
+   */
+  public int getAddOnsCount() {
+    return addOns_.size();
+  }
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  public java.lang.String getAddOns(int index) {
+    return addOns_.get(index);
+  }
+  /**
+   * <pre>
+   * The environment's standalone add-ons after the change — echoes the request's complete set back so
+   * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAddOnsBytes(int index) {
+    return addOns_.getByteString(index);
   }
 
   public static final int EXCEEDED_FIELD_NUMBER = 2;
@@ -213,6 +272,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < exceeded_.size(); i++) {
       output.writeMessage(2, exceeded_.get(i));
     }
+    for (int i = 0; i < addOns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, addOns_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +292,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, exceeded_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < addOns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(addOns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAddOnsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -240,13 +310,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse other = (com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse) obj;
+    com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse other = (com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse) obj;
 
     if (!getPlansList()
         .equals(other.getPlansList())) return false;
+    if (!getAddOnsList()
+        .equals(other.getAddOnsList())) return false;
     if (!getExceededList()
         .equals(other.getExceededList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -264,6 +336,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PLANS_FIELD_NUMBER;
       hash = (53 * hash) + getPlansList().hashCode();
     }
+    if (getAddOnsCount() > 0) {
+      hash = (37 * hash) + ADD_ONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddOnsList().hashCode();
+    }
     if (getExceededCount() > 0) {
       hash = (37 * hash) + EXCEEDED_FIELD_NUMBER;
       hash = (53 * hash) + getExceededList().hashCode();
@@ -273,44 +349,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -318,26 +394,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -350,7 +426,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -366,26 +442,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.billing.UpdateEnvironmentPlanResponse}
+   * Protobuf type {@code scalekit.v1.billing.UpdateBillingPlanResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.billing.UpdateEnvironmentPlanResponse)
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.billing.UpdateBillingPlanResponse)
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.class, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.Builder.class);
+              com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.newBuilder()
     private Builder() {
 
     }
@@ -406,30 +482,32 @@ private static final long serialVersionUID = 0L;
         plansBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      addOns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       if (exceededBuilder_ == null) {
         exceeded_ = java.util.Collections.emptyList();
       } else {
         exceeded_ = null;
         exceededBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanResponse_descriptor;
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse build() {
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse build() {
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -437,15 +515,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse buildPartial() {
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse result = new com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse(this);
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse buildPartial() {
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse result = new com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse result) {
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse result) {
       if (plansBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           plans_ = java.util.Collections.unmodifiableList(plans_);
@@ -456,9 +534,9 @@ private static final long serialVersionUID = 0L;
         result.plans_ = plansBuilder_.build();
       }
       if (exceededBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           exceeded_ = java.util.Collections.unmodifiableList(exceeded_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.exceeded_ = exceeded_;
       } else {
@@ -466,8 +544,12 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        addOns_.makeImmutable();
+        result.addOns_ = addOns_;
+      }
     }
 
     @java.lang.Override
@@ -504,16 +586,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse other) {
-      if (other == com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse other) {
+      if (other == com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.getDefaultInstance()) return this;
       if (plansBuilder_ == null) {
         if (!other.plans_.isEmpty()) {
           if (plans_.isEmpty()) {
@@ -540,11 +622,21 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.addOns_.isEmpty()) {
+        if (addOns_.isEmpty()) {
+          addOns_ = other.addOns_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureAddOnsIsMutable();
+          addOns_.addAll(other.addOns_);
+        }
+        onChanged();
+      }
       if (exceededBuilder_ == null) {
         if (!other.exceeded_.isEmpty()) {
           if (exceeded_.isEmpty()) {
             exceeded_ = other.exceeded_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureExceededIsMutable();
             exceeded_.addAll(other.exceeded_);
@@ -557,7 +649,7 @@ private static final long serialVersionUID = 0L;
             exceededBuilder_.dispose();
             exceededBuilder_ = null;
             exceeded_ = other.exceeded_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             exceededBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getExceededFieldBuilder() : null;
@@ -618,6 +710,12 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 18
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureAddOnsIsMutable();
+              addOns_.add(s);
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -947,12 +1045,168 @@ private static final long serialVersionUID = 0L;
       return plansBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureAddOnsIsMutable() {
+      if (!addOns_.isModifiable()) {
+        addOns_ = new com.google.protobuf.LazyStringArrayList(addOns_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @return A list containing the addOns.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddOnsList() {
+      addOns_.makeImmutable();
+      return addOns_;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @return The count of addOns.
+     */
+    public int getAddOnsCount() {
+      return addOns_.size();
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param index The index of the element to return.
+     * @return The addOns at the given index.
+     */
+    public java.lang.String getAddOns(int index) {
+      return addOns_.get(index);
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addOns at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddOnsBytes(int index) {
+      return addOns_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param index The index to set the value at.
+     * @param value The addOns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAddOns(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param value The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOns(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param values The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAddOns(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAddOnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, addOns_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAddOns() {
+      addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The environment's standalone add-ons after the change — echoes the request's complete set back so
+     * the caller can confirm what actually landed without a separate ListEnvironmentBilling round trip.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns"];</code>
+     * @param value The bytes of the addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOnsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.scalekit.grpc.scalekit.v1.billing.ExceededAllowance> exceeded_ =
       java.util.Collections.emptyList();
     private void ensureExceededIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         exceeded_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.billing.ExceededAllowance>(exceeded_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1212,7 +1466,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearExceeded() {
       if (exceededBuilder_ == null) {
         exceeded_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         exceededBuilder_.clear();
@@ -1359,7 +1613,7 @@ private static final long serialVersionUID = 0L;
         exceededBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.billing.ExceededAllowance, com.scalekit.grpc.scalekit.v1.billing.ExceededAllowance.Builder, com.scalekit.grpc.scalekit.v1.billing.ExceededAllowanceOrBuilder>(
                 exceeded_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         exceeded_ = null;
@@ -1379,23 +1633,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.billing.UpdateEnvironmentPlanResponse)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.billing.UpdateBillingPlanResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.billing.UpdateEnvironmentPlanResponse)
-  private static final com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.billing.UpdateBillingPlanResponse)
+  private static final com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateEnvironmentPlanResponse>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateEnvironmentPlanResponse>() {
+  private static final com.google.protobuf.Parser<UpdateBillingPlanResponse>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateBillingPlanResponse>() {
     @java.lang.Override
-    public UpdateEnvironmentPlanResponse parsePartialFrom(
+    public UpdateBillingPlanResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1414,17 +1668,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<UpdateEnvironmentPlanResponse> parser() {
+  public static com.google.protobuf.Parser<UpdateBillingPlanResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateEnvironmentPlanResponse> getParserForType() {
+  public com.google.protobuf.Parser<UpdateBillingPlanResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanResponse getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

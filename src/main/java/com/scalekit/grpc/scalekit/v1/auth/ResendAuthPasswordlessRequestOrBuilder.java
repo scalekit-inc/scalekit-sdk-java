@@ -4,8 +4,8 @@
 // Protobuf Java Version: 3.25.3
 package com.scalekit.grpc.scalekit.v1.auth;
 
-public interface ResendPasswordlessRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:scalekit.v1.auth.ResendPasswordlessRequest)
+public interface ResendAuthPasswordlessRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:scalekit.v1.auth.ResendAuthPasswordlessRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
