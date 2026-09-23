@@ -22,6 +22,8 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
     authenticationMode_ = 0;
     plans_ = java.util.Collections.emptyList();
+    addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -172,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -193,7 +195,7 @@ private static final long serialVersionUID = 0L;
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -215,7 +217,7 @@ private static final long serialVersionUID = 0L;
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -236,7 +238,7 @@ private static final long serialVersionUID = 0L;
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -257,7 +259,7 @@ private static final long serialVersionUID = 0L;
    * workspace-level subscription billing, whose production environments carry no per-line plan — sending
    * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
    *
-   * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+   * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
    * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
    * product line" across every billing RPC.
    * </pre>
@@ -268,6 +270,87 @@ private static final long serialVersionUID = 0L;
   public com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder getPlansOrBuilder(
       int index) {
     return plans_.get(index);
+  }
+
+  public static final int ADD_ONS_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList addOns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the addOns.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAddOnsList() {
+    return addOns_;
+  }
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of addOns.
+   */
+  public int getAddOnsCount() {
+    return addOns_.size();
+  }
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  public java.lang.String getAddOns(int index) {
+    return addOns_.get(index);
+  }
+  /**
+   * <pre>
+   * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+   * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+   *
+   * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+   * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+   * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+   * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+   * `plans`.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAddOnsBytes(int index) {
+    return addOns_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -299,6 +382,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < plans_.size(); i++) {
       output.writeMessage(9, plans_.get(i));
     }
+    for (int i = 0; i < addOns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, addOns_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -326,6 +412,14 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < plans_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, plans_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < addOns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(addOns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAddOnsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -358,6 +452,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPlansList()
         .equals(other.getPlansList())) return false;
+    if (!getAddOnsList()
+        .equals(other.getAddOnsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -386,6 +482,10 @@ private static final long serialVersionUID = 0L;
     if (getPlansCount() > 0) {
       hash = (37 * hash) + PLANS_FIELD_NUMBER;
       hash = (53 * hash) + getPlansList().hashCode();
+    }
+    if (getAddOnsCount() > 0) {
+      hash = (37 * hash) + ADD_ONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddOnsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -529,6 +629,8 @@ private static final long serialVersionUID = 0L;
         plansBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      addOns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -590,6 +692,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.authenticationMode_ = authenticationMode_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        addOns_.makeImmutable();
+        result.addOns_ = addOns_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -678,6 +784,16 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.addOns_.isEmpty()) {
+        if (addOns_.isEmpty()) {
+          addOns_ = other.addOns_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureAddOnsIsMutable();
+          addOns_.addAll(other.addOns_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -737,6 +853,12 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 74
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureAddOnsIsMutable();
+              addOns_.add(s);
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1028,7 +1150,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1052,7 +1174,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1076,7 +1198,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1100,7 +1222,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1131,7 +1253,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1159,7 +1281,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1189,7 +1311,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1220,7 +1342,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1248,7 +1370,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1276,7 +1398,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1305,7 +1427,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1332,7 +1454,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1359,7 +1481,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1380,7 +1502,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1404,7 +1526,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1429,7 +1551,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1450,7 +1572,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1472,7 +1594,7 @@ private static final long serialVersionUID = 0L;
      * workspace-level subscription billing, whose production environments carry no per-line plan — sending
      * it or omitting it makes no difference there. GetBillingAccount reports which of the two applies.
      *
-     * Same shape as EnvironmentBilling.plans and UpdateEnvironmentPlanRequest.plans
+     * Same shape as EnvironmentBilling.plans and UpdateBillingPlanRequest.plans
      * (scalekit.v1.billing.LinePlan), not a map — one wire representation for "a tier assignment per
      * product line" across every billing RPC.
      * </pre>
@@ -1496,6 +1618,216 @@ private static final long serialVersionUID = 0L;
         plans_ = null;
       }
       return plansBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureAddOnsIsMutable() {
+      if (!addOns_.isModifiable()) {
+        addOns_ = new com.google.protobuf.LazyStringArrayList(addOns_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the addOns.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddOnsList() {
+      addOns_.makeImmutable();
+      return addOns_;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of addOns.
+     */
+    public int getAddOnsCount() {
+      return addOns_.size();
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The addOns at the given index.
+     */
+    public java.lang.String getAddOns(int index) {
+      return addOns_.get(index);
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addOns at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddOnsBytes(int index) {
+      return addOns_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The addOns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAddOns(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOns(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAddOns(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAddOnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, addOns_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAddOns() {
+      addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Entitlement keys to buy standalone, on top of whatever `plans` already grants for free — e.g. EU
+     * data residency on a plan that doesn't include it. Optional; empty means no add-ons at creation.
+     *
+     * Unlike `plans`, this is NOT "omitted keeps the current value" — there is no current value at
+     * creation, and proto3 cannot distinguish an omitted repeated field from an explicitly empty one
+     * anyway, so a caller wanting no add-ons and a caller who forgot this field are indistinguishable
+     * (both simply provision none). Ignored for workspaces on legacy workspace-level billing, same as
+     * `plans`.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 10 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOnsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

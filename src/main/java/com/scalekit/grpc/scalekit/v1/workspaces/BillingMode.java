@@ -27,16 +27,10 @@ public enum BillingMode
   STRIPE(1),
   /**
    * <pre>
-   * Metronome rates usage in parallel for shadow verification, but Stripe
-   * remains the biller of record.
-   * </pre>
-   *
-   * <code>STRIPE_AND_METRONOME = 2;</code>
-   */
-  STRIPE_AND_METRONOME(2),
-  /**
-   * <pre>
    * Metronome is the sole billing engine.
+   *
+   * Value 2 was STRIPE_AND_METRONOME, a shadow-rating parallel run that was never assigned to a real
+   * workspace. Removed rather than kept as a variant every client had to handle.
    * </pre>
    *
    * <code>METRONOME = 3;</code>
@@ -59,16 +53,10 @@ public enum BillingMode
   public static final int STRIPE_VALUE = 1;
   /**
    * <pre>
-   * Metronome rates usage in parallel for shadow verification, but Stripe
-   * remains the biller of record.
-   * </pre>
-   *
-   * <code>STRIPE_AND_METRONOME = 2;</code>
-   */
-  public static final int STRIPE_AND_METRONOME_VALUE = 2;
-  /**
-   * <pre>
    * Metronome is the sole billing engine.
+   *
+   * Value 2 was STRIPE_AND_METRONOME, a shadow-rating parallel run that was never assigned to a real
+   * workspace. Removed rather than kept as a variant every client had to handle.
    * </pre>
    *
    * <code>METRONOME = 3;</code>
@@ -102,7 +90,6 @@ public enum BillingMode
     switch (value) {
       case 0: return BILLING_MODE_UNSPECIFIED;
       case 1: return STRIPE;
-      case 2: return STRIPE_AND_METRONOME;
       case 3: return METRONOME;
       default: return null;
     }

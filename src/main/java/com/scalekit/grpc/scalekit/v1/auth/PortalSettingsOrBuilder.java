@@ -43,4 +43,27 @@ public interface PortalSettingsOrBuilder extends
    * @return The newSelfServeSsoScim.
    */
   boolean getNewSelfServeSsoScim();
+
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+   * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+   * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+   * </pre>
+   *
+   * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the mcpConsentScreenV2 field is set.
+   */
+  boolean hasMcpConsentScreenV2();
+  /**
+   * <pre>
+   * mcp_consent_screen_v2 indicates whether the MCP consent screen should use the two-column
+   * layout. Rollout-driven (feature flag). Only present when the request carries a consent
+   * cookie, i.e. it is the consent screen asking; every other caller gets the field omitted.
+   * </pre>
+   *
+   * <code>optional bool mcp_consent_screen_v2 = 3 [json_name = "mcpConsentScreenV2", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The mcpConsentScreenV2.
+   */
+  boolean getMcpConsentScreenV2();
 }

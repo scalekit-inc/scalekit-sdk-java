@@ -113,7 +113,7 @@ public enum InvoiceStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(2);
+    return com.scalekit.grpc.scalekit.v1.workspaces.WorkspacesProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final InvoiceStatus[] VALUES = values();

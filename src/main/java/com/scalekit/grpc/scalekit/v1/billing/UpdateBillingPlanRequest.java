@@ -5,79 +5,46 @@
 package com.scalekit.grpc.scalekit.v1.billing;
 
 /**
- * Protobuf type {@code scalekit.v1.billing.UpdateEnvironmentPlanRequest}
+ * <pre>
+ * The environment acted on is the one in request context (the `x-env-domain` header), not a field — the
+ * same way every other environment-scoped API in this service resolves it.
+ * </pre>
+ *
+ * Protobuf type {@code scalekit.v1.billing.UpdateBillingPlanRequest}
  */
-public final class UpdateEnvironmentPlanRequest extends
+public final class UpdateBillingPlanRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:scalekit.v1.billing.UpdateEnvironmentPlanRequest)
-    UpdateEnvironmentPlanRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:scalekit.v1.billing.UpdateBillingPlanRequest)
+    UpdateBillingPlanRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use UpdateEnvironmentPlanRequest.newBuilder() to construct.
-  private UpdateEnvironmentPlanRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UpdateBillingPlanRequest.newBuilder() to construct.
+  private UpdateBillingPlanRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateEnvironmentPlanRequest() {
-    environmentId_ = "";
+  private UpdateBillingPlanRequest() {
     plans_ = java.util.Collections.emptyList();
+    addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new UpdateEnvironmentPlanRequest();
+    return new UpdateBillingPlanRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor;
+    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_fieldAccessorTable
+    return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.class, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.Builder.class);
-  }
-
-  public static final int ENVIRONMENT_ID_FIELD_NUMBER = 1;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object environmentId_ = "";
-  /**
-   * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-   * @return The environmentId.
-   */
-  @java.lang.Override
-  public java.lang.String getEnvironmentId() {
-    java.lang.Object ref = environmentId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      environmentId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-   * @return The bytes for environmentId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEnvironmentIdBytes() {
-    java.lang.Object ref = environmentId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      environmentId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+            com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.Builder.class);
   }
 
   public static final int PLANS_FIELD_NUMBER = 2;
@@ -146,6 +113,87 @@ private static final long serialVersionUID = 0L;
     return plans_.get(index);
   }
 
+  public static final int ADD_ONS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList addOns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+   * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+   * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+   * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+   * field — omitting it is read as "cancel every add-on."
+   *
+   * An add-on the target plan already grants for free is harmless to include here: the server silently
+   * stops billing it separately once the plan covers it, with no special handling required by the caller.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the addOns.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getAddOnsList() {
+    return addOns_;
+  }
+  /**
+   * <pre>
+   * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+   * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+   * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+   * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+   * field — omitting it is read as "cancel every add-on."
+   *
+   * An add-on the target plan already grants for free is harmless to include here: the server silently
+   * stops billing it separately once the plan covers it, with no special handling required by the caller.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of addOns.
+   */
+  public int getAddOnsCount() {
+    return addOns_.size();
+  }
+  /**
+   * <pre>
+   * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+   * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+   * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+   * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+   * field — omitting it is read as "cancel every add-on."
+   *
+   * An add-on the target plan already grants for free is harmless to include here: the server silently
+   * stops billing it separately once the plan covers it, with no special handling required by the caller.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The addOns at the given index.
+   */
+  public java.lang.String getAddOns(int index) {
+    return addOns_.get(index);
+  }
+  /**
+   * <pre>
+   * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+   * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+   * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+   * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+   * field — omitting it is read as "cancel every add-on."
+   *
+   * An add-on the target plan already grants for free is harmless to include here: the server silently
+   * stops billing it separately once the plan covers it, with no special handling required by the caller.
+   * </pre>
+   *
+   * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the addOns at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAddOnsBytes(int index) {
+    return addOns_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -160,11 +208,11 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, environmentId_);
-    }
     for (int i = 0; i < plans_.size(); i++) {
       output.writeMessage(2, plans_.get(i));
+    }
+    for (int i = 0; i < addOns_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, addOns_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -175,12 +223,17 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(environmentId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, environmentId_);
-    }
     for (int i = 0; i < plans_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, plans_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < addOns_.size(); i++) {
+        dataSize += computeStringSizeNoTag(addOns_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAddOnsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -192,15 +245,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest)) {
+    if (!(obj instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest)) {
       return super.equals(obj);
     }
-    com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest other = (com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest) obj;
+    com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest other = (com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest) obj;
 
-    if (!getEnvironmentId()
-        .equals(other.getEnvironmentId())) return false;
     if (!getPlansList()
         .equals(other.getPlansList())) return false;
+    if (!getAddOnsList()
+        .equals(other.getAddOnsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -212,55 +265,57 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENVIRONMENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getEnvironmentId().hashCode();
     if (getPlansCount() > 0) {
       hash = (37 * hash) + PLANS_FIELD_NUMBER;
       hash = (53 * hash) + getPlansList().hashCode();
+    }
+    if (getAddOnsCount() > 0) {
+      hash = (37 * hash) + ADD_ONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddOnsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(byte[] data)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -268,26 +323,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseDelimitedFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest parseFrom(
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -300,7 +355,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest prototype) {
+  public static Builder newBuilder(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -316,26 +371,31 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code scalekit.v1.billing.UpdateEnvironmentPlanRequest}
+   * <pre>
+   * The environment acted on is the one in request context (the `x-env-domain` header), not a field — the
+   * same way every other environment-scoped API in this service resolves it.
+   * </pre>
+   *
+   * Protobuf type {@code scalekit.v1.billing.UpdateBillingPlanRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:scalekit.v1.billing.UpdateEnvironmentPlanRequest)
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:scalekit.v1.billing.UpdateBillingPlanRequest)
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_fieldAccessorTable
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.class, com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.Builder.class);
+              com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.Builder.class);
     }
 
-    // Construct using com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.newBuilder()
+    // Construct using com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.newBuilder()
     private Builder() {
 
     }
@@ -349,31 +409,32 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      environmentId_ = "";
       if (plansBuilder_ == null) {
         plans_ = java.util.Collections.emptyList();
       } else {
         plans_ = null;
         plansBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
+      addOns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateEnvironmentPlanRequest_descriptor;
+      return com.scalekit.grpc.scalekit.v1.billing.BillingProto.internal_static_scalekit_v1_billing_UpdateBillingPlanRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest getDefaultInstanceForType() {
-      return com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.getDefaultInstance();
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest getDefaultInstanceForType() {
+      return com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest build() {
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest result = buildPartial();
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest build() {
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -381,19 +442,19 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest buildPartial() {
-      com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest result = new com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest(this);
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest buildPartial() {
+      com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest result = new com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest result) {
+    private void buildPartialRepeatedFields(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest result) {
       if (plansBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           plans_ = java.util.Collections.unmodifiableList(plans_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.plans_ = plans_;
       } else {
@@ -401,10 +462,11 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest result) {
+    private void buildPartial0(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.environmentId_ = environmentId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        addOns_.makeImmutable();
+        result.addOns_ = addOns_;
       }
     }
 
@@ -442,26 +504,21 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest) {
-        return mergeFrom((com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest)other);
+      if (other instanceof com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest) {
+        return mergeFrom((com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest other) {
-      if (other == com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest.getDefaultInstance()) return this;
-      if (!other.getEnvironmentId().isEmpty()) {
-        environmentId_ = other.environmentId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
+    public Builder mergeFrom(com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest other) {
+      if (other == com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.getDefaultInstance()) return this;
       if (plansBuilder_ == null) {
         if (!other.plans_.isEmpty()) {
           if (plans_.isEmpty()) {
             plans_ = other.plans_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensurePlansIsMutable();
             plans_.addAll(other.plans_);
@@ -474,7 +531,7 @@ private static final long serialVersionUID = 0L;
             plansBuilder_.dispose();
             plansBuilder_ = null;
             plans_ = other.plans_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             plansBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPlansFieldBuilder() : null;
@@ -482,6 +539,16 @@ private static final long serialVersionUID = 0L;
             plansBuilder_.addAllMessages(other.plans_);
           }
         }
+      }
+      if (!other.addOns_.isEmpty()) {
+        if (addOns_.isEmpty()) {
+          addOns_ = other.addOns_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureAddOnsIsMutable();
+          addOns_.addAll(other.addOns_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -509,11 +576,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              environmentId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 10
             case 18: {
               com.scalekit.grpc.scalekit.v1.billing.LinePlan m =
                   input.readMessage(
@@ -527,6 +589,12 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 18
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureAddOnsIsMutable();
+              addOns_.add(s);
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -544,84 +612,12 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.lang.Object environmentId_ = "";
-    /**
-     * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-     * @return The environmentId.
-     */
-    public java.lang.String getEnvironmentId() {
-      java.lang.Object ref = environmentId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        environmentId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-     * @return The bytes for environmentId.
-     */
-    public com.google.protobuf.ByteString
-        getEnvironmentIdBytes() {
-      java.lang.Object ref = environmentId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        environmentId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-     * @param value The environmentId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvironmentId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      environmentId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEnvironmentId() {
-      environmentId_ = getDefaultInstance().getEnvironmentId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string environment_id = 1 [json_name = "environmentId"];</code>
-     * @param value The bytes for environmentId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEnvironmentIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      environmentId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
     private java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> plans_ =
       java.util.Collections.emptyList();
     private void ensurePlansIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         plans_ = new java.util.ArrayList<com.scalekit.grpc.scalekit.v1.billing.LinePlan>(plans_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -826,7 +822,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPlans() {
       if (plansBuilder_ == null) {
         plans_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         plansBuilder_.clear();
@@ -938,12 +934,222 @@ private static final long serialVersionUID = 0L;
         plansBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.scalekit.grpc.scalekit.v1.billing.LinePlan, com.scalekit.grpc.scalekit.v1.billing.LinePlan.Builder, com.scalekit.grpc.scalekit.v1.billing.LinePlanOrBuilder>(
                 plans_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         plans_ = null;
       }
       return plansBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureAddOnsIsMutable() {
+      if (!addOns_.isModifiable()) {
+        addOns_ = new com.google.protobuf.LazyStringArrayList(addOns_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the addOns.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddOnsList() {
+      addOns_.makeImmutable();
+      return addOns_;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of addOns.
+     */
+    public int getAddOnsCount() {
+      return addOns_.size();
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The addOns at the given index.
+     */
+    public java.lang.String getAddOns(int index) {
+      return addOns_.get(index);
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addOns at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddOnsBytes(int index) {
+      return addOns_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The addOns to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAddOns(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOns(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAddOns(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureAddOnsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, addOns_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAddOns() {
+      addOns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The COMPLETE set of standalone add-ons this environment should end up with — not a delta, and NOT
+     * "omitted keeps the current value" the way an omitted line in `plans` does. proto3 cannot distinguish
+     * an omitted repeated field from an explicitly empty one, so a caller that wants no change to add-ons
+     * must resubmit the environment's current add-on list (from EnvironmentBilling.add_ons), not omit this
+     * field — omitting it is read as "cancel every add-on."
+     *
+     * An add-on the target plan already grants for free is harmless to include here: the server silently
+     * stops billing it separately once the plan covers it, with no special handling required by the caller.
+     * </pre>
+     *
+     * <code>repeated string add_ons = 3 [json_name = "addOns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the addOns to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAddOnsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureAddOnsIsMutable();
+      addOns_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -958,23 +1164,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:scalekit.v1.billing.UpdateEnvironmentPlanRequest)
+    // @@protoc_insertion_point(builder_scope:scalekit.v1.billing.UpdateBillingPlanRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:scalekit.v1.billing.UpdateEnvironmentPlanRequest)
-  private static final com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:scalekit.v1.billing.UpdateBillingPlanRequest)
+  private static final com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest();
+    DEFAULT_INSTANCE = new com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest();
   }
 
-  public static com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest getDefaultInstance() {
+  public static com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateEnvironmentPlanRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateEnvironmentPlanRequest>() {
+  private static final com.google.protobuf.Parser<UpdateBillingPlanRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UpdateBillingPlanRequest>() {
     @java.lang.Override
-    public UpdateEnvironmentPlanRequest parsePartialFrom(
+    public UpdateBillingPlanRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -993,17 +1199,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<UpdateEnvironmentPlanRequest> parser() {
+  public static com.google.protobuf.Parser<UpdateBillingPlanRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UpdateEnvironmentPlanRequest> getParserForType() {
+  public com.google.protobuf.Parser<UpdateBillingPlanRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.scalekit.grpc.scalekit.v1.billing.UpdateEnvironmentPlanRequest getDefaultInstanceForType() {
+  public com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

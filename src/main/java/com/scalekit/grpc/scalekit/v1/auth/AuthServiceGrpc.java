@@ -108,35 +108,35 @@ public final class AuthServiceGrpc {
     return getVerifyPasswordLessOtpMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest,
-      com.google.protobuf.Empty> getResendPasswordlessMethod;
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest,
+      com.google.protobuf.Empty> getResendAuthPasswordlessMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ResendPasswordless",
-      requestType = com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "ResendAuthPasswordless",
+      requestType = com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest.class,
       responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest,
-      com.google.protobuf.Empty> getResendPasswordlessMethod() {
-    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest, com.google.protobuf.Empty> getResendPasswordlessMethod;
-    if ((getResendPasswordlessMethod = AuthServiceGrpc.getResendPasswordlessMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest,
+      com.google.protobuf.Empty> getResendAuthPasswordlessMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest, com.google.protobuf.Empty> getResendAuthPasswordlessMethod;
+    if ((getResendAuthPasswordlessMethod = AuthServiceGrpc.getResendAuthPasswordlessMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
-        if ((getResendPasswordlessMethod = AuthServiceGrpc.getResendPasswordlessMethod) == null) {
-          AuthServiceGrpc.getResendPasswordlessMethod = getResendPasswordlessMethod =
-              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest, com.google.protobuf.Empty>newBuilder()
+        if ((getResendAuthPasswordlessMethod = AuthServiceGrpc.getResendAuthPasswordlessMethod) == null) {
+          AuthServiceGrpc.getResendAuthPasswordlessMethod = getResendAuthPasswordlessMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResendPasswordless"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResendAuthPasswordless"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("ResendPasswordless"))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("ResendAuthPasswordless"))
               .build();
         }
       }
     }
-    return getResendPasswordlessMethod;
+    return getResendAuthPasswordlessMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
@@ -458,9 +458,9 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void resendPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest request,
+    default void resendAuthPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResendPasswordlessMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResendAuthPasswordlessMethod(), responseObserver);
     }
 
     /**
@@ -573,10 +573,10 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void resendPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest request,
+    public void resendAuthPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getResendPasswordlessMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getResendAuthPasswordlessMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -683,9 +683,9 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.protobuf.Empty resendPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest request) {
+    public com.google.protobuf.Empty resendAuthPasswordless(com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getResendPasswordlessMethod(), getCallOptions(), request);
+          getChannel(), getResendAuthPasswordlessMethod(), getCallOptions(), request);
     }
 
     /**
@@ -787,10 +787,10 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resendPasswordless(
-        com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> resendAuthPasswordless(
+        com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getResendPasswordlessMethod(), getCallOptions()), request);
+          getChannel().newCall(getResendAuthPasswordlessMethod(), getCallOptions()), request);
     }
 
     /**
@@ -861,7 +861,7 @@ public final class AuthServiceGrpc {
   private static final int METHODID_LIST_AUTH_METHODS = 0;
   private static final int METHODID_DISCOVERY_AUTH_METHOD = 1;
   private static final int METHODID_VERIFY_PASSWORD_LESS_OTP = 2;
-  private static final int METHODID_RESEND_PASSWORDLESS = 3;
+  private static final int METHODID_RESEND_AUTH_PASSWORDLESS = 3;
   private static final int METHODID_LIST_USER_ORGANIZATIONS = 4;
   private static final int METHODID_SIGNUP_ORGANIZATION = 5;
   private static final int METHODID_GET_AUTH_STATE = 6;
@@ -900,8 +900,8 @@ public final class AuthServiceGrpc {
           serviceImpl.verifyPasswordLessOtp((com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse>) responseObserver);
           break;
-        case METHODID_RESEND_PASSWORDLESS:
-          serviceImpl.resendPasswordless((com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest) request,
+        case METHODID_RESEND_AUTH_PASSWORDLESS:
+          serviceImpl.resendAuthPasswordless((com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_USER_ORGANIZATIONS:
@@ -976,12 +976,12 @@ public final class AuthServiceGrpc {
               com.scalekit.grpc.scalekit.v1.auth.VerifyPasswordLessOtpResponse>(
                 service, METHODID_VERIFY_PASSWORD_LESS_OTP)))
         .addMethod(
-          getResendPasswordlessMethod(),
+          getResendAuthPasswordlessMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.scalekit.grpc.scalekit.v1.auth.ResendPasswordlessRequest,
+              com.scalekit.grpc.scalekit.v1.auth.ResendAuthPasswordlessRequest,
               com.google.protobuf.Empty>(
-                service, METHODID_RESEND_PASSWORDLESS)))
+                service, METHODID_RESEND_AUTH_PASSWORDLESS)))
         .addMethod(
           getListUserOrganizationsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1089,7 +1089,7 @@ public final class AuthServiceGrpc {
               .addMethod(getListAuthMethodsMethod())
               .addMethod(getDiscoveryAuthMethodMethod())
               .addMethod(getVerifyPasswordLessOtpMethod())
-              .addMethod(getResendPasswordlessMethod())
+              .addMethod(getResendAuthPasswordlessMethod())
               .addMethod(getListUserOrganizationsMethod())
               .addMethod(getSignupOrganizationMethod())
               .addMethod(getGetAuthStateMethod())

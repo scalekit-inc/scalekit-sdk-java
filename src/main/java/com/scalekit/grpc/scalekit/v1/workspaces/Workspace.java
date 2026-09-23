@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     authDomain_ = "";
     deployment_ = "";
     billingMode_ = 0;
+    workspaceType_ = 0;
   }
 
   @java.lang.Override
@@ -396,6 +397,24 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.scalekit.grpc.scalekit.v1.workspaces.BillingMode.UNRECOGNIZED : result;
   }
 
+  public static final int WORKSPACE_TYPE_FIELD_NUMBER = 13;
+  private int workspaceType_ = 0;
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for workspaceType.
+   */
+  @java.lang.Override public int getWorkspaceTypeValue() {
+    return workspaceType_;
+  }
+  /**
+   * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The workspaceType.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType getWorkspaceType() {
+    com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType result = com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.forNumber(workspaceType_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -442,6 +461,9 @@ private static final long serialVersionUID = 0L;
     }
     if (billingMode_ != com.scalekit.grpc.scalekit.v1.workspaces.BillingMode.BILLING_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, billingMode_);
+    }
+    if (workspaceType_ != com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.WORKSPACE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, workspaceType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -490,6 +512,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(12, billingMode_);
     }
+    if (workspaceType_ != com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.WORKSPACE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(13, workspaceType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -534,6 +560,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeployment()
         .equals(other.getDeployment())) return false;
     if (billingMode_ != other.billingMode_) return false;
+    if (workspaceType_ != other.workspaceType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -573,6 +600,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDeployment().hashCode();
     hash = (37 * hash) + BILLING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + billingMode_;
+    hash = (37 * hash) + WORKSPACE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + workspaceType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -735,6 +764,7 @@ private static final long serialVersionUID = 0L;
       authDomain_ = "";
       deployment_ = "";
       billingMode_ = 0;
+      workspaceType_ = 0;
       return this;
     }
 
@@ -810,6 +840,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.billingMode_ = billingMode_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.workspaceType_ = workspaceType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -903,6 +936,9 @@ private static final long serialVersionUID = 0L;
       if (other.billingMode_ != 0) {
         setBillingModeValue(other.getBillingModeValue());
       }
+      if (other.workspaceType_ != 0) {
+        setWorkspaceTypeValue(other.getWorkspaceTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -990,6 +1026,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 96
+            case 104: {
+              workspaceType_ = input.readEnum();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1904,6 +1945,59 @@ private static final long serialVersionUID = 0L;
     public Builder clearBillingMode() {
       bitField0_ = (bitField0_ & ~0x00000400);
       billingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int workspaceType_ = 0;
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for workspaceType.
+     */
+    @java.lang.Override public int getWorkspaceTypeValue() {
+      return workspaceType_;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for workspaceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkspaceTypeValue(int value) {
+      workspaceType_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The workspaceType.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType getWorkspaceType() {
+      com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType result = com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.forNumber(workspaceType_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The workspaceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkspaceType(com.scalekit.grpc.scalekit.v1.workspaces.WorkspaceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      workspaceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.workspaces.WorkspaceType workspace_type = 13 [json_name = "workspaceType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkspaceType() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      workspaceType_ = 0;
       onChanged();
       return this;
     }
