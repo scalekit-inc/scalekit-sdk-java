@@ -7687,10 +7687,6 @@ Access via `client.resources()`.
 <dd>
 
 Retrieves a single resource by id.
-
-A resource client's `scopes` are only actually granted in an issued access token when they also appear in the resource's own `scopes` allowlist (the server intersects requested scopes against the environment's permissions, the resource's allowed scopes, and the client's own scopes) — call this first to see what the resource actually allows before creating or updating a resource client with scopes.
-
-The resource's `getScopesList()` returns every scope defined in the environment, not just the ones this resource allows — each entry carries an `enabled` flag, and only the ones with `getEnabled()` true are actually usable on this resource. Filter on that flag to get the actual allowlist.
 </dd>
 </dl>
 </dd>
@@ -7753,9 +7749,7 @@ System.out.println(response.getResource().getName() + " " + allowedScopes);
 <dl>
 <dd>
 
-Lists resources of a given type, with pagination.
-
-`resourceType` is required — the server rejects `RESOURCE_TYPE_UNSPECIFIED` with an `INVALID_ARGUMENT` error rather than treating it as "list every type".
+Lists resources of a given type in the environment, with pagination.
 </dd>
 </dl>
 </dd>
@@ -7830,11 +7824,7 @@ System.out.println(response.getTotalSize() + " " + response.getResourcesList());
 <dl>
 <dd>
 
-Creates a resource client.
-
-The response's `plainSecret` is the plaintext client secret, only available at creation time.
-
-`audience` cannot be set through this SDK — it is always server-determined, for any resource type. A non-empty `client.getAudienceList()` throws `IllegalArgumentException` rather than being silently forwarded.
+Creates a resource client. Returns the created `client` and a `plainSecret` - the plaintext client secret, only available at creation time.
 </dd>
 </dl>
 </dd>
@@ -8050,10 +8040,6 @@ for (M2MClient resourceClient : response.getClientsList()) {
 <dd>
 
 Updates a resource client.
-
-Only the fields set on `options` (non-null) are changed — there is no field mask to build yourself; it's derived internally from whichever fields are set. Verified against a live environment: the server only actually honors this for `scopes`, `customClaims` and `redirectUris` — set one to an empty list to clear it. `name`/`description` are applied whenever non-empty regardless (an empty string is a no-op, not a clear).
-
-There is no `audience` field on `options` — audience is always server-determined and can never be set through this SDK, on create or update, for any resource type.
 </dd>
 </dl>
 </dd>
@@ -8344,11 +8330,11 @@ client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142
 <dl>
 <dd>
 
-Lists the end-user consents granted against a resource, with pagination.
+Lists the end-user consents granted against a resource, with pagination. Use this to audit who authorized a client, and to find the `consentId` you need before revoking.
 
-Each returned consent carries `id`, `externalUserId`, `clientId`, `clientName`, `scopes` and `grantedAt`. The response also carries `totalSize` plus `nextPageToken` and `prevPageToken` cursors.
+Filter by user in one of two ways. Pass `userIds` to match external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give both, `userIds` wins and `search` is ignored.
 
-Filter by user in one of two ways. Pass `userIds` to match specific external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give both, `userIds` wins and `search` is ignored.
+Consents with `id`, `externalUserId`, `clientId`, `clientName`, `scopes`, and `grantedAt`, plus `totalSize` and the `nextPageToken` / `prevPageToken` cursors.
 </dd>
 </dl>
 </dd>
@@ -8430,11 +8416,9 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dl>
 <dd>
 
-Revokes a single end-user consent held by an API client.
+Revokes a single end-user consent held by an API client. The client is prompted for consent again on its next authorization attempt, and every active refresh token issued to that client for the same user is revoked.
 
-Deletes the consent, so the client is prompted for consent again on its next authorization attempt, and revokes every active refresh token issued to that client for the same user. Access tokens already issued stay valid until they expire.
-
-Note that `clientId` is the API client that holds the consent (`m2m_` prefix), not the resource id. This matches the underlying route `DELETE /clients/{client_id}/consents/{consent_id}`.
+Access tokens that Scalekit already issued stay valid until they expire. See [How revocation affects active access tokens](https://docs.scalekit.com/authenticate/mcp/managing-mcp-clients/#how-revocation-affects-active-access-tokens) for ways to shorten that window.
 </dd>
 </dl>
 </dd>
