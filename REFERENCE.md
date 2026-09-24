@@ -8037,7 +8037,7 @@ for (M2MClient resourceClient : response.getClientsList()) {
 </dl>
 </details>
 
-<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">updateResourceClient</a>(resourceId, clientId, client, updateMask) -> UpdateResourceClientResponse</code></summary>
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">updateResourceClient</a>(resourceId, clientId, options) -> UpdateResourceClientResponse</code></summary>
 <dl>
 <dd>
 
@@ -8051,9 +8051,9 @@ for (M2MClient resourceClient : response.getClientsList()) {
 
 Updates a resource client.
 
-`updateMask` lists which fields of `client` to change, using the proto's field names (for example `custom_claims`, not `customClaims`). Verified against a live environment: the server only actually honors the mask for `scopes`, `custom_claims` and `redirect_uris` — include one of those paths with an empty value (e.g. an empty scopes list) to clear it. `name`/`description` are applied whenever non-empty regardless of `updateMask` (an empty string is a no-op, not a clear).
+Only the fields set on `options` (non-null) are changed — there is no field mask to build yourself; it's derived internally from whichever fields are set. Verified against a live environment: the server only actually honors this for `scopes`, `customClaims` and `redirectUris` — set one to an empty list to clear it. `name`/`description` are applied whenever non-empty regardless (an empty string is a no-op, not a clear).
 
-`"audience"` is not a supported `updateMask` path — audience cannot be set through this SDK at all, on create or update, for any resource type, so this throws `IllegalArgumentException` rather than silently accepting a path that can never take effect.
+There is no `audience` field on `options` — audience is always server-determined and can never be set through this SDK, on create or update, for any resource type.
 </dd>
 </dl>
 </dd>
@@ -8068,9 +8068,8 @@ Updates a resource client.
 <dd>
 
 ```java
-import com.google.protobuf.FieldMask;
+import com.scalekit.api.util.UpdateResourceClientOptions;
 import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
-import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 
 GetResourceResponse resourceResponse = client.resources().getResource("res_142145647087190278");
@@ -8082,8 +8081,7 @@ List<String> allowedScopes = resourceResponse.getResource().getScopesList().stre
 UpdateResourceClientResponse response = client.resources().updateResourceClient(
   "res_142145647087190278",
   "m2m_142145647087190278",
-  ResourceClient.newBuilder().addAllScopes(allowedScopes).build(),
-  FieldMask.newBuilder().addPaths("scopes").build()
+  UpdateResourceClientOptions.builder().scopes(allowedScopes).build()
 );
 
 System.out.println(response.getClient().getScopesList());
@@ -8117,22 +8115,13 @@ System.out.println(response.getClient().getScopesList());
 <dl>
 <dd>
 
-**client:** `ResourceClient` - The fields to update, built via `ResourceClient.newBuilder()`. Required.
-- `setName(String)` - Updated name. An empty string is a no-op server-side, not a clear.
-- `setDescription(String)` - Updated description. An empty string is a no-op server-side, not a clear.
-- `addAllScopes(Iterable<String>)` - Updated scopes (replaces existing; pass an empty list, with `"scopes"` in `updateMask`, to clear). These scopes should be the same or a subset of the scopes available for the resource.
-- `addAllCustomClaims(Iterable<CustomClaim>)` - Custom claims to set (replaces existing; pass an empty list, with `"custom_claims"` in `updateMask`, to clear).
-- `setExpiry(long)` - Updated access token lifetime in seconds.
-- `addAllRedirectUris(Iterable<String>)` - Updated redirect URIs (replaces existing; pass an empty list, with `"redirect_uris"` in `updateMask`, to clear).
-- `addAllAudience(Iterable<String>)` - Not usable through this SDK: audience can never be changed via update, for any resource type. Including `"audience"` in `updateMask` throws `IllegalArgumentException`.
-
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**updateMask:** `FieldMask` - Field paths in `client` to apply (see note above). Pass `null` to apply no partial-update mask.
+**options:** `UpdateResourceClientOptions` - Fields to change; a `null` field is left alone. Built via `UpdateResourceClientOptions.builder()`.
+- `name(String)` - Updated name, if changing it. An empty string is a no-op server-side, not a clear.
+- `description(String)` - Updated description, if changing it. An empty string is a no-op server-side, not a clear.
+- `scopes(List<String>)` - Updated scopes, if changing them (replaces existing; pass an empty list to clear). These scopes should be the same or a subset of the scopes available for the resource.
+- `customClaims(List<CustomClaim>)` - Updated custom claims, if changing them (replaces existing; pass an empty list to clear).
+- `expiry(Long)` - Updated access token lifetime in seconds, if changing it.
+- `redirectUris(List<String>)` - Updated redirect URIs, if changing them (replaces existing; pass an empty list to clear).
 
 </dd>
 </dl>

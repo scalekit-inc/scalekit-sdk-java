@@ -1,6 +1,7 @@
 package com.scalekit.api;
 
 import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.api.util.UpdateResourceClientOptions;
 import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
 import com.scalekit.grpc.scalekit.v1.clients.DeleteResourceClientResponse;
@@ -13,7 +14,6 @@ import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
 import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
 import com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
-import com.google.protobuf.FieldMask;
 
 /**
  * Client for reading resources, managing the API clients scoped to a
@@ -97,25 +97,24 @@ public interface ResourceConsentClient {
     /**
      * Updates an existing API client scoped to a resource.
      *
-     * updateMask lists which fields of client to change. Verified against a
-     * live environment: the server only actually honors the mask for scopes,
-     * customClaims and redirectUris — include one of those paths with an
-     * empty value (e.g. an empty scopes list) to clear it. name/description
-     * are applied whenever non-empty regardless of updateMask (an empty
-     * string is a no-op, not a clear).
+     * Only the fields set on options (non-null) are changed — there is no
+     * field mask to build yourself; it's derived internally from whichever
+     * fields are set. Verified against a live environment: the server only
+     * actually honors this for scopes, customClaims and redirectUris — set
+     * one to an empty list to clear it. name/description are applied
+     * whenever non-empty regardless (an empty string is a no-op, not a
+     * clear).
      *
-     * "audience" is not a supported updateMask path — audience cannot be set
-     * through this SDK at all, on create or update, for any resource type,
-     * so this throws IllegalArgumentException rather than silently
-     * accepting a path that can never take effect.
+     * There is no audience field on options — audience is always
+     * server-determined and can never be set through this SDK, on create or
+     * update, for any resource type.
      *
      * @param resourceId The resource the client must belong to (format: res_xxxxx)
      * @param clientId   The client ID to update
-     * @param client     ResourceClient proto with the fields to update
-     * @param updateMask Field paths in client to apply; null or empty applies no partial-update mask
+     * @param options    Fields to change; a null field is left alone
      * @return UpdateResourceClientResponse with updated client metadata
      */
-    UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, ResourceClient client, FieldMask updateMask);
+    UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, UpdateResourceClientOptions options);
 
     /**
      * Permanently deletes an API client scoped to a resource.

@@ -1,6 +1,6 @@
-import com.google.protobuf.FieldMask;
 import com.scalekit.ScalekitClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.api.util.UpdateResourceClientOptions;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
 import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
@@ -169,20 +169,14 @@ public class ResourceConsentClientTests {
     void testUpdateResourceClientRequiresResourceId() {
         assertThrows(IllegalArgumentException.class, () ->
                 client.resources().updateResourceClient("", "m2m_dummy",
-                        ResourceClient.newBuilder().setName("Test").build(), null));
+                        UpdateResourceClientOptions.builder().name("Test").build()));
     }
 
     @Test
     void testUpdateResourceClientRequiresClientId() {
         assertThrows(IllegalArgumentException.class, () ->
                 client.resources().updateResourceClient(TEST_RESOURCE_ID, "",
-                        ResourceClient.newBuilder().setName("Test").build(), null));
-    }
-
-    @Test
-    void testUpdateResourceClientRequiresClient() {
-        assertThrows(IllegalArgumentException.class, () ->
-                client.resources().updateResourceClient(TEST_RESOURCE_ID, "m2m_dummy", null, null));
+                        UpdateResourceClientOptions.builder().name("Test").build()));
     }
 
     @Test
@@ -254,8 +248,7 @@ public class ResourceConsentClientTests {
                     "created client should appear in list");
 
             UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                    ResourceClient.newBuilder().setName("Java SDK Test Client Updated").build(),
-                    FieldMask.newBuilder().addPaths("name").build());
+                    UpdateResourceClientOptions.builder().name("Java SDK Test Client Updated").build());
             assertEquals("Java SDK Test Client Updated", updated.getClient().getName());
 
             DeleteResourceClientResponse deleteResponse = client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
@@ -429,23 +422,22 @@ public class ResourceConsentClientTests {
         assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
     }
 
-    // Confirms name/description are truthy-gated, not mask-gated: a non-empty
-    // value applies even when its path isn't in the update mask.
+    // Confirms both fields can be updated together in one call, each
+    // independently included by simply setting it on the options.
     @Test
-    void testUpdateResourceClientNameDescriptionAppliedRegardlessOfMask() {
+    void testUpdateResourceClientNameAndDescription() {
         CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
                 ResourceClient.newBuilder().setName("Original Name").build());
         String clientId = created.getClient().getClientId();
 
         try {
             UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                    ResourceClient.newBuilder()
-                            .setName("Applied Despite Missing From Mask")
-                            .setDescription("also applied")
-                            .build(),
-                    FieldMask.newBuilder().addPaths("scopes").build()); // name and description deliberately left out
+                    UpdateResourceClientOptions.builder()
+                            .name("Applied Name")
+                            .description("also applied")
+                            .build());
 
-            assertEquals("Applied Despite Missing From Mask", updated.getClient().getName());
+            assertEquals("Applied Name", updated.getClient().getName());
             assertEquals("also applied", updated.getClient().getDescription());
         } finally {
             client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
@@ -462,8 +454,7 @@ public class ResourceConsentClientTests {
 
         try {
             UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                    ResourceClient.newBuilder().setName("").setDescription("").build(),
-                    FieldMask.newBuilder().addPaths("name").addPaths("description").build());
+                    UpdateResourceClientOptions.builder().name("").description("").build());
 
             assertEquals("Keep This Name", updated.getClient().getName());
             assertEquals("keep this description", updated.getClient().getDescription());
@@ -472,32 +463,14 @@ public class ResourceConsentClientTests {
         }
     }
 
-    // Confirms audience can't be changed via update, by design — the SDK
-    // rejects an "audience" mask path outright, since audience is never
-    // settable through this SDK at all, on create or update.
-    @Test
-    void testUpdateResourceClientRejectsAudienceInMask() {
-        CreateResourceClientResponse created = client.resources().createResourceClient(TEST_RESOURCE_ID,
-                ResourceClient.newBuilder().setName("Audience Immutable Test").build());
-        String clientId = created.getClient().getClientId();
-        java.util.List<String> originalAudience = created.getClient().getAudienceList();
+    // Audience immutability on update is now a compile-time guarantee rather
+    // than a runtime rejection: UpdateResourceClientOptions has no audience
+    // field at all, so there is no way to even attempt setting it through
+    // this method (unlike createResourceClient, which still takes the raw
+    // proto message and rejects a non-empty audience at runtime — see
+    // testCreateResourceClientRejectsAudience).
 
-        try {
-            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
-                    client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                            ResourceClient.newBuilder().addAudience("https://example.com/should-not-apply").build(),
-                            FieldMask.newBuilder().addPaths("audience").build()));
-
-            assertEquals("audience cannot be set via the SDK; it is always server-determined", exception.getMessage());
-
-            GetResourceClientResponse fetched = client.resources().getResourceClient(TEST_RESOURCE_ID, clientId);
-            assertEquals(originalAudience, fetched.getClient().getAudienceList());
-        } finally {
-            client.resources().deleteResourceClient(TEST_RESOURCE_ID, clientId);
-        }
-    }
-
-    // Confirms scopes/customClaims/redirectUris — the three fields the mask
+// Confirms scopes/customClaims/redirectUris — the three fields the mask
     // actually governs — can be cleared by passing an empty value with the
     // path included in the mask.
     @Test
@@ -517,8 +490,11 @@ public class ResourceConsentClientTests {
 
         try {
             UpdateResourceClientResponse updated = client.resources().updateResourceClient(TEST_RESOURCE_ID, clientId,
-                    ResourceClient.newBuilder().build(),
-                    FieldMask.newBuilder().addPaths("scopes").addPaths("custom_claims").addPaths("redirect_uris").build());
+                    UpdateResourceClientOptions.builder()
+                            .scopes(Collections.emptyList())
+                            .customClaims(Collections.emptyList())
+                            .redirectUris(Collections.emptyList())
+                            .build());
 
             assertTrue(updated.getClient().getScopesList().isEmpty());
             assertTrue(updated.getClient().getCustomClaimsList().isEmpty());

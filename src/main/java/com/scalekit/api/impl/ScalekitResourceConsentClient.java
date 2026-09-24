@@ -4,11 +4,14 @@ import com.google.protobuf.FieldMask;
 import com.scalekit.Environment;
 import com.scalekit.api.ResourceConsentClient;
 import com.scalekit.api.util.ListUserConsentsOptions;
+import com.scalekit.api.util.UpdateResourceClientOptions;
 import com.scalekit.grpc.scalekit.v1.clients.*;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
 import io.grpc.ManagedChannel;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -120,25 +123,50 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
     }
 
     @Override
-    public UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, ResourceClient client, FieldMask updateMask) {
+    public UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, UpdateResourceClientOptions options) {
         if (resourceId == null || resourceId.isEmpty()) {
             throw new IllegalArgumentException("resourceId is required");
         }
         if (clientId == null || clientId.isEmpty()) {
             throw new IllegalArgumentException("clientId is required");
         }
-        if (client == null) {
-            throw new IllegalArgumentException("client is required");
+        if (options == null) {
+            options = UpdateResourceClientOptions.builder().build();
         }
-        if (updateMask != null && updateMask.getPathsList().contains("audience")) {
-            throw new IllegalArgumentException("audience cannot be set via the SDK; it is always server-determined");
+
+        List<String> paths = new ArrayList<>();
+        ResourceClient.Builder client = ResourceClient.newBuilder();
+        if (options.getName() != null) {
+            client.setName(options.getName());
+            paths.add("name");
         }
+        if (options.getDescription() != null) {
+            client.setDescription(options.getDescription());
+            paths.add("description");
+        }
+        if (options.getScopes() != null) {
+            client.addAllScopes(options.getScopes());
+            paths.add("scopes");
+        }
+        if (options.getCustomClaims() != null) {
+            client.addAllCustomClaims(options.getCustomClaims());
+            paths.add("custom_claims");
+        }
+        if (options.getExpiry() != null) {
+            client.setExpiry(options.getExpiry());
+            paths.add("expiry");
+        }
+        if (options.getRedirectUris() != null) {
+            client.addAllRedirectUris(options.getRedirectUris());
+            paths.add("redirect_uris");
+        }
+
         UpdateResourceClientRequest.Builder request = UpdateResourceClientRequest.newBuilder()
                 .setResourceId(resourceId)
                 .setClientId(clientId)
-                .setClient(client);
-        if (updateMask != null && updateMask.getPathsCount() > 0) {
-            request.setUpdateMask(updateMask);
+                .setClient(client.build());
+        if (!paths.isEmpty()) {
+            request.setUpdateMask(FieldMask.newBuilder().addAllPaths(paths).build());
         }
         UpdateResourceClientRequest builtRequest = request.build();
         return RetryExecuter.executeWithRetry(() ->
