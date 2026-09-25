@@ -7670,6 +7670,654 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 
 ## Resources
 
+Manage the resource clients scoped to a resource (such as an MCP server), and access the consents your end users grant against one. A consent records that one end user allowed a specific resource client to act on their behalf. Each consent identifies the user by `externalUserId` — the identifier your application supplied when the consent was granted.
+
+Access via `client.resources()`.
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">getResource</a>(resourceId) -> GetResourceResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Retrieves a single resource by id.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
+
+GetResourceResponse response = client.resources().getResource("res_142145647087190278");
+System.out.println(response.getResource());
+
+List<String> allowedScopes = response.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
+System.out.println(response.getResource().getName() + " " + allowedScopes);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource to fetch (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listResources</a>(resourceType, pageSize, pageToken) -> ListResourcesResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists resources of a given type in the environment, with pagination.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.ListResourcesResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceType;
+
+ListResourcesResponse response = client.resources().listResources(ResourceType.MCP_SERVER, 20, "");
+
+System.out.println(response.getTotalSize() + " " + response.getResourcesList());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceType:** `ResourceType` - The type of resource to list. Required; `RESOURCE_TYPE_UNSPECIFIED` is rejected by the server.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageSize:** `int` - Max resources per page (0 uses server default; capped at 30 server-side)
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**pageToken:** `String` - Pagination cursor for next page (null or empty string for first page)
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">createResourceClient</a>(resourceId, client) -> CreateResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a resource client. Returns the created `client` and a `plainSecret` - the plaintext client secret, only available at creation time.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.CreateResourceClientResponse;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
+import com.scalekit.grpc.scalekit.v1.clients.ResourceClient;
+
+GetResourceResponse resourceResponse = client.resources().getResource("res_142145647087190278");
+List<String> allowedScopes = resourceResponse.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
+
+CreateResourceClientResponse response = client.resources().createResourceClient(
+  "res_142145647087190278",
+  ResourceClient.newBuilder().setName("My Resource Client").addAllScopes(allowedScopes).build()
+);
+System.out.println(response.getClient().getClientId() + " " + response.getPlainSecret());
+```
+
+`ResourceClient.newBuilder()` also accepts `setDescription`, `addAllCustomClaims`, `setExpiry` and `addAllRedirectUris` — see Parameters below.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource to create the client for (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**client:** `ResourceClient` - The desired client properties, built via `ResourceClient.newBuilder()`. Required.
+- `setName(String)` - Human-readable name for the client. Defaults to "Resource Client" if omitted.
+- `setDescription(String)` - Optional description.
+- `addAllScopes(Iterable<String>)` / `addScopes(String)` - Scopes to grant. These scopes should be the same or a subset of the scopes available for the resource.
+- `addAllCustomClaims(Iterable<CustomClaim>)` / `addCustomClaims(CustomClaim)` - Custom claims to embed in access tokens, as key/value pairs. Keep this to the essentials, since it increases token size.
+- `setExpiry(long)` - Access token lifetime in seconds. Defaults to the resource's configured expiry, or one day.
+- `addAllRedirectUris(Iterable<String>)` / `addRedirectUris(String)` - Allowed redirect URIs, for a pre-registered (non-DCR) client.
+- `addAllAudience(Iterable<String>)` / `addAudience(String)` - Not usable through this SDK: audience is always server-determined, for any resource type. A non-empty value throws `IllegalArgumentException`.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">getResourceClient</a>(resourceId, clientId) -> GetResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Fetches a single resource client. For a DCR client, the response also includes the end-users who have granted it consent.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceClientResponse;
+
+GetResourceClientResponse response = client.resources().getResourceClient(
+  "res_142145647087190278",
+  "m2m_142145647087190278"
+);
+
+System.out.println(response.getClient().getName());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listResourceClients</a>(resourceId) -> ListResourceClientsResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists resource clients.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.ListResourceClientsResponse;
+import com.scalekit.grpc.scalekit.v1.clients.M2MClient;
+
+ListResourceClientsResponse response = client.resources().listResourceClients("res_142145647087190278");
+
+for (M2MClient resourceClient : response.getClientsList()) {
+  System.out.println(resourceClient.getClientId());
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource whose clients to list (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">updateResourceClient</a>(resourceId, clientId, options) -> UpdateResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates a resource client.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.api.util.UpdateResourceClientOptions;
+import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
+import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
+
+GetResourceResponse resourceResponse = client.resources().getResource("res_142145647087190278");
+List<String> allowedScopes = resourceResponse.getResource().getScopesList().stream()
+        .filter(Scope::getEnabled)
+        .map(Scope::getName)
+        .collect(Collectors.toList());
+
+UpdateResourceClientResponse response = client.resources().updateResourceClient(
+  "res_142145647087190278",
+  "m2m_142145647087190278",
+  UpdateResourceClientOptions.builder().scopes(allowedScopes).build()
+);
+
+System.out.println(response.getClient().getScopesList());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to update (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**options:** `UpdateResourceClientOptions` - Fields to change; a `null` field is left alone. Built via `UpdateResourceClientOptions.builder()`.
+- `name(String)` - Updated name, if changing it. An empty string is a no-op server-side, not a clear.
+- `description(String)` - Updated description, if changing it. An empty string is a no-op server-side, not a clear.
+- `scopes(List<String>)` - Updated scopes, if changing them (replaces existing; pass an empty list to clear). These scopes should be the same or a subset of the scopes available for the resource.
+- `customClaims(List<CustomClaim>)` - Updated custom claims, if changing them (replaces existing; pass an empty list to clear).
+- `expiry(Long)` - Updated access token lifetime in seconds, if changing it.
+- `redirectUris(List<String>)` - Updated redirect URIs, if changing them (replaces existing; pass an empty list to clear).
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">deleteResourceClient</a>(resourceId, clientId) -> DeleteResourceClientResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Deletes resource clients. Throws if the client is missing or scoped to a different resource.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().deleteResourceClient("res_142145647087190278", "m2m_142145647087190278");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to delete (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">createResourceClientSecret</a>(resourceId, clientId) -> CreateClientSecretResponse</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates a new secret for a resource client. Only 2 client secrets are recommended to exist at a given point in time - use `deleteResourceClientSecret` to remove an existing one first if you need more.
+
+The plaintext client secret is only ever returned here, at creation time.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.grpc.scalekit.v1.clients.CreateClientSecretResponse;
+
+CreateClientSecretResponse response = client.resources().createResourceClientSecret("res_142145647087190278", "m2m_142145647087190278");
+System.out.println(response.getPlainSecret());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID to create a secret for (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">deleteResourceClientSecret</a>(resourceId, clientId, secretId) -> void</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Permanently deletes a secret from a resource client. A client must always keep at least 1 secret - calling this on a client's last remaining secret throws an error.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142145647087190278", "sks_xxxxx");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**resourceId:** `String` - The resource the client must belong to (format: `res_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**clientId:** `String` - The client ID the secret belongs to (format: `m2m_xxxxx`). Required.
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**secretId:** `String` - The secret ID to delete (format: `sks_xxxxx`). Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
 <details><summary><code>client.resources().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ResourceConsentClient.java">listUserConsents</a>(resourceId, options) -> ListResourceUserConsentsResponse</code></summary>
 <dl>
 <dd>
@@ -7682,11 +8330,11 @@ client.m2m().listOrganizationClients("org_123", 20, "");
 <dl>
 <dd>
 
-Lists the end-user consents granted against a resource, such as an MCP server, with pagination.
+Lists the end-user consents granted against a resource, with pagination. Use this to audit who authorized a client, and to find the `consentId` you need before revoking.
 
-A consent records that one end user allowed a specific API client to act on their behalf. Each returned consent carries `id`, `externalUserId`, `clientId`, `clientName`, `scopes` and `grantedAt`; the response also carries `totalSize` plus `nextPageToken` and `prevPageToken` cursors.
+Filter by user in one of two ways. Pass `userIds` to match external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give both, `userIds` wins and `search` is ignored.
 
-`externalUserId` is the identifier your application supplied for the user when the consent was granted. Set `userIds` to match it exactly and case-sensitively (maximum 25 values, combined with OR), or `search` for a case-insensitive substring match. When both are set, `userIds` wins and `search` is ignored.
+Consents with `id`, `externalUserId`, `clientId`, `clientName`, `scopes`, and `grantedAt`, plus `totalSize` and the `nextPageToken` / `prevPageToken` cursors.
 </dd>
 </dl>
 </dd>
@@ -7740,7 +8388,11 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dl>
 <dd>
 
-**options:** `ListUserConsentsOptions` - `search` (case-insensitive substring match on external user IDs), `pageSize` (max 30; 0 uses the server default), `pageToken`, `userIds` (exact match, max 25). Pass `null` for no options.
+**options:** `ListUserConsentsOptions` - Optional filter, search and pagination options. Pass `null` for no options.
+- `search(String)` - Case-insensitive substring match on external user IDs. Ignored when `userIds` is set.
+- `pageSize(int)` - Page size, max 30. 0 uses the server default.
+- `pageToken(String)` - Pagination cursor from a previous response (`nextPageToken`/`prevPageToken`).
+- `userIds(List<String>)` - Exact match on external user IDs, max 25. Takes precedence over `search`.
 
 </dd>
 </dl>
@@ -7764,11 +8416,9 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dl>
 <dd>
 
-Revokes a single end-user consent held by an API client.
+Revokes a single end-user consent held by an API client. The client is prompted for consent again on its next authorization attempt, and every active refresh token issued to that client for the same user is revoked.
 
-Deletes the consent, so the client is prompted for consent again on its next authorization attempt, and revokes every active refresh token issued to that client for the same user. Access tokens already issued stay valid until they expire.
-
-Note that `clientId` is the API client that holds the consent (`m2m_` prefix), not the resource id.
+Access tokens that Scalekit already issued stay valid until they expire. See [How revocation affects active access tokens](https://docs.scalekit.com/authenticate/mcp/managing-mcp-clients/#how-revocation-affects-active-access-tokens) for ways to shorten that window.
 </dd>
 </dl>
 </dd>
