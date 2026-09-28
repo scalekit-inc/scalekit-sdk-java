@@ -7705,12 +7705,6 @@ import com.scalekit.grpc.scalekit.v1.clients.GetResourceResponse;
 
 GetResourceResponse response = client.resources().getResource("res_142145647087190278");
 System.out.println(response.getResource());
-
-List<String> allowedScopes = response.getResource().getScopesList().stream()
-        .filter(Scope::getEnabled)
-        .map(Scope::getName)
-        .collect(Collectors.toList());
-System.out.println(response.getResource().getName() + " " + allowedScopes);
 ```
 </dd>
 </dl>
@@ -8416,9 +8410,11 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dl>
 <dd>
 
-Revokes a single end-user consent held by an API client. The client is prompted for consent again on its next authorization attempt, and every active refresh token issued to that client for the same user is revoked.
+Revokes a single end-user consent held by an API client.
 
-Access tokens that Scalekit already issued stay valid until they expire. See [How revocation affects active access tokens](https://docs.scalekit.com/authenticate/mcp/managing-mcp-clients/#how-revocation-affects-active-access-tokens) for ways to shorten that window.
+Deletes the consent, so the client is prompted for consent again on its next authorization attempt, and revokes every active refresh token issued to that client for the same user. Access tokens already issued stay valid until they expire.
+
+Note that `clientId` is the API client that holds the consent (format: `m2m_xxxxx`), not the resource id. This matches the underlying route `DELETE /clients/{client_id}/consents/{consent_id}`.
 </dd>
 </dl>
 </dd>
