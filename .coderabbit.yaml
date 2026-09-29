@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# Only path filters and review instructions are set here. Everything else uses
+# CodeRabbit's defaults.
+reviews:
+  path_filters:
+    # Generated protobuf/gRPC stubs (`make generate`). Never hand-edited.
+    - "!src/main/java/com/scalekit/grpc/**"
+  path_instructions:
+    - path: "**"
+      instructions: |
+        Do not comment on generated code (`src/main/java/com/scalekit/grpc/**`). It is regenerated from the proto repo, so any fix belongs upstream.
+    - path: "**/*.java"
+      instructions: |
+        House convention. Do not flag existing `com.scalekit.internal.http` option types in public signatures. This applies to the existing surface only: do flag a new public signature that exposes `com.scalekit.internal.*` types.
