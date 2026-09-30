@@ -55,7 +55,7 @@ This is the official Java SDK for [Scalekit](https://scalekit.com) — the auth 
 **Gradle:**
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.4.1"
+implementation "com.scalekit:scalekit-sdk-java:2.5.0"
 ```
 
 **Maven:**
@@ -64,9 +64,23 @@ implementation "com.scalekit:scalekit-sdk-java:2.4.1"
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.4.1</version>
+    <version>2.5.0</version>
 </dependency>
 ```
+
+#### Multiple issuers
+
+`TokenValidationOptions` accepts `issuers` (a `List<String>`) so a token can be accepted from more than one issuer, for example the base issuer and a resource-bound one. The token is valid if its `iss` claim exactly equals **any** accepted issuer. The existing single `issuer(String)` builder method is unchanged and combines with `issuers`:
+
+```java
+TokenValidationOptions options = TokenValidationOptions.builder()
+    .issuers(Arrays.asList(
+        "https://your-env.scalekit.dev",
+        "https://your-env.scalekit.dev/resources/res_123"))
+    .build();
+```
+
+Leaving both unset skips the issuer check; a non-empty `issuers` is always enforced. `validateAccessTokenAndGetClaims(jwt, options)` is new and accepts the same options.
 
 #### Usage
 

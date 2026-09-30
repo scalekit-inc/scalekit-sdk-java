@@ -200,22 +200,7 @@ public class ScalekitAuthClient implements AuthClient {
             }
 
             //  verify the expiry (and optionally issuer/audience)
-            JwtConsumerBuilder jwtConsumerBuilder = new JwtConsumerBuilder()
-                .setRequireExpirationTime()
-                .setAllowedClockSkewInSeconds(30)
-                .setSkipSignatureVerification(); // Already verified above
-
-            if (options != null && options.getIssuer() != null && !options.getIssuer().isEmpty()) {
-                jwtConsumerBuilder.setExpectedIssuer(options.getIssuer());
-            }
-
-            if (options != null && options.getAudience() != null && !options.getAudience().isEmpty()) {
-                jwtConsumerBuilder.setExpectedAudience(options.getAudience().toArray(new String[0]));
-            } else {
-                jwtConsumerBuilder.setSkipDefaultAudienceValidation();
-            }
-
-            JwtConsumer jwtConsumer = jwtConsumerBuilder.build();
+            JwtConsumer jwtConsumer = buildJwtConsumer(options);
 
             // This will throw an exception if the token is expired or fails issuer/audience checks
             jwtConsumer.processToClaims(jwt);
@@ -232,6 +217,20 @@ public class ScalekitAuthClient implements AuthClient {
      * @return a Map&lt;String, Object&gt; containing the decoded claims from the token
      */
     public Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException {
+        return validateAccessTokenAndGetClaims(jwt, null);
+    }
+
+    /**
+     * validateAccessTokenAndGetClaims validates an access token, optionally enforcing the
+     * expected issuer(s) and audience, and returns the decoded claims. The token is valid if
+     * its issuer equals {@link TokenValidationOptions#getIssuer()} or any entry of
+     * {@link TokenValidationOptions#getIssuers()}.
+     * @param jwt: The JWT token
+     * @param options: Optional issuer/audience validation options (may be null)
+     * @return a Map&lt;String, Object&gt; containing the decoded claims from the token
+     * @throws APIException if the signature is invalid, the token is expired, or it fails an issuer/audience check
+     */
+    public Map<String, Object> validateAccessTokenAndGetClaims(String jwt, TokenValidationOptions options) throws APIException {
         try {
             // TODO Optimization - Cache the keys
             String keysJson = fetchJsonWebKeys();
@@ -251,13 +250,8 @@ public class ScalekitAuthClient implements AuthClient {
                 throw new APIException("Invalid token signature");
             }
 
-            //  verify the expiry and get claims
-            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
-                .setRequireExpirationTime()
-                .setAllowedClockSkewInSeconds(30)
-                .setSkipSignatureVerification() // Already verified above
-                .setSkipDefaultAudienceValidation()
-                .build();
+            //  verify the expiry (and optionally issuer/audience) and get claims
+            JwtConsumer jwtConsumer = buildJwtConsumer(options);
 
             // This will throw an exception if the token is expired
             JwtClaims jwtClaims = jwtConsumer.processToClaims(jwt);
@@ -267,6 +261,44 @@ public class ScalekitAuthClient implements AuthClient {
         } catch (Exception e) {
             throw new APIException("Failed to validate token and get claims: " + e.getMessage());
         }
+    }
+
+    /**
+     * Builds the claims consumer shared by validateAccessToken and
+     * validateAccessTokenAndGetClaims so both apply identical issuer/audience rules.
+     * The signature is verified by the caller before this consumer runs.
+     */
+    private static JwtConsumer buildJwtConsumer(TokenValidationOptions options) {
+        JwtConsumerBuilder builder = new JwtConsumerBuilder()
+            .setRequireExpirationTime()
+            .setAllowedClockSkewInSeconds(30)
+            .setSkipSignatureVerification(); // Already verified by the caller
+
+        // The accepted set is issuer (when non-empty) plus every entry of issuers. The check is
+        // skipped only when that set is empty because nothing was configured; a non-empty
+        // issuers list is always enforced, even when its entries are blank, so it fails closed.
+        // The token is valid if its iss exactly equals ANY accepted entry, and a token without
+        // an iss claim is rejected (requireIssuer = true).
+        if (options != null) {
+            List<String> accepted = new ArrayList<>();
+            if (options.getIssuer() != null && !options.getIssuer().isEmpty()) {
+                accepted.add(options.getIssuer());
+            }
+            if (options.getIssuers() != null) {
+                accepted.addAll(options.getIssuers());
+            }
+            if (!accepted.isEmpty()) {
+                builder.setExpectedIssuers(true, accepted.toArray(new String[0]));
+            }
+        }
+
+        if (options != null && options.getAudience() != null && !options.getAudience().isEmpty()) {
+            builder.setExpectedAudience(options.getAudience().toArray(new String[0]));
+        } else {
+            builder.setSkipDefaultAudienceValidation();
+        }
+
+        return builder.build();
     }
 
     private String fetchJsonWebKeys() throws IOException {
