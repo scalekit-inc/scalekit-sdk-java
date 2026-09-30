@@ -16,10 +16,10 @@ import com.scalekit.grpc.scalekit.v1.clients.RevokeUserConsentResponse;
 import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 
 /**
- * Client for reading resources, managing the API clients scoped to a
+ * Client for reading resources, managing the resource clients scoped to a
  * resource, and reading and revoking end-user consents granted against one.
  *
- * A consent records that one end user allowed a specific API client to act on
+ * A consent records that one end user allowed a specific resource client to act on
  * their behalf. Each consent identifies the user by its external user ID — the
  * identifier your application supplied for that user when the consent was
  * granted.
@@ -60,7 +60,7 @@ public interface ResourceConsentClient {
     ListResourcesResponse listResources(ResourceType resourceType, int pageSize, String pageToken);
 
     /**
-     * Creates a new API client scoped to a resource.
+     * Creates a new resource client.
      *
      * The response's plainSecret is the plaintext client secret, only
      * available at creation time.
@@ -77,7 +77,7 @@ public interface ResourceConsentClient {
     CreateResourceClientResponse createResourceClient(String resourceId, ResourceClient client);
 
     /**
-     * Retrieves a single API client scoped to a resource, along with the
+     * Retrieves a single resource client, along with the
      * end-users who have granted it consent.
      *
      * @param resourceId The resource the client must belong to (format: res_xxxxx)
@@ -87,7 +87,7 @@ public interface ResourceConsentClient {
     GetResourceClientResponse getResourceClient(String resourceId, String clientId);
 
     /**
-     * Lists every API client scoped to a resource.
+     * Lists every resource client.
      *
      * @param resourceId The resource whose clients to list (format: res_xxxxx)
      * @return ListResourceClientsResponse with clients and DCR/static client counts
@@ -95,7 +95,7 @@ public interface ResourceConsentClient {
     ListResourceClientsResponse listResourceClients(String resourceId);
 
     /**
-     * Updates an existing API client scoped to a resource.
+     * Updates an existing resource client.
      *
      * Only the fields set on options (non-null) are changed — there is no
      * field mask to build yourself; it's derived internally from whichever
@@ -117,7 +117,7 @@ public interface ResourceConsentClient {
     UpdateResourceClientResponse updateResourceClient(String resourceId, String clientId, UpdateResourceClientOptions options);
 
     /**
-     * Permanently deletes an API client scoped to a resource.
+     * Permanently deletes a resource client.
      *
      * DeleteResourceClient shares its underlying delete path with client
      * deletion in general, so nothing forces the given clientId to actually
@@ -134,7 +134,7 @@ public interface ResourceConsentClient {
     DeleteResourceClientResponse deleteResourceClient(String resourceId, String clientId);
 
     /**
-     * Creates a new secret for an API client scoped to a resource.
+     * Creates a new secret for a resource client.
      *
      * The underlying secret-creation call is keyed by clientId alone — it has
      * no notion of a resource — so this fetches the client first and verifies
@@ -159,7 +159,7 @@ public interface ResourceConsentClient {
     CreateClientSecretResponse createResourceClientSecret(String resourceId, String clientId);
 
     /**
-     * Permanently deletes a secret from an API client scoped to a resource.
+     * Permanently deletes a secret from a resource client.
      *
      * Like createResourceClientSecret, the underlying delete call is keyed by
      * clientId alone, so this verifies the client belongs to resourceId first

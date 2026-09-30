@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Implementation of the ResourceConsentClient interface for reading
- * resources, managing the API clients scoped to a resource, and reading and
+ * resources, managing the resource clients scoped to a resource, and reading and
  * revoking the end-user consents granted against one.
  */
 public class ScalekitResourceConsentClient implements ResourceConsentClient {
