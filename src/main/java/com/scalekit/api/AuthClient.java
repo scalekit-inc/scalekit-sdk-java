@@ -41,4 +41,17 @@ public interface AuthClient {
      AuthenticationResponse refreshAccessToken(String refreshToken) throws APIException;
 
      Map<String, Object> validateAccessTokenAndGetClaims(String jwt) throws APIException;
+
+     /**
+      * Validates an access token, optionally enforcing the expected issuer(s) and audience,
+      * and returns the decoded claims. The token is valid if its {@code iss} claim exactly
+      * equals the issuer or any entry of the issuers list.
+      *
+      * @param jwt     the JWT access token to validate
+      * @param options optional issuer/audience validation options (may be {@code null})
+      * @return the decoded claims
+      * @throws APIException if the signature is invalid, the token is expired, or it fails
+      *                      an issuer/audience check
+      */
+     Map<String, Object> validateAccessTokenAndGetClaims(String jwt, TokenValidationOptions options) throws APIException;
 }
