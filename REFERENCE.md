@@ -7903,7 +7903,7 @@ System.out.println(response.getClient().getClientId() + " " + response.getPlainS
 <dl>
 <dd>
 
-Fetches a single resource client. For a DCR client, the response also includes the end-users who have granted it consent.
+Fetches a single resource client, along with the end-users who have granted it consent.
 </dd>
 </dl>
 </dd>
