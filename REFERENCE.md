@@ -6540,7 +6540,7 @@ boolean ok = client.authentication().validateAccessToken("<access_token_jwt>");
 <dl>
 <dd>
 
-Validates an access token's signature and expiry, and additionally enforces the expected issuer (exact match) and/or audience (token must contain at least one of the expected values) when provided via `TokenValidationOptions`.
+Validates an access token's signature and expiry, and additionally enforces the expected issuer(s) and/or audience when provided via `TokenValidationOptions`. The token is valid if its `iss` claim exactly equals **any** accepted issuer, that is `issuer` and/or any entry of `issuers` (no trailing-slash normalization), and its `aud` contains at least one of the expected audience values. Leaving both unset skips the issuer check; a non-empty `issuers` list is always enforced, even if its entries are blank.
 
 Returns `false` when the signature does not verify. Any other failure — an expired token, or an issuer/audience mismatch when the corresponding option is set — is thrown as an `APIException` rather than returned as `false`, so wrap the call in a try/catch when you need to distinguish those cases.
 </dd>
@@ -6560,8 +6560,11 @@ Returns `false` when the signature does not verify. Any other failure — an exp
 import com.scalekit.internal.http.TokenValidationOptions;
 import java.util.Arrays;
 
+// Trust both the base issuer and a resource-bound issuer
 TokenValidationOptions options = TokenValidationOptions.builder()
-  .issuer("https://your-env.scalekit.dev")
+  .issuers(Arrays.asList(
+    "https://your-env.scalekit.dev",
+    "https://your-env.scalekit.dev/resources/res_123"))
   .audience(Arrays.asList("your-audience"))
   .build();
 
@@ -6588,7 +6591,7 @@ boolean ok = client.authentication().validateAccessToken("<access_token_jwt>", o
 <dl>
 <dd>
 
-**options:** `TokenValidationOptions` - Optional issuer and audience validation options (pass `null` to validate signature and expiry only)
+**options:** `TokenValidationOptions` - Optional issuer and audience validation options. `issuer` (single `String`) and/or `issuers` (`List<String>`); the token is valid if `iss` equals any accepted issuer. Pass `null` to validate signature and expiry only
 
 </dd>
 </dl>
@@ -6645,6 +6648,79 @@ Map<String, Object> claims = client.authentication().validateAccessTokenAndGetCl
 <dd>
 
 **jwt:** `String` - The access token JWT
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.authentication().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/AuthClient.java">validateAccessTokenAndGetClaims</a>(jwt, options) -> Map&lt;String, Object&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Validates an access token like `validateAccessToken(jwt, options)` and returns the decoded claims. The token is valid if its `iss` claim exactly equals `issuer` or any entry of `issuers`. Throws an `APIException` if the signature is invalid, the token is expired, or it fails an issuer/audience check.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+import com.scalekit.internal.http.TokenValidationOptions;
+import java.util.Arrays;
+import java.util.Map;
+
+TokenValidationOptions options = TokenValidationOptions.builder()
+  .issuers(Arrays.asList(
+    "https://your-env.scalekit.dev",
+    "https://your-env.scalekit.dev/resources/res_123"))
+  .build();
+
+Map<String, Object> claims =
+  client.authentication().validateAccessTokenAndGetClaims("<access_token_jwt>", options);
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**jwt:** `String` - The access token JWT
+
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**options:** `TokenValidationOptions` - Optional issuer and audience validation options (pass `null` for signature and expiry only)
 
 </dd>
 </dl>
