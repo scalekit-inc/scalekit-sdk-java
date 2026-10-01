@@ -66,7 +66,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <io.grpc.version>1.75.0</io.grpc.version>
-
+        <!-- Release pipeline (.github/workflows/release.yml) overrides these after the
+             human release approval. Defaults keep a local `mvn deploy` from publishing. -->
+        <central.autoPublish>false</central.autoPublish>
+        <central.waitUntil>validated</central.waitUntil>
     </properties>
 
     <dependencies>
@@ -160,7 +163,8 @@
                     <extensions>true</extensions>
                     <configuration>
                         <publishingServerId>central</publishingServerId>
-                        <autoPublish>false</autoPublish>
+                        <autoPublish>${central.autoPublish}</autoPublish>
+                        <waitUntil>${central.waitUntil}</waitUntil>
                     </configuration>
                 </plugin>
 

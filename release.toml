@@ -1,0 +1,36 @@
+# Release configuration read by scripts/release/release.py.
+[project]
+name = "scalekit-sdk-java"
+repo = "scalekit-inc/scalekit-sdk-java"
+language = "java"
+
+[[version_files]]
+path = "pom.xml"
+pattern = '<artifactId>scalekit-sdk-java</artifactId>\s*<version>(?P<version>[^<]+)</version>'
+count = 1
+
+[[version_files]]
+path = "src/main/java/com/scalekit/internal/Constants.java"
+pattern = 'public static String version = "(?P<version>[^"]+)";'
+count = 1
+
+[[version_files]]
+path = "README.md"
+pattern = 'com\.scalekit:scalekit-sdk-java:(?P<version>[0-9][^"\s]*)'
+count = 1
+
+[[version_files]]
+path = "README.md"
+pattern = '<artifactId>scalekit-sdk-java</artifactId>\s*<version>(?P<version>[^<]+)</version>'
+count = 1
+
+[release]
+install = """<dependency>
+  <groupId>com.scalekit</groupId>
+  <artifactId>scalekit-sdk-java</artifactId>
+  <version>{version}</version>
+</dependency>"""
+install_lang = "xml"
+
+[paths]
+shipped = ["src/main/*", "pom.xml"]
