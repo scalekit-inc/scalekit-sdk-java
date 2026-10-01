@@ -8444,7 +8444,7 @@ client.resources().revokeUserConsent("m2m_142145647087190278", "usrcnst_14214564
 <dl>
 <dd>
 
-**clientId:** `String` - The API client holding the consent (format: `m2m_xxxxx`). Required.
+**clientId:** `String` - The resource client holding the consent (format: `m2m_xxxxx`). Required.
 
 </dd>
 </dl>
