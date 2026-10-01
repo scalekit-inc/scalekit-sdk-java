@@ -191,14 +191,14 @@ public interface ResourceConsentClient {
     ListResourceUserConsentsResponse listUserConsents(String resourceId, ListUserConsentsOptions options);
 
     /**
-     * Revokes a single end-user consent held by an API client.
+     * Revokes a single end-user consent held by a resource client.
      *
      * Deletes the consent, so the client is prompted for consent again on its
      * next authorization attempt, and revokes every active refresh token issued
      * to that client for the same user. Access tokens already issued stay valid
      * until they expire.
      *
-     * @param clientId  The API client holding the consent (format: m2m_xxxxx), not the resource id
+     * @param clientId  The resource client holding the consent (format: m2m_xxxxx), not the resource id
      * @param consentId The consent to revoke (format: usrcnst_xxxxx)
      * @return RevokeUserConsentResponse
      */
