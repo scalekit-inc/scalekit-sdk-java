@@ -168,12 +168,24 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.7.0</version>
+                <!-- Applies to a direct `mvn javadoc:javadoc` run, which `make javadoc` and CI
+                     use to catch broken {@link} references before they reach a release build.
+                     The `missing` group is off because generated gRPC/protobuf sources carry
+                     no doc comments. -->
+                <configuration>
+                    <doclint>all,-missing</doclint>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <!-- A release must not be blocked by doc lint; CI already enforces it
+                             via `make javadoc`. Overrides the plugin-level setting above. -->
+                        <configuration>
+                            <doclint>none</doclint>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

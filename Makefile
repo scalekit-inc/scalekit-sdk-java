@@ -3,6 +3,7 @@
 #   make generate        # Regenerate SDK code from proto sources
 #   make generate-local  # Regenerate SDK code from local ../scalekit/proto
 #   make lint            # Run static checks
+#   make javadoc         # Fail on broken Javadoc references
 #   make test            # Run unit tests
 
 SHELL := /bin/bash
@@ -25,7 +26,7 @@ PROTO_LOCAL_INPUT := ../scalekit
 PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
 
-.PHONY: setup tools-check generate generate-local lint test verify-generate
+.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate
 
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
@@ -58,6 +59,11 @@ generate-local: tools-check
 
 lint:
 	@echo "No dedicated lint/static plugin configured in pom.xml; skipping lint."
+
+# Runs the standard doclet with the doclint groups set in pom.xml (all,-missing).
+# A broken {@link} is a Javadoc error, so this fails here instead of during `mvn deploy`.
+javadoc:
+	$(MVN_CMD) javadoc:javadoc
 
 test:
 	$(MVN_CMD) test
