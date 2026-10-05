@@ -82,6 +82,9 @@ jobs:
       - name: Run lint
         run: make lint
 
+      - name: Verify Javadoc
+        run: make javadoc
+
       - name: Run tests
         env:
           SCALEKIT_ENVIRONMENT_URL: ${{ secrets.SCALEKIT_ENVIRONMENT_URL }}

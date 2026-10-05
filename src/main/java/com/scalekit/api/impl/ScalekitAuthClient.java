@@ -223,8 +223,8 @@ public class ScalekitAuthClient implements AuthClient {
     /**
      * validateAccessTokenAndGetClaims validates an access token, optionally enforcing the
      * expected issuer(s) and audience, and returns the decoded claims. The token is valid if
-     * its issuer equals {@link TokenValidationOptions#getIssuer()} or any entry of
-     * {@link TokenValidationOptions#getIssuers()}.
+     * its issuer equals the {@code issuer} value of {@link TokenValidationOptions},
+     * or any entry of its {@code issuers} list.
      * @param jwt: The JWT token
      * @param options: Optional issuer/audience validation options (may be null)
      * @return a Map&lt;String, Object&gt; containing the decoded claims from the token
