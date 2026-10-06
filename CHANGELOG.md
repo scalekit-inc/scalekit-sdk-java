@@ -1,10 +1,19 @@
 # Changelog
 
 All notable changes to this SDK are documented in this file. The format follows
-[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) with the layout defined in the
-Scalekit release-notes standard, and versions follow [Semantic Versioning](https://semver.org/).
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
+[Semantic Versioning](https://semver.org/).
 
-Sections up to and including 2.4.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). They keep their original wording and predate the release-notes standard.
+Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). They keep their original wording.
+
+## [2.5.0] - 2026-10-05
+
+### Changes
+
+- [SK-2043] chore: update proto to v0.1.150.0 (v2.4.1) ([#78](https://github.com/scalekit-inc/scalekit-sdk-java/pull/78))
+- feat: accept multiple issuers in token validation (SK-2080) ([#79](https://github.com/scalekit-inc/scalekit-sdk-java/pull/79))
+- Add Create/Update/Delete/List/Get to ResourceClient ([#77](https://github.com/scalekit-inc/scalekit-sdk-java/pull/77))
+- [SK-2144] fix: unbreak release build on broken Javadoc reference ([#81](https://github.com/scalekit-inc/scalekit-sdk-java/pull/81))
 
 ## [2.4.0] - 2026-09-11
 
@@ -236,6 +245,7 @@ List<Domain> domains = client.domains().listDomainsByOrganizationId(
 
 #### Initial Release
 
+[2.5.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.5.0
 [2.4.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.4.0
 [2.3.1]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.3.1
 [2.3.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.3.0
