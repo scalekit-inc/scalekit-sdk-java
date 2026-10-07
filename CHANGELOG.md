@@ -4,7 +4,7 @@ All notable changes to this SDK are documented in this file. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
-Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). They keep their original wording.
+Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). Their wording is kept, with small corrections.
 
 ## [2.5.0] - 2026-10-05
 
