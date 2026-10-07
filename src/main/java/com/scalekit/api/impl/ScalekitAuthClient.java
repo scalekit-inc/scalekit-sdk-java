@@ -6,16 +6,6 @@ import com.scalekit.Environment;
 import com.scalekit.api.AuthClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.http.*;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.util.EntityUtils;
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSHeader;
 import com.nimbusds.jose.JWSVerifier;
@@ -30,11 +20,13 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.JWTParser;
 import com.nimbusds.jwt.SignedJWT;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.text.ParseException;
-import java.util.concurrent.TimeUnit;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -45,28 +37,12 @@ import static com.scalekit.internal.Constants.*;
 
 public class ScalekitAuthClient implements AuthClient {
 
-    private final CloseableHttpClient httpClient;
+    private static final int CONNECT_TIMEOUT_MILLIS = 5000;
+    private static final int READ_TIMEOUT_MILLIS = 10000;
+
     private final ObjectMapper objectMapper;
 
     public ScalekitAuthClient() {
-
-        PoolingHttpClientConnectionManager connManager = new PoolingHttpClientConnectionManager();
-        connManager.setMaxTotal(20);
-        connManager.setDefaultMaxPerRoute(10);
-
-        RequestConfig requestConfig = RequestConfig.custom()
-                .setConnectTimeout(5000)
-                .setSocketTimeout(10000)
-                .setConnectionRequestTimeout(5000)
-                .build();
-
-        this.httpClient = HttpClients.custom()
-                .setConnectionManager(connManager)
-                .setDefaultRequestConfig(requestConfig)
-                .evictExpiredConnections()
-                .evictIdleConnections(30, TimeUnit.SECONDS)
-                .build();
-
         this.objectMapper = new ObjectMapper();
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
@@ -368,16 +344,50 @@ public class ScalekitAuthClient implements AuthClient {
 
     private String fetchJsonWebKeys() throws IOException {
         String url = Environment.defaultConfig().siteName + KEYS_ENDPOINT;
+        return sendRequest(url, null, "Failed to fetch keys: ");
+    }
 
-        HttpGet httpGet = new HttpGet(URI.create(url));
-
-        try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
-            if (response.getStatusLine().getStatusCode() != 200) {
-                throw new IOException("Failed to fetch keys: " + EntityUtils.toString(response.getEntity()));
+    /**
+     * Sends a GET, or a form POST when {@code formBody} is non-null, using the JDK's
+     * HttpURLConnection (which reuses connections through HTTP keep-alive).
+     * @return the response body
+     * @throws IOException if the request fails or the status is not 200; the message is
+     *         {@code errorPrefix} followed by the response body
+     */
+    private static String sendRequest(String url, String formBody, String errorPrefix) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setConnectTimeout(CONNECT_TIMEOUT_MILLIS);
+        connection.setReadTimeout(READ_TIMEOUT_MILLIS);
+        if (formBody != null) {
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            connection.setDoOutput(true);
+            try (OutputStream out = connection.getOutputStream()) {
+                out.write(formBody.getBytes(StandardCharsets.UTF_8));
             }
+        }
 
-            HttpEntity entity = response.getEntity();
-            return EntityUtils.toString(entity, StandardCharsets.UTF_8);
+        int status = connection.getResponseCode();
+        // Read the body fully, including on errors, so the connection can be reused
+        String body = readFully(status >= 400 ? connection.getErrorStream() : connection.getInputStream());
+        if (status != 200) {
+            throw new IOException(errorPrefix + body);
+        }
+        return body;
+    }
+
+    private static String readFully(InputStream in) throws IOException {
+        if (in == null) {
+            return "";
+        }
+        try (InputStream stream = in) {
+            ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+            byte[] chunk = new byte[8192];
+            int read;
+            while ((read = stream.read(chunk)) != -1) {
+                buffer.write(chunk, 0, read);
+            }
+            return new String(buffer.toByteArray(), StandardCharsets.UTF_8);
         }
     }
 
@@ -440,24 +450,8 @@ public class ScalekitAuthClient implements AuthClient {
                 })
                 .collect(Collectors.joining("&"));
 
-        HttpPost httpPost = new HttpPost(URI.create(url));
-        httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-
-
-        StringEntity entity = new StringEntity(form, StandardCharsets.UTF_8);
-        httpPost.setEntity(entity);
-
-        try (CloseableHttpResponse response = httpClient.execute(httpPost)) {
-            // Check the response status
-            if (response.getStatusLine().getStatusCode() != 200) {
-                throw new IOException("Failed to authenticate: " + EntityUtils.toString(response.getEntity()));
-            }
-
-            // Parse the response body into AuthenticationResponse
-            HttpEntity responseEntity = response.getEntity();
-            String responseBody = EntityUtils.toString(responseEntity, StandardCharsets.UTF_8);
-            return objectMapper.readValue(responseBody, AuthenticationResponse.class);
-        }
+        String responseBody = sendRequest(url, form, "Failed to authenticate: ");
+        return objectMapper.readValue(responseBody, AuthenticationResponse.class);
     }
 
     /**

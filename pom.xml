@@ -131,11 +131,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.18.8</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.14</version>
-        </dependency>
         <!-- JWT/JWKS handling. A regular (not shaded) dependency, so an application that
              already has nimbus-jose-jwt (e.g. through Spring Security) shares one copy, and
              others get it from Maven. It has no dependencies of its own. -->
