@@ -220,7 +220,7 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
-    /** Allowed clock skew, in seconds, when checking exp, nbf and iat of access tokens. */
+    /** Allowed clock skew, in seconds, when checking exp and nbf of access tokens. */
     private static final long ACCESS_TOKEN_CLOCK_SKEW_SECONDS = 30;
 
     /** Thrown when a token's claims fail validation. */
@@ -263,8 +263,8 @@ public class ScalekitAuthClient implements AuthClient {
 
     /**
      * Checks the claims shared by validateAccessToken and validateAccessTokenAndGetClaims so
-     * both apply identical rules: exp is required, exp/nbf/iat are checked with a 30 second
-     * clock skew, and issuer/audience are enforced when configured. The signature is verified
+     * both apply identical rules: exp is required, exp/nbf are checked with a 30 second
+     * clock skew, iat must not be after exp, and issuer/audience are enforced when configured. The signature is verified
      * by the caller before this runs.
      */
     private static void verifyClaims(JWTClaimsSet claims, TokenValidationOptions options) throws InvalidTokenException {
@@ -309,7 +309,7 @@ public class ScalekitAuthClient implements AuthClient {
         }
     }
 
-    /** Rejects a token that is expired, not yet valid, or issued in the future, allowing the given clock skew. */
+    /** Rejects a token that is expired or not yet valid (allowing the given clock skew), or whose iat is after its exp. */
     private static void verifyTimes(JWTClaimsSet claims, long skewSeconds) throws InvalidTokenException {
         long now = System.currentTimeMillis();
         long skewMillis = skewSeconds * 1000;
@@ -321,16 +321,17 @@ public class ScalekitAuthClient implements AuthClient {
         if (nbf != null && now + skewMillis < nbf.getTime()) {
             throw new InvalidTokenException("The JWT is not yet valid as the evaluation time is before the Not Before (nbf=" + nbf.getTime() / 1000 + ")");
         }
+        // iat is not compared with the current time; it is only rejected when it is after exp
         Date iat = claims.getIssueTime();
-        if (iat != null && now + skewMillis < iat.getTime()) {
-            throw new InvalidTokenException("The Issued At (iat=" + iat.getTime() / 1000 + ") is in the future");
+        if (iat != null && exp != null && iat.getTime() > exp.getTime()) {
+            throw new InvalidTokenException("The Issued At (iat=" + iat.getTime() / 1000 + ") is after the Expiration Time (exp=" + exp.getTime() / 1000 + ")");
         }
     }
 
     /**
      * Decodes a signed token's payload without verifying its signature, for tokens that were
      * already verified or that come straight from the Scalekit token endpoint over TLS.
-     * exp, nbf and iat are still checked (with no clock skew) when present.
+     * exp and nbf are still checked (with no clock skew), and iat must not be after exp, when present.
      * @return the payload JSON as sent
      */
     private static String decodeVerifiedPayload(String token) throws ParseException, InvalidTokenException {
