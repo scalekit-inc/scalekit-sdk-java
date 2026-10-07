@@ -1,0 +1,8 @@
+kind: fixed
+body: |
+  `client.authentication().validateAccessToken(...)`, `validateAccessTokenAndGetClaims(...)` and `getIdpInitiatedLoginClaims(...)` previously threw `NoClassDefFoundError: org/slf4j/LoggerFactory` when `slf4j-api` was not on the classpath. They now work without any logging library.
+time: '2026-10-07T23:34:29.161511+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''
