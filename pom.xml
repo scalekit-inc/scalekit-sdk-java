@@ -66,6 +66,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <io.grpc.version>1.75.0</io.grpc.version>
+        <!-- Supported range: 9.37.x and 10.x. CI also runs the tests with -Dnimbus.version=9.37.4. -->
+        <nimbus.version>10.10</nimbus.version>
 
     </properties>
 
@@ -134,10 +136,20 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.14</version>
         </dependency>
+        <!-- JWT/JWKS handling. A regular (not shaded) dependency, so an application that
+             already has nimbus-jose-jwt (e.g. through Spring Security) shares one copy, and
+             others get it from Maven. It has no dependencies of its own. -->
         <dependency>
-            <groupId>org.bitbucket.b_c</groupId>
-            <artifactId>jose4j</artifactId>
-            <version>0.9.6</version>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>${nimbus.version}</version>
+        </dependency>
+        <!-- Tests log through SLF4J (previously pulled in by jose4j). Test scope only. -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -266,6 +278,8 @@
                                     <exclude>javax.annotation:javax.annotation-api</exclude>
                                     <exclude>org.slf4j:slf4j-api</exclude>
                                     <exclude>org.slf4j:slf4j-nop</exclude>
+                                    <!-- Published as a regular dependency instead (see above) -->
+                                    <exclude>com.nimbusds:nimbus-jose-jwt</exclude>
                                 </excludes>
                             </artifactSet>
                             <filters>

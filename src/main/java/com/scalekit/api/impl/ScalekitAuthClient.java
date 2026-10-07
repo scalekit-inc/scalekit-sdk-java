@@ -16,18 +16,24 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
-import org.jose4j.jwk.JsonWebKey;
-import org.jose4j.jwk.JsonWebKeySet;
-import org.jose4j.jwk.VerificationJwkSelector;
-import org.jose4j.jws.JsonWebSignature;
-import org.jose4j.jwt.JwtClaims;
-import org.jose4j.jwt.consumer.InvalidJwtException;
-import org.jose4j.jwt.consumer.JwtConsumer;
-import org.jose4j.jwt.consumer.JwtConsumerBuilder;
+import com.nimbusds.jose.JOSEException;
+import com.nimbusds.jose.JWSHeader;
+import com.nimbusds.jose.JWSVerifier;
+import com.nimbusds.jose.crypto.factories.DefaultJWSVerifierFactory;
+import com.nimbusds.jose.jwk.AsymmetricJWK;
+import com.nimbusds.jose.jwk.JWK;
+import com.nimbusds.jose.jwk.JWKMatcher;
+import com.nimbusds.jose.jwk.JWKSelector;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jwt.JWT;
+import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.JWTParser;
+import com.nimbusds.jwt.SignedJWT;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
+import java.text.ParseException;
 import java.util.concurrent.TimeUnit;
 
 import java.nio.charset.StandardCharsets;
@@ -182,28 +188,15 @@ public class ScalekitAuthClient implements AuthClient {
     public boolean validateAccessToken(String jwt, TokenValidationOptions options) throws APIException {
         try {
             // TODO Optimization - Cache the keys
-            String keysJson = fetchJsonWebKeys();
-
-            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
-
-            JsonWebSignature jws = new JsonWebSignature();
-            jws.setCompactSerialization(jwt);
-
-            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
-            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
-            jws.setKey(jwk.getKey());
+            SignedJWT signedJwt = SignedJWT.parse(jwt);
 
             //  verify the signature
-            boolean isSignatureValid = jws.verifySignature();
-            if (!isSignatureValid) {
+            if (!verifySignature(signedJwt, fetchJsonWebKeys())) {
                 return false;
             }
 
-            //  verify the expiry (and optionally issuer/audience)
-            JwtConsumer jwtConsumer = buildJwtConsumer(options);
-
-            // This will throw an exception if the token is expired or fails issuer/audience checks
-            jwtConsumer.processToClaims(jwt);
+            // Throws if the token is expired or fails issuer/audience checks
+            verifyClaims(signedJwt.getJWTClaimsSet(), options);
 
             return true;
         } catch (Exception e) {
@@ -233,52 +226,82 @@ public class ScalekitAuthClient implements AuthClient {
     public Map<String, Object> validateAccessTokenAndGetClaims(String jwt, TokenValidationOptions options) throws APIException {
         try {
             // TODO Optimization - Cache the keys
-            String keysJson = fetchJsonWebKeys();
-
-            JsonWebKeySet jsonWebKeySet = new JsonWebKeySet(keysJson);
-
-            JsonWebSignature jws = new JsonWebSignature();
-            jws.setCompactSerialization(jwt);
-
-            VerificationJwkSelector jwkSelector = new VerificationJwkSelector();
-            JsonWebKey jwk = jwkSelector.select(jws, jsonWebKeySet.getJsonWebKeys());
-            jws.setKey(jwk.getKey());
+            SignedJWT signedJwt = SignedJWT.parse(jwt);
 
             //  verify the signature
-            boolean isSignatureValid = jws.verifySignature();
-            if (!isSignatureValid) {
+            if (!verifySignature(signedJwt, fetchJsonWebKeys())) {
                 throw new APIException("Invalid token signature");
             }
 
-            //  verify the expiry (and optionally issuer/audience) and get claims
-            JwtConsumer jwtConsumer = buildJwtConsumer(options);
+            // Throws if the token is expired or fails issuer/audience checks
+            verifyClaims(signedJwt.getJWTClaimsSet(), options);
 
-            // This will throw an exception if the token is expired
-            JwtClaims jwtClaims = jwtConsumer.processToClaims(jwt);
-
-            // Convert JWT claims to Map
-            return objectMapper.readValue(jwtClaims.toJson(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
+            // Convert the claims to a Map from the payload JSON as sent, so value types
+            // (for example integer timestamps and a single-string aud) are kept as-is
+            return objectMapper.readValue(signedJwt.getPayload().toString(), new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
         } catch (Exception e) {
             throw new APIException("Failed to validate token and get claims: " + e.getMessage());
         }
     }
 
+    /** Allowed clock skew, in seconds, when checking exp, nbf and iat of access tokens. */
+    private static final long ACCESS_TOKEN_CLOCK_SKEW_SECONDS = 30;
+
+    /** Thrown when a token's claims fail validation. */
+    private static final class InvalidTokenException extends Exception {
+        InvalidTokenException(String message) {
+            super(message);
+        }
+    }
+
     /**
-     * Builds the claims consumer shared by validateAccessToken and
-     * validateAccessTokenAndGetClaims so both apply identical issuer/audience rules.
-     * The signature is verified by the caller before this consumer runs.
+     * Verifies the token's signature against the environment's JSON Web Key Set.
+     * Candidate keys are those matching the token's kid (when present) and its algorithm's
+     * key type; the signature is valid if any candidate verifies it.
+     * @return false when no candidate key verifies the signature
+     * @throws InvalidTokenException when the key set has no key that can verify this token
      */
-    private static JwtConsumer buildJwtConsumer(TokenValidationOptions options) {
-        JwtConsumerBuilder builder = new JwtConsumerBuilder()
-            .setRequireExpirationTime()
-            .setAllowedClockSkewInSeconds(30)
-            .setSkipSignatureVerification(); // Already verified by the caller
+    private static boolean verifySignature(SignedJWT signedJwt, String keysJson)
+            throws ParseException, JOSEException, InvalidTokenException {
+        JWSHeader header = signedJwt.getHeader();
+        JWKMatcher matcher = JWKMatcher.forJWSHeader(header);
+        List<JWK> candidates = matcher == null
+                ? Collections.<JWK>emptyList()
+                : new JWKSelector(matcher).select(JWKSet.parse(keysJson));
+        if (candidates.isEmpty()) {
+            throw new InvalidTokenException("No matching key found for kid " + header.getKeyID()
+                    + " and alg " + header.getAlgorithm());
+        }
+        DefaultJWSVerifierFactory verifierFactory = new DefaultJWSVerifierFactory();
+        for (JWK jwk : candidates) {
+            if (!(jwk instanceof AsymmetricJWK)) {
+                continue;
+            }
+            JWSVerifier verifier = verifierFactory.createJWSVerifier(header, ((AsymmetricJWK) jwk).toPublicKey());
+            if (signedJwt.verify(verifier)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Checks the claims shared by validateAccessToken and validateAccessTokenAndGetClaims so
+     * both apply identical rules: exp is required, exp/nbf/iat are checked with a 30 second
+     * clock skew, and issuer/audience are enforced when configured. The signature is verified
+     * by the caller before this runs.
+     */
+    private static void verifyClaims(JWTClaimsSet claims, TokenValidationOptions options) throws InvalidTokenException {
+        if (claims.getExpirationTime() == null) {
+            throw new InvalidTokenException("No Expiration Time (exp) claim present");
+        }
+        verifyTimes(claims, ACCESS_TOKEN_CLOCK_SKEW_SECONDS);
 
         // The accepted set is issuer (when non-empty) plus every entry of issuers. The check is
         // skipped only when that set is empty because nothing was configured; a non-empty
         // issuers list is always enforced, even when its entries are blank, so it fails closed.
         // The token is valid if its iss exactly equals ANY accepted entry, and a token without
-        // an iss claim is rejected (requireIssuer = true).
+        // an iss claim is rejected.
         if (options != null) {
             List<String> accepted = new ArrayList<>();
             if (options.getIssuer() != null && !options.getIssuer().isEmpty()) {
@@ -288,17 +311,59 @@ public class ScalekitAuthClient implements AuthClient {
                 accepted.addAll(options.getIssuers());
             }
             if (!accepted.isEmpty()) {
-                builder.setExpectedIssuers(true, accepted.toArray(new String[0]));
+                String issuer = claims.getIssuer();
+                if (issuer == null) {
+                    throw new InvalidTokenException("No Issuer (iss) claim present but was expecting one of " + accepted);
+                }
+                if (!accepted.contains(issuer)) {
+                    throw new InvalidTokenException("Issuer (iss) claim value (" + issuer + ") doesn't match expected value of " + accepted);
+                }
             }
         }
 
+        // The token is valid if any of its aud values is one of the expected audiences
         if (options != null && options.getAudience() != null && !options.getAudience().isEmpty()) {
-            builder.setExpectedAudience(options.getAudience().toArray(new String[0]));
-        } else {
-            builder.setSkipDefaultAudienceValidation();
+            List<String> audience = claims.getAudience();
+            if (audience == null || audience.isEmpty()) {
+                throw new InvalidTokenException("No Audience (aud) claim present");
+            }
+            if (Collections.disjoint(audience, options.getAudience())) {
+                throw new InvalidTokenException("Audience (aud) claim " + audience + " doesn't contain an acceptable identifier. Expected one of " + options.getAudience());
+            }
         }
+    }
 
-        return builder.build();
+    /** Rejects a token that is expired, not yet valid, or issued in the future, allowing the given clock skew. */
+    private static void verifyTimes(JWTClaimsSet claims, long skewSeconds) throws InvalidTokenException {
+        long now = System.currentTimeMillis();
+        long skewMillis = skewSeconds * 1000;
+        Date exp = claims.getExpirationTime();
+        if (exp != null && now - skewMillis >= exp.getTime()) {
+            throw new InvalidTokenException("The JWT is no longer valid - the evaluation time is on or after the Expiration Time (exp=" + exp.getTime() / 1000 + ")");
+        }
+        Date nbf = claims.getNotBeforeTime();
+        if (nbf != null && now + skewMillis < nbf.getTime()) {
+            throw new InvalidTokenException("The JWT is not yet valid as the evaluation time is before the Not Before (nbf=" + nbf.getTime() / 1000 + ")");
+        }
+        Date iat = claims.getIssueTime();
+        if (iat != null && now + skewMillis < iat.getTime()) {
+            throw new InvalidTokenException("The Issued At (iat=" + iat.getTime() / 1000 + ") is in the future");
+        }
+    }
+
+    /**
+     * Decodes a signed token's payload without verifying its signature, for tokens that were
+     * already verified or that come straight from the Scalekit token endpoint over TLS.
+     * exp, nbf and iat are still checked (with no clock skew) when present.
+     * @return the payload JSON as sent
+     */
+    private static String decodeVerifiedPayload(String token) throws ParseException, InvalidTokenException {
+        JWT jwt = JWTParser.parse(token);
+        if (!(jwt instanceof SignedJWT)) {
+            throw new InvalidTokenException("The JWT is not signed");
+        }
+        verifyTimes(jwt.getJWTClaimsSet(), 0);
+        return ((SignedJWT) jwt).getPayload().toString();
     }
 
     private String fetchJsonWebKeys() throws IOException {
@@ -342,15 +407,9 @@ public class ScalekitAuthClient implements AuthClient {
 
         try {
             response = authenticate(params);
-            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
-                    .setSkipSignatureVerification()
-                    .setSkipDefaultAudienceValidation()
-                    .build();
 
-            JwtClaims jwtClaims = jwtConsumer.processToClaims(response.getIdToken());
-
-            idTokenClaims = objectMapper.readValue(jwtClaims.toJson(), IdTokenClaims.class);
-        } catch (IOException | InterruptedException | URISyntaxException | InvalidJwtException e) {
+            idTokenClaims = objectMapper.readValue(decodeVerifiedPayload(response.getIdToken()), IdTokenClaims.class);
+        } catch (IOException | InterruptedException | URISyntaxException | ParseException | InvalidTokenException e) {
             throw new APIException("Failed to authenticate with code: " + e.getMessage());
         }
 
@@ -412,16 +471,10 @@ public class ScalekitAuthClient implements AuthClient {
             if (!isTokenValid) {
                 throw new APIException("Invalid idpInitiatedLoginToken");
             }
-            JwtConsumer jwtConsumer = new JwtConsumerBuilder()
-                    .setSkipSignatureVerification()
-                    .setSkipDefaultAudienceValidation()
-                    .build();
-            JwtClaims jwtClaims = jwtConsumer.processToClaims(idpInitiatedLoginToken);
-
             return objectMapper.readValue(
-                    jwtClaims.toJson(),
+                    decodeVerifiedPayload(idpInitiatedLoginToken),
                     IdpInitiatedLoginClaims.class);
-        } catch (IOException | InvalidJwtException e) {
+        } catch (IOException | ParseException | InvalidTokenException e) {
             throw new APIException("Failed to verify and consume idpInitiatedLoginToken, error: " + e.getMessage());
         }
     }
