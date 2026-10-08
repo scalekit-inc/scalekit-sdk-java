@@ -1,12 +1,12 @@
 kind: added
 body: |
-  `client.tools().search(...)` ranks tools by relevance and readiness; `listScoped(...)` and `listAvailable(...)` list an identifier's tools. `client.connections()` adds `listAppConnections`, `createEnvironmentConnection`, `getEnvironmentConnection` and `updateEnvironmentConnection`; `client.actions().providers().listProviders(...)` lists providers. `client.actions()` also offers `searchTools`, `listScopedTools`, `listAvailableTools` and `listConnections`. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#tools)
+  `client.connections()` now manages your environment's app connections with `listAppConnections(...)`, `createEnvironmentConnection(...)`, `getEnvironmentConnection(...)` and `updateEnvironmentConnection(...)`; `client.actions().listConnections(...)` lists the same connections. Pass the connection's current type to `updateEnvironmentConnection`: a different type converts the connection and resets its settings. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#app-and-environment-connections)
 
   ```java
-  List<SearchedTool> tools = client.tools().search("send an email",
-      SearchToolsParams.builder().identifier("user_123").topK(5).build());
   EnvironmentConnection gmail = client.connections().createEnvironmentConnection(
       CreateEnvironmentConnectionParams.appConnection("GMAIL").build());
+  Page<AppConnection> page = client.connections().listAppConnections(
+      ListAppConnectionsParams.builder().query("gmail").build());
   ```
 time: '2026-10-08T07:47:36.543136+00:00'
 custom:
