@@ -11,6 +11,10 @@ import com.scalekit.models.mcp.CreateMcpConfigParams;
 import com.scalekit.models.mcp.McpConfig;
 import com.scalekit.models.mcp.McpConnectionToolMapping;
 import com.scalekit.models.connectedaccounts.UpdateConnectedAccountParams;
+import com.scalekit.models.Page;
+import com.scalekit.models.connections.AppConnection;
+import com.scalekit.models.connections.EnvironmentConnection;
+import com.scalekit.models.connections.ListAppConnectionsParams;
 import com.scalekit.models.mcp.ListMcpConfigsParams;
 import com.scalekit.models.mcp.McpSessionToken;
 import com.scalekit.models.mcp.UpdateMcpConfigParams;
@@ -18,11 +22,21 @@ import com.scalekit.models.providers.AuthField;
 import com.scalekit.models.providers.AuthPattern;
 import com.scalekit.models.providers.AuthPatternType;
 import com.scalekit.models.providers.CustomProviderRequest;
+import com.scalekit.models.providers.ListProvidersParams;
 import com.scalekit.models.providers.Provider;
+import com.scalekit.models.providers.ProviderType;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
+import com.scalekit.models.tools.ConnectionReadiness;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
+import com.scalekit.models.tools.ScopedTool;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.SearchedTool;
+import com.scalekit.models.tools.Tool;
+import com.scalekit.models.tools.ToolReadinessState;
 import com.scalekit.models.tools.ListToolsParams;
 import com.scalekit.models.tools.ToolPage;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -49,7 +63,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * enabled connection), TEST_AGENTKIT_IDENTIFIER (an identifier with an active account on it),
  * TEST_AGENTKIT_TOOL (a tool of that connection) and TEST_AGENTKIT_PROXY_PATH (a GET path on the
  * provider's API). TEST_AGENTKIT_TOOL_INPUT, a JSON object, is the tool's input (default {}).
- * Each test skips when what it needs is missing, and removes what it creates.
+ * TEST_AGENTKIT_ENV_CONNECTION_ID is the ID of an environment connection to read. Each test skips
+ * when what it needs is missing, and removes what it creates. Environment connections are only read:
+ * they cannot be deleted through the SDK, so creating and updating them is covered by the
+ * credential-free tests.
  */
 @Tag("live")
 class AgentKitLiveTest {
@@ -257,5 +274,107 @@ class AgentKitLiveTest {
         ProxyException e = assertThrows(ProxyException.class, () -> client.actions().request(
                 ProxyRequest.builder(unique("missing-"), identifier, path).build()));
         assertEquals(404, e.statusCode());
+    }
+
+    @Test
+    void listAppConnectionsFindsTheFixtureConnection() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        boolean found = false;
+        for (AppConnection each : client.connections().listAppConnections(
+                ListAppConnectionsParams.builder().pageSize(30).build()).autoPager()) {
+            assertFalse(each.id().isEmpty());
+            found |= each.connectionName().equals(connection);
+        }
+        assertTrue(found, "the fixture connection is an app connection");
+
+        Page<AppConnection> facade = client.actions().listConnections(ListAppConnectionsParams.builder().pageSize(1).build());
+        assertTrue(facade.items().size() <= 1);
+        assertThrows(BadRequestException.class, () -> client.actions().listConnections(
+                ListAppConnectionsParams.builder().query("ab").build()), "the server needs at least 3 characters");
+    }
+
+    @Test
+    void getEnvironmentConnectionReadsTheFixture() {
+        String id = fixture("TEST_AGENTKIT_ENV_CONNECTION_ID");
+        EnvironmentConnection connection = client.connections().getEnvironmentConnection(id);
+        assertEquals(id, connection.id());
+        assertFalse(connection.providerKey().isEmpty());
+        assertNotNull(connection.type());
+
+        APIException e = assertThrows(APIException.class,
+                () -> client.connections().getEnvironmentConnection("conn_" + System.nanoTime()));
+        assertTrue(e instanceof NotFoundException || e instanceof BadRequestException, e.getClass().getName());
+    }
+
+    @Test
+    void listProvidersByType() {
+        Page<Provider> builtIn = client.actions().providers().listProviders(
+                ListProvidersParams.builder().pageSize(5).build());
+        assertFalse(builtIn.items().isEmpty(), "every environment has built-in providers");
+        assertTrue(builtIn.items().size() <= 5);
+        for (Provider provider : builtIn.items()) {
+            assertFalse(provider.isCustom(), provider.identifier());
+        }
+        for (Provider provider : client.actions().providers().listProviders(
+                ListProvidersParams.builder().providerType(ProviderType.CUSTOM).pageSize(5).build()).items()) {
+            assertTrue(provider.isCustom(), provider.identifier());
+        }
+        assertNotNull(client.actions().providers().listProviders().items());
+    }
+
+    @Test
+    void searchToolsRanksAndChecksReadiness() {
+        String tool = fixture("TEST_AGENTKIT_TOOL");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        List<SearchedTool> plain = client.tools().search(tool.replace('_', ' '),
+                SearchToolsParams.builder().topK(5).build());
+        assertTrue(plain.size() <= 5);
+        for (int i = 1; i < plain.size(); i++) {
+            assertTrue(plain.get(i - 1).score() >= plain.get(i).score(), "results are ranked by score");
+        }
+        for (SearchedTool each : plain) {
+            assertTrue(each.connections().isEmpty(), "readiness is only computed for an identifier");
+        }
+
+        List<SearchedTool> scoped = client.actions().searchTools(tool.replace('_', ' '),
+                SearchToolsParams.builder().identifier(identifier).topK(5).build());
+        assertTrue(scoped.size() <= 5);
+        for (SearchedTool each : scoped) {
+            for (ConnectionReadiness readiness : each.connections()) {
+                assertNotEquals(ToolReadinessState.NOT_EVALUATED, readiness.readinessState(), each.name());
+            }
+        }
+
+        StringBuilder tooLong = new StringBuilder();
+        for (int i = 0; i < 300; i++) {
+            tooLong.append('a');
+        }
+        assertThrows(BadRequestException.class, () -> client.tools().search(tooLong.toString()));
+    }
+
+    @Test
+    void listAvailableToolsForTheFixtureIdentifier() {
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        Page<Tool> page = client.actions().listAvailableTools(identifier,
+                ListAvailableToolsParams.builder().pageSize(10).build());
+        assertFalse(page.items().isEmpty(), "the fixture identifier has an account");
+        assertTrue(page.items().size() <= 10);
+        assertTrue(client.tools().listAvailable(unique("sdk-java-nobody-")).items().isEmpty(),
+                "an identifier without accounts gets an empty page");
+    }
+
+    @Test
+    void listScopedToolsForTheFixtureConnection() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        Page<ScopedTool> page = client.tools().listScoped(identifier,
+                ListScopedToolsParams.builder().addConnectionName(connection).pageSize(5).build());
+        assertFalse(page.items().isEmpty());
+        for (ScopedTool each : page.items()) {
+            assertEquals(identifier, each.identifier());
+            assertTrue(each.connectedAccountId().isPresent());
+        }
+        assertThrows(NotFoundException.class, () -> client.actions().listScopedTools(unique("sdk-java-nobody-"),
+                ListScopedToolsParams.builder().addConnectionName(connection).build()));
     }
 }

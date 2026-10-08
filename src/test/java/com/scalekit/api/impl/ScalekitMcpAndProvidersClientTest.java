@@ -20,6 +20,8 @@ import com.scalekit.grpc.scalekit.v1.mcp.McpConfigConnectionToolMapping;
 import com.scalekit.grpc.scalekit.v1.mcp.UpdateMcpConfigRequest;
 import com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest;
 import com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse;
+import com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest;
+import com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse;
 import com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest;
 import com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse;
 import com.scalekit.internal.RetryTestSupport;
@@ -38,7 +40,9 @@ import com.scalekit.models.providers.AuthField;
 import com.scalekit.models.providers.AuthPattern;
 import com.scalekit.models.providers.AuthPatternType;
 import com.scalekit.models.providers.CustomProviderRequest;
+import com.scalekit.models.providers.ListProvidersParams;
 import com.scalekit.models.providers.Provider;
+import com.scalekit.models.providers.ProviderType;
 import io.grpc.Status;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -285,6 +289,68 @@ class ScalekitMcpAndProvidersClientTest {
         fake.enqueue("DeleteCustomProvider", FakeAgentKitServer.error(Status.Code.UNAVAILABLE, null));
         providers.deleteCustomProvider("A:env");
         assertEquals(2, fake.calls("DeleteCustomProvider"));
+    }
+
+    // ---- listProviders ----
+
+    @Test
+    void listProvidersSendsFilterAndMapsProviders() {
+        fake.enqueue("ListProviders", ListProvidersResponse.newBuilder()
+                .addProviders(com.scalekit.grpc.scalekit.v1.providers.Provider.newBuilder().setIdentifier("ACME:env")
+                        .setDisplayName("Acme").setProxyUrl("https://api.acme.example"))
+                .setNextPageToken("n").setTotalSize(3).build());
+
+        Page<Provider> page = providers.listProviders(ListProvidersParams.builder()
+                .providerType(ProviderType.CUSTOM).identifier(" ACME:env ").pageSize(2).pageToken("t").build());
+
+        ListProvidersRequest request = fake.lastRequest("ListProviders");
+        assertTrue(request.hasFilter());
+        assertEquals(com.scalekit.grpc.scalekit.v1.providers.ProviderType.CUSTOM, request.getFilter().getProviderType());
+        assertEquals("ACME:env", request.getIdentifier());
+        assertEquals(2, request.getPageSize());
+        assertEquals("t", request.getPageToken());
+        assertEquals("ACME:env", page.items().get(0).identifier());
+        assertEquals("Acme", page.items().get(0).displayName());
+        assertTrue(page.hasNextPage());
+    }
+
+    @Test
+    void listProvidersWithoutParamsSendsNoFilter() {
+        providers.listProviders();
+        providers.listProviders(null);
+        for (ListProvidersRequest request : fake.<ListProvidersRequest>requests("ListProviders")) {
+            assertEquals(ListProvidersRequest.getDefaultInstance(), request, "no type means built-in providers only");
+        }
+        providers.listProviders(ListProvidersParams.builder().providerType(ProviderType.ALL).build());
+        assertEquals(com.scalekit.grpc.scalekit.v1.providers.ProviderType.ALL,
+                ((ListProvidersRequest) fake.lastRequest("ListProviders")).getFilter().getProviderType());
+    }
+
+    @Test
+    void listProvidersAutoPagerKeepsFilterAndIsRetriedOnUnavailable() {
+        fake.enqueue("ListProviders", FakeAgentKitServer.error(Status.Code.UNAVAILABLE, null),
+                ListProvidersResponse.newBuilder().addProviders(
+                        com.scalekit.grpc.scalekit.v1.providers.Provider.newBuilder().setIdentifier("A"))
+                        .setNextPageToken("p2").build(),
+                ListProvidersResponse.newBuilder().addProviders(
+                        com.scalekit.grpc.scalekit.v1.providers.Provider.newBuilder().setIdentifier("B")).build());
+        List<String> ids = new java.util.ArrayList<>();
+        for (Provider provider : providers.listProviders(
+                ListProvidersParams.builder().providerType(ProviderType.ALL).build()).autoPager()) {
+            ids.add(provider.identifier());
+        }
+        assertEquals(Arrays.asList("A", "B"), ids);
+        List<ListProvidersRequest> requests = fake.requests("ListProviders");
+        assertEquals(3, requests.size());
+        assertEquals("p2", requests.get(2).getPageToken());
+        assertEquals(com.scalekit.grpc.scalekit.v1.providers.ProviderType.ALL,
+                requests.get(2).getFilter().getProviderType());
+    }
+
+    @Test
+    void listProvidersMapsInvalidArgument() {
+        fake.enqueue("ListProviders", FakeAgentKitServer.error(Status.Code.INVALID_ARGUMENT, null));
+        assertThrows(BadRequestException.class, () -> providers.listProviders());
     }
 
     @Test

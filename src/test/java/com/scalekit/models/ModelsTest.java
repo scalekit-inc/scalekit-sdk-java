@@ -8,11 +8,25 @@ import com.scalekit.models.connectedaccounts.CreateConnectedAccountParams;
 import com.scalekit.models.connectedaccounts.GoogleDwdAuth;
 import com.scalekit.models.connectedaccounts.OAuthToken;
 import com.scalekit.models.connectedaccounts.TrustedIdpAuth;
+import com.scalekit.models.connections.CreateEnvironmentConnectionParams;
+import com.scalekit.models.connections.EnvironmentConnection;
+import com.scalekit.models.connections.EnvironmentConnectionAuthMode;
+import com.scalekit.models.connections.EnvironmentConnectionStatus;
+import com.scalekit.models.connections.EnvironmentConnectionType;
+import com.scalekit.models.connections.GoogleDwdConnectionSettings;
+import com.scalekit.models.connections.ListAppConnectionsParams;
+import com.scalekit.models.connections.OAuthConnectionSettings;
 import com.scalekit.models.providers.AuthPatternType;
+import com.scalekit.models.providers.ListProvidersParams;
+import com.scalekit.models.providers.ProviderType;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
 import com.scalekit.models.tools.ExecuteToolParams;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
 import com.scalekit.models.tools.ListToolsParams;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.ToolReadinessState;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
@@ -127,6 +141,52 @@ class ModelsTest {
         }
     }
 
+    @Test
+    void everyGeneratedConnectionEnumValueIsKnown() {
+        for (com.scalekit.grpc.scalekit.v1.connections.ConnectionType type
+                : com.scalekit.grpc.scalekit.v1.connections.ConnectionType.values()) {
+            if (type == com.scalekit.grpc.scalekit.v1.connections.ConnectionType.UNRECOGNIZED || type.getNumber() == 0) {
+                continue;
+            }
+            assertNotEquals(EnvironmentConnectionType.Known._UNKNOWN, EnvironmentConnectionType.of(type.name()).known(),
+                    type.name());
+        }
+        for (com.scalekit.grpc.scalekit.v1.connections.ConnectionStatus status
+                : com.scalekit.grpc.scalekit.v1.connections.ConnectionStatus.values()) {
+            if (status == com.scalekit.grpc.scalekit.v1.connections.ConnectionStatus.UNRECOGNIZED
+                    || status.getNumber() == 0) {
+                continue;
+            }
+            assertNotEquals(EnvironmentConnectionStatus.Known._UNKNOWN,
+                    EnvironmentConnectionStatus.of(status.name()).known(), status.name());
+        }
+        for (com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode mode
+                : com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.values()) {
+            if (mode == com.scalekit.grpc.scalekit.v1.connections.ConnectionAuthMode.UNRECOGNIZED
+                    || mode.getNumber() == 0) {
+                continue;
+            }
+            assertNotEquals(EnvironmentConnectionAuthMode.Known._UNKNOWN,
+                    EnvironmentConnectionAuthMode.of(mode.name()).known(), mode.name());
+        }
+        for (com.scalekit.grpc.scalekit.v1.tools.ToolReadinessState state
+                : com.scalekit.grpc.scalekit.v1.tools.ToolReadinessState.values()) {
+            if (state == com.scalekit.grpc.scalekit.v1.tools.ToolReadinessState.UNRECOGNIZED
+                    || state.getNumber() == 0) {
+                continue;
+            }
+            String name = state.name().substring("TOOL_READINESS_STATE_".length());
+            assertNotEquals(ToolReadinessState.Known._UNKNOWN, ToolReadinessState.of(name).known(), name);
+        }
+        for (com.scalekit.grpc.scalekit.v1.providers.ProviderType type
+                : com.scalekit.grpc.scalekit.v1.providers.ProviderType.values()) {
+            if (type != com.scalekit.grpc.scalekit.v1.providers.ProviderType.UNRECOGNIZED) {
+                assertEquals(type.name(), ProviderType.valueOf(type.name()).name());
+            }
+        }
+        assertEquals(EnvironmentConnectionType.Known._UNKNOWN, EnvironmentConnectionType.of("INVALID").known());
+    }
+
     // ---- redaction ----
 
     @Test
@@ -145,6 +205,22 @@ class ModelsTest {
         assertTrue(text.contains("api_key"), "static auth keeps the key names");
     }
 
+    @Test
+    void connectionSettingsSecretsNeverAppearInToString() {
+        OAuthConnectionSettings oauth = OAuthConnectionSettings.builder().clientId("client-id")
+                .clientSecret("CS-S3CR3T").googleadsDeveloperToken("GA-S3CR3T").build();
+        GoogleDwdConnectionSettings dwd = GoogleDwdConnectionSettings.builder().serviceAccountJson("SA-S3CR3T").build();
+        String text = oauth.toString() + dwd
+                + EnvironmentConnection.builder().id("c").oauthSettings(oauth).build()
+                + EnvironmentConnection.builder().id("c").googleDwdSettings(dwd).build()
+                + EnvironmentConnection.builder().id("c")
+                .staticSettings(Collections.singletonMap("api_key", "ST-S3CR3T")).build()
+                + CreateEnvironmentConnectionParams.appConnection("X")
+                .context(Collections.singletonMap("token", "CTX-S3CR3T")).build();
+        assertFalse(text.contains("S3CR3T"), text);
+        assertTrue(text.contains("client-id"));
+    }
+
     // ---- params ----
 
     @Test
@@ -159,6 +235,50 @@ class ModelsTest {
         assertThrows(IllegalArgumentException.class,
                 () -> ExecuteToolParams.builder().putToolInput("big", Long.MAX_VALUE).build());
         assertEquals(ConnectedAccountRef.of("gmail", "u"), ConnectedAccountRef.of(" gmail", "u "));
+    }
+
+    @Test
+    void newParamsNormalizeBlankValuesAndValidate() {
+        SearchToolsParams search = SearchToolsParams.builder().identifier("  ").build();
+        assertFalse(search.identifier().isPresent());
+        assertFalse(search.topK().isPresent());
+        assertEquals(ExecuteToolParams.DEFAULT_TIMEOUT, search.timeout());
+        assertThrows(IllegalArgumentException.class, () -> SearchToolsParams.builder().timeout(Duration.ofSeconds(-1)).build());
+        assertEquals(ExecuteToolParams.DEFAULT_TIMEOUT, ListAvailableToolsParams.builder().build().timeout());
+        assertThrows(IllegalArgumentException.class, () -> ListScopedToolsParams.builder().build());
+        ListScopedToolsParams scoped = ListScopedToolsParams.builder().addToolName("gmail_send_email").build();
+        assertThrows(UnsupportedOperationException.class, () -> scoped.toolNames().add("x"));
+        ListAppConnectionsParams connections = ListAppConnectionsParams.builder().query(" ").provider(" ").pageToken("").build();
+        assertFalse(connections.query().isPresent());
+        assertFalse(connections.provider().isPresent());
+        assertFalse(connections.pageToken().isPresent());
+        assertEquals(" gma", ListAppConnectionsParams.builder().query(" gma").build().query().get(),
+                "a non-blank query is sent as given");
+        ListProvidersParams providers = ListProvidersParams.builder().identifier(" ").build();
+        assertFalse(providers.identifier().isPresent());
+        assertFalse(providers.providerType().isPresent());
+        CreateEnvironmentConnectionParams create = CreateEnvironmentConnectionParams.appConnection(" GMAIL ")
+                .connectionName(" ").build();
+        assertFalse(create.connectionName().isPresent());
+        assertEquals("GMAIL", create.providerKey());
+        assertThrows(IllegalArgumentException.class, () -> CreateEnvironmentConnectionParams.appConnection("X")
+                .context(Collections.singletonMap("bad", new Object())).build());
+    }
+
+    @Test
+    void newParamsToBuilderRoundTrips() {
+        SearchToolsParams search = SearchToolsParams.builder().identifier("u").topK(3).timeout(Duration.ofSeconds(5)).build();
+        assertEquals(search.toString(), search.toBuilder().build().toString());
+        ListScopedToolsParams scoped = ListScopedToolsParams.builder().addProvider("GMAIL").addConnectionName("gmail")
+                .pageSize(5).pageToken("t").build();
+        assertEquals(scoped.toString(), scoped.toBuilder().build().toString());
+        ListAvailableToolsParams available = ListAvailableToolsParams.builder().pageSize(5).build();
+        assertEquals(available.toString(), available.toBuilder().build().toString());
+        ListAppConnectionsParams connections = ListAppConnectionsParams.builder().provider("GMAIL").query("gma")
+                .pageSize(3).build();
+        assertEquals(connections.toString(), connections.toBuilder().build().toString());
+        ListProvidersParams providers = ListProvidersParams.builder().providerType(ProviderType.ALL).pageSize(2).build();
+        assertEquals(providers.toString(), providers.toBuilder().build().toString());
     }
 
     @Test

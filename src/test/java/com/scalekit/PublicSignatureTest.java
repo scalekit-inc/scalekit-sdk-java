@@ -2,6 +2,7 @@ package com.scalekit;
 
 import com.scalekit.api.ActionsClient;
 import com.scalekit.api.ConnectedAccountsClient;
+import com.scalekit.api.ConnectionClient;
 import com.scalekit.api.McpClient;
 import com.scalekit.api.ProvidersClient;
 import com.scalekit.api.ToolsClient;
@@ -47,7 +48,8 @@ class PublicSignatureTest {
 
     private static final String[] MODEL_PACKAGES = {
             "com.scalekit.models", "com.scalekit.models.tools", "com.scalekit.models.connectedaccounts",
-            "com.scalekit.models.mcp", "com.scalekit.models.providers", "com.scalekit.models.proxy"};
+            "com.scalekit.models.mcp", "com.scalekit.models.providers", "com.scalekit.models.proxy",
+            "com.scalekit.models.connections"};
 
     private static final List<Class<?>> NEW_TYPES = Arrays.<Class<?>>asList(
             ToolsClient.class, ConnectedAccountsClient.class, ActionsClient.class, McpClient.class, ProvidersClient.class,
@@ -72,6 +74,34 @@ class PublicSignatureTest {
             Method method = ScalekitClient.class.getMethod(accessor);
             checkType(method.getGenericReturnType(), "ScalekitClient." + accessor, violations);
         }
+        assertTrue(violations.isEmpty(), String.join("\n", violations));
+    }
+
+    /**
+     * ConnectionClient shipped before 2.6.0, so its older methods (which return generated types)
+     * are outside this check; the methods added in 2.6.0 must be default methods with SDK types.
+     */
+    @Test
+    void connectionClientAdditionsAreDefaultMethodsWithSdkTypes() {
+        List<String> added = Arrays.asList("listAppConnections", "createEnvironmentConnection",
+                "getEnvironmentConnection", "updateEnvironmentConnection");
+        List<String> violations = new ArrayList<>();
+        int found = 0;
+        for (Method method : ConnectionClient.class.getDeclaredMethods()) {
+            if (!added.contains(method.getName())) {
+                continue;
+            }
+            found++;
+            String where = "ConnectionClient." + method.getName();
+            if (!method.isDefault()) {
+                violations.add(where + " must be a default method so existing implementations keep working");
+            }
+            checkType(method.getGenericReturnType(), where, violations);
+            for (Type parameter : method.getGenericParameterTypes()) {
+                checkType(parameter, where, violations);
+            }
+        }
+        assertEquals(5, found);
         assertTrue(violations.isEmpty(), String.join("\n", violations));
     }
 

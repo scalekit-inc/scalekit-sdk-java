@@ -5,6 +5,15 @@ import com.google.protobuf.Message;
 import com.scalekit.Environment;
 import com.scalekit.api.AuthClient;
 import com.scalekit.grpc.scalekit.v1.connected_accounts.*;
+import com.scalekit.grpc.scalekit.v1.connections.ConnectionServiceGrpc;
+import com.scalekit.grpc.scalekit.v1.connections.CreateConnectionResponse;
+import com.scalekit.grpc.scalekit.v1.connections.CreateEnvironmentConnectionRequest;
+import com.scalekit.grpc.scalekit.v1.connections.GetConnectionResponse;
+import com.scalekit.grpc.scalekit.v1.connections.GetEnvironmentConnectionRequest;
+import com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsRequest;
+import com.scalekit.grpc.scalekit.v1.connections.ListAppConnectionsResponse;
+import com.scalekit.grpc.scalekit.v1.connections.UpdateConnectionResponse;
+import com.scalekit.grpc.scalekit.v1.connections.UpdateEnvironmentConnectionRequest;
 import com.scalekit.grpc.scalekit.v1.errdetails.ErrorInfo;
 import com.scalekit.grpc.scalekit.v1.errdetails.ToolErrorInfo;
 import com.scalekit.grpc.scalekit.v1.mcp.*;
@@ -16,6 +25,8 @@ import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.ClientInterceptors;
+import io.grpc.Context;
+import io.grpc.Deadline;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
@@ -60,6 +71,7 @@ final class FakeAgentKitServer implements AutoCloseable {
     private final Map<String, Deque<Object>> scripts = new ConcurrentHashMap<>();
     private final Map<String, List<Object>> requests = new ConcurrentHashMap<>();
     private final Map<String, List<Long>> deadlinesNanos = new ConcurrentHashMap<>();
+    private final Map<String, List<Long>> serverDeadlinesNanos = new ConcurrentHashMap<>();
 
     final Server server;
     final ManagedChannel managedChannel;
@@ -74,6 +86,7 @@ final class FakeAgentKitServer implements AutoCloseable {
                 .addService(new Accounts())
                 .addService(new Mcp())
                 .addService(new Providers())
+                .addService(new Connections())
                 .build()
                 .start();
         managedChannel = ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
@@ -131,6 +144,15 @@ final class FakeAgentKitServer implements AutoCloseable {
         return list == null ? Collections.<Long>emptyList() : new ArrayList<>(list);
     }
 
+    /**
+     * Returns the deadlines the server saw for a method, for clients built on the un-intercepted
+     * {@link #managedChannel}.
+     */
+    List<Long> serverDeadlines(String method) {
+        List<Long> list = serverDeadlinesNanos.get(method);
+        return list == null ? Collections.<Long>emptyList() : new ArrayList<>(list);
+    }
+
     static StatusRuntimeException error(Status.Code code, String errorCode) {
         return error(code, errorCode, null);
     }
@@ -164,6 +186,10 @@ final class FakeAgentKitServer implements AutoCloseable {
     @SuppressWarnings("unchecked")
     private <R extends Message> void handle(String method, Object request, StreamObserver<R> observer, R empty) {
         record(requests, method, request);
+        Deadline deadline = Context.current().getDeadline();
+        if (deadline != null) {
+            record(serverDeadlinesNanos, method, deadline.timeRemaining(TimeUnit.NANOSECONDS));
+        }
         Object reply = null;
         Deque<Object> queue = scripts.get(method);
         if (queue != null) {
@@ -196,6 +222,22 @@ final class FakeAgentKitServer implements AutoCloseable {
         @Override
         public void executeTool(ExecuteToolRequest request, StreamObserver<ExecuteToolResponse> observer) {
             handle("ExecuteTool", request, observer, ExecuteToolResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void searchTools(SearchToolsRequest request, StreamObserver<SearchToolsResponse> observer) {
+            handle("SearchTools", request, observer, SearchToolsResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void listScopedTools(ListScopedToolsRequest request, StreamObserver<ListScopedToolsResponse> observer) {
+            handle("ListScopedTools", request, observer, ListScopedToolsResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void listAvailableTools(ListAvailableToolsRequest request,
+                                       StreamObserver<ListAvailableToolsResponse> observer) {
+            handle("ListAvailableTools", request, observer, ListAvailableToolsResponse.getDefaultInstance());
         }
     }
 
@@ -303,6 +345,37 @@ final class FakeAgentKitServer implements AutoCloseable {
         public void deleteCustomProvider(DeleteProviderRequest request,
                                          StreamObserver<DeleteProviderResponse> observer) {
             handle("DeleteCustomProvider", request, observer, DeleteProviderResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void listProviders(ListProvidersRequest request, StreamObserver<ListProvidersResponse> observer) {
+            handle("ListProviders", request, observer, ListProvidersResponse.getDefaultInstance());
+        }
+    }
+
+    private final class Connections extends ConnectionServiceGrpc.ConnectionServiceImplBase {
+        @Override
+        public void listAppConnections(ListAppConnectionsRequest request,
+                                       StreamObserver<ListAppConnectionsResponse> observer) {
+            handle("ListAppConnections", request, observer, ListAppConnectionsResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void createEnvironmentConnection(CreateEnvironmentConnectionRequest request,
+                                                StreamObserver<CreateConnectionResponse> observer) {
+            handle("CreateEnvironmentConnection", request, observer, CreateConnectionResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void getEnvironmentConnection(GetEnvironmentConnectionRequest request,
+                                             StreamObserver<GetConnectionResponse> observer) {
+            handle("GetEnvironmentConnection", request, observer, GetConnectionResponse.getDefaultInstance());
+        }
+
+        @Override
+        public void updateEnvironmentConnection(UpdateEnvironmentConnectionRequest request,
+                                                StreamObserver<UpdateConnectionResponse> observer) {
+            handle("UpdateEnvironmentConnection", request, observer, UpdateConnectionResponse.getDefaultInstance());
         }
     }
 }
