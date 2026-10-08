@@ -71,7 +71,7 @@ Sections up to and including 2.5.0 were imported from [GitHub Releases](https://
 - [SK-2668] feat(users): add listUserRoles and listUserPermissions ([#49](https://github.com/scalekit-inc/scalekit-sdk-java/pull/49))
 - docs: add getLogoutUrl method and rename to REFERENCE.md ([#50](https://github.com/scalekit-inc/scalekit-sdk-java/pull/50))
 - [SK-2671] feat(roles): add updateDefaultRoles and listDependentRoles ([#51](https://github.com/scalekit-inc/scalekit-sdk-java/pull/51))
-- [SK-2601][SK-2607] feat: API discrepancy fixes (Java) ([#44](https://github.com/scalekit-inc/scalekit-sdk-java/pull/44))
+- [SK-2601, SK-2607] feat: API discrepancy fixes (Java) ([#44](https://github.com/scalekit-inc/scalekit-sdk-java/pull/44))
 - docs: API tokens, M2M, and table of contents in REFERENCE ([#54](https://github.com/scalekit-inc/scalekit-sdk-java/pull/54))
 - refactor(m2m): standardize method names to add/remove convention ([#53](https://github.com/scalekit-inc/scalekit-sdk-java/pull/53))
 - docs: Update README with agent-first positioning ([#55](https://github.com/scalekit-inc/scalekit-sdk-java/pull/55))
