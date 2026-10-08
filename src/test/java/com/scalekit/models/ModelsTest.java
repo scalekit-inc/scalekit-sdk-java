@@ -1,0 +1,217 @@
+package com.scalekit.models;
+
+import com.scalekit.models.connectedaccounts.AuthorizationDetails;
+import com.scalekit.models.connectedaccounts.AuthorizationType;
+import com.scalekit.models.connectedaccounts.ConnectedAccountRef;
+import com.scalekit.models.connectedaccounts.ConnectedAccountStatus;
+import com.scalekit.models.connectedaccounts.CreateConnectedAccountParams;
+import com.scalekit.models.connectedaccounts.GoogleDwdAuth;
+import com.scalekit.models.connectedaccounts.OAuthToken;
+import com.scalekit.models.connectedaccounts.TrustedIdpAuth;
+import com.scalekit.models.providers.AuthPatternType;
+import com.scalekit.models.proxy.ProxyRequest;
+import com.scalekit.models.proxy.ProxyResponse;
+import com.scalekit.models.tools.ExecuteToolParams;
+import com.scalekit.models.tools.ListToolsParams;
+import org.junit.jupiter.api.Test;
+
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class ModelsTest {
+
+    // ---- paging ----
+
+    private static Page<Integer> pages(AtomicInteger fetches, int pageCount) {
+        return page(fetches, 1, pageCount);
+    }
+
+    private static Page<Integer> page(AtomicInteger fetches, int number, int pageCount) {
+        return new Page.Builder<Integer>()
+                .items(Arrays.asList(number * 10, number * 10 + 1))
+                .nextPageToken(number < pageCount ? "t" + (number + 1) : "")
+                .totalSize(pageCount * 2L)
+                .nextPageFetcher(token -> {
+                    fetches.incrementAndGet();
+                    return page(fetches, Integer.parseInt(token.substring(1)), pageCount);
+                })
+                .build();
+    }
+
+    @Test
+    void autoPagerIsLazyAndRestartsFromTheFirstPage() {
+        AtomicInteger fetches = new AtomicInteger();
+        Page<Integer> first = pages(fetches, 3);
+        assertEquals(3, first.autoPager().stream().limit(3).count());
+        assertEquals(1, fetches.get(), "limit(3) needs only the second page");
+        assertEquals(Arrays.asList(10, 11, 20, 21, 30, 31),
+                first.autoPager().stream().collect(Collectors.toList()));
+        assertEquals(3, fetches.get());
+        assertEquals(6L, first.totalSize().getAsLong());
+    }
+
+    @Test
+    void lastPageHasNoNext() {
+        Page<Integer> only = new Page.Builder<Integer>().items(Collections.singletonList(1)).nextPageToken("").build();
+        assertFalse(only.hasNextPage());
+        assertFalse(only.nextPageToken().isPresent());
+        assertThrows(NoSuchElementException.class, only::nextPage);
+        Iterator<Integer> it = only.autoPager().iterator();
+        assertEquals(1, it.next());
+        assertThrows(NoSuchElementException.class, it::next);
+        assertFalse(only.totalSize().isPresent());
+    }
+
+    @Test
+    void autoPagerStopsWhenTheServerRepeatsTheCursor() {
+        AtomicInteger fetches = new AtomicInteger();
+        Page<Integer> stuck = new Page.Builder<Integer>().items(Collections.<Integer>emptyList()).nextPageToken("same")
+                .nextPageFetcher(token -> {
+                    fetches.incrementAndGet();
+                    return new Page.Builder<Integer>().items(Collections.<Integer>emptyList()).nextPageToken("same")
+                            .nextPageFetcher(t -> {
+                                fetches.incrementAndGet();
+                                return null;
+                            }).build();
+                }).build();
+        assertFalse(stuck.autoPager().iterator().hasNext());
+        assertEquals(1, fetches.get());
+    }
+
+    @Test
+    void pageItemsAreImmutableCopies() {
+        List<Integer> items = new ArrayList<>(Arrays.asList(1, 2));
+        Page<Integer> page = new Page.Builder<Integer>().items(items).build();
+        items.add(3);
+        assertEquals(2, page.items().size());
+        assertThrows(UnsupportedOperationException.class, () -> page.items().add(4));
+    }
+
+    // ---- extensible enums ----
+
+    @Test
+    void extensibleEnumsKeepUnknownValues() {
+        assertSame(ConnectedAccountStatus.ACTIVE, ConnectedAccountStatus.of("ACTIVE"));
+        ConnectedAccountStatus future = ConnectedAccountStatus.of("SUSPENDED");
+        assertEquals(ConnectedAccountStatus.Known._UNKNOWN, future.known());
+        assertEquals("SUSPENDED", future.value());
+        assertEquals(future, ConnectedAccountStatus.of("SUSPENDED"));
+        assertEquals(AuthorizationType.Known.NO_AUTH, AuthorizationType.of("NO_AUTH").known());
+        assertEquals(AuthorizationType.Known._UNKNOWN, AuthorizationType.of("_UNKNOWN").known());
+        assertEquals(AuthPatternType.Known.BEARER, AuthPatternType.of("BEARER").known());
+        assertEquals(AuthPatternType.Known._UNKNOWN, AuthPatternType.of("SAML").known());
+        assertThrows(IllegalArgumentException.class, () -> AuthPatternType.of(null));
+    }
+
+    @Test
+    void everyGeneratedConnectorTypeIsKnown() {
+        for (com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectorType type
+                : com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectorType.values()) {
+            if (type == com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectorType.UNRECOGNIZED
+                    || type.getNumber() == 0) {
+                continue;
+            }
+            assertNotEquals(AuthorizationType.Known._UNKNOWN, AuthorizationType.of(type.name()).known(), type.name());
+        }
+    }
+
+    // ---- redaction ----
+
+    @Test
+    void secretsNeverAppearInToString() {
+        String text = AuthorizationDetails.oauthToken(OAuthToken.builder().accessToken("AT-S3CR3T")
+                .refreshToken("RT-S3CR3T").build()).toString()
+                + AuthorizationDetails.staticAuth(Collections.singletonMap("api_key", "KEY-S3CR3T")).toString()
+                + AuthorizationDetails.googleDwd(GoogleDwdAuth.builder("a@b.c").accessToken("DWD-S3CR3T").build())
+                + AuthorizationDetails.trustedIdp(TrustedIdpAuth.builder("db").secretAccessKey("SK-S3CR3T")
+                .sessionToken("ST-S3CR3T").build())
+                + CreateConnectedAccountParams.builder().apiConfig(Collections.singletonMap("k", "CFG-S3CR3T")).build()
+                + ProxyRequest.builder("c", "i", "/p").header("X-Api-Key", "HDR-S3CR3T").method("POST")
+                .jsonBody(Collections.singletonMap("password", "BODY-S3CR3T")).build()
+                + ProxyResponse.builder().statusCode(200).body("RESP-S3CR3T".getBytes(StandardCharsets.UTF_8)).build();
+        assertFalse(text.contains("S3CR3T"), text);
+        assertTrue(text.contains("api_key"), "static auth keeps the key names");
+    }
+
+    // ---- params ----
+
+    @Test
+    void paramsNormalizeBlankValuesAndValidate() {
+        ListToolsParams list = ListToolsParams.builder().identifier("  ").connectionName(" gmail ").build();
+        assertFalse(list.identifier().isPresent());
+        assertEquals("gmail", list.connectionName().get());
+        assertEquals(ListToolsParams.DEFAULT_TIMEOUT, list.timeout());
+        assertEquals(Duration.ofSeconds(60), ExecuteToolParams.DEFAULT_TIMEOUT);
+        assertThrows(IllegalArgumentException.class, () -> ListToolsParams.builder().timeout(Duration.ZERO).build());
+        assertThrows(IllegalArgumentException.class, () -> ExecuteToolParams.builder().timeout(null).build());
+        assertThrows(IllegalArgumentException.class,
+                () -> ExecuteToolParams.builder().putToolInput("big", Long.MAX_VALUE).build());
+        assertEquals(ConnectedAccountRef.of("gmail", "u"), ConnectedAccountRef.of(" gmail", "u "));
+    }
+
+    @Test
+    void toBuilderRoundTrips() {
+        ListToolsParams params = ListToolsParams.builder().provider("GOOGLE").summary(true).pageSize(5).build();
+        ListToolsParams copy = params.toBuilder().build();
+        assertEquals(params.toString(), copy.toString());
+    }
+
+    // ---- proxy request rules ----
+
+    @Test
+    void proxyRequestRules() {
+        ProxyRequest request = ProxyRequest.builder(" conn ", " user ", "x/y").method("patch").build();
+        assertEquals("/x/y", request.path());
+        assertEquals("PATCH", request.method());
+        assertEquals("conn", request.connectionName());
+        assertEquals(ProxyRequest.DEFAULT_TIMEOUT, request.timeout());
+
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("", "u", "/p").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", " ", "/p").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", null).build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p")
+                .jsonBody(Collections.singletonMap("a", 1)).build(), "GET cannot have a body");
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").method("HEAD")
+                .formBody(Collections.singletonMap("a", "1")).build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").method("POST")
+                .jsonBody(Collections.singletonMap("a", 1)).formBody(Collections.singletonMap("a", "1")).build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").jsonBody("text"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("Host", "x"));
+        assertThrows(IllegalArgumentException.class,
+                () -> ProxyRequest.builder("c", "u", "/p").header("content-length", "1"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("X-A", "a\r\nb: c"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("bad name", "v"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").method("GE T").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").method("CONNECT").build());
+        assertThrows(IllegalArgumentException.class,
+                () -> ProxyRequest.builder("c", "u", "/p").timeout(Duration.ofMillis(-1)).build());
+        assertThrows(IllegalArgumentException.class,
+                () -> ProxyRequest.builder("c", "u", "/p").method("POST").rawBody(new byte[0], " ").build());
+    }
+
+    @Test
+    void proxyResponseHeadersAreCaseInsensitiveAndCharsetAware() {
+        Map<String, List<String>> headers = new HashMap<>();
+        headers.put("Content-Type", Collections.singletonList("text/plain; charset=ISO-8859-1"));
+        ProxyResponse response = ProxyResponse.builder().statusCode(201).headers(headers)
+                .body("café".getBytes(StandardCharsets.ISO_8859_1)).build();
+        assertEquals("café", response.bodyAsString());
+        assertTrue(response.header("CONTENT-TYPE").isPresent());
+        assertTrue(response.isSuccessful());
+        assertThrows(IllegalStateException.class, response::bodyAsJsonObject);
+        assertThrows(IllegalStateException.class,
+                () -> ProxyResponse.builder().body("[1]".getBytes(StandardCharsets.UTF_8)).build().bodyAsJsonObject());
+    }
+}
