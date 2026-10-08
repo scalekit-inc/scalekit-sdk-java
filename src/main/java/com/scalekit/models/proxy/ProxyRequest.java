@@ -40,7 +40,8 @@ import java.util.Set;
  *   <li>{@code connectionName}, {@code identifier} and {@code path} are required; the first two
  *       are trimmed and a leading {@code /} is added to the path when missing;</li>
  *   <li>header values, {@code connectionName} and {@code identifier} contain only printable
- *       ISO-8859-1 characters (HTTP header encoding);</li>
+ *       US-ASCII characters (and tab), because HTTP clients do not send other characters
+ *       reliably: {@code java.net.http} replaces them with {@code ?};</li>
  *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments;</li>
  *   <li>at most one body ({@code jsonBody}, {@code formBody} or {@code rawBody}), and none on
  *       {@code GET} or {@code HEAD};</li>
@@ -225,15 +226,15 @@ public final class ProxyRequest {
     }
 
     /**
-     * Header values travel as ISO-8859-1: reject characters outside it and control characters
-     * other than tab, instead of letting the HTTP client mangle or refuse them after the token
-     * fetch.
+     * Header values must be printable US-ASCII (or tab): java.net.http writes any other
+     * character as '?' and HttpURLConnection's result depends on the platform charset, so the
+     * server would see a different value. Reject them before any request instead.
      */
     static String checkHeaderValue(String value, String name) {
         for (int i = 0; i < value.length(); i++) {
             char c = value.charAt(i);
-            if (c > 0xFF || c == 0x7F || (c < 0x20 && c != '\t')) {
-                throw new IllegalArgumentException(name + " must contain only printable ISO-8859-1 characters");
+            if (c > 0x7E || (c < 0x20 && c != '\t')) {
+                throw new IllegalArgumentException(name + " must contain only printable US-ASCII characters");
             }
         }
         return value;
@@ -381,7 +382,8 @@ public final class ProxyRequest {
          * @return this builder
          * @throws IllegalArgumentException if the name is not a valid header name or is one the
          *                                  HTTP client manages, or the value is null or contains
-         *                                  a control character or a character outside ISO-8859-1
+         *                                  a control character or a character outside printable
+         *                                  US-ASCII
          */
         public Builder header(String name, String value) {
             if (name == null || !isToken(name)) {

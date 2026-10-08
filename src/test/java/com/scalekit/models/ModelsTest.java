@@ -216,8 +216,16 @@ class ModelsTest {
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("X-A", "a\u007fb"));
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "\u7528\u6237", "/p").build());
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("con\nn", "u", "/p").build());
-        ProxyRequest latin = ProxyRequest.builder("c", "caf\u00e9", "/p").header("X-A", "a\tb \u00ff").build();
-        assertEquals("caf\u00e9", latin.identifier());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "caf\u00e9", "/p").build(),
+                "java.net.http would send \"caf?\"");
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c\u00e9", "u", "/p").build());
+        assertThrows(IllegalArgumentException.class,
+                () -> ProxyRequest.builder("c", "u", "/p").header("X-Title", "R\u00e9sum\u00e9"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("X-A", "\u00ff"));
+        ProxyRequest ascii = ProxyRequest.builder("c", "user ~1!", "/p").header("X-A", "a\tb ~").build();
+        assertEquals("user ~1!", ascii.identifier());
+        assertEquals("/x?next=/../y", ProxyRequest.builder("c", "u", "/x?next=/../y").build().path(),
+                "a dot segment inside the query is not a path segment");
     }
 
     @Test

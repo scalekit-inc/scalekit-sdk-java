@@ -284,6 +284,13 @@ abstract class ProxyExecutorContract {
     }
 
     @Test
+    void twoKeyLookAlikeWithoutDetailIsTreatedAsUpstream() {
+        assertNotResent(new Reply(401, "{\"code\":\"UNAUTHORIZED\",\"message\":\"x\"}", 0,
+                "Content-Type", "application/json"));
+        verify(authClient, times(1)).getClientAccessToken();
+    }
+
+    @Test
     void lookAlikeWithExtraKeysIsTreatedAsUpstream() {
         assertNotResent(new Reply(401, "{\"detail\":\"x\",\"code\":\"UNAUTHORIZED\",\"request_id\":\"r\"}", 0,
                 "Content-Type", "application/json"));
