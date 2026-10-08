@@ -25,7 +25,7 @@
 - [Actions › MCP](#actions--mcp)
 - [Actions › Custom Providers](#actions--custom-providers)
 
-The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. The AgentKit clients ([Tools](#tools), [Connected Accounts](#connected-accounts) and [Actions](#actions), including MCP configurations and custom providers) were added in 2.6.0; see [Tools](#tools) for how they report errors, retry and time out.
+The Java SDK exposes the clients and methods in the sections above through `ScalekitClient`. The AgentKit clients ([Tools](#tools), [Connected Accounts](#connected-accounts) and [Actions](#actions), including MCP configurations and providers) and the app and environment connection methods of [Connections](#connections) were added in 2.6.0; see [Tools](#tools) for how they report errors, retry and time out.
 
 ## ScalekitClient
 
@@ -2397,6 +2397,249 @@ client.connections().deleteConnection("conn_123", "org_123");
 <dd>
 
 **organizationId:** `String` - The organization ID
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+### App and environment connections
+
+Added in 2.6.0. These methods take and return SDK models from `com.scalekit.models.connections`, unlike the organization connection methods above, which use generated types. App connections are the connections your users' connected accounts belong to; their `connectionName()` is what [Tools](#tools) and [Connected Accounts](#connected-accounts) call `connectionName`. Status and auth mode are `Optional` and empty when the server does not set them; settings (`oauthSettings()`, `staticSettings()`, `googleDwdSettings()`) are never printed by `toString()`. Only the settings app connections use are modelled. Create is never retried; the other calls are retried on UNAVAILABLE. Errors, retries and deadlines otherwise work as described under [Tools](#tools). A class that implements `ConnectionClient` itself inherits default methods that throw `UnsupportedOperationException`.
+
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">listAppConnections</a>(params) -> Page&lt;AppConnection&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists one page of your environment's app connections. `listAppConnections()` lists all. A query shorter than 3 characters, or a page size over 30, throws `BadRequestException`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Page<AppConnection> page = client.connections().listAppConnections(
+        ListAppConnectionsParams.builder().provider("GMAIL").build());
+for (AppConnection connection : page.autoPager()) {
+    System.out.println(connection.connectionName() + " " + connection.status().map(Object::toString).orElse("-"));
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**params:** `ListAppConnectionsParams` - Optional. `provider`, `query` (3 to 100 characters), `pageSize` (at most 30) and `pageToken`. May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">createEnvironmentConnection</a>(params) -> EnvironmentConnection</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Creates an app connection. When no connection name is given, the server generates one from the provider (for example `gmail`, or `gmail-1a2b3c4d` when that is taken). A taken name throws `BadRequestException` with `getScalekitErrorCode()` `DUPLICATE_IDENTIFIER`. Never retried, because a repeat could create a second connection.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+EnvironmentConnection gmail = client.connections().createEnvironmentConnection(
+        CreateEnvironmentConnectionParams.appConnection("GMAIL")
+                .connectionName("gmail-support")
+                .build());
+String connectionId = gmail.id();
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**params:** `CreateEnvironmentConnectionParams` - Required. `CreateEnvironmentConnectionParams.appConnection(providerKey)`, then optionally `type`, `connectionName`, `authMode` and `context` (JSON-compatible values).
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">getEnvironmentConnection</a>(connectionId) -> EnvironmentConnection</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Gets an environment connection, including its settings. A missing connection throws `NotFoundException`; a malformed ID throws `BadRequestException`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+EnvironmentConnection connection = client.connections().getEnvironmentConnection("conn_123");
+connection.oauthSettings().ifPresent(oauth -> System.out.println(oauth.scopes()));
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**connectionId:** `String` - The connection ID. Required; not empty.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">updateEnvironmentConnection</a>(connectionId, params) -> EnvironmentConnection</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Updates an environment connection. The server requires the connection name, provider key and type on every update, and stores the connection name given: pass the current name to keep it. On app connections only the settings change. Set at most one kind of settings. A reserved name throws `BadRequestException` (`RESTRICTED_CONNECTION_NAME`); a missing connection throws `NotFoundException`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+EnvironmentConnection updated = client.connections().updateEnvironmentConnection("conn_123",
+        UpdateEnvironmentConnectionParams.builder("gmail", "GMAIL", EnvironmentConnectionType.OAUTH)
+                .oauthSettings(OAuthConnectionSettings.builder()
+                        .clientId(System.getenv("GMAIL_CLIENT_ID"))
+                        .clientSecret(System.getenv("GMAIL_CLIENT_SECRET"))
+                        .scopes(Arrays.asList("https://www.googleapis.com/auth/gmail.readonly"))
+                        .build())
+                .build());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**connectionId:** `String` - The connection ID. Required; not empty.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `UpdateEnvironmentConnectionParams` - Required. `builder(connectionName, providerKey, type)`, then at most one of `oauthSettings`, `staticSettings` (JSON-compatible map) or `googleDwdSettings`.
 
 </dd>
 </dl>
@@ -8945,7 +9188,7 @@ AgentKit lets your agents act on your users' third-party accounts. Added in 2.6.
 
 **Errors.** These clients throw unchecked subclasses of `APIException`, chosen by the gRPC status: `BadRequestException` (INVALID_ARGUMENT, FAILED_PRECONDITION, OUT_OF_RANGE), `NotFoundException`, `PermissionDeniedException`, `ConflictException` (ALREADY_EXISTS, ABORTED), `RateLimitException`, `AuthenticationException`, `ScalekitTimeoutException` (DEADLINE_EXCEEDED), `InternalServerException` (INTERNAL, UNKNOWN, DATA_LOSS, UNIMPLEMENTED, UNAVAILABLE; read `getGrpcStatusCode()` to tell them apart) and `ScalekitConnectionException` (CANCELLED, I/O failures, interrupts). A failed tool run (`getScalekitErrorCode()` is `TOOL_ERROR`) throws `ToolException` or one of `ToolUnauthorizedException`, `ToolForbiddenException`, `ToolRateLimitException`, with `toolErrorCode()`, `toolErrorMessage()` and `executionId()`. Invalid arguments throw `IllegalArgumentException` before any request. `getScalekitErrorCode()` gives the server's reason, for example `RESOURCE_ALREADY_EXISTS`; an `AuthenticationException` with `REAUTHENTICATION_NEEDED` means a connected account must be authorized again, not that your client credentials are wrong.
 
-**Retries and timeouts.** Reads, updates and deletes are retried on UNAVAILABLE. Running a tool, the create calls, user verification and the proxy are never retried, because they may already have taken effect. When Scalekit rejects the SDK's own access token, the token is refreshed and the call retried once; tool and connected-account authentication failures are never retried. A retried delete whose first attempt succeeded surfaces `NotFoundException`. Listing and running tools use a 60-second deadline (`ExecuteToolParams.DEFAULT_TIMEOUT`), which `timeout(Duration)` on the params changes per call; other calls use the client's default deadline.
+**Retries and timeouts.** Reads, updates and deletes are retried on UNAVAILABLE. Running a tool, the create calls, user verification and the proxy are never retried, because they may already have taken effect. When Scalekit rejects the SDK's own access token, the token is refreshed and the call retried once; tool and connected-account authentication failures are never retried. A retried delete whose first attempt succeeded surfaces `NotFoundException`. Listing, searching and running tools use a 60-second deadline (`ExecuteToolParams.DEFAULT_TIMEOUT`), which `timeout(Duration)` on the params changes per call; other calls use the client's default deadline.
 
 <details><summary><code>client.tools().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ToolsClient.java">list</a>(params) -> ToolPage</code></summary>
 <dl>
@@ -9064,6 +9307,203 @@ Map<String, Object> data = result.data();
 <dd>
 
 **params:** `ExecuteToolParams` - Which account runs the tool (`connectedAccountId`, or `connectionName` + `identifier`, or `identifier` alone), the input (`toolInput` / `putToolInput`, JSON-compatible values) and `timeout` (default 60 s). May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+<details><summary><code>client.tools().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ToolsClient.java">search</a>(query, params) -> List&lt;SearchedTool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Searches the tools of your environment's enabled connections by relevance and returns the complete, ranked result (the search is not paged). Each `SearchedTool` has `name()`, `provider()`, `description()` and `score()`. With an identifier, `connections()` lists, for each connection the identifier has used, whether the tool can run (`READY`, `NEEDS_CONNECTION`, `NEEDS_REAUTH`); without one it is empty, and a state the server did not evaluate is `NOT_EVALUATED`. `search(query)` uses the defaults. A blank query throws `IllegalArgumentException`; the query is sent as given (1 to 256 characters).
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+List<SearchedTool> results = client.tools().search("send an email",
+        SearchToolsParams.builder().identifier("user_123").topK(5).build());
+for (SearchedTool tool : results) {
+    for (ConnectionReadiness readiness : tool.connections()) {
+        if (readiness.readinessState().known() == ToolReadinessState.Known.READY) {
+            System.out.println(tool.name() + " runs through " + readiness.connectionName());
+        }
+    }
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**query:** `String` - What the tool should do, in plain words. Required; not blank.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `SearchToolsParams` - Optional. `identifier` (adds per-connection readiness and the identifier's custom MCP tools), `topK` (default 10, at most 50) and `timeout` (default 60 s). May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tools().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ToolsClient.java">listScoped</a>(identifier, params) -> Page&lt;ScopedTool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists the tools an identifier can run through its connected accounts, each with the account that runs it (`connectedAccountId()`). The server requires a filter, so `params` is required and its builder rejects an empty filter. The server applies tool names first, then providers, then connection names. A repeated provider, or more than one account for a provider, throws `BadRequestException`; no account for a requested provider or connection throws `NotFoundException`. `tool()` is an `Optional<Tool>`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Page<ScopedTool> page = client.tools().listScoped("user_123",
+        ListScopedToolsParams.builder().addConnectionName("gmail").build());
+for (ScopedTool scoped : page.autoPager()) {
+    scoped.tool().ifPresent(tool -> System.out.println(tool.definition().get("name")));
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**identifier:** `String` - Your identifier for the user or tenant. Required; trimmed.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `ListScopedToolsParams` - Required. The filter: at least one of `providers`, `toolNames` or `connectionNames` (`addProvider`, `addToolName`, `addConnectionName`); paging: `pageSize`, `pageToken`; and `timeout` (default 60 s).
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.tools().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ToolsClient.java">listAvailable</a>(identifier, params) -> Page&lt;Tool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists the tools of the providers an identifier has connected accounts with, whatever the accounts' status. An identifier without accounts gets an empty page, not an error. `listAvailable(identifier)` uses the defaults.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+for (Tool tool : client.tools().listAvailable("user_123",
+        ListAvailableToolsParams.builder().pageSize(50).build()).autoPager()) {
+    System.out.println(tool.definition().get("name"));
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**identifier:** `String` - Your identifier for the user or tenant. Required; trimmed.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `ListAvailableToolsParams` - Optional. Paging (`pageSize`, default 100; `pageToken`) and `timeout` (default 60 s). May be null.
 
 </dd>
 </dl>
@@ -9662,6 +10102,9 @@ How the Node SDK's AgentKit methods map to Java (Java takes `connectionName` whe
 |---|---|
 | `tools.listTools` | `client.tools().list` / `client.actions().listTools` |
 | `tools.executeTool` | `client.tools().execute` / `client.actions().executeTool` |
+| `tools.searchTools` / `actions.searchTools` | `client.tools().search` / `client.actions().searchTools` |
+| `tools.listScopedTools` / `actions.listScopedTools` | `client.tools().listScoped` / `client.actions().listScopedTools` |
+| `tools.listAvailableTools` / `actions.listAvailableTools` | `client.tools().listAvailable` / `client.actions().listAvailableTools` |
 | `connectedAccounts.listConnectedAccounts` | `client.connectedAccounts().list` / `client.actions().listConnectedAccounts` |
 | `connectedAccounts.getConnectedAccountByIdentifier` | `client.connectedAccounts().get` / `client.actions().getConnectedAccount` |
 | `connectedAccounts.createConnectedAccount` | `client.connectedAccounts().create` / `client.actions().createConnectedAccount` |
@@ -9671,10 +10114,12 @@ How the Node SDK's AgentKit methods map to Java (Java takes `connectionName` whe
 | `connectedAccounts.getMagicLinkForConnectedAccount` | `client.connectedAccounts().getMagicLink` / `client.actions().getAuthorizationLink` |
 | `connectedAccounts.verifyConnectedAccountUser` | `client.connectedAccounts().verifyUser` / `client.actions().verifyConnectedAccountUser` |
 | `actions.mcp.*` | `client.actions().mcp().*` (same method names) |
-| `actions.providers.createCustomProvider`, `updateCustomProvider`, `deleteCustomProvider` | `client.actions().providers().*` (same method names) |
+| `actions.providers.createCustomProvider`, `updateCustomProvider`, `deleteCustomProvider`, `listProviders` | `client.actions().providers().*` (same method names) |
+| `actions.listConnections` | `client.actions().listConnections` |
+| `connection.listAppConnections`, `createEnvironmentConnection`, `getEnvironmentConnection`, `updateEnvironmentConnection` | `client.connections().*` (same method names) |
 | `actions.request({ ..., timeoutMs })` | `client.actions().request(ProxyRequest)`, with `timeout(Duration)` |
 
-Differences worth knowing: the tool timeout is set per call (`timeout(Duration)` on the params), not on the client; Java has separate exception classes per status family but folds UNAVAILABLE and UNIMPLEMENTED into `InternalServerException`; `getAuthorizationLink` requires an account ID or a connection name plus identifier; and the proxy does not follow redirects and throws `ProxyException` for statuses of 400 and above (the Python SDK returns the response instead).
+Differences worth knowing: the tool timeout is set per call (`timeout(Duration)` on the params), not on the client; `listScoped` requires a filter and `search` a non-blank query before any request; creating an environment connection always creates an app connection (the Java SDK does not create login connections) and is never retried; Java has separate exception classes per status family but folds UNAVAILABLE and UNIMPLEMENTED into `InternalServerException`; `getAuthorizationLink` requires an account ID or a connection name plus identifier; and the proxy does not follow redirects and throws `ProxyException` for statuses of 400 and above (the Python SDK returns the response instead).
 
 <details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">mcp</a>() -> McpClient</code></summary>
 <dl>
@@ -10525,6 +10970,245 @@ ProxyResponse posted = client.actions().request(
 </dd>
 </dl>
 </details>
+<details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">searchTools</a>(query, params) -> List&lt;SearchedTool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Same as the matching method of [Tools](#tools). Calls `client.tools().search`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+List<SearchedTool> results = client.actions().searchTools("create a calendar event");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**query:** `String` - What the tool should do. Required; not blank.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `SearchToolsParams` - Optional. `identifier` (adds per-connection readiness and the identifier's custom MCP tools), `topK` (default 10, at most 50) and `timeout` (default 60 s). May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">listScopedTools</a>(identifier, params) -> Page&lt;ScopedTool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Same as the matching method of [Tools](#tools). Calls `client.tools().listScoped`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Page<ScopedTool> page = client.actions().listScopedTools("user_123",
+        ListScopedToolsParams.builder().addProvider("GMAIL").build());
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**identifier:** `String` - Your identifier for the user or tenant. Required; trimmed.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `ListScopedToolsParams` - Required. The filter: at least one of `providers`, `toolNames` or `connectionNames` (`addProvider`, `addToolName`, `addConnectionName`); paging: `pageSize`, `pageToken`; and `timeout` (default 60 s).
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">listAvailableTools</a>(identifier, params) -> Page&lt;Tool&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Same as the matching method of [Tools](#tools). Calls `client.tools().listAvailable`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Page<Tool> page = client.actions().listAvailableTools("user_123");
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**identifier:** `String` - Your identifier for the user or tenant. Required; trimmed.
+
+</dd>
+</dl>
+<dl>
+<dd>
+
+**params:** `ListAvailableToolsParams` - Optional. Paging (`pageSize`, default 100; `pageToken`) and `timeout` (default 60 s). May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+
+<details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">listConnections</a>(params) -> Page&lt;AppConnection&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists one page of your environment's app connections: the connections your users' connected accounts belong to. Same as `client.connections().listAppConnections`; see [Connections](#connections).
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+for (AppConnection connection : client.actions().listConnections().autoPager()) {
+    System.out.println(connection.connectionName() + " (" + connection.provider() + ")");
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**params:** `ListAppConnectionsParams` - Optional. `provider`, `query` (3 to 100 characters), `pageSize` (at most 30) and `pageToken`. May be null.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
 
 ## Actions › MCP
 
@@ -10963,7 +11647,7 @@ McpSessionToken token = client.actions().mcp().createSessionToken("config_id", "
 
 ## Actions › Custom Providers
 
-Custom providers are connectors you define for services Scalekit does not ship. Reach them with `client.actions().providers()`. An auth pattern's or field's attributes that the SDK does not model are kept in `additionalProperties()` and sent back unchanged, so `provider.authPatterns()` can be passed straight to an update.
+Custom providers are connectors you define for services Scalekit does not ship. Reach them with `client.actions().providers()`, which also lists the providers Scalekit ships (`listProviders`). An auth pattern's or field's attributes that the SDK does not model are kept in `additionalProperties()` and sent back unchanged, so `provider.authPatterns()` can be passed straight to an update.
 
 <details><summary><code>client.actions().providers().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ProvidersClient.java">createCustomProvider</a>(request) -> Provider</code></summary>
 <dl>
@@ -11136,6 +11820,65 @@ client.actions().providers().deleteCustomProvider("ACMECRM:env_123");
 <dd>
 
 **identifier:** `String` - The provider's `identifier()`. Required.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+<details><summary><code>client.actions().providers().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ProvidersClient.java">listProviders</a>(params) -> Page&lt;Provider&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Lists one page of providers. Without a type the server lists the providers Scalekit ships; `ProviderType.CUSTOM` lists your custom providers and `ProviderType.ALL` both. `listProviders()` uses the defaults. An invalid identifier throws `BadRequestException`.
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Page<Provider> page = client.actions().providers().listProviders(ListProvidersParams.builder()
+        .providerType(ProviderType.CUSTOM)
+        .pageSize(20)
+        .build());
+for (Provider provider : page.autoPager()) {
+    System.out.println(provider.identifier() + ": " + provider.displayName());
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**params:** `ListProvidersParams` - Optional. `providerType` (`DEFAULT`, `CUSTOM` or `ALL`), `identifier` (one provider), `pageSize` (default 10) and `pageToken`. May be null.
 
 </dd>
 </dl>

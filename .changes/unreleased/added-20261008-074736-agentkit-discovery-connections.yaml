@@ -1,0 +1,15 @@
+kind: added
+body: |
+  `client.tools().search(...)` finds tools by relevance and, with an identifier, reports whether each can run through that user's connections; `listScoped(...)` and `listAvailable(...)` list the tools an identifier can run. `client.connections()` adds `listAppConnections`, `createEnvironmentConnection`, `getEnvironmentConnection` and `updateEnvironmentConnection`, and `client.actions().providers().listProviders(...)` lists built-in and custom providers. The same operations are on `client.actions()` under the names the other Scalekit SDKs use (`searchTools`, `listScopedTools`, `listAvailableTools`, `listConnections`). [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#tools)
+
+  ```java
+  List<SearchedTool> tools = client.tools().search("send an email",
+      SearchToolsParams.builder().identifier("user_123").topK(5).build());
+  EnvironmentConnection gmail = client.connections().createEnvironmentConnection(
+      CreateEnvironmentConnectionParams.appConnection("GMAIL").build());
+  ```
+time: '2026-10-08T07:47:36.543136+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2194
+  Migration: ''
