@@ -99,7 +99,9 @@ ScalekitClient scalekitClient = new ScalekitClient(
 
 #### AgentKit quickstart
 
-Connect a user's Gmail account, then let your agent read their mail:
+Connect a user's Gmail account, then let your agent read their mail.
+
+`"gmail"` below is the name of an app connection that already exists in your environment. Create one in the Scalekit dashboard, or with `client.connections().createEnvironmentConnection(...)`, and use its name (`client.connections().listAppConnections()` lists them).
 
 ```java
 import com.scalekit.ScalekitClient;
