@@ -3,6 +3,7 @@ package com.scalekit.models.proxy;
 import com.scalekit.internal.JsonCodec;
 import com.scalekit.internal.JsonValues;
 import com.scalekit.internal.Preconditions;
+import com.scalekit.internal.proxy.UploadContentAccess;
 
 import java.io.ByteArrayInputStream;
 import java.io.FilterInputStream;
@@ -92,6 +93,16 @@ public final class ResumableUploadRequest {
     public static final String DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
     private static final String UPLOAD_TYPE = "uploadType";
+
+    static {
+        // Gives the SDK's uploader access to the content without making openContent() public.
+        UploadContentAccess.install(new UploadContentAccess() {
+            @Override
+            protected InputStream open(ResumableUploadRequest request) {
+                return request.openContent();
+            }
+        });
+    }
 
     private enum ContentKind { BYTES, STREAM, FILE }
 
@@ -297,7 +308,8 @@ public final class ResumableUploadRequest {
     }
 
     /**
-     * Opens the content for reading. Not part of the public API: the SDK's uploader calls it. The
+     * Opens the content for reading. Not part of the public API: the SDK's uploader calls it
+     * through {@link UploadContentAccess}. The
      * caller closes the returned stream; closing it never closes a stream passed to
      * {@link Builder#content(InputStream)}.
      *
@@ -338,7 +350,8 @@ public final class ResumableUploadRequest {
                 content = totalBytes < 0 ? "stream" : "stream (" + totalBytes + " bytes)";
         }
         return "ResumableUploadRequest{method=" + method + ", connectionName=" + connectionName + ", identifier="
-                + identifier + ", path=" + path + ", queryParams=" + queryParams.keySet() + ", contentType=" + contentType
+                + identifier + ", path=" + path + ", queryParams=" + queryParams.keySet()
+                + ", contentType=" + contentType
                 + ", content=" + content + ", metadata=" + (metadata == null ? "none" : metadata.keySet())
                 + ", chunkSize=" + chunkSize + ", maxRetries=" + maxRetries + ", timeout=" + timeout + "}";
     }

@@ -16,8 +16,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.time.Clock;
@@ -84,39 +82,6 @@ public final class ResumableUploader {
     private static final byte[] NO_BYTES = new byte[0];
 
     /**
-     * {@code ResumableUploadRequest.openContent()}, which is package-private so that it is not
-     * public API. Resolved once; immutable.
-     */
-    private static final Method OPEN_CONTENT = openContentMethod();
-
-    private static Method openContentMethod() {
-        try {
-            Method method = ResumableUploadRequest.class.getDeclaredMethod("openContent");
-            method.setAccessible(true);
-            return method;
-        } catch (NoSuchMethodException | RuntimeException e) {
-            throw new IllegalStateException("cannot access the upload content of ResumableUploadRequest", e);
-        }
-    }
-
-    static InputStream openContent(ResumableUploadRequest request) {
-        try {
-            return (InputStream) OPEN_CONTENT.invoke(request);
-        } catch (InvocationTargetException e) {
-            Throwable cause = e.getCause();
-            if (cause instanceof RuntimeException) {
-                throw (RuntimeException) cause;
-            }
-            if (cause instanceof Error) {
-                throw (Error) cause;
-            }
-            throw new IllegalStateException(cause);
-        } catch (IllegalAccessException e) {
-            throw new IllegalStateException("cannot access the upload content of ResumableUploadRequest", e);
-        }
-    }
-
-    /**
      * Which requests of the protocol may be repeated after a transient failure. Only these three
      * are ever sent.
      */
@@ -175,7 +140,7 @@ public final class ResumableUploader {
         }
         // Every local check runs before the content is opened or read.
         proxy.checkSendable(startRequest(request, -1).build());
-        InputStream content = openContent(request);
+        InputStream content = UploadContentAccess.openContent(request);
         Throwable failure = null;
         try {
             return new Session(request, content).run();

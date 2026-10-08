@@ -6,11 +6,15 @@ import java.util.Optional;
 
 /**
  * Thrown when a resumable upload
- * ({@link com.scalekit.api.ActionsClient#uploadResumable(com.scalekit.models.proxy.ResumableUploadRequest)})
- * gets an HTTP status it cannot continue from: the request that starts the session got a status
- * of 400 or above; a chunk got a 4xx other than 408 and 429, or a 2xx other than 200 and 201; or a
- * chunk kept failing with a retryable status (408, 429, 500, 502, 503, 504, or on Java 8 a 401
- * whose body {@code HttpURLConnection} discarded) until its retries ran out. As a {@link ProxyException} it carries the response's status, headers and body.
+ * ({@link com.scalekit.api.ActionsClient#uploadResumable ActionsClient.uploadResumable}) gets an
+ * HTTP status it cannot continue from:
+ * <ul>
+ *   <li>the request that starts the session got a status of 400 or above;</li>
+ *   <li>a chunk got a 4xx other than 408 and 429, or a 2xx other than 200 and 201;</li>
+ *   <li>a chunk kept failing with a retryable status (408, 429, 500, 502, 503, 504, or on Java 8
+ *       a 401 whose body {@code HttpURLConnection} discarded) until its retries ran out.</li>
+ * </ul>
+ * As a {@link ProxyException} it carries the response's status, headers and body.
  *
  * <p>{@link UploadSessionExpiredException}, a subclass, marks an upload session that no longer
  * exists. {@link #uploadId()} is empty when the session never started.
