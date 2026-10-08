@@ -9077,7 +9077,7 @@ Map<String, Object> data = result.data();
 
 ## Connected Accounts
 
-A connected account is one user's or tenant's account on a third-party service. Select an existing account with `ConnectedAccountRef.byId(id)` or `ConnectedAccountRef.of(connectionName, identifier)`. Credentials (`authorizationDetails()`) and `apiConfig()` are returned by `get`, `create` and `update` when your environment returns them, never by `list`, and are never printed by `toString()`. Selecting accounts by organization or user ID is not available in Java; use the identifier (for example `"org_123/usr_456"`).
+A connected account is one user's or tenant's account on a third-party service. Select an existing account with `ConnectedAccountRef.byId(id)` or `ConnectedAccountRef.of(connectionName, identifier)`. `NotFoundException` means the connection does not exist or no account matches the connection name and identifier; an account ID that does not exist is reported by the server as an internal error, so it surfaces as `InternalServerException`. Credentials (`authorizationDetails()`) and `apiConfig()` are returned by `get`, `create` and `update` when your environment returns them, never by `list`, and are never printed by `toString()`. Selecting accounts by organization or user ID is not available in Java; use the identifier (for example `"org_123/usr_456"`).
 
 <details><summary><code>client.connectedAccounts().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectedAccountsClient.java">list</a>(params) -> Page&lt;ConnectedAccount&gt;</code></summary>
 <dl>
@@ -9150,7 +9150,7 @@ for (ConnectedAccount account : page.autoPager()) {
 <dl>
 <dd>
 
-Gets a connected account, including its credentials when your environment returns them. An expired token is refreshed first; if the refresh fails the account comes back with status `EXPIRED`. Throws `NotFoundException` when the account or connection does not exist.
+Gets a connected account, including its credentials when your environment returns them. An expired token is refreshed first; if the refresh fails the account comes back with status `EXPIRED`. Throws `NotFoundException` when the connection does not exist or no account matches the connection name and identifier; an unknown account ID throws `InternalServerException`.
 </dd>
 </dl>
 </dd>
@@ -9342,7 +9342,7 @@ ConnectedAccount updated = client.connectedAccounts().update(ConnectedAccountRef
 <dl>
 <dd>
 
-Deletes a connected account. Not idempotent: deleting a missing account throws `NotFoundException`, including when a retry follows a first attempt that succeeded. Fails with `BadRequestException` (`MCP_SERVER_EXISTS_FOR_CONNECTED_ACCOUNT`) while an MCP server uses the account.
+Deletes a connected account. Not idempotent: deleting a missing account fails, including when a retry follows a first attempt that succeeded (with `NotFoundException` when it is selected by connection name and identifier). Fails with `BadRequestException` (`MCP_SERVER_EXISTS_FOR_CONNECTED_ACCOUNT`) while an MCP server uses the account.
 </dd>
 </dl>
 </dd>
@@ -10412,7 +10412,7 @@ ConnectedAccount account = client.actions().updateConnectedAccount(ConnectedAcco
 <dl>
 <dd>
 
-Same as the matching method of [Connected Accounts](#connected-accounts). Deleting a missing account throws `NotFoundException`.
+Same as the matching method of [Connected Accounts](#connected-accounts). Deleting a missing account selected by connection name and identifier throws `NotFoundException`.
 </dd>
 </dl>
 </dd>
@@ -10471,8 +10471,11 @@ Calls a third-party API through Scalekit's proxy, which adds the connected accou
 - Any method works, including `PATCH`. Java 8 uses `HttpURLConnection`; Java 11+ uses `java.net.http`. On Java 16+ without the `java.net.http` module (a custom runtime image, or a module path that does not resolve it), methods other than GET, POST, HEAD, OPTIONS, PUT, DELETE and TRACE throw `UnsupportedOperationException` before any request; add `--add-modules java.net.http`.
 - At most one body (`jsonBody`, `formBody` or `rawBody`), and none on GET or HEAD. `Host`, `Content-Length`, `Connection`, `Expect` and `Upgrade` cannot be set. Your `Authorization`, `connection_name` and `identifier` headers are replaced by the SDK's.
 - Redirects are not followed: a 3xx is returned as is. A status of 400 or above throws `ProxyException` with the full response, plus `proxyErrorCode()` / `proxyErrorDetail()` when Scalekit's proxy rejected the request (for example `TOOL_PROXY_DISABLED` or `NOT_FOUND`).
-- Never retried. Only when Scalekit rejects the SDK's own token (401 with `"code": "UNAUTHORIZED"`, before anything is forwarded) is the token refreshed and the request sent once more; an upstream 401 is never resent. On Java 8, a 401 to a request with a body arrives without its body, so it is not resent; the token is refreshed for the next call.
-- The deadline is 60 seconds unless `timeout(Duration)` sets one. On Java 8 it applies to connecting and to each read. A timeout throws `ScalekitTimeoutException`; a connection failure or interrupt throws `ScalekitConnectionException`.
+- Never retried. Only when Scalekit rejects the SDK's own token before anything is forwarded (a 401 with a JSON content type and a body of exactly `{"detail": ..., "code": "UNAUTHORIZED"}`) is the token refreshed and the request sent once more; an upstream 401 is never resent. The resend does not happen:
+  - within 5 seconds of the SDK fetching a token, because the token cache does not refresh again that soon. This includes the first proxy call of a client that has made no other call yet: the rejection is thrown as `ProxyException`.
+  - on Java 8 (or wherever `HttpURLConnection` is used), for POST, PUT, PATCH and other non-standard methods, with or without a body. These requests are streamed, and `HttpURLConnection` then discards the 401's body, so the SDK cannot tell Scalekit's rejection from the upstream API's: it throws `ProxyException` without a body and refreshes the token for the next call.
+- The deadline is 60 seconds unless `timeout(Duration)` sets one. On Java 8 it applies to connecting and to each read. A timeout throws `ScalekitTimeoutException`; a connection failure or interrupt throws `ScalekitConnectionException`. On Java 8 an interrupt that arrives while the request is in flight takes effect only when the request finishes or times out.
+- `ProxyRequest` rejects, before any request: header values, `connectionName` or `identifier` with characters outside printable ISO-8859-1, and a path containing `#` or `.`/`..` segments.
 </dd>
 </dl>
 </dd>

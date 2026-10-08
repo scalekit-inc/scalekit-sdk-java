@@ -39,6 +39,9 @@ import java.util.Set;
  * <ul>
  *   <li>{@code connectionName}, {@code identifier} and {@code path} are required; the first two
  *       are trimmed and a leading {@code /} is added to the path when missing;</li>
+ *   <li>header values, {@code connectionName} and {@code identifier} contain only printable
+ *       ISO-8859-1 characters (HTTP header encoding);</li>
+ *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments;</li>
  *   <li>at most one body ({@code jsonBody}, {@code formBody} or {@code rawBody}), and none on
  *       {@code GET} or {@code HEAD};</li>
  *   <li>the headers {@code Host}, {@code Content-Length}, {@code Connection}, {@code Expect} and
@@ -72,10 +75,12 @@ public final class ProxyRequest {
     private final Duration timeout;
 
     private ProxyRequest(Builder builder) {
-        this.connectionName = Preconditions.requireNonBlank(builder.connectionName, "connectionName");
-        this.identifier = Preconditions.requireNonBlank(builder.identifier, "identifier");
+        this.connectionName = checkHeaderValue(Preconditions.requireNonBlank(builder.connectionName, "connectionName"),
+                "connectionName");
+        this.identifier = checkHeaderValue(Preconditions.requireNonBlank(builder.identifier, "identifier"),
+                "identifier");
         String rawPath = Preconditions.requireNonBlank(builder.path, "path");
-        this.path = rawPath.startsWith("/") ? rawPath : "/" + rawPath;
+        this.path = checkPath(rawPath.startsWith("/") ? rawPath : "/" + rawPath);
         this.method = checkMethod(builder.method);
         this.queryParams = freeze(builder.queryParams);
         this.headers = freeze(builder.headers);
@@ -219,6 +224,40 @@ public final class ProxyRequest {
         return upper;
     }
 
+    /**
+     * Header values travel as ISO-8859-1: reject characters outside it and control characters
+     * other than tab, instead of letting the HTTP client mangle or refuse them after the token
+     * fetch.
+     */
+    static String checkHeaderValue(String value, String name) {
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
+            if (c > 0xFF || c == 0x7F || (c < 0x20 && c != '\t')) {
+                throw new IllegalArgumentException(name + " must contain only printable ISO-8859-1 characters");
+            }
+        }
+        return value;
+    }
+
+    /**
+     * Rejects a fragment, which HTTP clients never send (it would also swallow the query
+     * parameters), and "." or ".." segments, which servers may resolve against the proxy prefix.
+     */
+    private static String checkPath(String path) {
+        if (path.indexOf('#') >= 0) {
+            throw new IllegalArgumentException("path must not contain '#'; percent-encode it as %23");
+        }
+        int query = path.indexOf('?');
+        String pathOnly = query >= 0 ? path.substring(0, query) : path;
+        for (String segment : pathOnly.split("/", -1)) {
+            String decoded = segment.replaceAll("(?i)%2e", ".");
+            if (".".equals(decoded) || "..".equals(decoded)) {
+                throw new IllegalArgumentException("path must not contain \".\" or \"..\" segments: " + path);
+            }
+        }
+        return path;
+    }
+
     static boolean isToken(String value) {
         if (value.isEmpty()) {
             return false;
@@ -342,7 +381,7 @@ public final class ProxyRequest {
          * @return this builder
          * @throws IllegalArgumentException if the name is not a valid header name or is one the
          *                                  HTTP client manages, or the value is null or contains
-         *                                  a line break
+         *                                  a control character or a character outside ISO-8859-1
          */
         public Builder header(String name, String value) {
             if (name == null || !isToken(name)) {
@@ -351,9 +390,10 @@ public final class ProxyRequest {
             if (RESTRICTED_HEADERS.contains(name.toLowerCase(Locale.ROOT))) {
                 throw new IllegalArgumentException("header " + name + " cannot be set; the HTTP client manages it");
             }
-            if (value == null || value.indexOf('\r') >= 0 || value.indexOf('\n') >= 0 || value.indexOf('\0') >= 0) {
+            if (value == null) {
                 throw new IllegalArgumentException("invalid value for header " + name);
             }
+            checkHeaderValue(value, "header " + name);
             List<String> values = headers.get(name);
             if (values == null) {
                 values = new ArrayList<>();

@@ -28,6 +28,10 @@ import com.scalekit.models.connectedaccounts.UserVerificationResult;
  * }</pre>
  *
  * <p>Connection names, identifiers and account IDs are trimmed before they are checked and sent.
+ * {@link NotFoundException} means the connection does not exist or no account matches a
+ * connection name and identifier. An account ID ({@link ConnectedAccountRef#byId}) that does not
+ * exist is reported by the server as an internal error, so it surfaces as
+ * {@link com.scalekit.exceptions.InternalServerException}, not {@code NotFoundException}.
  * Calls use the client's default deadline. Implementations are thread-safe. This interface is not
  * designed for implementation outside the SDK: mock it in tests, but do not implement it, because
  * methods may be added.
@@ -66,7 +70,10 @@ public interface ConnectedAccountsClient {
      * @param account the account to get
      * @return the account
      * @throws IllegalArgumentException if {@code account} is null
-     * @throws NotFoundException if the account or connection does not exist
+     * @throws NotFoundException if the connection does not exist, or no account matches the
+     *                           connection name and identifier
+     * @throws com.scalekit.exceptions.InternalServerException if the account ID does not exist (the
+     *                           server reports it as an internal error)
      * @throws APIException for other failures
      * @since 2.6.0
      */
@@ -121,7 +128,9 @@ public interface ConnectedAccountsClient {
      * @param params  the new credentials and configuration
      * @return the updated account
      * @throws IllegalArgumentException if {@code account} or {@code params} is null
-     * @throws NotFoundException if the account does not exist
+     * @throws NotFoundException if the connection does not exist, or no account matches the
+     *                           connection name and identifier; an unknown account ID is not
+     *                           reported this way (see the class description)
      * @throws BadRequestException if the input is invalid
      * @throws APIException for other failures
      * @since 2.6.0
@@ -129,12 +138,15 @@ public interface ConnectedAccountsClient {
     ConnectedAccount update(ConnectedAccountRef account, UpdateConnectedAccountParams params);
 
     /**
-     * Deletes a connected account. Deleting an account that does not exist fails with
-     * {@link NotFoundException}, including when a retry follows a first attempt that succeeded.
+     * Deletes a connected account. Deleting an account that does not exist fails, including when
+     * a retry follows a first attempt that succeeded: with {@link NotFoundException} when it is
+     * selected by connection name and identifier.
      *
      * @param account the account to delete
      * @throws IllegalArgumentException if {@code account} is null
-     * @throws NotFoundException if the account or connection does not exist
+     * @throws NotFoundException if the connection does not exist, or no account matches the
+     *                           connection name and identifier; an unknown account ID is not
+     *                           reported this way (see the class description)
      * @throws BadRequestException if an MCP server still uses the account
      *                             ({@code MCP_SERVER_EXISTS_FOR_CONNECTED_ACCOUNT})
      * @throws APIException for other failures

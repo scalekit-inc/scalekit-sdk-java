@@ -29,10 +29,11 @@ import java.util.function.Supplier;
  * <ul>
  *   <li>The token comes from the shared {@link ScalekitCredentials} cache and is fetched on a cold
  *       start.</li>
- *   <li>A 401 whose JSON body has {@code "code": "UNAUTHORIZED"} is Scalekit rejecting the token
- *       before anything is forwarded: the token is refreshed and the request sent once more, but
- *       only when the refresh produced a different token. Any other 401 came from the upstream
- *       API and is never resent.</li>
+ *   <li>A 401 with a JSON content type whose body is exactly {@code {"detail", "code"}} with
+ *       {@code "code": "UNAUTHORIZED"} is Scalekit rejecting the token before anything is
+ *       forwarded: the token is refreshed and the request sent once more, but only when the
+ *       refresh produced a different token (the credentials' 5-second refresh debounce can
+ *       prevent that). Any other 401 came from the upstream API and is never resent.</li>
  *   <li>Nothing else is retried.</li>
  * </ul>
  */
@@ -267,15 +268,34 @@ public final class ProxyExecutor {
         }
     }
 
-    private static boolean isScalekitUnauthorized(HttpResult result) {
+    /**
+     * Returns whether a 401 is Scalekit's own rejection of the access token: a JSON response whose
+     * body is exactly {@code {"detail": ..., "code": "UNAUTHORIZED"}}. Anything else, including a
+     * look-alike body with extra keys or a non-JSON content type, is treated as the upstream API's
+     * and never resent.
+     */
+    static boolean isScalekitUnauthorized(HttpResult result) {
         if (!result.bodyAvailable || result.body.length == 0) {
             return false;
         }
+        ProxyResponse parsed = ProxyResponse.builder().headers(result.headers).body(result.body).build();
+        if (!isJson(parsed.header("Content-Type").orElse(null))) {
+            return false;
+        }
+        Map<String, Object> body;
         try {
-            ProxyResponse parsed = ProxyResponse.builder().body(result.body).build();
-            return UNAUTHORIZED_CODE.equals(parsed.bodyAsJsonObject().get("code"));
+            body = parsed.bodyAsJsonObject();
         } catch (IllegalStateException notJsonObject) {
             return false;
         }
+        return body.size() == 2 && body.containsKey("detail") && UNAUTHORIZED_CODE.equals(body.get("code"));
+    }
+
+    private static boolean isJson(String contentType) {
+        if (contentType == null) {
+            return false;
+        }
+        String mediaType = contentType.split(";", 2)[0].trim().toLowerCase(Locale.ROOT);
+        return "application/json".equals(mediaType) || mediaType.endsWith("+json");
     }
 }
