@@ -1,0 +1,15 @@
+kind: added
+body: |
+  `client.tools()`, `client.connectedAccounts()` and `client.actions()` add AgentKit to the Java SDK: connect your users' third-party accounts, run tools on their behalf, call provider APIs through Scalekit's proxy (`client.actions().request(...)`), and manage MCP configurations and custom providers. They return SDK models and throw `APIException` subclasses such as `NotFoundException` and `ToolUnauthorizedException`. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#tools)
+
+  ```java
+  ConnectedAccount account = client.connectedAccounts().getOrCreate("gmail", "user_123");
+  ExecuteToolResult result = client.tools().execute("gmail_fetch_mails",
+      ExecuteToolParams.builder().connectionName("gmail").identifier("user_123")
+          .putToolInput("max_results", 5).build());
+  ```
+time: '2026-10-08T06:05:08.767748+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2194
+  Migration: ''
