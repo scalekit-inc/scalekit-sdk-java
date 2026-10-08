@@ -1,0 +1,123 @@
+name: Release
+
+# Publishes the release's tag to Maven Central when a GitHub Release is published.
+# The job waits for approval of the `release` environment, which holds the Central Portal
+# token and the signing key.
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish to Maven Central
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: read
+      id-token: write # build provenance attestation (Sigstore OIDC)
+      attestations: write # store the attestation in this repository
+    steps:
+      - name: Checkout the release tag
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/tags/${{ github.event.release.tag_name }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check the tagged commit is on main
+        run: |
+          git fetch --no-tags origin main
+          if ! git merge-base --is-ancestor HEAD FETCH_HEAD; then
+            echo "::error::The release tag does not point to a commit on main."
+            exit 1
+          fi
+
+      - name: Set up Java (Temurin 21) with Central credentials and the signing key
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "21"
+          server-id: central # publishingServerId of central-publishing-maven-plugin
+          server-username-env-var: MAVEN_CENTRAL_USERNAME
+          server-password-env-var: MAVEN_CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase-env-var: MAVEN_GPG_PASSPHRASE
+
+      - name: Check the tag matches every version location
+        id: version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        shell: python3 {0}
+        run: |
+          import os, re, sys
+
+          tag = os.environ["TAG"]
+          m = re.fullmatch(r"v(\d+\.\d+\.\d+)", tag)
+          if not m:
+              sys.exit(f"Release tag {tag!r} is not vX.Y.Z.")
+          version = m.group(1)
+
+          # The same locations and patterns the release tooling bumps.
+          locations = [
+              ("pom.xml", r"<artifactId>scalekit-sdk-java</artifactId>\s*<version>(?P<version>[^<]+)</version>"),
+              ("src/main/java/com/scalekit/internal/Constants.java", r'public static String version = "(?P<version>[^"]+)";'),
+              ("README.md", r'com\.scalekit:scalekit-sdk-java:(?P<version>[0-9][^"\s]*)'),
+              ("README.md", r"<artifactId>scalekit-sdk-java</artifactId>\s*<version>(?P<version>[^<]+)</version>"),
+          ]
+          ok = True
+          for path, pattern in locations:
+              with open(path, encoding="utf-8") as f:
+                  found = [x.group("version") for x in re.finditer(pattern, f.read())]
+              if found != [version]:
+                  print(f"::error file={path}::expected version {version} exactly once, found {found}")
+                  ok = False
+          if not ok:
+              sys.exit(f"Tag {tag} does not match the version in the sources.")
+          print(f"All version locations are {version}.")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"version={version}\n")
+
+      - name: Check the version is not on Maven Central yet
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          url="https://repo1.maven.org/maven2/com/scalekit/scalekit-sdk-java/${VERSION}/"
+          code="$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 5 "$url")"
+          case "$code" in
+            404) echo "${VERSION} is not on Maven Central yet." ;;
+            200) echo "::error::${VERSION} is already on Maven Central (${url}); published versions cannot be replaced."; exit 1 ;;
+            *) echo "::error::Unexpected HTTP ${code} from ${url}; cannot confirm the version is new."; exit 1 ;;
+          esac
+
+      # One Maven run: builds on JDK 21 (release 8 bytecode), runs the credential-free tests,
+      # checks the shaded jar with scripts/check-jar-contents.sh (jarcheck.skip=false), signs,
+      # and uploads the bundle to the Central Portal. The live suite already ran on the tagged
+      # commit in the build workflow (a required check on main).
+      #
+      # autoPublish is false in pom.xml: the upload is validated and then waits in the Central
+      # Portal until someone publishes it by hand, because a published version can never be
+      # changed or removed. Once a release made by this workflow has been inspected and
+      # published, the follow-up is autoPublish true with waitUntil published, so the approved
+      # run publishes on its own.
+      - name: Build, test, check, sign and upload to the Central Portal
+        env:
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: mvn -B -ntp -DexcludedGroups=live -Djarcheck.skip=false deploy
+
+      - name: Attest build provenance of the jars
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4.2.2
+        with:
+          subject-path: |
+            target/scalekit-sdk-java-${{ steps.version.outputs.version }}.jar
+            target/scalekit-sdk-java-${{ steps.version.outputs.version }}-sources.jar
+            target/scalekit-sdk-java-${{ steps.version.outputs.version }}-javadoc.jar
