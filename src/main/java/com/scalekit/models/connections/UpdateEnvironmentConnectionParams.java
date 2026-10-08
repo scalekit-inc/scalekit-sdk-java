@@ -11,13 +11,15 @@ import java.util.Optional;
  * {@link com.scalekit.api.ConnectionClient#updateEnvironmentConnection(String, UpdateEnvironmentConnectionParams)}.
  *
  * <p>The server requires the connection name, the provider key and the type on every update, and
- * stores the connection name given here: pass the current name to keep it. On app connections only
- * the settings change; the other values are required but not otherwise applied. Set at most one
- * kind of settings.
+ * stores the connection name given here: pass the current name to keep it. Pass the connection's
+ * current type too: a different type converts the connection, which resets its settings and sets
+ * its status to {@code IN_PROGRESS}. Set at most one kind of settings.
  *
  * <pre>{@code
+ * EnvironmentConnection current = client.connections().getEnvironmentConnection("conn_123");
  * UpdateEnvironmentConnectionParams params = UpdateEnvironmentConnectionParams
- *         .builder("gmail", "GMAIL", EnvironmentConnectionType.OAUTH)
+ *         .builder(current.connectionName().orElseThrow(IllegalStateException::new),
+ *                 current.providerKey(), current.type())
  *         .oauthSettings(OAuthConnectionSettings.builder()
  *                 .clientId(System.getenv("GMAIL_CLIENT_ID"))
  *                 .clientSecret(System.getenv("GMAIL_CLIENT_SECRET"))

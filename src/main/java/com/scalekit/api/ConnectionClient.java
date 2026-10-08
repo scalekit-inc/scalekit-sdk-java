@@ -84,7 +84,7 @@ public interface ConnectionClient {
     }
 
     /**
-     * Gets an environment connection, including its settings.
+     * Gets an environment connection, including its settings. Secrets in the settings are masked.
      *
      * @param connectionId the connection ID
      * @return the connection
@@ -102,11 +102,24 @@ public interface ConnectionClient {
     /**
      * Updates an environment connection. The server requires the connection name, provider key and
      * type on every update and stores the connection name given, so pass the current name to keep
-     * it. On app connections only the settings change. Reserved connection names cannot change.
+     * it. Reserved connection names cannot change.
+     *
+     * <p><b>Pass the connection's current type</b>, for example from
+     * {@link #getEnvironmentConnection(String)}. A different type converts the connection: the server
+     * changes its type and provider, resets its settings and sets its status to
+     * {@code IN_PROGRESS}. The SDK does not check this for you.
+     *
+     * <p>Secrets read back from the server are masked. Sending a masked value back keeps the stored
+     * secret, so settings read with {@link #getEnvironmentConnection(String)} can be changed and sent
+     * back as they are.
      *
      * <pre>{@code
-     * EnvironmentConnection updated = client.connections().updateEnvironmentConnection("conn_123",
-     *         UpdateEnvironmentConnectionParams.builder("gmail", "GMAIL", EnvironmentConnectionType.OAUTH)
+     * EnvironmentConnection current = client.connections().getEnvironmentConnection("conn_123");
+     * EnvironmentConnection updated = client.connections().updateEnvironmentConnection(current.id(),
+     *         UpdateEnvironmentConnectionParams.builder(
+     *                         current.connectionName().orElseThrow(IllegalStateException::new),
+     *                         current.providerKey(),
+     *                         current.type())
      *                 .oauthSettings(OAuthConnectionSettings.builder()
      *                         .clientId(System.getenv("GMAIL_CLIENT_ID"))
      *                         .clientSecret(System.getenv("GMAIL_CLIENT_SECRET"))

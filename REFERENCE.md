@@ -2410,7 +2410,7 @@ client.connections().deleteConnection("conn_123", "org_123");
 
 ### App and environment connections
 
-Added in 2.6.0. These methods take and return SDK models from `com.scalekit.models.connections`, unlike the organization connection methods above, which use generated types. App connections are the connections your users' connected accounts belong to; their `connectionName()` is what [Tools](#tools) and [Connected Accounts](#connected-accounts) call `connectionName`. Status and auth mode are `Optional` and empty when the server does not set them; settings (`oauthSettings()`, `staticSettings()`, `googleDwdSettings()`) are never printed by `toString()`. Only the settings app connections use are modelled. Create is never retried; the other calls are retried on UNAVAILABLE. Errors, retries and deadlines otherwise work as described under [Tools](#tools). A class that implements `ConnectionClient` itself inherits default methods that throw `UnsupportedOperationException`.
+Added in 2.6.0. These methods take and return SDK models from `com.scalekit.models.connections`, unlike the organization connection methods above, which use generated types. App connections are the connections your users' connected accounts belong to; their `connectionName()` is what [Tools](#tools) and [Connected Accounts](#connected-accounts) call `connectionName`. Status and auth mode are `Optional` and empty when the server does not set them; settings (`oauthSettings()`, `staticSettings()`, `googleDwdSettings()`) are never printed by `toString()`, and the server returns their secrets (client secret, Google Ads developer token, service account key) masked. Only the settings app connections use are modelled. Create is never retried; the other calls are retried on UNAVAILABLE. Errors, retries and deadlines otherwise work as described under [Tools](#tools). A class that implements `ConnectionClient` itself inherits default methods that throw `UnsupportedOperationException`.
 
 <details><summary><code>client.connections().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ConnectionClient.java">listAppConnections</a>(params) -> Page&lt;AppConnection&gt;</code></summary>
 <dl>
@@ -2540,7 +2540,7 @@ String connectionId = gmail.id();
 <dl>
 <dd>
 
-Gets an environment connection, including its settings. A missing connection throws `NotFoundException`; a malformed ID throws `BadRequestException`.
+Gets an environment connection, including its settings; secrets in them are masked. A missing connection throws `NotFoundException`; a malformed ID throws `BadRequestException`.
 </dd>
 </dl>
 </dd>
@@ -2595,7 +2595,7 @@ connection.oauthSettings().ifPresent(oauth -> System.out.println(oauth.scopes())
 <dl>
 <dd>
 
-Updates an environment connection. The server requires the connection name, provider key and type on every update, and stores the connection name given: pass the current name to keep it. On app connections only the settings change. Set at most one kind of settings. A reserved name throws `BadRequestException` (`RESTRICTED_CONNECTION_NAME`); a missing connection throws `NotFoundException`.
+Updates an environment connection. The server requires the connection name, provider key and type on every update, and stores the connection name given: pass the current name to keep it. **Pass the connection's current type** (for example `getEnvironmentConnection(id).type()`): a different type converts the connection, changing its type and provider, resetting its settings and setting its status to `IN_PROGRESS`; the SDK does not check this. Secrets read back are masked, and a masked value sent back keeps the stored secret, so settings read with `getEnvironmentConnection` can be changed and sent back. Set at most one kind of settings. A reserved name throws `BadRequestException` (`RESTRICTED_CONNECTION_NAME`); a missing connection throws `NotFoundException`.
 </dd>
 </dl>
 </dd>
@@ -2610,8 +2610,12 @@ Updates an environment connection. The server requires the connection name, prov
 <dd>
 
 ```java
-EnvironmentConnection updated = client.connections().updateEnvironmentConnection("conn_123",
-        UpdateEnvironmentConnectionParams.builder("gmail", "GMAIL", EnvironmentConnectionType.OAUTH)
+EnvironmentConnection current = client.connections().getEnvironmentConnection("conn_123");
+EnvironmentConnection updated = client.connections().updateEnvironmentConnection(current.id(),
+        UpdateEnvironmentConnectionParams.builder(
+                        current.connectionName().orElseThrow(IllegalStateException::new),
+                        current.providerKey(),
+                        current.type())
                 .oauthSettings(OAuthConnectionSettings.builder()
                         .clientId(System.getenv("GMAIL_CLIENT_ID"))
                         .clientSecret(System.getenv("GMAIL_CLIENT_SECRET"))

@@ -9,7 +9,8 @@ import java.util.Optional;
 
 /**
  * The Google Workspace domain-wide delegation settings of an app connection. The service account
- * key is a secret: {@link #toString()} never prints it. Immutable and thread-safe.
+ * key is a secret: {@link #toString()} never prints it, and the server returns it masked. A masked
+ * value sent back in an update keeps the stored key. Immutable and thread-safe.
  *
  * @since 2.6.0
  */
@@ -49,6 +50,9 @@ public final class GoogleDwdConnectionSettings {
 
     /**
      * Returns the service account key, as JSON. A secret.
+     *
+     * <p>Read back from the server, the value is masked (a fixed prefix and the service account's
+     * email), not JSON. Sending a masked value back in an update keeps the stored key.
      *
      * @return the value, or empty when not set
      */
@@ -113,7 +117,8 @@ public final class GoogleDwdConnectionSettings {
         }
 
         /**
-         * Sets the service account key, as JSON.
+         * Sets the service account key, as JSON. A masked value read from the server keeps the
+         * stored key.
          *
          * @param serviceAccountJson the value
          * @return this builder

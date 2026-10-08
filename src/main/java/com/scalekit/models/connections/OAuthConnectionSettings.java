@@ -10,7 +10,9 @@ import java.util.Optional;
 /**
  * The OAuth settings of an app connection: the OAuth client Scalekit uses when users authorize
  * their accounts. Used to update a connection and returned when reading one. The client secret
- * and the Google Ads developer token are secrets: {@link #toString()} never prints them.
+ * and the Google Ads developer token are secrets: {@link #toString()} never prints them, and the
+ * server returns them masked. A masked value sent back in an update keeps the stored secret, so
+ * settings read from a connection can be changed and sent back with {@link #toBuilder()}.
  * Immutable and thread-safe.
  *
  * <pre>{@code
@@ -110,6 +112,9 @@ public final class OAuthConnectionSettings {
 
     /**
      * Returns the OAuth client secret. A secret.
+     *
+     * <p>Read back from the server, the value is masked (a fixed prefix and the last four
+     * characters). Sending a masked value back in an update keeps the stored secret.
      *
      * @return the value, or empty when not set
      */
@@ -246,6 +251,9 @@ public final class OAuthConnectionSettings {
     /**
      * Returns the Google Ads developer token. A secret.
      *
+     * <p>Read back from the server, the value is masked (a fixed prefix and the last four
+     * characters). Sending a masked value back in an update keeps the stored secret.
+     *
      * @return the value, or empty when not set
      */
     public Optional<String> googleadsDeveloperToken() {
@@ -335,7 +343,8 @@ public final class OAuthConnectionSettings {
         }
 
         /**
-         * Sets the OAuth client secret.
+         * Sets the OAuth client secret. A masked value read from the server keeps the stored
+         * secret.
          *
          * @param clientSecret the value
          * @return this builder
@@ -500,7 +509,8 @@ public final class OAuthConnectionSettings {
         }
 
         /**
-         * Sets the Google Ads developer token.
+         * Sets the Google Ads developer token. A masked value read from the server keeps the
+         * stored token.
          *
          * @param googleadsDeveloperToken the value
          * @return this builder
