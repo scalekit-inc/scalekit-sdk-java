@@ -65,7 +65,7 @@ jobs:
               sys.exit(f"Release tag {tag!r} is not vX.Y.Z.")
           version = m.group(1)
 
-          # The same locations and patterns the release tooling bumps.
+          # Every place the version is written must agree with the release tag.
           locations = [
               ("pom.xml", r"<artifactId>scalekit-sdk-java</artifactId>\s*<version>(?P<version>[^<]+)</version>"),
               ("src/main/java/com/scalekit/internal/Constants.java", r'public static String version = "(?P<version>[^"]+)";'),
