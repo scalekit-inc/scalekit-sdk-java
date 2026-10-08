@@ -62,7 +62,7 @@ class ScalekitClientAgentKitTest {
 
     @Test
     void rejectionOfAFreshlyFetchedTokenIsNotRetried() {
-        server.enqueue(new Reply(401, "{\"detail\":\"token expired\",\"code\":\"UNAUTHORIZED\"}", 0));
+        server.enqueue(new Reply(401, "{\"detail\":\"token expired\",\"code\":\"UNAUTHORIZED\"}", 0, "Content-Type", "application/json"));
         ProxyException e = assertThrows(ProxyException.class,
                 () -> client.actions().request(ProxyRequest.builder("gmail", "user_1", "/x").build()));
         assertEquals(401, e.statusCode());

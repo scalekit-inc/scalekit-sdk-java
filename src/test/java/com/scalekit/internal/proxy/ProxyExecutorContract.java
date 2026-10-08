@@ -26,6 +26,8 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /** Behaviour every proxy transport must show; subclasses pick the transport. */
@@ -37,6 +39,9 @@ abstract class ProxyExecutorContract {
     ProxyExecutor executor;
 
     abstract HttpTransport newTransport();
+
+    /** Whether the transport loses a 401's body on streamed (POST, PUT, PATCH...) requests. */
+    abstract boolean dropsUnauthorizedBodyOnStreamedRequests();
 
     @BeforeEach
     void setUp() throws Exception {
@@ -64,7 +69,7 @@ abstract class ProxyExecutorContract {
 
     @Test
     void coldStartFetchesATokenAndAFreshTokenRejectionIsNotRefreshedAgain() {
-        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0));
+        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0, "Content-Type", "application/json"));
         ProxyException e = assertThrows(ProxyException.class, () -> executor.execute(get("/x").build()));
         assertEquals("UNAUTHORIZED", e.proxyErrorCode().get());
         // The token was fetched moments ago; the refresh debounce keeps it, so nothing is resent.
@@ -225,7 +230,7 @@ abstract class ProxyExecutorContract {
     @Test
     void secondScalekitUnauthorizedIsNotResentAgain() {
         primeTokenFromAnEarlierGrpcCall();
-        Reply unauthorized = new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0);
+        Reply unauthorized = new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0, "Content-Type", "application/json");
         server.enqueue(unauthorized, unauthorized);
         ProxyException e = assertThrows(ProxyException.class, () -> executor.execute(get("/x").build()));
         assertEquals(401, e.statusCode());
@@ -235,10 +240,77 @@ abstract class ProxyExecutorContract {
 
     @Test
     void upstreamUnauthorizedIsNeverResent() {
-        server.enqueue(new Reply(401, "{\"error\":\"invalid_auth\"}", 0));
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(new Reply(401, "{\"error\":\"invalid_auth\"}", 0, "Content-Type", "application/json"));
         ProxyException e = assertThrows(ProxyException.class, () -> executor.execute(get("/x").build()));
         assertEquals(401, e.statusCode());
+        assertEquals("{\"error\":\"invalid_auth\"}", e.response().bodyAsString());
         assertEquals(1, server.proxyRequests().size());
+        assertEquals("token-1", credentials.getToken(), "an upstream 401 does not refresh the token");
+        verify(authClient, times(1)).getClientAccessToken();
+    }
+
+    @Test
+    void upstreamUnauthorizedToAPostIsNeverResent() {
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(new Reply(401, "{\"error\":\"invalid_auth\"}", 0, "Content-Type", "application/json"));
+        ProxyRequest post = get("/api/chat.postMessage").method("POST")
+                .jsonBody(Collections.singletonMap("text", "hello")).build();
+        ProxyException e = assertThrows(ProxyException.class, () -> executor.execute(post));
+        assertEquals(401, e.statusCode());
+        assertEquals(1, server.proxyRequests().size(), "a non-idempotent upstream call must not be repeated");
+        if (dropsUnauthorizedBodyOnStreamedRequests()) {
+            // The body was lost, so the 401 cannot be attributed: not resent, but the token is
+            // refreshed so that a stale one does not fail the next call too.
+            assertEquals("token-2", credentials.getToken());
+            verify(authClient, times(2)).getClientAccessToken();
+        } else {
+            assertEquals("token-1", credentials.getToken(), "an upstream 401 does not refresh the token");
+            verify(authClient, times(1)).getClientAccessToken();
+        }
+    }
+
+    private void assertNotResent(Reply lookAlike) {
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(lookAlike);
+        assertThrows(ProxyException.class, () -> executor.execute(get("/x").build()));
+        assertEquals(1, server.proxyRequests().size());
+        assertEquals("token-1", credentials.getToken());
+    }
+
+    @Test
+    void lookAlikeWithoutDetailIsTreatedAsUpstream() {
+        assertNotResent(new Reply(401, "{\"code\":\"UNAUTHORIZED\"}", 0, "Content-Type", "application/json"));
+    }
+
+    @Test
+    void lookAlikeWithExtraKeysIsTreatedAsUpstream() {
+        assertNotResent(new Reply(401, "{\"detail\":\"x\",\"code\":\"UNAUTHORIZED\",\"request_id\":\"r\"}", 0,
+                "Content-Type", "application/json"));
+    }
+
+    @Test
+    void lookAlikeWithoutJsonContentTypeIsTreatedAsUpstream() {
+        assertNotResent(new Reply(401, "{\"detail\":\"x\",\"code\":\"UNAUTHORIZED\"}", 0,
+                "Content-Type", "text/plain"));
+        server.enqueue(new Reply(401, "{\"detail\":\"x\",\"code\":\"UNAUTHORIZED\"}", 0));
+        assertThrows(ProxyException.class, () -> executor.execute(get("/y").build()));
+        assertEquals(2, server.proxyRequests().size(), "no content type is not JSON either");
+    }
+
+    @Test
+    void lookAlikeWithAnotherCodeIsTreatedAsUpstream() {
+        assertNotResent(new Reply(401, "{\"detail\":\"x\",\"code\":\"INVALID_TOKEN\"}", 0,
+                "Content-Type", "application/json"));
+    }
+
+    @Test
+    void scalekitUnauthorizedWithJsonSuffixContentTypeIsResent() {
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(new Reply(401, "{\"detail\":\"x\",\"code\":\"UNAUTHORIZED\"}", 0,
+                "Content-Type", "application/problem+json; charset=utf-8"));
+        assertEquals(200, executor.execute(get("/x").build()).statusCode());
+        assertEquals(2, server.proxyRequests().size());
     }
 
     @Test

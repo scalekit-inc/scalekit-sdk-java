@@ -24,6 +24,11 @@ class JdkHttpClientTransportTest extends ProxyExecutorContract {
         return new JdkHttpClientTransport();
     }
 
+    @Override
+    boolean dropsUnauthorizedBodyOnStreamedRequests() {
+        return false;
+    }
+
     @Test
     void isTheDefaultWhenAvailable() {
         assertTrue(ProxyExecutor.defaultTransport() instanceof JdkHttpClientTransport);
@@ -32,7 +37,7 @@ class JdkHttpClientTransportTest extends ProxyExecutorContract {
     @Test
     void scalekitUnauthorizedOnAPostIsResentOnce() {
         primeTokenFromAnEarlierGrpcCall();
-        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0));
+        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0, "Content-Type", "application/json"));
         ProxyResponse response = executor.execute(ProxyRequest.builder("gmail", "user_1", "/x").method("POST")
                 .jsonBody(Collections.singletonMap("a", 1)).build());
         assertEquals(200, response.statusCode());

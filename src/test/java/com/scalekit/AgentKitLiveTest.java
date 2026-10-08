@@ -10,6 +10,8 @@ import com.scalekit.models.connectedaccounts.ConnectedAccountRef;
 import com.scalekit.models.mcp.CreateMcpConfigParams;
 import com.scalekit.models.mcp.McpConfig;
 import com.scalekit.models.mcp.McpConnectionToolMapping;
+import com.scalekit.models.connectedaccounts.UpdateConnectedAccountParams;
+import com.scalekit.models.mcp.ListMcpConfigsParams;
 import com.scalekit.models.mcp.McpSessionToken;
 import com.scalekit.models.mcp.UpdateMcpConfigParams;
 import com.scalekit.models.providers.AuthField;
@@ -23,16 +25,20 @@ import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
 import com.scalekit.models.tools.ListToolsParams;
 import com.scalekit.models.tools.ToolPage;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,7 +48,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * and SCALEKIT_CLIENT_SECRET; tests that use a connection also need TEST_AGENTKIT_CONNECTION (an
  * enabled connection), TEST_AGENTKIT_IDENTIFIER (an identifier with an active account on it),
  * TEST_AGENTKIT_TOOL (a tool of that connection) and TEST_AGENTKIT_PROXY_PATH (a GET path on the
- * provider's API). Each test skips when what it needs is missing, and removes what it creates.
+ * provider's API). TEST_AGENTKIT_TOOL_INPUT, a JSON object, is the tool's input (default {}).
+ * Each test skips when what it needs is missing, and removes what it creates.
  */
 @Tag("live")
 class AgentKitLiveTest {
@@ -80,6 +87,19 @@ class AgentKitLiveTest {
         return prefix + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
     }
 
+    private static Map<String, Object> toolInput() {
+        String json = System.getenv("TEST_AGENTKIT_TOOL_INPUT");
+        if (json == null || json.trim().isEmpty()) {
+            return Collections.emptyMap();
+        }
+        try {
+            return new ObjectMapper().readValue(json, new TypeReference<Map<String, Object>>() {
+            });
+        } catch (IOException e) {
+            throw new IllegalStateException("TEST_AGENTKIT_TOOL_INPUT must be a JSON object", e);
+        }
+    }
+
     @Test
     void listToolsReturnsAPage() {
         ToolPage page = client.tools().list(ListToolsParams.builder().pageSize(5).build());
@@ -93,7 +113,7 @@ class AgentKitLiveTest {
         String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
         String tool = fixture("TEST_AGENTKIT_TOOL");
         ExecuteToolResult result = client.actions().executeTool(tool, ExecuteToolParams.builder()
-                .connectionName(connection).identifier(identifier).putToolInput("max_results", 1).build());
+                .connectionName(connection).identifier(identifier).toolInput(toolInput()).build());
         assertFalse(result.executionId().isEmpty());
 
         assertThrows(BadRequestException.class, () -> client.tools().execute(unique("no_such_tool_"),
@@ -130,6 +150,38 @@ class AgentKitLiveTest {
     }
 
     @Test
+    void createUpdateGetDelete() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = unique("sdk-java-");
+        ConnectedAccountRef ref = ConnectedAccountRef.of(connection, identifier);
+        cleanup.add(() -> client.connectedAccounts().delete(ref));
+
+        ConnectedAccount created = client.actions().createConnectedAccount(connection, identifier);
+        assertEquals(identifier, created.identifier());
+        assertThrows(BadRequestException.class, () -> client.connectedAccounts().create(connection, identifier),
+                "a second create is a duplicate");
+
+        ConnectedAccount updated = client.actions().updateConnectedAccount(ref, UpdateConnectedAccountParams.builder()
+                .apiConfig(Collections.singletonMap("sdk_test_marker", identifier)).build());
+        assertEquals(created.id(), updated.id());
+
+        ConnectedAccount fetched = client.connectedAccounts().get(ConnectedAccountRef.byId(created.id()));
+        assertEquals(created.id(), fetched.id());
+        // apiConfig is returned only when the environment returns it; when present it must hold the update.
+        fetched.apiConfig().ifPresent(config -> assertEquals(identifier, config.get("sdk_test_marker")));
+        updated.apiConfig().ifPresent(config -> assertEquals(identifier, config.get("sdk_test_marker")));
+
+        client.actions().deleteConnectedAccount(ref);
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts().get(ref));
+    }
+
+    @Test
+    void magicLinkForAnUnknownConnectionIsNotFound() {
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts()
+                .getMagicLink(ConnectedAccountRef.of(unique("missing-"), unique("user-"))));
+    }
+
+    @Test
     void verifyUserWithAnUnknownRequestFails() {
         APIException e = assertThrows(APIException.class, () -> client.connectedAccounts()
                 .verifyUser("00000000-0000-0000-0000-000000000000", "user_123"));
@@ -151,9 +203,18 @@ class AgentKitLiveTest {
         McpConfig updated = client.actions().mcp().updateConfig(config.id(),
                 UpdateMcpConfigParams.builder().description("SDK test updated").build());
         assertEquals("SDK test updated", updated.description().orElse(null));
-        assertNotNull(client.actions().mcp().listConnectedAccounts(config.id(), unique("user-")));
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        assertFalse(client.actions().mcp().listConnectedAccounts(config.id(), identifier).isEmpty());
 
-        McpSessionToken token = client.actions().mcp().createSessionToken(config.id(), unique("user-"));
+        boolean listed = false;
+        for (McpConfig each : client.actions().mcp().listConfigs(
+                ListMcpConfigsParams.builder().search(name).build()).autoPager()) {
+            listed |= each.id().equals(config.id());
+        }
+        assertTrue(listed, "listConfigs finds the new configuration");
+
+        // The fixture identifier already has an account on the connection, so minting creates nothing.
+        McpSessionToken token = client.actions().mcp().createSessionToken(config.id(), identifier);
         assertFalse(token.token().isEmpty());
 
         client.actions().mcp().deleteConfig(config.id());

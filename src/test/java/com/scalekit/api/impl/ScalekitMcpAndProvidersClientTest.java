@@ -269,6 +269,25 @@ class ScalekitMcpAndProvidersClientTest {
     }
 
     @Test
+    void createCustomProviderIsNotRetriedOnUnavailable() {
+        fake.enqueue("CreateCustomProvider", FakeAgentKitServer.error(Status.Code.UNAVAILABLE, null));
+        InternalServerException e = assertThrows(InternalServerException.class,
+                () -> providers.createCustomProvider(CustomProviderRequest.builder("A", "https://a").build()));
+        assertEquals(Status.Code.UNAVAILABLE.value(), e.getGrpcStatusCode());
+        assertEquals(1, fake.calls("CreateCustomProvider"));
+    }
+
+    @Test
+    void updateAndDeleteCustomProviderAreRetriedOnUnavailable() {
+        fake.enqueue("UpdateCustomProvider", FakeAgentKitServer.error(Status.Code.UNAVAILABLE, null));
+        providers.updateCustomProvider("A:env", CustomProviderRequest.builder("A", "https://a").build());
+        assertEquals(2, fake.calls("UpdateCustomProvider"));
+        fake.enqueue("DeleteCustomProvider", FakeAgentKitServer.error(Status.Code.UNAVAILABLE, null));
+        providers.deleteCustomProvider("A:env");
+        assertEquals(2, fake.calls("DeleteCustomProvider"));
+    }
+
+    @Test
     void modelledFieldsWinOverAdditionalPropertiesWithTheSameName() {
         AuthPattern pattern = AuthPattern.builder(AuthPatternType.BEARER, "Token")
                 .description("real")

@@ -8,12 +8,15 @@ import com.scalekit.exceptions.NotFoundException;
 import com.scalekit.exceptions.ScalekitConnectionException;
 import com.scalekit.exceptions.ScalekitTimeoutException;
 import com.scalekit.grpc.scalekit.v1.tools.ToolServiceGrpc;
+import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -127,6 +130,21 @@ class RetryPolicyTest {
     void everyWrappedMethodHasAPolicyAndUnknownOnesFailFast() {
         assertEquals(RetryPolicy.NON_IDEMPOTENT, MethodRetryPolicies.of(ToolServiceGrpc.getExecuteToolMethod()));
         assertEquals(RetryPolicy.IDEMPOTENT, MethodRetryPolicies.of(ToolServiceGrpc.getListToolsMethod()));
-        assertThrows(IllegalStateException.class, () -> MethodRetryPolicies.of(ToolServiceGrpc.getSearchToolsMethod()));
+        MethodDescriptor.Marshaller<Object> marshaller = new MethodDescriptor.Marshaller<Object>() {
+            @Override
+            public InputStream stream(Object value) {
+                return new ByteArrayInputStream(new byte[0]);
+            }
+
+            @Override
+            public Object parse(InputStream stream) {
+                return null;
+            }
+        };
+        MethodDescriptor<Object, Object> unknown = MethodDescriptor.newBuilder(marshaller, marshaller)
+                .setType(MethodDescriptor.MethodType.UNARY)
+                .setFullMethodName(MethodDescriptor.generateFullMethodName("example.v1.FakeService", "Unlisted"))
+                .build();
+        assertThrows(IllegalStateException.class, () -> MethodRetryPolicies.of(unknown));
     }
 }

@@ -202,6 +202,25 @@ class ModelsTest {
     }
 
     @Test
+    void proxyRequestRejectsUnsafePathsAndHeaderValues() {
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a#frag").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/../oauth/token").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/./b").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/%2E%2e/b").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/..").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "..").build());
+        assertEquals("/a..b/.well-known/x?next=../y", ProxyRequest.builder("c", "u", "/a..b/.well-known/x?next=../y").build().path(),
+                "dots inside segments and in the query are fine");
+
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("X-A", "\u20ac"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/p").header("X-A", "a\u007fb"));
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "\u7528\u6237", "/p").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("con\nn", "u", "/p").build());
+        ProxyRequest latin = ProxyRequest.builder("c", "caf\u00e9", "/p").header("X-A", "a\tb \u00ff").build();
+        assertEquals("caf\u00e9", latin.identifier());
+    }
+
+    @Test
     void proxyResponseHeadersAreCaseInsensitiveAndCharsetAware() {
         Map<String, List<String>> headers = new HashMap<>();
         headers.put("Content-Type", Collections.singletonList("text/plain; charset=ISO-8859-1"));
