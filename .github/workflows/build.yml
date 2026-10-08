@@ -17,30 +17,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Generated-code check, Javadoc and the full test suite, including the live tests
+  # (they need the repository secrets). Releases are built on the same JDK.
   build:
     name: build
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: "21"
 
       - name: Set up Buf
-        uses: bufbuild/buf-setup-action@v1
+        uses: bufbuild/buf-setup-action@a47c93e0b1648d5651a065437926377d060baa99 # v1.50.0
         with:
           github_token: ${{ github.token }}
           version: "1.50.1"
 
       - name: Cache repo-local Maven dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .tools/m2
           key: ${{ runner.os }}-repo-local-m2-${{ hashFiles('pom.xml') }}
@@ -96,3 +98,134 @@ jobs:
           TEST_DOMAIN: ${{ secrets.TEST_DOMAIN }}
 
         run: make test
+
+  # The tests that need no credentials, on every supported JDK. Sources are compiled once by
+  # JDK 21 (release 8, as for a release); surefire runs the tests on the matrix JDK.
+  unit:
+    name: unit (jdk ${{ matrix.java }})
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        java: ["8", "11", "17", "21", "25"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up JDK ${{ matrix.java }} (runs the tests)
+        id: test-jdk
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          set-default: false
+
+      - name: Set up JDK 21 (runs Maven and compiles)
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cache repo-local Maven dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools/m2
+          key: ${{ runner.os }}-repo-local-m2-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-repo-local-m2-
+
+      - name: Run credential-free tests on JDK ${{ matrix.java }}
+        env:
+          TEST_JAVA: ${{ steps.test-jdk.outputs.path }}/bin/java
+        run: |
+          "$TEST_JAVA" -version
+          make unit-test JVM="$TEST_JAVA"
+
+  # Binary and source compatibility of the public API with the latest release (japicmp).
+  api-compat:
+    name: api-compat
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cache repo-local Maven dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools/m2
+          key: ${{ runner.os }}-repo-local-m2-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-repo-local-m2-
+
+      - name: Find the latest release
+        id: baseline
+        run: |
+          tag="$(git describe --tags --abbrev=0 --match 'v*')"
+          version="${tag#v}"
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Latest tag '$tag' is not vX.Y.Z."
+            exit 1
+          fi
+          echo "Comparing with $tag"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Check API compatibility
+        env:
+          JAPICMP_OLD_VERSION: ${{ steps.baseline.outputs.version }}
+        run: make api-compat JAPICMP_OLD_VERSION="$JAPICMP_OLD_VERSION"
+
+      - name: Upload japicmp reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: japicmp-reports
+          path: target/japicmp/
+          retention-days: 14
+          if-no-files-found: ignore
+
+  # Third-party packages bundled in the jar without relocation (scripts/jar-contents-allowlist.txt).
+  jar-contents:
+    name: jar-contents
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Java
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cache repo-local Maven dependencies
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools/m2
+          key: ${{ runner.os }}-repo-local-m2-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-repo-local-m2-
+
+      - name: Check jar contents
+        run: make jar-check
