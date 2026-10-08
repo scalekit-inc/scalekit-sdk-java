@@ -39,6 +39,15 @@ class JdkHttpClientResumableUploadTest extends ResumableUploaderContract {
     }
 
     @Test
+    void aReadableProviderUnauthorizedOnAChunkIsNeverRetried() {
+        server.enqueue(started(), new Reply(401, "{\"error\":{\"code\":401,\"message\":\"Invalid Credentials\"}}", 0,
+                "Content-Type", "application/json"));
+        UploadExceptionHolder.assertUploadException(401, () -> uploader.upload(upload().content(data(10)).build()));
+        assertEquals(2, server.proxyRequests().size());
+        assertTrue(sleeps.isEmpty());
+    }
+
+    @Test
     void scalekitRejectingTheTokenOnTheStartIsRefreshedAndResentOnce() {
         server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0,
                 "Content-Type", "application/json"), started(), done("{}"));

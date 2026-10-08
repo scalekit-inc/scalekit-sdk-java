@@ -52,7 +52,7 @@ import java.util.function.Consumer;
  *   <li>{@link Builder#content(InputStream, long)}: a stream of a known size;</li>
  *   <li>{@link Builder#content(InputStream)}: a stream of unknown size, read until it ends.</li>
  * </ul>
- * The SDK never closes a stream you pass, and never reads more than one chunk of it into memory.
+ * The SDK never closes a stream you pass, and reads it one chunk at a time.
  *
  * <p>Rules checked by {@link Builder#build()}, before any network call:
  * <ul>
@@ -62,8 +62,9 @@ import java.util.function.Consumer;
  *       (pass query parameters with {@link Builder#queryParam(String, String)}), a space, a
  *       control character or DEL;</li>
  *   <li>the method is {@code POST}, {@code PATCH} or {@code PUT}, in any case;</li>
- *   <li>the content type is not blank and contains only printable US-ASCII characters (no CR
- *       or LF anywhere, including at the ends);</li>
+ *   <li>the content type is not blank and contains only printable US-ASCII characters and TAB:
+ *       any other control character, including CR and LF anywhere, is rejected, and leading or
+ *       trailing spaces and tabs are trimmed;</li>
  *   <li>the chunk size is a positive multiple of {@value #CHUNK_SIZE_MULTIPLE} bytes (256 KiB);</li>
  *   <li>{@code maxRetries} is not negative and the timeout is positive;</li>
  *   <li>a {@link Path} is an existing regular file.</li>
@@ -296,14 +297,14 @@ public final class ResumableUploadRequest {
     }
 
     /**
-     * Opens the content for reading, as the SDK does when it uploads. The caller closes the
-     * returned stream; closing it never closes a stream passed to
+     * Opens the content for reading. Not part of the public API: the SDK's uploader calls it. The
+     * caller closes the returned stream; closing it never closes a stream passed to
      * {@link Builder#content(InputStream)}.
      *
      * @return a new stream over the array or the file, or the stream that was passed in
      * @throws UncheckedIOException if the file cannot be opened
      */
-    public InputStream openContent() {
+    InputStream openContent() {
         switch (contentKind) {
             case BYTES:
                 return new ByteArrayInputStream(bytes);

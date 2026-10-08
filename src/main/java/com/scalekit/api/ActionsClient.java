@@ -363,8 +363,9 @@ public interface ActionsClient {
      *       {@code Content-Range} header. Until a stream of unknown size ends, chunks carry no
      *       total ({@code bytes a-b/*}); the last one carries it. Empty content is sent as one
      *       empty {@code PUT}.</li>
-     *   <li>After a timeout, a connection failure or HTTP 408, 429, 500, 502, 503 or 504, the SDK
-     *       waits, asks the server how many bytes it has, and continues from there. It waits with
+     *   <li>After a timeout, a connection failure, HTTP 408, 429, 500, 502, 503 or 504, or (on
+     *       Java 8, where {@code HttpURLConnection} discards it) a 401 whose body cannot be read,
+     *       the SDK waits, asks the server how many bytes it has, and continues from there. It waits with
      *       exponential backoff and full jitter (at most 1 second before the first retry, doubling
      *       up to 30 seconds), or for the time a 429 or 503 gives in {@code Retry-After}, capped
      *       at 30 seconds. A chunk may fail {@link ResumableUploadRequest.Builder#maxRetries
@@ -374,7 +375,9 @@ public interface ActionsClient {
      *       of a chunk, the rest of that chunk is sent next.</li>
      * </ol>
      *
-     * <p>At most one chunk of the content is held in memory. The calling thread does the upload;
+     * <p>About one chunk of the content is held in memory at a time: each chunk is sent from the
+     * array it was read into, and only resending the rest of a partly committed chunk briefly
+     * copies it. The calling thread does the upload;
      * an interrupt stops it before the next request or during a wait (on Java 11+ also during a
      * request) with {@link ScalekitConnectionException}, and the interrupt flag stays set. An
      * upload that stops cannot be resumed by a later call: call this method again to start over.

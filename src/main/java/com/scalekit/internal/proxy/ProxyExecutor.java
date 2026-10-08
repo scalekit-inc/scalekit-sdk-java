@@ -101,7 +101,7 @@ public final class ProxyExecutor {
         if (request == null) {
             throw new IllegalArgumentException("request is required");
         }
-        return execute(request, request.body().orElse(null));
+        return send(request, request.body().orElse(null), false);
     }
 
     /**
@@ -111,17 +111,43 @@ public final class ProxyExecutor {
      * may still be reading it. The request itself must have no body; set {@code Content-Type} as
      * a header.
      *
+     * <p>Unlike {@link #execute(ProxyRequest)}, a 401 whose body the transport could not read
+     * (HttpURLConnection discards it on streamed requests) is thrown as
+     * {@link UnreadableUnauthorizedException}, so that the caller can tell it from a provider's 401.
+     *
      * @param request the request, without a body
      * @param body    the body, or null for none
      * @return the response, for statuses below 400
      * @see #execute(ProxyRequest)
      */
     ProxyResponse execute(ProxyRequest request, byte[] body) {
+        return send(request, body, true);
+    }
+
+    /**
+     * Runs the checks {@link #execute(ProxyRequest)} makes before any I/O: the runtime can send the
+     * method, and the URI stays under the proxy prefix.
+     *
+     * @param request the request
+     * @throws UnsupportedOperationException if the runtime cannot send the request's method
+     * @throws IllegalArgumentException      if the URI would leave the proxy prefix
+     */
+    void checkSendable(ProxyRequest request) {
+        sendableTransport(request);
+        buildUri(request);
+    }
+
+    private HttpTransport sendableTransport(ProxyRequest request) {
         HttpTransport http = transport();
         if (!http.supportsMethod(request.method())) {
             throw new UnsupportedOperationException("This Java runtime cannot send HTTP " + request.method()
                     + " requests without the java.net.http module; on Java 11 or later add --add-modules java.net.http");
         }
+        return http;
+    }
+
+    private ProxyResponse send(ProxyRequest request, byte[] body, boolean markUnreadableUnauthorized) {
+        HttpTransport http = sendableTransport(request);
         URI uri = buildUri(request);
         if (Thread.currentThread().isInterrupted()) {
             throw new ScalekitConnectionException("proxy request not sent: the thread is interrupted",
@@ -153,9 +179,25 @@ public final class ProxyExecutor {
                 .body(result.body)
                 .build();
         if (result.status >= 400) {
+            if (markUnreadableUnauthorized && result.status == 401 && !result.bodyAvailable) {
+                throw new UnreadableUnauthorizedException(response);
+            }
             throw new ProxyException(response);
         }
         return response;
+    }
+
+    /**
+     * A 401 whose body the transport could not read, so it cannot be told apart from Scalekit
+     * rejecting the token; the token has already been refreshed. Thrown only by
+     * {@link #execute(ProxyRequest, byte[])}.
+     */
+    static final class UnreadableUnauthorizedException extends ProxyException {
+        private static final long serialVersionUID = 1L;
+
+        UnreadableUnauthorizedException(ProxyResponse response) {
+            super(response);
+        }
     }
 
     private HttpTransport transport() {

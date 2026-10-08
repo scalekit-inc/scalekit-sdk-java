@@ -58,6 +58,8 @@ abstract class ResumableUploaderContract {
     final List<Long> sleeps = new ArrayList<>();
     final Set<Integer> failingCalls = new HashSet<>();
     final AtomicInteger calls = new AtomicInteger();
+    /** The body array of every call the transport sent, in order (null for none). */
+    final List<byte[]> sentBodies = java.util.Collections.synchronizedList(new ArrayList<byte[]>());
     double jitter = 0.5;
 
     abstract HttpTransport newTransport();
@@ -104,6 +106,7 @@ abstract class ResumableUploaderContract {
 
             @Override
             public HttpResult send(HttpCall call) throws IOException, InterruptedException {
+                sentBodies.add(call.body);
                 if (failingCalls.contains(calls.incrementAndGet())) {
                     throw new IOException("connection reset");
                 }
@@ -399,6 +402,57 @@ abstract class ResumableUploaderContract {
         assertEquals(Arrays.asList(UploadProgress.of(KIB_256, 1048576), UploadProgress.of(2 * KIB_256, 1048576),
                 UploadProgress.of(1048576, 1048576)), progress);
         assertTrue(sleeps.isEmpty(), "progress is not a failure");
+    }
+
+    @Test
+    void aChunkIsSentAsItsOwnArrayWithoutCopiesAndOnlyAPartialResendIsCopied() {
+        server.enqueue(started(), status(503), new Reply(308, "", 0), committed(KIB_256 - 1), done("{}"));
+
+        uploader.upload(upload().chunkSize(2 * KIB_256).content(data(2 * KIB_256)).build());
+
+        // start, chunk (503), status query, chunk again (308: half committed), the unsent half.
+        assertEquals(5, sentBodies.size());
+        byte[] first = sentBodies.get(1);
+        assertEquals(2 * KIB_256, first.length);
+        assertNull(sentBodies.get(2), "a status query has no body");
+        assertSame(first, sentBodies.get(3), "a resend from the chunk's start reuses the chunk's array");
+        byte[] tail = sentBodies.get(4);
+        assertNotSame(first, tail);
+        assertEquals(KIB_256, tail.length);
+        assertArrayEquals(data(2 * KIB_256), first, "the chunk's array is never overwritten");
+    }
+
+    @Test
+    void aFileIsClosedAfterSuccessAndAfterFailure(@org.junit.jupiter.api.io.TempDir Path dir) throws IOException {
+        Path fds = java.nio.file.Paths.get("/proc/self/fd");
+        org.junit.jupiter.api.Assumptions.assumeTrue(Files.isDirectory(fds), "needs /proc to list open files");
+        Path written = dir.resolve("upload.bin");
+        Files.write(written, data(1000));
+        Path file = written.toRealPath();
+
+        server.enqueue(started(), done("{}"));
+        uploader.upload(upload().content(file).build());
+        assertFalse(isOpen(fds, file), "closed after success");
+
+        server.enqueue(started(), status(403));
+        assertThrows(UploadException.class, () -> uploader.upload(upload().content(file).build()));
+        assertFalse(isOpen(fds, file), "closed after an HTTP failure");
+
+        server.enqueue(status(500));
+        assertThrows(UploadException.class, () -> uploader.upload(upload().content(file).build()));
+        assertFalse(isOpen(fds, file), "closed when the session never started");
+    }
+
+    private static boolean isOpen(Path fds, Path file) throws IOException {
+        try (java.util.stream.Stream<Path> open = Files.list(fds)) {
+            return open.anyMatch(fd -> {
+                try {
+                    return Files.readSymbolicLink(fd).equals(file);
+                } catch (IOException | UnsupportedOperationException gone) {
+                    return false;
+                }
+            });
+        }
     }
 
     @Test

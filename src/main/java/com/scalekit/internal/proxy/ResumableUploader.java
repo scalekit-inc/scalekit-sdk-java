@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.time.Clock;
@@ -48,17 +50,20 @@ import java.util.regex.Pattern;
  *   <li>Sends each chunk with {@code PUT path?uploadType=resumable&upload_id=<id>} and
  *       {@code Content-Range}; a 308 reports the committed bytes in its {@code Range} header, and a
  *       200 or 201 ends the upload with the resource's JSON.</li>
- *   <li>On a timeout, a connection failure or HTTP 408, 429, 500, 502, 503 or 504, waits, asks the
- *       server how much it has ({@link Step#STATUS_QUERY}: an empty {@code PUT} with
- *       <code>Content-Range: bytes &#42;/&lt;total&gt;</code>), and resumes from there. A chunk may fail
- *       {@code maxRetries} times in a row; the count resets when the committed offset advances.</li>
+ *   <li>On a timeout, a connection failure, HTTP 408, 429, 500, 502, 503 or 504, or a 401 whose
+ *       body the transport discarded, waits, asks the server how much it has
+ *       ({@link Step#STATUS_QUERY}: an empty {@code PUT} with
+ *       <code>Content-Range: bytes &#42;/&lt;total&gt;</code>), and resumes from there. A chunk may
+ *       fail {@code maxRetries} times in a row.</li>
  * </ol>
  *
- * <p>Holds at most one chunk of content (plus one look-ahead byte) in memory, and gives each
- * request its own copy of the bytes it sends, because a request that timed out may still be reading
- * its array. When the server commits part of a chunk, the rest of that chunk is sent next. A 308
- * that commits nothing new counts as one failed attempt and the chunk is resent from the reported
- * offset; the failure count resets only when the committed offset reaches a new high-water mark.
+ * <p>Memory: each chunk is read into a new array that is never written again once read, so a
+ * request that timed out and may still be reading it never sees other bytes. A chunk that starts at
+ * the committed offset is sent as that array, without a copy; only when the server committed part
+ * of a chunk is the unsent rest copied, briefly adding up to one more chunk. When the server
+ * commits part of a chunk, the rest of that chunk is sent next. A 308 that commits nothing new
+ * counts as one failed attempt and the chunk is resent from the reported offset; the failure count
+ * resets only when the committed offset reaches a new high-water mark.
  */
 public final class ResumableUploader {
 
@@ -76,10 +81,44 @@ public final class ResumableUploader {
     private static final Pattern DELTA_SECONDS = Pattern.compile("-?\\d+");
     private static final String METADATA_CONTENT_TYPE = "application/json; charset=UTF-8";
     private static final int NO_LOOKAHEAD = -1;
+    private static final byte[] NO_BYTES = new byte[0];
 
     /**
-     * Which requests of the protocol may be repeated after a transient failure (JV-RETRY-3). Only
-     * these three are ever sent.
+     * {@code ResumableUploadRequest.openContent()}, which is package-private so that it is not
+     * public API. Resolved once; immutable.
+     */
+    private static final Method OPEN_CONTENT = openContentMethod();
+
+    private static Method openContentMethod() {
+        try {
+            Method method = ResumableUploadRequest.class.getDeclaredMethod("openContent");
+            method.setAccessible(true);
+            return method;
+        } catch (NoSuchMethodException | RuntimeException e) {
+            throw new IllegalStateException("cannot access the upload content of ResumableUploadRequest", e);
+        }
+    }
+
+    static InputStream openContent(ResumableUploadRequest request) {
+        try {
+            return (InputStream) OPEN_CONTENT.invoke(request);
+        } catch (InvocationTargetException e) {
+            Throwable cause = e.getCause();
+            if (cause instanceof RuntimeException) {
+                throw (RuntimeException) cause;
+            }
+            if (cause instanceof Error) {
+                throw (Error) cause;
+            }
+            throw new IllegalStateException(cause);
+        } catch (IllegalAccessException e) {
+            throw new IllegalStateException("cannot access the upload content of ResumableUploadRequest", e);
+        }
+    }
+
+    /**
+     * Which requests of the protocol may be repeated after a transient failure. Only these three
+     * are ever sent.
      */
     enum Step {
         /** Opens the session. Not idempotent: repeating it opens a second session. */
@@ -134,7 +173,9 @@ public final class ResumableUploader {
         if (request == null) {
             throw new IllegalArgumentException("request is required");
         }
-        InputStream content = request.openContent();
+        // Every local check runs before the content is opened or read.
+        proxy.checkSendable(startRequest(request, -1).build());
+        InputStream content = openContent(request);
         Throwable failure = null;
         try {
             return new Session(request, content).run();
@@ -151,6 +192,28 @@ public final class ResumableUploader {
                 }
             }
         }
+    }
+
+    /** The request that starts the session; {@code total} is -1 when the size is unknown. */
+    private static ProxyRequest.Builder startRequest(ResumableUploadRequest request, long total) {
+        ProxyRequest.Builder start = ProxyRequest.builder(request.connectionName(), request.identifier(),
+                        request.path())
+                .method(request.method())
+                .timeout(request.timeout())
+                .queryParam("uploadType", "resumable")
+                .header("X-Upload-Content-Type", request.contentType());
+        for (Map.Entry<String, List<String>> param : request.queryParams().entrySet()) {
+            for (String value : param.getValue()) {
+                start.queryParam(param.getKey(), value);
+            }
+        }
+        if (total >= 0) {
+            start.header("X-Upload-Content-Length", Long.toString(total));
+        }
+        if (request.metadata().isPresent()) {
+            start.rawBody(JsonCodec.encode(request.metadata().get()), METADATA_CONTENT_TYPE);
+        }
+        return start;
     }
 
     /** Backoff before retry {@code attempt} (1-based): full jitter up to min(cap, base * 2^(attempt-1)). */
@@ -229,19 +292,20 @@ public final class ResumableUploader {
     }
 
     /**
-     * One upload: the content, the current chunk and the session state. The buffer holds the
+     * One upload: the content, the current chunk and the session state. {@code chunk} holds the
      * current chunk from its first byte ({@code chunkStart}) until the server has committed all of
      * it, so the upload can resume from any offset the server reports inside the chunk.
      */
     private final class Session {
         private final ResumableUploadRequest request;
         private final InputStream in;
-        private final byte[] buffer;
+        /** The current chunk: exactly {@code bufferLength} bytes, never written after it is read. */
+        private byte[] chunk = NO_BYTES;
         private final Consumer<UploadProgress> onProgress;
         private final long declaredTotal;
-        /** Absolute offset of buffer[0]: the first byte of the current chunk. */
+        /** Absolute offset of chunk[0]: the first byte of the current chunk. */
         private long chunkStart;
-        /** Bytes of the current chunk in the buffer; all of them have been read from the content. */
+        /** Length of the current chunk; all of it has been read from the content. */
         private int bufferLength;
         /** The offset the server last reported as committed. */
         private long committed;
@@ -262,11 +326,6 @@ public final class ResumableUploader {
             this.in = in;
             this.declaredTotal = request.totalBytes().isPresent() ? request.totalBytes().getAsLong() : -1;
             this.total = declaredTotal;
-            int capacity = request.chunkSize();
-            if (declaredTotal >= 0 && declaredTotal < capacity) {
-                capacity = (int) declaredTotal;
-            }
-            this.buffer = new byte[capacity];
             this.onProgress = request.onProgress().orElse(null);
         }
 
@@ -335,24 +394,7 @@ public final class ResumableUploader {
         }
 
         private void start() {
-            ProxyRequest.Builder start = ProxyRequest.builder(request.connectionName(), request.identifier(),
-                            request.path())
-                    .method(request.method())
-                    .timeout(request.timeout())
-                    .queryParam("uploadType", "resumable")
-                    .header("X-Upload-Content-Type", request.contentType());
-            for (Map.Entry<String, List<String>> param : request.queryParams().entrySet()) {
-                for (String value : param.getValue()) {
-                    start.queryParam(param.getKey(), value);
-                }
-            }
-            if (total >= 0) {
-                start.header("X-Upload-Content-Length", Long.toString(total));
-            }
-            if (request.metadata().isPresent()) {
-                start.rawBody(JsonCodec.encode(request.metadata().get()), METADATA_CONTENT_TYPE);
-            }
-            ProxyRequest startRequest = start.build();
+            ProxyRequest startRequest = startRequest(request, total).build();
             Attempt attempt = send(Step.START, startRequest, startRequest.body().orElse(null));
             ProxyResponse response = attempt.response;
             if (response.statusCode() < 200 || response.statusCode() > 299) {
@@ -384,7 +426,9 @@ public final class ResumableUploader {
             if (step == Step.CHUNK && committed < chunkEnd()) {
                 put.header("Content-Range", "bytes " + committed + "-" + (chunkEnd() - 1) + "/" + totalText)
                         .header("Content-Type", request.contentType());
-                body = Arrays.copyOfRange(buffer, (int) (committed - chunkStart), bufferLength);
+                // A whole chunk goes out as its own array; only a partial resend needs a copy.
+                body = committed == chunkStart ? chunk
+                        : Arrays.copyOfRange(chunk, (int) (committed - chunkStart), bufferLength);
             } else {
                 put.header("Content-Range", "bytes */" + totalText);
             }
@@ -412,7 +456,11 @@ public final class ResumableUploader {
                     expired.initCause(e);
                     throw expired;
                 }
-                if (!RETRYABLE_STATUSES.contains(status) || !step.retriedAfterTransientFailure) {
+                // A 401 the transport could not read may be Scalekit rejecting a token that has
+                // since been refreshed; a readable provider 401 is never retried.
+                boolean transientFailure = RETRYABLE_STATUSES.contains(status)
+                        || e instanceof ProxyExecutor.UnreadableUnauthorizedException;
+                if (!transientFailure || !step.retriedAfterTransientFailure) {
                     UploadException failed = new UploadException(response, uploadId, committed);
                     failed.initCause(e);
                     throw failed;
@@ -520,39 +568,45 @@ public final class ResumableUploader {
                 return;
             }
             chunkStart = chunkEnd();
+            chunk = NO_BYTES;
             bufferLength = 0;
             if (endOfContent) {
                 return;
             }
-            int capacity = buffer.length;
+            int capacity = request.chunkSize();
             if (declaredTotal >= 0) {
                 capacity = (int) Math.min(capacity, declaredTotal - chunkStart);
             }
+            byte[] next = new byte[capacity];
+            int length = 0;
             try {
                 if (lookahead != NO_LOOKAHEAD && capacity > 0) {
-                    buffer[bufferLength++] = (byte) lookahead;
+                    next[length++] = (byte) lookahead;
                     lookahead = NO_LOOKAHEAD;
                 }
-                while (bufferLength < capacity) {
-                    int read = in.read(buffer, bufferLength, capacity - bufferLength);
+                while (length < capacity) {
+                    int read = in.read(next, length, capacity - length);
                     if (read < 0) {
                         endOfContent = true;
                         break;
                     }
-                    bufferLength += read;
+                    length += read;
                 }
                 if (!endOfContent && lookahead == NO_LOOKAHEAD) {
-                    int next = in.read();
-                    if (next < 0) {
+                    int ahead = in.read();
+                    if (ahead < 0) {
                         endOfContent = true;
                     } else {
-                        lookahead = next;
+                        lookahead = ahead;
                     }
                 }
             } catch (IOException e) {
                 throw new UncheckedIOException("cannot read the upload content" + sessionContext() + ": "
                         + e.getMessage(), e);
             }
+            // Only the last chunk of a stream can come up short; trim it so it can be sent as is.
+            chunk = length == next.length ? next : Arrays.copyOf(next, length);
+            bufferLength = length;
             long read = chunkEnd();
             if (declaredTotal >= 0) {
                 if (endOfContent && read < declaredTotal) {
