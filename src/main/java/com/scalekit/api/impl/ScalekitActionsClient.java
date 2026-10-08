@@ -2,6 +2,7 @@ package com.scalekit.api.impl;
 
 import com.scalekit.api.ActionsClient;
 import com.scalekit.api.ConnectedAccountsClient;
+import com.scalekit.api.ConnectionClient;
 import com.scalekit.api.McpClient;
 import com.scalekit.api.ProvidersClient;
 import com.scalekit.api.ToolsClient;
@@ -15,12 +16,22 @@ import com.scalekit.models.connectedaccounts.CreateConnectedAccountParams;
 import com.scalekit.models.connectedaccounts.ListConnectedAccountsParams;
 import com.scalekit.models.connectedaccounts.UpdateConnectedAccountParams;
 import com.scalekit.models.connectedaccounts.UserVerificationResult;
+import com.scalekit.models.connections.AppConnection;
+import com.scalekit.models.connections.ListAppConnectionsParams;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
 import com.scalekit.models.tools.ListToolsParams;
+import com.scalekit.models.tools.ScopedTool;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.SearchedTool;
+import com.scalekit.models.tools.Tool;
 import com.scalekit.models.tools.ToolPage;
+
+import java.util.List;
 
 /** {@link ActionsClient} that delegates to the service clients and the proxy executor. Thread-safe. */
 public class ScalekitActionsClient implements ActionsClient {
@@ -29,6 +40,7 @@ public class ScalekitActionsClient implements ActionsClient {
     private final ConnectedAccountsClient connectedAccounts;
     private final McpClient mcp;
     private final ProvidersClient providers;
+    private final ConnectionClient connections;
     private final ProxyExecutor proxy;
 
     /**
@@ -38,14 +50,16 @@ public class ScalekitActionsClient implements ActionsClient {
      * @param connectedAccounts the connected accounts client
      * @param mcp               the MCP client
      * @param providers         the providers client
+     * @param connections       the connection client
      * @param proxy             the proxy executor
      */
     public ScalekitActionsClient(ToolsClient tools, ConnectedAccountsClient connectedAccounts, McpClient mcp,
-                                 ProvidersClient providers, ProxyExecutor proxy) {
+                                 ProvidersClient providers, ConnectionClient connections, ProxyExecutor proxy) {
         this.tools = tools;
         this.connectedAccounts = connectedAccounts;
         this.mcp = mcp;
         this.providers = providers;
+        this.connections = connections;
         this.proxy = proxy;
     }
 
@@ -150,5 +164,40 @@ public class ScalekitActionsClient implements ActionsClient {
     @Override
     public ProxyResponse request(ProxyRequest request) {
         return proxy.execute(request);
+    }
+
+    @Override
+    public List<SearchedTool> searchTools(String query) {
+        return tools.search(query);
+    }
+
+    @Override
+    public List<SearchedTool> searchTools(String query, SearchToolsParams params) {
+        return tools.search(query, params);
+    }
+
+    @Override
+    public Page<ScopedTool> listScopedTools(String identifier, ListScopedToolsParams params) {
+        return tools.listScoped(identifier, params);
+    }
+
+    @Override
+    public Page<Tool> listAvailableTools(String identifier) {
+        return tools.listAvailable(identifier);
+    }
+
+    @Override
+    public Page<Tool> listAvailableTools(String identifier, ListAvailableToolsParams params) {
+        return tools.listAvailable(identifier, params);
+    }
+
+    @Override
+    public Page<AppConnection> listConnections() {
+        return connections.listAppConnections();
+    }
+
+    @Override
+    public Page<AppConnection> listConnections(ListAppConnectionsParams params) {
+        return connections.listAppConnections(params);
     }
 }

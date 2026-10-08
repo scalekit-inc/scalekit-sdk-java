@@ -183,7 +183,7 @@ public class ScalekitClient {
             connectedAccountsClient = new ScalekitConnectedAccountsClient(channel, credentials);
             actionsClient = new ScalekitActionsClient(toolsClient, connectedAccountsClient,
                     new ScalekitMcpClient(channel, credentials), new ScalekitProvidersClient(channel, credentials),
-                    new ProxyExecutor(environment.siteName, credentials));
+                    connectionClient, new ProxyExecutor(environment.siteName, credentials));
 
         } catch (MalformedURLException e) {
             throw new APIException("invalid environment URL, error:" + e.getMessage());

@@ -4,7 +4,9 @@ import com.scalekit.exceptions.APIException;
 import com.scalekit.exceptions.BadRequestException;
 import com.scalekit.exceptions.ConflictException;
 import com.scalekit.exceptions.NotFoundException;
+import com.scalekit.models.Page;
 import com.scalekit.models.providers.CustomProviderRequest;
+import com.scalekit.models.providers.ListProvidersParams;
 import com.scalekit.models.providers.Provider;
 
 /**
@@ -83,4 +85,31 @@ public interface ProvidersClient {
      * @since 2.6.0
      */
     void deleteCustomProvider(String identifier);
+
+    /**
+     * Lists the first page of the providers Scalekit ships.
+     *
+     * @return the first page of providers
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<Provider> listProviders();
+
+    /**
+     * Lists one page of providers: those Scalekit ships, your custom ones, or both.
+     *
+     * <pre>{@code
+     * for (Provider provider : client.actions().providers().listProviders(
+     *         ListProvidersParams.builder().providerType(ProviderType.CUSTOM).build()).autoPager()) {
+     *     System.out.println(provider.identifier());
+     * }
+     * }</pre>
+     *
+     * @param params type, identifier and paging; null lists the built-in providers
+     * @return one page of providers
+     * @throws BadRequestException if the type is not supported
+     * @throws APIException for other failures
+     * @since 2.6.0
+     */
+    Page<Provider> listProviders(ListProvidersParams params);
 }

@@ -6,10 +6,19 @@ import com.scalekit.exceptions.InternalServerException;
 import com.scalekit.exceptions.NotFoundException;
 import com.scalekit.exceptions.ScalekitTimeoutException;
 import com.scalekit.exceptions.ToolException;
+import com.scalekit.models.Page;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
 import com.scalekit.models.tools.ListToolsParams;
+import com.scalekit.models.tools.ScopedTool;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.SearchedTool;
+import com.scalekit.models.tools.Tool;
 import com.scalekit.models.tools.ToolPage;
+
+import java.util.List;
 
 /**
  * Lists the tools agents can run and runs them on behalf of a connected account. Get it from
@@ -80,4 +89,92 @@ public interface ToolsClient {
      * @since 2.6.0
      */
     ExecuteToolResult execute(String toolName, ExecuteToolParams params);
+
+    /**
+     * Searches every tool of your environment's enabled connections by relevance. The result is
+     * complete (not paged), ranked by score. Retried on transient unavailability.
+     *
+     * @param query what the tool should do, in plain words; not blank
+     * @return the matching tools, never null
+     * @throws IllegalArgumentException if {@code query} is null or blank
+     * @throws APIException if the request fails; see {@link #search(String, SearchToolsParams)}
+     * @since 2.6.0
+     */
+    List<SearchedTool> search(String query);
+
+    /**
+     * Searches every tool of your environment's enabled connections by relevance. With an
+     * identifier, each result lists whether that identifier can run it through each connection
+     * it has used, and the identifier's custom MCP tools are included.
+     *
+     * <pre>{@code
+     * List<SearchedTool> tools = client.tools().search("send an email",
+     *         SearchToolsParams.builder().identifier("user_123").topK(5).build());
+     * }</pre>
+     *
+     * @param query  what the tool should do, in plain words (1 to 256 characters)
+     * @param params identifier, result limit (default 10, at most 50) and deadline; null for none
+     * @return the matching tools, never null
+     * @throws IllegalArgumentException if {@code query} is null or blank
+     * @throws BadRequestException if the query is invalid
+     * @throws ScalekitTimeoutException if the deadline passes
+     * @throws APIException for other failures
+     * @since 2.6.0
+     */
+    List<SearchedTool> search(String query, SearchToolsParams params);
+
+    /**
+     * Lists the tools an identifier can run through its connected accounts, each with the account
+     * that runs it. Retried on transient unavailability.
+     *
+     * <pre>{@code
+     * Page<ScopedTool> page = client.tools().listScoped("user_123",
+     *         ListScopedToolsParams.builder().addConnectionName("gmail").build());
+     * }</pre>
+     *
+     * @param identifier your identifier for the user or tenant; trimmed
+     * @param params     the filter (required: providers, tool names or connection names), paging
+     *                   and deadline
+     * @return one page of tools
+     * @throws IllegalArgumentException if {@code identifier} is null or blank, or {@code params} is null
+     * @throws BadRequestException if a provider is repeated or the identifier has more than one
+     *                             account for a provider
+     * @throws NotFoundException if the identifier has no account for a requested provider or connection
+     * @throws APIException for other failures
+     * @since 2.6.0
+     */
+    Page<ScopedTool> listScoped(String identifier, ListScopedToolsParams params);
+
+    /**
+     * Lists the tools of the providers an identifier has accounts with, whatever the accounts'
+     * status. An identifier without accounts gets an empty page, not an error.
+     *
+     * @param identifier your identifier for the user or tenant; trimmed
+     * @return the first page of tools
+     * @throws IllegalArgumentException if {@code identifier} is null or blank
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<Tool> listAvailable(String identifier);
+
+    /**
+     * Lists the tools of the providers an identifier has accounts with, whatever the accounts'
+     * status. An identifier without accounts gets an empty page, not an error.
+     *
+     * <pre>{@code
+     * for (Tool tool : client.tools().listAvailable("user_123",
+     *         ListAvailableToolsParams.builder().pageSize(50).build()).autoPager()) {
+     *     System.out.println(tool.definition().get("name"));
+     * }
+     * }</pre>
+     *
+     * @param identifier your identifier for the user or tenant; trimmed
+     * @param params     paging and deadline; null for the defaults
+     * @return one page of tools
+     * @throws IllegalArgumentException if {@code identifier} is null or blank
+     * @throws ScalekitTimeoutException if the deadline passes
+     * @throws APIException for other failures
+     * @since 2.6.0
+     */
+    Page<Tool> listAvailable(String identifier, ListAvailableToolsParams params);
 }

@@ -14,12 +14,22 @@ import com.scalekit.models.connectedaccounts.CreateConnectedAccountParams;
 import com.scalekit.models.connectedaccounts.ListConnectedAccountsParams;
 import com.scalekit.models.connectedaccounts.UpdateConnectedAccountParams;
 import com.scalekit.models.connectedaccounts.UserVerificationResult;
+import com.scalekit.models.connections.AppConnection;
+import com.scalekit.models.connections.ListAppConnectionsParams;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
 import com.scalekit.models.tools.ListToolsParams;
+import com.scalekit.models.tools.ScopedTool;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.SearchedTool;
+import com.scalekit.models.tools.Tool;
 import com.scalekit.models.tools.ToolPage;
+
+import java.util.List;
 
 /**
  * One entry point for agent actions: tools, connected accounts, MCP configurations, custom
@@ -327,4 +337,87 @@ public interface ActionsClient {
      * @since 2.6.0
      */
     ProxyResponse request(ProxyRequest request);
+
+    /**
+     * Same as {@link ToolsClient#search(String)}.
+     *
+     * @param query what the tool should do; not blank
+     * @return the matching tools, never null
+     * @throws IllegalArgumentException if {@code query} is null or blank
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    List<SearchedTool> searchTools(String query);
+
+    /**
+     * Same as {@link ToolsClient#search(String, SearchToolsParams)}.
+     *
+     * @param query  what the tool should do; not blank
+     * @param params identifier, result limit and deadline; null for none
+     * @return the matching tools, never null
+     * @throws IllegalArgumentException if {@code query} is null or blank
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    List<SearchedTool> searchTools(String query, SearchToolsParams params);
+
+    /**
+     * Same as {@link ToolsClient#listScoped(String, ListScopedToolsParams)}.
+     *
+     * @param identifier your identifier for the user or tenant
+     * @param params     the filter (required), paging and deadline
+     * @return one page of tools
+     * @throws IllegalArgumentException if {@code identifier} is blank or {@code params} is null
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<ScopedTool> listScopedTools(String identifier, ListScopedToolsParams params);
+
+    /**
+     * Same as {@link ToolsClient#listAvailable(String)}.
+     *
+     * @param identifier your identifier for the user or tenant
+     * @return the first page of tools
+     * @throws IllegalArgumentException if {@code identifier} is null or blank
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<Tool> listAvailableTools(String identifier);
+
+    /**
+     * Same as {@link ToolsClient#listAvailable(String, ListAvailableToolsParams)}.
+     *
+     * @param identifier your identifier for the user or tenant
+     * @param params     paging and deadline; null for the defaults
+     * @return one page of tools
+     * @throws IllegalArgumentException if {@code identifier} is null or blank
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<Tool> listAvailableTools(String identifier, ListAvailableToolsParams params);
+
+    /**
+     * Same as {@link ConnectionClient#listAppConnections()}.
+     *
+     * @return the first page of app connections
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<AppConnection> listConnections();
+
+    /**
+     * Same as {@link ConnectionClient#listAppConnections(ListAppConnectionsParams)}.
+     *
+     * <pre>{@code
+     * for (AppConnection connection : client.actions().listConnections().autoPager()) {
+     *     System.out.println(connection.connectionName());
+     * }
+     * }</pre>
+     *
+     * @param params provider, search text and paging; null for none
+     * @return one page of app connections
+     * @throws APIException if the request fails
+     * @since 2.6.0
+     */
+    Page<AppConnection> listConnections(ListAppConnectionsParams params);
 }

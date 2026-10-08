@@ -1,6 +1,7 @@
 package com.scalekit.internal;
 
 import com.scalekit.grpc.scalekit.v1.connected_accounts.ConnectedAccountServiceGrpc;
+import com.scalekit.grpc.scalekit.v1.connections.ConnectionServiceGrpc;
 import com.scalekit.grpc.scalekit.v1.mcp.McpServiceGrpc;
 import com.scalekit.grpc.scalekit.v1.providers.ProviderServiceGrpc;
 import com.scalekit.grpc.scalekit.v1.tools.ToolServiceGrpc;
@@ -29,6 +30,8 @@ public final class MethodRetryPolicies {
         // Verification consumes the single-use auth request; a repeat could turn a success into
         // a not-found failure.
         put(policies, ConnectedAccountServiceGrpc.getVerifyConnectedAccountUserMethod(), RetryPolicy.NON_IDEMPOTENT);
+        // Creating a connection may generate a fresh name, so a repeat could add a second one.
+        put(policies, ConnectionServiceGrpc.getCreateEnvironmentConnectionMethod(), RetryPolicy.NON_IDEMPOTENT);
 
         // Idempotent: reads, full-replacement updates, get-or-create style calls, and deletes (a
         // retried delete whose first attempt succeeded surfaces NOT_FOUND).
@@ -45,6 +48,13 @@ public final class MethodRetryPolicies {
         put(policies, McpServiceGrpc.getListMcpConnectedAccountsMethod(), RetryPolicy.IDEMPOTENT);
         put(policies, ProviderServiceGrpc.getUpdateCustomProviderMethod(), RetryPolicy.IDEMPOTENT);
         put(policies, ProviderServiceGrpc.getDeleteCustomProviderMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ToolServiceGrpc.getSearchToolsMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ToolServiceGrpc.getListScopedToolsMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ToolServiceGrpc.getListAvailableToolsMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ConnectionServiceGrpc.getListAppConnectionsMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ConnectionServiceGrpc.getGetEnvironmentConnectionMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ConnectionServiceGrpc.getUpdateEnvironmentConnectionMethod(), RetryPolicy.IDEMPOTENT);
+        put(policies, ProviderServiceGrpc.getListProvidersMethod(), RetryPolicy.IDEMPOTENT);
         POLICIES = Collections.unmodifiableMap(policies);
     }
 
