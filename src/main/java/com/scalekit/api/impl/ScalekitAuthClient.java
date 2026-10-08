@@ -360,11 +360,15 @@ public class ScalekitAuthClient implements AuthClient {
         connection.setConnectTimeout(CONNECT_TIMEOUT_MILLIS);
         connection.setReadTimeout(READ_TIMEOUT_MILLIS);
         if (formBody != null) {
+            byte[] bytes = formBody.getBytes(StandardCharsets.UTF_8);
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             connection.setDoOutput(true);
+            // Streaming mode stops the JDK from silently re-sending the POST after a connection
+            // reset (sun.net.http.retryPost), which would replay a single-use authorization code.
+            connection.setFixedLengthStreamingMode(bytes.length);
             try (OutputStream out = connection.getOutputStream()) {
-                out.write(formBody.getBytes(StandardCharsets.UTF_8));
+                out.write(bytes);
             }
         }
 
