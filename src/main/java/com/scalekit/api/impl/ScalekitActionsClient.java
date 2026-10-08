@@ -7,6 +7,7 @@ import com.scalekit.api.McpClient;
 import com.scalekit.api.ProvidersClient;
 import com.scalekit.api.ToolsClient;
 import com.scalekit.internal.proxy.ProxyExecutor;
+import com.scalekit.internal.proxy.ResumableUploader;
 import com.scalekit.models.Page;
 import com.scalekit.models.connectedaccounts.AuthorizationLink;
 import com.scalekit.models.connectedaccounts.AuthorizationLinkParams;
@@ -20,6 +21,7 @@ import com.scalekit.models.connections.AppConnection;
 import com.scalekit.models.connections.ListAppConnectionsParams;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
+import com.scalekit.models.proxy.ResumableUploadRequest;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
 import com.scalekit.models.tools.ListAvailableToolsParams;
@@ -32,6 +34,7 @@ import com.scalekit.models.tools.Tool;
 import com.scalekit.models.tools.ToolPage;
 
 import java.util.List;
+import java.util.Map;
 
 /** {@link ActionsClient} that delegates to the service clients and the proxy executor. Thread-safe. */
 public class ScalekitActionsClient implements ActionsClient {
@@ -42,6 +45,7 @@ public class ScalekitActionsClient implements ActionsClient {
     private final ProvidersClient providers;
     private final ConnectionClient connections;
     private final ProxyExecutor proxy;
+    private final ResumableUploader uploader;
 
     /**
      * Creates the facade.
@@ -61,6 +65,7 @@ public class ScalekitActionsClient implements ActionsClient {
         this.providers = providers;
         this.connections = connections;
         this.proxy = proxy;
+        this.uploader = new ResumableUploader(proxy);
     }
 
     @Override
@@ -164,6 +169,11 @@ public class ScalekitActionsClient implements ActionsClient {
     @Override
     public ProxyResponse request(ProxyRequest request) {
         return proxy.execute(request);
+    }
+
+    @Override
+    public Map<String, Object> uploadResumable(ResumableUploadRequest request) {
+        return uploader.upload(request);
     }
 
     @Override

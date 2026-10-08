@@ -10098,7 +10098,7 @@ String next = result.postUserVerifyRedirectUrl().orElse("/");
 
 ## Actions
 
-`client.actions()` is the agent-actions facade. Its tool and connected-account methods are the operations of [Tools](#tools) and [Connected Accounts](#connected-accounts) under the names the other Scalekit SDKs use; they behave and fail identically. It also gives access to [MCP configurations](#actions--mcp), [custom providers](#actions--custom-providers) and the REST proxy (`request`).
+`client.actions()` is the agent-actions facade. Its tool and connected-account methods are the operations of [Tools](#tools) and [Connected Accounts](#connected-accounts) under the names the other Scalekit SDKs use; they behave and fail identically. It also gives access to [MCP configurations](#actions--mcp), [custom providers](#actions--custom-providers), the REST proxy (`request`) and resumable uploads to Google APIs (`uploadResumable`).
 
 How the Node SDK's AgentKit methods map to Java (Java takes `connectionName` where Node takes `connector`, a `ConnectedAccountRef` instead of selector fields, and `…Params` builders instead of option objects):
 
@@ -10122,6 +10122,7 @@ How the Node SDK's AgentKit methods map to Java (Java takes `connectionName` whe
 | `actions.listConnections` | `client.actions().listConnections` |
 | `connection.listAppConnections`, `createEnvironmentConnection`, `getEnvironmentConnection`, `updateEnvironmentConnection` | `client.connections().*` (same method names) |
 | `actions.request({ ..., timeoutMs })` | `client.actions().request(ProxyRequest)`, with `timeout(Duration)` |
+| `actions.uploadResumable(params, options?)` | `client.actions().uploadResumable(ResumableUploadRequest)`; the options (`onProgress`, `maxRetries`, `timeoutMs`) are builder methods, and an interrupt replaces `signal` |
 
 Differences worth knowing: the tool timeout is set per call (`timeout(Duration)` on the params), not on the client; `listScoped` requires a filter and `search` a non-blank query before any request; creating an environment connection always creates an app connection (the Java SDK does not create login connections) and is never retried; Java has separate exception classes per status family but folds UNAVAILABLE and UNIMPLEMENTED into `InternalServerException`; `getAuthorizationLink` requires an account ID or a connection name plus identifier; and the proxy does not follow redirects and throws `ProxyException` for statuses of 400 and above (the Python SDK returns the response instead).
 
@@ -10964,6 +10965,85 @@ ProxyResponse posted = client.actions().request(
 <dd>
 
 **request:** `ProxyRequest` - Built with `ProxyRequest.builder(connectionName, identifier, path)`; optional `method` (default GET), `queryParam`, `header`, one body, `timeout`.
+
+</dd>
+</dl>
+</dd>
+</dl>
+
+
+</dd>
+</dl>
+</details>
+<details><summary><code>client.actions().<a href="https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/src/main/java/com/scalekit/api/ActionsClient.java">uploadResumable</a>(request) -> Map&lt;String, Object&gt;</code></summary>
+<dl>
+<dd>
+
+#### 📝 Description
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+Uploads a file of any size to a Google API that supports resumable uploads (Drive `/upload/drive/v3/files`, Cloud Storage `/upload/storage/v1/b/<bucket>/o`, YouTube `/upload/youtube/v3/videos`) through Scalekit's proxy, which adds the connected account's credentials. The content is sent in chunks (4 MiB by default), so each request stays short, and a failed chunk resumes from the bytes the server committed instead of restarting. Returns the final response's JSON object, such as the Drive file (an empty map when the body is empty).
+
+- **Content:** exactly one of `content(byte[])` (not copied), `content(Path)` (size read at `build()`; the SDK opens and closes the file), `content(InputStream, long totalBytes)` or `content(InputStream)` (unknown size, read to its end). A stream is never closed by the SDK, and at most one chunk is held in memory. A stream or file whose length differs from its declared size throws `IllegalStateException` before the last chunk is sent; a read failure throws `UncheckedIOException`.
+- **Session start:** `POST` by default; `PATCH` (Drive: replace an existing file's content, path `/upload/drive/v3/files/<fileId>`) and `PUT` are also accepted, in any case. The SDK sends `uploadType=resumable`, your `queryParam`s (for example YouTube's `part` or Drive's `supportsAllDrives`; `uploadType` itself is rejected, matched exactly), `X-Upload-Content-Type`, `X-Upload-Content-Length` when the size is known (a stream that fits in one chunk counts), and `metadata` as a JSON body. It is never retried, because a second request would open a second session; a failure throws `UploadException` with no upload ID.
+- **Chunks:** `PUT` with `Content-Range`; until a stream of unknown size ends, chunks carry no total (`bytes a-b/*`). `chunkSize` must be a positive multiple of 256 KiB. Empty content is one empty `PUT`.
+- **Retries:** after a timeout, a connection failure or HTTP 408, 429, 500, 502, 503 or 504, the SDK waits (exponential backoff with full jitter, at most 1 s before the first retry and 30 s at most; or `Retry-After` on 429/503, capped at 30 s), asks the server how many bytes it has, and continues from there. A 308 that commits no new bytes counts as one failure, and the chunk is resent from the offset it reports. A chunk may fail `maxRetries` times in a row (default 3); the count resets only when the committed offset passes the highest one so far. When the server commits part of a chunk, the rest of that chunk is sent next.
+- **Errors:** HTTP 404 or 410 to a chunk throws `UploadSessionExpiredException` (the SDK does not start a new session); another 4xx, a 2xx other than 200/201, or retries running out on an HTTP status throw `UploadException`; retries running out on timeouts or connection failures throw `ScalekitTimeoutException` / `ScalekitConnectionException`; responses that break the protocol (no `upload_id`, a bad `Range`, completion before the final chunk, a final body that is not a JSON object) throw `UploadProtocolException`. Upload errors carry `uploadId()`, `bytesCommitted()` and, when there was one, the response.
+- **Progress:** `onProgress` is called on the uploading thread each time more bytes are committed and once on completion with the total; an exception it throws stops the upload and propagates.
+- `timeout` (default 60 s) applies to each request, not to the whole upload. An interrupt stops the upload before the next request or during a wait (on Java 11+ also during a request) with `ScalekitConnectionException`. An upload that stops cannot be resumed by a later call.
+- The path follows `ProxyRequest`'s rules and must not contain `?`, a space, a control character or DEL (percent-encode them).
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### 🔌 Usage
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+```java
+Map<String, Object> file = client.actions().uploadResumable(
+        ResumableUploadRequest.builder("googledrive", "user_123", "/upload/drive/v3/files")
+                .content(Paths.get("big.mp4"))
+                .contentType("video/mp4")
+                .metadata(Collections.singletonMap("name", "big.mp4"))
+                .onProgress(p -> System.out.println(p.bytesCommitted() + " bytes uploaded"))
+                .build());
+String fileId = (String) file.get("id");
+
+try {
+    client.actions().uploadResumable(
+            ResumableUploadRequest.builder("googledrive", "user_123", "/upload/drive/v3/files/" + fileId)
+                    .method("PATCH")
+                    .content(inputStream)
+                    .build());
+} catch (UploadSessionExpiredException e) {
+    // the session is gone: upload again from the start
+}
+```
+</dd>
+</dl>
+</dd>
+</dl>
+
+#### ⚙️ Parameters
+
+<dl>
+<dd>
+
+<dl>
+<dd>
+
+**request:** `ResumableUploadRequest` - Built with `ResumableUploadRequest.builder(connectionName, identifier, path)` and one `content(...)`; optional `method` (default POST), `contentType` (default `application/octet-stream`), `metadata`, `queryParam`, `chunkSize` (default 4 MiB), `maxRetries` (default 3), `timeout` (default 60 s), `onProgress`.
 
 </dd>
 </dl>

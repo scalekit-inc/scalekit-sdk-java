@@ -49,8 +49,28 @@ public class ProxyException extends APIException {
         this(requireResponse(response), parseError(response));
     }
 
+    /**
+     * Creates the exception for a response with an error status, with a message that names the
+     * failed operation and adds context. For subclasses.
+     *
+     * @param response  the response
+     * @param operation what failed, for example {@code "resumable upload"}; the message starts
+     *                  with {@code "<operation> failed with HTTP <status>"}
+     * @param context   text appended to the message, or null
+     * @throws IllegalArgumentException if {@code response} is null
+     * @since 2.6.0
+     */
+    protected ProxyException(ProxyResponse response, String operation, String context) {
+        this(requireResponse(response), parseError(response), operation, context);
+    }
+
     private ProxyException(ProxyResponse response, String[] error) {
-        super(error[0], messageFor(response.statusCode(), error[0], error[1]), grpcCodeFor(response.statusCode()), null);
+        this(response, error, "proxy request", null);
+    }
+
+    private ProxyException(ProxyResponse response, String[] error, String operation, String context) {
+        super(error[0], messageFor(operation, response.statusCode(), error[0], error[1])
+                + (context == null ? "" : context), grpcCodeFor(response.statusCode()), null);
         this.statusCode = response.statusCode();
         this.response = response;
         this.proxyErrorCode = error[0];
@@ -115,8 +135,8 @@ public class ProxyException extends APIException {
         return new String[]{code, detail};
     }
 
-    private static String messageFor(int status, String code, String detail) {
-        StringBuilder message = new StringBuilder("proxy request failed with HTTP ").append(status);
+    private static String messageFor(String operation, int status, String code, String detail) {
+        StringBuilder message = new StringBuilder(operation).append(" failed with HTTP ").append(status);
         if (detail != null) {
             String oneLine = detail.replace('\r', ' ').replace('\n', ' ');
             if (oneLine.length() > MAX_DETAIL_LENGTH) {

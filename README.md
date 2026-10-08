@@ -29,6 +29,7 @@ This is the official Java SDK for [Scalekit](https://scalekit.com) — the auth 
 - **Tool calling** — List tools and run them on behalf of a connected account (`client.tools()`)
 - **Tool discovery** — Search tools by relevance and list the tools a user can run (`client.tools().search(...)`, `listScoped(...)`, `listAvailable(...)`)
 - **REST proxy** — Call a provider's API with the account's credentials added by Scalekit (`client.actions().request(...)`)
+- **Resumable uploads** — Upload large files to Google Drive, Cloud Storage or YouTube in chunks that resume after a failure (`client.actions().uploadResumable(...)`)
 - **MCP configurations** — Serve a set of connections and tools to agents as an MCP server, with per-user session tokens (`client.actions().mcp()`)
 - **Providers** — List providers and bring your own connector for services Scalekit does not ship (`client.actions().providers()`)
 - **App connections** — List, create, read and update the connections your users' accounts belong to (`client.connections().listAppConnections()` and related methods)

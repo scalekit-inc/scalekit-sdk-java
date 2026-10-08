@@ -1,0 +1,18 @@
+kind: added
+body: |
+  `client.actions().uploadResumable(request)` uploads large files to Google Drive, Cloud Storage and YouTube through a connected account: the content is sent in chunks (4 MiB by default), a failed chunk resumes instead of restarting, and the call returns the created resource as a map. Build the upload with `ResumableUploadRequest` from a `byte[]`, a `Path` or an `InputStream`; if the upload session has expired, the call throws `UploadSessionExpiredException` and does not start a new one. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#actions)
+
+  ```java
+  Map<String, Object> file = client.actions().uploadResumable(
+      ResumableUploadRequest.builder("googledrive", "user_123", "/upload/drive/v3/files")
+          .content(Paths.get("big.mp4"))
+          .contentType("video/mp4")
+          .metadata(Collections.singletonMap("name", "big.mp4"))
+          .build());
+  String fileId = (String) file.get("id");
+  ```
+time: '2026-10-08T22:01:26.455299+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2296
+  Migration: ''

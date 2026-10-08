@@ -244,7 +244,7 @@ public final class ProxyRequest {
      * Rejects a fragment, which HTTP clients never send (it would also swallow the query
      * parameters), and "." or ".." segments, which servers may resolve against the proxy prefix.
      */
-    private static String checkPath(String path) {
+    static String checkPath(String path) {
         if (path.indexOf('#') >= 0) {
             throw new IllegalArgumentException("path must not contain '#'; percent-encode it as %23");
         }

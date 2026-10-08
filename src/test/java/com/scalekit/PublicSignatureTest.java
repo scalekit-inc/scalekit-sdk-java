@@ -20,6 +20,9 @@ import com.scalekit.exceptions.ToolException;
 import com.scalekit.exceptions.ToolForbiddenException;
 import com.scalekit.exceptions.ToolRateLimitException;
 import com.scalekit.exceptions.ToolUnauthorizedException;
+import com.scalekit.exceptions.UploadException;
+import com.scalekit.exceptions.UploadProtocolException;
+import com.scalekit.exceptions.UploadSessionExpiredException;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -57,7 +60,8 @@ class PublicSignatureTest {
             NotFoundException.class, ConflictException.class, RateLimitException.class, InternalServerException.class,
             ScalekitTimeoutException.class, ScalekitConnectionException.class, ToolException.class,
             ToolUnauthorizedException.class, ToolForbiddenException.class, ToolRateLimitException.class,
-            ProxyException.class);
+            ProxyException.class, UploadException.class, UploadSessionExpiredException.class,
+            UploadProtocolException.class);
 
     @Test
     void newPublicSignaturesUseOnlyJdkAndSdkTypes() throws Exception {

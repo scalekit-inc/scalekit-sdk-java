@@ -101,6 +101,22 @@ public final class ProxyExecutor {
         if (request == null) {
             throw new IllegalArgumentException("request is required");
         }
+        return execute(request, request.body().orElse(null));
+    }
+
+    /**
+     * Sends a request with a body given separately, for callers in this package that already
+     * hold the body in an array of their own (the resumable uploader). The array is sent as is,
+     * without a copy: the caller must not change it afterwards, because a request that timed out
+     * may still be reading it. The request itself must have no body; set {@code Content-Type} as
+     * a header.
+     *
+     * @param request the request, without a body
+     * @param body    the body, or null for none
+     * @return the response, for statuses below 400
+     * @see #execute(ProxyRequest)
+     */
+    ProxyResponse execute(ProxyRequest request, byte[] body) {
         HttpTransport http = transport();
         if (!http.supportsMethod(request.method())) {
             throw new UnsupportedOperationException("This Java runtime cannot send HTTP " + request.method()
@@ -113,12 +129,12 @@ public final class ProxyExecutor {
         }
 
         String token = currentToken();
-        HttpResult result = send(http, request, uri, token);
+        HttpResult result = send(http, request, body, uri, token);
         if (result.status == 401) {
             if (isScalekitUnauthorized(result)) {
                 String refreshed = refreshToken();
                 if (refreshed != null && !refreshed.equals(token)) {
-                    result = send(http, request, uri, refreshed);
+                    result = send(http, request, body, uri, refreshed);
                 }
             } else if (!result.bodyAvailable) {
                 // The transport could not read the body, so the 401 cannot be attributed. Never
@@ -181,9 +197,8 @@ public final class ProxyExecutor {
         return credentials.getToken();
     }
 
-    private HttpResult send(HttpTransport http, ProxyRequest request, URI uri, String token) {
-        HttpCall call = new HttpCall(request.method(), uri, headers(request, token), request.body().orElse(null),
-                request.timeout());
+    private HttpResult send(HttpTransport http, ProxyRequest request, byte[] body, URI uri, String token) {
+        HttpCall call = new HttpCall(request.method(), uri, headers(request, token), body, request.timeout());
         try {
             return http.send(call);
         } catch (TransportTimeoutException e) {
@@ -228,7 +243,8 @@ public final class ProxyExecutor {
     }
 
     private URI buildUri(ProxyRequest request) {
-        StringBuilder url = new StringBuilder(baseUrl).append("/proxy").append(encodePath(request.path()));
+        String prefix = baseUrl + "/proxy";
+        StringBuilder url = new StringBuilder(prefix).append(encodePath(request.path()));
         char separator = request.path().indexOf('?') >= 0 ? '&' : '?';
         for (Map.Entry<String, List<String>> param : request.queryParams().entrySet()) {
             for (String value : param.getValue()) {
@@ -236,7 +252,31 @@ public final class ProxyExecutor {
                 separator = '&';
             }
         }
-        return URI.create(url.toString());
+        URI uri = URI.create(url.toString());
+        requireUnderProxy(uri, URI.create(prefix + "/").getRawPath());
+        return uri;
+    }
+
+    /**
+     * Fails before any I/O unless the URI's raw path is inside the proxy prefix and has no
+     * {@code .} or {@code ..} segment, so that the access token can only go to the proxy. The
+     * request models already reject such paths; this guards the URI that is actually sent.
+     */
+    static void requireUnderProxy(URI uri, String proxyPrefix) {
+        String path = uri.getRawPath();
+        boolean inside = path != null && path.startsWith(proxyPrefix);
+        if (inside) {
+            for (String segment : path.substring(proxyPrefix.length()).split("/", -1)) {
+                String decoded = segment.replaceAll("(?i)%2e", ".");
+                if (".".equals(decoded) || "..".equals(decoded)) {
+                    inside = false;
+                    break;
+                }
+            }
+        }
+        if (!inside) {
+            throw new IllegalArgumentException("the request path resolves outside " + proxyPrefix);
+        }
     }
 
     /** Percent-encodes characters that may not appear in a URI, keeping existing escapes. */
