@@ -306,7 +306,6 @@ public final class ResumableUploader {
                 if (step == Step.CHUNK) {
                     fill();
                 }
-                long unsent = chunkEnd() - committed;
                 Attempt attempt = exchange(step);
                 if (attempt.failure != null) {
                     failures++;
@@ -336,14 +335,17 @@ public final class ResumableUploader {
                             + (step == Step.CHUNK ? "chunk" : "status query"), response);
                 }
                 committed = committedOffset(response);
+                if (endOfContent && committed == chunkEnd()) {
+                    // The server confirms every byte, including the last, yet does not complete the
+                    // upload (this covers a 308 to the empty request for zero bytes). A conforming
+                    // server answers 200 or 201 here, so stop at once: no closing request, no retry.
+                    throw protocolError("the server committed all " + committed
+                            + " bytes but did not complete the upload", response);
+                }
                 if (committed > highWater) {
                     highWater = committed;
                     failures = 0;
                     progress(total >= 0 ? UploadProgress.of(committed, total) : UploadProgress.of(committed));
-                } else if (step == Step.CHUNK && unsent == 0) {
-                    // Every byte is committed and the final request did not complete the upload.
-                    throw protocolError("the server did not complete the upload after receiving all "
-                            + committed + " bytes", response);
                 } else if (step == Step.CHUNK) {
                     // A 308 that commits nothing new is one failed attempt. The next attempt resends
                     // from the offset it reported, without a status query.

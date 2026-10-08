@@ -42,7 +42,8 @@ import java.util.Set;
  *   <li>header values, {@code connectionName} and {@code identifier} contain only printable
  *       US-ASCII characters (and tab), because HTTP clients do not send other characters
  *       reliably: {@code java.net.http} replaces them with {@code ?};</li>
- *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments;</li>
+ *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments, also after
+ *       percent-decoding (so {@code %2e%2e} and {@code a%2F..%2Fb} are rejected);</li>
  *   <li>at most one body ({@code jsonBody}, {@code formBody} or {@code rawBody}), and none on
  *       {@code GET} or {@code HEAD};</li>
  *   <li>the headers {@code Host}, {@code Content-Length}, {@code Connection}, {@code Expect} and
@@ -250,11 +251,9 @@ public final class ProxyRequest {
         }
         int query = path.indexOf('?');
         String pathOnly = query >= 0 ? path.substring(0, query) : path;
-        for (String segment : pathOnly.split("/", -1)) {
-            String decoded = segment.replaceAll("(?i)%2e", ".");
-            if (".".equals(decoded) || "..".equals(decoded)) {
-                throw new IllegalArgumentException("path must not contain \".\" or \"..\" segments: " + path);
-            }
+        if (Preconditions.hasDotSegment(pathOnly)) {
+            throw new IllegalArgumentException("path must not contain \".\" or \"..\" segments, also when "
+                    + "percent-decoded: " + path);
         }
         return path;
     }

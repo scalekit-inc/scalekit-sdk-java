@@ -17,8 +17,10 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,8 +32,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * (default {@code googledrive}). Every test skips when they are missing.
  *
  * <p>Files are named {@code sdk-upload-test-java-<run>-*}. Afterwards every file with this run's
- * prefix is deleted, together with any "Untitled" file created during the run (an upload that fails
- * after its session started can leave one behind).
+ * prefix is deleted, together with any "Untitled" file created during the run whose size matches
+ * one of the run's payloads (an upload that fails after its session started can leave one behind).
  */
 @Tag("live")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -45,6 +47,8 @@ class ResumableUploadLiveTest {
     private String run;
     private Instant runStarted;
     private final List<String> createdFiles = Collections.synchronizedList(new ArrayList<String>());
+    /** Sizes of the payloads this run uploaded, so that the orphan sweep deletes only its own files. */
+    private final Set<String> payloadSizes = Collections.synchronizedSet(new HashSet<String>());
 
     @BeforeAll
     void setUp() {
@@ -69,22 +73,26 @@ class ResumableUploadLiveTest {
         for (String fileId : new ArrayList<>(createdFiles)) {
             deleteQuietly(fileId);
         }
-        // Then sweep: anything left with this run's prefix, and orphans from failed uploads.
-        deleteMatching("name contains '" + prefix() + "' and trashed = false");
-        deleteMatching("name = 'Untitled' and createdTime > '" + runStarted + "' and trashed = false");
+        // Then sweep: anything left with this run's prefix, and "Untitled" orphans from failed
+        // uploads, but only those created during the run with the size of one of its payloads.
+        deleteMatching("name contains '" + prefix() + "' and trashed = false", false);
+        deleteMatching("name = 'Untitled' and createdTime > '" + runStarted + "' and trashed = false", true);
     }
 
-    private void deleteMatching(String query) {
+    private void deleteMatching(String query, boolean onlyPayloadSizes) {
         try {
             Map<String, Object> listed = client.actions().request(ProxyRequest
                     .builder(connection, identifier, "/drive/v3/files")
                     .queryParam("q", query)
-                    .queryParam("fields", "files(id)")
+                    .queryParam("fields", "files(id,size)")
                     .build()).bodyAsJsonObject();
             Object files = listed.get("files");
             if (files instanceof List) {
                 for (Object file : (List<?>) files) {
-                    deleteQuietly((String) ((Map<?, ?>) file).get("id"));
+                    Map<?, ?> found = (Map<?, ?>) file;
+                    if (!onlyPayloadSizes || payloadSizes.contains(String.valueOf(found.get("size")))) {
+                        deleteQuietly((String) found.get("id"));
+                    }
                 }
             }
         } catch (APIException ignored) {
@@ -103,6 +111,12 @@ class ResumableUploadLiveTest {
 
     private static String trimToNull(String value) {
         return value == null || value.trim().isEmpty() ? null : value.trim();
+    }
+
+    /** Returns a payload of {@code size} bytes and records its size for the orphan sweep. */
+    private byte[] payload(int size) {
+        payloadSizes.add(String.valueOf(size));
+        return data(size);
     }
 
     private static byte[] data(int size) {
@@ -142,7 +156,7 @@ class ResumableUploadLiveTest {
     void knownSizeInChunksReportsProgressAndUploadsEveryByte() {
         List<UploadProgress> progress = new ArrayList<>();
         Map<String, Object> file = client.actions().uploadResumable(newFile("known.bin")
-                .content(data(600 * 1024))
+                .content(payload(600 * 1024))
                 .contentType("application/octet-stream")
                 .onProgress(progress::add)
                 .build());
@@ -158,7 +172,7 @@ class ResumableUploadLiveTest {
     void streamOfUnknownSize() {
         List<UploadProgress> progress = new ArrayList<>();
         Map<String, Object> file = client.actions().uploadResumable(newFile("stream.bin")
-                .content(new ByteArrayInputStream(data(600 * 1024)))
+                .content(new ByteArrayInputStream(payload(600 * 1024)))
                 .onProgress(progress::add)
                 .build());
 
@@ -169,18 +183,21 @@ class ResumableUploadLiveTest {
 
     @Test
     void zeroBytes() {
-        Map<String, Object> file = client.actions().uploadResumable(newFile("empty.bin").content(new byte[0]).build());
+        List<UploadProgress> progress = new ArrayList<>();
+        Map<String, Object> file = client.actions().uploadResumable(newFile("empty.bin")
+                .content(payload(0)).onProgress(progress::add).build());
+        assertEquals(Collections.singletonList(UploadProgress.of(0, 0)), progress);
         assertEquals("0", sizeOf(track(file)));
     }
 
     @Test
     void patchReplacesAnExistingFilesContent() {
-        String fileId = track(client.actions().uploadResumable(newFile("replace.bin").content(data(1000)).build()));
+        String fileId = track(client.actions().uploadResumable(newFile("replace.bin").content(payload(1000)).build()));
 
         Map<String, Object> replaced = client.actions().uploadResumable(ResumableUploadRequest
                 .builder(connection, identifier, "/upload/drive/v3/files/" + fileId)
                 .method("PATCH")
-                .content(new ByteArrayInputStream(data(300 * 1024)), 300 * 1024)
+                .content(new ByteArrayInputStream(payload(300 * 1024)), 300 * 1024)
                 .chunkSize(KIB_256)
                 .build());
 
@@ -193,7 +210,7 @@ class ResumableUploadLiveTest {
         UploadException e = assertThrows(UploadException.class, () -> client.actions().uploadResumable(
                 ResumableUploadRequest.builder(connection, identifier, "/upload/drive/v3/files/doesnotexist")
                         .method("PATCH")
-                        .content(data(10))
+                        .content(payload(10))
                         .build()));
         assertEquals(404, e.statusCode());
         assertFalse(e.uploadId().isPresent(), "the session never started");

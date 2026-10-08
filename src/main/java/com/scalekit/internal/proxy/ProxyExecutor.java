@@ -5,6 +5,7 @@ import com.scalekit.exceptions.ProxyException;
 import com.scalekit.exceptions.ScalekitConnectionException;
 import com.scalekit.exceptions.ScalekitTimeoutException;
 import com.scalekit.internal.Constants;
+import com.scalekit.internal.Preconditions;
 import com.scalekit.internal.ScalekitCredentials;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
@@ -301,21 +302,14 @@ public final class ProxyExecutor {
 
     /**
      * Fails before any I/O unless the URI's raw path is inside the proxy prefix and has no
-     * {@code .} or {@code ..} segment, so that the access token can only go to the proxy. The
+     * {@code .} or {@code ..} segment, even once fully percent-decoded (an encoded slash can form
+     * one), so that the access token can only go to the proxy. The
      * request models already reject such paths; this guards the URI that is actually sent.
      */
     static void requireUnderProxy(URI uri, String proxyPrefix) {
         String path = uri.getRawPath();
-        boolean inside = path != null && path.startsWith(proxyPrefix);
-        if (inside) {
-            for (String segment : path.substring(proxyPrefix.length()).split("/", -1)) {
-                String decoded = segment.replaceAll("(?i)%2e", ".");
-                if (".".equals(decoded) || "..".equals(decoded)) {
-                    inside = false;
-                    break;
-                }
-            }
-        }
+        boolean inside = path != null && path.startsWith(proxyPrefix)
+                && !Preconditions.hasDotSegment(path.substring(proxyPrefix.length()));
         if (!inside) {
             throw new IllegalArgumentException("the request path resolves outside " + proxyPrefix);
         }

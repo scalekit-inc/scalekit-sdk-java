@@ -385,6 +385,41 @@ abstract class ResumableUploaderContract {
     }
 
     @Test
+    void a308ConfirmingEveryByteOfTheFinalChunkIsAProtocolErrorAtOnce() {
+        List<UploadProgress> progress = new ArrayList<>();
+        server.enqueue(started(), committed(KIB_256 - 1), committed(KIB_256 + 99));
+
+        UploadProtocolException e = assertThrows(UploadProtocolException.class, () -> uploader.upload(upload()
+                .content(data(KIB_256 + 100)).onProgress(progress::add).build()));
+
+        assertEquals(3, server.proxyRequests().size(), "no closing request after the 308");
+        assertEquals(KIB_256 + 100, e.bytesCommitted());
+        assertEquals(308, e.response().get().statusCode());
+        assertTrue(e.getMessage().contains("did not complete"), e.getMessage());
+        assertEquals(Collections.singletonList(UploadProgress.of(KIB_256, KIB_256 + 100)), progress,
+                "no progress for the unconfirmed completion");
+        assertTrue(sleeps.isEmpty(), "not retried");
+    }
+
+    @Test
+    void a308ToTheEmptyRequestForZeroBytesIsAProtocolErrorAtOnce() {
+        List<UploadProgress> progress = new ArrayList<>();
+        server.enqueue(started(), new Reply(308, "", 0));
+        assertThrows(UploadProtocolException.class,
+                () -> uploader.upload(upload().content(new byte[0]).onProgress(progress::add).build()));
+        assertEquals(2, server.proxyRequests().size());
+        assertTrue(progress.isEmpty());
+        assertTrue(sleeps.isEmpty());
+    }
+
+    @Test
+    void aStatusQueryConfirmingEveryByteWithoutCompletingIsAProtocolError() {
+        server.enqueue(started(), status(503), committed(9));
+        assertThrows(UploadProtocolException.class, () -> uploader.upload(upload().content(data(10)).build()));
+        assertEquals(3, server.proxyRequests().size(), "start, chunk, status query; nothing after");
+    }
+
+    @Test
     void aPartialCommitSendsTheRestOfTheChunkFromTheCommittedOffset() {
         byte[] content = data(4 * KIB_256);
         List<UploadProgress> progress = new ArrayList<>();

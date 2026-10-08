@@ -10925,7 +10925,7 @@ Calls a third-party API through Scalekit's proxy, which adds the connected accou
   - within 5 seconds of the SDK fetching a token, because the token cache does not refresh again that soon. This includes the first proxy call of a client that has made no other call yet: the rejection is thrown as `ProxyException`.
   - on Java 8 (or wherever `HttpURLConnection` is used), for POST, PUT, PATCH and other non-standard methods, with or without a body. These requests are streamed, and `HttpURLConnection` then discards the 401's body, so the SDK cannot tell Scalekit's rejection from the upstream API's: it throws `ProxyException` without a body and refreshes the token for the next call.
 - The deadline is 60 seconds unless `timeout(Duration)` sets one. On Java 8 it applies to connecting and to each read. A timeout throws `ScalekitTimeoutException`; a connection failure or interrupt throws `ScalekitConnectionException`. On Java 8 an interrupt that arrives while the request is in flight takes effect only when the request finishes or times out.
-- `ProxyRequest` rejects, before any request: header values, `connectionName` or `identifier` with characters outside printable US-ASCII (`java.net.http` would send them as `?`), and a path containing `#` or `.`/`..` segments.
+- `ProxyRequest` rejects, before any request: header values, `connectionName` or `identifier` with characters outside printable US-ASCII (`java.net.http` would send them as `?`), and a path containing `#` or `.`/`..` segments, also once percent-decoded (`%2e%2e`, `a%2F..%2Fb`).
 </dd>
 </dl>
 </dd>
