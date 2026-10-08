@@ -254,6 +254,11 @@
                                     <pattern>io.grpc</pattern>
                                     <shadedPattern>com.scalekit.shaded.grpc</shadedPattern>
                                 </relocation>
+                                <!-- Nullness annotations used by Guava 33.4+ (replaced checker-qual) -->
+                                <relocation>
+                                    <pattern>org.jspecify</pattern>
+                                    <shadedPattern>com.scalekit.shaded.jspecify</shadedPattern>
+                                </relocation>
                             </relocations>
                             <artifactSet>
                                 <excludes>
