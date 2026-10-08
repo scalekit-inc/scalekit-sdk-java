@@ -3,6 +3,7 @@ import com.scalekit.ScalekitClient;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -10,6 +11,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
+@Tag("live")
 public class OrganizationSlugLogoTests {
 
     private static ScalekitClient client;
@@ -19,17 +21,20 @@ public class OrganizationSlugLogoTests {
         String environmentUrl = System.getenv("SCALEKIT_ENVIRONMENT_URL");
         String clientId = System.getenv("SCALEKIT_CLIENT_ID");
         String apiSecret = System.getenv("SCALEKIT_CLIENT_SECRET");
-        if (environmentUrl == null || environmentUrl.isBlank()
-                || clientId == null || clientId.isBlank()
-                || apiSecret == null || apiSecret.isBlank()) {
+        if (isBlank(environmentUrl) || isBlank(clientId) || isBlank(apiSecret)) {
             throw new IllegalStateException(
                     "Missing required env vars: SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID, SCALEKIT_CLIENT_SECRET");
         }
         client = new ScalekitClient(environmentUrl, clientId, apiSecret);
     }
 
+    // String.isBlank() is Java 11+; the test sources compile with release 8 like the main sources.
+    private static boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
+
     private void deleteOrgIfPresent(Organization org) {
-        if (org != null && org.getId() != null && !org.getId().isBlank()) {
+        if (org != null && !isBlank(org.getId())) {
             try {
                 client.organizations().deleteById(org.getId());
             } catch (Exception e) {

@@ -5,10 +5,12 @@ import com.scalekit.grpc.scalekit.v1.connections.*;
 import com.scalekit.grpc.scalekit.v1.organizations.CreateOrganization;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class ConnectionTests {
 
     //configs
