@@ -42,6 +42,24 @@ class ProxyUriGuardTest {
     }
 
     @Test
+    void rejectionMessagesDoNotEchoThePathOrQuery() {
+        String path = "/files/../../api?access_token=SECRET";
+        IllegalArgumentException model = assertThrows(IllegalArgumentException.class,
+                () -> com.scalekit.models.proxy.ProxyRequest.builder("c", "u", path).build());
+        IllegalArgumentException upload = assertThrows(IllegalArgumentException.class,
+                () -> com.scalekit.models.proxy.ResumableUploadRequest.builder("c", "u", "/files/%2e%2e/SECRET")
+                        .content(new byte[0]).build());
+        IllegalArgumentException guard = assertThrows(IllegalArgumentException.class,
+                () -> guard("https://env.example/base/proxy/files/%2e%2e/x?access_token=SECRET", "/base/proxy/"));
+        for (IllegalArgumentException e : new IllegalArgumentException[]{model, upload, guard}) {
+            assertTrue(e.getMessage().contains("must stay under the proxy prefix"), e.getMessage());
+            assertFalse(e.getMessage().contains("SECRET"), e.getMessage());
+            assertFalse(e.getMessage().contains("files"), e.getMessage());
+            assertFalse(e.getMessage().contains("base"), e.getMessage());
+        }
+    }
+
+    @Test
     void pathsThatLeaveTheProxyFail() {
         for (String uri : new String[]{"https://env.example/proxy/../x", "https://env.example/proxy/a/%2E%2e/x",
                 "https://env.example/proxy/./x", "https://env.example/proxyx", "https://env.example/other/proxy/x",

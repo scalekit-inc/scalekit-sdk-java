@@ -312,7 +312,7 @@ public final class ProxyExecutor {
         boolean inside = path != null && path.startsWith(proxyPrefix)
                 && !Preconditions.hasDotSegment(path.substring(proxyPrefix.length()));
         if (!inside) {
-            throw new IllegalArgumentException("the request path resolves outside " + proxyPrefix);
+            throw new IllegalArgumentException("the request path must stay under the proxy prefix");
         }
     }
 

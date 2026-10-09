@@ -255,8 +255,9 @@ public final class ProxyRequest {
         int query = path.indexOf('?');
         String pathOnly = query >= 0 ? path.substring(0, query) : path;
         if (Preconditions.hasDotSegment(pathOnly)) {
-            throw new IllegalArgumentException("path must not contain \".\" or \"..\" segments, also when "
-                    + "percent-decoded or separated by '\\': " + path);
+            // The path is not echoed: its query string may carry a secret.
+            throw new IllegalArgumentException("path must stay under the proxy prefix: it must not contain \".\" or "
+                    + "\"..\" segments, also when percent-encoded or separated by '\\'");
         }
         return path;
     }
