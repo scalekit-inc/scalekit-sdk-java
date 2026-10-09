@@ -1,0 +1,8 @@
+kind: changed
+body: |
+  The SDK's requests to the Scalekit token and signing-key endpoints now honor the JVM proxy settings (`https.proxyHost`, `https.proxyPort`, `http.nonProxyHosts`, or a default `ProxySelector`), as its gRPC API calls already did. Previously they always connected directly. This covers `client.authentication().authenticateWithCode(...)`, `refreshAccessToken(...)`, `generateClientToken(...)` and `getClientAccessToken()`, which also supplies the token for every API call, and the key fetch in `validateAccessToken(...)`, `validateAccessTokenAndGetClaims(...)` and `getIdpInitiatedLoginClaims(...)`. Timeouts are unchanged: 5 seconds to connect and 10 seconds to read. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.5.0/REFERENCE.md#auth)
+time: '2026-10-07T23:34:29.341701+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''
