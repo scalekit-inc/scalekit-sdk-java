@@ -1,6 +1,8 @@
 package com.scalekit.internal.proxy;
 
+import com.scalekit.api.ActionsClient;
 import com.scalekit.api.AuthClient;
+import com.scalekit.api.impl.ScalekitActionsClient;
 import com.scalekit.exceptions.AuthenticationException;
 import com.scalekit.exceptions.ProxyException;
 import com.scalekit.exceptions.ScalekitConnectionException;
@@ -26,6 +28,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -364,5 +367,98 @@ abstract class ProxyExecutorContract {
         assertEquals(200, response.statusCode());
         assertEquals(0, response.body().length);
         assertEquals("HEAD", server.proxyRequests().get(0).method);
+    }
+
+    // request(): the access token only ever goes to <environment URL>/proxy/.
+
+    private static ActionsClient actions(ProxyExecutor proxy) {
+        return new ScalekitActionsClient(null, null, null, null, null, proxy);
+    }
+
+    /** Paths whose effective location, as a server that decodes and resolves dot segments sees it, leaves /proxy/. */
+    private static final String[] ESCAPING_PATHS = {
+            "/x/../../api/v1/organizations",
+            "/../api",
+            "..",
+            "x/../../api",
+            "/x/../../api?q=1",
+            "/x/%2e%2e/%2e%2e/api",
+            "/x/%2E%2e/%2e%2E/api",
+            "/x%2f..%2f..%2fapi",
+            "/x%2F..%2F..%2Fapi",
+            "/x%2f%2e%2e%2f%2e%2e%2fapi",
+            "/x\\..\\..\\api",
+            "/x%5c..%5c..%5capi",
+            "/x%5C%2e%2e%5Capi",
+            "/x/..\\..\\api",
+    };
+
+    @Test
+    void requestRejectsPathsThatResolveOutsideTheProxyPrefixBeforeAnyIo() {
+        ActionsClient actions = actions(executor);
+        for (String path : ESCAPING_PATHS) {
+            for (String method : new String[]{"GET", "POST"}) {
+                assertThrows(IllegalArgumentException.class,
+                        () -> actions.request(get(path).method(method).build()), method + " " + path);
+            }
+        }
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
+    }
+
+    @Test
+    void requestUnderAnEnvironmentBasePathRejectsPathsThatLeaveItBeforeAnyIo() {
+        ActionsClient actions = actions(new ProxyExecutor(server.baseUrl() + "/base/", credentials, this::newTransport));
+        for (String path : new String[]{"/../x", "/../../x", "/%2e%2e/x", "/..%2f..%2fx", "/x%2F..%2F..%2F..%2Fx",
+                "\\..\\x"}) {
+            assertThrows(IllegalArgumentException.class, () -> actions.request(get(path).build()), path);
+        }
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
+
+        actions.request(get("/drive/v3/about").build());
+        assertEquals("/base/proxy/drive/v3/about", server.proxyRequests().get(0).uri);
+    }
+
+    @Test
+    void requestSendsPathsThatStayUnderTheProxyPrefixUnchanged() {
+        ActionsClient actions = actions(executor);
+        String[][] sent = {
+                {"/drive/v3/about?fields=user", "/proxy/drive/v3/about?fields=user"},
+                {"/files/my file.txt", "/proxy/files/my%20file.txt"},
+                {"/files/a%2Fb", "/proxy/files/a%2Fb"},
+                {"//double", "/proxy//double"},
+                {"/files/...", "/proxy/files/..."},
+                {"/files/a\\b", "/proxy/files/a%5Cb"},
+                // Control characters are percent-encoded, so ".\t." reaches the server as ".%09.": a
+                // three-character segment, not "..", and the path stays under /proxy/.
+                {"/x/.\t./.\t./api", "/proxy/x/.%09./.%09./api"},
+                {"/x/.\r\n./api", "/proxy/x/.%0D%0A./api"},
+                {"/x\ny", "/proxy/x%0Ay"},
+                // Surrounding whitespace is trimmed before the path is checked, so the check sees what is sent.
+                {"/x\n", "/proxy/x"},
+        };
+        for (String[] pair : sent) {
+            actions.request(get(pair[0]).build());
+        }
+        List<Recorded> requests = server.proxyRequests();
+        assertEquals(sent.length, requests.size());
+        for (int i = 0; i < sent.length; i++) {
+            assertEquals(sent[i][1], requests.get(i).uri, sent[i][0]);
+        }
+    }
+
+    @Test
+    void scalekitUnauthorizedResendGoesToTheSameCheckedUri() {
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0,
+                "Content-Type", "application/json"));
+        ActionsClient actions = actions(new ProxyExecutor(server.baseUrl() + "/base", credentials, this::newTransport));
+        assertEquals(200, actions.request(get("/drive/v3/about").queryParam("fields", "user").build()).statusCode());
+        List<Recorded> requests = server.proxyRequests();
+        assertEquals(2, requests.size());
+        assertEquals("/base/proxy/drive/v3/about?fields=user", requests.get(0).uri);
+        assertEquals(requests.get(0).uri, requests.get(1).uri);
+        assertEquals("Bearer token-2", requests.get(1).headers.getFirst("Authorization"));
     }
 }

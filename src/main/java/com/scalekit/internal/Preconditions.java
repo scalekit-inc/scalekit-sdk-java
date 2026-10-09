@@ -182,14 +182,16 @@ public final class Preconditions {
 
     /**
      * Returns whether a URI path has a {@code .} or {@code ..} segment once fully percent-decoded,
-     * including segments formed by an encoded slash ({@code a%2F..%2Fb}), because a server may
-     * decode it before resolving the path. A {@code %2F} that forms no such segment is fine.
+     * including segments formed by an encoded slash ({@code a%2F..%2Fb}) or by a backslash
+     * ({@code a\..\b}, {@code a%5C..%5Cb}), because a server may decode the path and treat
+     * {@code \} as {@code /} before resolving it. A {@code %2F} or {@code \} that forms no such
+     * segment is fine.
      *
      * @param path the path, without query string
      * @return true when a decoded segment is {@code .} or {@code ..}
      */
     public static boolean hasDotSegment(String path) {
-        for (String segment : percentDecode(path).split("/", -1)) {
+        for (String segment : percentDecode(path).replace('\\', '/').split("/", -1)) {
             if (".".equals(segment) || "..".equals(segment)) {
                 return true;
             }

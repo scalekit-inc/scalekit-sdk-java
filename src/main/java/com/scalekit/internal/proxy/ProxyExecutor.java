@@ -303,8 +303,9 @@ public final class ProxyExecutor {
     /**
      * Fails before any I/O unless the URI's raw path is inside the proxy prefix and has no
      * {@code .} or {@code ..} segment, even once fully percent-decoded (an encoded slash can form
-     * one), so that the access token can only go to the proxy. The
-     * request models already reject such paths; this guards the URI that is actually sent.
+     * one) and with {@code \} read as {@code /}, so that the access token can only go to the
+     * proxy. The request models already reject such paths; this guards the URI that is actually
+     * sent.
      */
     static void requireUnderProxy(URI uri, String proxyPrefix) {
         String path = uri.getRawPath();

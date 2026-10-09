@@ -26,4 +26,15 @@ class PreconditionsPathTest {
         assertFalse(Preconditions.hasDotSegment("/a/..b/.c"));
         assertFalse(Preconditions.hasDotSegment("/a//b"));
     }
+
+    @Test
+    void backslashCountsAsASeparator() {
+        assertTrue(Preconditions.hasDotSegment("/a\\..\\b"));
+        assertTrue(Preconditions.hasDotSegment("/a%5c..%5Cb"));
+        assertTrue(Preconditions.hasDotSegment("/a/.\\b"));
+        assertTrue(Preconditions.hasDotSegment("\\.."));
+        assertFalse(Preconditions.hasDotSegment("/a\\b"));
+        assertFalse(Preconditions.hasDotSegment("/a%5C...%5Cb"));
+        assertFalse(Preconditions.hasDotSegment("/a\\.b"));
+    }
 }

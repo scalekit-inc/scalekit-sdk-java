@@ -331,7 +331,8 @@ public interface ActionsClient {
      *
      * @param request the request
      * @return the response, for statuses below 400
-     * @throws IllegalArgumentException if {@code request} is null
+     * @throws IllegalArgumentException if {@code request} is null, or its URL would resolve outside
+     *                                  {@code <environment URL>/proxy/}; nothing is sent then
      * @throws UnsupportedOperationException if the runtime cannot send the request's method
      * @throws ProxyException if the response status is 400 or above
      * @throws AuthenticationException if the SDK cannot obtain an access token
