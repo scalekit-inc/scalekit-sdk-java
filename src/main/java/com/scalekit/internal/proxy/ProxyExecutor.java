@@ -295,8 +295,16 @@ public final class ProxyExecutor {
                 separator = '&';
             }
         }
-        URI uri = URI.create(url.toString());
-        requireUnderProxy(uri, URI.create(prefix + "/").getRawPath());
+        URI uri;
+        String proxyPrefix;
+        try {
+            uri = URI.create(url.toString());
+            proxyPrefix = URI.create(prefix + "/").getRawPath();
+        } catch (IllegalArgumentException invalid) {
+            // Not chained: the JDK's message holds the whole URL, query values included.
+            throw new IllegalArgumentException("the request URL is not a valid URI; check the environment URL and path");
+        }
+        requireUnderProxy(uri, proxyPrefix);
         return uri;
     }
 

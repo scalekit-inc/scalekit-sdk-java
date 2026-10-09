@@ -29,21 +29,21 @@ class ProxyUriGuardTest {
     @Test
     void proxyRequestRejectsDotSegmentsFormedByEncodedSlashesButKeepsOtherEncodedSlashes() {
         for (String path : new String[]{"/a%2f..%2fb", "/a%2F.%2Fb", "/x/%2e%2E", "/a%2f%2e%2e%2fb", "/a/..%2fb",
-                "/a\\..\\b", "/a%5c..%5Cb", "/a/.\\b"}) {
+                "/a\\..\\b", "/a%5c..%5Cb", "/a/.\\b", "/bad%zz", "/bad%2", "/bad%", "/q?x=%zz"}) {
             assertThrows(IllegalArgumentException.class,
                     () -> com.scalekit.models.proxy.ProxyRequest.builder("c", "u", path).build(), path);
             assertThrows(IllegalArgumentException.class, () -> com.scalekit.models.proxy.ResumableUploadRequest
                     .builder("c", "u", path).content(new byte[0]).build(), path);
         }
         for (String path : new String[]{"/files/a%2Fb", "/files/a%2F...%2Fb", "/files/.x", "/files/x.", "/a%2f.b",
-                "/q?next=/../x", "/100%25", "/bad%zz", "/a\\b", "/a%5C...%5Cb"}) {
+                "/q?next=/../x", "/100%25", "/a\\b", "/a%5C...%5Cb"}) {
             assertEquals(path, com.scalekit.models.proxy.ProxyRequest.builder("c", "u", path).build().path(), path);
         }
     }
 
     @Test
     void rejectionMessagesDoNotEchoThePathOrQuery() {
-        String path = "/files/../../api?access_token=SECRET";
+        String path = "/files/../../outside?access_token=SECRET";
         IllegalArgumentException model = assertThrows(IllegalArgumentException.class,
                 () -> com.scalekit.models.proxy.ProxyRequest.builder("c", "u", path).build());
         IllegalArgumentException upload = assertThrows(IllegalArgumentException.class,

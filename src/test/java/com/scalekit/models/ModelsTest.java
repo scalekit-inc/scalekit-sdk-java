@@ -324,7 +324,7 @@ class ModelsTest {
     @Test
     void proxyRequestRejectsUnsafePathsAndHeaderValues() {
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a#frag").build());
-        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/../oauth/token").build());
+        assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/../outside").build());
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/./b").build());
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/%2E%2e/b").build());
         assertThrows(IllegalArgumentException.class, () -> ProxyRequest.builder("c", "u", "/a/..").build());

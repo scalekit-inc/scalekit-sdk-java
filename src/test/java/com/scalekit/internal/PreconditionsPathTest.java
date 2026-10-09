@@ -37,4 +37,14 @@ class PreconditionsPathTest {
         assertFalse(Preconditions.hasDotSegment("/a%5C...%5Cb"));
         assertFalse(Preconditions.hasDotSegment("/a\\.b"));
     }
+
+    @Test
+    void malformedPercentEscapesAreFound() {
+        for (String bad : new String[]{"%", "%2", "%zz", "/a%2", "/a%g0", "/ok%20?x=%z1", "%%41"}) {
+            assertTrue(Preconditions.hasMalformedPercentEscape(bad), bad);
+        }
+        for (String ok : new String[]{"", "/a", "/a%2Fb", "/100%25", "%aF%00", "/q?x=%20"}) {
+            assertFalse(Preconditions.hasMalformedPercentEscape(ok), ok);
+        }
+    }
 }

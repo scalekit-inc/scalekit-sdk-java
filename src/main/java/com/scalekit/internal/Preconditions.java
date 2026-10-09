@@ -200,6 +200,23 @@ public final class Preconditions {
     }
 
     /**
+     * Returns whether a value has a {@code %} that is not followed by two hex digits, which no URI
+     * may contain.
+     *
+     * @param value the value
+     * @return true when a {@code %} starts no valid escape
+     */
+    public static boolean hasMalformedPercentEscape(String value) {
+        for (int i = value.indexOf('%'); i >= 0; i = value.indexOf('%', i + 1)) {
+            if (i + 2 >= value.length() || Character.digit(value.charAt(i + 1), 16) < 0
+                    || Character.digit(value.charAt(i + 2), 16) < 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Decodes every {@code %XX} escape as UTF-8. A {@code %} not followed by two hex digits is kept
      * as is, and {@code +} is not a space (this is a path, not a form).
      */

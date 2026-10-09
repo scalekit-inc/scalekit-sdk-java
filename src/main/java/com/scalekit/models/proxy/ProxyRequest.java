@@ -46,6 +46,8 @@ import java.util.Set;
  *       percent-decoding and with {@code \} read as {@code /} (so {@code %2e%2e},
  *       {@code a%2F..%2Fb} and {@code a\..\b} are rejected), so that the request cannot resolve
  *       outside {@code <environment URL>/proxy/};</li>
+ *   <li>every {@code %} in the path, including its query string, starts a {@code %XX} escape;
+ *       write a literal {@code %} as {@code %25};</li>
  *   <li>at most one body ({@code jsonBody}, {@code formBody} or {@code rawBody}), and none on
  *       {@code GET} or {@code HEAD};</li>
  *   <li>the headers {@code Host}, {@code Content-Length}, {@code Connection}, {@code Expect} and
@@ -251,6 +253,10 @@ public final class ProxyRequest {
     static String checkPath(String path) {
         if (path.indexOf('#') >= 0) {
             throw new IllegalArgumentException("path must not contain '#'; percent-encode it as %23");
+        }
+        if (Preconditions.hasMalformedPercentEscape(path)) {
+            // No request with such a path could be sent; the path is not echoed (its query may hold a secret).
+            throw new IllegalArgumentException("path has a malformed percent escape; encode '%' as %25");
         }
         int query = path.indexOf('?');
         String pathOnly = query >= 0 ? path.substring(0, query) : path;
