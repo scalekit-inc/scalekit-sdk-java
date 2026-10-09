@@ -179,4 +179,63 @@ public final class Preconditions {
         }
         return Collections.unmodifiableMap(copy);
     }
+
+    /**
+     * Returns whether a URI path has a {@code .} or {@code ..} segment once fully percent-decoded,
+     * including segments formed by an encoded slash ({@code a%2F..%2Fb}) or by a backslash
+     * ({@code a\..\b}, {@code a%5C..%5Cb}), because a server may decode the path and treat
+     * {@code \} as {@code /} before resolving it. A {@code %2F} or {@code \} that forms no such
+     * segment is fine.
+     *
+     * @param path the path, without query string
+     * @return true when a decoded segment is {@code .} or {@code ..}
+     */
+    public static boolean hasDotSegment(String path) {
+        for (String segment : percentDecode(path).replace('\\', '/').split("/", -1)) {
+            if (".".equals(segment) || "..".equals(segment)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns whether a value has a {@code %} that is not followed by two hex digits, which no URI
+     * may contain.
+     *
+     * @param value the value
+     * @return true when a {@code %} starts no valid escape
+     */
+    public static boolean hasMalformedPercentEscape(String value) {
+        for (int i = value.indexOf('%'); i >= 0; i = value.indexOf('%', i + 1)) {
+            if (i + 2 >= value.length() || Character.digit(value.charAt(i + 1), 16) < 0
+                    || Character.digit(value.charAt(i + 2), 16) < 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Decodes every {@code %XX} escape as UTF-8. A {@code %} not followed by two hex digits is kept
+     * as is, and {@code +} is not a space (this is a path, not a form).
+     */
+    static String percentDecode(String value) {
+        if (value.indexOf('%') < 0) {
+            return value;
+        }
+        java.io.ByteArrayOutputStream bytes = new java.io.ByteArrayOutputStream(value.length());
+        byte[] raw = value.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        for (int i = 0; i < raw.length; i++) {
+            int high = i + 2 < raw.length && raw[i] == '%' ? Character.digit(raw[i + 1], 16) : -1;
+            int low = high >= 0 ? Character.digit(raw[i + 2], 16) : -1;
+            if (low >= 0) {
+                bytes.write((high << 4) | low);
+                i += 2;
+            } else {
+                bytes.write(raw[i]);
+            }
+        }
+        return new String(bytes.toByteArray(), java.nio.charset.StandardCharsets.UTF_8);
+    }
 }

@@ -1,6 +1,8 @@
 package com.scalekit.internal.proxy;
 
+import com.scalekit.api.ActionsClient;
 import com.scalekit.api.AuthClient;
+import com.scalekit.api.impl.ScalekitActionsClient;
 import com.scalekit.exceptions.AuthenticationException;
 import com.scalekit.exceptions.ProxyException;
 import com.scalekit.exceptions.ScalekitConnectionException;
@@ -26,6 +28,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -364,5 +367,141 @@ abstract class ProxyExecutorContract {
         assertEquals(200, response.statusCode());
         assertEquals(0, response.body().length);
         assertEquals("HEAD", server.proxyRequests().get(0).method);
+    }
+
+    // request(): the access token only ever goes to <environment URL>/proxy/.
+
+    private static ActionsClient actions(ProxyExecutor proxy) {
+        return new ScalekitActionsClient(null, null, null, null, null, proxy);
+    }
+
+    /**
+     * Paths whose effective location leaves /proxy/ for a server that percent-decodes the path, reads
+     * a backslash as a slash, collapses "//" and then resolves dot segments.
+     */
+    private static final String[] ESCAPING_PATHS = {
+            "/x/../../outside",
+            "/../outside",
+            "..",
+            "x/../../outside",
+            "/x/../../outside?q=1",
+            "/x/%2e%2e/%2e%2e/outside",
+            "/x/%2E%2e/%2e%2E/outside",
+            "/x%2f..%2f..%2foutside",
+            "/x%2F..%2F..%2Foutside",
+            "/x%2f%2e%2e%2f%2e%2e%2foutside",
+            "/x\\..\\..\\outside",
+            "/x%5c..%5c..%5coutside",
+            "/x%5C%2e%2e%5Coutside",
+            "/x/..\\..\\outside",
+            // "//" is collapsed before ".." is resolved, so one ".." already pops the proxy prefix.
+            "//..%2foutside/x",
+            "/%2f..%2foutside/x",
+            "/x//..%2f..%2fy",
+    };
+
+    @Test
+    void requestRejectsPathsThatResolveOutsideTheProxyPrefixBeforeAnyIo() {
+        ActionsClient actions = actions(executor);
+        for (String path : ESCAPING_PATHS) {
+            for (String method : new String[]{"GET", "POST"}) {
+                assertThrows(IllegalArgumentException.class,
+                        () -> actions.request(get(path).method(method).build()), method + " " + path);
+            }
+        }
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
+    }
+
+    @Test
+    void requestUnderAnEnvironmentBasePathRejectsPathsThatLeaveItBeforeAnyIo() {
+        ActionsClient actions = actions(new ProxyExecutor(server.baseUrl() + "/base/", credentials, this::newTransport));
+        for (String path : new String[]{"/../x", "/../../x", "/%2e%2e/x", "/..%2f..%2fx", "/x%2F..%2F..%2F..%2Fx",
+                "\\..\\x", "//..%2fx", "/%2f..%2fx"}) {
+            assertThrows(IllegalArgumentException.class, () -> actions.request(get(path).build()), path);
+        }
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
+
+        actions.request(get("/drive/v3/about").build());
+        assertEquals("/base/proxy/drive/v3/about", server.proxyRequests().get(0).uri);
+    }
+
+    @Test
+    void requestSendsPathsThatStayUnderTheProxyPrefixUnchanged() {
+        ActionsClient actions = actions(executor);
+        String[][] sent = {
+                {"/drive/v3/about?fields=user", "/proxy/drive/v3/about?fields=user"},
+                {"/files/my file.txt", "/proxy/files/my%20file.txt"},
+                {"/files/a%2Fb", "/proxy/files/a%2Fb"},
+                {"/", "/proxy/"},
+                {"//double", "/proxy//double"},
+                {"/files/...", "/proxy/files/..."},
+                {"/files/a\\b", "/proxy/files/a%5Cb"},
+                // Control characters are percent-encoded, so ".\t." reaches the server as ".%09.": a
+                // three-character segment, not "..", and the path stays under /proxy/.
+                {"/x/.\t./.\t./outside", "/proxy/x/.%09./.%09./outside"},
+                {"/x/.\r\n./outside", "/proxy/x/.%0D%0A./outside"},
+                {"/x\ny", "/proxy/x%0Ay"},
+                // Surrounding whitespace is trimmed before the path is checked, so the check sees what is sent.
+                {"/x\n", "/proxy/x"},
+        };
+        for (String[] pair : sent) {
+            actions.request(get(pair[0]).build());
+        }
+        List<Recorded> requests = server.proxyRequests();
+        assertEquals(sent.length, requests.size());
+        for (int i = 0; i < sent.length; i++) {
+            assertEquals(sent[i][1], requests.get(i).uri, sent[i][0]);
+        }
+    }
+
+    @Test
+    void scalekitUnauthorizedResendGoesToTheSameCheckedUri() {
+        primeTokenFromAnEarlierGrpcCall();
+        server.enqueue(new Reply(401, "{\"detail\":\"invalid token\",\"code\":\"UNAUTHORIZED\"}", 0,
+                "Content-Type", "application/json"));
+        ActionsClient actions = actions(new ProxyExecutor(server.baseUrl() + "/base", credentials, this::newTransport));
+        assertEquals(200, actions.request(get("/drive/v3/about").queryParam("fields", "user").build()).statusCode());
+        List<Recorded> requests = server.proxyRequests();
+        assertEquals(2, requests.size());
+        assertEquals("/base/proxy/drive/v3/about?fields=user", requests.get(0).uri);
+        assertEquals(requests.get(0).uri, requests.get(1).uri);
+        assertEquals("Bearer token-2", requests.get(1).headers.getFirst("Authorization"));
+    }
+
+    private static void assertNoSecretInChain(Throwable e) {
+        for (Throwable t = e; t != null; t = t.getCause()) {
+            assertFalse(String.valueOf(t.getMessage()).contains("SECRET"), String.valueOf(t.getMessage()));
+        }
+    }
+
+    @Test
+    void malformedPercentEscapeIsRejectedBeforeAnyIoWithoutEchoingTheUrl() {
+        ActionsClient actions = actions(executor);
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                () -> actions.request(get("/bad%zz").queryParam("access_token", "SECRET").build()));
+        assertEquals("path has a malformed percent escape; encode '%' as %25", e.getMessage());
+        assertNoSecretInChain(e);
+        for (String path : new String[]{"/bad%zz?access_token=SECRET", "/ok?access_token=SECRET&x=%z", "/bad%2"}) {
+            IllegalArgumentException inPath = assertThrows(IllegalArgumentException.class,
+                    () -> actions.request(get(path).build()), path);
+            assertTrue(inPath.getMessage().contains("malformed percent escape"), inPath.getMessage());
+            assertNoSecretInChain(inPath);
+        }
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
+    }
+
+    @Test
+    void environmentUrlThatIsNotAValidUriIsRejectedBeforeAnyIoWithoutEchoingTheUrl() {
+        ActionsClient actions = actions(new ProxyExecutor(server.baseUrl() + "/b%zz", credentials, this::newTransport));
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                () -> actions.request(get("/x?access_token=SECRET").queryParam("token", "SECRET").build()));
+        assertTrue(e.getMessage().contains("not a valid URI"), e.getMessage());
+        assertNull(e.getCause(), "the JDK's exception carries the whole URL and is not chained");
+        assertNoSecretInChain(e);
+        assertTrue(server.proxyRequests().isEmpty(), "nothing reached the server");
+        verify(authClient, never()).getClientAccessToken();
     }
 }

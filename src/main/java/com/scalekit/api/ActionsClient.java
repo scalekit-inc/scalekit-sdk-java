@@ -5,6 +5,9 @@ import com.scalekit.exceptions.AuthenticationException;
 import com.scalekit.exceptions.ProxyException;
 import com.scalekit.exceptions.ScalekitConnectionException;
 import com.scalekit.exceptions.ScalekitTimeoutException;
+import com.scalekit.exceptions.UploadException;
+import com.scalekit.exceptions.UploadProtocolException;
+import com.scalekit.exceptions.UploadSessionExpiredException;
 import com.scalekit.models.Page;
 import com.scalekit.models.connectedaccounts.AuthorizationLink;
 import com.scalekit.models.connectedaccounts.AuthorizationLinkParams;
@@ -18,6 +21,7 @@ import com.scalekit.models.connections.AppConnection;
 import com.scalekit.models.connections.ListAppConnectionsParams;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
+import com.scalekit.models.proxy.ResumableUploadRequest;
 import com.scalekit.models.tools.ExecuteToolParams;
 import com.scalekit.models.tools.ExecuteToolResult;
 import com.scalekit.models.tools.ListAvailableToolsParams;
@@ -30,6 +34,7 @@ import com.scalekit.models.tools.Tool;
 import com.scalekit.models.tools.ToolPage;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * One entry point for agent actions: tools, connected accounts, MCP configurations, custom
@@ -326,7 +331,8 @@ public interface ActionsClient {
      *
      * @param request the request
      * @return the response, for statuses below 400
-     * @throws IllegalArgumentException if {@code request} is null
+     * @throws IllegalArgumentException if {@code request} is null, or its URL would resolve outside
+     *                                  {@code <environment URL>/proxy/}; nothing is sent then
      * @throws UnsupportedOperationException if the runtime cannot send the request's method
      * @throws ProxyException if the response status is 400 or above
      * @throws AuthenticationException if the SDK cannot obtain an access token
@@ -337,6 +343,86 @@ public interface ActionsClient {
      * @since 2.6.0
      */
     ProxyResponse request(ProxyRequest request);
+
+    /**
+     * Uploads a file of any size to a Google API that supports resumable uploads (Drive, Cloud
+     * Storage, YouTube) through Scalekit's proxy, which adds the connected account's credentials.
+     * The content is sent in chunks ({@link ResumableUploadRequest#DEFAULT_CHUNK_SIZE 4 MiB} by
+     * default), so each request stays short; a chunk that fails is resumed from the bytes the
+     * server committed instead of restarting the upload. Returns the created or updated
+     * resource, such as the Drive file object.
+     *
+     * <ol>
+     *   <li>Every input is checked before any request (see {@link ResumableUploadRequest}).</li>
+     *   <li>The session starts with {@code <method> <path>?uploadType=resumable&<queryParams>},
+     *       the {@code X-Upload-Content-Type} header, {@code X-Upload-Content-Length} when the
+     *       total size is known (also for a stream that fits in one chunk), and the metadata as a
+     *       JSON body. This request is never retried, because a second one would open a second
+     *       session; the one exception is the token refresh described for
+     *       {@link #request(ProxyRequest)}.</li>
+     *   <li>Each chunk is sent with {@code PUT <path>?uploadType=resumable&upload_id=<id>} and a
+     *       {@code Content-Range} header. Until a stream of unknown size ends, chunks carry no
+     *       total ({@code bytes a-b/*}); the last one carries it. Empty content is sent as one
+     *       empty {@code PUT}.</li>
+     *   <li>After a timeout, a connection failure, HTTP 408, 429, 500, 502, 503 or 504, or (on
+     *       Java 8, where {@code HttpURLConnection} discards it) a 401 whose body cannot be read,
+     *       the SDK waits, asks the server how many bytes it has, and continues from there. It waits with
+     *       exponential backoff and full jitter (at most 1 second before the first retry, doubling
+     *       up to 30 seconds), or for the time a 429 or 503 gives in {@code Retry-After}, capped
+     *       at 30 seconds. A chunk may fail {@link ResumableUploadRequest.Builder#maxRetries
+     *       maxRetries} times in a row (3 by default). A 308 that commits no new bytes counts as one
+     *       failure, and the chunk is resent from the offset it reports. The count resets only
+     *       when the committed offset passes the highest one so far. When the server commits part
+     *       of a chunk, the rest of that chunk is sent next.</li>
+     * </ol>
+     *
+     * <p>About one chunk of the content is held in memory at a time: each chunk is sent from the
+     * array it was read into, and only resending the rest of a partly committed chunk briefly
+     * copies it. The calling thread does the upload;
+     * an interrupt stops it before the next request or during a wait (on Java 11+ also during a
+     * request) with {@link ScalekitConnectionException}, and the interrupt flag stays set. An
+     * upload that stops cannot be resumed by a later call: call this method again to start over.
+     *
+     * <pre>{@code
+     * Map<String, Object> file = client.actions().uploadResumable(
+     *         ResumableUploadRequest.builder("googledrive", "user_123", "/upload/drive/v3/files")
+     *                 .content(Paths.get("big.mp4"))
+     *                 .contentType("video/mp4")
+     *                 .metadata(Collections.singletonMap("name", "big.mp4"))
+     *                 .onProgress(p -> System.out.println(p.bytesCommitted() + " bytes uploaded"))
+     *                 .build());
+     * String fileId = (String) file.get("id");
+     * }</pre>
+     *
+     * @param request the upload
+     * @return the JSON object of the final response, such as the Drive file; an empty map when
+     *         its body is empty
+     * @throws IllegalArgumentException if {@code request} is null
+     * @throws IllegalStateException if the content of
+     *                               {@link ResumableUploadRequest.Builder#content(java.io.InputStream, long)
+     *                               a stream of known size} or of a file does not match that size;
+     *                               it is detected before the last chunk is sent
+     * @throws java.io.UncheckedIOException if reading the content fails
+     * @throws UnsupportedOperationException if the runtime cannot send the request's method
+     *                                       (see {@link #request(ProxyRequest)})
+     * @throws UploadSessionExpiredException if the upload session no longer exists (HTTP 404 or
+     *                                       410 to a chunk); the SDK does not start a new one
+     * @throws UploadException if the request that starts the session fails with a status of 400 or
+     *                         above, a chunk fails with another 4xx or gets a 2xx other than 200
+     *                         and 201, or retries run out after a retryable status
+     * @throws UploadProtocolException if the server's responses break the resumable upload
+     *                                 protocol (including reporting completion before the final
+     *                                 chunk was sent, or a chunk's retries running out on 308s
+     *                                 that commit nothing), or the final body is not a JSON object
+     * @throws AuthenticationException if the SDK cannot obtain an access token
+     * @throws ScalekitTimeoutException if the request that starts the session times out, or a
+     *                                  chunk's retries run out after timeouts
+     * @throws ScalekitConnectionException if the request that starts the session cannot be sent,
+     *                                     a chunk's retries run out after connection failures, or
+     *                                     the thread is interrupted
+     * @since 2.6.0
+     */
+    Map<String, Object> uploadResumable(ResumableUploadRequest request);
 
     /**
      * Same as {@link ToolsClient#search(String)}.

@@ -5,6 +5,7 @@ import com.scalekit.exceptions.ProxyException;
 import com.scalekit.exceptions.ScalekitConnectionException;
 import com.scalekit.exceptions.ScalekitTimeoutException;
 import com.scalekit.internal.Constants;
+import com.scalekit.internal.Preconditions;
 import com.scalekit.internal.ScalekitCredentials;
 import com.scalekit.models.proxy.ProxyRequest;
 import com.scalekit.models.proxy.ProxyResponse;
@@ -101,11 +102,53 @@ public final class ProxyExecutor {
         if (request == null) {
             throw new IllegalArgumentException("request is required");
         }
+        return send(request, request.body().orElse(null), false);
+    }
+
+    /**
+     * Sends a request with a body given separately, for callers in this package that already
+     * hold the body in an array of their own (the resumable uploader). The array is sent as is,
+     * without a copy: the caller must not change it afterwards, because a request that timed out
+     * may still be reading it. The request itself must have no body; set {@code Content-Type} as
+     * a header.
+     *
+     * <p>Unlike {@link #execute(ProxyRequest)}, a 401 whose body the transport could not read
+     * (HttpURLConnection discards it on streamed requests) is thrown as
+     * {@link UnreadableUnauthorizedException}, so that the caller can tell it from a provider's 401.
+     *
+     * @param request the request, without a body
+     * @param body    the body, or null for none
+     * @return the response, for statuses below 400
+     * @see #execute(ProxyRequest)
+     */
+    ProxyResponse execute(ProxyRequest request, byte[] body) {
+        return send(request, body, true);
+    }
+
+    /**
+     * Runs the checks {@link #execute(ProxyRequest)} makes before any I/O: the runtime can send the
+     * method, and the URI stays under the proxy prefix.
+     *
+     * @param request the request
+     * @throws UnsupportedOperationException if the runtime cannot send the request's method
+     * @throws IllegalArgumentException      if the URI would leave the proxy prefix
+     */
+    void checkSendable(ProxyRequest request) {
+        sendableTransport(request);
+        buildUri(request);
+    }
+
+    private HttpTransport sendableTransport(ProxyRequest request) {
         HttpTransport http = transport();
         if (!http.supportsMethod(request.method())) {
             throw new UnsupportedOperationException("This Java runtime cannot send HTTP " + request.method()
                     + " requests without the java.net.http module; on Java 11 or later add --add-modules java.net.http");
         }
+        return http;
+    }
+
+    private ProxyResponse send(ProxyRequest request, byte[] body, boolean markUnreadableUnauthorized) {
+        HttpTransport http = sendableTransport(request);
         URI uri = buildUri(request);
         if (Thread.currentThread().isInterrupted()) {
             throw new ScalekitConnectionException("proxy request not sent: the thread is interrupted",
@@ -113,12 +156,12 @@ public final class ProxyExecutor {
         }
 
         String token = currentToken();
-        HttpResult result = send(http, request, uri, token);
+        HttpResult result = send(http, request, body, uri, token);
         if (result.status == 401) {
             if (isScalekitUnauthorized(result)) {
                 String refreshed = refreshToken();
                 if (refreshed != null && !refreshed.equals(token)) {
-                    result = send(http, request, uri, refreshed);
+                    result = send(http, request, body, uri, refreshed);
                 }
             } else if (!result.bodyAvailable) {
                 // The transport could not read the body, so the 401 cannot be attributed. Never
@@ -137,9 +180,25 @@ public final class ProxyExecutor {
                 .body(result.body)
                 .build();
         if (result.status >= 400) {
+            if (markUnreadableUnauthorized && result.status == 401 && !result.bodyAvailable) {
+                throw new UnreadableUnauthorizedException(response);
+            }
             throw new ProxyException(response);
         }
         return response;
+    }
+
+    /**
+     * A 401 whose body the transport could not read, so it cannot be told apart from Scalekit
+     * rejecting the token; the token has already been refreshed. Thrown only by
+     * {@link #execute(ProxyRequest, byte[])}.
+     */
+    static final class UnreadableUnauthorizedException extends ProxyException {
+        private static final long serialVersionUID = 1L;
+
+        UnreadableUnauthorizedException(ProxyResponse response) {
+            super(response);
+        }
     }
 
     private HttpTransport transport() {
@@ -181,9 +240,8 @@ public final class ProxyExecutor {
         return credentials.getToken();
     }
 
-    private HttpResult send(HttpTransport http, ProxyRequest request, URI uri, String token) {
-        HttpCall call = new HttpCall(request.method(), uri, headers(request, token), request.body().orElse(null),
-                request.timeout());
+    private HttpResult send(HttpTransport http, ProxyRequest request, byte[] body, URI uri, String token) {
+        HttpCall call = new HttpCall(request.method(), uri, headers(request, token), body, request.timeout());
         try {
             return http.send(call);
         } catch (TransportTimeoutException e) {
@@ -228,7 +286,8 @@ public final class ProxyExecutor {
     }
 
     private URI buildUri(ProxyRequest request) {
-        StringBuilder url = new StringBuilder(baseUrl).append("/proxy").append(encodePath(request.path()));
+        String prefix = baseUrl + "/proxy";
+        StringBuilder url = new StringBuilder(prefix).append(encodePath(request.path()));
         char separator = request.path().indexOf('?') >= 0 ? '&' : '?';
         for (Map.Entry<String, List<String>> param : request.queryParams().entrySet()) {
             for (String value : param.getValue()) {
@@ -236,7 +295,33 @@ public final class ProxyExecutor {
                 separator = '&';
             }
         }
-        return URI.create(url.toString());
+        URI uri;
+        String proxyPrefix;
+        try {
+            uri = URI.create(url.toString());
+            proxyPrefix = URI.create(prefix + "/").getRawPath();
+        } catch (IllegalArgumentException invalid) {
+            // Not chained: the JDK's message holds the whole URL, query values included.
+            throw new IllegalArgumentException("the request URL is not a valid URI; check the environment URL and path");
+        }
+        requireUnderProxy(uri, proxyPrefix);
+        return uri;
+    }
+
+    /**
+     * Fails before any I/O unless the URI's raw path is inside the proxy prefix and has no
+     * {@code .} or {@code ..} segment, even once fully percent-decoded (an encoded slash can form
+     * one) and with {@code \} read as {@code /}, so that the access token can only go to the
+     * proxy. The request models already reject such paths; this guards the URI that is actually
+     * sent.
+     */
+    static void requireUnderProxy(URI uri, String proxyPrefix) {
+        String path = uri.getRawPath();
+        boolean inside = path != null && path.startsWith(proxyPrefix)
+                && !Preconditions.hasDotSegment(path.substring(proxyPrefix.length()));
+        if (!inside) {
+            throw new IllegalArgumentException("the request path must stay under the proxy prefix");
+        }
     }
 
     /** Percent-encodes characters that may not appear in a URI, keeping existing escapes. */

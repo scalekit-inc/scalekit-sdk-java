@@ -42,7 +42,12 @@ import java.util.Set;
  *   <li>header values, {@code connectionName} and {@code identifier} contain only printable
  *       US-ASCII characters (and tab), because HTTP clients do not send other characters
  *       reliably: {@code java.net.http} replaces them with {@code ?};</li>
- *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments;</li>
+ *   <li>the path has no {@code #} and no {@code .} or {@code ..} segments, also after
+ *       percent-decoding and with {@code \} read as {@code /} (so {@code %2e%2e},
+ *       {@code a%2F..%2Fb} and {@code a\..\b} are rejected), so that the request cannot resolve
+ *       outside {@code <environment URL>/proxy/};</li>
+ *   <li>every {@code %} in the path, including its query string, starts a {@code %XX} escape;
+ *       write a literal {@code %} as {@code %25};</li>
  *   <li>at most one body ({@code jsonBody}, {@code formBody} or {@code rawBody}), and none on
  *       {@code GET} or {@code HEAD};</li>
  *   <li>the headers {@code Host}, {@code Content-Length}, {@code Connection}, {@code Expect} and
@@ -242,19 +247,23 @@ public final class ProxyRequest {
 
     /**
      * Rejects a fragment, which HTTP clients never send (it would also swallow the query
-     * parameters), and "." or ".." segments, which servers may resolve against the proxy prefix.
+     * parameters), and "." or ".." segments (also percent-encoded or separated by a backslash),
+     * which servers may resolve against the proxy prefix.
      */
-    private static String checkPath(String path) {
+    static String checkPath(String path) {
         if (path.indexOf('#') >= 0) {
             throw new IllegalArgumentException("path must not contain '#'; percent-encode it as %23");
         }
+        if (Preconditions.hasMalformedPercentEscape(path)) {
+            // No request with such a path could be sent; the path is not echoed (its query may hold a secret).
+            throw new IllegalArgumentException("path has a malformed percent escape; encode '%' as %25");
+        }
         int query = path.indexOf('?');
         String pathOnly = query >= 0 ? path.substring(0, query) : path;
-        for (String segment : pathOnly.split("/", -1)) {
-            String decoded = segment.replaceAll("(?i)%2e", ".");
-            if (".".equals(decoded) || "..".equals(decoded)) {
-                throw new IllegalArgumentException("path must not contain \".\" or \"..\" segments: " + path);
-            }
+        if (Preconditions.hasDotSegment(pathOnly)) {
+            // The path is not echoed: its query string may carry a secret.
+            throw new IllegalArgumentException("path must stay under the proxy prefix: it must not contain \".\" or "
+                    + "\"..\" segments, also when percent-encoded or separated by '\\'");
         }
         return path;
     }
