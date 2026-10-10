@@ -1,0 +1,137 @@
+package com.scalekit.api.impl;
+
+import com.scalekit.api.ProvidersClient;
+import com.scalekit.grpc.scalekit.v1.providers.CreateCustomProvider;
+import com.scalekit.grpc.scalekit.v1.providers.CreateCustomProviderRequest;
+import com.scalekit.grpc.scalekit.v1.providers.CreateProviderResponse;
+import com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest;
+import com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest;
+import com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse;
+import com.scalekit.grpc.scalekit.v1.providers.ProviderServiceGrpc;
+import com.scalekit.grpc.scalekit.v1.providers.ProviderType;
+import com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProvider;
+import com.scalekit.grpc.scalekit.v1.providers.UpdateCustomProviderRequest;
+import com.scalekit.grpc.scalekit.v1.providers.UpdateProviderResponse;
+import com.scalekit.internal.Preconditions;
+import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.models.Page;
+import com.scalekit.models.providers.CustomProviderRequest;
+import com.scalekit.models.providers.ListProvidersParams;
+import com.scalekit.models.providers.Provider;
+import io.grpc.Channel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/** {@link ProvidersClient} over gRPC. Thread-safe. */
+public class ScalekitProvidersClient implements ProvidersClient {
+
+    private final ProviderServiceGrpc.ProviderServiceBlockingStub stub;
+    private final ScalekitCredentials credentials;
+
+    /**
+     * Creates the client.
+     *
+     * @param channel     the channel
+     * @param credentials the credentials attached to every call
+     */
+    public ScalekitProvidersClient(Channel channel, ScalekitCredentials credentials) {
+        this.credentials = credentials;
+        this.stub = ProviderServiceGrpc.newBlockingStub(channel).withCallCredentials(credentials);
+    }
+
+    private ProviderServiceGrpc.ProviderServiceBlockingStub stub() {
+        return stub.withDeadlineAfter(AgentKitCalls.controlPlaneTimeoutMillis(), AgentKitCalls.MILLIS);
+    }
+
+    @Override
+    public Provider createCustomProvider(CustomProviderRequest request) {
+        if (request == null) {
+            throw new IllegalArgumentException("request is required");
+        }
+        CreateCustomProvider.Builder provider = CreateCustomProvider.newBuilder()
+                .setDisplayName(request.displayName())
+                .setProxyUrl(request.proxyUrl())
+                .setProxyEnabled(request.proxyEnabled())
+                .setAuthPatterns(AgentKitConverters.toListValue(request.authPatterns()))
+                .putAllMetadata(request.metadata());
+        request.description().ifPresent(provider::setDescription);
+        request.iconSrc().ifPresent(provider::setIconSrc);
+        final CreateCustomProviderRequest built = CreateCustomProviderRequest.newBuilder().setProvider(provider).build();
+        CreateProviderResponse response = AgentKitCalls.call(ProviderServiceGrpc.getCreateCustomProviderMethod(),
+                credentials, () -> stub().createCustomProvider(built));
+        return AgentKitConverters.provider(response.getProvider());
+    }
+
+    @Override
+    public Provider updateCustomProvider(String identifier, CustomProviderRequest request) {
+        String id = Preconditions.requireNonEmpty(identifier, "identifier");
+        if (request == null) {
+            throw new IllegalArgumentException("request is required");
+        }
+        UpdateCustomProvider.Builder provider = UpdateCustomProvider.newBuilder()
+                .setDisplayName(request.displayName())
+                .setProxyUrl(request.proxyUrl())
+                .setProxyEnabled(request.proxyEnabled())
+                .setAuthPatterns(AgentKitConverters.toListValue(request.authPatterns()))
+                .putAllMetadata(request.metadata());
+        request.description().ifPresent(provider::setDescription);
+        request.iconSrc().ifPresent(provider::setIconSrc);
+        final UpdateCustomProviderRequest built = UpdateCustomProviderRequest.newBuilder()
+                .setIdentifier(id)
+                .setProvider(provider)
+                .build();
+        UpdateProviderResponse response = AgentKitCalls.call(ProviderServiceGrpc.getUpdateCustomProviderMethod(),
+                credentials, () -> stub().updateCustomProvider(built));
+        return AgentKitConverters.provider(response.getProvider());
+    }
+
+    @Override
+    public void deleteCustomProvider(String identifier) {
+        final DeleteProviderRequest built = DeleteProviderRequest.newBuilder()
+                .setIdentifier(Preconditions.requireNonEmpty(identifier, "identifier"))
+                .build();
+        AgentKitCalls.call(ProviderServiceGrpc.getDeleteCustomProviderMethod(), credentials,
+                () -> stub().deleteCustomProvider(built));
+    }
+
+    @Override
+    public Page<Provider> listProviders() {
+        return listProviders(null);
+    }
+
+    @Override
+    public Page<Provider> listProviders(ListProvidersParams params) {
+        ListProvidersParams effective = params == null ? ListProvidersParams.builder().build() : params;
+        return fetch(effective, effective.pageToken().orElse(null));
+    }
+
+    private Page<Provider> fetch(final ListProvidersParams params, String pageToken) {
+        ListProvidersRequest.Builder request = ListProvidersRequest.newBuilder();
+        if (params.providerType().isPresent()) {
+            request.setFilter(ListProvidersRequest.Filter.newBuilder()
+                    .setProviderType(ProviderType.valueOf(params.providerType().get().name())));
+        }
+        params.identifier().ifPresent(request::setIdentifier);
+        if (params.pageSize().isPresent()) {
+            request.setPageSize(params.pageSize().getAsInt());
+        }
+        if (pageToken != null) {
+            request.setPageToken(pageToken);
+        }
+        final ListProvidersRequest built = request.build();
+        ListProvidersResponse response = AgentKitCalls.call(ProviderServiceGrpc.getListProvidersMethod(), credentials,
+                () -> stub().listProviders(built));
+        List<Provider> providers = new ArrayList<>(response.getProvidersCount());
+        for (com.scalekit.grpc.scalekit.v1.providers.Provider provider : response.getProvidersList()) {
+            providers.add(AgentKitConverters.provider(provider));
+        }
+        return new Page.Builder<Provider>()
+                .items(providers)
+                .nextPageToken(response.getNextPageToken())
+                .prevPageToken(response.getPrevPageToken())
+                .totalSize(response.getTotalSize())
+                .nextPageFetcher(next -> fetch(params, next))
+                .build();
+    }
+}

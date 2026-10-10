@@ -1,0 +1,380 @@
+package com.scalekit;
+
+import com.scalekit.exceptions.APIException;
+import com.scalekit.exceptions.BadRequestException;
+import com.scalekit.exceptions.NotFoundException;
+import com.scalekit.exceptions.ProxyException;
+import com.scalekit.models.connectedaccounts.AuthorizationLink;
+import com.scalekit.models.connectedaccounts.ConnectedAccount;
+import com.scalekit.models.connectedaccounts.ConnectedAccountRef;
+import com.scalekit.models.mcp.CreateMcpConfigParams;
+import com.scalekit.models.mcp.McpConfig;
+import com.scalekit.models.mcp.McpConnectionToolMapping;
+import com.scalekit.models.connectedaccounts.UpdateConnectedAccountParams;
+import com.scalekit.models.Page;
+import com.scalekit.models.connections.AppConnection;
+import com.scalekit.models.connections.EnvironmentConnection;
+import com.scalekit.models.connections.ListAppConnectionsParams;
+import com.scalekit.models.mcp.ListMcpConfigsParams;
+import com.scalekit.models.mcp.McpSessionToken;
+import com.scalekit.models.mcp.UpdateMcpConfigParams;
+import com.scalekit.models.providers.AuthField;
+import com.scalekit.models.providers.AuthPattern;
+import com.scalekit.models.providers.AuthPatternType;
+import com.scalekit.models.providers.CustomProviderRequest;
+import com.scalekit.models.providers.ListProvidersParams;
+import com.scalekit.models.providers.Provider;
+import com.scalekit.models.providers.ProviderType;
+import com.scalekit.models.proxy.ProxyRequest;
+import com.scalekit.models.proxy.ProxyResponse;
+import com.scalekit.models.tools.ExecuteToolParams;
+import com.scalekit.models.tools.ExecuteToolResult;
+import com.scalekit.models.tools.ConnectionReadiness;
+import com.scalekit.models.tools.ListAvailableToolsParams;
+import com.scalekit.models.tools.ListScopedToolsParams;
+import com.scalekit.models.tools.ScopedTool;
+import com.scalekit.models.tools.SearchToolsParams;
+import com.scalekit.models.tools.SearchedTool;
+import com.scalekit.models.tools.Tool;
+import com.scalekit.models.tools.ToolReadinessState;
+import com.scalekit.models.tools.ListToolsParams;
+import com.scalekit.models.tools.ToolPage;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Live tests against a real environment. They need SCALEKIT_ENVIRONMENT_URL, SCALEKIT_CLIENT_ID
+ * and SCALEKIT_CLIENT_SECRET; tests that use a connection also need TEST_AGENTKIT_CONNECTION (an
+ * enabled connection), TEST_AGENTKIT_IDENTIFIER (an identifier with an active account on it),
+ * TEST_AGENTKIT_TOOL (a tool of that connection) and TEST_AGENTKIT_PROXY_PATH (a GET path on the
+ * provider's API). TEST_AGENTKIT_TOOL_INPUT, a JSON object, is the tool's input (default {}).
+ * TEST_AGENTKIT_ENV_CONNECTION_ID is the ID of an environment connection to read. Each test skips
+ * when what it needs is missing, and removes what it creates. Environment connections are only read:
+ * they cannot be deleted through the SDK, so creating and updating them is covered by the
+ * credential-free tests.
+ */
+@Tag("live")
+class AgentKitLiveTest {
+
+    private ScalekitClient client;
+    private final List<Runnable> cleanup = new ArrayList<>();
+
+    @BeforeEach
+    void setUp() {
+        String url = System.getenv("SCALEKIT_ENVIRONMENT_URL");
+        String id = System.getenv("SCALEKIT_CLIENT_ID");
+        String secret = System.getenv("SCALEKIT_CLIENT_SECRET");
+        Assumptions.assumeTrue(url != null && id != null && secret != null, "Scalekit credentials are not set");
+        client = new ScalekitClient(url, id, secret);
+    }
+
+    @AfterEach
+    void tearDown() {
+        for (Runnable step : cleanup) {
+            try {
+                step.run();
+            } catch (APIException ignored) {
+                // already gone
+            }
+        }
+    }
+
+    private static String fixture(String name) {
+        String value = System.getenv(name);
+        Assumptions.assumeTrue(value != null && !value.trim().isEmpty(), name + " is not set");
+        return value.trim();
+    }
+
+    private static String unique(String prefix) {
+        return prefix + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
+    }
+
+    private static Map<String, Object> toolInput() {
+        String json = System.getenv("TEST_AGENTKIT_TOOL_INPUT");
+        if (json == null || json.trim().isEmpty()) {
+            return Collections.emptyMap();
+        }
+        try {
+            return new ObjectMapper().readValue(json, new TypeReference<Map<String, Object>>() {
+            });
+        } catch (IOException e) {
+            throw new IllegalStateException("TEST_AGENTKIT_TOOL_INPUT must be a JSON object", e);
+        }
+    }
+
+    @Test
+    void listToolsReturnsAPage() {
+        ToolPage page = client.tools().list(ListToolsParams.builder().pageSize(5).build());
+        assertNotNull(page.items());
+        assertTrue(page.items().size() <= 5);
+    }
+
+    @Test
+    void executeToolRunsAndUnknownToolIsABadRequest() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        String tool = fixture("TEST_AGENTKIT_TOOL");
+        ExecuteToolResult result = client.actions().executeTool(tool, ExecuteToolParams.builder()
+                .connectionName(connection).identifier(identifier).toolInput(toolInput()).build());
+        assertFalse(result.executionId().isEmpty());
+
+        assertThrows(BadRequestException.class, () -> client.tools().execute(unique("no_such_tool_"),
+                ExecuteToolParams.builder().connectionName(connection).identifier(identifier).build()));
+    }
+
+    @Test
+    void connectedAccountLifecycle() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = unique("sdk-java-");
+        ConnectedAccountRef ref = ConnectedAccountRef.of(connection, identifier);
+        cleanup.add(() -> client.connectedAccounts().delete(ref));
+
+        ConnectedAccount created = client.connectedAccounts().getOrCreate(connection, identifier);
+        assertEquals(identifier, created.identifier());
+        assertEquals(created.id(), client.connectedAccounts().getOrCreate(connection, identifier).id(),
+                "a second getOrCreate returns the same account");
+        assertEquals(created.id(), client.actions().getConnectedAccount(ConnectedAccountRef.byId(created.id())).id());
+
+        AuthorizationLink link = client.actions().getAuthorizationLink(ref);
+        assertFalse(link.link().isEmpty());
+
+        boolean listed = false;
+        for (ConnectedAccount account : client.connectedAccounts().list(
+                com.scalekit.models.connectedaccounts.ListConnectedAccountsParams.builder()
+                        .identifier(identifier).build()).autoPager()) {
+            listed |= account.id().equals(created.id());
+        }
+        assertTrue(listed);
+
+        client.connectedAccounts().delete(ref);
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts().get(ref));
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts().delete(ref));
+    }
+
+    @Test
+    void createUpdateGetDelete() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = unique("sdk-java-");
+        ConnectedAccountRef ref = ConnectedAccountRef.of(connection, identifier);
+        cleanup.add(() -> client.connectedAccounts().delete(ref));
+
+        ConnectedAccount created = client.actions().createConnectedAccount(connection, identifier);
+        assertEquals(identifier, created.identifier());
+        assertThrows(BadRequestException.class, () -> client.connectedAccounts().create(connection, identifier),
+                "a second create is a duplicate");
+
+        ConnectedAccount updated = client.actions().updateConnectedAccount(ref, UpdateConnectedAccountParams.builder()
+                .apiConfig(Collections.singletonMap("sdk_test_marker", identifier)).build());
+        assertEquals(created.id(), updated.id());
+
+        ConnectedAccount fetched = client.connectedAccounts().get(ConnectedAccountRef.byId(created.id()));
+        assertEquals(created.id(), fetched.id());
+        // apiConfig is returned only when the environment returns it; when present it must hold the update.
+        fetched.apiConfig().ifPresent(config -> assertEquals(identifier, config.get("sdk_test_marker")));
+        updated.apiConfig().ifPresent(config -> assertEquals(identifier, config.get("sdk_test_marker")));
+
+        client.actions().deleteConnectedAccount(ref);
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts().get(ref));
+    }
+
+    @Test
+    void magicLinkForAnUnknownConnectionIsNotFound() {
+        assertThrows(NotFoundException.class, () -> client.connectedAccounts()
+                .getMagicLink(ConnectedAccountRef.of(unique("missing-"), unique("user-"))));
+    }
+
+    @Test
+    void verifyUserWithAnUnknownRequestFails() {
+        APIException e = assertThrows(APIException.class, () -> client.connectedAccounts()
+                .verifyUser("00000000-0000-0000-0000-000000000000", "user_123"));
+        assertTrue(e instanceof BadRequestException || e instanceof NotFoundException, e.getClass().getName());
+    }
+
+    @Test
+    void mcpConfigLifecycle() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String name = unique("sdk_java_");
+        McpConfig config = client.actions().mcp().createConfig(name, CreateMcpConfigParams.builder()
+                .description("SDK test")
+                .addConnectionToolMapping(McpConnectionToolMapping.of(connection, Collections.<String>emptyList()))
+                .build());
+        cleanup.add(() -> client.actions().mcp().deleteConfig(config.id()));
+        assertEquals(name, config.name());
+
+        assertEquals(config.id(), client.actions().mcp().getConfig(config.id()).id());
+        McpConfig updated = client.actions().mcp().updateConfig(config.id(),
+                UpdateMcpConfigParams.builder().description("SDK test updated").build());
+        assertEquals("SDK test updated", updated.description().orElse(null));
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        assertFalse(client.actions().mcp().listConnectedAccounts(config.id(), identifier).isEmpty());
+
+        boolean listed = false;
+        for (McpConfig each : client.actions().mcp().listConfigs(
+                ListMcpConfigsParams.builder().search(name).build()).autoPager()) {
+            listed |= each.id().equals(config.id());
+        }
+        assertTrue(listed, "listConfigs finds the new configuration");
+
+        // The fixture identifier already has an account on the connection, so minting creates nothing.
+        McpSessionToken token = client.actions().mcp().createSessionToken(config.id(), identifier);
+        assertFalse(token.token().isEmpty());
+
+        client.actions().mcp().deleteConfig(config.id());
+        assertThrows(NotFoundException.class, () -> client.actions().mcp().getConfig(config.id()));
+    }
+
+    @Test
+    void customProviderLifecycle() {
+        String displayName = "Sdk Java " + UUID.randomUUID().toString().replace("-", "")
+                .substring(0, 10).toUpperCase(Locale.ROOT);
+        AuthPattern bearer = AuthPattern.builder(AuthPatternType.BEARER, "Token")
+                .addField(AuthField.builder("token").label("Token").inputType("password").required(true).build())
+                .build();
+        Provider provider = client.actions().providers().createCustomProvider(
+                CustomProviderRequest.builder(displayName, "https://api.example.com").addAuthPattern(bearer).build());
+        cleanup.add(() -> client.actions().providers().deleteCustomProvider(provider.identifier()));
+        assertTrue(provider.isCustom());
+        assertTrue(provider.proxyEnabled());
+
+        Provider updated = client.actions().providers().updateCustomProvider(provider.identifier(),
+                CustomProviderRequest.builder(provider.displayName(), provider.proxyUrl().get())
+                        .description("updated")
+                        .authPatterns(provider.authPatterns())
+                        .build());
+        assertEquals("updated", updated.description().orElse(null));
+
+        client.actions().providers().deleteCustomProvider(provider.identifier());
+        assertThrows(NotFoundException.class,
+                () -> client.actions().providers().deleteCustomProvider(provider.identifier()));
+    }
+
+    @Test
+    void proxyGetAndUnknownConnection() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        String path = fixture("TEST_AGENTKIT_PROXY_PATH");
+        ProxyResponse response = client.actions().request(ProxyRequest.builder(connection, identifier, path).build());
+        assertTrue(response.isSuccessful(), "status " + response.statusCode());
+
+        ProxyException e = assertThrows(ProxyException.class, () -> client.actions().request(
+                ProxyRequest.builder(unique("missing-"), identifier, path).build()));
+        assertEquals(404, e.statusCode());
+    }
+
+    @Test
+    void listAppConnectionsFindsTheFixtureConnection() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        boolean found = false;
+        for (AppConnection each : client.connections().listAppConnections(
+                ListAppConnectionsParams.builder().pageSize(30).build()).autoPager()) {
+            assertFalse(each.id().isEmpty());
+            found |= each.connectionName().equals(connection);
+        }
+        assertTrue(found, "the fixture connection is an app connection");
+
+        Page<AppConnection> facade = client.actions().listConnections(ListAppConnectionsParams.builder().pageSize(1).build());
+        assertTrue(facade.items().size() <= 1);
+        assertThrows(BadRequestException.class, () -> client.actions().listConnections(
+                ListAppConnectionsParams.builder().query("ab").build()), "the server needs at least 3 characters");
+    }
+
+    @Test
+    void getEnvironmentConnectionReadsTheFixture() {
+        String id = fixture("TEST_AGENTKIT_ENV_CONNECTION_ID");
+        EnvironmentConnection connection = client.connections().getEnvironmentConnection(id);
+        assertEquals(id, connection.id());
+        assertFalse(connection.providerKey().isEmpty());
+        assertNotNull(connection.type());
+
+        APIException e = assertThrows(APIException.class,
+                () -> client.connections().getEnvironmentConnection("conn_" + System.nanoTime()));
+        assertTrue(e instanceof NotFoundException || e instanceof BadRequestException, e.getClass().getName());
+    }
+
+    @Test
+    void listProvidersByType() {
+        Page<Provider> builtIn = client.actions().providers().listProviders(
+                ListProvidersParams.builder().pageSize(5).build());
+        assertFalse(builtIn.items().isEmpty(), "every environment has built-in providers");
+        assertTrue(builtIn.items().size() <= 5);
+        for (Provider provider : builtIn.items()) {
+            assertFalse(provider.isCustom(), provider.identifier());
+        }
+        for (Provider provider : client.actions().providers().listProviders(
+                ListProvidersParams.builder().providerType(ProviderType.CUSTOM).pageSize(5).build()).items()) {
+            assertTrue(provider.isCustom(), provider.identifier());
+        }
+        assertNotNull(client.actions().providers().listProviders().items());
+    }
+
+    @Test
+    void searchToolsRanksAndChecksReadiness() {
+        String tool = fixture("TEST_AGENTKIT_TOOL");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        List<SearchedTool> plain = client.tools().search(tool.replace('_', ' '),
+                SearchToolsParams.builder().topK(5).build());
+        assertTrue(plain.size() <= 5);
+        for (int i = 1; i < plain.size(); i++) {
+            assertTrue(plain.get(i - 1).score() >= plain.get(i).score(), "results are ranked by score");
+        }
+        for (SearchedTool each : plain) {
+            assertTrue(each.connections().isEmpty(), "readiness is only computed for an identifier");
+        }
+
+        List<SearchedTool> scoped = client.actions().searchTools(tool.replace('_', ' '),
+                SearchToolsParams.builder().identifier(identifier).topK(5).build());
+        assertTrue(scoped.size() <= 5);
+        for (SearchedTool each : scoped) {
+            for (ConnectionReadiness readiness : each.connections()) {
+                assertNotEquals(ToolReadinessState.NOT_EVALUATED, readiness.readinessState(), each.name());
+            }
+        }
+
+        StringBuilder tooLong = new StringBuilder();
+        for (int i = 0; i < 300; i++) {
+            tooLong.append('a');
+        }
+        assertThrows(BadRequestException.class, () -> client.tools().search(tooLong.toString()));
+    }
+
+    @Test
+    void listAvailableToolsForTheFixtureIdentifier() {
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        Page<Tool> page = client.actions().listAvailableTools(identifier,
+                ListAvailableToolsParams.builder().pageSize(10).build());
+        assertFalse(page.items().isEmpty(), "the fixture identifier has an account");
+        assertTrue(page.items().size() <= 10);
+        assertTrue(client.tools().listAvailable(unique("sdk-java-nobody-")).items().isEmpty(),
+                "an identifier without accounts gets an empty page");
+    }
+
+    @Test
+    void listScopedToolsForTheFixtureConnection() {
+        String connection = fixture("TEST_AGENTKIT_CONNECTION");
+        String identifier = fixture("TEST_AGENTKIT_IDENTIFIER");
+        Page<ScopedTool> page = client.tools().listScoped(identifier,
+                ListScopedToolsParams.builder().addConnectionName(connection).pageSize(5).build());
+        assertFalse(page.items().isEmpty());
+        for (ScopedTool each : page.items()) {
+            assertEquals(identifier, each.identifier());
+            assertTrue(each.connectedAccountId().isPresent());
+        }
+        assertThrows(NotFoundException.class, () -> client.actions().listScopedTools(unique("sdk-java-nobody-"),
+                ListScopedToolsParams.builder().addConnectionName(connection).build()));
+    }
+}

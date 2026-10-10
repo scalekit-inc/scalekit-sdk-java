@@ -4,10 +4,20 @@ import com.google.protobuf.Empty;
 import com.scalekit.Environment;
 import com.scalekit.api.ConnectionClient;
 import com.scalekit.grpc.scalekit.v1.connections.*;
+import com.scalekit.internal.Preconditions;
 import com.scalekit.internal.RetryExecuter;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.internal.StructConverter;
+import com.scalekit.models.Page;
+import com.scalekit.models.connections.AppConnection;
+import com.scalekit.models.connections.CreateEnvironmentConnectionParams;
+import com.scalekit.models.connections.EnvironmentConnection;
+import com.scalekit.models.connections.ListAppConnectionsParams;
+import com.scalekit.models.connections.UpdateEnvironmentConnectionParams;
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class ScalekitConnectionClient implements ConnectionClient {
@@ -166,5 +176,94 @@ public class ScalekitConnectionClient implements ConnectionClient {
             );
              return null;
          },this.credentials);
+    }
+
+    private ConnectionServiceGrpc.ConnectionServiceBlockingStub agentKitStub() {
+        return this.ConnectionStub.withDeadlineAfter(AgentKitCalls.controlPlaneTimeoutMillis(), AgentKitCalls.MILLIS);
+    }
+
+    @Override
+    public Page<AppConnection> listAppConnections(ListAppConnectionsParams params) {
+        ListAppConnectionsParams effective = params == null ? ListAppConnectionsParams.builder().build() : params;
+        return fetchAppConnections(effective, effective.pageToken().orElse(null));
+    }
+
+    private Page<AppConnection> fetchAppConnections(final ListAppConnectionsParams params, String pageToken) {
+        ListAppConnectionsRequest.Builder request = ListAppConnectionsRequest.newBuilder();
+        params.provider().ifPresent(request::setProvider);
+        params.query().ifPresent(request::setQuery);
+        if (params.pageSize().isPresent()) {
+            request.setPageSize(params.pageSize().getAsInt());
+        }
+        if (pageToken != null) {
+            request.setPageToken(pageToken);
+        }
+        final ListAppConnectionsRequest built = request.build();
+        ListAppConnectionsResponse response = AgentKitCalls.call(ConnectionServiceGrpc.getListAppConnectionsMethod(),
+                credentials, () -> agentKitStub().listAppConnections(built));
+        List<AppConnection> connections = new ArrayList<>(response.getConnectionsCount());
+        for (ListConnection connection : response.getConnectionsList()) {
+            connections.add(ConnectionConverters.appConnection(connection));
+        }
+        return new Page.Builder<AppConnection>()
+                .items(connections)
+                .nextPageToken(response.getNextPageToken())
+                .prevPageToken(response.getPrevPageToken())
+                .totalSize(response.getTotalSize())
+                .nextPageFetcher(next -> fetchAppConnections(params, next))
+                .build();
+    }
+
+    @Override
+    public EnvironmentConnection createEnvironmentConnection(CreateEnvironmentConnectionParams params) {
+        if (params == null) {
+            throw new IllegalArgumentException("params is required");
+        }
+        CreateConnection.Builder connection = CreateConnection.newBuilder().setProviderKey(params.providerKey());
+        if (params.type().isPresent()) {
+            connection.setTypeValue(ConnectionConverters.typeNumber(params.type().get()));
+        }
+        params.connectionName().ifPresent(connection::setKeyId);
+        if (params.authMode().isPresent()) {
+            connection.setAuthModeValue(ConnectionConverters.authModeNumber(params.authMode().get()));
+        }
+        if (params.context().isPresent()) {
+            connection.setContext(StructConverter.toStruct(params.context().get()));
+        }
+        final CreateEnvironmentConnectionRequest built = CreateEnvironmentConnectionRequest.newBuilder()
+                .setConnection(connection)
+                .setFlags(Flags.newBuilder().setIsApp(true))
+                .build();
+        CreateConnectionResponse response = AgentKitCalls.call(
+                ConnectionServiceGrpc.getCreateEnvironmentConnectionMethod(), credentials,
+                () -> agentKitStub().createEnvironmentConnection(built));
+        return ConnectionConverters.environmentConnection(response.getConnection());
+    }
+
+    @Override
+    public EnvironmentConnection getEnvironmentConnection(String connectionId) {
+        final GetEnvironmentConnectionRequest built = GetEnvironmentConnectionRequest.newBuilder()
+                .setConnectionId(Preconditions.requireNonEmpty(connectionId, "connectionId"))
+                .build();
+        GetConnectionResponse response = AgentKitCalls.call(ConnectionServiceGrpc.getGetEnvironmentConnectionMethod(),
+                credentials, () -> agentKitStub().getEnvironmentConnection(built));
+        return ConnectionConverters.environmentConnection(response.getConnection());
+    }
+
+    @Override
+    public EnvironmentConnection updateEnvironmentConnection(String connectionId,
+                                                             UpdateEnvironmentConnectionParams params) {
+        String id = Preconditions.requireNonEmpty(connectionId, "connectionId");
+        if (params == null) {
+            throw new IllegalArgumentException("params is required");
+        }
+        final UpdateEnvironmentConnectionRequest built = UpdateEnvironmentConnectionRequest.newBuilder()
+                .setConnectionId(id)
+                .setConnection(ConnectionConverters.toProto(params))
+                .build();
+        UpdateConnectionResponse response = AgentKitCalls.call(
+                ConnectionServiceGrpc.getUpdateEnvironmentConnectionMethod(), credentials,
+                () -> agentKitStub().updateEnvironmentConnection(built));
+        return ConnectionConverters.environmentConnection(response.getConnection());
     }
 }

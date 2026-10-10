@@ -23,14 +23,15 @@ This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit pro
 
 ---
 
-### Agent-First Features
+### Agent features (AgentKit)
 
-- **Agent Identity** — Agents as first-class actors with human ownership and org context
-- **MCP-Native OAuth 2.1** — Purpose-built for Model Context Protocol with DCR/PKCE support
-- **Ephemeral Credentials** — Time-bound, task-based authorization (minutes, not days)
-- **Token Vault** — Per-user, per-tool token storage with rotation and progressive consent
-- **Human-in-the-Loop** — Step-up authentication when risk crosses thresholds
-- **Immutable Audit** — Track which user initiated, which agent acted, what resource was accessed
+- **Connected accounts** — Your users' accounts on third-party services; Scalekit stores and refreshes their credentials (`client.connectedAccounts()`)
+- **Tool calling** — List tools and run them on behalf of a connected account (`client.tools()`)
+- **Tool discovery** — Search tools by relevance and list the tools a user can run (`client.tools().search(...)`, `listScoped(...)`, `listAvailable(...)`)
+- **REST proxy** — Call a provider's API with the account's credentials added by Scalekit (`client.actions().request(...)`)
+- **MCP configurations** — Serve a set of connections and tools to agents as an MCP server, with per-user session tokens (`client.actions().mcp()`)
+- **Providers** — List providers and bring your own connector for services Scalekit does not ship (`client.actions().providers()`)
+- **App connections** — List, create, read and update the connections your users' accounts belong to (`client.connections().listAppConnections()` and related methods)
 
 #### Human Authentication
 
@@ -95,6 +96,52 @@ ScalekitClient scalekitClient = new ScalekitClient(
 
 // Use scalekitClient to interact with the Scalekit API
 ```
+
+#### AgentKit quickstart
+
+Connect a user's Gmail account, then let your agent read their mail.
+
+`"gmail"` below is the name of an app connection that already exists in your environment. Create one in the Scalekit dashboard, or with `client.connections().createEnvironmentConnection(...)`, and use its name (`client.connections().listAppConnections()` lists them).
+
+```java
+import com.scalekit.ScalekitClient;
+import com.scalekit.exceptions.ToolUnauthorizedException;
+import com.scalekit.models.connectedaccounts.*;
+import com.scalekit.models.proxy.ProxyRequest;
+import com.scalekit.models.tools.ExecuteToolParams;
+import com.scalekit.models.tools.ExecuteToolResult;
+
+ScalekitClient client = new ScalekitClient(
+    System.getenv("SCALEKIT_ENVIRONMENT_URL"),
+    System.getenv("SCALEKIT_CLIENT_ID"),
+    System.getenv("SCALEKIT_CLIENT_SECRET"));
+
+// 1. Make sure the user has a Gmail account connected; send them the link if not.
+ConnectedAccount account = client.connectedAccounts().getOrCreate("gmail", "user_123");
+if (account.status().known() != ConnectedAccountStatus.Known.ACTIVE) {
+    AuthorizationLink link = client.connectedAccounts().getMagicLink(ConnectedAccountRef.byId(account.id()));
+    System.out.println("Authorize at: " + link.link());
+}
+
+// 2. Run a tool as that user.
+try {
+    ExecuteToolResult result = client.tools().execute("gmail_fetch_mails",
+        ExecuteToolParams.builder()
+            .connectionName("gmail")
+            .identifier("user_123")
+            .putToolInput("max_results", 5)
+            .build());
+    System.out.println(result.data());
+} catch (ToolUnauthorizedException e) {
+    // The user must authorize the account again.
+}
+
+// 3. Or call the provider's API directly; Scalekit adds the credentials.
+String profile = client.actions().request(
+    ProxyRequest.builder("gmail", "user_123", "/gmail/v1/users/me/profile").build()).bodyAsString();
+```
+
+See [REFERENCE.md](REFERENCE.md#tools) for every AgentKit method, its errors and its retry behaviour.
 
 ---
 
