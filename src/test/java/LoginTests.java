@@ -5,6 +5,7 @@ import com.scalekit.internal.http.UpdateLoginUserDetailsResult;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -68,6 +69,7 @@ public class LoginTests {
 
     // --- Live integration: skips unless server-side IDs are provided ---
 
+    @Tag("live")
     @Test
     void UpdateLoginUserDetailsLive() {
         String connectionId = System.getenv("SCALEKIT_TEST_CONNECTION_ID");

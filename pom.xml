@@ -63,10 +63,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- javac's release option also checks API usage against the Java 8 class library;
+             a source/target pair does not. It applies to main and test sources alike. -->
+        <maven.compiler.release>8</maven.compiler.release>
         <io.grpc.version>1.75.0</io.grpc.version>
 
+        <!-- API compatibility check (japicmp) against a released version on Maven Central.
+             Off by default so a plain build never needs the network for it. `make api-compat`
+             downloads the released jar of japicmp.oldVersion (CI passes the latest v* tag)
+             to japicmp.oldJar and enables the check. -->
+        <japicmp.skip>true</japicmp.skip>
+        <japicmp.oldVersion>2.5.0</japicmp.oldVersion>
+        <japicmp.oldJar>${project.build.directory}/japicmp-baseline/scalekit-sdk-java-${japicmp.oldVersion}.jar</japicmp.oldJar>
+        <!-- scripts/check-jar-contents.sh as part of the build (see exec-maven-plugin). -->
+        <jarcheck.skip>true</jarcheck.skip>
     </properties>
 
     <dependencies>
@@ -160,6 +170,10 @@
                     <extensions>true</extensions>
                     <configuration>
                         <publishingServerId>central</publishingServerId>
+                        <!-- false: an upload waits in the Central Portal until it is published
+                             by hand. Follow-up once a release from .github/workflows/release.yml
+                             has been inspected there: autoPublish true and
+                             <waitUntil>published</waitUntil>, so the approved run publishes. -->
                         <autoPublish>false</autoPublish>
                     </configuration>
                 </plugin>
@@ -223,8 +237,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>
@@ -233,6 +245,14 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <!-- Pinned so the test runner does not change with the Maven version. `make unit-test`
+                 passes -DexcludedGroups=live (tests tagged @Tag("live") need a real environment)
+                 and, in CI, -Djvm=<path to java> to run the compiled tests on each supported JDK. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.0</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -279,6 +299,10 @@
                                         <exclude>META-INF/NOTICE.*</exclude>
                                         <exclude>META-INF/*</exclude>
                                         <exclude>module-info.class</exclude>
+                                        <!-- Module descriptors of bundled dependencies. The shaded jar
+                                             is not Multi-Release, so no JVM reads them; they only
+                                             misdescribe this jar to module-aware tools. -->
+                                        <exclude>META-INF/versions/*/module-info.class</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -290,6 +314,130 @@
                     </execution>
                 </executions>
               </plugin>
+
+            <!-- Runs scripts/check-jar-contents.sh on the shaded jar before it is signed and
+                 deployed. Off by default (it needs bash and unzip); the release workflow passes
+                 -Djarcheck.skip=false, and `make jar-check` runs the script directly. -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.6.4</version>
+                <executions>
+                    <execution>
+                        <id>check-jar-contents</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${jarcheck.skip}</skip>
+                            <executable>${project.basedir}/scripts/check-jar-contents.sh</executable>
+                            <arguments>
+                                <argument>${project.build.directory}/${project.build.finalName}.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- API compatibility with the released version japicmp.oldVersion (make api-compat).
+                 A package filter matches the package and its subpackages.
+                 - api: everything in com.scalekit except the packages below; any binary or
+                   source incompatible change fails the build.
+                 - api-clients: com.scalekit.api (service interfaces and implementations); the
+                   same rule, except that adding a method to a service interface is allowed.
+                   These interfaces are implemented only by the SDK (callers get them from
+                   ScalekitClient), and new operations are added to them.
+                 - grpc: generated proto classes, report only. A generated type that appears
+                   in an SDK signature is still checked through that signature.
+                 Relocated dependencies (com.scalekit.shaded) are not API. -->
+            <plugin>
+                <groupId>com.github.siom79.japicmp</groupId>
+                <artifactId>japicmp-maven-plugin</artifactId>
+                <version>0.26.3</version>
+                <configuration>
+                    <!-- A file, not a dependency: with the pom at the released version, Maven
+                         would resolve the dependency to this build's own jar. -->
+                    <oldVersion>
+                        <file>
+                            <path>${japicmp.oldJar}</path>
+                        </file>
+                    </oldVersion>
+                    <skip>${japicmp.skip}</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>api</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>cmp</goal>
+                        </goals>
+                        <configuration>
+                            <parameter>
+                                <includes>
+                                    <include>com.scalekit</include>
+                                </includes>
+                                <excludes>
+                                    <exclude>com.scalekit.api</exclude>
+                                    <exclude>com.scalekit.grpc</exclude>
+                                    <exclude>com.scalekit.shaded</exclude>
+                                </excludes>
+                                <onlyModified>true</onlyModified>
+                                <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                                <breakBuildOnSourceIncompatibleModifications>true</breakBuildOnSourceIncompatibleModifications>
+                            </parameter>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>api-clients</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>cmp</goal>
+                        </goals>
+                        <configuration>
+                            <parameter>
+                                <includes>
+                                    <include>com.scalekit.api</include>
+                                </includes>
+                                <onlyModified>true</onlyModified>
+                                <breakBuildOnBinaryIncompatibleModifications>true</breakBuildOnBinaryIncompatibleModifications>
+                                <breakBuildOnSourceIncompatibleModifications>true</breakBuildOnSourceIncompatibleModifications>
+                                <overrideCompatibilityChangeParameters>
+                                    <overrideCompatibilityChangeParameter>
+                                        <compatibilityChange>METHOD_ADDED_TO_INTERFACE</compatibilityChange>
+                                        <binaryCompatible>true</binaryCompatible>
+                                        <sourceCompatible>true</sourceCompatible>
+                                        <semanticVersionLevel>MINOR</semanticVersionLevel>
+                                    </overrideCompatibilityChangeParameter>
+                                    <overrideCompatibilityChangeParameter>
+                                        <compatibilityChange>METHOD_ABSTRACT_ADDED_IN_IMPLEMENTED_INTERFACE</compatibilityChange>
+                                        <binaryCompatible>true</binaryCompatible>
+                                        <sourceCompatible>true</sourceCompatible>
+                                        <semanticVersionLevel>MINOR</semanticVersionLevel>
+                                    </overrideCompatibilityChangeParameter>
+                                </overrideCompatibilityChangeParameters>
+                            </parameter>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>grpc</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>cmp</goal>
+                        </goals>
+                        <configuration>
+                            <parameter>
+                                <includes>
+                                    <include>com.scalekit.grpc</include>
+                                </includes>
+                                <onlyModified>true</onlyModified>
+                                <breakBuildOnBinaryIncompatibleModifications>false</breakBuildOnBinaryIncompatibleModifications>
+                                <breakBuildOnSourceIncompatibleModifications>false</breakBuildOnSourceIncompatibleModifications>
+                            </parameter>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
     </build>
