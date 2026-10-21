@@ -182,9 +182,13 @@
                             <goal>jar</goal>
                         </goals>
                         <!-- A release must not be blocked by doc lint; CI already enforces it
-                             via `make javadoc`. Overrides the plugin-level setting above. -->
+                             via `make javadoc`. Overrides the plugin-level setting above.
+                             The published javadoc jar documents only the hand-written API:
+                             generated gRPC/protobuf classes made it ~30 MB, and their docs
+                             remain available to IDEs through the sources jar. -->
                         <configuration>
                             <doclint>none</doclint>
+                            <excludePackageNames>com.scalekit.grpc.*</excludePackageNames>
                         </configuration>
                     </execution>
                 </executions>
