@@ -3,13 +3,14 @@ import com.scalekit.api.impl.ScalekitAuthClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.http.TokenValidationOptions;
 import com.sun.net.httpserver.HttpServer;
-import org.jose4j.jwk.JsonWebKeySet;
-import org.jose4j.jwk.RsaJsonWebKey;
-import org.jose4j.jwk.RsaJwkGenerator;
-import org.jose4j.jws.AlgorithmIdentifiers;
-import org.jose4j.jws.JsonWebSignature;
-import org.jose4j.jwt.JwtClaims;
-import org.jose4j.jwt.NumericDate;
+import com.nimbusds.jose.JWSAlgorithm;
+import com.nimbusds.jose.JWSHeader;
+import com.nimbusds.jose.crypto.RSASSASigner;
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.gen.RSAKeyGenerator;
+import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.SignedJWT;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,7 @@ import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -38,16 +40,15 @@ public class MultiIssuerTokenValidationTest {
     private static final String BASE = ENV_URL;
     private static final String RESOURCE = ENV_URL + "/resources/res_123";
 
-    private static RsaJsonWebKey signingKey;
+    private static RSAKey signingKey;
     private static HttpServer jwksServer;
     private static ScalekitAuthClient auth;
 
     @BeforeAll
     static void init() throws Exception {
-        signingKey = RsaJwkGenerator.generateJwk(2048);
-        signingKey.setKeyId("test-key-1");
+        signingKey = new RSAKeyGenerator(2048).keyID("test-key-1").generate();
 
-        byte[] jwks = new JsonWebKeySet(signingKey).toJson().getBytes(StandardCharsets.UTF_8);
+        byte[] jwks = new JWKSet(signingKey.toPublicJWK()).toString().getBytes(StandardCharsets.UTF_8);
         jwksServer = HttpServer.create(new InetSocketAddress("localhost", 0), 0);
         jwksServer.createContext("/keys", exchange -> {
             exchange.getResponseHeaders().add("Content-Type", "application/json");
@@ -67,17 +68,16 @@ public class MultiIssuerTokenValidationTest {
     }
 
     private static String signWithIssuer(String iss) throws Exception {
-        JwtClaims claims = new JwtClaims();
-        claims.setIssuer(iss);
-        claims.setSubject("user_1");
-        claims.setExpirationTime(NumericDate.fromSeconds(NumericDate.now().getValue() + 600));
+        JWTClaimsSet claims = new JWTClaimsSet.Builder()
+                .issuer(iss)
+                .subject("user_1")
+                .expirationTime(new Date(System.currentTimeMillis() + 600_000))
+                .build();
 
-        JsonWebSignature jws = new JsonWebSignature();
-        jws.setPayload(claims.toJson());
-        jws.setKey(signingKey.getPrivateKey());
-        jws.setKeyIdHeaderValue(signingKey.getKeyId());
-        jws.setAlgorithmHeaderValue(AlgorithmIdentifiers.RSA_USING_SHA256);
-        return jws.getCompactSerialization();
+        SignedJWT jws = new SignedJWT(
+                new JWSHeader.Builder(JWSAlgorithm.RS256).keyID(signingKey.getKeyID()).build(), claims);
+        jws.sign(new RSASSASigner(signingKey));
+        return jws.serialize();
     }
 
     private static TokenValidationOptions opts(List<String> issuers) {
