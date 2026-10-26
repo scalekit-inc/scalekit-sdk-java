@@ -67,7 +67,8 @@
              a source/target pair does not. It applies to main and test sources alike. -->
         <maven.compiler.release>8</maven.compiler.release>
         <io.grpc.version>1.84.0</io.grpc.version>
-        <!-- Supported range: 9.37.x and 10.x. CI also runs the tests with -Dnimbus.version=9.37.4. -->
+        <!-- Supported range: 9.37.x and 10.x. The tests can be run against the lower end with
+             -Dnimbus.version=9.37.4 (not yet part of CI). -->
         <nimbus.version>10.10</nimbus.version>
 
         <!-- API compatibility check (japicmp) against a released version on Maven Central.
