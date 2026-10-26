@@ -10,9 +10,6 @@
 
 # grpc-core: com.google.android:annotations
 android/annotation/
-# build.buf:protovalidate (classes and .proto sources)
-buf/validate/
-build/buf/
 # .proto sources of protobuf-java and proto-google-common-protos (their classes are relocated)
 google/api/
 google/apps/
@@ -24,28 +21,9 @@ google/protobuf/
 google/rpc/
 google/shopping/
 google/type/
-# protovalidate: com.github.seancfoley:ipaddress
-inet/ipaddr/
 # grpc: io.perfmark:perfmark-api
 io/perfmark/
-# protovalidate: jakarta.mail:jakarta.mail-api, jakarta.activation:jakarta.activation-api
-jakarta/activation/
-jakarta/mail/
 # guava / protobuf-java-util: com.google.code.findbugs:jsr305
 javax/annotation/
-# httpclient: public suffix list
-mozilla/
-# protovalidate (cel-java): org.agrona:agrona
-org/agrona/
-# httpclient: commons-codec, commons-logging, httpclient, httpcore
-org/apache/commons/codec/
-org/apache/commons/logging/
-org/apache/http/
-# guava: org.checkerframework:checker-qual
-org/checkerframework/
 # grpc: org.codehaus.mojo:animal-sniffer-annotations
 org/codehaus/mojo/
-# org.bitbucket.b_c:jose4j
-org/jose4j/
-# protovalidate: org.projectnessie.cel (cel-core, cel-generated-pb, cel-generated-antlr)
-org/projectnessie/
