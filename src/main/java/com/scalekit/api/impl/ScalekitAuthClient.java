@@ -376,6 +376,12 @@ public class ScalekitAuthClient implements AuthClient {
         // Read the body fully, including on errors, so the connection can be reused
         String body = readFully(status >= 400 ? connection.getErrorStream() : connection.getInputStream());
         if (status != 200) {
+            // In streaming mode HttpURLConnection discards the body of a 401 (getErrorStream() is
+            // null). The token endpoint answers 401 only when client authentication fails
+            // (RFC 6749 section 5.2), so name that error instead of an empty message.
+            if (body.isEmpty()) {
+                body = "HTTP " + status + (status == 401 ? " invalid_client: the client ID or secret was not accepted" : "");
+            }
             throw new IOException(errorPrefix + body);
         }
         return body;
