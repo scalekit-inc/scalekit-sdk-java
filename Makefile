@@ -70,3 +70,10 @@ test:
 
 verify-generate: generate
 	git diff --exit-code
+
+# Builds the three jars a release publishes and checks their total against
+# RELEASE_SIZE_LIMIT_MB (default 60; Maven Central's per-release limit is 80 MB).
+.PHONY: release-size
+release-size:
+	$(MVN_CMD) -DskipTests -Dgpg.skip package
+	scripts/check-release-size.sh
