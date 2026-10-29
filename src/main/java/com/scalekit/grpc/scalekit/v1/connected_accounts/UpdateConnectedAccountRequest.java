@@ -306,6 +306,32 @@ private static final long serialVersionUID = 0L;
     return connectedAccount_ == null ? com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccount.getDefaultInstance() : connectedAccount_;
   }
 
+  public static final int SCOPE_SELECTION_FIELD_NUMBER = 7;
+  private com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection scopeSelection_;
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelection field is set.
+   */
+  @java.lang.Override
+  public boolean hasScopeSelection() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelection.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection getScopeSelection() {
+    return scopeSelection_ == null ? com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.getDefaultInstance() : scopeSelection_;
+  }
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder getScopeSelectionOrBuilder() {
+    return scopeSelection_ == null ? com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.getDefaultInstance() : scopeSelection_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -338,6 +364,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, id_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(7, getScopeSelection());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -365,6 +394,10 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, id_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getScopeSelection());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -411,6 +444,11 @@ private static final long serialVersionUID = 0L;
       if (!getConnectedAccount()
           .equals(other.getConnectedAccount())) return false;
     }
+    if (hasScopeSelection() != other.hasScopeSelection()) return false;
+    if (hasScopeSelection()) {
+      if (!getScopeSelection()
+          .equals(other.getScopeSelection())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -445,6 +483,10 @@ private static final long serialVersionUID = 0L;
     if (hasConnectedAccount()) {
       hash = (37 * hash) + CONNECTED_ACCOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getConnectedAccount().hashCode();
+    }
+    if (hasScopeSelection()) {
+      hash = (37 * hash) + SCOPE_SELECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getScopeSelection().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -577,6 +619,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getConnectedAccountFieldBuilder();
+        getScopeSelectionFieldBuilder();
       }
     }
     @java.lang.Override
@@ -592,6 +635,11 @@ private static final long serialVersionUID = 0L;
       if (connectedAccountBuilder_ != null) {
         connectedAccountBuilder_.dispose();
         connectedAccountBuilder_ = null;
+      }
+      scopeSelection_ = null;
+      if (scopeSelectionBuilder_ != null) {
+        scopeSelectionBuilder_.dispose();
+        scopeSelectionBuilder_ = null;
       }
       return this;
     }
@@ -652,6 +700,12 @@ private static final long serialVersionUID = 0L;
             ? connectedAccount_
             : connectedAccountBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.scopeSelection_ = scopeSelectionBuilder_ == null
+            ? scopeSelection_
+            : scopeSelectionBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -728,6 +782,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasConnectedAccount()) {
         mergeConnectedAccount(other.getConnectedAccount());
       }
+      if (other.hasScopeSelection()) {
+        mergeScopeSelection(other.getScopeSelection());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -786,6 +843,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 50
+            case 58: {
+              input.readMessage(
+                  getScopeSelectionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1317,6 +1381,127 @@ private static final long serialVersionUID = 0L;
         connectedAccount_ = null;
       }
       return connectedAccountBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection scopeSelection_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder> scopeSelectionBuilder_;
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the scopeSelection field is set.
+     */
+    public boolean hasScopeSelection() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The scopeSelection.
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection getScopeSelection() {
+      if (scopeSelectionBuilder_ == null) {
+        return scopeSelection_ == null ? com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.getDefaultInstance() : scopeSelection_;
+      } else {
+        return scopeSelectionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelection(com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection value) {
+      if (scopeSelectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scopeSelection_ = value;
+      } else {
+        scopeSelectionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelection(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.Builder builderForValue) {
+      if (scopeSelectionBuilder_ == null) {
+        scopeSelection_ = builderForValue.build();
+      } else {
+        scopeSelectionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeScopeSelection(com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection value) {
+      if (scopeSelectionBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          scopeSelection_ != null &&
+          scopeSelection_ != com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.getDefaultInstance()) {
+          getScopeSelectionBuilder().mergeFrom(value);
+        } else {
+          scopeSelection_ = value;
+        }
+      } else {
+        scopeSelectionBuilder_.mergeFrom(value);
+      }
+      if (scopeSelection_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearScopeSelection() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      scopeSelection_ = null;
+      if (scopeSelectionBuilder_ != null) {
+        scopeSelectionBuilder_.dispose();
+        scopeSelectionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.Builder getScopeSelectionBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getScopeSelectionFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder getScopeSelectionOrBuilder() {
+      if (scopeSelectionBuilder_ != null) {
+        return scopeSelectionBuilder_.getMessageOrBuilder();
+      } else {
+        return scopeSelection_ == null ?
+            com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.getDefaultInstance() : scopeSelection_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder> 
+        getScopeSelectionFieldBuilder() {
+      if (scopeSelectionBuilder_ == null) {
+        scopeSelectionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection.Builder, com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder>(
+                getScopeSelection(),
+                getParentForChildren(),
+                isClean());
+        scopeSelection_ = null;
+      }
+      return scopeSelectionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

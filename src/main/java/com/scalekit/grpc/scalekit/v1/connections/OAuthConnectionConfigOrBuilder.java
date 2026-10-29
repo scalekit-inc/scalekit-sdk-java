@@ -301,19 +301,23 @@ public interface OAuthConnectionConfigOrBuilder extends
   com.scalekit.grpc.scalekit.v1.connections.OauthExtensionsOrBuilder getExtensionsOrBuilder();
 
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+   *     See scalekit/v1/connections/connections.proto;l=1822
    * @return Whether the tokenEndpointAuthMethod field is set.
    */
-  boolean hasTokenEndpointAuthMethod();
+  @java.lang.Deprecated boolean hasTokenEndpointAuthMethod();
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+   *     See scalekit/v1/connections/connections.proto;l=1822
    * @return The tokenEndpointAuthMethod.
    */
-  com.google.protobuf.StringValue getTokenEndpointAuthMethod();
+  @java.lang.Deprecated com.google.protobuf.StringValue getTokenEndpointAuthMethod();
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
-  com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder();
+  @java.lang.Deprecated com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder();
 
   /**
    * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
@@ -329,4 +333,85 @@ public interface OAuthConnectionConfigOrBuilder extends
    * <code>.google.protobuf.StringValue googleads_developer_token = 26 [json_name = "googleadsDeveloperToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getGoogleadsDeveloperTokenOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelectionAllowed field is set.
+   */
+  boolean hasScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelectionAllowed.
+   */
+  com.google.protobuf.BoolValue getScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder();
+
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredScopes.
+   */
+  java.util.List<java.lang.String>
+      getRequiredScopesList();
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredScopes.
+   */
+  int getRequiredScopesCount();
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredScopes at the given index.
+   */
+  java.lang.String getRequiredScopes(int index);
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredScopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRequiredScopesBytes(int index);
+
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredOptionalScopes.
+   */
+  java.util.List<java.lang.String>
+      getRequiredOptionalScopesList();
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredOptionalScopes.
+   */
+  int getRequiredOptionalScopesCount();
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredOptionalScopes at the given index.
+   */
+  java.lang.String getRequiredOptionalScopes(int index);
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredOptionalScopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRequiredOptionalScopesBytes(int index);
+
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenEndpointAuthType field is set.
+   */
+  boolean hasTokenEndpointAuthType();
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for tokenEndpointAuthType.
+   */
+  int getTokenEndpointAuthTypeValue();
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenEndpointAuthType.
+   */
+  com.scalekit.grpc.scalekit.v1.connections.TokenAuthType getTokenEndpointAuthType();
 }

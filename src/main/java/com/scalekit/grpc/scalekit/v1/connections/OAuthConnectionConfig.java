@@ -20,6 +20,11 @@ private static final long serialVersionUID = 0L;
     scopes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     redirectUri_ = "";
+    requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    requiredOptionalScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    tokenEndpointAuthType_ = 0;
   }
 
   @java.lang.Override
@@ -564,26 +569,30 @@ private static final long serialVersionUID = 0L;
   public static final int TOKEN_ENDPOINT_AUTH_METHOD_FIELD_NUMBER = 25;
   private com.google.protobuf.StringValue tokenEndpointAuthMethod_;
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+   *     See scalekit/v1/connections/connections.proto;l=1822
    * @return Whether the tokenEndpointAuthMethod field is set.
    */
   @java.lang.Override
-  public boolean hasTokenEndpointAuthMethod() {
+  @java.lang.Deprecated public boolean hasTokenEndpointAuthMethod() {
     return ((bitField0_ & 0x00020000) != 0);
   }
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+   *     See scalekit/v1/connections/connections.proto;l=1822
    * @return The tokenEndpointAuthMethod.
    */
   @java.lang.Override
-  public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
+  @java.lang.Deprecated public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
     return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
   }
   /**
-   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
-  public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
+  @java.lang.Deprecated public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
     return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
   }
 
@@ -611,6 +620,131 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getGoogleadsDeveloperTokenOrBuilder() {
     return googleadsDeveloperToken_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : googleadsDeveloperToken_;
+  }
+
+  public static final int SCOPE_SELECTION_ALLOWED_FIELD_NUMBER = 27;
+  private com.google.protobuf.BoolValue scopeSelectionAllowed_;
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelectionAllowed field is set.
+   */
+  @java.lang.Override
+  public boolean hasScopeSelectionAllowed() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelectionAllowed.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getScopeSelectionAllowed() {
+    return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder() {
+    return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+  }
+
+  public static final int REQUIRED_SCOPES_FIELD_NUMBER = 28;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList requiredScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredScopes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRequiredScopesList() {
+    return requiredScopes_;
+  }
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredScopes.
+   */
+  public int getRequiredScopesCount() {
+    return requiredScopes_.size();
+  }
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredScopes at the given index.
+   */
+  public java.lang.String getRequiredScopes(int index) {
+    return requiredScopes_.get(index);
+  }
+  /**
+   * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredScopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRequiredScopesBytes(int index) {
+    return requiredScopes_.getByteString(index);
+  }
+
+  public static final int REQUIRED_OPTIONAL_SCOPES_FIELD_NUMBER = 29;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList requiredOptionalScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredOptionalScopes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRequiredOptionalScopesList() {
+    return requiredOptionalScopes_;
+  }
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredOptionalScopes.
+   */
+  public int getRequiredOptionalScopesCount() {
+    return requiredOptionalScopes_.size();
+  }
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredOptionalScopes at the given index.
+   */
+  public java.lang.String getRequiredOptionalScopes(int index) {
+    return requiredOptionalScopes_.get(index);
+  }
+  /**
+   * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredOptionalScopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRequiredOptionalScopesBytes(int index) {
+    return requiredOptionalScopes_.getByteString(index);
+  }
+
+  public static final int TOKEN_ENDPOINT_AUTH_TYPE_FIELD_NUMBER = 30;
+  private int tokenEndpointAuthType_ = 0;
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the tokenEndpointAuthType field is set.
+   */
+  @java.lang.Override public boolean hasTokenEndpointAuthType() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for tokenEndpointAuthType.
+   */
+  @java.lang.Override public int getTokenEndpointAuthTypeValue() {
+    return tokenEndpointAuthType_;
+  }
+  /**
+   * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The tokenEndpointAuthType.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.connections.TokenAuthType getTokenEndpointAuthType() {
+    com.scalekit.grpc.scalekit.v1.connections.TokenAuthType result = com.scalekit.grpc.scalekit.v1.connections.TokenAuthType.forNumber(tokenEndpointAuthType_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.connections.TokenAuthType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -689,6 +823,18 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(26, getGoogleadsDeveloperToken());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(27, getScopeSelectionAllowed());
+    }
+    for (int i = 0; i < requiredScopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, requiredScopes_.getRaw(i));
+    }
+    for (int i = 0; i < requiredOptionalScopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, requiredOptionalScopes_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeEnum(30, tokenEndpointAuthType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -785,6 +931,30 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(26, getGoogleadsDeveloperToken());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, getScopeSelectionAllowed());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requiredScopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(requiredScopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getRequiredScopesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requiredOptionalScopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(requiredOptionalScopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getRequiredOptionalScopesList().size();
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(30, tokenEndpointAuthType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -900,6 +1070,19 @@ private static final long serialVersionUID = 0L;
       if (!getGoogleadsDeveloperToken()
           .equals(other.getGoogleadsDeveloperToken())) return false;
     }
+    if (hasScopeSelectionAllowed() != other.hasScopeSelectionAllowed()) return false;
+    if (hasScopeSelectionAllowed()) {
+      if (!getScopeSelectionAllowed()
+          .equals(other.getScopeSelectionAllowed())) return false;
+    }
+    if (!getRequiredScopesList()
+        .equals(other.getRequiredScopesList())) return false;
+    if (!getRequiredOptionalScopesList()
+        .equals(other.getRequiredOptionalScopesList())) return false;
+    if (hasTokenEndpointAuthType() != other.hasTokenEndpointAuthType()) return false;
+    if (hasTokenEndpointAuthType()) {
+      if (tokenEndpointAuthType_ != other.tokenEndpointAuthType_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -992,6 +1175,22 @@ private static final long serialVersionUID = 0L;
     if (hasGoogleadsDeveloperToken()) {
       hash = (37 * hash) + GOOGLEADS_DEVELOPER_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getGoogleadsDeveloperToken().hashCode();
+    }
+    if (hasScopeSelectionAllowed()) {
+      hash = (37 * hash) + SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
+      hash = (53 * hash) + getScopeSelectionAllowed().hashCode();
+    }
+    if (getRequiredScopesCount() > 0) {
+      hash = (37 * hash) + REQUIRED_SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getRequiredScopesList().hashCode();
+    }
+    if (getRequiredOptionalScopesCount() > 0) {
+      hash = (37 * hash) + REQUIRED_OPTIONAL_SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getRequiredOptionalScopesList().hashCode();
+    }
+    if (hasTokenEndpointAuthType()) {
+      hash = (37 * hash) + TOKEN_ENDPOINT_AUTH_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + tokenEndpointAuthType_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1142,6 +1341,7 @@ private static final long serialVersionUID = 0L;
         getExtensionsFieldBuilder();
         getTokenEndpointAuthMethodFieldBuilder();
         getGoogleadsDeveloperTokenFieldBuilder();
+        getScopeSelectionAllowedFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1246,6 +1446,16 @@ private static final long serialVersionUID = 0L;
         googleadsDeveloperTokenBuilder_.dispose();
         googleadsDeveloperTokenBuilder_ = null;
       }
+      scopeSelectionAllowed_ = null;
+      if (scopeSelectionAllowedBuilder_ != null) {
+        scopeSelectionAllowedBuilder_.dispose();
+        scopeSelectionAllowedBuilder_ = null;
+      }
+      requiredScopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      requiredOptionalScopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      tokenEndpointAuthType_ = 0;
       return this;
     }
 
@@ -1401,6 +1611,24 @@ private static final long serialVersionUID = 0L;
             : googleadsDeveloperTokenBuilder_.build();
         to_bitField0_ |= 0x00040000;
       }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.scopeSelectionAllowed_ = scopeSelectionAllowedBuilder_ == null
+            ? scopeSelectionAllowed_
+            : scopeSelectionAllowedBuilder_.build();
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        requiredScopes_.makeImmutable();
+        result.requiredScopes_ = requiredScopes_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        requiredOptionalScopes_.makeImmutable();
+        result.requiredOptionalScopes_ = requiredOptionalScopes_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.tokenEndpointAuthType_ = tokenEndpointAuthType_;
+        to_bitField0_ |= 0x00100000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1519,6 +1747,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasGoogleadsDeveloperToken()) {
         mergeGoogleadsDeveloperToken(other.getGoogleadsDeveloperToken());
+      }
+      if (other.hasScopeSelectionAllowed()) {
+        mergeScopeSelectionAllowed(other.getScopeSelectionAllowed());
+      }
+      if (!other.requiredScopes_.isEmpty()) {
+        if (requiredScopes_.isEmpty()) {
+          requiredScopes_ = other.requiredScopes_;
+          bitField0_ |= 0x00400000;
+        } else {
+          ensureRequiredScopesIsMutable();
+          requiredScopes_.addAll(other.requiredScopes_);
+        }
+        onChanged();
+      }
+      if (!other.requiredOptionalScopes_.isEmpty()) {
+        if (requiredOptionalScopes_.isEmpty()) {
+          requiredOptionalScopes_ = other.requiredOptionalScopes_;
+          bitField0_ |= 0x00800000;
+        } else {
+          ensureRequiredOptionalScopesIsMutable();
+          requiredOptionalScopes_.addAll(other.requiredOptionalScopes_);
+        }
+        onChanged();
+      }
+      if (other.hasTokenEndpointAuthType()) {
+        setTokenEndpointAuthType(other.getTokenEndpointAuthType());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1690,6 +1944,30 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00100000;
               break;
             } // case 210
+            case 218: {
+              input.readMessage(
+                  getScopeSelectionAllowedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00200000;
+              break;
+            } // case 218
+            case 226: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRequiredScopesIsMutable();
+              requiredScopes_.add(s);
+              break;
+            } // case 226
+            case 234: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRequiredOptionalScopesIsMutable();
+              requiredOptionalScopes_.add(s);
+              break;
+            } // case 234
+            case 240: {
+              tokenEndpointAuthType_ = input.readEnum();
+              bitField0_ |= 0x01000000;
+              break;
+            } // case 240
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3951,17 +4229,21 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> tokenEndpointAuthMethodBuilder_;
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+     *     See scalekit/v1/connections/connections.proto;l=1822
      * @return Whether the tokenEndpointAuthMethod field is set.
      */
-    public boolean hasTokenEndpointAuthMethod() {
+    @java.lang.Deprecated public boolean hasTokenEndpointAuthMethod() {
       return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @deprecated scalekit.v1.connections.OAuthConnectionConfig.token_endpoint_auth_method is deprecated.
+     *     See scalekit/v1/connections/connections.proto;l=1822
      * @return The tokenEndpointAuthMethod.
      */
-    public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
+    @java.lang.Deprecated public com.google.protobuf.StringValue getTokenEndpointAuthMethod() {
       if (tokenEndpointAuthMethodBuilder_ == null) {
         return tokenEndpointAuthMethod_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenEndpointAuthMethod_;
       } else {
@@ -3969,9 +4251,9 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
+    @java.lang.Deprecated public Builder setTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
       if (tokenEndpointAuthMethodBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3985,9 +4267,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder setTokenEndpointAuthMethod(
+    @java.lang.Deprecated public Builder setTokenEndpointAuthMethod(
         com.google.protobuf.StringValue.Builder builderForValue) {
       if (tokenEndpointAuthMethodBuilder_ == null) {
         tokenEndpointAuthMethod_ = builderForValue.build();
@@ -3999,9 +4281,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder mergeTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
+    @java.lang.Deprecated public Builder mergeTokenEndpointAuthMethod(com.google.protobuf.StringValue value) {
       if (tokenEndpointAuthMethodBuilder_ == null) {
         if (((bitField0_ & 0x00080000) != 0) &&
           tokenEndpointAuthMethod_ != null &&
@@ -4020,9 +4302,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public Builder clearTokenEndpointAuthMethod() {
+    @java.lang.Deprecated public Builder clearTokenEndpointAuthMethod() {
       bitField0_ = (bitField0_ & ~0x00080000);
       tokenEndpointAuthMethod_ = null;
       if (tokenEndpointAuthMethodBuilder_ != null) {
@@ -4033,17 +4315,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.StringValue.Builder getTokenEndpointAuthMethodBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StringValue.Builder getTokenEndpointAuthMethodBuilder() {
       bitField0_ |= 0x00080000;
       onChanged();
       return getTokenEndpointAuthMethodFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
-    public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
+    @java.lang.Deprecated public com.google.protobuf.StringValueOrBuilder getTokenEndpointAuthMethodOrBuilder() {
       if (tokenEndpointAuthMethodBuilder_ != null) {
         return tokenEndpointAuthMethodBuilder_.getMessageOrBuilder();
       } else {
@@ -4052,7 +4334,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>.google.protobuf.StringValue token_endpoint_auth_method = 25 [json_name = "tokenEndpointAuthMethod", deprecated = true, (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.StringValue, com.google.protobuf.StringValue.Builder, com.google.protobuf.StringValueOrBuilder> 
@@ -4187,6 +4469,409 @@ private static final long serialVersionUID = 0L;
         googleadsDeveloperToken_ = null;
       }
       return googleadsDeveloperTokenBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue scopeSelectionAllowed_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> scopeSelectionAllowedBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the scopeSelectionAllowed field is set.
+     */
+    public boolean hasScopeSelectionAllowed() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The scopeSelectionAllowed.
+     */
+    public com.google.protobuf.BoolValue getScopeSelectionAllowed() {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+      } else {
+        return scopeSelectionAllowedBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelectionAllowed(com.google.protobuf.BoolValue value) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scopeSelectionAllowed_ = value;
+      } else {
+        scopeSelectionAllowedBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelectionAllowed(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        scopeSelectionAllowed_ = builderForValue.build();
+      } else {
+        scopeSelectionAllowedBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeScopeSelectionAllowed(com.google.protobuf.BoolValue value) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0) &&
+          scopeSelectionAllowed_ != null &&
+          scopeSelectionAllowed_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getScopeSelectionAllowedBuilder().mergeFrom(value);
+        } else {
+          scopeSelectionAllowed_ = value;
+        }
+      } else {
+        scopeSelectionAllowedBuilder_.mergeFrom(value);
+      }
+      if (scopeSelectionAllowed_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearScopeSelectionAllowed() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      scopeSelectionAllowed_ = null;
+      if (scopeSelectionAllowedBuilder_ != null) {
+        scopeSelectionAllowedBuilder_.dispose();
+        scopeSelectionAllowedBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getScopeSelectionAllowedBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getScopeSelectionAllowedFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder() {
+      if (scopeSelectionAllowedBuilder_ != null) {
+        return scopeSelectionAllowedBuilder_.getMessageOrBuilder();
+      } else {
+        return scopeSelectionAllowed_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 27 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getScopeSelectionAllowedFieldBuilder() {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        scopeSelectionAllowedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getScopeSelectionAllowed(),
+                getParentForChildren(),
+                isClean());
+        scopeSelectionAllowed_ = null;
+      }
+      return scopeSelectionAllowedBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRequiredScopesIsMutable() {
+      if (!requiredScopes_.isModifiable()) {
+        requiredScopes_ = new com.google.protobuf.LazyStringArrayList(requiredScopes_);
+      }
+      bitField0_ |= 0x00400000;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the requiredScopes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredScopesList() {
+      requiredScopes_.makeImmutable();
+      return requiredScopes_;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of requiredScopes.
+     */
+    public int getRequiredScopesCount() {
+      return requiredScopes_.size();
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The requiredScopes at the given index.
+     */
+    public java.lang.String getRequiredScopes(int index) {
+      return requiredScopes_.get(index);
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the requiredScopes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRequiredScopesBytes(int index) {
+      return requiredScopes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The requiredScopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredScopes(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.set(index, value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredScopes(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequiredScopes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRequiredScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, requiredScopes_);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredScopes() {
+      requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00400000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 28 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList requiredOptionalScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRequiredOptionalScopesIsMutable() {
+      if (!requiredOptionalScopes_.isModifiable()) {
+        requiredOptionalScopes_ = new com.google.protobuf.LazyStringArrayList(requiredOptionalScopes_);
+      }
+      bitField0_ |= 0x00800000;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the requiredOptionalScopes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredOptionalScopesList() {
+      requiredOptionalScopes_.makeImmutable();
+      return requiredOptionalScopes_;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of requiredOptionalScopes.
+     */
+    public int getRequiredOptionalScopesCount() {
+      return requiredOptionalScopes_.size();
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The requiredOptionalScopes at the given index.
+     */
+    public java.lang.String getRequiredOptionalScopes(int index) {
+      return requiredOptionalScopes_.get(index);
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the requiredOptionalScopes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRequiredOptionalScopesBytes(int index) {
+      return requiredOptionalScopes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The requiredOptionalScopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredOptionalScopes(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredOptionalScopesIsMutable();
+      requiredOptionalScopes_.set(index, value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The requiredOptionalScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredOptionalScopes(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredOptionalScopesIsMutable();
+      requiredOptionalScopes_.add(value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The requiredOptionalScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequiredOptionalScopes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRequiredOptionalScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, requiredOptionalScopes_);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredOptionalScopes() {
+      requiredOptionalScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00800000);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_optional_scopes = 29 [json_name = "requiredOptionalScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the requiredOptionalScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredOptionalScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRequiredOptionalScopesIsMutable();
+      requiredOptionalScopes_.add(value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private int tokenEndpointAuthType_ = 0;
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the tokenEndpointAuthType field is set.
+     */
+    @java.lang.Override public boolean hasTokenEndpointAuthType() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for tokenEndpointAuthType.
+     */
+    @java.lang.Override public int getTokenEndpointAuthTypeValue() {
+      return tokenEndpointAuthType_;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for tokenEndpointAuthType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenEndpointAuthTypeValue(int value) {
+      tokenEndpointAuthType_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The tokenEndpointAuthType.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.connections.TokenAuthType getTokenEndpointAuthType() {
+      com.scalekit.grpc.scalekit.v1.connections.TokenAuthType result = com.scalekit.grpc.scalekit.v1.connections.TokenAuthType.forNumber(tokenEndpointAuthType_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.connections.TokenAuthType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The tokenEndpointAuthType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTokenEndpointAuthType(com.scalekit.grpc.scalekit.v1.connections.TokenAuthType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x01000000;
+      tokenEndpointAuthType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.connections.TokenAuthType token_endpoint_auth_type = 30 [json_name = "tokenEndpointAuthType", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTokenEndpointAuthType() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      tokenEndpointAuthType_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

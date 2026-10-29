@@ -170,4 +170,34 @@ public interface UpdateBillingPlanResponseOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.billing.ExceededAllowanceOrBuilder getExceededOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the paymentAction field is set.
+   */
+  boolean hasPaymentAction();
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The paymentAction.
+   */
+  com.scalekit.grpc.scalekit.v1.billing.PaymentAction getPaymentAction();
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder getPaymentActionOrBuilder();
 }

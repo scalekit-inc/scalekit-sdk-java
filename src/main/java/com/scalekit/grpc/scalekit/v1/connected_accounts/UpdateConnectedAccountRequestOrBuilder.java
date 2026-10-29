@@ -107,4 +107,19 @@ public interface UpdateConnectedAccountRequestOrBuilder extends
    * <code>.scalekit.v1.connected_accounts.UpdateConnectedAccount connected_account = 5 [json_name = "connectedAccount", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.connected_accounts.UpdateConnectedAccountOrBuilder getConnectedAccountOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelection field is set.
+   */
+  boolean hasScopeSelection();
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelection.
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelection getScopeSelection();
+  /**
+   * <code>.scalekit.v1.connected_accounts.ScopeSelection scope_selection = 7 [json_name = "scopeSelection", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.connected_accounts.ScopeSelectionOrBuilder getScopeSelectionOrBuilder();
 }

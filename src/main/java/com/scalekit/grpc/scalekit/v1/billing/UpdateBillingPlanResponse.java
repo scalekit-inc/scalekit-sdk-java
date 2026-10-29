@@ -43,6 +43,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PLANS_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> plans_;
@@ -252,6 +253,47 @@ private static final long serialVersionUID = 0L;
     return exceeded_.get(index);
   }
 
+  public static final int PAYMENT_ACTION_FIELD_NUMBER = 4;
+  private com.scalekit.grpc.scalekit.v1.billing.PaymentAction paymentAction_;
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the paymentAction field is set.
+   */
+  @java.lang.Override
+  public boolean hasPaymentAction() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The paymentAction.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.billing.PaymentAction getPaymentAction() {
+    return paymentAction_ == null ? com.scalekit.grpc.scalekit.v1.billing.PaymentAction.getDefaultInstance() : paymentAction_;
+  }
+  /**
+   * <pre>
+   * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+   * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+   * </pre>
+   *
+   * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder getPaymentActionOrBuilder() {
+    return paymentAction_ == null ? com.scalekit.grpc.scalekit.v1.billing.PaymentAction.getDefaultInstance() : paymentAction_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -274,6 +316,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < addOns_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, addOns_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getPaymentAction());
     }
     getUnknownFields().writeTo(output);
   }
@@ -300,6 +345,10 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAddOnsList().size();
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getPaymentAction());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -321,6 +370,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAddOnsList())) return false;
     if (!getExceededList()
         .equals(other.getExceededList())) return false;
+    if (hasPaymentAction() != other.hasPaymentAction()) return false;
+    if (hasPaymentAction()) {
+      if (!getPaymentAction()
+          .equals(other.getPaymentAction())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -343,6 +397,10 @@ private static final long serialVersionUID = 0L;
     if (getExceededCount() > 0) {
       hash = (37 * hash) + EXCEEDED_FIELD_NUMBER;
       hash = (53 * hash) + getExceededList().hashCode();
+    }
+    if (hasPaymentAction()) {
+      hash = (37 * hash) + PAYMENT_ACTION_FIELD_NUMBER;
+      hash = (53 * hash) + getPaymentAction().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -463,13 +521,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getPlansFieldBuilder();
+        getExceededFieldBuilder();
+        getPaymentActionFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -491,6 +557,11 @@ private static final long serialVersionUID = 0L;
         exceededBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      paymentAction_ = null;
+      if (paymentActionBuilder_ != null) {
+        paymentActionBuilder_.dispose();
+        paymentActionBuilder_ = null;
+      }
       return this;
     }
 
@@ -550,6 +621,14 @@ private static final long serialVersionUID = 0L;
         addOns_.makeImmutable();
         result.addOns_ = addOns_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.paymentAction_ = paymentActionBuilder_ == null
+            ? paymentAction_
+            : paymentActionBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -658,6 +737,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasPaymentAction()) {
+        mergePaymentAction(other.getPaymentAction());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -716,6 +798,13 @@ private static final long serialVersionUID = 0L;
               addOns_.add(s);
               break;
             } // case 26
+            case 34: {
+              input.readMessage(
+                  getPaymentActionFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1619,6 +1708,172 @@ private static final long serialVersionUID = 0L;
         exceeded_ = null;
       }
       return exceededBuilder_;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.billing.PaymentAction paymentAction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.billing.PaymentAction, com.scalekit.grpc.scalekit.v1.billing.PaymentAction.Builder, com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder> paymentActionBuilder_;
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the paymentAction field is set.
+     */
+    public boolean hasPaymentAction() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The paymentAction.
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.PaymentAction getPaymentAction() {
+      if (paymentActionBuilder_ == null) {
+        return paymentAction_ == null ? com.scalekit.grpc.scalekit.v1.billing.PaymentAction.getDefaultInstance() : paymentAction_;
+      } else {
+        return paymentActionBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPaymentAction(com.scalekit.grpc.scalekit.v1.billing.PaymentAction value) {
+      if (paymentActionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        paymentAction_ = value;
+      } else {
+        paymentActionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setPaymentAction(
+        com.scalekit.grpc.scalekit.v1.billing.PaymentAction.Builder builderForValue) {
+      if (paymentActionBuilder_ == null) {
+        paymentAction_ = builderForValue.build();
+      } else {
+        paymentActionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergePaymentAction(com.scalekit.grpc.scalekit.v1.billing.PaymentAction value) {
+      if (paymentActionBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          paymentAction_ != null &&
+          paymentAction_ != com.scalekit.grpc.scalekit.v1.billing.PaymentAction.getDefaultInstance()) {
+          getPaymentActionBuilder().mergeFrom(value);
+        } else {
+          paymentAction_ = value;
+        }
+      } else {
+        paymentActionBuilder_.mergeFrom(value);
+      }
+      if (paymentAction_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearPaymentAction() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      paymentAction_ = null;
+      if (paymentActionBuilder_ != null) {
+        paymentActionBuilder_.dispose();
+        paymentActionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.PaymentAction.Builder getPaymentActionBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getPaymentActionFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder getPaymentActionOrBuilder() {
+      if (paymentActionBuilder_ != null) {
+        return paymentActionBuilder_.getMessageOrBuilder();
+      } else {
+        return paymentAction_ == null ?
+            com.scalekit.grpc.scalekit.v1.billing.PaymentAction.getDefaultInstance() : paymentAction_;
+      }
+    }
+    /**
+     * <pre>
+     * Set when the change was NOT applied because the customer's bank requires authentication (3-D Secure)
+     * for the upgrade's payment authorization. plans and add_ons then describe the unchanged current plan.
+     * </pre>
+     *
+     * <code>.scalekit.v1.billing.PaymentAction payment_action = 4 [json_name = "paymentAction", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.billing.PaymentAction, com.scalekit.grpc.scalekit.v1.billing.PaymentAction.Builder, com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder> 
+        getPaymentActionFieldBuilder() {
+      if (paymentActionBuilder_ == null) {
+        paymentActionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.billing.PaymentAction, com.scalekit.grpc.scalekit.v1.billing.PaymentAction.Builder, com.scalekit.grpc.scalekit.v1.billing.PaymentActionOrBuilder>(
+                getPaymentAction(),
+                getParentForChildren(),
+                isClean());
+        paymentAction_ = null;
+      }
+      return paymentActionBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

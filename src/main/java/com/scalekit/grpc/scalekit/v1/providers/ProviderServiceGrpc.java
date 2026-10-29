@@ -204,6 +204,68 @@ public final class ProviderServiceGrpc {
     return getDeleteCustomProviderMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getTriggerToolCollectionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TriggerToolCollection",
+      requestType = com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getTriggerToolCollectionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest, com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getTriggerToolCollectionMethod;
+    if ((getTriggerToolCollectionMethod = ProviderServiceGrpc.getTriggerToolCollectionMethod) == null) {
+      synchronized (ProviderServiceGrpc.class) {
+        if ((getTriggerToolCollectionMethod = ProviderServiceGrpc.getTriggerToolCollectionMethod) == null) {
+          ProviderServiceGrpc.getTriggerToolCollectionMethod = getTriggerToolCollectionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest, com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TriggerToolCollection"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun.getDefaultInstance()))
+              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("TriggerToolCollection"))
+              .build();
+        }
+      }
+    }
+    return getTriggerToolCollectionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getGetToolCollectionRunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetToolCollectionRun",
+      requestType = com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest,
+      com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getGetToolCollectionRunMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest, com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getGetToolCollectionRunMethod;
+    if ((getGetToolCollectionRunMethod = ProviderServiceGrpc.getGetToolCollectionRunMethod) == null) {
+      synchronized (ProviderServiceGrpc.class) {
+        if ((getGetToolCollectionRunMethod = ProviderServiceGrpc.getGetToolCollectionRunMethod) == null) {
+          ProviderServiceGrpc.getGetToolCollectionRunMethod = getGetToolCollectionRunMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest, com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetToolCollectionRun"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun.getDefaultInstance()))
+              .setSchemaDescriptor(new ProviderServiceMethodDescriptorSupplier("GetToolCollectionRun"))
+              .build();
+        }
+      }
+    }
+    return getGetToolCollectionRunMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest,
       com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> getListProvidersMethod;
 
@@ -360,6 +422,23 @@ public final class ProviderServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Queues an async ToolCollectionRun and returns immediately; poll GetToolCollectionRun for progress.
+     * </pre>
+     */
+    default void triggerToolCollection(com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTriggerToolCollectionMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getToolCollectionRun(com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetToolCollectionRunMethod(), responseObserver);
+    }
+
+    /**
      */
     default void listProviders(com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> responseObserver) {
@@ -467,6 +546,25 @@ public final class ProviderServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Queues an async ToolCollectionRun and returns immediately; poll GetToolCollectionRun for progress.
+     * </pre>
+     */
+    public void triggerToolCollection(com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTriggerToolCollectionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getToolCollectionRun(com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetToolCollectionRunMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      */
     public void listProviders(com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> responseObserver) {
@@ -553,6 +651,23 @@ public final class ProviderServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse deleteCustomProvider(com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCustomProviderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Queues an async ToolCollectionRun and returns immediately; poll GetToolCollectionRun for progress.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun triggerToolCollection(com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTriggerToolCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun getToolCollectionRun(com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetToolCollectionRunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -649,6 +764,25 @@ public final class ProviderServiceGrpc {
     }
 
     /**
+     * <pre>
+     * Queues an async ToolCollectionRun and returns immediately; poll GetToolCollectionRun for progress.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> triggerToolCollection(
+        com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTriggerToolCollectionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun> getToolCollectionRun(
+        com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetToolCollectionRunMethod(), getCallOptions()), request);
+    }
+
+    /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.providers.ListProvidersResponse> listProviders(
         com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest request) {
@@ -682,8 +816,10 @@ public final class ProviderServiceGrpc {
   private static final int METHODID_UPDATE_CUSTOM_PROVIDER = 3;
   private static final int METHODID_DELETE_PROVIDER = 4;
   private static final int METHODID_DELETE_CUSTOM_PROVIDER = 5;
-  private static final int METHODID_LIST_PROVIDERS = 6;
-  private static final int METHODID_LIST_MY_PROVIDERS = 7;
+  private static final int METHODID_TRIGGER_TOOL_COLLECTION = 6;
+  private static final int METHODID_GET_TOOL_COLLECTION_RUN = 7;
+  private static final int METHODID_LIST_PROVIDERS = 8;
+  private static final int METHODID_LIST_MY_PROVIDERS = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -725,6 +861,14 @@ public final class ProviderServiceGrpc {
         case METHODID_DELETE_CUSTOM_PROVIDER:
           serviceImpl.deleteCustomProvider((com.scalekit.grpc.scalekit.v1.providers.DeleteProviderRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>) responseObserver);
+          break;
+        case METHODID_TRIGGER_TOOL_COLLECTION:
+          serviceImpl.triggerToolCollection((com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>) responseObserver);
+          break;
+        case METHODID_GET_TOOL_COLLECTION_RUN:
+          serviceImpl.getToolCollectionRun((com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>) responseObserver);
           break;
         case METHODID_LIST_PROVIDERS:
           serviceImpl.listProviders((com.scalekit.grpc.scalekit.v1.providers.ListProvidersRequest) request,
@@ -795,6 +939,20 @@ public final class ProviderServiceGrpc {
               com.scalekit.grpc.scalekit.v1.providers.DeleteProviderResponse>(
                 service, METHODID_DELETE_CUSTOM_PROVIDER)))
         .addMethod(
+          getTriggerToolCollectionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.providers.TriggerToolCollectionRequest,
+              com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>(
+                service, METHODID_TRIGGER_TOOL_COLLECTION)))
+        .addMethod(
+          getGetToolCollectionRunMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.providers.GetToolCollectionRunRequest,
+              com.scalekit.grpc.scalekit.v1.providers.ToolCollectionRun>(
+                service, METHODID_GET_TOOL_COLLECTION_RUN)))
+        .addMethod(
           getListProvidersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -862,6 +1020,8 @@ public final class ProviderServiceGrpc {
               .addMethod(getUpdateCustomProviderMethod())
               .addMethod(getDeleteProviderMethod())
               .addMethod(getDeleteCustomProviderMethod())
+              .addMethod(getTriggerToolCollectionMethod())
+              .addMethod(getGetToolCollectionRunMethod())
               .addMethod(getListProvidersMethod())
               .addMethod(getListMyProvidersMethod())
               .build();

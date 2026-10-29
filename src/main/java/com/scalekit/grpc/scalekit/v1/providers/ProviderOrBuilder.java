@@ -9,72 +9,72 @@ public interface ProviderOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1 [json_name = "id"];</code>
+   * <code>string id = 1 [json_name = "id", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string identifier = 2 [json_name = "identifier"];</code>
+   * <code>string identifier = 2 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The identifier.
    */
   java.lang.String getIdentifier();
   /**
-   * <code>string identifier = 2 [json_name = "identifier"];</code>
+   * <code>string identifier = 2 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString
       getIdentifierBytes();
 
   /**
-   * <code>string display_name = 3 [json_name = "displayName"];</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayName.
    */
   java.lang.String getDisplayName();
   /**
-   * <code>string display_name = 3 [json_name = "displayName"];</code>
+   * <code>string display_name = 3 [json_name = "displayName", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString
       getDisplayNameBytes();
 
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 4 [json_name = "description"];</code>
+   * <code>string description = 4 [json_name = "description", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>repeated string categories = 5 [json_name = "categories"];</code>
+   * <code>repeated string categories = 5 [json_name = "categories", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return A list containing the categories.
    */
   java.util.List<java.lang.String>
       getCategoriesList();
   /**
-   * <code>repeated string categories = 5 [json_name = "categories"];</code>
+   * <code>repeated string categories = 5 [json_name = "categories", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The count of categories.
    */
   int getCategoriesCount();
   /**
-   * <code>repeated string categories = 5 [json_name = "categories"];</code>
+   * <code>repeated string categories = 5 [json_name = "categories", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the element to return.
    * @return The categories at the given index.
    */
   java.lang.String getCategories(int index);
   /**
-   * <code>repeated string categories = 5 [json_name = "categories"];</code>
+   * <code>repeated string categories = 5 [json_name = "categories", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the categories at the given index.
    */
@@ -82,58 +82,58 @@ public interface ProviderOrBuilder extends
       getCategoriesBytes(int index);
 
   /**
-   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns"];</code>
+   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the authPatterns field is set.
    */
   boolean hasAuthPatterns();
   /**
-   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns"];</code>
+   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The authPatterns.
    */
   com.google.protobuf.ListValue getAuthPatterns();
   /**
-   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns"];</code>
+   * <code>.google.protobuf.ListValue auth_patterns = 6 [json_name = "authPatterns", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.ListValueOrBuilder getAuthPatternsOrBuilder();
 
   /**
-   * <code>string icon_src = 7 [json_name = "iconSrc"];</code>
+   * <code>string icon_src = 7 [json_name = "iconSrc", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The iconSrc.
    */
   java.lang.String getIconSrc();
   /**
-   * <code>string icon_src = 7 [json_name = "iconSrc"];</code>
+   * <code>string icon_src = 7 [json_name = "iconSrc", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for iconSrc.
    */
   com.google.protobuf.ByteString
       getIconSrcBytes();
 
   /**
-   * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+   * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayPriority.
    */
   int getDisplayPriority();
 
   /**
-   * <code>bool coming_soon = 9 [json_name = "comingSoon"];</code>
+   * <code>bool coming_soon = 9 [json_name = "comingSoon", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The comingSoon.
    */
   boolean getComingSoon();
 
   /**
-   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The proxyUrl.
    */
   java.lang.String getProxyUrl();
   /**
-   * <code>string proxy_url = 10 [json_name = "proxyUrl"];</code>
+   * <code>string proxy_url = 10 [json_name = "proxyUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for proxyUrl.
    */
   com.google.protobuf.ByteString
       getProxyUrlBytes();
 
   /**
-   * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled"];</code>
+   * <code>bool proxy_enabled = 11 [json_name = "proxyEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The proxyEnabled.
    */
   boolean getProxyEnabled();
@@ -183,4 +183,16 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>string openapi_spec_url = 15 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The openapiSpecUrl.
+   */
+  java.lang.String getOpenapiSpecUrl();
+  /**
+   * <code>string openapi_spec_url = 15 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for openapiSpecUrl.
+   */
+  com.google.protobuf.ByteString
+      getOpenapiSpecUrlBytes();
 }

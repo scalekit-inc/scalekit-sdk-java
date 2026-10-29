@@ -449,6 +449,68 @@ public final class OrganizationServiceGrpc {
     return getGetOrganizationSessionPolicyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> getGetOrganizationBrandingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOrganizationBranding",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> getGetOrganizationBrandingMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> getGetOrganizationBrandingMethod;
+    if ((getGetOrganizationBrandingMethod = OrganizationServiceGrpc.getGetOrganizationBrandingMethod) == null) {
+      synchronized (OrganizationServiceGrpc.class) {
+        if ((getGetOrganizationBrandingMethod = OrganizationServiceGrpc.getGetOrganizationBrandingMethod) == null) {
+          OrganizationServiceGrpc.getGetOrganizationBrandingMethod = getGetOrganizationBrandingMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest, com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOrganizationBranding"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("GetOrganizationBranding"))
+              .build();
+        }
+      }
+    }
+    return getGetOrganizationBrandingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> getUpdateOrganizationBrandingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOrganizationBranding",
+      requestType = com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest,
+      com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> getUpdateOrganizationBrandingMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> getUpdateOrganizationBrandingMethod;
+    if ((getUpdateOrganizationBrandingMethod = OrganizationServiceGrpc.getUpdateOrganizationBrandingMethod) == null) {
+      synchronized (OrganizationServiceGrpc.class) {
+        if ((getUpdateOrganizationBrandingMethod = OrganizationServiceGrpc.getUpdateOrganizationBrandingMethod) == null) {
+          OrganizationServiceGrpc.getUpdateOrganizationBrandingMethod = getUpdateOrganizationBrandingMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest, com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOrganizationBranding"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OrganizationServiceMethodDescriptorSupplier("UpdateOrganizationBranding"))
+              .build();
+        }
+      }
+    }
+    return getUpdateOrganizationBrandingMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest,
       com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsResponse> getUpsertUserManagementSettingsMethod;
 
@@ -698,6 +760,20 @@ public final class OrganizationServiceGrpc {
     }
 
     /**
+     */
+    default void getOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetOrganizationBrandingMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void updateOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateOrganizationBrandingMethod(), responseObserver);
+    }
+
+    /**
      * <pre>
      * Update user management setting for an organization
      * </pre>
@@ -871,6 +947,22 @@ public final class OrganizationServiceGrpc {
     }
 
     /**
+     */
+    public void getOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOrganizationBrandingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOrganizationBrandingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
      * <pre>
      * Update user management setting for an organization
      * </pre>
@@ -1019,6 +1111,20 @@ public final class OrganizationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationSessionPolicyResponse getOrganizationSessionPolicy(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationSessionPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetOrganizationSessionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse getOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrganizationBrandingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse updateOrganizationBranding(com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOrganizationBrandingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1184,6 +1290,22 @@ public final class OrganizationServiceGrpc {
     }
 
     /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse> getOrganizationBranding(
+        com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOrganizationBrandingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse> updateOrganizationBranding(
+        com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOrganizationBrandingMethod(), getCallOptions()), request);
+    }
+
+    /**
      * <pre>
      * Update user management setting for an organization
      * </pre>
@@ -1225,9 +1347,11 @@ public final class OrganizationServiceGrpc {
   private static final int METHODID_UPDATE_ORGANIZATION_SETTINGS = 11;
   private static final int METHODID_UPDATE_ORGANIZATION_SESSION_POLICY = 12;
   private static final int METHODID_GET_ORGANIZATION_SESSION_POLICY = 13;
-  private static final int METHODID_UPSERT_USER_MANAGEMENT_SETTINGS = 14;
-  private static final int METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING = 15;
-  private static final int METHODID_GET_APPLICATION_SESSION_POLICY = 16;
+  private static final int METHODID_GET_ORGANIZATION_BRANDING = 14;
+  private static final int METHODID_UPDATE_ORGANIZATION_BRANDING = 15;
+  private static final int METHODID_UPSERT_USER_MANAGEMENT_SETTINGS = 16;
+  private static final int METHODID_GET_ORGANIZATION_USER_MANAGEMENT_SETTING = 17;
+  private static final int METHODID_GET_APPLICATION_SESSION_POLICY = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1301,6 +1425,14 @@ public final class OrganizationServiceGrpc {
         case METHODID_GET_ORGANIZATION_SESSION_POLICY:
           serviceImpl.getOrganizationSessionPolicy((com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationSessionPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationSessionPolicyResponse>) responseObserver);
+          break;
+        case METHODID_GET_ORGANIZATION_BRANDING:
+          serviceImpl.getOrganizationBranding((com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ORGANIZATION_BRANDING:
+          serviceImpl.updateOrganizationBranding((com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse>) responseObserver);
           break;
         case METHODID_UPSERT_USER_MANAGEMENT_SETTINGS:
           serviceImpl.upsertUserManagementSettings((com.scalekit.grpc.scalekit.v1.organizations.UpsertUserManagementSettingsRequest) request,
@@ -1431,6 +1563,20 @@ public final class OrganizationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationSessionPolicyResponse>(
                 service, METHODID_GET_ORGANIZATION_SESSION_POLICY)))
         .addMethod(
+          getGetOrganizationBrandingMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.GetOrganizationBrandingResponse>(
+                service, METHODID_GET_ORGANIZATION_BRANDING)))
+        .addMethod(
+          getUpdateOrganizationBrandingMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingRequest,
+              com.scalekit.grpc.scalekit.v1.organizations.UpdateOrganizationBrandingResponse>(
+                service, METHODID_UPDATE_ORGANIZATION_BRANDING)))
+        .addMethod(
           getUpsertUserManagementSettingsMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1513,6 +1659,8 @@ public final class OrganizationServiceGrpc {
               .addMethod(getUpdateOrganizationSettingsMethod())
               .addMethod(getUpdateOrganizationSessionPolicyMethod())
               .addMethod(getGetOrganizationSessionPolicyMethod())
+              .addMethod(getGetOrganizationBrandingMethod())
+              .addMethod(getUpdateOrganizationBrandingMethod())
               .addMethod(getUpsertUserManagementSettingsMethod())
               .addMethod(getGetOrganizationUserManagementSettingMethod())
               .addMethod(getGetApplicationSessionPolicyMethod())

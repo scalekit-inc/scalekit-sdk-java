@@ -32,4 +32,29 @@ public interface ResourceUserConsentFilterOrBuilder extends
    */
   com.google.protobuf.ByteString
       getExternalUserIdBytes(int index);
+
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the consentId.
+   */
+  java.util.List<java.lang.String>
+      getConsentIdList();
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of consentId.
+   */
+  int getConsentIdCount();
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The consentId at the given index.
+   */
+  java.lang.String getConsentId(int index);
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the consentId at the given index.
+   */
+  com.google.protobuf.ByteString
+      getConsentIdBytes(int index);
 }

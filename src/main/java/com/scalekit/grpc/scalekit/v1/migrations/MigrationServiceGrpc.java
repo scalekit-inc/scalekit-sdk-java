@@ -201,6 +201,37 @@ public final class MigrationServiceGrpc {
     return getMigrateEnvKeysMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> getRepairSkCredsConnectedAccountEncryptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepairSkCredsConnectedAccountEncryption",
+      requestType = com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest,
+      com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> getRepairSkCredsConnectedAccountEncryptionMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest, com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> getRepairSkCredsConnectedAccountEncryptionMethod;
+    if ((getRepairSkCredsConnectedAccountEncryptionMethod = MigrationServiceGrpc.getRepairSkCredsConnectedAccountEncryptionMethod) == null) {
+      synchronized (MigrationServiceGrpc.class) {
+        if ((getRepairSkCredsConnectedAccountEncryptionMethod = MigrationServiceGrpc.getRepairSkCredsConnectedAccountEncryptionMethod) == null) {
+          MigrationServiceGrpc.getRepairSkCredsConnectedAccountEncryptionMethod = getRepairSkCredsConnectedAccountEncryptionMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest, com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RepairSkCredsConnectedAccountEncryption"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MigrationServiceMethodDescriptorSupplier("RepairSkCredsConnectedAccountEncryption"))
+              .build();
+        }
+      }
+    }
+    return getRepairSkCredsConnectedAccountEncryptionMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest,
       com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> getReconcileConnectionsAccrualMethod;
 
@@ -355,6 +386,13 @@ public final class MigrationServiceGrpc {
 
     /**
      */
+    default void repairSkCredsConnectedAccountEncryption(com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRepairSkCredsConnectedAccountEncryptionMethod(), responseObserver);
+    }
+
+    /**
+     */
     default void reconcileConnectionsAccrual(com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReconcileConnectionsAccrualMethod(), responseObserver);
@@ -445,6 +483,14 @@ public final class MigrationServiceGrpc {
 
     /**
      */
+    public void repairSkCredsConnectedAccountEncryption(com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRepairSkCredsConnectedAccountEncryptionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
     public void reconcileConnectionsAccrual(com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
@@ -516,6 +562,13 @@ public final class MigrationServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse migrateEnvKeys(com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMigrateEnvKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse repairSkCredsConnectedAccountEncryption(com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepairSkCredsConnectedAccountEncryptionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -599,6 +652,14 @@ public final class MigrationServiceGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse> repairSkCredsConnectedAccountEncryption(
+        com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRepairSkCredsConnectedAccountEncryptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualResponse> reconcileConnectionsAccrual(
         com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -620,8 +681,9 @@ public final class MigrationServiceGrpc {
   private static final int METHODID_MIGRATE_ROLE_PERMISSIONS = 3;
   private static final int METHODID_MIGRATE_ENVIRONMENT_PERMISSIONS = 4;
   private static final int METHODID_MIGRATE_ENV_KEYS = 5;
-  private static final int METHODID_RECONCILE_CONNECTIONS_ACCRUAL = 6;
-  private static final int METHODID_PROJECT_BILLING_CATALOG = 7;
+  private static final int METHODID_REPAIR_SK_CREDS_CONNECTED_ACCOUNT_ENCRYPTION = 6;
+  private static final int METHODID_RECONCILE_CONNECTIONS_ACCRUAL = 7;
+  private static final int METHODID_PROJECT_BILLING_CATALOG = 8;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -663,6 +725,10 @@ public final class MigrationServiceGrpc {
         case METHODID_MIGRATE_ENV_KEYS:
           serviceImpl.migrateEnvKeys((com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>) responseObserver);
+          break;
+        case METHODID_REPAIR_SK_CREDS_CONNECTED_ACCOUNT_ENCRYPTION:
+          serviceImpl.repairSkCredsConnectedAccountEncryption((com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse>) responseObserver);
           break;
         case METHODID_RECONCILE_CONNECTIONS_ACCRUAL:
           serviceImpl.reconcileConnectionsAccrual((com.scalekit.grpc.scalekit.v1.migrations.ReconcileConnectionsAccrualRequest) request,
@@ -733,6 +799,13 @@ public final class MigrationServiceGrpc {
               com.scalekit.grpc.scalekit.v1.migrations.MigrateEnvKeysResponse>(
                 service, METHODID_MIGRATE_ENV_KEYS)))
         .addMethod(
+          getRepairSkCredsConnectedAccountEncryptionMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionRequest,
+              com.scalekit.grpc.scalekit.v1.migrations.RepairSkCredsConnectedAccountEncryptionResponse>(
+                service, METHODID_REPAIR_SK_CREDS_CONNECTED_ACCOUNT_ENCRYPTION)))
+        .addMethod(
           getReconcileConnectionsAccrualMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -800,6 +873,7 @@ public final class MigrationServiceGrpc {
               .addMethod(getMigrateRolePermissionsMethod())
               .addMethod(getMigrateEnvironmentPermissionsMethod())
               .addMethod(getMigrateEnvKeysMethod())
+              .addMethod(getRepairSkCredsConnectedAccountEncryptionMethod())
               .addMethod(getReconcileConnectionsAccrualMethod())
               .addMethod(getProjectBillingCatalogMethod())
               .build();

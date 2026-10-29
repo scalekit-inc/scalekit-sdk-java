@@ -610,6 +610,32 @@ private static final long serialVersionUID = 0L;
     return resourceScopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : resourceScopeSelectionAllowed_;
   }
 
+  public static final int RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER = 20;
+  private com.google.protobuf.BoolValue resourceScopedIssuerEnabled_;
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resourceScopedIssuerEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceScopedIssuerEnabled() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getResourceScopedIssuerEnabled() {
+    return resourceScopedIssuerEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : resourceScopedIssuerEnabled_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getResourceScopedIssuerEnabledOrBuilder() {
+    return resourceScopedIssuerEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : resourceScopedIssuerEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -674,6 +700,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(19, getResourceScopeSelectionAllowed());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(20, getResourceScopedIssuerEnabled());
     }
     getUnknownFields().writeTo(output);
   }
@@ -750,6 +779,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(19, getResourceScopeSelectionAllowed());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getResourceScopedIssuerEnabled());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -814,6 +847,11 @@ private static final long serialVersionUID = 0L;
     if (hasResourceScopeSelectionAllowed()) {
       if (!getResourceScopeSelectionAllowed()
           .equals(other.getResourceScopeSelectionAllowed())) return false;
+    }
+    if (hasResourceScopedIssuerEnabled() != other.hasResourceScopedIssuerEnabled()) return false;
+    if (hasResourceScopedIssuerEnabled()) {
+      if (!getResourceScopedIssuerEnabled()
+          .equals(other.getResourceScopedIssuerEnabled())) return false;
     }
     if (!getSettingsCase().equals(other.getSettingsCase())) return false;
     switch (settingsCase_) {
@@ -884,6 +922,10 @@ private static final long serialVersionUID = 0L;
     if (hasResourceScopeSelectionAllowed()) {
       hash = (37 * hash) + RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + getResourceScopeSelectionAllowed().hashCode();
+    }
+    if (hasResourceScopedIssuerEnabled()) {
+      hash = (37 * hash) + RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceScopedIssuerEnabled().hashCode();
     }
     switch (settingsCase_) {
       case 13:
@@ -1030,6 +1072,7 @@ private static final long serialVersionUID = 0L;
         getCimdClientAllowlistFieldBuilder();
         getCimdClientAllowlistEnabledFieldBuilder();
         getResourceScopeSelectionAllowedFieldBuilder();
+        getResourceScopedIssuerEnabledFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1085,6 +1128,11 @@ private static final long serialVersionUID = 0L;
       if (resourceScopeSelectionAllowedBuilder_ != null) {
         resourceScopeSelectionAllowedBuilder_.dispose();
         resourceScopeSelectionAllowedBuilder_ = null;
+      }
+      resourceScopedIssuerEnabled_ = null;
+      if (resourceScopedIssuerEnabledBuilder_ != null) {
+        resourceScopedIssuerEnabledBuilder_.dispose();
+        resourceScopedIssuerEnabledBuilder_ = null;
       }
       settingsCase_ = 0;
       settings_ = null;
@@ -1199,6 +1247,12 @@ private static final long serialVersionUID = 0L;
             ? resourceScopeSelectionAllowed_
             : resourceScopeSelectionAllowedBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.resourceScopedIssuerEnabled_ = resourceScopedIssuerEnabledBuilder_ == null
+            ? resourceScopedIssuerEnabled_
+            : resourceScopedIssuerEnabledBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1346,6 +1400,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasResourceScopeSelectionAllowed()) {
         mergeResourceScopeSelectionAllowed(other.getResourceScopeSelectionAllowed());
       }
+      if (other.hasResourceScopedIssuerEnabled()) {
+        mergeResourceScopedIssuerEnabled(other.getResourceScopedIssuerEnabled());
+      }
       switch (other.getSettingsCase()) {
         case CUSTOM_CONNECTION_SETTINGS: {
           mergeCustomConnectionSettings(other.getCustomConnectionSettings());
@@ -1489,6 +1546,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00010000;
               break;
             } // case 154
+            case 162: {
+              input.readMessage(
+                  getResourceScopedIssuerEnabledFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 162
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3234,6 +3298,127 @@ private static final long serialVersionUID = 0L;
         resourceScopeSelectionAllowed_ = null;
       }
       return resourceScopeSelectionAllowedBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue resourceScopedIssuerEnabled_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> resourceScopedIssuerEnabledBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the resourceScopedIssuerEnabled field is set.
+     */
+    public boolean hasResourceScopedIssuerEnabled() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceScopedIssuerEnabled.
+     */
+    public com.google.protobuf.BoolValue getResourceScopedIssuerEnabled() {
+      if (resourceScopedIssuerEnabledBuilder_ == null) {
+        return resourceScopedIssuerEnabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : resourceScopedIssuerEnabled_;
+      } else {
+        return resourceScopedIssuerEnabledBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setResourceScopedIssuerEnabled(com.google.protobuf.BoolValue value) {
+      if (resourceScopedIssuerEnabledBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceScopedIssuerEnabled_ = value;
+      } else {
+        resourceScopedIssuerEnabledBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setResourceScopedIssuerEnabled(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (resourceScopedIssuerEnabledBuilder_ == null) {
+        resourceScopedIssuerEnabled_ = builderForValue.build();
+      } else {
+        resourceScopedIssuerEnabledBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeResourceScopedIssuerEnabled(com.google.protobuf.BoolValue value) {
+      if (resourceScopedIssuerEnabledBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0) &&
+          resourceScopedIssuerEnabled_ != null &&
+          resourceScopedIssuerEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getResourceScopedIssuerEnabledBuilder().mergeFrom(value);
+        } else {
+          resourceScopedIssuerEnabled_ = value;
+        }
+      } else {
+        resourceScopedIssuerEnabledBuilder_.mergeFrom(value);
+      }
+      if (resourceScopedIssuerEnabled_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearResourceScopedIssuerEnabled() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      resourceScopedIssuerEnabled_ = null;
+      if (resourceScopedIssuerEnabledBuilder_ != null) {
+        resourceScopedIssuerEnabledBuilder_.dispose();
+        resourceScopedIssuerEnabledBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getResourceScopedIssuerEnabledBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getResourceScopedIssuerEnabledFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getResourceScopedIssuerEnabledOrBuilder() {
+      if (resourceScopedIssuerEnabledBuilder_ != null) {
+        return resourceScopedIssuerEnabledBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceScopedIssuerEnabled_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : resourceScopedIssuerEnabled_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getResourceScopedIssuerEnabledFieldBuilder() {
+      if (resourceScopedIssuerEnabledBuilder_ == null) {
+        resourceScopedIssuerEnabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getResourceScopedIssuerEnabled(),
+                getParentForChildren(),
+                isClean());
+        resourceScopedIssuerEnabled_ = null;
+      }
+      return resourceScopedIssuerEnabledBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -43,4 +43,52 @@ public interface UpdateManualGatewayGroupRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

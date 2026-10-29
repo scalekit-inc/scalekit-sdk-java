@@ -46,4 +46,42 @@ public interface CreateMcpSessionTokenRequestOrBuilder extends
    * <code>.google.protobuf.Duration expiry = 3 [json_name = "expiry", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.DurationOrBuilder getExpiryOrBuilder();
+
+  /**
+   * <code>string key_id = 4 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The keyId.
+   */
+  java.lang.String getKeyId();
+  /**
+   * <code>string key_id = 4 [json_name = "keyId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for keyId.
+   */
+  com.google.protobuf.ByteString
+      getKeyIdBytes();
+
+  /**
+   * <pre>
+   * Optional tool access level for the token: FULL or READ_ONLY (case-sensitive).
+   * READ_ONLY restricts the token to tools annotated read-only (read_only_hint).
+   * FULL, an empty string, or omitting the field exposes every tool. Any other
+   * value is rejected.
+   * </pre>
+   *
+   * <code>string access_level = 5 [json_name = "accessLevel", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The accessLevel.
+   */
+  java.lang.String getAccessLevel();
+  /**
+   * <pre>
+   * Optional tool access level for the token: FULL or READ_ONLY (case-sensitive).
+   * READ_ONLY restricts the token to tools annotated read-only (read_only_hint).
+   * FULL, an empty string, or omitting the field exposes every tool. Any other
+   * value is rejected.
+   * </pre>
+   *
+   * <code>string access_level = 5 [json_name = "accessLevel", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for accessLevel.
+   */
+  com.google.protobuf.ByteString
+      getAccessLevelBytes();
 }

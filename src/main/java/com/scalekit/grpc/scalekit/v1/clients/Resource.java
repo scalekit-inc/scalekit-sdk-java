@@ -666,6 +666,17 @@ private static final long serialVersionUID = 0L;
     return resourceScopeSelectionAllowed_;
   }
 
+  public static final int RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER = 25;
+  private boolean resourceScopedIssuerEnabled_ = false;
+  /**
+   * <code>bool resource_scoped_issuer_enabled = 25 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
+   */
+  @java.lang.Override
+  public boolean getResourceScopedIssuerEnabled() {
+    return resourceScopedIssuerEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -751,6 +762,9 @@ private static final long serialVersionUID = 0L;
     }
     if (resourceScopeSelectionAllowed_ != false) {
       output.writeBool(24, resourceScopeSelectionAllowed_);
+    }
+    if (resourceScopedIssuerEnabled_ != false) {
+      output.writeBool(25, resourceScopedIssuerEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -849,6 +863,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(24, resourceScopeSelectionAllowed_);
     }
+    if (resourceScopedIssuerEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(25, resourceScopedIssuerEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -923,6 +941,8 @@ private static final long serialVersionUID = 0L;
         != other.getCimdClientAllowlistEnabled()) return false;
     if (getResourceScopeSelectionAllowed()
         != other.getResourceScopeSelectionAllowed()) return false;
+    if (getResourceScopedIssuerEnabled()
+        != other.getResourceScopedIssuerEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1003,6 +1023,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getResourceScopeSelectionAllowed());
+    hash = (37 * hash) + RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getResourceScopedIssuerEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1197,6 +1220,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00200000);
       cimdClientAllowlistEnabled_ = false;
       resourceScopeSelectionAllowed_ = false;
+      resourceScopedIssuerEnabled_ = false;
       return this;
     }
 
@@ -1330,6 +1354,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.resourceScopeSelectionAllowed_ = resourceScopeSelectionAllowed_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.resourceScopedIssuerEnabled_ = resourceScopedIssuerEnabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1512,6 +1539,9 @@ private static final long serialVersionUID = 0L;
       if (other.getResourceScopeSelectionAllowed() != false) {
         setResourceScopeSelectionAllowed(other.getResourceScopeSelectionAllowed());
       }
+      if (other.getResourceScopedIssuerEnabled() != false) {
+        setResourceScopedIssuerEnabled(other.getResourceScopedIssuerEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1682,6 +1712,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00800000;
               break;
             } // case 192
+            case 200: {
+              resourceScopedIssuerEnabled_ = input.readBool();
+              bitField0_ |= 0x01000000;
+              break;
+            } // case 200
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3576,6 +3611,38 @@ private static final long serialVersionUID = 0L;
     public Builder clearResourceScopeSelectionAllowed() {
       bitField0_ = (bitField0_ & ~0x00800000);
       resourceScopeSelectionAllowed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean resourceScopedIssuerEnabled_ ;
+    /**
+     * <code>bool resource_scoped_issuer_enabled = 25 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceScopedIssuerEnabled.
+     */
+    @java.lang.Override
+    public boolean getResourceScopedIssuerEnabled() {
+      return resourceScopedIssuerEnabled_;
+    }
+    /**
+     * <code>bool resource_scoped_issuer_enabled = 25 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resourceScopedIssuerEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceScopedIssuerEnabled(boolean value) {
+
+      resourceScopedIssuerEnabled_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool resource_scoped_issuer_enabled = 25 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceScopedIssuerEnabled() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      resourceScopedIssuerEnabled_ = false;
       onChanged();
       return this;
     }

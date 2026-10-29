@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     connectionToolMappings_ = java.util.Collections.emptyList();
     mcpServerUrl_ = "";
+    toolExposure_ = 0;
   }
 
   @java.lang.Override
@@ -44,6 +45,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.mcp.McpConfig.class, com.scalekit.grpc.scalekit.v1.mcp.McpConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
@@ -241,6 +243,31 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOOL_EXPOSURE_FIELD_NUMBER = 6;
+  private int toolExposure_ = 0;
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the toolExposure field is set.
+   */
+  @java.lang.Override public boolean hasToolExposure() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for toolExposure.
+   */
+  @java.lang.Override public int getToolExposureValue() {
+    return toolExposure_;
+  }
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The toolExposure.
+   */
+  @java.lang.Override public com.scalekit.grpc.scalekit.v1.mcp.ToolExposure getToolExposure() {
+    com.scalekit.grpc.scalekit.v1.mcp.ToolExposure result = com.scalekit.grpc.scalekit.v1.mcp.ToolExposure.forNumber(toolExposure_);
+    return result == null ? com.scalekit.grpc.scalekit.v1.mcp.ToolExposure.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -270,6 +297,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mcpServerUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, mcpServerUrl_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(6, toolExposure_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -294,6 +324,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mcpServerUrl_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, mcpServerUrl_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, toolExposure_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -320,6 +354,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConnectionToolMappingsList())) return false;
     if (!getMcpServerUrl()
         .equals(other.getMcpServerUrl())) return false;
+    if (hasToolExposure() != other.hasToolExposure()) return false;
+    if (hasToolExposure()) {
+      if (toolExposure_ != other.toolExposure_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -343,6 +381,10 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + MCP_SERVER_URL_FIELD_NUMBER;
     hash = (53 * hash) + getMcpServerUrl().hashCode();
+    if (hasToolExposure()) {
+      hash = (37 * hash) + TOOL_EXPOSURE_FIELD_NUMBER;
+      hash = (53 * hash) + toolExposure_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,6 +527,7 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       mcpServerUrl_ = "";
+      toolExposure_ = 0;
       return this;
     }
 
@@ -543,6 +586,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.mcpServerUrl_ = mcpServerUrl_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.toolExposure_ = toolExposure_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -635,6 +684,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasToolExposure()) {
+        setToolExposure(other.getToolExposure());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -694,6 +746,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 48: {
+              toolExposure_ = input.readEnum();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1235,6 +1292,66 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       mcpServerUrl_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int toolExposure_ = 0;
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the toolExposure field is set.
+     */
+    @java.lang.Override public boolean hasToolExposure() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The enum numeric value on the wire for toolExposure.
+     */
+    @java.lang.Override public int getToolExposureValue() {
+      return toolExposure_;
+    }
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The enum numeric value on the wire for toolExposure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToolExposureValue(int value) {
+      toolExposure_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The toolExposure.
+     */
+    @java.lang.Override
+    public com.scalekit.grpc.scalekit.v1.mcp.ToolExposure getToolExposure() {
+      com.scalekit.grpc.scalekit.v1.mcp.ToolExposure result = com.scalekit.grpc.scalekit.v1.mcp.ToolExposure.forNumber(toolExposure_);
+      return result == null ? com.scalekit.grpc.scalekit.v1.mcp.ToolExposure.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The toolExposure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setToolExposure(com.scalekit.grpc.scalekit.v1.mcp.ToolExposure value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      toolExposure_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 6 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearToolExposure() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      toolExposure_ = 0;
       onChanged();
       return this;
     }
