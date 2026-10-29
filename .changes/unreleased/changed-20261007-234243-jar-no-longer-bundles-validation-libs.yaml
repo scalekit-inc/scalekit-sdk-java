@@ -1,0 +1,8 @@
+kind: changed
+body: |
+  The jar no longer bundles Jakarta Mail (`jakarta.mail`, `jakarta.activation`), CEL (`org.projectnessie.cel`), Agrona, IPAddress or `build.buf` classes under their original package names. They came from an unused validation library that the SDK no longer includes, and could collide with the same libraries in your application, for example Jakarta Mail in Spring Boot. If your code used one of these libraries only because the SDK jar contained it, add it to your build. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.5.0/REFERENCE.md#scalekitclient)
+time: '2026-10-07T23:42:43.701645+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''
