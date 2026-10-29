@@ -8,21 +8,26 @@ import java.util.List;
  * Filter and pagination options for listing the end-user consents granted
  * against a resource.
  *
- * {@code userIds} matches the consent's external user ID exactly and
- * case-sensitively and takes precedence over {@code search}: when it carries at
- * least one non-blank value, the server ignores {@code search}.
+ * Priority order: {@code consentIds}, then {@code userIds}, then {@code search}.
+ * A filter with at least one non-blank value silently overrides the lower-priority
+ * ones; a blank-only filter falls through to the next.
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListUserConsentsOptions {
-    /** Case-insensitive substring match on external user IDs. Ignored when userIds is set. */
+    /** Case-insensitive substring match on external user IDs. Ignored when consentIds or userIds is set. */
     String search;
     /** Consents per page (max 30). 0 uses the server default. */
     int pageSize;
     /** Pagination cursor. */
     String pageToken;
-    /** Exact, case-sensitive match on external user IDs (max 25). Takes precedence over search. */
+    /** Exact, case-sensitive match on external user IDs (max 25). Ignored when consentIds is set; takes precedence over search. */
     List<String> userIds;
+    /**
+     * Exact match on consent IDs (format: usrcnst_xxxxx), max 25 distinct. Takes precedence over
+     * userIds and search. IDs that do not exist or belong to another resource are omitted from the result.
+     */
+    List<String> consentIds;
 }

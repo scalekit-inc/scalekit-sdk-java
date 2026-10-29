@@ -272,12 +272,18 @@ public class ScalekitResourceConsentClient implements ResourceConsentClient {
             request.setSearch(effectiveOptions.getSearch());
         }
         // The filter takes precedence over search server-side, so only attach it
-        // when the caller actually supplied user IDs — an empty filter would
-        // otherwise suppress a search the caller did supply.
-        if (effectiveOptions.getUserIds() != null && !effectiveOptions.getUserIds().isEmpty()) {
-            request.setFilter(ResourceUserConsentFilter.newBuilder()
-                    .addAllExternalUserId(effectiveOptions.getUserIds())
-                    .build());
+        // when the caller supplied IDs; an empty filter would suppress a search.
+        boolean hasUserIds = effectiveOptions.getUserIds() != null && !effectiveOptions.getUserIds().isEmpty();
+        boolean hasConsentIds = effectiveOptions.getConsentIds() != null && !effectiveOptions.getConsentIds().isEmpty();
+        if (hasUserIds || hasConsentIds) {
+            ResourceUserConsentFilter.Builder filter = ResourceUserConsentFilter.newBuilder();
+            if (hasUserIds) {
+                filter.addAllExternalUserId(effectiveOptions.getUserIds());
+            }
+            if (hasConsentIds) {
+                filter.addAllConsentId(effectiveOptions.getConsentIds());
+            }
+            request.setFilter(filter.build());
         }
 
         ListResourceUserConsentsRequest builtRequest = request.build();
