@@ -1,0 +1,29 @@
+# Packages the published jar still bundles under their original (unrelocated) names, checked
+# by scripts/check-jar-contents.sh. Third-party classes under their original names can clash
+# with the same libraries in an application, so new bundled code must be relocated under
+# com.scalekit.shaded (maven-shade-plugin) or declared as a normal dependency instead.
+#
+# Ratchet: entries are only ever removed, never added. The check fails when an entry no
+# longer matches anything in the jar, so remove it in the change that drops the package.
+#
+# One path prefix per line; an entry matches every jar entry that starts with it.
+
+# grpc-core: com.google.android:annotations
+android/annotation/
+# .proto sources of protobuf-java and proto-google-common-protos (their classes are relocated)
+google/api/
+google/apps/
+google/cloud/
+google/geo/
+google/logging/
+google/longrunning/
+google/protobuf/
+google/rpc/
+google/shopping/
+google/type/
+# grpc: io.perfmark:perfmark-api
+io/perfmark/
+# guava / protobuf-java-util: com.google.code.findbugs:jsr305
+javax/annotation/
+# grpc: org.codehaus.mojo:animal-sniffer-annotations
+org/codehaus/mojo/

@@ -1,0 +1,40 @@
+version: 2
+updates:
+  # Dependencies and plugins in pom.xml. Minor and patch updates arrive as one grouped PR a
+  # week; each major update gets its own PR, because a major can change the public API
+  # (bundled types appear in signatures) or raise the minimum Java version (8).
+  - package-ecosystem: maven
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    groups:
+      maven-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # The tests also run on Java 8: Mockito 5 needs Java 11 and JUnit 6 needs Java 17.
+      - dependency-name: org.mockito:mockito-core
+        update-types:
+          - version-update:semver-major
+      - dependency-name: org.junit.jupiter:junit-jupiter-engine
+        update-types:
+          - version-update:semver-major
+
+  # Actions in .github/workflows, pinned to commit SHAs; Dependabot updates the SHA and the
+  # version comment together.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - minor
+          - patch
