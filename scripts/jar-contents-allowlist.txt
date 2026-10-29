@@ -1,0 +1,51 @@
+# Packages the published jar still bundles under their original (unrelocated) names, checked
+# by scripts/check-jar-contents.sh. Third-party classes under their original names can clash
+# with the same libraries in an application, so new bundled code must be relocated under
+# com.scalekit.shaded (maven-shade-plugin) or declared as a normal dependency instead.
+#
+# Ratchet: entries are only ever removed, never added. The check fails when an entry no
+# longer matches anything in the jar, so remove it in the change that drops the package.
+#
+# One path prefix per line; an entry matches every jar entry that starts with it.
+
+# grpc-core: com.google.android:annotations
+android/annotation/
+# build.buf:protovalidate (classes and .proto sources)
+buf/validate/
+build/buf/
+# .proto sources of protobuf-java and proto-google-common-protos (their classes are relocated)
+google/api/
+google/apps/
+google/cloud/
+google/geo/
+google/logging/
+google/longrunning/
+google/protobuf/
+google/rpc/
+google/shopping/
+google/type/
+# protovalidate: com.github.seancfoley:ipaddress
+inet/ipaddr/
+# grpc: io.perfmark:perfmark-api
+io/perfmark/
+# protovalidate: jakarta.mail:jakarta.mail-api, jakarta.activation:jakarta.activation-api
+jakarta/activation/
+jakarta/mail/
+# guava / protobuf-java-util: com.google.code.findbugs:jsr305
+javax/annotation/
+# httpclient: public suffix list
+mozilla/
+# protovalidate (cel-java): org.agrona:agrona
+org/agrona/
+# httpclient: commons-codec, commons-logging, httpclient, httpcore
+org/apache/commons/codec/
+org/apache/commons/logging/
+org/apache/http/
+# guava: org.checkerframework:checker-qual
+org/checkerframework/
+# grpc: org.codehaus.mojo:animal-sniffer-annotations
+org/codehaus/mojo/
+# org.bitbucket.b_c:jose4j
+org/jose4j/
+# protovalidate: org.projectnessie.cel (cel-core, cel-generated-pb, cel-generated-antlr)
+org/projectnessie/
