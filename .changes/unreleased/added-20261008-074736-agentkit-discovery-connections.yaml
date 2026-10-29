@@ -1,0 +1,15 @@
+kind: added
+body: |
+  `client.connections()` now manages your environment's app connections with `listAppConnections(...)`, `createEnvironmentConnection(...)`, `getEnvironmentConnection(...)` and `updateEnvironmentConnection(...)`; `client.actions().listConnections(...)` lists the same connections. Pass the connection's current type to `updateEnvironmentConnection`: a different type converts the connection and resets its settings. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.6.0/REFERENCE.md#app-and-environment-connections)
+
+  ```java
+  EnvironmentConnection gmail = client.connections().createEnvironmentConnection(
+      CreateEnvironmentConnectionParams.appConnection("GMAIL").build());
+  Page<AppConnection> page = client.connections().listAppConnections(
+      ListAppConnectionsParams.builder().query("gmail").build());
+  ```
+time: '2026-10-08T07:47:36.543136+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2194
+  Migration: ''

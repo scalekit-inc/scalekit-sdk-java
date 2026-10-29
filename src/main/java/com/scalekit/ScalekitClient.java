@@ -4,6 +4,7 @@ import com.scalekit.api.*;
 import com.scalekit.api.impl.*;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.internal.ScalekitCredentials;
+import com.scalekit.internal.proxy.ProxyExecutor;
 import com.scalekit.webhooks.ScalekitWebhook;
 import com.scalekit.webhooks.Webhook;
 import io.grpc.ManagedChannel;
@@ -49,6 +50,12 @@ public class ScalekitClient {
     private final EventsClient eventsClient;
 
     private final LoginClient loginClient;
+
+    private final ToolsClient toolsClient;
+
+    private final ConnectedAccountsClient connectedAccountsClient;
+
+    private final ActionsClient actionsClient;
 
     /** Default: how often an idle gRPC connection is verified before reuse. */
     public static final long DEFAULT_KEEPALIVE_TIME_SECONDS = 60;
@@ -172,6 +179,11 @@ public class ScalekitClient {
             eventsClient = new ScalekitEventsClient(channel, credentials);
             loginClient = new ScalekitLoginClient(channel, credentials);
             webhook = new ScalekitWebhook();
+            toolsClient = new ScalekitToolsClient(channel, credentials);
+            connectedAccountsClient = new ScalekitConnectedAccountsClient(channel, credentials);
+            actionsClient = new ScalekitActionsClient(toolsClient, connectedAccountsClient,
+                    new ScalekitMcpClient(channel, credentials), new ScalekitProvidersClient(channel, credentials),
+                    connectionClient, new ProxyExecutor(environment.siteName, credentials));
 
         } catch (MalformedURLException e) {
             throw new APIException("invalid environment URL, error:" + e.getMessage());
@@ -247,5 +259,55 @@ public class ScalekitClient {
 
     public LoginClient login() {
         return this.loginClient;
+    }
+
+    /**
+     * Returns the client that lists and runs tools on behalf of connected accounts. The same
+     * instance is returned on every call; it is thread-safe.
+     *
+     * <pre>{@code
+     * ExecuteToolResult result = client.tools().execute("gmail_fetch_mails",
+     *         ExecuteToolParams.builder().connectionName("gmail").identifier("user_123").build());
+     * }</pre>
+     *
+     * @return the tools client
+     * @since 2.6.0
+     */
+    public ToolsClient tools() {
+        return this.toolsClient;
+    }
+
+    /**
+     * Returns the client that manages connected accounts: your users' accounts on third-party
+     * services, whose credentials Scalekit stores and refreshes. The same instance is returned on
+     * every call; it is thread-safe.
+     *
+     * <pre>{@code
+     * ConnectedAccount account = client.connectedAccounts().getOrCreate("gmail", "user_123");
+     * }</pre>
+     *
+     * @return the connected accounts client
+     * @since 2.6.0
+     */
+    public ConnectedAccountsClient connectedAccounts() {
+        return this.connectedAccountsClient;
+    }
+
+    /**
+     * Returns the agent-actions facade: tools, connected accounts, MCP configurations
+     * ({@link ActionsClient#mcp()}), custom providers ({@link ActionsClient#providers()}) and
+     * calls to third-party APIs through Scalekit's proxy ({@link ActionsClient#request}). The same
+     * instance is returned on every call; it is thread-safe.
+     *
+     * <pre>{@code
+     * ProxyResponse profile = client.actions().request(
+     *         ProxyRequest.builder("gmail", "user_123", "/gmail/v1/users/me/profile").build());
+     * }</pre>
+     *
+     * @return the actions client
+     * @since 2.6.0
+     */
+    public ActionsClient actions() {
+        return this.actionsClient;
     }
 }
