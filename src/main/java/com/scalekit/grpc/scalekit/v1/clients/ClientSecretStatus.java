@@ -107,7 +107,7 @@ public enum ClientSecretStatus
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.getDescriptor().getEnumTypes().get(1);
+    return com.scalekit.grpc.scalekit.v1.clients.ClientsProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ClientSecretStatus[] VALUES = values();

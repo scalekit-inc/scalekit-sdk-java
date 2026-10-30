@@ -77,6 +77,10 @@ public enum IdentityProviderType
    * <code>ADFS = 16;</code>
    */
   ADFS(16),
+  /**
+   * <code>FACEBOOK = 17;</code>
+   */
+  FACEBOOK(17),
   UNRECOGNIZED(-1),
   ;
 
@@ -148,6 +152,10 @@ public enum IdentityProviderType
    * <code>ADFS = 16;</code>
    */
   public static final int ADFS_VALUE = 16;
+  /**
+   * <code>FACEBOOK = 17;</code>
+   */
+  public static final int FACEBOOK_VALUE = 17;
 
 
   public final int getNumber() {
@@ -191,6 +199,7 @@ public enum IdentityProviderType
       case 14: return IDP_SIMULATOR;
       case 15: return SCALEKIT;
       case 16: return ADFS;
+      case 17: return FACEBOOK;
       default: return null;
     }
   }

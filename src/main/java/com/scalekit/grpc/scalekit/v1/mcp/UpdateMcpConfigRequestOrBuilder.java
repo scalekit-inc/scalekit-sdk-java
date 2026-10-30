@@ -55,4 +55,20 @@ public interface UpdateMcpConfigRequestOrBuilder extends
    */
   com.scalekit.grpc.scalekit.v1.mcp.McpConfigConnectionToolMappingOrBuilder getConnectionToolMappingsOrBuilder(
       int index);
+
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 4 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the toolExposure field is set.
+   */
+  boolean hasToolExposure();
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 4 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The enum numeric value on the wire for toolExposure.
+   */
+  int getToolExposureValue();
+  /**
+   * <code>optional .scalekit.v1.mcp.ToolExposure tool_exposure = 4 [json_name = "toolExposure", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The toolExposure.
+   */
+  com.scalekit.grpc.scalekit.v1.mcp.ToolExposure getToolExposure();
 }

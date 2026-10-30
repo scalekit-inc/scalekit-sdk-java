@@ -269,7 +269,7 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_PRIORITY_FIELD_NUMBER = 8;
   private int displayPriority_ = 0;
   /**
-   * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+   * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayPriority.
    */
   @java.lang.Override
@@ -1437,7 +1437,7 @@ private static final long serialVersionUID = 0L;
 
     private int displayPriority_ ;
     /**
-     * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+     * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The displayPriority.
      */
     @java.lang.Override
@@ -1445,7 +1445,7 @@ private static final long serialVersionUID = 0L;
       return displayPriority_;
     }
     /**
-     * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+     * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The displayPriority to set.
      * @return This builder for chaining.
      */
@@ -1457,7 +1457,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+     * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearDisplayPriority() {

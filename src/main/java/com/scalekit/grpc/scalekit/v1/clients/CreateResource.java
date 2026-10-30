@@ -459,6 +459,17 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER = 17;
   private boolean resourceScopeSelectionAllowed_ = false;
   /**
+   * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopeSelectionAllowed.
+   */
+  @java.lang.Override
+  public boolean getResourceScopeSelectionAllowed() {
+    return resourceScopeSelectionAllowed_;
+  }
+
+  public static final int RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER = 18;
+  private boolean resourceScopedIssuerEnabled_ = false;
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -478,12 +489,12 @@ private static final long serialVersionUID = 0L;
    *];
    * </pre>
    *
-   * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The resourceScopeSelectionAllowed.
+   * <code>bool resource_scoped_issuer_enabled = 18 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
    */
   @java.lang.Override
-  public boolean getResourceScopeSelectionAllowed() {
-    return resourceScopeSelectionAllowed_;
+  public boolean getResourceScopedIssuerEnabled() {
+    return resourceScopedIssuerEnabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -550,6 +561,9 @@ private static final long serialVersionUID = 0L;
     }
     if (resourceScopeSelectionAllowed_ != false) {
       output.writeBool(17, resourceScopeSelectionAllowed_);
+    }
+    if (resourceScopedIssuerEnabled_ != false) {
+      output.writeBool(18, resourceScopedIssuerEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -626,6 +640,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(17, resourceScopeSelectionAllowed_);
     }
+    if (resourceScopedIssuerEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, resourceScopedIssuerEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -674,6 +692,8 @@ private static final long serialVersionUID = 0L;
         != other.getCimdClientAllowlistEnabled()) return false;
     if (getResourceScopeSelectionAllowed()
         != other.getResourceScopeSelectionAllowed()) return false;
+    if (getResourceScopedIssuerEnabled()
+        != other.getResourceScopedIssuerEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -731,6 +751,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + RESOURCE_SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getResourceScopeSelectionAllowed());
+    hash = (37 * hash) + RESOURCE_SCOPED_ISSUER_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getResourceScopedIssuerEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -886,6 +909,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00004000);
       cimdClientAllowlistEnabled_ = false;
       resourceScopeSelectionAllowed_ = false;
+      resourceScopedIssuerEnabled_ = false;
       return this;
     }
 
@@ -980,6 +1004,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.resourceScopeSelectionAllowed_ = resourceScopeSelectionAllowed_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.resourceScopedIssuerEnabled_ = resourceScopedIssuerEnabled_;
       }
     }
 
@@ -1120,6 +1147,9 @@ private static final long serialVersionUID = 0L;
       if (other.getResourceScopeSelectionAllowed() != false) {
         setResourceScopeSelectionAllowed(other.getResourceScopeSelectionAllowed());
       }
+      if (other.getResourceScopedIssuerEnabled() != false) {
+        setResourceScopedIssuerEnabled(other.getResourceScopedIssuerEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1240,6 +1270,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00010000;
               break;
             } // case 136
+            case 144: {
+              resourceScopedIssuerEnabled_ = input.readBool();
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 144
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2319,6 +2354,38 @@ private static final long serialVersionUID = 0L;
 
     private boolean resourceScopeSelectionAllowed_ ;
     /**
+     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceScopeSelectionAllowed.
+     */
+    @java.lang.Override
+    public boolean getResourceScopeSelectionAllowed() {
+      return resourceScopeSelectionAllowed_;
+    }
+    /**
+     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resourceScopeSelectionAllowed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceScopeSelectionAllowed(boolean value) {
+
+      resourceScopeSelectionAllowed_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceScopeSelectionAllowed() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      resourceScopeSelectionAllowed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean resourceScopedIssuerEnabled_ ;
+    /**
      * <pre>
      *
      *string tos_uri = 10 [
@@ -2338,12 +2405,12 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @return The resourceScopeSelectionAllowed.
+     * <code>bool resource_scoped_issuer_enabled = 18 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The resourceScopedIssuerEnabled.
      */
     @java.lang.Override
-    public boolean getResourceScopeSelectionAllowed() {
-      return resourceScopeSelectionAllowed_;
+    public boolean getResourceScopedIssuerEnabled() {
+      return resourceScopedIssuerEnabled_;
     }
     /**
      * <pre>
@@ -2365,14 +2432,14 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-     * @param value The resourceScopeSelectionAllowed to set.
+     * <code>bool resource_scoped_issuer_enabled = 18 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The resourceScopedIssuerEnabled to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceScopeSelectionAllowed(boolean value) {
+    public Builder setResourceScopedIssuerEnabled(boolean value) {
 
-      resourceScopeSelectionAllowed_ = value;
-      bitField0_ |= 0x00010000;
+      resourceScopedIssuerEnabled_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -2396,12 +2463,12 @@ private static final long serialVersionUID = 0L;
      *];
      * </pre>
      *
-     * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * <code>bool resource_scoped_issuer_enabled = 18 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
-    public Builder clearResourceScopeSelectionAllowed() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      resourceScopeSelectionAllowed_ = false;
+    public Builder clearResourceScopedIssuerEnabled() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      resourceScopedIssuerEnabled_ = false;
       onChanged();
       return this;
     }

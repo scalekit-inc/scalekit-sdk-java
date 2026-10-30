@@ -57,6 +57,10 @@ public enum EventTarget
    * <code>PERMISSION = 11;</code>
    */
   PERMISSION(11),
+  /**
+   * <code>PROVIDER = 12;</code>
+   */
+  PROVIDER(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -108,6 +112,10 @@ public enum EventTarget
    * <code>PERMISSION = 11;</code>
    */
   public static final int PERMISSION_VALUE = 11;
+  /**
+   * <code>PROVIDER = 12;</code>
+   */
+  public static final int PROVIDER_VALUE = 12;
 
 
   public final int getNumber() {
@@ -146,6 +154,7 @@ public enum EventTarget
       case 9: return CONNECTED_ACCOUNT;
       case 10: return ROLE;
       case 11: return PERMISSION;
+      case 12: return PROVIDER;
       default: return null;
     }
   }

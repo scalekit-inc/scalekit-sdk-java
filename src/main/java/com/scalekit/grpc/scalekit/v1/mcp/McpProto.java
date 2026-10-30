@@ -297,552 +297,662 @@ public final class McpProto {
       "nfiguration details to create\272H\003\310\001\001R\006con" +
       "fig\"q\n\027CreateMcpConfigResponse\022V\n\006config" +
       "\030\001 \001(\0132\032.scalekit.v1.mcp.McpConfigB\"\222A\0372" +
-      "\035The created MCP configurationR\006config\"\314" +
-      "\003\n\026UpdateMcpConfigRequest\022j\n\tconfig_id\030\001" +
+      "\035The created MCP configurationR\006config\"\320" +
+      "\007\n\026UpdateMcpConfigRequest\022j\n\tconfig_id\030\001" +
       " \001(\tBM\222A@2%ID of the MCP configuration t" +
       "o updateJ\027\"cfg_85630864460904897\"\272H\007r\002\020\001" +
       "\310\001\001R\010configId\022w\n\013description\030\002 \001(\tBU\222AR2" +
       "-Updated description for the MCP configu" +
       "rationJ!\"Updated daily summarizer config" +
-      "\"R\013description\022\314\001\n\030connection_tool_mappi" +
+      "\"R\013description\022\341\001\n\030connection_tool_mappi" +
       "ngs\030\003 \003(\0132/.scalekit.v1.mcp.McpConfigCon" +
-      "nectionToolMappingBa\222AV2TUpdated list of" +
+      "nectionToolMappingBv\222As2qUpdated list of" +
       " connection-to-tool mappings for this MC" +
-      "P config. Maximum 25 entries.\272H\005\222\001\002\020\031R\026c" +
-      "onnectionToolMappings\"q\n\027UpdateMcpConfig" +
-      "Response\022V\n\006config\030\001 \001(\0132\032.scalekit.v1.m" +
-      "cp.McpConfigB\"\222A\0372\035The updated MCP confi" +
-      "gurationR\006config\"\204\001\n\026DeleteMcpConfigRequ" +
-      "est\022j\n\tconfig_id\030\001 \001(\tBM\222A@2%ID of the M" +
-      "CP configuration to deleteJ\027\"cfg_8563086" +
-      "4460904897\"\272H\007r\002\020\001\310\001\001R\010configId\"\031\n\027Delet" +
-      "eMcpConfigResponse\"\200\001\n\023GetMcpConfigReque" +
-      "st\022i\n\tconfig_id\030\001 \001(\tBL\222A?2$ID of the MC" +
-      "P configuration to fetchJ\027\"cfg_856308644" +
-      "60904897\"\272H\007r\002\020\001\310\001\001R\010configId\"p\n\024GetMcpC" +
-      "onfigResponse\022X\n\006config\030\001 \001(\0132\032.scalekit" +
-      ".v1.mcp.McpConfigB$\222A!2\037The requested MC" +
-      "P configurationR\006config\"\375\006\n\025ListMcpConfi" +
-      "gsRequest\022E\n\006filter\030\001 \001(\0132-.scalekit.v1." +
-      "mcp.ListMcpConfigsRequest.FilterR\006filter" +
-      "\022B\n\006search\030\002 \001(\tB*\222A\'2%Look ahead text s" +
-      "earch on config nameR\006search\022V\n\tpage_siz" +
-      "e\030\003 \001(\rB9\222A/2-Number of configs to retur" +
-      "n per page (max 30)\272H\004*\002\030\036R\010pageSize\022W\n\n" +
-      "page_token\030\004 \001(\tB8\222A523Pagination token " +
-      "to fetch the next or previous pageR\tpage" +
-      "Token\032\247\004\n\006Filter\0223\n\002id\030\001 \001(\tB#\222A 2\036Filte" +
-      "r by MCP configuration idR\002id\022\340\001\n\004name\030\002" +
-      " \001(\tB\313\001\222A\256\0012\251\001Case-insensitive exact mat" +
-      "ch on configuration name. Allowed charac" +
-      "ters: letters (a\342\200\223z, A\342\200\223Z), digits (0\342" +
-      "\200\2239), hyphens (-), and underscores (_). " +
-      "Maximum 100 characters.xd\272H\026r\024\030d2\020^[a-zA" +
-      "-Z0-9_-]*$R\004name\022J\n\010provider\030\003 \001(\tB.\222A+2" +
-      ")Filter configs that include this provid" +
-      "erR\010provider\022\270\001\n\016mcp_server_url\030\004 \001(\tB\221\001" +
-      "\222A\215\0012\212\001Filter configs by MCP server URL." +
-      " The UUID is extracted from the last pat" +
-      "h segment of the URL and used to find th" +
-      "e matching configuration.R\014mcpServerUrl\"" +
-      "\360\002\n\026ListMcpConfigsResponse\022U\n\007configs\030\001 " +
-      "\003(\0132\032.scalekit.v1.mcp.McpConfigB\037\222A\0342\032Li" +
-      "st of MCP configurationsR\007configs\022T\n\017nex" +
-      "t_page_token\030\002 \001(\tB,\222A)2\'Pagination toke" +
-      "n to fetch the next pageR\rnextPageToken\022" +
-      "X\n\017prev_page_token\030\003 \001(\tB0\222A-2+Paginatio" +
-      "n token to fetch the previous pageR\rprev" +
-      "PageToken\022O\n\ntotal_size\030\004 \001(\rB0\222A-2+Tota" +
-      "l number of configs matching the filterR" +
-      "\ttotalSize\"\357\002\n\030EnsureMcpInstanceRequest\022" +
-      "J\n\004name\030\001 \001(\tB6\222A32!Display name for the" +
-      " MCP instanceJ\016\"daily-digest\"R\004name\022\200\001\n\013" +
-      "config_name\030\002 \001(\tB_\222AR2<Name of the MCP " +
-      "configuration to associate with the inst" +
-      "anceJ\022\"daily-summarizer\"\272H\007r\002\020\001\310\001\001R\nconf" +
-      "igName\022\203\001\n\017user_identifier\030\003 \001(\tBZ\222AM23I" +
-      "dentifier for the end user requesting th" +
-      "e instanceJ\026\"john.doe@example.com\"\272H\007r\002\020" +
-      "\001\310\001\001R\016userIdentifier\"w\n\031EnsureMcpInstanc" +
-      "eResponse\022Z\n\010instance\030\001 \001(\0132\034.scalekit.v" +
-      "1.mcp.McpInstanceB \222A\0352\033Details of the M" +
-      "CP instanceR\010instance\"\313\005\n\026McpConnectionA" +
-      "uthState\022>\n\rconnection_id\030\001 \001(\tB\031\222A\0262\024ID" +
-      " of the connectionR\014connectionId\022D\n\017conn" +
-      "ection_name\030\002 \001(\tB\033\222A\0302\026Name of the conn" +
-      "ectionR\016connectionName\022G\n\010provider\030\003 \001(\t" +
-      "B+\222A(2&Provider identifier for the conne" +
-      "ctionR\010provider\022t\n\024connected_account_id\030" +
-      "\004 \001(\tB=\222A:28ID of the connected account " +
-      "for this user and connectionH\000R\022connecte" +
-      "dAccountId\210\001\001\022r\n\030connected_account_statu" +
-      "s\030\005 \001(\tB3\222A02.Authentication status of t" +
-      "he connected accountH\001R\026connectedAccount" +
-      "Status\210\001\001\022\301\001\n\023authentication_link\030\006 \001(\tB" +
-      "\217\001\222A\213\0012\210\001Fresh authentication link for t" +
-      "he connected account. Empty when include" +
-      "_auth_link is false or when the connecti" +
-      "on has no associated key.R\022authenticatio" +
-      "nLinkB\027\n\025_connected_account_idB\033\n\031_conne" +
-      "cted_account_status\"\260\004\n\037ListMcpConnected" +
-      "AccountsRequest\022`\n\tconfig_id\030\001 \001(\tBC\222A62" +
-      "\033ID of the MCP configurationJ\027\"cfg_85630" +
-      "864460904897\"\272H\007r\002\020\001\310\001\001R\010configId\022\212\001\n\nid" +
-      "entifier\030\002 \001(\tBj\222AZ2@Identifier for the " +
-      "end user whose connected accounts to ret" +
-      "rieveJ\026\"john.doe@example.com\"\340A\002\272H\007r\002\020\001\310" +
-      "\001\001R\nidentifier\022\235\002\n\021include_auth_link\030\003 \001" +
-      "(\010B\360\001\222A\354\0012\351\001When true, generates a fresh" +
-      " authentication link for each connection" +
-      " and creates connected accounts if they " +
-      "do not exist. When false or omitted, ret" +
-      "urns existing connected account status w" +
-      "ithout creating accounts or generating l" +
-      "inks.R\017includeAuthLink\"\302\001\n ListMcpConnec" +
-      "tedAccountsResponse\022\235\001\n\022connected_accoun" +
-      "ts\030\001 \003(\0132\'.scalekit.v1.mcp.McpConnection" +
-      "AuthStateBE\222AB2@Connected account state " +
-      "for each connection in the configuration" +
-      "R\021connectedAccounts\"\203\005\n\027ListMcpInstances" +
-      "Request\022G\n\006filter\030\001 \001(\0132/.scalekit.v1.mc" +
-      "p.ListMcpInstancesRequest.FilterR\006filter" +
-      "\022h\n\006search\030\002 \001(\tBP\222AM2KCase-insensitive " +
-      "look-ahead search across instance name a" +
-      "nd user identifierR\006search\022X\n\tpage_size\030" +
-      "\003 \001(\rB;\222A12/Number of instances to retur" +
-      "n per page (max 30)\272H\004*\002\030\036R\010pageSize\022W\n\n" +
-      "page_token\030\004 \001(\tB8\222A523Pagination token " +
-      "to fetch the next or previous pageR\tpage" +
-      "Token\032\201\002\n\006Filter\022.\n\002id\030\001 \001(\tB\036\222A\0332\031Filte" +
-      "r by MCP instance idR\002id\0226\n\004name\030\002 \001(\tB\"" +
-      "\222A\0372\035Filter by exact instance nameR\004name" +
-      "\022F\n\013config_name\030\003 \001(\tB%\222A\"2 Filter by MC" +
-      "P configuration nameR\nconfigName\022G\n\017user" +
-      "_identifier\030\004 \001(\tB\036\222A\0332\031Filter by user i" +
-      "dentifierR\016userIdentifier\"\365\002\n\030ListMcpIns" +
-      "tancesResponse\022V\n\tinstances\030\001 \003(\0132\034.scal" +
-      "ekit.v1.mcp.McpInstanceB\032\222A\0272\025List of MC" +
-      "P instancesR\tinstances\022T\n\017next_page_toke" +
-      "n\030\002 \001(\tB,\222A)2\'Pagination token to fetch " +
-      "the next pageR\rnextPageToken\022X\n\017prev_pag" +
-      "e_token\030\003 \001(\tB0\222A-2+Pagination token to " +
-      "fetch the previous pageR\rprevPageToken\022Q" +
-      "\n\ntotal_size\030\004 \001(\rB2\222A/2-Total number of" +
-      " instances matching the filterR\ttotalSiz" +
-      "e\"\206\001\n\030DeleteMcpInstanceRequest\022j\n\013instan" +
-      "ce_id\030\001 \001(\tBI\222A<2 ID of the MCP instance" +
-      " to deleteJ\030\"inst_88630864544790977\"\272H\007r" +
-      "\002\020\001\310\001\001R\ninstanceId\"\033\n\031DeleteMcpInstanceR" +
-      "esponse\"\316\002\n\030UpdateMcpInstanceRequest\022j\n\013" +
-      "instance_id\030\001 \001(\tBI\222A<2 ID of the MCP in" +
-      "stance to updateJ\030\"inst_8863086454479097" +
-      "7\"\272H\007r\002\020\001\310\001\001R\ninstanceId\022V\n\004name\030\002 \001(\tBB" +
-      "\222A?2%New display name for the MCP instan" +
-      "ceJ\026\"daily-digest-updated\"R\004name\022n\n\013conf" +
-      "ig_name\030\003 \001(\tBM\222AJ24New MCP configuratio" +
-      "n name to attach to the instanceJ\022\"daily" +
-      "-summarizer\"R\nconfigName\"p\n\031UpdateMcpIns" +
-      "tanceResponse\022S\n\010instance\030\001 \001(\0132\034.scalek" +
-      "it.v1.mcp.McpInstanceB\031\222A\0262\024Updated MCP " +
-      "instanceR\010instance\"\202\001\n\025GetMcpInstanceReq" +
-      "uest\022i\n\013instance_id\030\001 \001(\tBH\222A;2\037ID of th" +
-      "e MCP instance to fetchJ\030\"inst_886308645" +
-      "44790977\"\272H\007r\002\020\001\310\001\001R\ninstanceId\"s\n\026GetMc" +
-      "pInstanceResponse\022Y\n\010instance\030\001 \001(\0132\034.sc" +
-      "alekit.v1.mcp.McpInstanceB\037\222A\0342\032The requ" +
-      "ested MCP instanceR\010instance\"\242\002\n\036GetMcpI" +
-      "nstanceAuthStateRequest\022\210\001\n\013instance_id\030" +
-      "\001 \001(\tBg\222AZ2>ID of the MCP instance whose" +
-      " connection statuses are requestedJ\030\"ins" +
-      "t_88630864544790977\"\272H\007r\002\020\001\310\001\001R\ninstance" +
-      "Id\022u\n\022include_auth_links\030\002 \001(\010BG\222AD2BWhe" +
-      "ther to generate fresh authentication li" +
-      "nks for each connectionR\020includeAuthLink" +
-      "s\"\301\004\n\036McpInstanceConnectionAuthState\022J\n\r" +
-      "connection_id\030\001 \001(\tB%\222A\"2 Underlying con" +
-      "nection identifierR\014connectionId\022P\n\017conn" +
-      "ection_name\030\002 \001(\tB\'\222A$2\"Developer-assign" +
-      "ed connection nameR\016connectionName\022@\n\010pr" +
-      "ovider\030\003 \001(\tB$\222A!2\037Provider backing the " +
-      "connectionR\010provider\022_\n\024connected_accoun" +
-      "t_id\030\004 \001(\tB-\222A*2(Connected account backi" +
-      "ng the connectionR\022connectedAccountId\022u\n" +
-      "\030connected_account_status\030\005 \001(\tB;\222A826Cu" +
-      "rrent authentication status of the conne" +
-      "cted accountR\026connectedAccountStatus\022g\n\023" +
-      "authentication_link\030\006 \001(\tB6\222A321Magic li" +
-      "nk for reconnecting the connected accoun" +
-      "tR\022authenticationLink\"\254\001\n\037GetMcpInstance" +
-      "AuthStateResponse\022\210\001\n\013connections\030\001 \003(\0132" +
-      "/.scalekit.v1.mcp.McpInstanceConnectionA" +
-      "uthStateB5\222A220Status of each connection" +
-      " mapped to the instanceR\013connections\"\367\005\n" +
-      "\013McpInstance\022O\n\002id\030\001 \001(\tB?\222A92\035Unique ID" +
-      " of the MCP instanceJ\030\"inst_886308645447" +
-      "90977\"\340A\003R\002id\022K\n\004name\030\002 \001(\tB7\222A.2\034Displa" +
-      "y name of the instanceJ\016\"daily-digest\"\272H" +
-      "\003\310\001\001R\004name\022\202\001\n\017user_identifier\030\003 \001(\tBY\222A" +
-      "P26Identifier for the user who owns or u" +
-      "ses this instanceJ\026\"john.doe@example.com" +
-      "\"\272H\003\310\001\001R\016userIdentifier\022\\\n\006config\030\004 \001(\0132" +
-      "\032.scalekit.v1.mcp.McpConfigB(\222A%2#Config" +
-      "uration backing this instanceR\006config\022\204\001" +
-      "\n\014last_used_at\030\005 \001(\0132\032.google.protobuf.T" +
-      "imestampBF\222AC2)Timestamp when the instan" +
-      "ce was last usedJ\026\"0001-01-01T00:00:00Z\"" +
-      "R\nlastUsedAt\022\204\001\n\nupdated_at\030\006 \001(\0132\032.goog" +
-      "le.protobuf.TimestampBI\222AF2,Timestamp wh" +
-      "en the instance was last updatedJ\026\"2025-" +
-      "10-07T12:21:00Z\"R\tupdatedAt\022Y\n\003url\030\007 \001(\t" +
-      "BG\222AD2\035URL to reach the MCP instanceJ#\"h" +
-      "ttps://example.com/mcp/v1/abc123\"R\003url\"\223" +
-      "\007\n\tMcpConfig\022L\n\002id\030\001 \001(\tB<\222A62\033Unique ID" +
-      " of the MCP configJ\027\"cfg_856308644609048" +
-      "97\"\340A\003R\002id\022\363\001\n\004name\030\002 \001(\tB\336\001\222A\277\0012\243\001Uniqu" +
-      "e name for the MCP configuration. Must b" +
-      "e 1\342\200\223100 characters. Allowed characters" +
-      ": lowercase letters (a\342\200\223z), digits (0\342\200" +
-      "\2239), hyphens (-), and underscores (_).J\022" +
-      "\"daily-summarizer\"xd\200\001\001\272H\030r\023\020\001\030d2\r^[a-z0" +
-      "-9_-]+$\310\001\001R\004name\022y\n\013description\030\003 \001(\tBW\222" +
-      "AT2$Description of the MCP configuration" +
-      "J,\"Summarizes daily emails and posts to " +
-      "Slack\"R\013description\022\304\001\n\030connection_tool_" +
-      "mappings\030\004 \003(\0132/.scalekit.v1.mcp.McpConf" +
-      "igConnectionToolMappingBY\222AN2LList of co" +
-      "nnection-to-tool mappings for this MCP c" +
-      "onfig. Maximum 25 entries.\272H\005\222\001\002\020\031R\026conn" +
-      "ectionToolMappings\022\377\001\n\016mcp_server_url\030\005 " +
-      "\001(\tB\330\001\222A\321\0012\177URL of the MCP server for th" +
-      "is configuration. Empty when the MCP con" +
-      "fig server URL feature is not enabled fo" +
-      "r this environment.JN\"https://env.scalek" +
-      "it.com/mcp/v3/servers/550e8400-e29b-41d4" +
-      "-a716-446655440000\"\340A\003R\014mcpServerUrl\"\233\005\n" +
-      "\036McpConfigConnectionToolMapping\022H\n\rconne" +
-      "ction_id\030\001 \001(\tB#\222A\0352\033Unique ID of the co" +
-      "nnection\340A\003R\014connectionId\022V\n\017connection_" +
-      "name\030\002 \001(\tB-\222A$2\"Developer-assigned conn" +
-      "ection name\272H\003\310\001\001R\016connectionName\022E\n\010pro" +
-      "vider\030\003 \001(\tB)\222A#2!Provider name for this" +
-      " connection\340A\003R\010provider\022[\n\005tools\030\004 \003(\tB" +
-      "E\222AB2@List of tool names linked to this " +
-      "connection (empty = all tools)R\005tools\022\204\001" +
-      "\n\024connected_account_id\030\005 \001(\tBM\222AG2EConne" +
-      "cted account backing this connection in " +
-      "the MCP instance context\340A\003H\000R\022connected" +
-      "AccountId\210\001\001\022v\n\030connected_account_status" +
-      "\030\006 \001(\tB7\222A12/Authentication status for t" +
-      "he connected account\340A\003H\001R\026connectedAcco" +
-      "untStatus\210\001\001B\027\n\025_connected_account_idB\033\n" +
-      "\031_connected_account_status\"\265\005\n\034CreateMcp" +
-      "SessionTokenRequest\022\314\001\n\rmcp_config_id\030\001 " +
-      "\001(\tB\247\001\222A\231\0012~Unique ID of the MCP configu" +
-      "ration whose connections back the token." +
-      " The configuration must exist in the cal" +
-      "ler\'s environment.J\027\"cfg_856308644609048" +
-      "97\"\340A\002\272H\004r\002\020\001R\013mcpConfigId\022\257\002\n\nidentifie" +
-      "r\030\002 \001(\tB\216\002\222A\375\0012\342\001Upstream-provider ident" +
-      "ifier (typically the user\'s email or pro" +
-      "vider user-id) shared by the connected a" +
-      "ccounts the token represents. A single i" +
-      "dentifier can map to one connected accou" +
-      "nt per connection in the MCP configurati" +
-      "on.J\020\"alice@acme.com\"x\377\001\200\001\001\340A\002\272H\007r\005\020\001\030\377\001" +
-      "R\nidentifier\022\223\001\n\006expiry\030\003 \001(\0132\031.google.p" +
-      "rotobuf.DurationB`\222A]2ROptional token li" +
-      "fetime. Must be between 60s and 24h. Def" +
-      "aults to 1h when omitted.J\007\"3600s\"R\006expi" +
-      "ry\"\377\004\n\035CreateMcpSessionTokenResponse\022\323\003\n" +
-      "\005token\030\001 \001(\tB\274\003\222A\265\0032\262\002Signed JWT (RS256)" +
-      " whose `sub` claim is the supplied ident" +
-      "ifier and whose `aud` claim is the MCP s" +
-      "erver URL bound to the configuration. Pa" +
-      "yload also carries the MCP configuration" +
-      " ID (`mcp_cfg`) and the resolved connect" +
-      "ed-account IDs (`ca_ids`). Signed with t" +
-      "he calling environment\'s active JWT sign" +
-      "ing key.J~\"eyJhbGciOiJSUzI1NiIsImtpZCI6I" +
-      "nNua18xMjMifQ.eyJhdWQiOlsiYWxpY2VAYWNtZS" +
-      "5jb20iXSwidG9rZW5fdHlwZSI6Im1jcF9zZXNzaW" +
-      "9uIn0.signature\"\340A\003R\005token\022\207\001\n\nexpires_a" +
-      "t\030\002 \001(\0132\032.google.protobuf.TimestampBL\222AF" +
-      "2DAbsolute time at which the token expir" +
-      "es. Equals issued_at + expiry.\340A\003R\texpir" +
-      "esAt2\366O\n\nMcpService\022\271\003\n\tCreateMcp\022!.scal" +
-      "ekit.v1.mcp.CreateMcpRequest\032\".scalekit." +
-      "v1.mcp.CreateMcpResponse\"\344\002\222A\230\002\n\013MCP Ser" +
-      "vers\022\026Create or retrieve MCP\032gCreates a " +
-      "new MCP for the configuration. If same c" +
-      "onfiguration exists, it will return the " +
-      "existing MCP.JL\n\003200\022E\n\033The created or e" +
-      "xisting MCP\022&\n$\032\".scalekit.v1.mcp.Create" +
-      "McpResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n" +
-      "\003401\022\031\n\027Authentication required\202\265\030\035\n\031vir" +
-      "tual_mcp_servers:write\030d\372\322\344\223\002\t\022\007PREVIEW\202" +
-      "\323\344\223\002\022\"\013/api/v1/mcp:\003mcp\022\212\003\n\006GetMcp\022\036.sca" +
-      "lekit.v1.mcp.GetMcpRequest\032\037.scalekit.v1" +
-      ".mcp.GetMcpResponse\"\276\002\222A\357\001\n\013MCP Servers\022" +
-      "\rGet MCP by ID\032+Returns the existing MCP" +
-      " with the given ID.J?\n\003200\0228\n\021The reques" +
-      "ted MCP\022#\n!\032\037.scalekit.v1.mcp.GetMcpResp" +
+      "P config. Maximum 25 entries when tool_e" +
+      "xposure is DIRECT.R\026connectionToolMappin" +
+      "gs\022\332\003\n\rtool_exposure\030\004 \001(\0162\035.scalekit.v1" +
+      ".mcp.ToolExposureB\220\003\222A\214\0032\211\003Updated tool " +
+      "exposure mode. Omit to keep the stored m" +
+      "ode. Switching to DIRECT is rejected whe" +
+      "n the resulting configuration has more t" +
+      "han 25 connection mappings or overlappin" +
+      "g tools. META is rejected with FAILED_PR" +
+      "ECONDITION when meta-tool mode is not av" +
+      "ailable for the environment. Existing se" +
+      "ssion tokens keep working after a switch" +
+      "; agents must call tools/list again to s" +
+      "ee the new tool set.H\000R\014toolExposure\210\001\001B" +
+      "\020\n\016_tool_exposure\"q\n\027UpdateMcpConfigResp" +
+      "onse\022V\n\006config\030\001 \001(\0132\032.scalekit.v1.mcp.M" +
+      "cpConfigB\"\222A\0372\035The updated MCP configura" +
+      "tionR\006config\"\204\001\n\026DeleteMcpConfigRequest\022" +
+      "j\n\tconfig_id\030\001 \001(\tBM\222A@2%ID of the MCP c" +
+      "onfiguration to deleteJ\027\"cfg_85630864460" +
+      "904897\"\272H\007r\002\020\001\310\001\001R\010configId\"\031\n\027DeleteMcp" +
+      "ConfigResponse\"\200\001\n\023GetMcpConfigRequest\022i" +
+      "\n\tconfig_id\030\001 \001(\tBL\222A?2$ID of the MCP co" +
+      "nfiguration to fetchJ\027\"cfg_8563086446090" +
+      "4897\"\272H\007r\002\020\001\310\001\001R\010configId\"p\n\024GetMcpConfi" +
+      "gResponse\022X\n\006config\030\001 \001(\0132\032.scalekit.v1." +
+      "mcp.McpConfigB$\222A!2\037The requested MCP co" +
+      "nfigurationR\006config\"\375\006\n\025ListMcpConfigsRe" +
+      "quest\022E\n\006filter\030\001 \001(\0132-.scalekit.v1.mcp." +
+      "ListMcpConfigsRequest.FilterR\006filter\022B\n\006" +
+      "search\030\002 \001(\tB*\222A\'2%Look ahead text searc" +
+      "h on config nameR\006search\022V\n\tpage_size\030\003 " +
+      "\001(\rB9\222A/2-Number of configs to return pe" +
+      "r page (max 30)\272H\004*\002\030\036R\010pageSize\022W\n\npage" +
+      "_token\030\004 \001(\tB8\222A523Pagination token to f" +
+      "etch the next or previous pageR\tpageToke" +
+      "n\032\247\004\n\006Filter\0223\n\002id\030\001 \001(\tB#\222A 2\036Filter by" +
+      " MCP configuration idR\002id\022\340\001\n\004name\030\002 \001(\t" +
+      "B\313\001\222A\256\0012\251\001Case-insensitive exact match o" +
+      "n configuration name. Allowed characters" +
+      ": letters (a\342\200\223z, A\342\200\223Z), digits (0\342\200\2239)" +
+      ", hyphens (-), and underscores (_). Maxi" +
+      "mum 100 characters.xd\272H\026r\024\030d2\020^[a-zA-Z0-" +
+      "9_-]*$R\004name\022J\n\010provider\030\003 \001(\tB.\222A+2)Fil" +
+      "ter configs that include this providerR\010" +
+      "provider\022\270\001\n\016mcp_server_url\030\004 \001(\tB\221\001\222A\215\001" +
+      "2\212\001Filter configs by MCP server URL. The" +
+      " UUID is extracted from the last path se" +
+      "gment of the URL and used to find the ma" +
+      "tching configuration.R\014mcpServerUrl\"\360\002\n\026" +
+      "ListMcpConfigsResponse\022U\n\007configs\030\001 \003(\0132" +
+      "\032.scalekit.v1.mcp.McpConfigB\037\222A\0342\032List o" +
+      "f MCP configurationsR\007configs\022T\n\017next_pa" +
+      "ge_token\030\002 \001(\tB,\222A)2\'Pagination token to" +
+      " fetch the next pageR\rnextPageToken\022X\n\017p" +
+      "rev_page_token\030\003 \001(\tB0\222A-2+Pagination to" +
+      "ken to fetch the previous pageR\rprevPage" +
+      "Token\022O\n\ntotal_size\030\004 \001(\rB0\222A-2+Total nu" +
+      "mber of configs matching the filterR\ttot" +
+      "alSize\"\357\002\n\030EnsureMcpInstanceRequest\022J\n\004n" +
+      "ame\030\001 \001(\tB6\222A32!Display name for the MCP" +
+      " instanceJ\016\"daily-digest\"R\004name\022\200\001\n\013conf" +
+      "ig_name\030\002 \001(\tB_\222AR2<Name of the MCP conf" +
+      "iguration to associate with the instance" +
+      "J\022\"daily-summarizer\"\272H\007r\002\020\001\310\001\001R\nconfigNa" +
+      "me\022\203\001\n\017user_identifier\030\003 \001(\tBZ\222AM23Ident" +
+      "ifier for the end user requesting the in" +
+      "stanceJ\026\"john.doe@example.com\"\272H\007r\002\020\001\310\001\001" +
+      "R\016userIdentifier\"w\n\031EnsureMcpInstanceRes" +
+      "ponse\022Z\n\010instance\030\001 \001(\0132\034.scalekit.v1.mc" +
+      "p.McpInstanceB \222A\0352\033Details of the MCP i" +
+      "nstanceR\010instance\"\313\005\n\026McpConnectionAuthS" +
+      "tate\022>\n\rconnection_id\030\001 \001(\tB\031\222A\0262\024ID of " +
+      "the connectionR\014connectionId\022D\n\017connecti" +
+      "on_name\030\002 \001(\tB\033\222A\0302\026Name of the connecti" +
+      "onR\016connectionName\022G\n\010provider\030\003 \001(\tB+\222A" +
+      "(2&Provider identifier for the connectio" +
+      "nR\010provider\022t\n\024connected_account_id\030\004 \001(" +
+      "\tB=\222A:28ID of the connected account for " +
+      "this user and connectionH\000R\022connectedAcc" +
+      "ountId\210\001\001\022r\n\030connected_account_status\030\005 " +
+      "\001(\tB3\222A02.Authentication status of the c" +
+      "onnected accountH\001R\026connectedAccountStat" +
+      "us\210\001\001\022\301\001\n\023authentication_link\030\006 \001(\tB\217\001\222A" +
+      "\213\0012\210\001Fresh authentication link for the c" +
+      "onnected account. Empty when include_aut" +
+      "h_link is false or when the connection h" +
+      "as no associated key.R\022authenticationLin" +
+      "kB\027\n\025_connected_account_idB\033\n\031_connected" +
+      "_account_status\"\260\004\n\037ListMcpConnectedAcco" +
+      "untsRequest\022`\n\tconfig_id\030\001 \001(\tBC\222A62\033ID " +
+      "of the MCP configurationJ\027\"cfg_856308644" +
+      "60904897\"\272H\007r\002\020\001\310\001\001R\010configId\022\212\001\n\nidenti" +
+      "fier\030\002 \001(\tBj\222AZ2@Identifier for the end " +
+      "user whose connected accounts to retriev" +
+      "eJ\026\"john.doe@example.com\"\340A\002\272H\007r\002\020\001\310\001\001R\n" +
+      "identifier\022\235\002\n\021include_auth_link\030\003 \001(\010B\360" +
+      "\001\222A\354\0012\351\001When true, generates a fresh aut" +
+      "hentication link for each connection and" +
+      " creates connected accounts if they do n" +
+      "ot exist. When false or omitted, returns" +
+      " existing connected account status witho" +
+      "ut creating accounts or generating links" +
+      ".R\017includeAuthLink\"\302\001\n ListMcpConnectedA" +
+      "ccountsResponse\022\235\001\n\022connected_accounts\030\001" +
+      " \003(\0132\'.scalekit.v1.mcp.McpConnectionAuth" +
+      "StateBE\222AB2@Connected account state for " +
+      "each connection in the configurationR\021co" +
+      "nnectedAccounts\"\203\005\n\027ListMcpInstancesRequ" +
+      "est\022G\n\006filter\030\001 \001(\0132/.scalekit.v1.mcp.Li" +
+      "stMcpInstancesRequest.FilterR\006filter\022h\n\006" +
+      "search\030\002 \001(\tBP\222AM2KCase-insensitive look" +
+      "-ahead search across instance name and u" +
+      "ser identifierR\006search\022X\n\tpage_size\030\003 \001(" +
+      "\rB;\222A12/Number of instances to return pe" +
+      "r page (max 30)\272H\004*\002\030\036R\010pageSize\022W\n\npage" +
+      "_token\030\004 \001(\tB8\222A523Pagination token to f" +
+      "etch the next or previous pageR\tpageToke" +
+      "n\032\201\002\n\006Filter\022.\n\002id\030\001 \001(\tB\036\222A\0332\031Filter by" +
+      " MCP instance idR\002id\0226\n\004name\030\002 \001(\tB\"\222A\0372" +
+      "\035Filter by exact instance nameR\004name\022F\n\013" +
+      "config_name\030\003 \001(\tB%\222A\"2 Filter by MCP co" +
+      "nfiguration nameR\nconfigName\022G\n\017user_ide" +
+      "ntifier\030\004 \001(\tB\036\222A\0332\031Filter by user ident" +
+      "ifierR\016userIdentifier\"\365\002\n\030ListMcpInstanc" +
+      "esResponse\022V\n\tinstances\030\001 \003(\0132\034.scalekit" +
+      ".v1.mcp.McpInstanceB\032\222A\0272\025List of MCP in" +
+      "stancesR\tinstances\022T\n\017next_page_token\030\002 " +
+      "\001(\tB,\222A)2\'Pagination token to fetch the " +
+      "next pageR\rnextPageToken\022X\n\017prev_page_to" +
+      "ken\030\003 \001(\tB0\222A-2+Pagination token to fetc" +
+      "h the previous pageR\rprevPageToken\022Q\n\nto" +
+      "tal_size\030\004 \001(\rB2\222A/2-Total number of ins" +
+      "tances matching the filterR\ttotalSize\"\206\001" +
+      "\n\030DeleteMcpInstanceRequest\022j\n\013instance_i" +
+      "d\030\001 \001(\tBI\222A<2 ID of the MCP instance to " +
+      "deleteJ\030\"inst_88630864544790977\"\272H\007r\002\020\001\310" +
+      "\001\001R\ninstanceId\"\033\n\031DeleteMcpInstanceRespo" +
+      "nse\"\316\002\n\030UpdateMcpInstanceRequest\022j\n\013inst" +
+      "ance_id\030\001 \001(\tBI\222A<2 ID of the MCP instan" +
+      "ce to updateJ\030\"inst_88630864544790977\"\272H" +
+      "\007r\002\020\001\310\001\001R\ninstanceId\022V\n\004name\030\002 \001(\tBB\222A?2" +
+      "%New display name for the MCP instanceJ\026" +
+      "\"daily-digest-updated\"R\004name\022n\n\013config_n" +
+      "ame\030\003 \001(\tBM\222AJ24New MCP configuration na" +
+      "me to attach to the instanceJ\022\"daily-sum" +
+      "marizer\"R\nconfigName\"p\n\031UpdateMcpInstanc" +
+      "eResponse\022S\n\010instance\030\001 \001(\0132\034.scalekit.v" +
+      "1.mcp.McpInstanceB\031\222A\0262\024Updated MCP inst" +
+      "anceR\010instance\"\202\001\n\025GetMcpInstanceRequest" +
+      "\022i\n\013instance_id\030\001 \001(\tBH\222A;2\037ID of the MC" +
+      "P instance to fetchJ\030\"inst_8863086454479" +
+      "0977\"\272H\007r\002\020\001\310\001\001R\ninstanceId\"s\n\026GetMcpIns" +
+      "tanceResponse\022Y\n\010instance\030\001 \001(\0132\034.scalek" +
+      "it.v1.mcp.McpInstanceB\037\222A\0342\032The requeste" +
+      "d MCP instanceR\010instance\"\242\002\n\036GetMcpInsta" +
+      "nceAuthStateRequest\022\210\001\n\013instance_id\030\001 \001(" +
+      "\tBg\222AZ2>ID of the MCP instance whose con" +
+      "nection statuses are requestedJ\030\"inst_88" +
+      "630864544790977\"\272H\007r\002\020\001\310\001\001R\ninstanceId\022u" +
+      "\n\022include_auth_links\030\002 \001(\010BG\222AD2BWhether" +
+      " to generate fresh authentication links " +
+      "for each connectionR\020includeAuthLinks\"\301\004" +
+      "\n\036McpInstanceConnectionAuthState\022J\n\rconn" +
+      "ection_id\030\001 \001(\tB%\222A\"2 Underlying connect" +
+      "ion identifierR\014connectionId\022P\n\017connecti" +
+      "on_name\030\002 \001(\tB\'\222A$2\"Developer-assigned c" +
+      "onnection nameR\016connectionName\022@\n\010provid" +
+      "er\030\003 \001(\tB$\222A!2\037Provider backing the conn" +
+      "ectionR\010provider\022_\n\024connected_account_id" +
+      "\030\004 \001(\tB-\222A*2(Connected account backing t" +
+      "he connectionR\022connectedAccountId\022u\n\030con" +
+      "nected_account_status\030\005 \001(\tB;\222A826Curren" +
+      "t authentication status of the connected" +
+      " accountR\026connectedAccountStatus\022g\n\023auth" +
+      "entication_link\030\006 \001(\tB6\222A321Magic link f" +
+      "or reconnecting the connected accountR\022a" +
+      "uthenticationLink\"\254\001\n\037GetMcpInstanceAuth" +
+      "StateResponse\022\210\001\n\013connections\030\001 \003(\0132/.sc" +
+      "alekit.v1.mcp.McpInstanceConnectionAuthS" +
+      "tateB5\222A220Status of each connection map" +
+      "ped to the instanceR\013connections\"\367\005\n\013Mcp" +
+      "Instance\022O\n\002id\030\001 \001(\tB?\222A92\035Unique ID of " +
+      "the MCP instanceJ\030\"inst_8863086454479097" +
+      "7\"\340A\003R\002id\022K\n\004name\030\002 \001(\tB7\222A.2\034Display na" +
+      "me of the instanceJ\016\"daily-digest\"\272H\003\310\001\001" +
+      "R\004name\022\202\001\n\017user_identifier\030\003 \001(\tBY\222AP26I" +
+      "dentifier for the user who owns or uses " +
+      "this instanceJ\026\"john.doe@example.com\"\272H\003" +
+      "\310\001\001R\016userIdentifier\022\\\n\006config\030\004 \001(\0132\032.sc" +
+      "alekit.v1.mcp.McpConfigB(\222A%2#Configurat" +
+      "ion backing this instanceR\006config\022\204\001\n\014la" +
+      "st_used_at\030\005 \001(\0132\032.google.protobuf.Times" +
+      "tampBF\222AC2)Timestamp when the instance w" +
+      "as last usedJ\026\"0001-01-01T00:00:00Z\"R\nla" +
+      "stUsedAt\022\204\001\n\nupdated_at\030\006 \001(\0132\032.google.p" +
+      "rotobuf.TimestampBI\222AF2,Timestamp when t" +
+      "he instance was last updatedJ\026\"2025-10-0" +
+      "7T12:21:00Z\"R\tupdatedAt\022Y\n\003url\030\007 \001(\tBG\222A" +
+      "D2\035URL to reach the MCP instanceJ#\"https" +
+      "://example.com/mcp/v1/abc123\"R\003url\"\317\014\n\tM" +
+      "cpConfig\022L\n\002id\030\001 \001(\tB<\222A62\033Unique ID of " +
+      "the MCP configJ\027\"cfg_85630864460904897\"\340" +
+      "A\003R\002id\022\363\001\n\004name\030\002 \001(\tB\336\001\222A\277\0012\243\001Unique na" +
+      "me for the MCP configuration. Must be 1\342" +
+      "\200\223100 characters. Allowed characters: lo" +
+      "wercase letters (a\342\200\223z), digits (0\342\200\2239)," +
+      " hyphens (-), and underscores (_).J\022\"dai" +
+      "ly-summarizer\"xd\200\001\001\272H\030r\023\020\001\030d2\r^[a-z0-9_-" +
+      "]+$\310\001\001R\004name\022y\n\013description\030\003 \001(\tBW\222AT2$" +
+      "Description of the MCP configurationJ,\"S" +
+      "ummarizes daily emails and posts to Slac" +
+      "k\"R\013description\022\331\001\n\030connection_tool_mapp" +
+      "ings\030\004 \003(\0132/.scalekit.v1.mcp.McpConfigCo" +
+      "nnectionToolMappingBn\222Ak2iList of connec" +
+      "tion-to-tool mappings for this MCP confi" +
+      "g. Maximum 25 entries when tool_exposure" +
+      " is DIRECT.R\026connectionToolMappings\022\377\001\n\016" +
+      "mcp_server_url\030\005 \001(\tB\330\001\222A\321\0012\177URL of the " +
+      "MCP server for this configuration. Empty" +
+      " when the MCP config server URL feature " +
+      "is not enabled for this environment.JN\"h" +
+      "ttps://env.scalekit.com/mcp/v3/servers/5" +
+      "50e8400-e29b-41d4-a716-446655440000\"\340A\003R" +
+      "\014mcpServerUrl\022\222\005\n\rtool_exposure\030\006 \001(\0162\035." +
+      "scalekit.v1.mcp.ToolExposureB\310\004\222A\304\0042\301\004Ho" +
+      "w the virtual MCP server exposes tools t" +
+      "o agents. DIRECT lists every mapped tool" +
+      " in tools/list and allows at most 25 con" +
+      "nection mappings. META lists five platfo" +
+      "rm tools (search_available_tools, list_a" +
+      "vailable_tools, get_tool_details, execut" +
+      "e_tool, connect_account) that search, in" +
+      "spect, run and connect the mapped tools " +
+      "per user, with no connection limit. On c" +
+      "reate, an unset value resolves to DIRECT" +
+      "; META must be requested explicitly and " +
+      "is available only where meta-tool mode i" +
+      "s enabled for the environment. Configura" +
+      "tions created before this field existed " +
+      "read as DIRECT.H\000R\014toolExposure\210\001\001B\020\n\016_t" +
+      "ool_exposure\"\233\005\n\036McpConfigConnectionTool" +
+      "Mapping\022H\n\rconnection_id\030\001 \001(\tB#\222A\0352\033Uni" +
+      "que ID of the connection\340A\003R\014connectionI" +
+      "d\022V\n\017connection_name\030\002 \001(\tB-\222A$2\"Develop" +
+      "er-assigned connection name\272H\003\310\001\001R\016conne" +
+      "ctionName\022E\n\010provider\030\003 \001(\tB)\222A#2!Provid" +
+      "er name for this connection\340A\003R\010provider" +
+      "\022[\n\005tools\030\004 \003(\tBE\222AB2@List of tool names" +
+      " linked to this connection (empty = all " +
+      "tools)R\005tools\022\204\001\n\024connected_account_id\030\005" +
+      " \001(\tBM\222AG2EConnected account backing thi" +
+      "s connection in the MCP instance context" +
+      "\340A\003H\000R\022connectedAccountId\210\001\001\022v\n\030connecte" +
+      "d_account_status\030\006 \001(\tB7\222A12/Authenticat" +
+      "ion status for the connected account\340A\003H" +
+      "\001R\026connectedAccountStatus\210\001\001B\027\n\025_connect" +
+      "ed_account_idB\033\n\031_connected_account_stat" +
+      "us\"\250\017\n\034CreateMcpSessionTokenRequest\022\314\002\n\r" +
+      "mcp_config_id\030\001 \001(\tB\247\002\222A\243\0022\207\002Unique ID o" +
+      "f the MCP configuration whose connection" +
+      "s back the token, for the virtual MCP se" +
+      "rver path (`/api/v1/mcp/configs/{mcp_con" +
+      "fig_id}/tokens`). The configuration must" +
+      " exist in the caller\'s environment. Leav" +
+      "e unset when minting for a connection wi" +
+      "th `key_id`.J\027\"cfg_85630864460904897\"R\013m" +
+      "cpConfigId\022\220\003\n\nidentifier\030\002 \001(\tB\357\002\222A\336\0022\303" +
+      "\002Upstream-provider identifier (typically" +
+      " the user\'s email or provider user-id) o" +
+      "f the connected accounts the token repre" +
+      "sents. On the configuration path, a sing" +
+      "le identifier can map to one connected a" +
+      "ccount per connection in the MCP configu" +
+      "ration. On the connection path, it selec" +
+      "ts the connected account on that connect" +
+      "ion.J\020\"alice@acme.com\"x\377\001\200\001\001\340A\002\272H\007r\005\020\001\030\377" +
+      "\001R\nidentifier\022\223\001\n\006expiry\030\003 \001(\0132\031.google." +
+      "protobuf.DurationB`\222A]2ROptional token l" +
+      "ifetime. Must be between 60s and 24h. De" +
+      "faults to 1h when omitted.J\007\"3600s\"R\006exp" +
+      "iry\022\250\003\n\006key_id\030\004 \001(\tB\220\003\222A\214\0032\367\002Connection" +
+      " name (`key_id`) of the AgentKit connect" +
+      "ion whose connection-level MCP server th" +
+      "e token is for, for the connection path " +
+      "(`/api/v1/mcp/connections/{key_id}/token" +
+      "s`). This is the `key_id` returned on th" +
+      "e connection and the last path segment o" +
+      "f its `mcp_server_url`, for example `git" +
+      "hub-connect`. Leave unset when minting f" +
+      "or an MCP configuration with `mcp_config" +
+      "_id`.J\020\"github-connect\"R\005keyId\022\344\003\n\014acces" +
+      "s_level\030\005 \001(\tB\300\003\222A\244\0032\201\003Optional tool acc" +
+      "ess level for the token: `FULL` or `READ" +
+      "_ONLY` (case-sensitive). `READ_ONLY` res" +
+      "tricts the token to tools annotated read" +
+      "-only (`read_only_hint`): other tools ar" +
+      "e omitted from tools/list and refused on" +
+      " tools/call, whatever tools the MCP conf" +
+      "iguration or connection exposes. `FULL`," +
+      " an empty string, or omitting the field " +
+      "exposes every tool. Any other value is r" +
+      "ejected.J\013\"READ_ONLY\"\362\002\004FULL\362\002\tREAD_ONLY" +
+      "\272H\025r\023R\000R\004FULLR\tREAD_ONLYR\013accessLevel:~\272" +
+      "H{\032y\n\030mcp_config_id_xor_key_id\022*set exac" +
+      "tly one of mcp_config_id or key_id\0321(thi" +
+      "s.mcp_config_id != \'\') != (this.key_id !" +
+      "= \'\')\"\246\010\n\035CreateMcpSessionTokenResponse\022" +
+      "\372\006\n\005token\030\001 \001(\tB\343\006\222A\334\0062\331\005Signed JWT (RS2" +
+      "56) whose `sub` claim is the supplied id" +
+      "entifier and whose `aud` claim is the MC" +
+      "P server URL the token is scoped to: the" +
+      " MCP configuration\'s server URL for a co" +
+      "nfiguration token, or the connection\'s `" +
+      "<env_url>/mcp/v3/connections/{key_id}` U" +
+      "RL for a connection token. A configurati" +
+      "on token also carries the MCP configurat" +
+      "ion ID (`mcp_cfg`); a connection token c" +
+      "arries the connection ID (`conn_id`) ins" +
+      "tead. A connection token and a token for" +
+      " a DIRECT configuration carry the resolv" +
+      "ed connected-account IDs (`ca_ids`, `ca_" +
+      "map`). A token for a META configuration " +
+      "carries no `ca_ids` or `ca_map`: its con" +
+      "nected accounts are resolved when the to" +
+      "ken is used. Signed with the calling env" +
+      "ironment\'s active JWT signing key.J~\"eyJ" +
+      "hbGciOiJSUzI1NiIsImtpZCI6InNua18xMjMifQ." +
+      "eyJhdWQiOlsiYWxpY2VAYWNtZS5jb20iXSwidG9r" +
+      "ZW5fdHlwZSI6Im1jcF9zZXNzaW9uIn0.signatur" +
+      "e\"\340A\003R\005token\022\207\001\n\nexpires_at\030\002 \001(\0132\032.goog" +
+      "le.protobuf.TimestampBL\222AF2DAbsolute tim" +
+      "e at which the token expires. Equals iss" +
+      "ued_at + expiry.\340A\003R\texpiresAt*C\n\014ToolEx" +
+      "posure\022\035\n\031TOOL_EXPOSURE_UNSPECIFIED\020\000\022\n\n" +
+      "\006DIRECT\020\001\022\010\n\004META\020\0022\206[\n\nMcpService\022\271\003\n\tC",
+      "reateMcp\022!.scalekit.v1.mcp.CreateMcpRequ" +
+      "est\032\".scalekit.v1.mcp.CreateMcpResponse\"" +
+      "\344\002\222A\230\002\n\013MCP Servers\022\026Create or retrieve " +
+      "MCP\032gCreates a new MCP for the configura" +
+      "tion. If same configuration exists, it w" +
+      "ill return the existing MCP.JL\n\003200\022E\n\033T" +
+      "he created or existing MCP\022&\n$\032\".scaleki" +
+      "t.v1.mcp.CreateMcpResponseJ\030\n\003400\022\021\n\017Inv" +
+      "alid requestJ \n\003401\022\031\n\027Authentication re" +
+      "quired\202\265\030\035\n\031virtual_mcp_servers:write\030d\372" +
+      "\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\022\"\013/api/v1/mcp:\003mcp\022\212" +
+      "\003\n\006GetMcp\022\036.scalekit.v1.mcp.GetMcpReques" +
+      "t\032\037.scalekit.v1.mcp.GetMcpResponse\"\276\002\222A\357" +
+      "\001\n\013MCP Servers\022\rGet MCP by ID\032+Returns t" +
+      "he existing MCP with the given ID.J?\n\00320" +
+      "0\0228\n\021The requested MCP\022#\n!\032\037.scalekit.v1" +
+      ".mcp.GetMcpResponseJ\030\n\003400\022\021\n\017Invalid re" +
+      "questJ \n\003401\022\031\n\027Authentication requiredJ" +
+      "\'\n\003404\022 \n\036Not Found - MCP does not exist" +
+      "\202\265\030\034\n\030virtual_mcp_servers:read\030d\372\322\344\223\002\t\022\007" +
+      "PREVIEW\202\323\344\223\002\026\022\024/api/v1/mcp/{mcp_id}\022\214\003\n\007" +
+      "ListMcp\022\037.scalekit.v1.mcp.ListMcpRequest" +
+      "\032 .scalekit.v1.mcp.ListMcpResponse\"\275\002\222A\367" +
+      "\001\n\013MCP Servers\022\tList MCPs\032dReturns a lis" +
+      "t of existing MCPs, optionally filtered " +
+      "by connected_account_identifier and link" +
+      "_token.J;\n\003200\0224\n\014List of MCPs\022$\n\"\032 .sca" +
+      "lekit.v1.mcp.ListMcpResponseJ\030\n\003400\022\021\n\017I" +
+      "nvalid requestJ \n\003401\022\031\n\027Authentication " +
+      "required\202\265\030\034\n\030virtual_mcp_servers:read\030d" +
+      "\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\r\022\013/api/v1/mcp\022\360\002\n\tD" +
+      "eleteMcp\022!.scalekit.v1.mcp.DeleteMcpRequ" +
+      "est\032\".scalekit.v1.mcp.DeleteMcpResponse\"" +
+      "\233\002\222A\313\001\n\013MCP Servers\022\020Delete MCP by ID\032\"D" +
+      "eletes the MCP with the given ID.J!\n\003200" +
+      "\022\032\n\030MCP deleted successfullyJ\030\n\003400\022\021\n\017I" +
+      "nvalid requestJ \n\003401\022\031\n\027Authentication " +
+      "requiredJ\'\n\003404\022 \n\036Not Found - MCP does " +
+      "not exist\202\265\030\035\n\031virtual_mcp_servers:write" +
+      "\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026*\024/api/v1/mcp/{mc" +
+      "p_id}\022\241\004\n\017CreateMcpConfig\022\'.scalekit.v1." +
+      "mcp.CreateMcpConfigRequest\032(.scalekit.v1" +
+      ".mcp.CreateMcpConfigResponse\"\272\003\222A\362\002\n\022MCP" +
+      " Configurations\022\036Create a new MCP config" +
+      "uration\032DCreates a new MCP configuration" +
+      " with a set of connections and tools.JZ\n" +
+      "\003201\022S\n#The newly created MCP configurat" +
+      "ion\022,\n*\032(.scalekit.v1.mcp.CreateMcpConfi" +
+      "gResponseJV\n\003400\022O\nMInvalid request - mi" +
+      "ssing required fields or invalid connect" +
+      "ion/tool mappingsJB\n\003401\022;\n9Authenticati" +
+      "on required - missing or invalid access " +
+      "token\202\265\030\035\n\031virtual_mcp_servers:write\030D\202\323" +
+      "\344\223\002\035\"\023/api/v1/mcp/configs:\006config\022\367\004\n\017Up" +
+      "dateMcpConfig\022\'.scalekit.v1.mcp.UpdateMc" +
+      "pConfigRequest\032(.scalekit.v1.mcp.UpdateM" +
+      "cpConfigResponse\"\220\004\222A\301\003\n\022MCP Configurati" +
+      "ons\022$Update an existing MCP configuratio" +
+      "n\032\223\001Updates the description and connecti" +
+      "on-to-tool mappings for an existing MCP " +
+      "configuration. The configuration name ca" +
+      "nnot be changed after creation.JT\n\003200\022M" +
+      "\n\035The updated MCP configuration\022,\n*\032(.sc" +
+      "alekit.v1.mcp.UpdateMcpConfigResponseJ@\n" +
+      "\003400\0229\n7Invalid request - malformed payl" +
+      "oad or invalid mappingsJ \n\003401\022\031\n\027Authen" +
+      "tication requiredJ5\n\003404\022.\n,Not Found - " +
+      "MCP configuration does not exist\202\265\030\035\n\031vi" +
+      "rtual_mcp_servers:write\030D\202\323\344\223\002$\032\037/api/v1" +
+      "/mcp/configs/{config_id}:\001*\022\375\003\n\016ListMcpC" +
+      "onfigs\022&.scalekit.v1.mcp.ListMcpConfigsR" +
+      "equest\032\'.scalekit.v1.mcp.ListMcpConfigsR" +
+      "esponse\"\231\003\222A\332\002\n\022MCP Configurations\022\027List" +
+      " MCP configurations\032mLists MCP configura" +
+      "tions for the current environment with o" +
+      "ptional filters for id, name prefix, and" +
+      " provider.JZ\n\003200\022S\n$Paginated list of M" +
+      "CP configurations\022+\n)\032\'.scalekit.v1.mcp." +
+      "ListMcpConfigsResponseJ>\n\003400\0227\n5Invalid" +
+      " request - bad filter or pagination para" +
+      "metersJ \n\003401\022\031\n\027Authentication required" +
+      "\202\265\030\034\n\030virtual_mcp_servers:read\030D\202\323\344\223\002\025\022\023" +
+      "/api/v1/mcp/configs\022\350\003\n\014GetMcpConfig\022$.s" +
+      "calekit.v1.mcp.GetMcpConfigRequest\032%.sca" +
+      "lekit.v1.mcp.GetMcpConfigResponse\"\212\003\222A\277\002" +
+      "\n\022MCP Configurations\022\032Fetch an MCP confi" +
+      "guration\032EReturns a single MCP configura" +
+      "tion for the current environment by ID.J" +
+      "S\n\003200\022L\n\037The requested MCP configuratio" +
+      "n\022)\n\'\032%.scalekit.v1.mcp.GetMcpConfigResp" +
       "onseJ\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n" +
-      "\027Authentication requiredJ\'\n\003404\022 \n\036Not F" +
-      "ound - MCP does not exist\202\265\030\034\n\030virtual_m" +
-      "cp_servers:read\030d\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\026\022\024" +
-      "/api/v1/mcp/{mcp_id}\022\214\003\n\007ListMcp\022\037.scale" +
-      "kit.v1.mcp.ListMcpRequest\032 .scalekit.v1." +
-      "mcp.ListMcpResponse\"\275\002\222A\367\001\n\013MCP Servers\022" +
-      "\tList MCPs\032dReturns a list of existing M" +
-      "CPs, optionally filtered by connected_ac" +
-      "count_identifier and link_token.J;\n\003200\022" +
-      "4\n\014List of MCPs\022$\n\"\032 .scalekit.v1.mcp.Li" +
-      "stMcpResponseJ\030\n\003400\022\021\n\017Invalid requestJ" +
-      " \n\003401\022\031\n\027Authentication required\202\265\030\034\n\030v" +
-      "irtual_mcp_servers:read\030d\372\322\344\223\002\t\022\007PREVIEW" +
-      "\202\323\344\223\002\r\022\013/api/v1/mcp\022\360\002\n\tDeleteMcp\022!.scal" +
-      "ekit.v1.mcp.DeleteMcpRequest\032\".scalekit." +
-      "v1.mcp.DeleteMcpResponse\"\233\002\222A\313\001\n\013MCP Ser" +
-      "vers\022\020Delete MCP by ID\032\"Deletes the MCP " +
-      "with the given ID.J!\n\003200\022\032\n\030MCP deleted" +
-      " successfullyJ\030\n\003400\022\021\n\017Invalid requestJ" +
-      " \n\003401\022\031\n\027Authentication requiredJ\'\n\003404" +
-      "\022 \n\036Not Found - MCP does not exist\202\265\030\035\n\031" +
-      "virtual_mcp_servers:write\030d\372\322\344\223\002\t\022\007PREVI" +
-      "EW\202\323\344\223\002\026*\024/api/v1/mcp/{mcp_id}\022\241\004\n\017Creat" +
-      "eMcpConfig\022\'.scalekit.v1.mcp.CreateMcpCo" +
-      "nfigRequest\032(.scalekit.v1.mcp.CreateMcpC" +
-      "onfigResponse\"\272\003\222A\362\002\n\022MCP Configurations" +
-      "\022\036Create a new MCP configuration\032DCreate" +
-      "s a new MCP configuration with a set of " +
-      "connections and tools.JZ\n\003201\022S\n#The new" +
-      "ly created MCP configuration\022,\n*\032(.scale" +
-      "kit.v1.mcp.CreateMcpConfigResponseJV\n\00340" +
-      "0\022O\nMInvalid request - missing required " +
-      "fields or invalid connection/tool mappin" +
-      "gsJB\n\003401\022;\n9Authentication required - m" +
-      "issing or invalid access token\202\265\030\035\n\031virt" +
-      "ual_mcp_servers:write\030D\202\323\344\223\002\035\"\023/api/v1/m" +
-      "cp/configs:\006config\022\367\004\n\017UpdateMcpConfig\022\'" +
-      ".scalekit.v1.mcp.UpdateMcpConfigRequest\032" +
-      "(.scalekit.v1.mcp.UpdateMcpConfigRespons" +
-      "e\"\220\004\222A\301\003\n\022MCP Configurations\022$Update an " +
-      "existing MCP configuration\032\223\001Updates the" +
-      " description and connection-to-tool mapp" +
-      "ings for an existing MCP configuration. " +
-      "The configuration name cannot be changed" +
-      " after creation.JT\n\003200\022M\n\035The updated M" +
-      "CP configuration\022,\n*\032(.scalekit.v1.mcp.U" +
-      "pdateMcpConfigResponseJ@\n\003400\0229\n7Invalid" +
-      " request - malformed payload or invalid " +
-      "mappingsJ \n\003401\022\031\n\027Authentication requir" +
-      "edJ5\n\003404\022.\n,Not Found - MCP configurati" +
-      "on does not exist\202\265\030\035\n\031virtual_mcp_serve" +
-      "rs:write\030D\202\323\344\223\002$\032\037/api/v1/mcp/configs/{c" +
-      "onfig_id}:\001*\022\375\003\n\016ListMcpConfigs\022&.scalek" +
-      "it.v1.mcp.ListMcpConfigsRequest\032\'.scalek" +
-      "it.v1.mcp.ListMcpConfigsResponse\"\231\003\222A\332\002\n" +
-      "\022MCP Configurations\022\027List MCP configurat" +
-      "ions\032mLists MCP configurations for the c",
-      "urrent environment with optional filters" +
-      " for id, name prefix, and provider.JZ\n\0032" +
-      "00\022S\n$Paginated list of MCP configuratio" +
-      "ns\022+\n)\032\'.scalekit.v1.mcp.ListMcpConfigsR" +
-      "esponseJ>\n\003400\0227\n5Invalid request - bad " +
-      "filter or pagination parametersJ \n\003401\022\031" +
-      "\n\027Authentication required\202\265\030\034\n\030virtual_m" +
-      "cp_servers:read\030D\202\323\344\223\002\025\022\023/api/v1/mcp/con" +
-      "figs\022\350\003\n\014GetMcpConfig\022$.scalekit.v1.mcp." +
-      "GetMcpConfigRequest\032%.scalekit.v1.mcp.Ge" +
-      "tMcpConfigResponse\"\212\003\222A\277\002\n\022MCP Configura" +
-      "tions\022\032Fetch an MCP configuration\032ERetur" +
-      "ns a single MCP configuration for the cu" +
-      "rrent environment by ID.JS\n\003200\022L\n\037The r" +
-      "equested MCP configuration\022)\n\'\032%.scaleki" +
-      "t.v1.mcp.GetMcpConfigResponseJ\030\n\003400\022\021\n\017" +
-      "Invalid requestJ \n\003401\022\031\n\027Authentication" +
-      " requiredJ5\n\003404\022.\n,Not Found - MCP conf" +
-      "iguration does not exist\202\265\030\034\n\030virtual_mc" +
-      "p_servers:read\030D\202\323\344\223\002!\022\037/api/v1/mcp/conf" +
-      "igs/{config_id}\022\201\004\n\017DeleteMcpConfig\022\'.sc" +
-      "alekit.v1.mcp.DeleteMcpConfigRequest\032(.s" +
-      "calekit.v1.mcp.DeleteMcpConfigResponse\"\232" +
-      "\003\222A\316\002\n\022MCP Configurations\022\033Delete an MCP" +
-      " configuration\032cDeletes the MCP configur" +
-      "ation and any associated mappings and in" +
-      "stances in the current environment.JC\n\0032" +
-      "00\022<\n:MCP configuration and associated d" +
-      "ata deleted successfullyJ\030\n\003400\022\021\n\017Inval" +
+      "\027Authentication requiredJ5\n\003404\022.\n,Not F" +
+      "ound - MCP configuration does not exist\202" +
+      "\265\030\034\n\030virtual_mcp_servers:read\030D\202\323\344\223\002!\022\037/" +
+      "api/v1/mcp/configs/{config_id}\022\201\004\n\017Delet" +
+      "eMcpConfig\022\'.scalekit.v1.mcp.DeleteMcpCo" +
+      "nfigRequest\032(.scalekit.v1.mcp.DeleteMcpC" +
+      "onfigResponse\"\232\003\222A\316\002\n\022MCP Configurations" +
+      "\022\033Delete an MCP configuration\032cDeletes t" +
+      "he MCP configuration and any associated " +
+      "mappings and instances in the current en" +
+      "vironment.JC\n\003200\022<\n:MCP configuration a" +
+      "nd associated data deleted successfullyJ" +
+      "\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Auth" +
+      "entication requiredJ5\n\003404\022.\n,Not Found " +
+      "- MCP configuration does not exist\202\265\030\035\n\031" +
+      "virtual_mcp_servers:write\030D\202\323\344\223\002!*\037/api/" +
+      "v1/mcp/configs/{config_id}\022\210\004\n\021EnsureMcp" +
+      "Instance\022).scalekit.v1.mcp.EnsureMcpInst" +
+      "anceRequest\032*.scalekit.v1.mcp.EnsureMcpI" +
+      "nstanceResponse\"\233\003\222A\307\002\n\rMCP Instances\022\035G" +
+      "et or create an MCP instance\032vReturns an" +
+      " existing MCP instance for the given con" +
+      "figuration, name, and user identifier or" +
+      " creates one if none exists.Jc\n\003200\022\\\n*T" +
+      "he existing or newly created MCP instanc" +
+      "e\022.\n,\032*.scalekit.v1.mcp.EnsureMcpInstanc" +
+      "eResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n\0034" +
+      "01\022\031\n\027Authentication required\202\265\030\035\n\031virtu" +
+      "al_mcp_servers:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344" +
+      "\223\002\032\"\025/api/v1/mcp/instances:\001*\022\220\004\n\020ListMc" +
+      "pInstances\022(.scalekit.v1.mcp.ListMcpInst" +
+      "ancesRequest\032).scalekit.v1.mcp.ListMcpIn" +
+      "stancesResponse\"\246\003\222A\326\002\n\rMCP Instances\022\022L" +
+      "ist MCP instances\032\233\001Lists MCP instances " +
+      "for the current environment with optiona" +
+      "l filters for instance id, name, configu" +
+      "ration, and text search across name or u" +
+      "ser identifier.JW\n\003200\022P\n\037Paginated list" +
+      " of MCP instances\022-\n+\032).scalekit.v1.mcp." +
+      "ListMcpInstancesResponseJ\030\n\003400\022\021\n\017Inval" +
       "id requestJ \n\003401\022\031\n\027Authentication requ" +
-      "iredJ5\n\003404\022.\n,Not Found - MCP configura" +
-      "tion does not exist\202\265\030\035\n\031virtual_mcp_ser" +
-      "vers:write\030D\202\323\344\223\002!*\037/api/v1/mcp/configs/" +
-      "{config_id}\022\210\004\n\021EnsureMcpInstance\022).scal" +
-      "ekit.v1.mcp.EnsureMcpInstanceRequest\032*.s" +
-      "calekit.v1.mcp.EnsureMcpInstanceResponse" +
-      "\"\233\003\222A\307\002\n\rMCP Instances\022\035Get or create an" +
-      " MCP instance\032vReturns an existing MCP i" +
-      "nstance for the given configuration, nam" +
-      "e, and user identifier or creates one if" +
-      " none exists.Jc\n\003200\022\\\n*The existing or " +
-      "newly created MCP instance\022.\n,\032*.scaleki" +
-      "t.v1.mcp.EnsureMcpInstanceResponseJ\030\n\00340" +
-      "0\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authentic" +
-      "ation required\202\265\030\035\n\031virtual_mcp_servers:" +
-      "write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002\032\"\025/api/v1/mc" +
-      "p/instances:\001*\022\220\004\n\020ListMcpInstances\022(.sc" +
-      "alekit.v1.mcp.ListMcpInstancesRequest\032)." +
-      "scalekit.v1.mcp.ListMcpInstancesResponse" +
-      "\"\246\003\222A\326\002\n\rMCP Instances\022\022List MCP instanc" +
-      "es\032\233\001Lists MCP instances for the current" +
-      " environment with optional filters for i" +
-      "nstance id, name, configuration, and tex" +
-      "t search across name or user identifier." +
-      "JW\n\003200\022P\n\037Paginated list of MCP instanc" +
-      "es\022-\n+\032).scalekit.v1.mcp.ListMcpInstance" +
-      "sResponseJ\030\n\003400\022\021\n\017Invalid requestJ \n\0034" +
-      "01\022\031\n\027Authentication required\202\265\030\034\n\030virtu" +
-      "al_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223" +
-      "\002\027\022\025/api/v1/mcp/instances\022\310\003\n\021DeleteMcpI" +
-      "nstance\022).scalekit.v1.mcp.DeleteMcpInsta" +
-      "nceRequest\032*.scalekit.v1.mcp.DeleteMcpIn" +
-      "stanceResponse\"\333\002\222A\374\001\n\rMCP Instances\022\026De" +
-      "lete an MCP instance\0329Deletes a single M" +
-      "CP instance in the current environment.J" +
-      "*\n\003200\022#\n!MCP instance deleted successfu" +
-      "llyJ\030\n\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027" +
-      "Authentication requiredJ0\n\003404\022)\n\'Not Fo" +
-      "und - MCP instance does not exist\202\265\030\035\n\031v" +
-      "irtual_mcp_servers:write\030D\372\322\344\223\002\t\022\007PREVIE" +
-      "W\202\323\344\223\002%*#/api/v1/mcp/instances/{instance" +
-      "_id}\022\351\004\n\021UpdateMcpInstance\022).scalekit.v1" +
-      ".mcp.UpdateMcpInstanceRequest\032*.scalekit" +
-      ".v1.mcp.UpdateMcpInstanceResponse\"\374\003\222A\232\003" +
-      "\n\rMCP Instances\022\026Update an MCP instance\032" +
-      "\257\001Updates attributes of an MCP instance." +
-      " Changing the display name only renames " +
-      "the instance; changing the config name r" +
-      "ebuilds the instance mappings from the n" +
-      "ew configuration.JQ\n\003200\022J\n\030The updated " +
-      "MCP instance\022.\n,\032*.scalekit.v1.mcp.Updat" +
-      "eMcpInstanceResponseJ\030\n\003400\022\021\n\017Invalid r" +
-      "equestJ \n\003401\022\031\n\027Authentication required" +
-      "J0\n\003404\022)\n\'Not Found - MCP instance does" +
-      " not exist\202\265\030\035\n\031virtual_mcp_servers:writ" +
-      "e\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2#/api/v1/mcp/in" +
-      "stances/{instance_id}:\001*\022\352\003\n\016GetMcpInsta" +
-      "nce\022&.scalekit.v1.mcp.GetMcpInstanceRequ" +
-      "est\032\'.scalekit.v1.mcp.GetMcpInstanceResp" +
-      "onse\"\206\003\222A\250\002\n\rMCP Instances\022\025Fetch an MCP" +
-      " instance\032@Returns a single MCP instance" +
-      " for the current environment by ID.JP\n\0032" +
-      "00\022I\n\032The requested MCP instance\022+\n)\032\'.s" +
-      "calekit.v1.mcp.GetMcpInstanceResponseJ\030\n" +
-      "\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authen" +
-      "tication requiredJ0\n\003404\022)\n\'Not Found - " +
-      "MCP instance does not exist\202\265\030\034\n\030virtual" +
-      "_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%" +
-      "\022#/api/v1/mcp/instances/{instance_id}\022\214\005" +
-      "\n\027GetMcpInstanceAuthState\022/.scalekit.v1." +
-      "mcp.GetMcpInstanceAuthStateRequest\0320.sca" +
-      "lekit.v1.mcp.GetMcpInstanceAuthStateResp" +
-      "onse\"\215\004\222A\240\003\n\rMCP Instances\022/Fetch connec" +
-      "tion auth state for an MCP instance\032sRet" +
-      "urns the connected account status and fr" +
-      "esh authentication links for each connec" +
-      "tion mapped to the MCP instance.J{\n\003200\022" +
-      "t\n<Authentication state for each connect" +
-      "ion in the MCP instance\0224\n2\0320.scalekit.v" +
-      "1.mcp.GetMcpInstanceAuthStateResponseJ\030\n" +
-      "\003400\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authen" +
-      "tication requiredJ0\n\003404\022)\n\'Not Found - " +
-      "MCP instance does not exist\202\265\030\034\n\030virtual" +
-      "_mcp_servers:read\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\0024" +
-      "\"2/api/v1/mcp/instances/{instance_id}:ge" +
-      "t_auth_state\022\304\n\n\025CreateMcpSessionToken\022-" +
-      ".scalekit.v1.mcp.CreateMcpSessionTokenRe" +
-      "quest\032..scalekit.v1.mcp.CreateMcpSession" +
-      "TokenResponse\"\313\t\222A\361\010\n\022MCP Configurations" +
-      "\022\033Create an MCP session token\032\337\004Mints a " +
-      "short-lived JWT that represents a user i" +
-      "dentifier across the connected accounts " +
-      "associated with an MCP configuration. Th" +
-      "e supplied identifier becomes the token\'" +
-      "s `sub` claim; the token\'s `aud` claim i" +
-      "s the MCP server URL bound to the config" +
-      "uration. Claims also carry the MCP confi" +
-      "guration ID (`mcp_cfg`) and the list of " +
-      "resolved connected-account IDs (`ca_ids`" +
-      "). Use this operation to issue a single " +
-      "credential an MCP server can present on " +
-      "the user\'s behalf when calling provider " +
-      "tools. The mint fails if any connection " +
-      "mapped to the configuration has no activ" +
-      "e connected account for the identifier.J" +
-      "\210\001\n\003200\022\200\001\nJToken created successfully; " +
-      "returns the signed JWT and its absolute " +
-      "expiry\0222\n0\032..scalekit.v1.mcp.CreateMcpSe" +
-      "ssionTokenResponseJ\355\001\n\003400\022\345\001\n\342\001Invalid " +
-      "request - mcp_config_id or identifier is" +
-      " missing or malformed, expiry is outside" +
-      " the 60s-24h window, the MCP configurati" +
-      "on has no connections, or a connection h" +
-      "as no active connected account for the s" +
-      "upplied identifierJa\n\003404\022Z\nXNot Found -" +
-      " no MCP configuration exists with the su" +
-      "pplied ID in the caller\'s environment\202\265\030" +
-      "\035\n\031virtual_mcp_servers:write\030D\202\323\344\223\002/\"*/a" +
-      "pi/v1/mcp/configs/{mcp_config_id}/tokens" +
-      ":\001*\022\251\t\n\030ListMcpConnectedAccounts\0220.scale" +
-      "kit.v1.mcp.ListMcpConnectedAccountsReque" +
-      "st\0321.scalekit.v1.mcp.ListMcpConnectedAcc" +
-      "ountsResponse\"\247\010\222A\306\007\n\022MCP Configurations" +
-      "\0220List connected accounts for an MCP con" +
-      "figuration\032\337\004Returns the connected accou" +
-      "nt state for each connection in the MCP " +
-      "configuration for the given user identif" +
-      "ier. When include_auth_link is true, cre" +
-      "ates connected accounts on the fly if th" +
-      "ey do not exist and returns a fresh auth" +
-      "entication link per connection. When inc" +
-      "lude_auth_link is false or omitted, retu" +
-      "rns the current status of existing conne" +
-      "cted accounts only \342\200\224 no accounts are c" +
-      "reated and authentication_link is always" +
-      " empty. Authentication links are only pr" +
-      "esent when the connection has an associa" +
-      "ted key; if the connection has no key, a" +
-      "uthentication_link is empty regardless o" +
-      "f include_auth_link.J\212\001\n\003200\022\202\001\nIConnect" +
-      "ed account state returned for each conne" +
-      "ction in the configuration\0225\n3\0321.scaleki" +
-      "t.v1.mcp.ListMcpConnectedAccountsRespons" +
-      "eJD\n\003400\022=\n;Bad request - config_id or i" +
-      "dentifier is missing or invalidJI\n\003404\022B" +
-      "\n@Not found - no MCP configuration exist" +
-      "s with the given config_id\202\265\030\034\n\030virtual_" +
-      "mcp_servers:read\030D\202\323\344\223\0027\"2/api/v1/mcp/co" +
-      "nfigs/{config_id}/connected_accounts:\001*\032" +
-      "L\222AI\n\013MCP Servers\022:Manage MCP servers an" +
-      "d their configurations for AI agents.B\300\005" +
-      "\n!com.scalekit.grpc.scalekit.v1.mcpB\010Mcp" +
-      "ProtoP\001Z-github.com/scalekit-inc/scaleki" +
-      "t/pkg/grpc/mcp\242\002\003SVM\252\002\017Scalekit.V1.Mcp\312\002" +
-      "\017Scalekit\\V1\\Mcp\342\002\033Scalekit\\V1\\Mcp\\GPBMe" +
-      "tadata\352\002\021Scalekit::V1::Mcp\222A\202\004j\272\001\n\013MCP S" +
-      "ervers\022\252\001Manage MCP servers and their co" +
-      "nfigurations for AI agents. MCP (Model C" +
-      "ontext Protocol) allows agents to secure" +
-      "ly access tools and data through authent" +
-      "icated connections.j\242\001\n\022MCP Configuratio" +
-      "ns\022\213\001Create and manage reusable MCP conf" +
-      "igurations. A configuration defines whic" +
-      "h connections and tools are available to" +
-      " an MCP server instance.j\235\001\n\rMCP Instanc" +
-      "es\022\213\001Create, manage, and interact with l" +
-      "ive MCP server instances. An instance is" +
-      " a running MCP server tied to a specific" +
-      " configuration and user.b\006proto3"
+      "ired\202\265\030\034\n\030virtual_mcp_servers:read\030D\372\322\344\223" +
+      "\002\t\022\007PREVIEW\202\323\344\223\002\027\022\025/api/v1/mcp/instances" +
+      "\022\310\003\n\021DeleteMcpInstance\022).scalekit.v1.mcp" +
+      ".DeleteMcpInstanceRequest\032*.scalekit.v1." +
+      "mcp.DeleteMcpInstanceResponse\"\333\002\222A\374\001\n\rMC" +
+      "P Instances\022\026Delete an MCP instance\0329Del" +
+      "etes a single MCP instance in the curren" +
+      "t environment.J*\n\003200\022#\n!MCP instance de" +
+      "leted successfullyJ\030\n\003400\022\021\n\017Invalid req" +
+      "uestJ \n\003401\022\031\n\027Authentication requiredJ0" +
+      "\n\003404\022)\n\'Not Found - MCP instance does n" +
+      "ot exist\202\265\030\035\n\031virtual_mcp_servers:write\030" +
+      "D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002%*#/api/v1/mcp/inst" +
+      "ances/{instance_id}\022\351\004\n\021UpdateMcpInstanc" +
+      "e\022).scalekit.v1.mcp.UpdateMcpInstanceReq" +
+      "uest\032*.scalekit.v1.mcp.UpdateMcpInstance" +
+      "Response\"\374\003\222A\232\003\n\rMCP Instances\022\026Update a" +
+      "n MCP instance\032\257\001Updates attributes of a" +
+      "n MCP instance. Changing the display nam" +
+      "e only renames the instance; changing th" +
+      "e config name rebuilds the instance mapp" +
+      "ings from the new configuration.JQ\n\003200\022" +
+      "J\n\030The updated MCP instance\022.\n,\032*.scalek" +
+      "it.v1.mcp.UpdateMcpInstanceResponseJ\030\n\0034" +
+      "00\022\021\n\017Invalid requestJ \n\003401\022\031\n\027Authenti" +
+      "cation requiredJ0\n\003404\022)\n\'Not Found - MC" +
+      "P instance does not exist\202\265\030\035\n\031virtual_m" +
+      "cp_servers:write\030D\372\322\344\223\002\t\022\007PREVIEW\202\323\344\223\002(2" +
+      "#/api/v1/mcp/instances/{instance_id}:\001*\022" +
+      "\352\003\n\016GetMcpInstance\022&.scalekit.v1.mcp.Get" +
+      "McpInstanceRequest\032\'.scalekit.v1.mcp.Get" +
+      "McpInstanceResponse\"\206\003\222A\250\002\n\rMCP Instance" +
+      "s\022\025Fetch an MCP instance\032@Returns a sing" +
+      "le MCP instance for the current environm" +
+      "ent by ID.JP\n\003200\022I\n\032The requested MCP i" +
+      "nstance\022+\n)\032\'.scalekit.v1.mcp.GetMcpInst" +
+      "anceResponseJ\030\n\003400\022\021\n\017Invalid requestJ " +
+      "\n\003401\022\031\n\027Authentication requiredJ0\n\003404\022" +
+      ")\n\'Not Found - MCP instance does not exi" +
+      "st\202\265\030\034\n\030virtual_mcp_servers:read\030D\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\002%\022#/api/v1/mcp/instances/{" +
+      "instance_id}\022\214\005\n\027GetMcpInstanceAuthState" +
+      "\022/.scalekit.v1.mcp.GetMcpInstanceAuthSta" +
+      "teRequest\0320.scalekit.v1.mcp.GetMcpInstan" +
+      "ceAuthStateResponse\"\215\004\222A\240\003\n\rMCP Instance" +
+      "s\022/Fetch connection auth state for an MC" +
+      "P instance\032sReturns the connected accoun" +
+      "t status and fresh authentication links " +
+      "for each connection mapped to the MCP in" +
+      "stance.J{\n\003200\022t\n<Authentication state f" +
+      "or each connection in the MCP instance\0224" +
+      "\n2\0320.scalekit.v1.mcp.GetMcpInstanceAuthS" +
+      "tateResponseJ\030\n\003400\022\021\n\017Invalid requestJ " +
+      "\n\003401\022\031\n\027Authentication requiredJ0\n\003404\022" +
+      ")\n\'Not Found - MCP instance does not exi" +
+      "st\202\265\030\034\n\030virtual_mcp_servers:read\030D\372\322\344\223\002\t" +
+      "\022\007PREVIEW\202\323\344\223\0024\"2/api/v1/mcp/instances/{" +
+      "instance_id}:get_auth_state\022\324\025\n\025CreateMc" +
+      "pSessionToken\022-.scalekit.v1.mcp.CreateMc" +
+      "pSessionTokenRequest\032..scalekit.v1.mcp.C" +
+      "reateMcpSessionTokenResponse\"\333\024\222A\323\023\n\022MCP" +
+      " Configurations\022\033Create an MCP session t" +
+      "oken\032\375\tMints a short-lived JWT that an M" +
+      "CP server accepts on behalf of a user id" +
+      "entifier. The supplied identifier become" +
+      "s the token\'s `sub` claim. Call one of t" +
+      "wo paths, depending on the MCP server th" +
+      "e token is for. `POST /api/v1/mcp/config" +
+      "s/{mcp_config_id}/tokens` mints for the " +
+      "virtual MCP server of an MCP configurati" +
+      "on: `aud` is that configuration\'s MCP se" +
+      "rver URL, and claims carry the MCP confi" +
+      "guration ID (`mcp_cfg`) and the connecte" +
+      "d-account IDs resolved across its connec" +
+      "tions (`ca_ids`). The mint fails if any " +
+      "connection mapped to the configuration h" +
+      "as no active connected account for the i" +
+      "dentifier. For a configuration whose too" +
+      "l_exposure is META, the token carries no" +
+      " `ca_ids`, no connected accounts are loo" +
+      "ked up or created at mint time, and the " +
+      "caller\'s accounts are resolved when the " +
+      "token is used. `POST /api/v1/mcp/connect" +
+      "ions/{key_id}/tokens` mints for the conn" +
+      "ection-level MCP server of one AgentKit " +
+      "connection at `<env_url>/mcp/v3/connecti" +
+      "ons/{key_id}`: `aud` is that URL, and cl" +
+      "aims carry the connection ID (`conn_id`)" +
+      " and its connected-account ID (`ca_ids`)" +
+      ". This path is applicable only for Agent" +
+      "Kit connections. A token is accepted onl" +
+      "y by the MCP server it was minted for, s" +
+      "o a configuration token cannot be used o" +
+      "n a connection\'s MCP server, or the reve" +
+      "rse.J\210\001\n\003200\022\200\001\nJToken created successfu" +
+      "lly; returns the signed JWT and its abso" +
+      "lute expiry\0222\n0\032..scalekit.v1.mcp.Create" +
+      "McpSessionTokenResponseJ\333\005\n\003400\022\323\005\n\320\005Inv" +
+      "alid request - identifier is missing or " +
+      "malformed, expiry is outside the 60s-24h" +
+      " window, or both or neither of `mcp_conf" +
+      "ig_id` and `key_id` are set. On the conf" +
+      "iguration path, also returned when `mcp_" +
+      "config_id` is malformed, the MCP configu" +
+      "ration has no connections, or a connecti" +
+      "on has no active connected account for t" +
+      "he supplied identifier. On the connectio" +
+      "n path, also returned when the connectio" +
+      "n is not an AgentKit connection (for exa" +
+      "mple, an SSO connection), or the identif" +
+      "ier has no active connected account on t" +
+      "he connection \342\200\224 unless the hosted conn" +
+      "ected-accounts widget is enabled for the" +
+      " environment, in which case a pending ac" +
+      "count is created and the mint succeeds s" +
+      "o the agent can authorize in-session.J\266\002" +
+      "\n\003404\022\256\002\n\253\002Not Found - on the configurat" +
+      "ion path, no MCP configuration exists wi" +
+      "th the supplied ID in the caller\'s envir" +
+      "onment. On the connection path, no activ" +
+      "e connection with the supplied `key_id` " +
+      "exists in the caller\'s environment; a co" +
+      "nnection that is disabled or has not com" +
+      "pleted setup is reported here.\202\265\030\035\n\031virt" +
+      "ual_mcp_servers:write\030D\202\323\344\223\002]\"*/api/v1/m" +
+      "cp/configs/{mcp_config_id}/tokens:\001*Z,\"\'" +
+      "/api/v1/mcp/connections/{key_id}/tokens:" +
+      "\001*\022\251\t\n\030ListMcpConnectedAccounts\0220.scalek" +
+      "it.v1.mcp.ListMcpConnectedAccountsReques" +
+      "t\0321.scalekit.v1.mcp.ListMcpConnectedAcco" +
+      "untsResponse\"\247\010\222A\306\007\n\022MCP Configurations\022" +
+      "0List connected accounts for an MCP conf" +
+      "iguration\032\337\004Returns the connected accoun" +
+      "t state for each connection in the MCP c" +
+      "onfiguration for the given user identifi" +
+      "er. When include_auth_link is true, crea" +
+      "tes connected accounts on the fly if the" +
+      "y do not exist and returns a fresh authe" +
+      "ntication link per connection. When incl" +
+      "ude_auth_link is false or omitted, retur" +
+      "ns the current status of existing connec" +
+      "ted accounts only \342\200\224 no accounts are cr" +
+      "eated and authentication_link is always " +
+      "empty. Authentication links are only pre" +
+      "sent when the connection has an associat" +
+      "ed key; if the connection has no key, au" +
+      "thentication_link is empty regardless of" +
+      " include_auth_link.J\212\001\n\003200\022\202\001\nIConnecte" +
+      "d account state returned for each connec" +
+      "tion in the configuration\0225\n3\0321.scalekit" +
+      ".v1.mcp.ListMcpConnectedAccountsResponse" +
+      "JD\n\003400\022=\n;Bad request - config_id or id" +
+      "entifier is missing or invalidJI\n\003404\022B\n" +
+      "@Not found - no MCP configuration exists" +
+      " with the given config_id\202\265\030\034\n\030virtual_m" +
+      "cp_servers:read\030D\202\323\344\223\0027\"2/api/v1/mcp/con" +
+      "figs/{config_id}/connected_accounts:\001*\032L" +
+      "\222AI\n\013MCP Servers\022:Manage MCP servers and" +
+      " their configurations for AI agents.B\300\005\n" +
+      "!com.scalekit.grpc.scalekit.v1.mcpB\010McpP" +
+      "rotoP\001Z-github.com/scalekit-inc/scalekit" +
+      "/pkg/grpc/mcp\242\002\003SVM\252\002\017Scalekit.V1.Mcp\312\002\017" +
+      "Scalekit\\V1\\Mcp\342\002\033Scalekit\\V1\\Mcp\\GPBMet" +
+      "adata\352\002\021Scalekit::V1::Mcp\222A\202\004j\272\001\n\013MCP Se" +
+      "rvers\022\252\001Manage MCP servers and their con" +
+      "figurations for AI agents. MCP (Model Co" +
+      "ntext Protocol) allows agents to securel" +
+      "y access tools and data through authenti" +
+      "cated connections.j\242\001\n\022MCP Configuration" +
+      "s\022\213\001Create and manage reusable MCP confi" +
+      "gurations. A configuration defines which" +
+      " connections and tools are available to " +
+      "an MCP server instance.j\235\001\n\rMCP Instance" +
+      "s\022\213\001Create, manage, and interact with li" +
+      "ve MCP server instances. An instance is " +
+      "a running MCP server tied to a specific " +
+      "configuration and user.b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -942,7 +1052,7 @@ public final class McpProto {
     internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_mcp_UpdateMcpConfigRequest_descriptor,
-        new java.lang.String[] { "ConfigId", "Description", "ConnectionToolMappings", });
+        new java.lang.String[] { "ConfigId", "Description", "ConnectionToolMappings", "ToolExposure", });
     internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_descriptor =
       getDescriptor().getMessageTypes().get(13);
     internal_static_scalekit_v1_mcp_UpdateMcpConfigResponse_fieldAccessorTable = new
@@ -1104,7 +1214,7 @@ public final class McpProto {
     internal_static_scalekit_v1_mcp_McpConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_mcp_McpConfig_descriptor,
-        new java.lang.String[] { "Id", "Name", "Description", "ConnectionToolMappings", "McpServerUrl", });
+        new java.lang.String[] { "Id", "Name", "Description", "ConnectionToolMappings", "McpServerUrl", "ToolExposure", });
     internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_scalekit_v1_mcp_McpConfigConnectionToolMapping_fieldAccessorTable = new
@@ -1116,7 +1226,7 @@ public final class McpProto {
     internal_static_scalekit_v1_mcp_CreateMcpSessionTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_scalekit_v1_mcp_CreateMcpSessionTokenRequest_descriptor,
-        new java.lang.String[] { "McpConfigId", "Identifier", "Expiry", });
+        new java.lang.String[] { "McpConfigId", "Identifier", "Expiry", "KeyId", "AccessLevel", });
     internal_static_scalekit_v1_mcp_CreateMcpSessionTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(40);
     internal_static_scalekit_v1_mcp_CreateMcpSessionTokenResponse_fieldAccessorTable = new
@@ -1126,6 +1236,7 @@ public final class McpProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.scalekit.grpc.buf.validate.ValidateProto.field);
+    registry.add(com.scalekit.grpc.buf.validate.ValidateProto.message);
     registry.add(com.scalekit.grpc.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.scalekit.grpc.google.api.AnnotationsProto.http);
     registry.add(com.scalekit.grpc.google.api.VisibilityProto.methodVisibility);

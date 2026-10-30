@@ -47,6 +47,11 @@ public interface PreviewEffectivePolicyRequestOrBuilder extends
    * Optional. When provided, the response intersects effective tools
    * with this list (mimicking an agent's ListTools page); when empty,
    * the response is the full permitted set on the connection.
+   *
+   * The empty-filter form covers the connection's own catalogue. Custom
+   * MCP tools are stored per connected account rather than per connection,
+   * so they are not enumerable from the connection alone — name those
+   * explicitly here to have them evaluated.
    * </pre>
    *
    * <code>repeated string candidate_tool_names = 3 [json_name = "candidateToolNames"];</code>
@@ -59,6 +64,11 @@ public interface PreviewEffectivePolicyRequestOrBuilder extends
    * Optional. When provided, the response intersects effective tools
    * with this list (mimicking an agent's ListTools page); when empty,
    * the response is the full permitted set on the connection.
+   *
+   * The empty-filter form covers the connection's own catalogue. Custom
+   * MCP tools are stored per connected account rather than per connection,
+   * so they are not enumerable from the connection alone — name those
+   * explicitly here to have them evaluated.
    * </pre>
    *
    * <code>repeated string candidate_tool_names = 3 [json_name = "candidateToolNames"];</code>
@@ -70,6 +80,11 @@ public interface PreviewEffectivePolicyRequestOrBuilder extends
    * Optional. When provided, the response intersects effective tools
    * with this list (mimicking an agent's ListTools page); when empty,
    * the response is the full permitted set on the connection.
+   *
+   * The empty-filter form covers the connection's own catalogue. Custom
+   * MCP tools are stored per connected account rather than per connection,
+   * so they are not enumerable from the connection alone — name those
+   * explicitly here to have them evaluated.
    * </pre>
    *
    * <code>repeated string candidate_tool_names = 3 [json_name = "candidateToolNames"];</code>
@@ -82,6 +97,11 @@ public interface PreviewEffectivePolicyRequestOrBuilder extends
    * Optional. When provided, the response intersects effective tools
    * with this list (mimicking an agent's ListTools page); when empty,
    * the response is the full permitted set on the connection.
+   *
+   * The empty-filter form covers the connection's own catalogue. Custom
+   * MCP tools are stored per connected account rather than per connection,
+   * so they are not enumerable from the connection alone — name those
+   * explicitly here to have them evaluated.
    * </pre>
    *
    * <code>repeated string candidate_tool_names = 3 [json_name = "candidateToolNames"];</code>

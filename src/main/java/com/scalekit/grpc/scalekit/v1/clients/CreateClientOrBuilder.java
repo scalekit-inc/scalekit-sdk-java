@@ -233,4 +233,19 @@ public interface CreateClientOrBuilder extends
    * <code>.google.protobuf.BoolValue enforce_pkce = 12 [json_name = "enforcePkce", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.BoolValueOrBuilder getEnforcePkceOrBuilder();
+
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 13 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the ipAllowlist field is set.
+   */
+  boolean hasIpAllowlist();
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 13 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The ipAllowlist.
+   */
+  com.scalekit.grpc.scalekit.v1.clients.IpAllowlist getIpAllowlist();
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 13 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder getIpAllowlistOrBuilder();
 }

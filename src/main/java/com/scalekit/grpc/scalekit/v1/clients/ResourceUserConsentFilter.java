@@ -19,6 +19,8 @@ private static final long serialVersionUID = 0L;
   private ResourceUserConsentFilter() {
     externalUserId_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    consentId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -78,6 +80,43 @@ private static final long serialVersionUID = 0L;
     return externalUserId_.getByteString(index);
   }
 
+  public static final int CONSENT_ID_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList consentId_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the consentId.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getConsentIdList() {
+    return consentId_;
+  }
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of consentId.
+   */
+  public int getConsentIdCount() {
+    return consentId_.size();
+  }
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The consentId at the given index.
+   */
+  public java.lang.String getConsentId(int index) {
+    return consentId_.get(index);
+  }
+  /**
+   * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the consentId at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getConsentIdBytes(int index) {
+    return consentId_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -94,6 +133,9 @@ private static final long serialVersionUID = 0L;
                       throws java.io.IOException {
     for (int i = 0; i < externalUserId_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, externalUserId_.getRaw(i));
+    }
+    for (int i = 0; i < consentId_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, consentId_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -112,6 +154,14 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getExternalUserIdList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < consentId_.size(); i++) {
+        dataSize += computeStringSizeNoTag(consentId_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getConsentIdList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -129,6 +179,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getExternalUserIdList()
         .equals(other.getExternalUserIdList())) return false;
+    if (!getConsentIdList()
+        .equals(other.getConsentIdList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -143,6 +195,10 @@ private static final long serialVersionUID = 0L;
     if (getExternalUserIdCount() > 0) {
       hash = (37 * hash) + EXTERNAL_USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExternalUserIdList().hashCode();
+    }
+    if (getConsentIdCount() > 0) {
+      hash = (37 * hash) + CONSENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getConsentIdList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -277,6 +333,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       externalUserId_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      consentId_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -313,6 +371,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         externalUserId_.makeImmutable();
         result.externalUserId_ = externalUserId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        consentId_.makeImmutable();
+        result.consentId_ = consentId_;
       }
     }
 
@@ -370,6 +432,16 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (!other.consentId_.isEmpty()) {
+        if (consentId_.isEmpty()) {
+          consentId_ = other.consentId_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureConsentIdIsMutable();
+          consentId_.addAll(other.consentId_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -402,6 +474,12 @@ private static final long serialVersionUID = 0L;
               externalUserId_.add(s);
               break;
             } // case 10
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureConsentIdIsMutable();
+              consentId_.add(s);
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -526,6 +604,117 @@ private static final long serialVersionUID = 0L;
       ensureExternalUserIdIsMutable();
       externalUserId_.add(value);
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList consentId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureConsentIdIsMutable() {
+      if (!consentId_.isModifiable()) {
+        consentId_ = new com.google.protobuf.LazyStringArrayList(consentId_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the consentId.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getConsentIdList() {
+      consentId_.makeImmutable();
+      return consentId_;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of consentId.
+     */
+    public int getConsentIdCount() {
+      return consentId_.size();
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The consentId at the given index.
+     */
+    public java.lang.String getConsentId(int index) {
+      return consentId_.get(index);
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the consentId at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getConsentIdBytes(int index) {
+      return consentId_.getByteString(index);
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The consentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsentId(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureConsentIdIsMutable();
+      consentId_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The consentId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConsentId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureConsentIdIsMutable();
+      consentId_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The consentId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllConsentId(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureConsentIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, consentId_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearConsentId() {
+      consentId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string consent_id = 2 [json_name = "consentId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the consentId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addConsentIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureConsentIdIsMutable();
+      consentId_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -201,27 +201,27 @@ public final class AuthServiceGrpc {
     return getSignupOrganizationMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest,
       com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> getGetAuthStateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetAuthState",
-      requestType = com.google.protobuf.Empty.class,
+      requestType = com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest.class,
       responseType = com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest,
       com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> getGetAuthStateMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> getGetAuthStateMethod;
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest, com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> getGetAuthStateMethod;
     if ((getGetAuthStateMethod = AuthServiceGrpc.getGetAuthStateMethod) == null) {
       synchronized (AuthServiceGrpc.class) {
         if ((getGetAuthStateMethod = AuthServiceGrpc.getGetAuthStateMethod) == null) {
           AuthServiceGrpc.getGetAuthStateMethod = getGetAuthStateMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest, com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthState"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.protobuf.Empty.getDefaultInstance()))
+                  com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse.getDefaultInstance()))
               .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetAuthState"))
@@ -387,6 +387,37 @@ public final class AuthServiceGrpc {
     return getUpdateLoginUserDetailsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest,
+      com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> getGetLoginRequestDetailsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLoginRequestDetails",
+      requestType = com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest,
+      com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> getGetLoginRequestDetailsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest, com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> getGetLoginRequestDetailsMethod;
+    if ((getGetLoginRequestDetailsMethod = AuthServiceGrpc.getGetLoginRequestDetailsMethod) == null) {
+      synchronized (AuthServiceGrpc.class) {
+        if ((getGetLoginRequestDetailsMethod = AuthServiceGrpc.getGetLoginRequestDetailsMethod) == null) {
+          AuthServiceGrpc.getGetLoginRequestDetailsMethod = getGetLoginRequestDetailsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest, com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLoginRequestDetails"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthServiceMethodDescriptorSupplier("GetLoginRequestDetails"))
+              .build();
+        }
+      }
+    }
+    return getGetLoginRequestDetailsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -479,7 +510,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    default void getAuthState(com.google.protobuf.Empty request,
+    default void getAuthState(com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAuthStateMethod(), responseObserver);
     }
@@ -517,6 +548,13 @@ public final class AuthServiceGrpc {
     default void updateLoginUserDetails(com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLoginUserDetailsMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default void getLoginRequestDetails(com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLoginRequestDetailsMethod(), responseObserver);
     }
   }
 
@@ -597,7 +635,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public void getAuthState(com.google.protobuf.Empty request,
+    public void getAuthState(com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetAuthStateMethod(), getCallOptions()), request, responseObserver);
@@ -641,6 +679,14 @@ public final class AuthServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateLoginUserDetailsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getLoginRequestDetails(com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLoginRequestDetailsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -704,7 +750,7 @@ public final class AuthServiceGrpc {
 
     /**
      */
-    public com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse getAuthState(com.google.protobuf.Empty request) {
+    public com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse getAuthState(com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAuthStateMethod(), getCallOptions(), request);
     }
@@ -742,6 +788,13 @@ public final class AuthServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsResponse updateLoginUserDetails(com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateLoginUserDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse getLoginRequestDetails(com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLoginRequestDetailsMethod(), getCallOptions(), request);
     }
   }
 
@@ -812,7 +865,7 @@ public final class AuthServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse> getAuthState(
-        com.google.protobuf.Empty request) {
+        com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAuthStateMethod(), getCallOptions()), request);
     }
@@ -856,6 +909,14 @@ public final class AuthServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateLoginUserDetailsMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse> getLoginRequestDetails(
+        com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLoginRequestDetailsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_AUTH_METHODS = 0;
@@ -870,6 +931,7 @@ public final class AuthServiceGrpc {
   private static final int METHODID_GET_AUTH_CUSTOMIZATIONS = 9;
   private static final int METHODID_GET_AUTH_FEATURES = 10;
   private static final int METHODID_UPDATE_LOGIN_USER_DETAILS = 11;
+  private static final int METHODID_GET_LOGIN_REQUEST_DETAILS = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -913,7 +975,7 @@ public final class AuthServiceGrpc {
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.SignupOrganizationResponse>) responseObserver);
           break;
         case METHODID_GET_AUTH_STATE:
-          serviceImpl.getAuthState((com.google.protobuf.Empty) request,
+          serviceImpl.getAuthState((com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>) responseObserver);
           break;
         case METHODID_GET_AUTH_ERROR:
@@ -935,6 +997,10 @@ public final class AuthServiceGrpc {
         case METHODID_UPDATE_LOGIN_USER_DETAILS:
           serviceImpl.updateLoginUserDetails((com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsResponse>) responseObserver);
+          break;
+        case METHODID_GET_LOGIN_REQUEST_DETAILS:
+          serviceImpl.getLoginRequestDetails((com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1000,7 +1066,7 @@ public final class AuthServiceGrpc {
           getGetAuthStateMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
-              com.google.protobuf.Empty,
+              com.scalekit.grpc.scalekit.v1.auth.GetAuthStateRequest,
               com.scalekit.grpc.scalekit.v1.auth.GetAuthStateResponse>(
                 service, METHODID_GET_AUTH_STATE)))
         .addMethod(
@@ -1038,6 +1104,13 @@ public final class AuthServiceGrpc {
               com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsRequest,
               com.scalekit.grpc.scalekit.v1.auth.UpdateLoginUserDetailsResponse>(
                 service, METHODID_UPDATE_LOGIN_USER_DETAILS)))
+        .addMethod(
+          getGetLoginRequestDetailsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsRequest,
+              com.scalekit.grpc.scalekit.v1.auth.GetLoginRequestDetailsResponse>(
+                service, METHODID_GET_LOGIN_REQUEST_DETAILS)))
         .build();
   }
 
@@ -1098,6 +1171,7 @@ public final class AuthServiceGrpc {
               .addMethod(getGetAuthCustomizationsMethod())
               .addMethod(getGetAuthFeaturesMethod())
               .addMethod(getUpdateLoginUserDetailsMethod())
+              .addMethod(getGetLoginRequestDetailsMethod())
               .build();
         }
       }

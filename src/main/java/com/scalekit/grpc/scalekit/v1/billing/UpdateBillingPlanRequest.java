@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     plans_ = java.util.Collections.emptyList();
     addOns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    paymentAuthorizationId_ = "";
   }
 
   @java.lang.Override
@@ -47,6 +48,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.class, com.scalekit.grpc.scalekit.v1.billing.UpdateBillingPlanRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PLANS_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private java.util.List<com.scalekit.grpc.scalekit.v1.billing.LinePlan> plans_;
@@ -194,6 +196,68 @@ private static final long serialVersionUID = 0L;
     return addOns_.getByteString(index);
   }
 
+  public static final int PAYMENT_AUTHORIZATION_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object paymentAuthorizationId_ = "";
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the paymentAuthorizationId field is set.
+   */
+  @java.lang.Override
+  public boolean hasPaymentAuthorizationId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The paymentAuthorizationId.
+   */
+  @java.lang.Override
+  public java.lang.String getPaymentAuthorizationId() {
+    java.lang.Object ref = paymentAuthorizationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      paymentAuthorizationId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for paymentAuthorizationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPaymentAuthorizationIdBytes() {
+    java.lang.Object ref = paymentAuthorizationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      paymentAuthorizationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -213,6 +277,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < addOns_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, addOns_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, paymentAuthorizationId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -235,6 +302,9 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAddOnsList().size();
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, paymentAuthorizationId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -254,6 +324,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getPlansList())) return false;
     if (!getAddOnsList()
         .equals(other.getAddOnsList())) return false;
+    if (hasPaymentAuthorizationId() != other.hasPaymentAuthorizationId()) return false;
+    if (hasPaymentAuthorizationId()) {
+      if (!getPaymentAuthorizationId()
+          .equals(other.getPaymentAuthorizationId())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -272,6 +347,10 @@ private static final long serialVersionUID = 0L;
     if (getAddOnsCount() > 0) {
       hash = (37 * hash) + ADD_ONS_FIELD_NUMBER;
       hash = (53 * hash) + getAddOnsList().hashCode();
+    }
+    if (hasPaymentAuthorizationId()) {
+      hash = (37 * hash) + PAYMENT_AUTHORIZATION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPaymentAuthorizationId().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -418,6 +497,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       addOns_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      paymentAuthorizationId_ = "";
       return this;
     }
 
@@ -468,6 +548,12 @@ private static final long serialVersionUID = 0L;
         addOns_.makeImmutable();
         result.addOns_ = addOns_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.paymentAuthorizationId_ = paymentAuthorizationId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -550,6 +636,11 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
+      if (other.hasPaymentAuthorizationId()) {
+        paymentAuthorizationId_ = other.paymentAuthorizationId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -595,6 +686,11 @@ private static final long serialVersionUID = 0L;
               addOns_.add(s);
               break;
             } // case 26
+            case 34: {
+              paymentAuthorizationId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1148,6 +1244,115 @@ private static final long serialVersionUID = 0L;
       ensureAddOnsIsMutable();
       addOns_.add(value);
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object paymentAuthorizationId_ = "";
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the paymentAuthorizationId field is set.
+     */
+    public boolean hasPaymentAuthorizationId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The paymentAuthorizationId.
+     */
+    public java.lang.String getPaymentAuthorizationId() {
+      java.lang.Object ref = paymentAuthorizationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        paymentAuthorizationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for paymentAuthorizationId.
+     */
+    public com.google.protobuf.ByteString
+        getPaymentAuthorizationIdBytes() {
+      java.lang.Object ref = paymentAuthorizationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        paymentAuthorizationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The paymentAuthorizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentAuthorizationId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      paymentAuthorizationId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPaymentAuthorizationId() {
+      paymentAuthorizationId_ = getDefaultInstance().getPaymentAuthorizationId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The payment authorization a previous call returned in payment_action, after the customer completed
+     * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+     * </pre>
+     *
+     * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for paymentAuthorizationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPaymentAuthorizationIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      paymentAuthorizationId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
