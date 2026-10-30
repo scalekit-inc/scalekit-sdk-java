@@ -27,7 +27,8 @@ public class ListUserConsentsOptions {
     List<String> userIds;
     /**
      * Exact match on consent IDs (format: usrcnst_xxxxx), max 25 distinct. Takes precedence over
-     * userIds and search. IDs that do not exist or belong to another resource are omitted from the result.
+     * userIds and search; blank-only values are ignored. IDs that do not exist or belong to another resource
+     * are omitted. An older server ignores this filter, so confirm each returned id is one you asked for before revoking.
      */
     List<String> consentIds;
 }
