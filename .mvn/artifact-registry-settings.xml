@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Maven settings for publishing a release to Google Artifact Registry (`make publish`).
+     It holds no secret: the short-lived access token is read from ARTIFACT_REGISTRY_TOKEN,
+     which `make publish` sets from `gcloud auth print-access-token`. Reading the release
+     needs no credentials, because the repository is public. -->
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <server>
+            <!-- Must match the repository id in the gcp-artifact-registry profile in pom.xml. -->
+            <id>artifact-registry</id>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Authorization</name>
+                        <value>Bearer ${env.ARTIFACT_REGISTRY_TOKEN}</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
+        </server>
+    </servers>
+</settings>

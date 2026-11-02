@@ -9,7 +9,7 @@
 <p><strong>Official Java SDK for Scalekit.</strong><br>
 Authentication, authorization, and tool-calling for human-in-the-loop and autonomous agent flows.</p>
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.scalekit/scalekit-sdk-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.scalekit%22%20AND%20a:%22scalekit-sdk-java%22)
+[![Version](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fus-maven.pkg.dev%2Fscalekit-infrastructure%2Fmaven-public%2Fcom%2Fscalekit%2Fscalekit-sdk-java%2Fmaven-metadata.xml&label=version)](#installation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Javadoc](https://javadoc.io/badge2/com.scalekit/scalekit-sdk-java/javadoc.svg)](https://javadoc.io/doc/com.scalekit/scalekit-sdk-java)
 
@@ -52,21 +52,44 @@ This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit pro
 
 #### Installation
 
+New releases are published to Scalekit's public Maven repository, `https://us-maven.pkg.dev/scalekit-infrastructure/maven-public`. Add it next to Maven Central; no credentials are needed. Versions up to 2.6.0 are also on Maven Central.
+
 **Gradle:**
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.6.0"
+repositories {
+    mavenCentral()
+    maven { url "https://us-maven.pkg.dev/scalekit-infrastructure/maven-public" }
+}
+
+dependencies {
+    implementation "com.scalekit:scalekit-sdk-java:2.6.0"
+}
 ```
 
 **Maven:**
 
 ```xml
-<dependency>
-    <groupId>com.scalekit</groupId>
-    <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.6.0</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>scalekit</id>
+        <url>https://us-maven.pkg.dev/scalekit-infrastructure/maven-public</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.scalekit</groupId>
+        <artifactId>scalekit-sdk-java</artifactId>
+        <version>2.6.0</version>
+    </dependency>
+</dependencies>
 ```
+
+If your builds resolve dependencies only through an internal mirror such as Nexus or Artifactory, add the URL above to it as a proxy repository.
 
 #### Multiple issuers
 
@@ -174,6 +197,17 @@ For now:
 3. Make your changes
 4. Run tests
 5. Open a Pull Request
+
+#### Publishing a release
+
+Maintainers publish from a clean checkout of the merged release commit:
+
+```bash
+gcloud auth login
+make publish
+```
+
+`make publish` signs the jar, sources and javadoc with your GPG key and deploys the `pom.xml` version to `https://us-maven.pkg.dev/scalekit-infrastructure/maven-public` (the `gcp-artifact-registry` profile). It needs Artifact Registry Writer on that repository, and refuses to run from a dirty tree or to publish a version that already exists. `mvn deploy -Pmaven-central` publishes to Maven Central instead.
 
 ---
 

@@ -153,17 +153,6 @@
             </resource>
         </resources>
         <plugins>
-                <plugin>
-                    <groupId>org.sonatype.central</groupId>
-                    <artifactId>central-publishing-maven-plugin</artifactId>
-                    <version>0.9.0</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <publishingServerId>central</publishingServerId>
-                        <autoPublish>false</autoPublish>
-                    </configuration>
-                </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -297,4 +286,41 @@
 
         </plugins>
     </build>
+
+    <!-- Where `mvn deploy` publishes. A release names exactly one profile; with neither,
+         deploy fails because there is no distribution repository, so nothing is published
+         by accident. See "Publishing a release" in README.md. -->
+    <profiles>
+        <!-- Google Artifact Registry: the public repository releases are published to.
+             The server id must match the <server> in .mvn/artifact-registry-settings.xml. -->
+        <profile>
+            <id>gcp-artifact-registry</id>
+            <distributionManagement>
+                <repository>
+                    <id>artifact-registry</id>
+                    <url>https://us-maven.pkg.dev/scalekit-infrastructure/maven-public</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
+        <!-- Maven Central: versions up to 2.6.0 were published here. The plugin replaces the
+             deploy step, so it is only active with -Pmaven-central. -->
+        <profile>
+            <id>maven-central</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.9.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>false</autoPublish>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
