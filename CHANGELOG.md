@@ -10,7 +10,13 @@ Don't edit released sections by hand.
 
 Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). Their wording is kept, with small corrections.
 
-## [2.7.0] - 2026-11-03
+## [2.6.1] - 2026-11-03
+
+### Changed
+
+- No code changes from 2.6.0. Starting with this version, releases are also published to Scalekit's Maven repository at `https://us-maven.pkg.dev/scalekit-public/java`, in addition to Maven Central. Maven Central remains the default; existing builds need no changes.
+
+## [2.6.0] - 2026-10-30
 
 ### Added
 
@@ -266,7 +272,8 @@ List<Domain> domains = client.domains().listDomainsByOrganizationId(
 
 #### Initial Release
 
-[2.7.0]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.6.0...v2.7.0
+[2.6.1]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.6.0...v2.6.1
+[2.6.0]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.5.0
 [2.4.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.4.0
 [2.3.1]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.3.1
