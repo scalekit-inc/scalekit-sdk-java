@@ -83,7 +83,7 @@ verify-generate: generate
 # Refuses to run from a dirty tree or to re-publish a version that already exists.
 publish:
 	@command -v gcloud >/dev/null 2>&1 || (echo "missing gcloud. install the Google Cloud CLI and run 'gcloud auth login'" && exit 1)
-	@git diff --quiet HEAD || (echo "uncommitted changes; publish from a clean checkout of the release commit" && exit 1)
+	@[ -z "$$(git status --porcelain)" ] || (echo "uncommitted or untracked files; publish from a clean checkout of the release commit" && git status --short && exit 1)
 	@version="$$($(MVN_CMD) -q help:evaluate -Dexpression=project.version -DforceStdout)" || exit 1; \
 	pom_url="$(ARTIFACT_REGISTRY_URL)/$(ARTIFACT_PATH)/$$version/scalekit-sdk-java-$$version.pom"; \
 	status="$$(curl -s -o /dev/null -w '%{http_code}' "$$pom_url")"; \

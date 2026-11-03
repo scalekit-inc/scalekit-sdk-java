@@ -179,7 +179,7 @@ For now:
 
 Each release is published to Maven Central and to Scalekit's Maven repository, `https://us-maven.pkg.dev/scalekit-public/java`.
 
-- **Maven Central:** from a clean checkout of the release commit, run `mvn -Pmaven-central clean deploy`.
+- **Maven Central:** from a clean checkout of the release commit, run `mvn -Pmaven-central clean deploy`, then open the deployment in the [Central Portal](https://central.sonatype.com/publishing/deployments) and click **Publish**. `autoPublish` is off, so the release is not available until you do.
 - **Scalekit's Maven repository:** publish the GitHub Release `vX.Y.Z`. The Release workflow publishes that tag once a maintainer approves the `release` environment. To publish an existing tag, run the Release workflow from the Actions tab with that tag; with "dry run" set, it builds and signs without publishing. `make publish` does the same from a machine logged in with `gcloud auth login`.
 
 Published versions cannot be overwritten, and both paths refuse to publish a version that already exists.
