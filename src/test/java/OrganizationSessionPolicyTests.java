@@ -6,6 +6,7 @@ import com.scalekit.grpc.scalekit.v1.commons.TimeUnit;
 import com.scalekit.grpc.scalekit.v1.organizations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -13,6 +14,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
+@Tag("live")
 public class OrganizationSessionPolicyTests {
 
     private static ScalekitClient client;

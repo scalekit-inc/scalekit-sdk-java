@@ -1,0 +1,8 @@
+kind: changed
+body: |
+  When the token endpoint rejects the client ID or secret, `client.authentication()` calls such as `generateClientToken(...)`, `getClientAccessToken()`, `authenticateWithCode(...)` and `refreshAccessToken(...)` now throw an `APIException` whose message reads `Failed to authenticate: HTTP 401 invalid_client: the client ID or secret was not accepted`. Previously the message ended with the server's raw JSON body, `{"error":"invalid_client"}`. Other errors from the token endpoint still include the server's response body. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.5.0/REFERENCE.md#auth)
+time: '2026-10-26T10:52:25.957439+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''

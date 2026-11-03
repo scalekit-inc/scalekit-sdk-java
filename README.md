@@ -172,7 +172,7 @@ For now:
 1. Fork this repository
 2. Create a branch — `git checkout -b fix/my-improvement`
 3. Make your changes
-4. Run tests
+4. Run the checks: `make unit-test` (no credentials needed), `make api-compat` (no breaking API change since the last release) and `make jar-check` (no new unrelocated dependency in the jar). `make test` also runs the live tests, which need `SCALEKIT_ENVIRONMENT_URL`, `SCALEKIT_CLIENT_ID` and `SCALEKIT_CLIENT_SECRET`; tag a test that needs them with `@Tag("live")`.
 5. Open a Pull Request
 
 ---

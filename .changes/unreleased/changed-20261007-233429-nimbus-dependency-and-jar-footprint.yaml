@@ -1,0 +1,10 @@
+kind: changed
+body: |
+  Token validation in `client.authentication()` now uses `com.nimbusds:nimbus-jose-jwt`, declared as a regular Maven dependency (10.10 by default; 9.37.x and 10.x are supported), instead of a copy of jose4j bundled in the jar. If your application already has nimbus-jose-jwt, for example through Spring Security, Maven and Gradle resolve one version for both, which can be the SDK's 10.10. To use a different supported version, declare `com.nimbusds:nimbus-jose-jwt` in your build. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/v2.5.0/REFERENCE.md#auth)
+
+  The jar also no longer bundles jose4j, Apache HttpClient, HttpCore, Commons Logging or Commons Codec under their original package names. This removes the "please remove commons-logging.jar from classpath" warning in Spring applications. If your code used one of these libraries only because the SDK jar contained it, add it to your build.
+time: '2026-10-07T23:34:29.252265+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''

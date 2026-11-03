@@ -3,12 +3,14 @@ import com.scalekit.grpc.scalekit.v1.commons.Role;
 import com.scalekit.grpc.scalekit.v1.users.*;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class UserRolesPermissionsTests {
 
     private static ScalekitClient client;

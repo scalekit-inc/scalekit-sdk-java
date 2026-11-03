@@ -4,7 +4,10 @@
 #   make generate-local  # Regenerate SDK code from local ../scalekit/proto
 #   make lint            # Run static checks
 #   make javadoc         # Fail on broken Javadoc references
-#   make test            # Run unit tests
+#   make test            # Run all tests, including live ones (needs SCALEKIT_* env vars)
+#   make unit-test       # Run only the tests that need no credentials or network
+#   make api-compat      # Fail on a binary/source incompatible API change vs the last release
+#   make jar-check       # Fail if the packaged jar bundles an unexpected unrelocated package
 
 SHELL := /bin/bash
 
@@ -26,7 +29,7 @@ PROTO_LOCAL_INPUT := ../scalekit
 PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
 
-.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate
+.PHONY: setup tools-check generate generate-local lint javadoc test unit-test api-compat jar-check verify-generate
 
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
@@ -67,6 +70,29 @@ javadoc:
 
 test:
 	$(MVN_CMD) test
+
+# Tests that call a real Scalekit environment carry @Tag("live"); everything else must run
+# without credentials or network, so tag any new test that needs them. Sources are compiled
+# by the JDK running Maven (release 8); JVM=/path/to/bin/java runs the tests on another JDK,
+# which is how CI covers JDK 8, 11, 17, 21 and 25.
+unit-test:
+	$(MVN_CMD) -DexcludedGroups=live $(if $(JVM),-Djvm="$(JVM)") test
+
+# Compares the packaged jar with the jar of JAPICMP_OLD_VERSION published on Maven Central
+# (default: the japicmp.oldVersion property in pom.xml; CI passes the latest v* tag).
+# Fails on any binary or source incompatible change. Reports: target/japicmp/.
+JAPICMP_OLD_VERSION ?= $(shell sed -n 's:.*<japicmp.oldVersion>\(.*\)</japicmp.oldVersion>.*:\1:p' pom.xml)
+JAPICMP_OLD_JAR := $(CURDIR)/target/japicmp-baseline/scalekit-sdk-java-$(JAPICMP_OLD_VERSION).jar
+
+api-compat:
+	scripts/fetch-release-jar.sh "$(JAPICMP_OLD_VERSION)" "$(JAPICMP_OLD_JAR)"
+	$(MVN_CMD) -DskipTests -Dgpg.skip -Dmaven.javadoc.skip=true -Djapicmp.skip=false \
+		-Djapicmp.oldVersion="$(JAPICMP_OLD_VERSION)" -Djapicmp.oldJar="$(JAPICMP_OLD_JAR)" verify
+
+# Packages the shaded jar and checks it against scripts/jar-contents-allowlist.txt.
+jar-check:
+	$(MVN_CMD) -DskipTests -Dgpg.skip -Dmaven.javadoc.skip=true package
+	scripts/check-jar-contents.sh
 
 verify-generate: generate
 	git diff --exit-code

@@ -16,6 +16,7 @@ import com.scalekit.grpc.scalekit.v1.clients.UpdateResourceClientResponse;
 import io.grpc.Status;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -23,6 +24,7 @@ import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class ResourceConsentClientTests {
 
     private static ScalekitClient client;

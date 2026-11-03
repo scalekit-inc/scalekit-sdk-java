@@ -7,11 +7,13 @@ import com.scalekit.grpc.scalekit.v1.domains.CreateDomain;
 import com.scalekit.grpc.scalekit.v1.organizations.Organization;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.UUID;
 
+@Tag("live")
 public class DomainTests {
 
     private static ScalekitClient client;

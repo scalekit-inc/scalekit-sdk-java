@@ -4,6 +4,7 @@ import com.scalekit.internal.ScalekitCredentials;
 import com.scalekit.internal.http.TokenValidationOptions;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class AuthTest {
 
     private static ScalekitClient client;
@@ -51,7 +53,7 @@ public class AuthTest {
         // Correct issuer/audience -> valid.
         assertTrue(client.authentication().validateAccessToken(accessToken, options));
 
-        // Wrong issuer -> validation fails (APIException wrapping the jose4j mismatch).
+        // Wrong issuer -> validation fails (APIException).
         TokenValidationOptions wrongIssuer = TokenValidationOptions.builder()
                 .issuer("https://wrong-issuer.example.com")
                 .audience(Collections.singletonList(audience))
@@ -59,7 +61,7 @@ public class AuthTest {
         assertThrows(APIException.class,
                 () -> client.authentication().validateAccessToken(accessToken, wrongIssuer));
 
-        // Wrong audience -> validation fails (APIException wrapping the jose4j mismatch).
+        // Wrong audience -> validation fails (APIException).
         TokenValidationOptions wrongAudience = TokenValidationOptions.builder()
                 .issuer(issuer)
                 .audience(Collections.singletonList("https://wrong-audience.example.com"))

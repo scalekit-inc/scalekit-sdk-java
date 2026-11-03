@@ -2,10 +2,12 @@ import com.scalekit.ScalekitClient;
 import com.scalekit.exceptions.APIException;
 import com.scalekit.grpc.scalekit.v1.roles.*;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class PermissionTests {
 
     private static ScalekitClient client;

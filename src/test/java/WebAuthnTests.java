@@ -4,10 +4,12 @@ import com.scalekit.grpc.scalekit.v1.auth.webauthn.ListCredentialsResponse;
 import com.scalekit.grpc.scalekit.v1.auth.webauthn.UpdateCredentialResponse;
 import com.scalekit.grpc.scalekit.v1.auth.webauthn.WebAuthnCredential;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("live")
 public class WebAuthnTests {
 
     private static ScalekitClient client;

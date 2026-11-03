@@ -1,0 +1,8 @@
+kind: changed
+body: |
+  The SDK jar no longer contains the `META-INF/versions/*/module-info.class` files of the libraries it bundles. The jar is not a multi-release jar, so the JVM never read them, but module-aware tools such as `jdeps` and IDEs reported those descriptors as if they described the SDK. No code changes, and the SDK still runs on Java 8 and later.
+time: '2026-10-10T00:06:30.126512+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''
