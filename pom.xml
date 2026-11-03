@@ -7,7 +7,7 @@
 
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.6.0</version>
+    <version>2.7.0</version>
 
     <packaging>jar</packaging>
 
@@ -303,8 +303,8 @@
             </distributionManagement>
         </profile>
 
-        <!-- Maven Central: versions up to 2.6.0 were published here. The plugin replaces the
-             deploy step, so it is only active with -Pmaven-central. -->
+        <!-- Maven Central: `mvn -Pmaven-central clean deploy`. The plugin replaces the deploy
+             step, so it is only active with -Pmaven-central. -->
         <profile>
             <id>maven-central</id>
             <build>

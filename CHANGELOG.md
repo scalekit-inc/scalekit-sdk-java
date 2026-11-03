@@ -10,6 +10,23 @@ Don't edit released sections by hand.
 
 Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). Their wording is kept, with small corrections.
 
+## [2.7.0] - 2026-11-03
+
+### Added
+
+- `client.resources().listUserConsents(resourceId, options)` accepts `consentIds` on `ListUserConsentsOptions` to fetch specific consents by ID, for example to find the `clientId` you need to revoke a consent you already hold the ID of. `consentIds` takes up to 25 distinct IDs in the `usrcnst_<number>` format and takes precedence over `userIds` and `search`; IDs that do not exist or belong to another resource are omitted from the result. Existing calls are unchanged. [Reference](https://github.com/scalekit-inc/scalekit-sdk-java/blob/main/REFERENCE.md)
+
+  ```java
+  ListResourceUserConsentsResponse response = scalekitClient.resources().listUserConsents(
+      "res_123456",
+      ListUserConsentsOptions.builder()
+          .consentIds(Arrays.asList("usrcnst_145478546020631313", "usrcnst_143610996831814379"))
+          .build());
+  for (ResourceUserConsent consent : response.getConsentsList()) {
+      System.out.println(consent.getId() + " " + consent.getClientId());
+  }
+  ```
+
 ## [2.5.0] - 2026-10-05
 
 ### Changes
@@ -249,6 +266,7 @@ List<Domain> domains = client.domains().listDomainsByOrganizationId(
 
 #### Initial Release
 
+[2.7.0]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.6.0...v2.7.0
 [2.5.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.5.0
 [2.4.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.4.0
 [2.3.1]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.3.1

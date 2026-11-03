@@ -6,6 +6,7 @@
 #   make javadoc         # Fail on broken Javadoc references
 #   make test            # Run unit tests
 #   make publish         # Publish the pom.xml version to Google Artifact Registry
+#   make publish-dry-run # Build and sign the release into target/publish-dry-run; publishes nothing
 
 SHELL := /bin/bash
 
@@ -31,7 +32,7 @@ JAVA_PKG := src/main/java/com/scalekit/grpc
 ARTIFACT_REGISTRY_URL := https://us-maven.pkg.dev/scalekit-public/java
 ARTIFACT_PATH := com/scalekit/scalekit-sdk-java
 
-.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate publish
+.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate publish publish-dry-run
 
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
@@ -92,3 +93,10 @@ publish:
 	echo "publishing scalekit-sdk-java $$version to $(ARTIFACT_REGISTRY_URL)"; \
 	ARTIFACT_REGISTRY_TOKEN="$$token" $(MVN_CMD) -gs .mvn/artifact-registry-settings.xml -P gcp-artifact-registry -DskipTests clean deploy && \
 	echo "published: $$pom_url"
+
+# Builds and signs exactly what `make publish` would upload, into target/publish-dry-run.
+# Publishes nothing and needs no Google Cloud access; the Release workflow uses it for
+# its dry-run mode.
+publish-dry-run:
+	$(MVN_CMD) -P gcp-artifact-registry -DskipTests -DaltDeploymentRepository=dry-run::file:$(CURDIR)/target/publish-dry-run clean deploy
+	@echo "dry run complete: artifacts in target/publish-dry-run; nothing was published"
