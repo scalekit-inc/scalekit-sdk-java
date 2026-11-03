@@ -298,7 +298,7 @@
             <distributionManagement>
                 <repository>
                     <id>artifact-registry</id>
-                    <url>https://us-maven.pkg.dev/scalekit-infrastructure/maven-public</url>
+                    <url>https://us-maven.pkg.dev/scalekit-public/java</url>
                 </repository>
             </distributionManagement>
         </profile>

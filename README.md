@@ -9,7 +9,7 @@
 <p><strong>Official Java SDK for Scalekit.</strong><br>
 Authentication, authorization, and tool-calling for human-in-the-loop and autonomous agent flows.</p>
 
-[![Version](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fus-maven.pkg.dev%2Fscalekit-infrastructure%2Fmaven-public%2Fcom%2Fscalekit%2Fscalekit-sdk-java%2Fmaven-metadata.xml&label=version)](#installation)
+[![Version](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fus-maven.pkg.dev%2Fscalekit-public%2Fjava%2Fcom%2Fscalekit%2Fscalekit-sdk-java%2Fmaven-metadata.xml&label=version)](#installation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Javadoc](https://javadoc.io/badge2/com.scalekit/scalekit-sdk-java/javadoc.svg)](https://javadoc.io/doc/com.scalekit/scalekit-sdk-java)
 
@@ -52,14 +52,14 @@ This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit pro
 
 #### Installation
 
-New releases are published to Scalekit's public Maven repository, `https://us-maven.pkg.dev/scalekit-infrastructure/maven-public`. Add it next to Maven Central; no credentials are needed. Versions up to 2.6.0 are also on Maven Central.
+New releases are published to Scalekit's public Maven repository, `https://us-maven.pkg.dev/scalekit-public/java`. Add it next to Maven Central; no credentials are needed. Versions up to 2.6.0 are also on Maven Central.
 
 **Gradle:**
 
 ```gradle
 repositories {
     mavenCentral()
-    maven { url "https://us-maven.pkg.dev/scalekit-infrastructure/maven-public" }
+    maven { url "https://us-maven.pkg.dev/scalekit-public/java" }
 }
 
 dependencies {
@@ -73,7 +73,7 @@ dependencies {
 <repositories>
     <repository>
         <id>scalekit</id>
-        <url>https://us-maven.pkg.dev/scalekit-infrastructure/maven-public</url>
+        <url>https://us-maven.pkg.dev/scalekit-public/java</url>
         <snapshots>
             <enabled>false</enabled>
         </snapshots>
@@ -207,7 +207,7 @@ gcloud auth login
 make publish
 ```
 
-`make publish` signs the jar, sources and javadoc with your GPG key and deploys the `pom.xml` version to `https://us-maven.pkg.dev/scalekit-infrastructure/maven-public` (the `gcp-artifact-registry` profile). It needs Artifact Registry Writer on that repository, and refuses to run from a dirty tree or to publish a version that already exists. `mvn deploy -Pmaven-central` publishes to Maven Central instead.
+`make publish` signs the jar, sources and javadoc with your GPG key and deploys the `pom.xml` version to `https://us-maven.pkg.dev/scalekit-public/java` (the `gcp-artifact-registry` profile). It needs Artifact Registry Writer on that repository, and refuses to run from a dirty tree or to publish a version that already exists. `mvn deploy -Pmaven-central` publishes to Maven Central instead.
 
 ---
 

@@ -28,7 +28,7 @@ PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
 
 # Must match the gcp-artifact-registry profile in pom.xml.
-ARTIFACT_REGISTRY_URL := https://us-maven.pkg.dev/scalekit-infrastructure/maven-public
+ARTIFACT_REGISTRY_URL := https://us-maven.pkg.dev/scalekit-public/java
 ARTIFACT_PATH := com/scalekit/scalekit-sdk-java
 
 .PHONY: setup tools-check generate generate-local lint javadoc test verify-generate publish
