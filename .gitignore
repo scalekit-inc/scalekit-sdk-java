@@ -45,3 +45,6 @@ build/
 /.history
 .tools/*
 dependency-reduced-pom.xml
+
+# Credentials file written into the checkout by google-github-actions/auth (Release workflow).
+gha-creds-*.json

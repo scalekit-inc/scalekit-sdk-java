@@ -5,6 +5,8 @@
 #   make lint            # Run static checks
 #   make javadoc         # Fail on broken Javadoc references
 #   make test            # Run unit tests
+#   make publish         # Publish the pom.xml version to Google Artifact Registry
+#   make publish-dry-run # Build and sign the release into target/publish-dry-run; publishes nothing
 
 SHELL := /bin/bash
 
@@ -26,7 +28,11 @@ PROTO_LOCAL_INPUT := ../scalekit
 PROTO_OUT := .artifacts
 JAVA_PKG := src/main/java/com/scalekit/grpc
 
-.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate
+# Must match the gcp-artifact-registry profile in pom.xml.
+ARTIFACT_REGISTRY_URL := https://us-maven.pkg.dev/scalekit-public/java
+ARTIFACT_PATH := com/scalekit/scalekit-sdk-java
+
+.PHONY: setup tools-check generate generate-local lint javadoc test verify-generate publish publish-dry-run
 
 setup:
 	@mkdir -p "$(TOOLS_BIN)" "$(MAVEN_REPO_LOCAL)"
@@ -70,3 +76,27 @@ test:
 
 verify-generate: generate
 	git diff --exit-code
+
+# Publishes the version in pom.xml to the public Google Artifact Registry repository.
+# Needs gcloud logged in as an account with Artifact Registry Writer on the repository,
+# and a GPG key for signing. Tests are skipped here: CI runs them on every push to main.
+# Refuses to run from a dirty tree or to re-publish a version that already exists.
+publish:
+	@command -v gcloud >/dev/null 2>&1 || (echo "missing gcloud. install the Google Cloud CLI and run 'gcloud auth login'" && exit 1)
+	@[ -z "$$(git status --porcelain)" ] || (echo "uncommitted or untracked files; publish from a clean checkout of the release commit" && git status --short && exit 1)
+	@version="$$($(MVN_CMD) -q help:evaluate -Dexpression=project.version -DforceStdout)" || exit 1; \
+	pom_url="$(ARTIFACT_REGISTRY_URL)/$(ARTIFACT_PATH)/$$version/scalekit-sdk-java-$$version.pom"; \
+	status="$$(curl -s -o /dev/null -w '%{http_code}' "$$pom_url")"; \
+	if [ "$$status" = "200" ]; then echo "$$version is already published at $(ARTIFACT_REGISTRY_URL); bump the version first"; exit 1; fi; \
+	if [ "$$status" != "404" ]; then echo "could not check whether $$version is published: HTTP $$status from $$pom_url (is the repository created and readable by allUsers?)"; exit 1; fi; \
+	token="$$(gcloud auth print-access-token)" && [ -n "$$token" ] || { echo "gcloud auth print-access-token failed; run 'gcloud auth login'"; exit 1; }; \
+	echo "publishing scalekit-sdk-java $$version to $(ARTIFACT_REGISTRY_URL)"; \
+	ARTIFACT_REGISTRY_TOKEN="$$token" $(MVN_CMD) -gs .mvn/artifact-registry-settings.xml -P gcp-artifact-registry -DskipTests clean deploy && \
+	echo "published: $$pom_url"
+
+# Builds and signs exactly what `make publish` would upload, into target/publish-dry-run.
+# Publishes nothing and needs no Google Cloud access; the Release workflow uses it for
+# its dry-run mode.
+publish-dry-run:
+	$(MVN_CMD) -P gcp-artifact-registry -DskipTests -DaltDeploymentRepository=dry-run::file:$(CURDIR)/target/publish-dry-run clean deploy
+	@echo "dry run complete: artifacts in target/publish-dry-run; nothing was published"
