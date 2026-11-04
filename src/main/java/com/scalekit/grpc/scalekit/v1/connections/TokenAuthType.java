@@ -21,6 +21,14 @@ public enum TokenAuthType
    * <code>BASIC_AUTH = 2;</code>
    */
   BASIC_AUTH(2),
+  /**
+   * <pre>
+   * no client secret sent to the token endpoint (client_id still is — public/PKCE clients); OidcCommonConfig rejects this value, it's OAuth-only
+   * </pre>
+   *
+   * <code>NONE = 3;</code>
+   */
+  NONE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,6 +44,14 @@ public enum TokenAuthType
    * <code>BASIC_AUTH = 2;</code>
    */
   public static final int BASIC_AUTH_VALUE = 2;
+  /**
+   * <pre>
+   * no client secret sent to the token endpoint (client_id still is — public/PKCE clients); OidcCommonConfig rejects this value, it's OAuth-only
+   * </pre>
+   *
+   * <code>NONE = 3;</code>
+   */
+  public static final int NONE_VALUE = 3;
 
 
   public final int getNumber() {
@@ -65,6 +81,7 @@ public enum TokenAuthType
       case 0: return TOKEN_AUTH_TYPE_UNSPECIFIED;
       case 1: return URL_PARAMS;
       case 2: return BASIC_AUTH;
+      case 3: return NONE;
       default: return null;
     }
   }

@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object identifier_ = "";
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The identifier.
    */
   @java.lang.Override
@@ -612,7 +612,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for identifier.
    */
   @java.lang.Override
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   @java.lang.Override
@@ -645,7 +645,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   @java.lang.Override
@@ -662,7 +662,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   @java.lang.Override
@@ -1130,7 +1130,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object identifier_ = "";
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The identifier.
      */
     public java.lang.String getIdentifier() {
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for identifier.
      */
     public com.google.protobuf.ByteString
@@ -1163,7 +1163,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The identifier to set.
      * @return This builder for chaining.
      */
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIdentifier() {
@@ -1186,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for identifier to set.
      * @return This builder for chaining.
      */
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
 
     private int pageSize_ ;
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -1210,7 +1210,7 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
@@ -1222,7 +1222,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+     * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
@@ -1234,7 +1234,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
@@ -1250,7 +1250,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for pageToken.
      */
     public com.google.protobuf.ByteString
@@ -1267,7 +1267,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
@@ -1280,7 +1280,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
@@ -1290,7 +1290,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string page_token = 3 [json_name = "pageToken"];</code>
+     * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */

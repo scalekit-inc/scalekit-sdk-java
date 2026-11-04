@@ -19,7 +19,7 @@ Authentication, authorization, and tool-calling for human-in-the-loop and autono
 
 ---
 
-This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit provides auth and actions on behalf of users, with 500+ connectors and 20,000+ tools. Build secure AI products faster with authentication for humans (SSO, passwordless, full-stack auth) and agents (MCP/APIs, delegated actions), all unified on one platform.
+This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit provides auth and actions on behalf of users, with 600+ connectors and 35,000+ tools. Build secure AI products faster with authentication for humans (SSO, passwordless, full-stack auth) and agents (MCP/APIs, delegated actions), all unified on one platform.
 
 ---
 
@@ -55,7 +55,7 @@ This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit pro
 **Gradle:**
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.5.0"
+implementation "com.scalekit:scalekit-sdk-java:2.6.1"
 ```
 
 **Maven:**
@@ -64,7 +64,7 @@ implementation "com.scalekit:scalekit-sdk-java:2.5.0"
 <dependency>
     <groupId>com.scalekit</groupId>
     <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.5.0</version>
+    <version>2.6.1</version>
 </dependency>
 ```
 
@@ -174,6 +174,15 @@ For now:
 3. Make your changes
 4. Run tests
 5. Open a Pull Request
+
+#### Publishing a release
+
+Each release is published to Maven Central and to Scalekit's Maven repository, `https://us-maven.pkg.dev/scalekit-public/java`.
+
+- **Maven Central:** from a clean checkout of the release commit, run `mvn -Pmaven-central clean deploy`, then open the deployment in the [Central Portal](https://central.sonatype.com/publishing/deployments) and click **Publish**. `autoPublish` is off, so the release is not available until you do.
+- **Scalekit's Maven repository:** publish the GitHub Release `vX.Y.Z`. The Release workflow publishes that tag once a maintainer approves the `release` environment. To publish an existing tag, run the Release workflow from the Actions tab with that tag; with "dry run" set, it builds and signs without publishing. `make publish` does the same from a machine logged in with `gcloud auth login`.
+
+Published versions cannot be overwritten, and both paths refuse to publish a version that already exists.
 
 ---
 

@@ -9,17 +9,17 @@ public interface UpdateProviderResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
   boolean hasProvider();
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   com.scalekit.grpc.scalekit.v1.providers.Provider getProvider();
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder getProviderOrBuilder();
 }

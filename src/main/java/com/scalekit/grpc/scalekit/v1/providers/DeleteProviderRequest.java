@@ -44,7 +44,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object identifier_ = "";
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The identifier.
    */
   @java.lang.Override
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for identifier.
    */
   @java.lang.Override
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object identifier_ = "";
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The identifier.
      */
     public java.lang.String getIdentifier() {
@@ -423,7 +423,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The bytes for identifier.
      */
     public com.google.protobuf.ByteString
@@ -440,7 +440,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The identifier to set.
      * @return This builder for chaining.
      */
@@ -453,7 +453,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearIdentifier() {
@@ -463,7 +463,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+     * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @param value The bytes for identifier to set.
      * @return This builder for chaining.
      */

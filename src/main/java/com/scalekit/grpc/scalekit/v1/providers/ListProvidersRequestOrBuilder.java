@@ -9,30 +9,30 @@ public interface ListProvidersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The identifier.
    */
   java.lang.String getIdentifier();
   /**
-   * <code>string identifier = 1 [json_name = "identifier", (.buf.validate.field) = { ... }</code>
+   * <code>string identifier = 1 [json_name = "identifier", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for identifier.
    */
   com.google.protobuf.ByteString
       getIdentifierBytes();
 
   /**
-   * <code>uint32 page_size = 2 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 2 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <code>string page_token = 3 [json_name = "pageToken"];</code>
+   * <code>string page_token = 3 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

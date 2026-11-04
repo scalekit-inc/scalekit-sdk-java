@@ -43,7 +43,7 @@ private static final long serialVersionUID = 0L;
   public static final int PROVIDER_FIELD_NUMBER = 1;
   private com.scalekit.grpc.scalekit.v1.providers.Provider provider_;
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return Whether the provider field is set.
    */
   @java.lang.Override
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The provider.
    */
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
     return provider_ == null ? com.scalekit.grpc.scalekit.v1.providers.Provider.getDefaultInstance() : provider_;
   }
   /**
-   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+   * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   @java.lang.Override
   public com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder getProviderOrBuilder() {
@@ -417,14 +417,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.providers.Provider, com.scalekit.grpc.scalekit.v1.providers.Provider.Builder, com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder> providerBuilder_;
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return Whether the provider field is set.
      */
     public boolean hasProvider() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      * @return The provider.
      */
     public com.scalekit.grpc.scalekit.v1.providers.Provider getProvider() {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setProvider(com.scalekit.grpc.scalekit.v1.providers.Provider value) {
       if (providerBuilder_ == null) {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder setProvider(
         com.scalekit.grpc.scalekit.v1.providers.Provider.Builder builderForValue) {
@@ -465,7 +465,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder mergeProvider(com.scalekit.grpc.scalekit.v1.providers.Provider value) {
       if (providerBuilder_ == null) {
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public Builder clearProvider() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.providers.Provider.Builder getProviderBuilder() {
       bitField0_ |= 0x00000001;
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
       return getProviderFieldBuilder().getBuilder();
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     public com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder getProviderOrBuilder() {
       if (providerBuilder_ != null) {
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider"];</code>
+     * <code>.scalekit.v1.providers.Provider provider = 1 [json_name = "provider", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.scalekit.grpc.scalekit.v1.providers.Provider, com.scalekit.grpc.scalekit.v1.providers.Provider.Builder, com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder> 

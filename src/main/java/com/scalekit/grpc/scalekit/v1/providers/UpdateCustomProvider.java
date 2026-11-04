@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     proxyUrl_ = "";
     iconSrc_ = "";
+    openapiSpecUrl_ = "";
   }
 
   @java.lang.Override
@@ -328,6 +329,45 @@ java.lang.String defaultValue) {
     return map.get(key);
   }
 
+  public static final int OPENAPI_SPEC_URL_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object openapiSpecUrl_ = "";
+  /**
+   * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The openapiSpecUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getOpenapiSpecUrl() {
+    java.lang.Object ref = openapiSpecUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      openapiSpecUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for openapiSpecUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOpenapiSpecUrlBytes() {
+    java.lang.Object ref = openapiSpecUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      openapiSpecUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -366,6 +406,9 @@ java.lang.String defaultValue) {
         internalGetMetadata(),
         MetadataDefaultEntryHolder.defaultEntry,
         10);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(openapiSpecUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, openapiSpecUrl_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -405,6 +448,9 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, metadata__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(openapiSpecUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, openapiSpecUrl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -437,6 +483,8 @@ java.lang.String defaultValue) {
         .equals(other.getIconSrc())) return false;
     if (!internalGetMetadata().equals(
         other.internalGetMetadata())) return false;
+    if (!getOpenapiSpecUrl()
+        .equals(other.getOpenapiSpecUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -467,6 +515,8 @@ java.lang.String defaultValue) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
     }
+    hash = (37 * hash) + OPENAPI_SPEC_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getOpenapiSpecUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -637,6 +687,7 @@ java.lang.String defaultValue) {
       proxyEnabled_ = false;
       iconSrc_ = "";
       internalGetMutableMetadata().clear();
+      openapiSpecUrl_ = "";
       return this;
     }
 
@@ -695,6 +746,9 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.openapiSpecUrl_ = openapiSpecUrl_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -772,6 +826,11 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
       bitField0_ |= 0x00000040;
+      if (!other.getOpenapiSpecUrl().isEmpty()) {
+        openapiSpecUrl_ = other.openapiSpecUrl_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -839,6 +898,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000040;
               break;
             } // case 82
+            case 98: {
+              openapiSpecUrl_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1421,6 +1485,78 @@ java.lang.String defaultValue) {
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private java.lang.Object openapiSpecUrl_ = "";
+    /**
+     * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The openapiSpecUrl.
+     */
+    public java.lang.String getOpenapiSpecUrl() {
+      java.lang.Object ref = openapiSpecUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        openapiSpecUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The bytes for openapiSpecUrl.
+     */
+    public com.google.protobuf.ByteString
+        getOpenapiSpecUrlBytes() {
+      java.lang.Object ref = openapiSpecUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        openapiSpecUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The openapiSpecUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOpenapiSpecUrl(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      openapiSpecUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOpenapiSpecUrl() {
+      openapiSpecUrl_ = getDefaultInstance().getOpenapiSpecUrl();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes for openapiSpecUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOpenapiSpecUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      openapiSpecUrl_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     @java.lang.Override

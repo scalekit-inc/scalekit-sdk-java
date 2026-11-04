@@ -246,5 +246,20 @@ public interface UpdateResourceOrBuilder extends
    */
   com.google.protobuf.BoolValueOrBuilder getResourceScopeSelectionAllowedOrBuilder();
 
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the resourceScopedIssuerEnabled field is set.
+   */
+  boolean hasResourceScopedIssuerEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
+   */
+  com.google.protobuf.BoolValue getResourceScopedIssuerEnabled();
+  /**
+   * <code>.google.protobuf.BoolValue resource_scoped_issuer_enabled = 20 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getResourceScopedIssuerEnabledOrBuilder();
+
   com.scalekit.grpc.scalekit.v1.clients.UpdateResource.SettingsCase getSettingsCase();
 }

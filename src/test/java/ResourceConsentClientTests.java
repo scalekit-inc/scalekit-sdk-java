@@ -624,6 +624,79 @@ public class ResourceConsentClientTests {
     }
 
     @Test
+    void testListUserConsentsWithConsentIdsReturnsOnlyRequested() {
+        ListResourceUserConsentsResponse all =
+                client.resources().listUserConsents(TEST_RESOURCE_ID, ListUserConsentsOptions.builder().pageSize(30).build());
+        Assumptions.assumeTrue(all.getConsentsCount() > 0, "the test resource has no consents");
+        String consentId = all.getConsents(0).getId();
+
+        ListResourceUserConsentsResponse response =
+                client.resources().listUserConsents(TEST_RESOURCE_ID,
+                        ListUserConsentsOptions.builder()
+                                .consentIds(Collections.singletonList(consentId))
+                                .build());
+
+        assertEquals(1, response.getConsentsCount());
+        assertEquals(consentId, response.getConsents(0).getId());
+    }
+
+    @Test
+    void testListUserConsentsWithUnknownConsentIdReturnsEmpty() {
+        ListResourceUserConsentsResponse response =
+                client.resources().listUserConsents(TEST_RESOURCE_ID,
+                        ListUserConsentsOptions.builder()
+                                .consentIds(Collections.singletonList("usrcnst_999999999999999999"))
+                                .build());
+
+        assertEquals(0, response.getConsentsCount());
+    }
+
+    @Test
+    void testListUserConsentsConsentIdsTakesPrecedenceOverUserIds() {
+        // userIds alone would match nothing, so a non-empty result would mean it was applied.
+        ListResourceUserConsentsResponse all =
+                client.resources().listUserConsents(TEST_RESOURCE_ID, ListUserConsentsOptions.builder().pageSize(30).build());
+        Assumptions.assumeTrue(all.getConsentsCount() > 0, "the test resource has no consents");
+        String consentId = all.getConsents(0).getId();
+
+        ListResourceUserConsentsResponse response =
+                client.resources().listUserConsents(TEST_RESOURCE_ID,
+                        ListUserConsentsOptions.builder()
+                                .consentIds(Collections.singletonList(consentId))
+                                .userIds(Collections.singletonList("usr_does_not_exist"))
+                                .build());
+
+        assertEquals(1, response.getConsentsCount());
+    }
+
+    @Test
+    void testListUserConsentsRejectsMalformedConsentId() {
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().listUserConsents(TEST_RESOURCE_ID,
+                        ListUserConsentsOptions.builder()
+                                .consentIds(Collections.singletonList("149633942432021190"))
+                                .build()));
+
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
+    void testListUserConsentsRejectsMoreThan25ConsentIds() {
+        String[] consentIds = new String[26];
+        for (int i = 0; i < consentIds.length; i++) {
+            consentIds[i] = "usrcnst_" + (i + 1);
+        }
+
+        APIException exception = assertThrows(APIException.class, () ->
+                client.resources().listUserConsents(TEST_RESOURCE_ID,
+                        ListUserConsentsOptions.builder()
+                                .consentIds(Arrays.asList(consentIds))
+                                .build()));
+
+        assertEquals(Status.Code.INVALID_ARGUMENT.value(), exception.getGrpcStatusCode());
+    }
+
+    @Test
     void testListUserConsentsWithoutResourceId() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
                 client.resources().listUserConsents("", null));

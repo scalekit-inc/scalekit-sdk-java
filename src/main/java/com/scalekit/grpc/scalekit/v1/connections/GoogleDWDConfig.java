@@ -19,6 +19,8 @@ private static final long serialVersionUID = 0L;
   private GoogleDWDConfig() {
     scopes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -131,6 +133,69 @@ private static final long serialVersionUID = 0L;
     return tokenUri_ == null ? com.google.protobuf.StringValue.getDefaultInstance() : tokenUri_;
   }
 
+  public static final int SCOPE_SELECTION_ALLOWED_FIELD_NUMBER = 4;
+  private com.google.protobuf.BoolValue scopeSelectionAllowed_;
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelectionAllowed field is set.
+   */
+  @java.lang.Override
+  public boolean hasScopeSelectionAllowed() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelectionAllowed.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getScopeSelectionAllowed() {
+    return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+  }
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder() {
+    return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+  }
+
+  public static final int REQUIRED_SCOPES_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList requiredScopes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredScopes.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getRequiredScopesList() {
+    return requiredScopes_;
+  }
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredScopes.
+   */
+  public int getRequiredScopesCount() {
+    return requiredScopes_.size();
+  }
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredScopes at the given index.
+   */
+  public java.lang.String getRequiredScopes(int index) {
+    return requiredScopes_.get(index);
+  }
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredScopes at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getRequiredScopesBytes(int index) {
+    return requiredScopes_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -153,6 +218,12 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getTokenUri());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getScopeSelectionAllowed());
+    }
+    for (int i = 0; i < requiredScopes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requiredScopes_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -178,6 +249,18 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getTokenUri());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getScopeSelectionAllowed());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < requiredScopes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(requiredScopes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRequiredScopesList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -206,6 +289,13 @@ private static final long serialVersionUID = 0L;
       if (!getTokenUri()
           .equals(other.getTokenUri())) return false;
     }
+    if (hasScopeSelectionAllowed() != other.hasScopeSelectionAllowed()) return false;
+    if (hasScopeSelectionAllowed()) {
+      if (!getScopeSelectionAllowed()
+          .equals(other.getScopeSelectionAllowed())) return false;
+    }
+    if (!getRequiredScopesList()
+        .equals(other.getRequiredScopesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -228,6 +318,14 @@ private static final long serialVersionUID = 0L;
     if (hasTokenUri()) {
       hash = (37 * hash) + TOKEN_URI_FIELD_NUMBER;
       hash = (53 * hash) + getTokenUri().hashCode();
+    }
+    if (hasScopeSelectionAllowed()) {
+      hash = (37 * hash) + SCOPE_SELECTION_ALLOWED_FIELD_NUMBER;
+      hash = (53 * hash) + getScopeSelectionAllowed().hashCode();
+    }
+    if (getRequiredScopesCount() > 0) {
+      hash = (37 * hash) + REQUIRED_SCOPES_FIELD_NUMBER;
+      hash = (53 * hash) + getRequiredScopesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -361,6 +459,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getServiceAccountJsonFieldBuilder();
         getTokenUriFieldBuilder();
+        getScopeSelectionAllowedFieldBuilder();
       }
     }
     @java.lang.Override
@@ -379,6 +478,13 @@ private static final long serialVersionUID = 0L;
         tokenUriBuilder_.dispose();
         tokenUriBuilder_ = null;
       }
+      scopeSelectionAllowed_ = null;
+      if (scopeSelectionAllowedBuilder_ != null) {
+        scopeSelectionAllowedBuilder_.dispose();
+        scopeSelectionAllowedBuilder_ = null;
+      }
+      requiredScopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -428,6 +534,16 @@ private static final long serialVersionUID = 0L;
             ? tokenUri_
             : tokenUriBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scopeSelectionAllowed_ = scopeSelectionAllowedBuilder_ == null
+            ? scopeSelectionAllowed_
+            : scopeSelectionAllowedBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        requiredScopes_.makeImmutable();
+        result.requiredScopes_ = requiredScopes_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -492,6 +608,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasTokenUri()) {
         mergeTokenUri(other.getTokenUri());
       }
+      if (other.hasScopeSelectionAllowed()) {
+        mergeScopeSelectionAllowed(other.getScopeSelectionAllowed());
+      }
+      if (!other.requiredScopes_.isEmpty()) {
+        if (requiredScopes_.isEmpty()) {
+          requiredScopes_ = other.requiredScopes_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureRequiredScopesIsMutable();
+          requiredScopes_.addAll(other.requiredScopes_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -538,6 +667,19 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 34: {
+              input.readMessage(
+                  getScopeSelectionAllowedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRequiredScopesIsMutable();
+              requiredScopes_.add(s);
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -906,6 +1048,238 @@ private static final long serialVersionUID = 0L;
         tokenUri_ = null;
       }
       return tokenUriBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue scopeSelectionAllowed_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> scopeSelectionAllowedBuilder_;
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the scopeSelectionAllowed field is set.
+     */
+    public boolean hasScopeSelectionAllowed() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The scopeSelectionAllowed.
+     */
+    public com.google.protobuf.BoolValue getScopeSelectionAllowed() {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        return scopeSelectionAllowed_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+      } else {
+        return scopeSelectionAllowedBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelectionAllowed(com.google.protobuf.BoolValue value) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scopeSelectionAllowed_ = value;
+      } else {
+        scopeSelectionAllowedBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setScopeSelectionAllowed(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        scopeSelectionAllowed_ = builderForValue.build();
+      } else {
+        scopeSelectionAllowedBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeScopeSelectionAllowed(com.google.protobuf.BoolValue value) {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          scopeSelectionAllowed_ != null &&
+          scopeSelectionAllowed_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getScopeSelectionAllowedBuilder().mergeFrom(value);
+        } else {
+          scopeSelectionAllowed_ = value;
+        }
+      } else {
+        scopeSelectionAllowedBuilder_.mergeFrom(value);
+      }
+      if (scopeSelectionAllowed_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearScopeSelectionAllowed() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      scopeSelectionAllowed_ = null;
+      if (scopeSelectionAllowedBuilder_ != null) {
+        scopeSelectionAllowedBuilder_.dispose();
+        scopeSelectionAllowedBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValue.Builder getScopeSelectionAllowedBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getScopeSelectionAllowedFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder() {
+      if (scopeSelectionAllowedBuilder_ != null) {
+        return scopeSelectionAllowedBuilder_.getMessageOrBuilder();
+      } else {
+        return scopeSelectionAllowed_ == null ?
+            com.google.protobuf.BoolValue.getDefaultInstance() : scopeSelectionAllowed_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+        getScopeSelectionAllowedFieldBuilder() {
+      if (scopeSelectionAllowedBuilder_ == null) {
+        scopeSelectionAllowedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                getScopeSelectionAllowed(),
+                getParentForChildren(),
+                isClean());
+        scopeSelectionAllowed_ = null;
+      }
+      return scopeSelectionAllowedBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureRequiredScopesIsMutable() {
+      if (!requiredScopes_.isModifiable()) {
+        requiredScopes_ = new com.google.protobuf.LazyStringArrayList(requiredScopes_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return A list containing the requiredScopes.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRequiredScopesList() {
+      requiredScopes_.makeImmutable();
+      return requiredScopes_;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The count of requiredScopes.
+     */
+    public int getRequiredScopesCount() {
+      return requiredScopes_.size();
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the element to return.
+     * @return The requiredScopes at the given index.
+     */
+    public java.lang.String getRequiredScopes(int index) {
+      return requiredScopes_.get(index);
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the requiredScopes at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getRequiredScopesBytes(int index) {
+      return requiredScopes_.getByteString(index);
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param index The index to set the value at.
+     * @param value The requiredScopes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequiredScopes(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredScopes(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param values The requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRequiredScopes(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureRequiredScopesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, requiredScopes_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequiredScopes() {
+      requiredScopes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @param value The bytes of the requiredScopes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRequiredScopesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureRequiredScopesIsMutable();
+      requiredScopes_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

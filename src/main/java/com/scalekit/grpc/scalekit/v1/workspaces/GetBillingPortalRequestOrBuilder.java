@@ -36,4 +36,42 @@ public interface GetBillingPortalRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFlowTypeBytes();
+
+  /**
+   * <pre>
+   * return_url is where the portal's "Return to &lt;business&gt;" link sends the member. It must be an
+   * absolute URL on this deployment's own dashboard host; anything else is rejected rather than
+   * forwarded, so the portal cannot be used as an open redirect. Omitted, Stripe falls back to the
+   * default return URL configured on the Stripe account.
+   * </pre>
+   *
+   * <code>optional string return_url = 3 [json_name = "returnUrl", (.buf.validate.field) = { ... }</code>
+   * @return Whether the returnUrl field is set.
+   */
+  boolean hasReturnUrl();
+  /**
+   * <pre>
+   * return_url is where the portal's "Return to &lt;business&gt;" link sends the member. It must be an
+   * absolute URL on this deployment's own dashboard host; anything else is rejected rather than
+   * forwarded, so the portal cannot be used as an open redirect. Omitted, Stripe falls back to the
+   * default return URL configured on the Stripe account.
+   * </pre>
+   *
+   * <code>optional string return_url = 3 [json_name = "returnUrl", (.buf.validate.field) = { ... }</code>
+   * @return The returnUrl.
+   */
+  java.lang.String getReturnUrl();
+  /**
+   * <pre>
+   * return_url is where the portal's "Return to &lt;business&gt;" link sends the member. It must be an
+   * absolute URL on this deployment's own dashboard host; anything else is rejected rather than
+   * forwarded, so the portal cannot be used as an open redirect. Omitted, Stripe falls back to the
+   * default return URL configured on the Stripe account.
+   * </pre>
+   *
+   * <code>optional string return_url = 3 [json_name = "returnUrl", (.buf.validate.field) = { ... }</code>
+   * @return The bytes for returnUrl.
+   */
+  com.google.protobuf.ByteString
+      getReturnUrlBytes();
 }

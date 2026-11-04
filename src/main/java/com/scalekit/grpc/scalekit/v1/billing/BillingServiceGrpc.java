@@ -146,6 +146,99 @@ public final class BillingServiceGrpc {
     return getAddPaymentMethodMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest,
+      com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> getListPaymentMethodsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPaymentMethods",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest,
+      com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> getListPaymentMethodsMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest, com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> getListPaymentMethodsMethod;
+    if ((getListPaymentMethodsMethod = BillingServiceGrpc.getListPaymentMethodsMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getListPaymentMethodsMethod = BillingServiceGrpc.getListPaymentMethodsMethod) == null) {
+          BillingServiceGrpc.getListPaymentMethodsMethod = getListPaymentMethodsMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest, com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPaymentMethods"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("ListPaymentMethods"))
+              .build();
+        }
+      }
+    }
+    return getListPaymentMethodsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest,
+      com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> getSetDefaultPaymentMethodMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetDefaultPaymentMethod",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest,
+      com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> getSetDefaultPaymentMethodMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest, com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> getSetDefaultPaymentMethodMethod;
+    if ((getSetDefaultPaymentMethodMethod = BillingServiceGrpc.getSetDefaultPaymentMethodMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getSetDefaultPaymentMethodMethod = BillingServiceGrpc.getSetDefaultPaymentMethodMethod) == null) {
+          BillingServiceGrpc.getSetDefaultPaymentMethodMethod = getSetDefaultPaymentMethodMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest, com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetDefaultPaymentMethod"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("SetDefaultPaymentMethod"))
+              .build();
+        }
+      }
+    }
+    return getSetDefaultPaymentMethodMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest,
+      com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> getRemovePaymentMethodMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemovePaymentMethod",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest,
+      com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> getRemovePaymentMethodMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest, com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> getRemovePaymentMethodMethod;
+    if ((getRemovePaymentMethodMethod = BillingServiceGrpc.getRemovePaymentMethodMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getRemovePaymentMethodMethod = BillingServiceGrpc.getRemovePaymentMethodMethod) == null) {
+          BillingServiceGrpc.getRemovePaymentMethodMethod = getRemovePaymentMethodMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest, com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemovePaymentMethod"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("RemovePaymentMethod"))
+              .build();
+        }
+      }
+    }
+    return getRemovePaymentMethodMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingRequest,
       com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingResponse> getListEnvironmentBillingMethod;
 
@@ -301,6 +394,99 @@ public final class BillingServiceGrpc {
     return getGetInvoicesDashboardUrlMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> getGetSupportWorkspaceBillingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSupportWorkspaceBilling",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest,
+      com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> getGetSupportWorkspaceBillingMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest, com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> getGetSupportWorkspaceBillingMethod;
+    if ((getGetSupportWorkspaceBillingMethod = BillingServiceGrpc.getGetSupportWorkspaceBillingMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getGetSupportWorkspaceBillingMethod = BillingServiceGrpc.getGetSupportWorkspaceBillingMethod) == null) {
+          BillingServiceGrpc.getGetSupportWorkspaceBillingMethod = getGetSupportWorkspaceBillingMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest, com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSupportWorkspaceBilling"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("GetSupportWorkspaceBilling"))
+              .build();
+        }
+      }
+    }
+    return getGetSupportWorkspaceBillingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> getUpdateSupportEnvironmentBillingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSupportEnvironmentBilling",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> getUpdateSupportEnvironmentBillingMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> getUpdateSupportEnvironmentBillingMethod;
+    if ((getUpdateSupportEnvironmentBillingMethod = BillingServiceGrpc.getUpdateSupportEnvironmentBillingMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getUpdateSupportEnvironmentBillingMethod = BillingServiceGrpc.getUpdateSupportEnvironmentBillingMethod) == null) {
+          BillingServiceGrpc.getUpdateSupportEnvironmentBillingMethod = getUpdateSupportEnvironmentBillingMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSupportEnvironmentBilling"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("UpdateSupportEnvironmentBilling"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSupportEnvironmentBillingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> getUpdateSupportWorkspaceBillingAccountMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSupportWorkspaceBillingAccount",
+      requestType = com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest,
+      com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> getUpdateSupportWorkspaceBillingAccountMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> getUpdateSupportWorkspaceBillingAccountMethod;
+    if ((getUpdateSupportWorkspaceBillingAccountMethod = BillingServiceGrpc.getUpdateSupportWorkspaceBillingAccountMethod) == null) {
+      synchronized (BillingServiceGrpc.class) {
+        if ((getUpdateSupportWorkspaceBillingAccountMethod = BillingServiceGrpc.getUpdateSupportWorkspaceBillingAccountMethod) == null) {
+          BillingServiceGrpc.getUpdateSupportWorkspaceBillingAccountMethod = getUpdateSupportWorkspaceBillingAccountMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest, com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSupportWorkspaceBillingAccount"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BillingServiceMethodDescriptorSupplier("UpdateSupportWorkspaceBillingAccount"))
+              .build();
+        }
+      }
+    }
+    return getUpdateSupportWorkspaceBillingAccountMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -405,6 +591,39 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
+     * ListPaymentMethods lists the cards on the workspace's Stripe customer, marking the invoice default.
+     * Metronome workspaces manage cards here instead of in the Stripe customer portal, whose payment-method
+     * section is off: it offers delete even on the card every invoice charges. Reading the default also
+     * fills it in when none is set (the same self-heal the default-card sweep runs).
+     * </pre>
+     */
+    default void listPaymentMethods(com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPaymentMethodsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SetDefaultPaymentMethod makes one of the workspace's saved payment methods the invoice default.
+     * </pre>
+     */
+    default void setDefaultPaymentMethod(com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetDefaultPaymentMethodMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RemovePaymentMethod deletes one of the workspace's saved payment methods, never the invoice default.
+     * </pre>
+     */
+    default void removePaymentMethod(com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemovePaymentMethodMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * ListEnvironmentBilling lists each production environment's plan.
      * </pre>
      */
@@ -466,6 +685,36 @@ public final class BillingServiceGrpc {
     default void getInvoicesDashboardUrl(com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInvoicesDashboardUrlMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetSupportWorkspaceBilling returns a customer workspace's full billing state for support.
+     * </pre>
+     */
+    default void getSupportWorkspaceBilling(com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSupportWorkspaceBillingMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportEnvironmentBilling adds or removes billing items on a customer's production environment.
+     * </pre>
+     */
+    default void updateSupportEnvironmentBilling(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSupportEnvironmentBillingMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportWorkspaceBillingAccount changes account-level billing settings on a customer's behalf.
+     * </pre>
+     */
+    default void updateSupportWorkspaceBillingAccount(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateSupportWorkspaceBillingAccountMethod(), responseObserver);
     }
   }
 
@@ -563,6 +812,42 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
+     * ListPaymentMethods lists the cards on the workspace's Stripe customer, marking the invoice default.
+     * Metronome workspaces manage cards here instead of in the Stripe customer portal, whose payment-method
+     * section is off: it offers delete even on the card every invoice charges. Reading the default also
+     * fills it in when none is set (the same self-heal the default-card sweep runs).
+     * </pre>
+     */
+    public void listPaymentMethods(com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPaymentMethodsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * SetDefaultPaymentMethod makes one of the workspace's saved payment methods the invoice default.
+     * </pre>
+     */
+    public void setDefaultPaymentMethod(com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetDefaultPaymentMethodMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RemovePaymentMethod deletes one of the workspace's saved payment methods, never the invoice default.
+     * </pre>
+     */
+    public void removePaymentMethod(com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemovePaymentMethodMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * ListEnvironmentBilling lists each production environment's plan.
      * </pre>
      */
@@ -629,6 +914,39 @@ public final class BillingServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetInvoicesDashboardUrlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * GetSupportWorkspaceBilling returns a customer workspace's full billing state for support.
+     * </pre>
+     */
+    public void getSupportWorkspaceBilling(com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSupportWorkspaceBillingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportEnvironmentBilling adds or removes billing items on a customer's production environment.
+     * </pre>
+     */
+    public void updateSupportEnvironmentBilling(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSupportEnvironmentBillingMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportWorkspaceBillingAccount changes account-level billing settings on a customer's behalf.
+     * </pre>
+     */
+    public void updateSupportWorkspaceBillingAccount(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSupportWorkspaceBillingAccountMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -704,6 +1022,39 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
+     * ListPaymentMethods lists the cards on the workspace's Stripe customer, marking the invoice default.
+     * Metronome workspaces manage cards here instead of in the Stripe customer portal, whose payment-method
+     * section is off: it offers delete even on the card every invoice charges. Reading the default also
+     * fills it in when none is set (the same self-heal the default-card sweep runs).
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse listPaymentMethods(com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPaymentMethodsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * SetDefaultPaymentMethod makes one of the workspace's saved payment methods the invoice default.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse setDefaultPaymentMethod(com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetDefaultPaymentMethodMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * RemovePaymentMethod deletes one of the workspace's saved payment methods, never the invoice default.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse removePaymentMethod(com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemovePaymentMethodMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * ListEnvironmentBilling lists each production environment's plan.
      * </pre>
      */
@@ -765,6 +1116,36 @@ public final class BillingServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse getInvoicesDashboardUrl(com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInvoicesDashboardUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * GetSupportWorkspaceBilling returns a customer workspace's full billing state for support.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse getSupportWorkspaceBilling(com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSupportWorkspaceBillingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportEnvironmentBilling adds or removes billing items on a customer's production environment.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse updateSupportEnvironmentBilling(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSupportEnvironmentBillingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportWorkspaceBillingAccount changes account-level billing settings on a customer's behalf.
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse updateSupportWorkspaceBillingAccount(com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSupportWorkspaceBillingAccountMethod(), getCallOptions(), request);
     }
   }
 
@@ -844,6 +1225,42 @@ public final class BillingServiceGrpc {
 
     /**
      * <pre>
+     * ListPaymentMethods lists the cards on the workspace's Stripe customer, marking the invoice default.
+     * Metronome workspaces manage cards here instead of in the Stripe customer portal, whose payment-method
+     * section is off: it offers delete even on the card every invoice charges. Reading the default also
+     * fills it in when none is set (the same self-heal the default-card sweep runs).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse> listPaymentMethods(
+        com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPaymentMethodsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * SetDefaultPaymentMethod makes one of the workspace's saved payment methods the invoice default.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse> setDefaultPaymentMethod(
+        com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetDefaultPaymentMethodMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * RemovePaymentMethod deletes one of the workspace's saved payment methods, never the invoice default.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse> removePaymentMethod(
+        com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemovePaymentMethodMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * ListEnvironmentBilling lists each production environment's plan.
      * </pre>
      */
@@ -911,17 +1328,56 @@ public final class BillingServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInvoicesDashboardUrlMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * GetSupportWorkspaceBilling returns a customer workspace's full billing state for support.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse> getSupportWorkspaceBilling(
+        com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSupportWorkspaceBillingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportEnvironmentBilling adds or removes billing items on a customer's production environment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse> updateSupportEnvironmentBilling(
+        com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSupportEnvironmentBillingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateSupportWorkspaceBillingAccount changes account-level billing settings on a customer's behalf.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse> updateSupportWorkspaceBillingAccount(
+        com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSupportWorkspaceBillingAccountMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_BILLING_CONFIG = 0;
   private static final int METHODID_GET_BILLING_CATALOG = 1;
   private static final int METHODID_GET_BILLING_ACCOUNT = 2;
   private static final int METHODID_ADD_PAYMENT_METHOD = 3;
-  private static final int METHODID_LIST_ENVIRONMENT_BILLING = 4;
-  private static final int METHODID_UPDATE_BILLING_PLAN = 5;
-  private static final int METHODID_GET_BILLING_USAGE = 6;
-  private static final int METHODID_GET_BILLING_CONNECTION_COUNTS = 7;
-  private static final int METHODID_GET_INVOICES_DASHBOARD_URL = 8;
+  private static final int METHODID_LIST_PAYMENT_METHODS = 4;
+  private static final int METHODID_SET_DEFAULT_PAYMENT_METHOD = 5;
+  private static final int METHODID_REMOVE_PAYMENT_METHOD = 6;
+  private static final int METHODID_LIST_ENVIRONMENT_BILLING = 7;
+  private static final int METHODID_UPDATE_BILLING_PLAN = 8;
+  private static final int METHODID_GET_BILLING_USAGE = 9;
+  private static final int METHODID_GET_BILLING_CONNECTION_COUNTS = 10;
+  private static final int METHODID_GET_INVOICES_DASHBOARD_URL = 11;
+  private static final int METHODID_GET_SUPPORT_WORKSPACE_BILLING = 12;
+  private static final int METHODID_UPDATE_SUPPORT_ENVIRONMENT_BILLING = 13;
+  private static final int METHODID_UPDATE_SUPPORT_WORKSPACE_BILLING_ACCOUNT = 14;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -956,6 +1412,18 @@ public final class BillingServiceGrpc {
           serviceImpl.addPaymentMethod((com.scalekit.grpc.scalekit.v1.billing.AddPaymentMethodRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.AddPaymentMethodResponse>) responseObserver);
           break;
+        case METHODID_LIST_PAYMENT_METHODS:
+          serviceImpl.listPaymentMethods((com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse>) responseObserver);
+          break;
+        case METHODID_SET_DEFAULT_PAYMENT_METHOD:
+          serviceImpl.setDefaultPaymentMethod((com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse>) responseObserver);
+          break;
+        case METHODID_REMOVE_PAYMENT_METHOD:
+          serviceImpl.removePaymentMethod((com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse>) responseObserver);
+          break;
         case METHODID_LIST_ENVIRONMENT_BILLING:
           serviceImpl.listEnvironmentBilling((com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.ListEnvironmentBillingResponse>) responseObserver);
@@ -975,6 +1443,18 @@ public final class BillingServiceGrpc {
         case METHODID_GET_INVOICES_DASHBOARD_URL:
           serviceImpl.getInvoicesDashboardUrl((com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse>) responseObserver);
+          break;
+        case METHODID_GET_SUPPORT_WORKSPACE_BILLING:
+          serviceImpl.getSupportWorkspaceBilling((com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_SUPPORT_ENVIRONMENT_BILLING:
+          serviceImpl.updateSupportEnvironmentBilling((com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_SUPPORT_WORKSPACE_BILLING_ACCOUNT:
+          serviceImpl.updateSupportWorkspaceBillingAccount((com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1023,6 +1503,27 @@ public final class BillingServiceGrpc {
               com.scalekit.grpc.scalekit.v1.billing.AddPaymentMethodResponse>(
                 service, METHODID_ADD_PAYMENT_METHOD)))
         .addMethod(
+          getListPaymentMethodsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsRequest,
+              com.scalekit.grpc.scalekit.v1.billing.ListPaymentMethodsResponse>(
+                service, METHODID_LIST_PAYMENT_METHODS)))
+        .addMethod(
+          getSetDefaultPaymentMethodMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodRequest,
+              com.scalekit.grpc.scalekit.v1.billing.SetDefaultPaymentMethodResponse>(
+                service, METHODID_SET_DEFAULT_PAYMENT_METHOD)))
+        .addMethod(
+          getRemovePaymentMethodMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodRequest,
+              com.scalekit.grpc.scalekit.v1.billing.RemovePaymentMethodResponse>(
+                service, METHODID_REMOVE_PAYMENT_METHOD)))
+        .addMethod(
           getListEnvironmentBillingMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1057,6 +1558,27 @@ public final class BillingServiceGrpc {
               com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlRequest,
               com.scalekit.grpc.scalekit.v1.billing.GetInvoicesDashboardUrlResponse>(
                 service, METHODID_GET_INVOICES_DASHBOARD_URL)))
+        .addMethod(
+          getGetSupportWorkspaceBillingMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingRequest,
+              com.scalekit.grpc.scalekit.v1.billing.GetSupportWorkspaceBillingResponse>(
+                service, METHODID_GET_SUPPORT_WORKSPACE_BILLING)))
+        .addMethod(
+          getUpdateSupportEnvironmentBillingMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingRequest,
+              com.scalekit.grpc.scalekit.v1.billing.UpdateSupportEnvironmentBillingResponse>(
+                service, METHODID_UPDATE_SUPPORT_ENVIRONMENT_BILLING)))
+        .addMethod(
+          getUpdateSupportWorkspaceBillingAccountMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountRequest,
+              com.scalekit.grpc.scalekit.v1.billing.UpdateSupportWorkspaceBillingAccountResponse>(
+                service, METHODID_UPDATE_SUPPORT_WORKSPACE_BILLING_ACCOUNT)))
         .build();
   }
 
@@ -1109,11 +1631,17 @@ public final class BillingServiceGrpc {
               .addMethod(getGetBillingCatalogMethod())
               .addMethod(getGetBillingAccountMethod())
               .addMethod(getAddPaymentMethodMethod())
+              .addMethod(getListPaymentMethodsMethod())
+              .addMethod(getSetDefaultPaymentMethodMethod())
+              .addMethod(getRemovePaymentMethodMethod())
               .addMethod(getListEnvironmentBillingMethod())
               .addMethod(getUpdateBillingPlanMethod())
               .addMethod(getGetBillingUsageMethod())
               .addMethod(getGetBillingConnectionCountsMethod())
               .addMethod(getGetInvoicesDashboardUrlMethod())
+              .addMethod(getGetSupportWorkspaceBillingMethod())
+              .addMethod(getUpdateSupportEnvironmentBillingMethod())
+              .addMethod(getUpdateSupportWorkspaceBillingAccountMethod())
               .build();
         }
       }

@@ -276,4 +276,10 @@ public interface ResourceOrBuilder extends
    * @return The resourceScopeSelectionAllowed.
    */
   boolean getResourceScopeSelectionAllowed();
+
+  /**
+   * <code>bool resource_scoped_issuer_enabled = 25 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
+   */
+  boolean getResourceScopedIssuerEnabled();
 }

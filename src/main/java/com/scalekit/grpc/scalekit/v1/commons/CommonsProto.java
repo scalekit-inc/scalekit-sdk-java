@@ -348,24 +348,24 @@ public final class CommonsProto {
       "\007\n\003DEV\020\002*w\n\020MembershipStatus\022!\n\035Membersh" +
       "ip_Status_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\014\n\010I" +
       "NACTIVE\020\002\022\022\n\016PENDING_INVITE\020\003\022\022\n\016INVITE_" +
-      "EXPIRED\020\004*\230\002\n\024IdentityProviderType\022!\n\035ID" +
+      "EXPIRED\020\004*\246\002\n\024IdentityProviderType\022!\n\035ID" +
       "ENTITY_PROVIDER_UNSPECIFIED\020\000\022\010\n\004OKTA\020\001\022" +
       "\n\n\006GOOGLE\020\002\022\020\n\014MICROSOFT_AD\020\003\022\t\n\005AUTH0\020\004" +
       "\022\014\n\010ONELOGIN\020\005\022\021\n\rPING_IDENTITY\020\006\022\r\n\tJUM" +
       "PCLOUD\020\007\022\n\n\006CUSTOM\020\010\022\n\n\006GITHUB\020\t\022\n\n\006GITL" +
       "AB\020\n\022\014\n\010LINKEDIN\020\013\022\016\n\nSALESFORCE\020\014\022\r\n\tMI" +
       "CROSOFT\020\r\022\021\n\rIDP_SIMULATOR\020\016\022\014\n\010SCALEKIT" +
-      "\020\017\022\010\n\004ADFS\020\020*`\n\022AuthenticationMode\022#\n\037AU" +
-      "THENTICATION_MODE_UNSPECIFIED\020\000\022\020\n\014MODUL" +
-      "AR_AUTH\020\001\022\023\n\017FULL_STACK_AUTH\020\002*O\n\010TimeUn" +
-      "it\022!\n\035SESSION_TIME_UNIT_UNSPECIFIED\020\000\022\013\n" +
-      "\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003B\326\001\n%com." +
-      "scalekit.grpc.scalekit.v1.commonsB\014Commo" +
-      "nsProtoP\001Z1github.com/scalekit-inc/scale" +
-      "kit/pkg/grpc/commons\242\002\003SVC\252\002\023Scalekit.V1" +
-      ".Commons\312\002\023Scalekit\\V1\\Commons\342\002\037Scaleki" +
-      "t\\V1\\Commons\\GPBMetadata\352\002\025Scalekit::V1:" +
-      ":Commonsb\006proto3"
+      "\020\017\022\010\n\004ADFS\020\020\022\014\n\010FACEBOOK\020\021*`\n\022Authentica" +
+      "tionMode\022#\n\037AUTHENTICATION_MODE_UNSPECIF" +
+      "IED\020\000\022\020\n\014MODULAR_AUTH\020\001\022\023\n\017FULL_STACK_AU" +
+      "TH\020\002*O\n\010TimeUnit\022!\n\035SESSION_TIME_UNIT_UN" +
+      "SPECIFIED\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004D" +
+      "AYS\020\003B\326\001\n%com.scalekit.grpc.scalekit.v1." +
+      "commonsB\014CommonsProtoP\001Z1github.com/scal" +
+      "ekit-inc/scalekit/pkg/grpc/commons\242\002\003SVC" +
+      "\252\002\023Scalekit.V1.Commons\312\002\023Scalekit\\V1\\Com" +
+      "mons\342\002\037Scalekit\\V1\\Commons\\GPBMetadata\352\002" +
+      "\025Scalekit::V1::Commonsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

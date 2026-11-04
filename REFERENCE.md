@@ -8402,7 +8402,9 @@ client.resources().deleteResourceClientSecret("res_142145647087190278", "m2m_142
 
 Lists the end-user consents granted against a resource, with pagination. Use this to audit who authorized a client, and to find the `consentId` you need before revoking.
 
-Filter by user in one of two ways. Pass `userIds` to match external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give both, `userIds` wins and `search` is ignored.
+Filter in one of three ways. Pass `consentIds` to fetch specific consents by ID, for example to find the `clientId` you need to revoke a consent you already hold the ID of. Pass `userIds` to match external user IDs exactly and case-sensitively. Pass `search` for a case-insensitive substring match. When you give more than one, the priority is `consentIds`, then `userIds`, then `search`, and the lower-priority ones are ignored without an error. Blank-only `consentIds` values are ignored, so the next filter applies instead.
+
+When you filter by `consentIds`, check that every returned `id` is one you asked for before you revoke anything. A server that predates this filter ignores it and returns the unfiltered first page. Do not combine `consentIds` with `userIds` as an ownership check, because `consentIds` overrides `userIds`. Compare `externalUserId` on the returned consent instead.
 
 Consents with `id`, `externalUserId`, `clientId`, `clientName`, `scopes`, and `grantedAt`, plus `totalSize` and the `nextPageToken` / `prevPageToken` cursors.
 </dd>
@@ -8429,7 +8431,7 @@ ListResourceUserConsentsResponse response = client.resources().listUserConsents(
   "res_142145647087190278",
   ListUserConsentsOptions.builder()
     .pageSize(10)
-    .userIds(Arrays.asList("usr_42", "usr_43"))
+    .consentIds(Arrays.asList("usrcnst_102709535608668163", "usrcnst_102709535608668164"))
     .build()
 );
 
@@ -8459,10 +8461,11 @@ for (ResourceUserConsent consent : response.getConsentsList()) {
 <dd>
 
 **options:** `ListUserConsentsOptions` - Optional filter, search and pagination options. Pass `null` for no options.
-- `search(String)` - Case-insensitive substring match on external user IDs. Ignored when `userIds` is set.
+- `search(String)` - Case-insensitive substring match on external user IDs. Ignored when `consentIds` or `userIds` is set.
 - `pageSize(int)` - Page size, max 30. 0 uses the server default.
 - `pageToken(String)` - Pagination cursor from a previous response (`nextPageToken`/`prevPageToken`).
-- `userIds(List<String>)` - Exact match on external user IDs, max 25. Takes precedence over `search`.
+- `userIds(List<String>)` - Exact match on external user IDs, max 25. Ignored when `consentIds` is set; takes precedence over `search`.
+- `consentIds(List<String>)` - Exact match on consent IDs (format `usrcnst_xxxxx`), max 25 distinct. IDs that do not exist or belong to another resource are omitted from the result. Takes precedence over `userIds` and `search`.
 
 </dd>
 </dl>

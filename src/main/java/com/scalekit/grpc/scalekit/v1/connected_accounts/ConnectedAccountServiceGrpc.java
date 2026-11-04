@@ -170,6 +170,37 @@ public final class ConnectedAccountServiceGrpc {
     return getDeleteConnectedAccountMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> getRefreshConnectedAccountTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefreshConnectedAccountTokens",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> getRefreshConnectedAccountTokensMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> getRefreshConnectedAccountTokensMethod;
+    if ((getRefreshConnectedAccountTokensMethod = ConnectedAccountServiceGrpc.getRefreshConnectedAccountTokensMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getRefreshConnectedAccountTokensMethod = ConnectedAccountServiceGrpc.getRefreshConnectedAccountTokensMethod) == null) {
+          ConnectedAccountServiceGrpc.getRefreshConnectedAccountTokensMethod = getRefreshConnectedAccountTokensMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RefreshConnectedAccountTokens"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("RefreshConnectedAccountTokens"))
+              .build();
+        }
+      }
+    }
+    return getRefreshConnectedAccountTokensMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest,
       com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse> getGetMagicLinkForConnectedAccountMethod;
 
@@ -323,6 +354,37 @@ public final class ConnectedAccountServiceGrpc {
       }
     }
     return getGetRedirectUrlMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getCreateRedirectUrlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRedirectUrl",
+      requestType = com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest.class,
+      responseType = com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest,
+      com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getCreateRedirectUrlMethod() {
+    io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> getCreateRedirectUrlMethod;
+    if ((getCreateRedirectUrlMethod = ConnectedAccountServiceGrpc.getCreateRedirectUrlMethod) == null) {
+      synchronized (ConnectedAccountServiceGrpc.class) {
+        if ((getCreateRedirectUrlMethod = ConnectedAccountServiceGrpc.getCreateRedirectUrlMethod) == null) {
+          ConnectedAccountServiceGrpc.getCreateRedirectUrlMethod = getCreateRedirectUrlMethod =
+              io.grpc.MethodDescriptor.<com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest, com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRedirectUrl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ConnectedAccountServiceMethodDescriptorSupplier("CreateRedirectUrl"))
+              .build();
+        }
+      }
+    }
+    return getCreateRedirectUrlMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.scalekit.grpc.scalekit.v1.connected_accounts.GetConnectedAccountByIdentifierRequest,
@@ -611,6 +673,16 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Refresh Connected Account Tokens
+     * </pre>
+     */
+    default void refreshConnectedAccountTokens(com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRefreshConnectedAccountTokensMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate Magic Link for Account Connection
      * </pre>
      */
@@ -657,6 +729,16 @@ public final class ConnectedAccountServiceGrpc {
     default void getRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request,
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRedirectUrlMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Create Redirect URL for Connected Account Portal, with the end user's scope selection
+     * </pre>
+     */
+    default void createRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRedirectUrlMethod(), responseObserver);
     }
 
     /**
@@ -815,6 +897,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Refresh Connected Account Tokens
+     * </pre>
+     */
+    public void refreshConnectedAccountTokens(com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefreshConnectedAccountTokensMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate Magic Link for Account Connection
      * </pre>
      */
@@ -866,6 +959,17 @@ public final class ConnectedAccountServiceGrpc {
         io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRedirectUrlMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Create Redirect URL for Connected Account Portal, with the end user's scope selection
+     * </pre>
+     */
+    public void createRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest request,
+        io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRedirectUrlMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1014,6 +1118,16 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Refresh Connected Account Tokens
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse refreshConnectedAccountTokens(com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefreshConnectedAccountTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Generate Magic Link for Account Connection
      * </pre>
      */
@@ -1060,6 +1174,16 @@ public final class ConnectedAccountServiceGrpc {
     public com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse getRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRedirectUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create Redirect URL for Connected Account Portal, with the end user's scope selection
+     * </pre>
+     */
+    public com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse createRedirectUrl(com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRedirectUrlMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1207,6 +1331,17 @@ public final class ConnectedAccountServiceGrpc {
 
     /**
      * <pre>
+     * Refresh Connected Account Tokens
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse> refreshConnectedAccountTokens(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefreshConnectedAccountTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Generate Magic Link for Account Connection
      * </pre>
      */
@@ -1258,6 +1393,17 @@ public final class ConnectedAccountServiceGrpc {
         com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRedirectUrlMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Create Redirect URL for Connected Account Portal, with the end user's scope selection
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse> createRedirectUrl(
+        com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRedirectUrlMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1343,17 +1489,19 @@ public final class ConnectedAccountServiceGrpc {
   private static final int METHODID_CREATE_CONNECTED_ACCOUNT = 2;
   private static final int METHODID_UPDATE_CONNECTED_ACCOUNT = 3;
   private static final int METHODID_DELETE_CONNECTED_ACCOUNT = 4;
-  private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 5;
-  private static final int METHODID_AUTHORIZE_ORG_WIDE_CREDENTIAL = 6;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT = 7;
-  private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 8;
-  private static final int METHODID_GET_REDIRECT_URL = 9;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 10;
-  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 11;
-  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 12;
-  private static final int METHODID_LIST_MY_APP_CONNECTIONS = 13;
-  private static final int METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT = 14;
-  private static final int METHODID_GET_MY_CONNECTION_MAGIC_LINK = 15;
+  private static final int METHODID_REFRESH_CONNECTED_ACCOUNT_TOKENS = 5;
+  private static final int METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT = 6;
+  private static final int METHODID_AUTHORIZE_ORG_WIDE_CREDENTIAL = 7;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT = 8;
+  private static final int METHODID_DISCONNECT_CONNECTED_ACCOUNT = 9;
+  private static final int METHODID_GET_REDIRECT_URL = 10;
+  private static final int METHODID_CREATE_REDIRECT_URL = 11;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_AUTH = 12;
+  private static final int METHODID_GET_CONNECTED_ACCOUNT_DETAILS = 13;
+  private static final int METHODID_VERIFY_CONNECTED_ACCOUNT_USER = 14;
+  private static final int METHODID_LIST_MY_APP_CONNECTIONS = 15;
+  private static final int METHODID_DISCONNECT_MY_CONNECTED_ACCOUNT = 16;
+  private static final int METHODID_GET_MY_CONNECTION_MAGIC_LINK = 17;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1392,6 +1540,10 @@ public final class ConnectedAccountServiceGrpc {
           serviceImpl.deleteConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse>) responseObserver);
           break;
+        case METHODID_REFRESH_CONNECTED_ACCOUNT_TOKENS:
+          serviceImpl.refreshConnectedAccountTokens((com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse>) responseObserver);
+          break;
         case METHODID_GET_MAGIC_LINK_FOR_CONNECTED_ACCOUNT:
           serviceImpl.getMagicLinkForConnectedAccount((com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetMagicLinkForConnectedAccountResponse>) responseObserver);
@@ -1410,6 +1562,10 @@ public final class ConnectedAccountServiceGrpc {
           break;
         case METHODID_GET_REDIRECT_URL:
           serviceImpl.getRedirectUrl((com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest) request,
+              (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_REDIRECT_URL:
+          serviceImpl.createRedirectUrl((com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest) request,
               (io.grpc.stub.StreamObserver<com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>) responseObserver);
           break;
         case METHODID_GET_CONNECTED_ACCOUNT_AUTH:
@@ -1490,6 +1646,13 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.DeleteConnectedAccountResponse>(
                 service, METHODID_DELETE_CONNECTED_ACCOUNT)))
         .addMethod(
+          getRefreshConnectedAccountTokensMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.RefreshConnectedAccountTokensResponse>(
+                service, METHODID_REFRESH_CONNECTED_ACCOUNT_TOKENS)))
+        .addMethod(
           getGetMagicLinkForConnectedAccountMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1524,6 +1687,13 @@ public final class ConnectedAccountServiceGrpc {
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlRequest,
               com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>(
                 service, METHODID_GET_REDIRECT_URL)))
+        .addMethod(
+          getCreateRedirectUrlMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.scalekit.grpc.scalekit.v1.connected_accounts.CreateRedirectUrlRequest,
+              com.scalekit.grpc.scalekit.v1.connected_accounts.GetRedirectUrlResponse>(
+                service, METHODID_CREATE_REDIRECT_URL)))
         .addMethod(
           getGetConnectedAccountAuthMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1619,11 +1789,13 @@ public final class ConnectedAccountServiceGrpc {
               .addMethod(getCreateConnectedAccountMethod())
               .addMethod(getUpdateConnectedAccountMethod())
               .addMethod(getDeleteConnectedAccountMethod())
+              .addMethod(getRefreshConnectedAccountTokensMethod())
               .addMethod(getGetMagicLinkForConnectedAccountMethod())
               .addMethod(getAuthorizeOrgWideCredentialMethod())
               .addMethod(getGetConnectedAccountMethod())
               .addMethod(getDisconnectConnectedAccountMethod())
               .addMethod(getGetRedirectUrlMethod())
+              .addMethod(getCreateRedirectUrlMethod())
               .addMethod(getGetConnectedAccountAuthMethod())
               .addMethod(getGetConnectedAccountDetailsMethod())
               .addMethod(getVerifyConnectedAccountUserMethod())

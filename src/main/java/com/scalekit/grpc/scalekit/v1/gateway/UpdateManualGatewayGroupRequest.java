@@ -42,6 +42,7 @@ private static final long serialVersionUID = 0L;
             com.scalekit.grpc.scalekit.v1.gateway.UpdateManualGatewayGroupRequest.class, com.scalekit.grpc.scalekit.v1.gateway.UpdateManualGatewayGroupRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int GROUP_ID_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupId_ = "";
@@ -159,6 +160,65 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 99;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   * <pre>
+   * Which fields this call intends to write. Paths are request field names —
+   * only "description" is honoured; display_name is required on every call and
+   * is always written.
+   *
+   * description is a plain proto3 string, so an omitted field and an explicit
+   * "" arrive identically. Without a mask an empty description therefore means
+   * "not sent, leave the stored one alone" — renaming a group must not discard
+   * its description. Name "description" here to clear it deliberately.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -182,6 +242,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(99, getUpdateMask());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +262,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(99, getUpdateMask());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -221,6 +288,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask()
+          .equals(other.getUpdateMask())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,6 +310,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -357,13 +433,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.scalekit.grpc.scalekit.v1.gateway.UpdateManualGatewayGroupRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getUpdateMaskFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -372,6 +454,11 @@ private static final long serialVersionUID = 0L;
       groupId_ = "";
       displayName_ = "";
       description_ = "";
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -414,6 +501,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null
+            ? updateMask_
+            : updateMaskBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -475,6 +570,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -516,6 +614,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 794: {
+              input.readMessage(
+                  getUpdateMaskFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 794
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -747,6 +852,226 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public Builder setUpdateMask(
+        com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          updateMask_ != null &&
+          updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      if (updateMask_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null ?
+            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+      }
+    }
+    /**
+     * <pre>
+     * Which fields this call intends to write. Paths are request field names —
+     * only "description" is honoured; display_name is required on every call and
+     * is always written.
+     *
+     * description is a plain proto3 string, so an omitted field and an explicit
+     * "" arrive identically. Without a mask an empty description therefore means
+     * "not sent, leave the stored one alone" — renaming a group must not discard
+     * its description. Name "description" here to clear it deliberately.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 99 [json_name = "updateMask"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(),
+                getParentForChildren(),
+                isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

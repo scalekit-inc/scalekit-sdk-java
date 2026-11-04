@@ -9,54 +9,54 @@ public interface ListProvidersResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers"];</code>
+   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<com.scalekit.grpc.scalekit.v1.providers.Provider> 
       getProvidersList();
   /**
-   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers"];</code>
+   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.providers.Provider getProviders(int index);
   /**
-   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers"];</code>
+   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   int getProvidersCount();
   /**
-   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers"];</code>
+   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   java.util.List<? extends com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder> 
       getProvidersOrBuilderList();
   /**
-   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers"];</code>
+   * <code>repeated .scalekit.v1.providers.Provider providers = 1 [json_name = "providers", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.scalekit.grpc.scalekit.v1.providers.ProviderOrBuilder getProvidersOrBuilder(
       int index);
 
   /**
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
   /**
-   * <code>string next_page_token = 2 [json_name = "nextPageToken"];</code>
+   * <code>string next_page_token = 2 [json_name = "nextPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString
       getNextPageTokenBytes();
 
   /**
-   * <code>uint32 total_size = 3 [json_name = "totalSize"];</code>
+   * <code>uint32 total_size = 3 [json_name = "totalSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The totalSize.
    */
   int getTotalSize();
 
   /**
-   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The prevPageToken.
    */
   java.lang.String getPrevPageToken();
   /**
-   * <code>string prev_page_token = 4 [json_name = "prevPageToken"];</code>
+   * <code>string prev_page_token = 4 [json_name = "prevPageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for prevPageToken.
    */
   com.google.protobuf.ByteString

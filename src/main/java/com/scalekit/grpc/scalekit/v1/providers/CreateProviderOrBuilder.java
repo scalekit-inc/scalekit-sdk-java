@@ -97,7 +97,7 @@ public interface CreateProviderOrBuilder extends
       getIconSrcBytes();
 
   /**
-   * <code>int32 display_priority = 8 [json_name = "displayPriority"];</code>
+   * <code>int32 display_priority = 8 [json_name = "displayPriority", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The displayPriority.
    */
   int getDisplayPriority();

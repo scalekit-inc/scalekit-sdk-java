@@ -247,77 +247,78 @@ public final class EventsProto {
       "Actor\022\025\n\021ACTOR_UNSPECIFIED\020\000\022\t\n\005HUMAN\020\001\022" +
       "\013\n\007MACHINE\020\002\022\007\n\003API\020\003*<\n\006Source\022\026\n\022SOURC" +
       "E_UNSPECIFIED\020\000\022\014\n\010SCALEKIT\020\001\022\014\n\010DIR_SYN" +
-      "C\020\002*\320\001\n\013EventTarget\022\034\n\030EVENT_TARGET_UNSP" +
+      "C\020\002*\336\001\n\013EventTarget\022\034\n\030EVENT_TARGET_UNSP" +
       "ECIFIED\020\000\022\r\n\tWORKSPACE\020\001\022\017\n\013ENVIRONMENT\020" +
       "\002\022\020\n\014ORGANIZATION\020\003\022\010\n\004USER\020\004\022\013\n\007SESSION" +
       "\020\005\022\014\n\010TEMPLATE\020\006\022\020\n\014EMAIL_SERVER\020\007\022\t\n\005EM" +
       "AIL\020\010\022\025\n\021CONNECTED_ACCOUNT\020\t\022\010\n\004ROLE\020\n\022\016" +
-      "\n\nPERMISSION\020\013*M\n\rEventCategory\022\034\n\030EVENT" +
-      "_SOURCE_UNSPECIFIED\020\000\022\010\n\004CORE\020\001\022\007\n\003SSO\020\002" +
-      "\022\013\n\007DIRSYNC\020\003*\351\005\n\nObjectType\022\033\n\027OBJECT_T" +
-      "YPE_UNSPECIFIED\020\000\022\r\n\tWorkspace\020\001\022\017\n\013Envi" +
-      "ronment\020\002\022\020\n\014Organization\020\003\022\016\n\nConnectio" +
-      "n\020\004\022\010\n\004User\020\005\022\010\n\004Role\020\006\022\024\n\020CustomAttribu" +
-      "tes\020\007\022\r\n\tDirectory\020\010\022\021\n\rDirectoryUser\020\t\022" +
-      "\022\n\016DirectoryGroup\020\n\022\013\n\007Session\020\013\022\014\n\010Temp" +
-      "late\020\014\022\007\n\003Job\020\r\022\n\n\006Domain\020\016\022\017\n\013EmailServ" +
-      "er\020\017\022\t\n\005Email\020\020\022\017\n\013AuthRequest\020\021\022\017\n\013SAML" +
-      "Request\020\022\022\020\n\014SAMLResponse\020\023\022\017\n\013TokenClai" +
-      "ms\020\024\022\021\n\rOIDCReqParams\020\025\022\022\n\016OIDCRespClaim" +
-      "s\020\026\022\014\n\010SSOError\020\027\022\020\n\014GenericError\020\030\022\021\n\rR" +
-      "efreshTokens\020\031\022\025\n\021EndSessionRequest\020\032\022\025\n" +
-      "\021LogoutTokenClaims\020\033\022\021\n\rOAuthResponse\020\034\022" +
-      "\010\n\004JSON\020\035\022\014\n\010SKErrors\020\036\022\021\n\rOrgMembership" +
-      "\020\037\022\017\n\013UserProfile\020 \022\027\n\023IDPInitiatedPaylo" +
-      "ad\020!\022\021\n\rDeviceDetails\020\"\022\013\n\007Actions\020#\022\024\n\020" +
-      "InterceptorEvent\020$\022\016\n\nPermission\020%\022\026\n\022Or" +
-      "gMembershipEvent\020&\022\022\n\016UserLoginEvent\020\'\022\023" +
-      "\n\017UserLogoutEvent\020(\022\024\n\020ConnectedAccount\020" +
-      ")2\252\014\n\rEventsService\022\216\001\n\nListEvents\022%.sca" +
-      "lekit.v1.events.ListEventsRequest\032&.scal" +
-      "ekit.v1.events.ListEventsResponse\"1\202\265\030\017\n" +
-      "\013events:read\030d\202\323\344\223\002\030\"\016/api/v1/events:\006fi" +
-      "lter\022\310\t\n\023ListEventsPaginated\022..scalekit." +
-      "v1.events.ListEventsPaginatedRequest\032/.s" +
-      "calekit.v1.events.ListEventsPaginatedRes" +
-      "ponse\"\317\010\222A\235\010\n\006Events\022\037List events withou" +
-      "t total count\032\332\005Returns a paginated list" +
-      " of events for the current environment, " +
-      "ordered most-recent first. The response " +
-      "carries cursor tokens for forward and ba" +
-      "ckward pagination but omits the total ev" +
-      "ent count, which lets the server skip a " +
-      "COUNT(*) query against the events table." +
-      " Use this operation when rendering an ev" +
-      "ent log that does not display a total \342\200" +
-      "\224 for example a paginated table that onl" +
-      "y needs next/previous controls. The filt" +
-      "er accepts event types, time window, org" +
-      "anization, source, and optional identifi" +
-      "ers (auth_request_id, interceptor_id, co" +
-      "nnection_id, connected_account_id). Page" +
-      " size defaults to 10 and is clamped to 1" +
-      "00. To page forward, pass the returned n" +
-      "ext_page_token as the page_token query p" +
-      "arameter on the next call.J\215\001\n\003200\022\205\001\nNE" +
-      "vents page returned successfully; includ" +
-      "es the events array and cursor tokens\0223\n" +
-      "1\032/.scalekit.v1.events.ListEventsPaginat" +
-      "edResponseJS\n\003400\022L\nJInvalid request - p" +
-      "age_token is malformed, or start_time is" +
-      " after end_timeJ0\n\003401\022)\n\'Missing or inv" +
-      "alid Authorization header\202\265\030\002\030\004\202\323\344\223\002\"\"\030/" +
-      "api/v1/events/paginated:\006filter\022\274\001\n\017Send" +
-      "CustomEvent\022*.scalekit.v1.events.SendCus" +
-      "tomEventRequest\032+.scalekit.v1.events.Sen" +
-      "dCustomEventResponse\"P\202\265\030\022\n\016webhooks:wri" +
-      "te\030`\202\323\344\223\0024\"+/api/v1/events/frontend_even" +
-      "ts/{event_type}:\005eventB\317\001\n$com.scalekit." +
-      "grpc.scalekit.v1.eventsB\013EventsProtoP\001Z0" +
-      "github.com/scalekit-inc/scalekit/pkg/grp" +
-      "c/events\242\002\003SVE\252\002\022Scalekit.V1.Events\312\002\022Sc" +
-      "alekit\\V1\\Events\342\002\036Scalekit\\V1\\Events\\GP" +
-      "BMetadata\352\002\024Scalekit::V1::Eventsb\006proto3"
+      "\n\nPERMISSION\020\013\022\014\n\010PROVIDER\020\014*M\n\rEventCat" +
+      "egory\022\034\n\030EVENT_SOURCE_UNSPECIFIED\020\000\022\010\n\004C" +
+      "ORE\020\001\022\007\n\003SSO\020\002\022\013\n\007DIRSYNC\020\003*\351\005\n\nObjectTy" +
+      "pe\022\033\n\027OBJECT_TYPE_UNSPECIFIED\020\000\022\r\n\tWorks" +
+      "pace\020\001\022\017\n\013Environment\020\002\022\020\n\014Organization\020" +
+      "\003\022\016\n\nConnection\020\004\022\010\n\004User\020\005\022\010\n\004Role\020\006\022\024\n" +
+      "\020CustomAttributes\020\007\022\r\n\tDirectory\020\010\022\021\n\rDi" +
+      "rectoryUser\020\t\022\022\n\016DirectoryGroup\020\n\022\013\n\007Ses" +
+      "sion\020\013\022\014\n\010Template\020\014\022\007\n\003Job\020\r\022\n\n\006Domain\020" +
+      "\016\022\017\n\013EmailServer\020\017\022\t\n\005Email\020\020\022\017\n\013AuthReq" +
+      "uest\020\021\022\017\n\013SAMLRequest\020\022\022\020\n\014SAMLResponse\020" +
+      "\023\022\017\n\013TokenClaims\020\024\022\021\n\rOIDCReqParams\020\025\022\022\n" +
+      "\016OIDCRespClaims\020\026\022\014\n\010SSOError\020\027\022\020\n\014Gener" +
+      "icError\020\030\022\021\n\rRefreshTokens\020\031\022\025\n\021EndSessi" +
+      "onRequest\020\032\022\025\n\021LogoutTokenClaims\020\033\022\021\n\rOA" +
+      "uthResponse\020\034\022\010\n\004JSON\020\035\022\014\n\010SKErrors\020\036\022\021\n" +
+      "\rOrgMembership\020\037\022\017\n\013UserProfile\020 \022\027\n\023IDP" +
+      "InitiatedPayload\020!\022\021\n\rDeviceDetails\020\"\022\013\n" +
+      "\007Actions\020#\022\024\n\020InterceptorEvent\020$\022\016\n\nPerm" +
+      "ission\020%\022\026\n\022OrgMembershipEvent\020&\022\022\n\016User" +
+      "LoginEvent\020\'\022\023\n\017UserLogoutEvent\020(\022\024\n\020Con" +
+      "nectedAccount\020)2\252\014\n\rEventsService\022\216\001\n\nLi" +
+      "stEvents\022%.scalekit.v1.events.ListEvents" +
+      "Request\032&.scalekit.v1.events.ListEventsR" +
+      "esponse\"1\202\265\030\017\n\013events:read\030d\202\323\344\223\002\030\"\016/api" +
+      "/v1/events:\006filter\022\310\t\n\023ListEventsPaginat" +
+      "ed\022..scalekit.v1.events.ListEventsPagina" +
+      "tedRequest\032/.scalekit.v1.events.ListEven" +
+      "tsPaginatedResponse\"\317\010\222A\235\010\n\006Events\022\037List" +
+      " events without total count\032\332\005Returns a " +
+      "paginated list of events for the current" +
+      " environment, ordered most-recent first." +
+      " The response carries cursor tokens for " +
+      "forward and backward pagination but omit" +
+      "s the total event count, which lets the " +
+      "server skip a COUNT(*) query against the" +
+      " events table. Use this operation when r" +
+      "endering an event log that does not disp" +
+      "lay a total \342\200\224 for example a paginated " +
+      "table that only needs next/previous cont" +
+      "rols. The filter accepts event types, ti" +
+      "me window, organization, source, and opt" +
+      "ional identifiers (auth_request_id, inte" +
+      "rceptor_id, connection_id, connected_acc" +
+      "ount_id). Page size defaults to 10 and i" +
+      "s clamped to 100. To page forward, pass " +
+      "the returned next_page_token as the page" +
+      "_token query parameter on the next call." +
+      "J\215\001\n\003200\022\205\001\nNEvents page returned succes" +
+      "sfully; includes the events array and cu" +
+      "rsor tokens\0223\n1\032/.scalekit.v1.events.Lis" +
+      "tEventsPaginatedResponseJS\n\003400\022L\nJInval" +
+      "id request - page_token is malformed, or" +
+      " start_time is after end_timeJ0\n\003401\022)\n\'" +
+      "Missing or invalid Authorization header\202" +
+      "\265\030\002\030\004\202\323\344\223\002\"\"\030/api/v1/events/paginated:\006f" +
+      "ilter\022\274\001\n\017SendCustomEvent\022*.scalekit.v1." +
+      "events.SendCustomEventRequest\032+.scalekit" +
+      ".v1.events.SendCustomEventResponse\"P\202\265\030\022" +
+      "\n\016webhooks:write\030`\202\323\344\223\0024\"+/api/v1/events" +
+      "/frontend_events/{event_type}:\005eventB\317\001\n" +
+      "$com.scalekit.grpc.scalekit.v1.eventsB\013E" +
+      "ventsProtoP\001Z0github.com/scalekit-inc/sc" +
+      "alekit/pkg/grpc/events\242\002\003SVE\252\002\022Scalekit." +
+      "V1.Events\312\002\022Scalekit\\V1\\Events\342\002\036Scaleki" +
+      "t\\V1\\Events\\GPBMetadata\352\002\024Scalekit::V1::" +
+      "Eventsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

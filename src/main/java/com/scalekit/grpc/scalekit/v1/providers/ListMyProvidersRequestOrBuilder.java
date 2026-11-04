@@ -9,18 +9,18 @@ public interface ListMyProvidersRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 page_size = 1 [json_name = "pageSize"];</code>
+   * <code>uint32 page_size = 1 [json_name = "pageSize", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageSize.
    */
   int getPageSize();
 
   /**
-   * <code>string page_token = 2 [json_name = "pageToken"];</code>
+   * <code>string page_token = 2 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The pageToken.
    */
   java.lang.String getPageToken();
   /**
-   * <code>string page_token = 2 [json_name = "pageToken"];</code>
+   * <code>string page_token = 2 [json_name = "pageToken", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString

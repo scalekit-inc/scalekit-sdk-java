@@ -136,4 +136,21 @@ public interface ExecuteToolRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAgentRunIdBytes();
+
+  /**
+   * <code>optional string trigger_correlation_id = 9 [json_name = "triggerCorrelationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the triggerCorrelationId field is set.
+   */
+  boolean hasTriggerCorrelationId();
+  /**
+   * <code>optional string trigger_correlation_id = 9 [json_name = "triggerCorrelationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The triggerCorrelationId.
+   */
+  java.lang.String getTriggerCorrelationId();
+  /**
+   * <code>optional string trigger_correlation_id = 9 [json_name = "triggerCorrelationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for triggerCorrelationId.
+   */
+  com.google.protobuf.ByteString
+      getTriggerCorrelationIdBytes();
 }

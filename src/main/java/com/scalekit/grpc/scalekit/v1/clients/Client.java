@@ -612,6 +612,32 @@ private static final long serialVersionUID = 0L;
     return enforcePkce_;
   }
 
+  public static final int IP_ALLOWLIST_FIELD_NUMBER = 20;
+  private com.scalekit.grpc.scalekit.v1.clients.IpAllowlist ipAllowlist_;
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the ipAllowlist field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpAllowlist() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The ipAllowlist.
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.IpAllowlist getIpAllowlist() {
+    return ipAllowlist_ == null ? com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.getDefaultInstance() : ipAllowlist_;
+  }
+  /**
+   * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  @java.lang.Override
+  public com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder getIpAllowlistOrBuilder() {
+    return ipAllowlist_ == null ? com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.getDefaultInstance() : ipAllowlist_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -676,6 +702,9 @@ private static final long serialVersionUID = 0L;
     }
     if (enforcePkce_ != false) {
       output.writeBool(19, enforcePkce_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(20, getIpAllowlist());
     }
     getUnknownFields().writeTo(output);
   }
@@ -769,6 +798,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(19, enforcePkce_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(20, getIpAllowlist());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -827,6 +860,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getClientType())) return false;
     if (getEnforcePkce()
         != other.getEnforcePkce()) return false;
+    if (hasIpAllowlist() != other.hasIpAllowlist()) return false;
+    if (hasIpAllowlist()) {
+      if (!getIpAllowlist()
+          .equals(other.getIpAllowlist())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -895,6 +933,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENFORCE_PKCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnforcePkce());
+    if (hasIpAllowlist()) {
+      hash = (37 * hash) + IP_ALLOWLIST_FIELD_NUMBER;
+      hash = (53 * hash) + getIpAllowlist().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1029,6 +1071,7 @@ private static final long serialVersionUID = 0L;
         getUpdateTimeFieldBuilder();
         getSecretsFieldBuilder();
         getCustomClaimsFieldBuilder();
+        getIpAllowlistFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1077,6 +1120,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.LazyStringArrayList.emptyList();
       clientType_ = "";
       enforcePkce_ = false;
+      ipAllowlist_ = null;
+      if (ipAllowlistBuilder_ != null) {
+        ipAllowlistBuilder_.dispose();
+        ipAllowlistBuilder_ = null;
+      }
       return this;
     }
 
@@ -1189,6 +1237,12 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.enforcePkce_ = enforcePkce_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.ipAllowlist_ = ipAllowlistBuilder_ == null
+            ? ipAllowlist_
+            : ipAllowlistBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1379,6 +1433,9 @@ private static final long serialVersionUID = 0L;
       if (other.getEnforcePkce() != false) {
         setEnforcePkce(other.getEnforcePkce());
       }
+      if (other.hasIpAllowlist()) {
+        mergeIpAllowlist(other.getIpAllowlist());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1515,6 +1572,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00010000;
               break;
             } // case 152
+            case 162: {
+              input.readMessage(
+                  getIpAllowlistFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 162
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3271,6 +3335,127 @@ private static final long serialVersionUID = 0L;
       enforcePkce_ = false;
       onChanged();
       return this;
+    }
+
+    private com.scalekit.grpc.scalekit.v1.clients.IpAllowlist ipAllowlist_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.IpAllowlist, com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.Builder, com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder> ipAllowlistBuilder_;
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return Whether the ipAllowlist field is set.
+     */
+    public boolean hasIpAllowlist() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     * @return The ipAllowlist.
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.IpAllowlist getIpAllowlist() {
+      if (ipAllowlistBuilder_ == null) {
+        return ipAllowlist_ == null ? com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.getDefaultInstance() : ipAllowlist_;
+      } else {
+        return ipAllowlistBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIpAllowlist(com.scalekit.grpc.scalekit.v1.clients.IpAllowlist value) {
+      if (ipAllowlistBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ipAllowlist_ = value;
+      } else {
+        ipAllowlistBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder setIpAllowlist(
+        com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.Builder builderForValue) {
+      if (ipAllowlistBuilder_ == null) {
+        ipAllowlist_ = builderForValue.build();
+      } else {
+        ipAllowlistBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder mergeIpAllowlist(com.scalekit.grpc.scalekit.v1.clients.IpAllowlist value) {
+      if (ipAllowlistBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0) &&
+          ipAllowlist_ != null &&
+          ipAllowlist_ != com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.getDefaultInstance()) {
+          getIpAllowlistBuilder().mergeFrom(value);
+        } else {
+          ipAllowlist_ = value;
+        }
+      } else {
+        ipAllowlistBuilder_.mergeFrom(value);
+      }
+      if (ipAllowlist_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public Builder clearIpAllowlist() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      ipAllowlist_ = null;
+      if (ipAllowlistBuilder_ != null) {
+        ipAllowlistBuilder_.dispose();
+        ipAllowlistBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.Builder getIpAllowlistBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getIpAllowlistFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    public com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder getIpAllowlistOrBuilder() {
+      if (ipAllowlistBuilder_ != null) {
+        return ipAllowlistBuilder_.getMessageOrBuilder();
+      } else {
+        return ipAllowlist_ == null ?
+            com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.getDefaultInstance() : ipAllowlist_;
+      }
+    }
+    /**
+     * <code>.scalekit.v1.clients.IpAllowlist ip_allowlist = 20 [json_name = "ipAllowlist", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.scalekit.grpc.scalekit.v1.clients.IpAllowlist, com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.Builder, com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder> 
+        getIpAllowlistFieldBuilder() {
+      if (ipAllowlistBuilder_ == null) {
+        ipAllowlistBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.scalekit.grpc.scalekit.v1.clients.IpAllowlist, com.scalekit.grpc.scalekit.v1.clients.IpAllowlist.Builder, com.scalekit.grpc.scalekit.v1.clients.IpAllowlistOrBuilder>(
+                getIpAllowlist(),
+                getParentForChildren(),
+                isClean());
+        ipAllowlist_ = null;
+      }
+      return ipAllowlistBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

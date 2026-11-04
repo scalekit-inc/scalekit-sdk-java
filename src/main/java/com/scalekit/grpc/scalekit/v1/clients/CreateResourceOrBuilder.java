@@ -183,6 +183,12 @@ public interface CreateResourceOrBuilder extends
   boolean getCimdClientAllowlistEnabled();
 
   /**
+   * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopeSelectionAllowed.
+   */
+  boolean getResourceScopeSelectionAllowed();
+
+  /**
    * <pre>
    *
    *string tos_uri = 10 [
@@ -202,8 +208,8 @@ public interface CreateResourceOrBuilder extends
    *];
    * </pre>
    *
-   * <code>bool resource_scope_selection_allowed = 17 [json_name = "resourceScopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
-   * @return The resourceScopeSelectionAllowed.
+   * <code>bool resource_scoped_issuer_enabled = 18 [json_name = "resourceScopedIssuerEnabled", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The resourceScopedIssuerEnabled.
    */
-  boolean getResourceScopeSelectionAllowed();
+  boolean getResourceScopedIssuerEnabled();
 }

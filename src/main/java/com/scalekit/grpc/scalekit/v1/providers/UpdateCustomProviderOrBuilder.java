@@ -110,4 +110,16 @@ java.lang.String defaultValue);
    */
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The openapiSpecUrl.
+   */
+  java.lang.String getOpenapiSpecUrl();
+  /**
+   * <code>string openapi_spec_url = 12 [json_name = "openapiSpecUrl", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for openapiSpecUrl.
+   */
+  com.google.protobuf.ByteString
+      getOpenapiSpecUrlBytes();
 }

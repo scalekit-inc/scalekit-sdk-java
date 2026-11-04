@@ -62,4 +62,44 @@ public interface GoogleDWDConfigOrBuilder extends
    * <code>.google.protobuf.StringValue token_uri = 3 [json_name = "tokenUri", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
    */
   com.google.protobuf.StringValueOrBuilder getTokenUriOrBuilder();
+
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the scopeSelectionAllowed field is set.
+   */
+  boolean hasScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The scopeSelectionAllowed.
+   */
+  com.google.protobuf.BoolValue getScopeSelectionAllowed();
+  /**
+   * <code>.google.protobuf.BoolValue scope_selection_allowed = 4 [json_name = "scopeSelectionAllowed", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getScopeSelectionAllowedOrBuilder();
+
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return A list containing the requiredScopes.
+   */
+  java.util.List<java.lang.String>
+      getRequiredScopesList();
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The count of requiredScopes.
+   */
+  int getRequiredScopesCount();
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the element to return.
+   * @return The requiredScopes at the given index.
+   */
+  java.lang.String getRequiredScopes(int index);
+  /**
+   * <code>repeated string required_scopes = 5 [json_name = "requiredScopes", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the requiredScopes at the given index.
+   */
+  com.google.protobuf.ByteString
+      getRequiredScopesBytes(int index);
 }

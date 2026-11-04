@@ -125,4 +125,36 @@ public interface UpdateBillingPlanRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAddOnsBytes(int index);
+
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return Whether the paymentAuthorizationId field is set.
+   */
+  boolean hasPaymentAuthorizationId();
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The paymentAuthorizationId.
+   */
+  java.lang.String getPaymentAuthorizationId();
+  /**
+   * <pre>
+   * The payment authorization a previous call returned in payment_action, after the customer completed
+   * their bank's authentication (3-D Secure) for it. Send the same plans and add_ons with it.
+   * </pre>
+   *
+   * <code>optional string payment_authorization_id = 4 [json_name = "paymentAuthorizationId", (.grpc.gateway.protoc_gen_openapiv2.options.openapiv2_field) = { ... }</code>
+   * @return The bytes for paymentAuthorizationId.
+   */
+  com.google.protobuf.ByteString
+      getPaymentAuthorizationIdBytes();
 }
