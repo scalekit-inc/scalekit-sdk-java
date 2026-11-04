@@ -10,6 +10,12 @@ Don't edit released sections by hand.
 
 Sections up to and including 2.5.0 were imported from [GitHub Releases](https://github.com/scalekit-inc/scalekit-sdk-java/releases). Their wording is kept, with small corrections.
 
+## [2.6.2] - 2026-11-04
+
+### Changed
+
+- No code changes from 2.6.1. Upgrading is optional; builds on 2.6.1 need no changes.
+
 ## [2.6.1] - 2026-11-03
 
 ### Changed
@@ -272,6 +278,7 @@ List<Domain> domains = client.domains().listDomainsByOrganizationId(
 
 #### Initial Release
 
+[2.6.2]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.6.1...v2.6.2
 [2.6.1]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.6.0...v2.6.1
 [2.6.0]: https://github.com/scalekit-inc/scalekit-sdk-java/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/scalekit-inc/scalekit-sdk-java/releases/tag/v2.5.0
