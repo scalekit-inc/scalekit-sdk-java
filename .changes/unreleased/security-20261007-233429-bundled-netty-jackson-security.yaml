@@ -1,0 +1,13 @@
+kind: security
+body: |
+  The Netty and Jackson libraries bundled in the SDK jar had publicly disclosed vulnerabilities, including HTTP/2 denial of service and TLS hostname verification being silently disabled. The jar now bundles gRPC 1.84.0 with Netty 4.2.16.Final, which fixes 30 Netty advisories, and Jackson 2.18.11, which fixes 11 advisories in `jackson-databind` and `jackson-core`. These libraries are relocated inside the jar, so overriding their versions in your own build does not patch them.
+
+  - **Advisories (examples):** Netty [GHSA-93wv-jw9v-4972](https://github.com/advisories/GHSA-93wv-jw9v-4972), [GHSA-f6hv-jmp6-3vwv](https://github.com/advisories/GHSA-f6hv-jmp6-3vwv) (HTTP/2 denial of service), [GHSA-c653-97m9-rcg9](https://github.com/advisories/GHSA-c653-97m9-rcg9) (hostname verification); Jackson [GHSA-cxp5-3px4-pw24](https://github.com/advisories/GHSA-cxp5-3px4-pw24), [GHSA-7hhh-6rmp-j9qf](https://github.com/advisories/GHSA-7hhh-6rmp-j9qf). Three Netty advisories remain open in 4.2.16.Final; they affect only server-side SNI and CORS handling, which the SDK, a gRPC client, does not use.
+  - **Affected versions:** `(,2.5.0]`
+  - **Patched versions:** `(2.5.0,)`, starting with this release
+  - **Action:** upgrade. No code changes are needed.
+time: '2026-10-07T23:34:29.051989+00:00'
+custom:
+  Breaking: 'No'
+  Ticket: SK-2193
+  Migration: ''
