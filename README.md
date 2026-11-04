@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.scalekit:scalekit-sdk-java:2.6.1"
+    implementation "com.scalekit:scalekit-sdk-java:2.6.2"
 }
 ```
 
@@ -81,7 +81,7 @@ dependencies {
     <dependency>
         <groupId>com.scalekit</groupId>
         <artifactId>scalekit-sdk-java</artifactId>
-        <version>2.6.1</version>
+        <version>2.6.2</version>
     </dependency>
 </dependencies>
 ```
