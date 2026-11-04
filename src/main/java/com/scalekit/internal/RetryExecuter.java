@@ -1,6 +1,8 @@
 package com.scalekit.internal;
 
 import com.scalekit.exceptions.APIException;
+import com.scalekit.exceptions.AuthenticationException;
+import com.scalekit.exceptions.ScalekitConnectionException;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 
@@ -104,6 +106,74 @@ public class RetryExecuter {
         }
 
         throw new APIException(lastError);
+    }
+
+    /**
+     * Runs a call under a retry policy. {@link RetryPolicy#LEGACY} (or null) behaves exactly as
+     * {@link #executeWithRetry(Callable, ScalekitCredentials)}. The other policies:
+     *
+     * <ul>
+     *   <li>refresh the SDK's credentials and retry once, only when UNAUTHENTICATED carries the
+     *       error code {@code UNAUTHENTICATED} or none (the SDK's own token was rejected). Other
+     *       codes, such as {@code TOOL_ERROR} or {@code REAUTHENTICATION_NEEDED}, describe a
+     *       connected account; a refresh cannot fix them, and retrying a create whose first
+     *       attempt already persisted would replace the real error;</li>
+     *   <li>retry UNAVAILABLE with backoff only under {@link RetryPolicy#IDEMPOTENT};</li>
+     *   <li>never retry DEADLINE_EXCEEDED;</li>
+     *   <li>throw the status-family exceptions chosen by {@link ErrorMapper}.</li>
+     * </ul>
+     *
+     * @param callable    the call; it must set its own deadline on every attempt
+     * @param credentials the credentials to refresh
+     * @param policy      the retry policy
+     * @param <T>         the result type
+     * @return the call's result
+     */
+    public static <T> T executeWithRetry(Callable<T> callable, ScalekitCredentials credentials, RetryPolicy policy) {
+        if (policy == null || policy == RetryPolicy.LEGACY) {
+            return executeWithRetry(callable, credentials);
+        }
+        StatusRuntimeException lastError = null;
+        boolean refreshed = false;
+
+        for (int attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+            try {
+                return callable.call();
+            } catch (StatusRuntimeException e) {
+                Status.Code code = e.getStatus().getCode();
+                boolean refresh = !refreshed && ErrorMapper.isClientCredentialFailure(e);
+                boolean retryUnavailable = code == Status.Code.UNAVAILABLE && policy == RetryPolicy.IDEMPOTENT;
+                if ((!refresh && !retryUnavailable) || attempt == MAX_ATTEMPTS) {
+                    throw ErrorMapper.map(e);
+                }
+                lastError = e;
+
+                if (refresh) {
+                    refreshed = true;
+                    try {
+                        credentials.updateCredentials();
+                    } catch (Exception refreshError) {
+                        throw new AuthenticationException(
+                                "Failed to refresh Scalekit credentials after an UNAUTHENTICATED response: "
+                                        + refreshError.getMessage(), refreshError);
+                    }
+                } else if (!backoffBeforeRetry(attempt)) {
+                    // Interrupted mid-backoff: stop instead of making another call on a thread that
+                    // was told to stop. The interrupt flag stays set.
+                    InterruptedException interrupted = new InterruptedException(
+                            "interrupted while backing off after " + code);
+                    interrupted.initCause(lastError);
+                    throw new ScalekitConnectionException("Retry aborted: interrupted while backing off after " + code,
+                            interrupted);
+                }
+            } catch (RuntimeException e) {
+                throw e;
+            } catch (Exception e) {
+                throw new APIException(e.getMessage(), e);
+            }
+        }
+
+        throw ErrorMapper.map(lastError);
     }
 
     // Exponential backoff with half jitter (same shape as Python's/Node's: base * (0.5 + rand()
