@@ -4,9 +4,10 @@ name: Release
 #
 # Two ways to start it, both in the `release` environment (a second maintainer approves):
 #   - publish a GitHub Release `vX.Y.Z`: publishes that tag;
-#   - Actions > Release > Run workflow with a tag: publishes an existing tag, for example to
-#     retry a failed run. With "dry run" set, it builds, signs and checks access to the
-#     repository, then uploads the result as a workflow artifact instead of publishing.
+#   - Actions > Release > Run workflow from `main`, with the tag as the `tag` input: publishes
+#     an existing tag, for example to retry a failed run. With "dry run" set, it builds, signs
+#     and checks access to the repository, then uploads the result as a workflow artifact
+#     instead of publishing.
 #
 # Published versions are immutable: `make publish` refuses a version that already exists.
 
@@ -43,10 +44,6 @@ jobs:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
 
     steps:
-      #   - Actions > Release > Run workflow from `main`, with the tag as the `tag` input: publishes
-      #     an existing tag, for example to retry a failed run. With "dry run" set, it builds, signs
-      #     and checks access to the repository, then uploads the result as a workflow artifact
-      #     instead of publishing.
       - name: Manual runs must start from main
         if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main'
         run: |
