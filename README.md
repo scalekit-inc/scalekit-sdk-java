@@ -9,7 +9,7 @@
 <p><strong>Official Java SDK for Scalekit.</strong><br>
 Authentication, authorization, and tool-calling for human-in-the-loop and autonomous agent flows.</p>
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.scalekit/scalekit-sdk-java.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.scalekit%22%20AND%20a:%22scalekit-sdk-java%22)
+[![Version](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fus-maven.pkg.dev%2Fscalekit-public%2Fjava%2Fcom%2Fscalekit%2Fscalekit-sdk-java%2Fmaven-metadata.xml&label=version)](#installation)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Javadoc](https://javadoc.io/badge2/com.scalekit/scalekit-sdk-java/javadoc.svg)](https://javadoc.io/doc/com.scalekit/scalekit-sdk-java)
 
@@ -52,20 +52,38 @@ This is the official Java SDK for [Scalekit](https://scalekit.com). Scalekit pro
 
 #### Installation
 
+The SDK is published to Scalekit's Maven repository, `https://us-maven.pkg.dev/scalekit-public/java`. Add it to your build next to Maven Central. It needs no credentials. If your builds download dependencies only through a mirror such as Nexus or Artifactory, add this URL to the mirror instead.
+
 **Gradle:**
 
 ```gradle
-implementation "com.scalekit:scalekit-sdk-java:2.6.1"
+repositories {
+    mavenCentral()
+    maven { url "https://us-maven.pkg.dev/scalekit-public/java" }
+}
+
+dependencies {
+    implementation "com.scalekit:scalekit-sdk-java:2.6.1"
+}
 ```
 
 **Maven:**
 
 ```xml
-<dependency>
-    <groupId>com.scalekit</groupId>
-    <artifactId>scalekit-sdk-java</artifactId>
-    <version>2.6.1</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>scalekit</id>
+        <url>https://us-maven.pkg.dev/scalekit-public/java</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.scalekit</groupId>
+        <artifactId>scalekit-sdk-java</artifactId>
+        <version>2.6.1</version>
+    </dependency>
+</dependencies>
 ```
 
 #### Multiple issuers
