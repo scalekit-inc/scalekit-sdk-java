@@ -43,6 +43,11 @@ jobs:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
 
     steps:
+      - name: Manual runs must start from main
+        if: github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main'
+        run: |
+          echo "Start this workflow from main (Use workflow from: main) and pass the tag as the 'tag' input."
+          exit 1
       - name: Checkout tag
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
